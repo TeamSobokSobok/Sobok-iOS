@@ -13,6 +13,10 @@
 		BD515E40278770C5003BD5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD515E3E278770C5003BD5A4 /* Main.storyboard */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
 		BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD515E43278770C7003BD5A4 /* LaunchScreen.storyboard */; };
+		BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E6C27877837003BD5A4 /* SplashViewController.swift */; };
+		BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E6E2787784D003BD5A4 /* BaseViewController.swift */; };
+		BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E70278778F9003BD5A4 /* SampleViewController.swift */; };
+		BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD515E71278778F9003BD5A4 /* SampleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		BD515E41278770C7003BD5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD515E44278770C7003BD5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD515E46278770C7003BD5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD515E6C27877837003BD5A4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		BD515E6E2787784D003BD5A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BD515E70278778F9003BD5A4 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		BD515E71278778F9003BD5A4 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,251 @@
 		BD515E37278770C5003BD5A4 /* SobokSobok */ = {
 			isa = PBXGroup;
 			children = (
-				BD515E38278770C5003BD5A4 /* AppDelegate.swift */,
-				BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */,
+				BD515E4C2787755A003BD5A4 /* Application */,
+				BD515E4D27877569003BD5A4 /* Common */,
+				BD515E4E27877571003BD5A4 /* Data */,
+				BD515E4F27877579003BD5A4 /* Presentation */,
+				BD515E5027877582003BD5A4 /* Resource */,
+				BD515E512787758B003BD5A4 /* Service */,
+				BD515E52278775A0003BD5A4 /* Support */,
 				BD515E3C278770C5003BD5A4 /* ViewController.swift */,
 				BD515E3E278770C5003BD5A4 /* Main.storyboard */,
-				BD515E41278770C7003BD5A4 /* Assets.xcassets */,
-				BD515E43278770C7003BD5A4 /* LaunchScreen.storyboard */,
-				BD515E46278770C7003BD5A4 /* Info.plist */,
 			);
 			path = SobokSobok;
+			sourceTree = "<group>";
+		};
+		BD515E4C2787755A003BD5A4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E38278770C5003BD5A4 /* AppDelegate.swift */,
+				BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BD515E4D27877569003BD5A4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E53278775FA003BD5A4 /* DesignSystem */,
+				BD515E5427877601003BD5A4 /* NameSpace */,
+				BD515E552787760A003BD5A4 /* Extension */,
+				BD515E562787760F003BD5A4 /* Protocol */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BD515E4E27877571003BD5A4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E572787761E003BD5A4 /* Mock */,
+				BD515E5827877622003BD5A4 /* Model */,
+				BD515E5927877628003BD5A4 /* DTO */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BD515E4F27877579003BD5A4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E5A27877635003BD5A4 /* Common */,
+				BD515E64278776B0003BD5A4 /* Splash */,
+				BD515E65278776B5003BD5A4 /* SignIn */,
+				BD515E66278776BD003BD5A4 /* SignUp */,
+				BD515E67278776D5003BD5A4 /* Home */,
+				BD515E68278776E0003BD5A4 /* Share */,
+				BD515E69278776E6003BD5A4 /* Notice */,
+				BD515E6A27877773003BD5A4 /* Medicine */,
+				BD515E6B27877784003BD5A4 /* Account */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BD515E5027877582003BD5A4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E43278770C7003BD5A4 /* LaunchScreen.storyboard */,
+				BD515E5B27877641003BD5A4 /* Gif */,
+				BD515E5C27877645003BD5A4 /* Font */,
+				BD515E41278770C7003BD5A4 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BD515E512787758B003BD5A4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E612787767A003BD5A4 /* Network */,
+				BD515E622787767D003BD5A4 /* Parser */,
+				BD515E6327877683003BD5A4 /* Result */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD515E52278775A0003BD5A4 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E46278770C7003BD5A4 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		BD515E53278775FA003BD5A4 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		BD515E5427877601003BD5A4 /* NameSpace */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NameSpace;
+			sourceTree = "<group>";
+		};
+		BD515E552787760A003BD5A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BD515E562787760F003BD5A4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BD515E572787761E003BD5A4 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		BD515E5827877622003BD5A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD515E5927877628003BD5A4 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		BD515E5A27877635003BD5A4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E74278778FD003BD5A4 /* Sample */,
+				BD515E6E2787784D003BD5A4 /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BD515E5B27877641003BD5A4 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		BD515E5C27877645003BD5A4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BD515E612787767A003BD5A4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BD515E622787767D003BD5A4 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		BD515E6327877683003BD5A4 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		BD515E64278776B0003BD5A4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E6C27877837003BD5A4 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		BD515E65278776B5003BD5A4 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		BD515E66278776BD003BD5A4 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		BD515E67278776D5003BD5A4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BD515E68278776E0003BD5A4 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		BD515E69278776E6003BD5A4 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		BD515E6A27877773003BD5A4 /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Medicine;
+			sourceTree = "<group>";
+		};
+		BD515E6B27877784003BD5A4 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		BD515E74278778FD003BD5A4 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				BD515E70278778F9003BD5A4 /* SampleViewController.swift */,
+				BD515E71278778F9003BD5A4 /* SampleViewController.xib */,
+			);
+			path = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +371,7 @@
 			files = (
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
+				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				BD515E40278770C5003BD5A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				BD515E3D278770C5003BD5A4 /* ViewController.swift in Sources */,
+				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +539,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SobokSobok/Info.plist;
+				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,7 +568,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SobokSobok/Info.plist;
+				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
