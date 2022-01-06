@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
-		BD515E3D278770C5003BD5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3C278770C5003BD5A4 /* ViewController.swift */; };
-		BD515E40278770C5003BD5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD515E3E278770C5003BD5A4 /* Main.storyboard */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
 		BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD515E43278770C7003BD5A4 /* LaunchScreen.storyboard */; };
 		BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E6C27877837003BD5A4 /* SplashViewController.swift */; };
@@ -23,8 +21,6 @@
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD515E3C278770C5003BD5A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BD515E3F278770C5003BD5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD515E41278770C7003BD5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD515E44278770C7003BD5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD515E46278770C7003BD5A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,8 +67,6 @@
 				BD515E5027877582003BD5A4 /* Resource */,
 				BD515E512787758B003BD5A4 /* Service */,
 				BD515E52278775A0003BD5A4 /* Support */,
-				BD515E3C278770C5003BD5A4 /* ViewController.swift */,
-				BD515E3E278770C5003BD5A4 /* Main.storyboard */,
 			);
 			path = SobokSobok;
 			sourceTree = "<group>";
@@ -372,7 +366,6 @@
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
-				BD515E40278770C5003BD5A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +377,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
-				BD515E3D278770C5003BD5A4 /* ViewController.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
@@ -395,14 +387,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BD515E3E278770C5003BD5A4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD515E3F278770C5003BD5A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BD515E43278770C7003BD5A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -542,9 +526,9 @@
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -571,9 +555,9 @@
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
