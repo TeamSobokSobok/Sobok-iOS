@@ -15,6 +15,15 @@
 		BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E6E2787784D003BD5A4 /* BaseViewController.swift */; };
 		BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E70278778F9003BD5A4 /* SampleViewController.swift */; };
 		BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD515E71278778F9003BD5A4 /* SampleViewController.xib */; };
+		BD515E8327877F0E003BD5A4 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8227877F0E003BD5A4 /* Moya */; };
+		BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8827877F9C003BD5A4 /* SnapKit */; };
+		BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8B27877FAD003BD5A4 /* Kingfisher */; };
+		BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */; };
+		BD515E92278780EE003BD5A4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E91278780EE003BD5A4 /* Lottie */; };
+		BD515E9527878114003BD5A4 /* EasyKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E9427878114003BD5A4 /* EasyKit */; };
+		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
+		BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */; };
+		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +44,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
+				BDFE75DE278786AE00014BE1 /* Then in Frameworks */,
+				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
+				BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */,
+				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
+				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
+				BD515E8327877F0E003BD5A4 /* Moya in Frameworks */,
+				BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */,
+				BD515E92278780EE003BD5A4 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +339,17 @@
 			dependencies = (
 			);
 			name = SobokSobok;
+			packageProductDependencies = (
+				BD515E8227877F0E003BD5A4 /* Moya */,
+				BD515E8827877F9C003BD5A4 /* SnapKit */,
+				BD515E8B27877FAD003BD5A4 /* Kingfisher */,
+				BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */,
+				BD515E91278780EE003BD5A4 /* Lottie */,
+				BD515E9427878114003BD5A4 /* EasyKit */,
+				BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */,
+				BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */,
+				BDFE75DD278786AE00014BE1 /* Then */,
+			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
 			productType = "com.apple.product-type.application";
@@ -349,6 +378,16 @@
 				Base,
 			);
 			mainGroup = BD515E2C278770C5003BD5A4;
+			packageReferences = (
+				BD515E8127877F0E003BD5A4 /* XCRemoteSwiftPackageReference "Moya" */,
+				BD515E8727877F9C003BD5A4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BD515E8A27877FAD003BD5A4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BD515E8D27878093003BD5A4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				BD515E90278780EE003BD5A4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */,
+				BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -453,6 +492,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -507,6 +547,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -594,6 +635,121 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BD515E8127877F0E003BD5A4 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		BD515E8727877F9C003BD5A4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		BD515E8A27877FAD003BD5A4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		BD515E8D27878093003BD5A4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		BD515E90278780EE003BD5A4 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Taehyeon-Kim/EasyKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BD515E8227877F0E003BD5A4 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD515E8127877F0E003BD5A4 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		BD515E8827877F9C003BD5A4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD515E8727877F9C003BD5A4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		BD515E8B27877FAD003BD5A4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD515E8A27877FAD003BD5A4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD515E8D27878093003BD5A4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		BD515E91278780EE003BD5A4 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD515E90278780EE003BD5A4 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		BD515E9427878114003BD5A4 /* EasyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */;
+			productName = EasyKit;
+		};
+		BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		BDFE75DD278786AE00014BE1 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BD515E2D278770C5003BD5A4 /* Project object */;
 }

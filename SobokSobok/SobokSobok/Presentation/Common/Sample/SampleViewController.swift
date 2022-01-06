@@ -7,6 +7,16 @@
 
 import UIKit
 
+import EasyKit
+import FirebaseAnalytics
+import FirebaseCrashlytics
+import IQKeyboardManagerSwift
+import Kingfisher
+import Lottie
+import Moya
+import SnapKit
+import Then
+
 final class SampleViewController: BaseViewController {
 
     override func viewDidLoad() {
