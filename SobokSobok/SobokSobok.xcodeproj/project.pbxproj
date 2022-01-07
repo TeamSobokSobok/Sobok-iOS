@@ -21,6 +21,7 @@
 		BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */; };
 		BD515E92278780EE003BD5A4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E91278780EE003BD5A4 /* Lottie */; };
 		BD515E9527878114003BD5A4 /* EasyKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E9427878114003BD5A4 /* EasyKit */; };
+		BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8E92788A01C009249D0 /* .swiftlint.yml */; };
 		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
 		BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
@@ -37,6 +38,7 @@
 		BD515E6E2787784D003BD5A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BD515E70278778F9003BD5A4 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		BD515E71278778F9003BD5A4 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		BD64F8E92788A01C009249D0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		BD515E2C278770C5003BD5A4 = {
 			isa = PBXGroup;
 			children = (
+				BD64F8E92788A01C009249D0 /* .swiftlint.yml */,
 				BD515E37278770C5003BD5A4 /* SobokSobok */,
 				BD515E36278770C5003BD5A4 /* Products */,
 			);
@@ -330,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD515E49278770C7003BD5A4 /* Build configuration list for PBXNativeTarget "SobokSobok" */;
 			buildPhases = (
+				BD64F8E827889FB0009249D0 /* SwiftLint Script */,
 				BD515E31278770C5003BD5A4 /* Sources */,
 				BD515E32278770C5003BD5A4 /* Frameworks */,
 				BD515E33278770C5003BD5A4 /* Resources */,
@@ -402,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
@@ -409,6 +414,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD64F8E827889FB0009249D0 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD515E31278770C5003BD5A4 /* Sources */ = {

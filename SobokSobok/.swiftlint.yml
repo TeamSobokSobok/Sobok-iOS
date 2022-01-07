@@ -1,0 +1,22 @@
+disabled_rules:
+- line_length
+- trailing_whitespace
+- orphaned_doc_comment
+- nesting
+- function_body_length
+
+opt_in_rules:
+- anyobject_protocol
+- let_var_whitespace
+
+included:
+
+excluded:
+- SobokSobok/Application # AppDelegate, SceneDelegate 파일 무시
+
+identifier_name:
+  excluded:
+    - id
+
+force_cast:
+    warning              # 강제 캐스팅은 error에서 warning으로 변경
