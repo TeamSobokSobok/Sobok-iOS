@@ -13,6 +13,7 @@ included:
 
 excluded:
 - SobokSobok/Application # AppDelegate, SceneDelegate 파일 무시
+- SobokSobok/Common/NameSpace
 
 identifier_name:
   excluded:
