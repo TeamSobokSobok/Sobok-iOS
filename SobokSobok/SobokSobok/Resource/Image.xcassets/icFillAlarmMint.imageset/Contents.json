@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "icFillAlarmMint.png",
+      "scale" : "1x"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "icFillAlarmMint@2x.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "icFillAlarmMint@3x.png",
+      "scale" : "3x",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
