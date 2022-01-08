@@ -29,6 +29,13 @@
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
 		BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA580278997E1000C0AF8 /* Color.xcassets */; };
 		BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA58227899C25000C0AF8 /* Image.xcassets */; };
+		BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA5942789B2A2000C0AF8 /* generate.py */; };
+		BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */; };
+		BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A42789BCD3000C0AF8 /* Notification.swift */; };
+		BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A52789BCD3000C0AF8 /* Image.swift */; };
+		BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A62789BCD3000C0AF8 /* URL.swift */; };
+		BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A72789BCD3000C0AF8 /* Color.swift */; };
+		BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A82789BCD3000C0AF8 /* Text.swift */; };
 		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
 		BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
@@ -53,6 +60,13 @@
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		BDDAA580278997E1000C0AF8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BDDAA58227899C25000C0AF8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		BDDAA5942789B2A2000C0AF8 /* generate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = generate.py; sourceTree = "<group>"; };
+		BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
+		BDDAA5A42789BCD3000C0AF8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		BDDAA5A52789BCD3000C0AF8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BDDAA5A62789BCD3000C0AF8 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		BDDAA5A72789BCD3000C0AF8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BDDAA5A82789BCD3000C0AF8 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +192,7 @@
 		BD515E52278775A0003BD5A4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				BDDAA5932789B271000C0AF8 /* Script */,
 				BD515E46278770C7003BD5A4 /* Info.plist */,
 			);
 			path = Support;
@@ -193,6 +208,12 @@
 		BD515E5427877601003BD5A4 /* NameSpace */ = {
 			isa = PBXGroup;
 			children = (
+				BDDAA5A72789BCD3000C0AF8 /* Color.swift */,
+				BDDAA5A52789BCD3000C0AF8 /* Image.swift */,
+				BDDAA5A42789BCD3000C0AF8 /* Notification.swift */,
+				BDDAA5A82789BCD3000C0AF8 /* Text.swift */,
+				BDDAA5A62789BCD3000C0AF8 /* URL.swift */,
+				BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */,
 			);
 			path = NameSpace;
 			sourceTree = "<group>";
@@ -347,6 +368,14 @@
 			path = Sample;
 			sourceTree = "<group>";
 		};
+		BDDAA5932789B271000C0AF8 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				BDDAA5942789B2A2000C0AF8 /* generate.py */,
+			);
+			path = Script;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,6 +384,7 @@
 			buildConfigurationList = BD515E49278770C7003BD5A4 /* Build configuration list for PBXNativeTarget "SobokSobok" */;
 			buildPhases = (
 				BD64F8E827889FB0009249D0 /* SwiftLint Script */,
+				BDDAA5962789B3F4000C0AF8 /* Python Script */,
 				BD515E31278770C5003BD5A4 /* Sources */,
 				BD515E32278770C5003BD5A4 /* Frameworks */,
 				BD515E33278770C5003BD5A4 /* Resources */,
@@ -432,6 +462,7 @@
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
+				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
@@ -462,6 +493,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		BDDAA5962789B3F4000C0AF8 /* Python Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Python Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python $TARGET_NAME/Support/Script/generate.py $TARGET_NAME\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -470,9 +519,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
+				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
+				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
+				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
+				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
+				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
