@@ -140,7 +140,3 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos,cocoapods
-
-### Sobok Sobok ###
-# Python Script
-script/
