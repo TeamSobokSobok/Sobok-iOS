@@ -39,6 +39,10 @@
 		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
 		BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
+		EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */; };
+		EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */; };
+		EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */; };
+		EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,10 @@
 		BDDAA5A62789BCD3000C0AF8 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		BDDAA5A72789BCD3000C0AF8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BDDAA5A82789BCD3000C0AF8 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSheet.swift; sourceTree = "<group>"; };
+		EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineSheet.xib; sourceTree = "<group>"; };
+		EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineTableViewCell.swift; sourceTree = "<group>"; };
+		EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +356,7 @@
 		BD515E6A27877773003BD5A4 /* Medicine */ = {
 			isa = PBXGroup;
 			children = (
+				EC037614278B372500CA4B54 /* AddMedicineSheet */,
 			);
 			path = Medicine;
 			sourceTree = "<group>";
@@ -374,6 +383,17 @@
 				BDDAA5942789B2A2000C0AF8 /* generate.py */,
 			);
 			path = Script;
+			sourceTree = "<group>";
+		};
+		EC037614278B372500CA4B54 /* AddMedicineSheet */ = {
+			isa = PBXGroup;
+			children = (
+				EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */,
+				EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */,
+				EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */,
+				EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */,
+			);
+			path = AddMedicineSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,9 +482,11 @@
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
+				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
+				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
@@ -519,6 +541,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
+				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
+				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
