@@ -46,13 +46,15 @@ final class TabBarController: UITabBarController {
     private func setTabBarAppearance() {
         UITabBar.appearance().tintColor = Color.black
         UITabBar.appearance().unselectedItemTintColor = Color.gray500
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().shadowImage = nil
+        UITabBar.appearance().backgroundImage = nil
         UITabBar.appearance().backgroundColor = UIColor.white
-        UITabBar.appearance().layer.borderWidth = 0.0
 
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+        
+        tabBar.layer.borderWidth = 1.0
+        tabBar.layer.borderColor = Color.gray200?.cgColor
     }
 
     private func setTabBarItems() {
