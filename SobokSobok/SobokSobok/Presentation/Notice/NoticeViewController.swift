@@ -20,6 +20,7 @@ final class NoticeViewController: UIViewController {
         super.viewDidLoad()
         assignDelegation()
         registerXib()
+        setTableView()
         initNoticeList()
     }
     
@@ -27,6 +28,10 @@ final class NoticeViewController: UIViewController {
     func assignDelegation() {
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
+    }
+    
+    func setTableView() {
+        notificationTableView.rowHeight = UITableView.automaticDimension
     }
     
     func registerXib() {
@@ -54,15 +59,18 @@ extension NoticeViewController: UITableViewDataSource {
         guard let cell = notificationTableView.dequeueReusableCell(withIdentifier: NoticeTableViewCell.cellIdentifier) as? NoticeTableViewCell else {return UITableViewCell()}
         cell.selectionStyle = .none
         cell.setData(noticeData: noticeList[indexPath.row])
+        switch indexPath.row {
+        case 2:
+            cell.confirmButton.subviews.forEach { $0.isHidden = true }
+        case 4:
+            cell.confirmButton.subviews.forEach { $0.isHidden = true }
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        default:
+            cell.confirmButton.subviews.forEach { $0.isHidden = false }
+        }
         return cell
     }
 }
 
-extension NoticeViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 134
-//        return notificationTableView.rowHeight    // 셀 크기 동적으로 조절 시도...
-    }
-}
+extension NoticeViewController: UITableViewDelegate { }
 

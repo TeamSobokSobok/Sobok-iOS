@@ -40,65 +40,71 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오후 12:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-RU-4bP">
-                        <rect key="frame" x="60" y="41.5" width="251" height="15"/>
+                        <rect key="frame" x="60" y="41.5" width="251" height="14.5"/>
                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
                         <color key="textColor" name="gray500_sub"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-vQ-cRF">
-                        <rect key="frame" x="18" y="68.5" width="145" height="40"/>
-                        <color key="backgroundColor" name="light_mint"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="145" id="CDL-3f-Lyi"/>
-                            <constraint firstAttribute="height" constant="40" id="bQI-oJ-R14"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="거절">
-                            <color key="titleColor" name="dark_mint_main"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-kF-log">
-                        <rect key="frame" x="172" y="68.5" width="145" height="40"/>
-                        <color key="backgroundColor" name="mint_main"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="145" id="Z0T-0J-cjm"/>
-                            <constraint firstAttribute="height" constant="40" id="tjd-Tz-fpm"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="수락">
-                            <color key="titleColor" name="white_sub"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-7t-gWs">
+                        <rect key="frame" x="18" y="68.5" width="299" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-vQ-cRF">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
+                                <color key="backgroundColor" name="light_mint"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="CDL-3f-Lyi"/>
+                                    <constraint firstAttribute="height" constant="40" id="bQI-oJ-R14"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="거절">
+                                    <color key="titleColor" name="dark_mint_main"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-kF-log">
+                                <rect key="frame" x="154" y="0.0" width="145" height="40"/>
+                                <color key="backgroundColor" name="mint_main"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="Z0T-0J-cjm"/>
+                                    <constraint firstAttribute="height" constant="40" id="tjd-Tz-fpm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="수락">
+                                    <color key="titleColor" name="white_sub"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="AgL-0F-azo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.25" id="1Gt-Rl-Uxj"/>
                     <constraint firstItem="AgL-0F-azo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26.25" id="2SP-ed-Pzl"/>
-                    <constraint firstItem="GGo-kF-log" firstAttribute="leading" secondItem="PnY-vQ-cRF" secondAttribute="trailing" constant="9" id="3fh-u9-487"/>
-                    <constraint firstItem="GGo-kF-log" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" constant="27" id="5bh-H1-tJa"/>
                     <constraint firstAttribute="trailing" secondItem="ukb-RU-4bP" secondAttribute="trailing" constant="24" id="OGS-bH-8fB"/>
                     <constraint firstItem="4SF-6c-dPv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="W3P-b1-6hK"/>
                     <constraint firstItem="4SF-6c-dPv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="ay2-HW-cc2"/>
                     <constraint firstItem="ukb-RU-4bP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="bIY-31-YKe"/>
+                    <constraint firstAttribute="bottom" secondItem="0zC-7t-gWs" secondAttribute="bottom" constant="26.5" id="cye-kT-FPP"/>
                     <constraint firstAttribute="trailing" secondItem="4SF-6c-dPv" secondAttribute="trailing" constant="24" id="hHf-XB-i8J"/>
-                    <constraint firstItem="PnY-vQ-cRF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="sOa-CC-wY6"/>
-                    <constraint firstItem="PnY-vQ-cRF" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" constant="27" id="tk3-L7-Kir"/>
+                    <constraint firstItem="0zC-7t-gWs" firstAttribute="top" secondItem="ukb-RU-4bP" secondAttribute="bottom" constant="12.5" id="lv3-Rb-Hd4"/>
+                    <constraint firstAttribute="trailing" secondItem="0zC-7t-gWs" secondAttribute="trailing" constant="18" id="sQD-28-EJu"/>
                     <constraint firstItem="ukb-RU-4bP" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" id="uxG-FV-DaG"/>
+                    <constraint firstItem="0zC-7t-gWs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="ymj-03-aL5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="confirmButton" destination="0zC-7t-gWs" id="ZU1-qz-mJX"/>
                 <outlet property="noticeImage" destination="AgL-0F-azo" id="JeG-li-nsA"/>
                 <outlet property="noticeStatus" destination="4SF-6c-dPv" id="CPf-Gc-u4k"/>
                 <outlet property="noticeTime" destination="ukb-RU-4bP" id="gxA-oO-AE7"/>

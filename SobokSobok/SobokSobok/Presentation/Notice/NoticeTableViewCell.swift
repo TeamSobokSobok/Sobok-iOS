@@ -15,6 +15,7 @@ final class NoticeTableViewCell: UITableViewCell {
     @IBOutlet var noticeImage: UIImageView!
     @IBOutlet var noticeStatus: UILabel!
     @IBOutlet var noticeTime: UILabel!
+    @IBOutlet var confirmButton: UIStackView!
     
     // MARK: - View Life Cycle
     override func awakeFromNib() {
