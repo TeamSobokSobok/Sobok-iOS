@@ -39,6 +39,11 @@
 		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
 		BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
+		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
+		F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA442789EDE70035230D /* NoticeViewController.swift */; };
+		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
+		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
+		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
 		EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */; };
 		EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */; };
 		EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */; };
@@ -71,6 +76,11 @@
 		BDDAA5A62789BCD3000C0AF8 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		BDDAA5A72789BCD3000C0AF8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BDDAA5A82789BCD3000C0AF8 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
+		F69CAA442789EDE70035230D /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
+		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
+		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSheet.swift; sourceTree = "<group>"; };
 		EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineSheet.xib; sourceTree = "<group>"; };
 		EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineTableViewCell.swift; sourceTree = "<group>"; };
@@ -250,6 +260,7 @@
 		BD515E5827877622003BD5A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +360,10 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
+				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
+				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
+				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -482,6 +497,7 @@
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
+				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
@@ -489,6 +505,7 @@
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
+				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
 			);
@@ -545,6 +562,8 @@
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
+				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
+				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
@@ -552,6 +571,7 @@
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
+				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
