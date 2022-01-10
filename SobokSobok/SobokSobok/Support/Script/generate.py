@@ -3,7 +3,6 @@ import sys
 import urllib
 import importlib
 import csv
-from enum import Enum
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
