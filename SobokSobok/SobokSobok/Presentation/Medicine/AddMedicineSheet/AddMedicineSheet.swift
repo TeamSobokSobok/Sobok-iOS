@@ -13,9 +13,9 @@ final class AddMedicineSheet: UIViewController {
 
     // MARK: Properties
     
-    private let medicineTuple = [
-    (image: Image.icMyFillPlus, text: "내 약 추가"),
-    (image: Image.icFillSend, text: "다른 사람에게 약 전송")
+    private let targetListForMedicine = [
+        (image: Image.icMyFillPlus, text: "내 약 추가"),
+        (image: Image.icFillSend, text: "다른 사람에게 약 전송")
     ]
  
     // MARK: @IBOutlet Properties
@@ -47,7 +47,7 @@ extension AddMedicineSheet: UITableViewDelegate {
 
 extension AddMedicineSheet: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicineTuple.count
+        return targetListForMedicine.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,8 +55,8 @@ extension AddMedicineSheet: UITableViewDataSource {
         // 셀이 선택 되었을 때 배경색 변하지 않게
         medicineCell.selectionStyle = .none
         
-        medicineCell.medicineImageView.image = medicineTuple[indexPath.row].image
-        medicineCell.medicineTextLabel.text = medicineTuple[indexPath.row].text
+        medicineCell.medicineImageView.image = targetListForMedicine[indexPath.row].image
+        medicineCell.medicineTextLabel.text = targetListForMedicine[indexPath.row].text
         return medicineCell
     }
     
