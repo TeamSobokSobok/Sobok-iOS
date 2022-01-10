@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="sce-Mc-uNJ" id="2ws-ic-gz1"/>
+                <outlet property="notificationTableView" destination="sce-Mc-uNJ" id="hpe-Vl-OaC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,18 +33,23 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sce-Mc-uNJ">
-                    <rect key="frame" x="20" y="179" width="335" height="579"/>
+                    <rect key="frame" x="20" y="179" width="335" height="567"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="gray150_sub"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sce-Mc-uNJ" secondAttribute="trailing" constant="20" id="1TO-ld-sfW"/>
                 <constraint firstItem="sce-Mc-uNJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9sh-QB-1go"/>
                 <constraint firstItem="sce-Mc-uNJ" firstAttribute="top" secondItem="x58-YT-CbT" secondAttribute="bottom" constant="22" id="Ei5-AN-Lv4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x58-YT-CbT" secondAttribute="trailing" constant="20" id="cqp-qM-vFx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sce-Mc-uNJ" secondAttribute="bottom" constant="20" id="f6n-uI-T7a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sce-Mc-uNJ" secondAttribute="bottom" constant="32" id="f6n-uI-T7a"/>
                 <constraint firstItem="x58-YT-CbT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="84" id="jXZ-8E-NyM"/>
                 <constraint firstItem="x58-YT-CbT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uWF-kl-QU5"/>
             </constraints>
@@ -51,6 +57,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="gray150_sub">
+            <color red="0.93725490196078431" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

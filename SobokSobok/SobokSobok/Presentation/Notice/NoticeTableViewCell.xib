@@ -33,20 +33,20 @@
                             <constraint firstAttribute="height" constant="33.5" id="dRP-j4-qNv"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수현이님이 캘린더 공유를 요청했어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SF-6c-dPv">
-                        <rect key="frame" x="60" y="23" width="251" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수현이님이 캘린더 공유를 요청했어요" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SF-6c-dPv">
+                        <rect key="frame" x="60" y="23" width="251" height="18.5"/>
                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오후 12:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-RU-4bP">
-                        <rect key="frame" x="60" y="46" width="251" height="15"/>
+                        <rect key="frame" x="60" y="41.5" width="251" height="15"/>
                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
                         <color key="textColor" name="gray500_sub"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-vQ-cRF">
-                        <rect key="frame" x="18" y="73" width="145" height="40"/>
+                        <rect key="frame" x="18" y="68.5" width="145" height="40"/>
                         <color key="backgroundColor" name="light_mint"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="145" id="CDL-3f-Lyi"/>
@@ -57,9 +57,14 @@
                         <state key="normal" title="거절">
                             <color key="titleColor" name="dark_mint_main"/>
                         </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-kF-log">
-                        <rect key="frame" x="172" y="73" width="145" height="40"/>
+                        <rect key="frame" x="172" y="68.5" width="145" height="40"/>
                         <color key="backgroundColor" name="mint_main"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="145" id="Z0T-0J-cjm"/>
@@ -70,24 +75,34 @@
                         <state key="normal" title="수락">
                             <color key="titleColor" name="white_sub"/>
                         </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="AgL-0F-azo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.25" id="1Gt-Rl-Uxj"/>
                     <constraint firstItem="AgL-0F-azo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26.25" id="2SP-ed-Pzl"/>
                     <constraint firstItem="GGo-kF-log" firstAttribute="leading" secondItem="PnY-vQ-cRF" secondAttribute="trailing" constant="9" id="3fh-u9-487"/>
+                    <constraint firstItem="GGo-kF-log" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" constant="27" id="5bh-H1-tJa"/>
                     <constraint firstAttribute="trailing" secondItem="ukb-RU-4bP" secondAttribute="trailing" constant="24" id="OGS-bH-8fB"/>
-                    <constraint firstItem="ukb-RU-4bP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="46" id="Pch-th-p0D"/>
                     <constraint firstItem="4SF-6c-dPv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="W3P-b1-6hK"/>
                     <constraint firstItem="4SF-6c-dPv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="ay2-HW-cc2"/>
                     <constraint firstItem="ukb-RU-4bP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="bIY-31-YKe"/>
-                    <constraint firstItem="PnY-vQ-cRF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="73" id="eOV-Ox-fXN"/>
-                    <constraint firstAttribute="trailing" secondItem="4SF-6c-dPv" secondAttribute="trailing" constant="24" id="pGU-LL-gjZ"/>
-                    <constraint firstItem="GGo-kF-log" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-62" id="qYp-5i-PxB"/>
+                    <constraint firstAttribute="trailing" secondItem="4SF-6c-dPv" secondAttribute="trailing" constant="24" id="hHf-XB-i8J"/>
                     <constraint firstItem="PnY-vQ-cRF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="sOa-CC-wY6"/>
+                    <constraint firstItem="PnY-vQ-cRF" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" constant="27" id="tk3-L7-Kir"/>
+                    <constraint firstItem="ukb-RU-4bP" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" id="uxG-FV-DaG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="noticeImage" destination="AgL-0F-azo" id="JeG-li-nsA"/>
+                <outlet property="noticeStatus" destination="4SF-6c-dPv" id="CPf-Gc-u4k"/>
+                <outlet property="noticeTime" destination="ukb-RU-4bP" id="gxA-oO-AE7"/>
+            </connections>
             <point key="canvasLocation" x="131.15942028985509" y="85.379464285714278"/>
         </tableViewCell>
     </objects>
