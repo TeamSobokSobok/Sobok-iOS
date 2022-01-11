@@ -13,7 +13,7 @@ final class NoticeViewController: UIViewController {
     @IBOutlet var notificationTableView: UITableView!
     
     // MARK: - Properties
-    var noticeList: [NoticeListData] = NoticeListData.dummy
+    private var noticeList: [NoticeListData] = NoticeListData.dummy
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ extension NoticeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = notificationTableView.dequeueReusableCell(withIdentifier: NoticeTableViewCell.reuseIdentifier) as? NoticeTableViewCell else {return UITableViewCell()}
+        let cell = notificationTableView.dequeueReusableCell(for: indexPath, cellType: NoticeTableViewCell.self)
         cell.selectionStyle = .none
         cell.setData(noticeData: noticeList[indexPath.row])
         switch indexPath.row {
