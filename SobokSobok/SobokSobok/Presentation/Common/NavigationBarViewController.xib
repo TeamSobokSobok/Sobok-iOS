@@ -17,6 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBarViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="nextButton" destination="3Yq-Dy-VlJ" id="P3U-GV-7ZX"/>
+                <outlet property="previousButton" destination="XrC-Dd-GbP" id="qJh-un-GUI"/>
+                <outlet property="titleLabel" destination="jBt-hg-VOw" id="wa7-36-UGk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
