@@ -13,5 +13,4 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }
