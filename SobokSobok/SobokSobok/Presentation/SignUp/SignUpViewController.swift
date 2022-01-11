@@ -17,6 +17,12 @@ final class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
+
+    }
+    
+    private func securePassword() {
+        passwordTextField.isSecureTextEntry = true
+        rePasswordTextField.isSecureTextEntry = true
     }
 
     private func checkTextField(){

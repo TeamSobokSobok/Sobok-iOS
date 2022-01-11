@@ -19,6 +19,11 @@ final class SignInViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
+        securePassword()
+    }
+    
+    private func securePassword() {
+        passwordTextField.isSecureTextEntry = true
     }
     
 
