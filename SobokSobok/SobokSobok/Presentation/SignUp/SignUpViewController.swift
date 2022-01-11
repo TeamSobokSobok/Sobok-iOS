@@ -46,4 +46,5 @@ final class SignUpViewController: BaseViewController {
             print("비밀번호를 확인해주시죠")
         }
     }
+    
 }
