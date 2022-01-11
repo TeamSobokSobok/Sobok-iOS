@@ -9,17 +9,20 @@ import UIKit
 
 final class SignUpViewController: BaseViewController {
 
+    // MARK: @IBOutlet Properties
     @IBOutlet weak var okayButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
     
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
 
     }
     
+    // MARK: Functions
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true
         rePasswordTextField.isSecureTextEntry = true
@@ -53,6 +56,7 @@ final class SignUpViewController: BaseViewController {
         }
     }
     
+    //MARK: Temporary
     func tempAlert(title:String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title:"확인", style: .default)

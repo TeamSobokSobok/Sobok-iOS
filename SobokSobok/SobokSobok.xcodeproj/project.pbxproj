@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
-		9A9E6207278D555E00D900A6 /* LoginResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6206278D555E00D900A6 /* LoginResponseDataModel.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCA278B31DC009AA416 /* TabBarItem.swift */; };
@@ -62,7 +61,6 @@
 /* Begin PBXFileReference section */
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
-		9A9E6206278D555E00D900A6 /* LoginResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDataModel.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		BD149DCA278B31DC009AA416 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 			children = (
 				9A18E7A9278D48120011FEB9 /* SignInViewController.swift */,
 				9A18E7AA278D48120011FEB9 /* SignInViewController.xib */,
-				9A9E6206278D555E00D900A6 /* LoginResponseDataModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -589,7 +586,6 @@
 			files = (
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
-				9A9E6207278D555E00D900A6 /* LoginResponseDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,

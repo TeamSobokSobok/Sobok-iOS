@@ -9,23 +9,26 @@ import UIKit
 
 final class SignInViewController: BaseViewController {
 
+    // MARK: - @IBOutlet Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var autoLogIn: UIButton!
+    
     var isSetAutoLogin = true
 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
         securePassword()
     }
     
+    // MARK: - Functions
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true
     }
-    
 
     private func checkTextField() {
         logInButton.isEnabled = false
@@ -47,7 +50,7 @@ final class SignInViewController: BaseViewController {
         }
     }
     
-    
+    // MARK: @IBAction Properties
     @IBAction func touchUpToSetAutoLogIn(_ sender: Any) {
         if(isSetAutoLogin){
             isSetAutoLogin = false
@@ -67,6 +70,7 @@ final class SignInViewController: BaseViewController {
         navigationController?.pushViewController(SignUpViewController.instanceFromNib(), animated: true)
     }
     
+    //MARK: Temporary
     func tempAlert(title:String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title:"확인", style: .default)
