@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -19,6 +22,7 @@
             <connections>
                 <outlet property="acceptButton" destination="VcN-fq-jOk" id="3mr-J2-WBo"/>
                 <outlet property="refuseButton" destination="BRi-7q-fpW" id="A84-HT-aLC"/>
+                <outlet property="sendInfoCollectionView" destination="d5U-45-PIf" id="kxP-YX-y1Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,15 +32,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-45-PIf">
-                    <rect key="frame" x="0.0" y="102" width="375" height="588"/>
+                    <rect key="frame" x="0.0" y="150" width="375" height="540"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" priority="250" constant="588" id="8c8-7v-StY"/>
+                        <constraint firstAttribute="height" priority="250" constant="540" id="8c8-7v-StY"/>
                         <constraint firstAttribute="width" constant="375" id="NDp-12-h5P"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mvx-qi-gEc">
                         <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
@@ -86,15 +90,37 @@
                         <constraint firstAttribute="bottom" secondItem="aAv-IS-zt7" secondAttribute="bottom" constant="22" id="lg0-4k-mbF"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-KD-Ham">
+                    <rect key="frame" x="0.0" y="102" width="375" height="48"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-4B-Ug0">
+                            <rect key="frame" x="20" y="27" width="163.33333333333334" height="21"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
+                            <color key="textColor" name="gray700_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="3eT-At-pXC"/>
+                        <constraint firstAttribute="bottom" secondItem="MPI-4B-Ug0" secondAttribute="bottom" id="KSc-Wb-hMt"/>
+                        <constraint firstItem="MPI-4B-Ug0" firstAttribute="top" secondItem="Pn4-KD-Ham" secondAttribute="top" constant="27" id="ouK-13-MF7"/>
+                        <constraint firstAttribute="height" constant="48" id="tNK-qn-G9Y"/>
+                        <constraint firstItem="MPI-4B-Ug0" firstAttribute="leading" secondItem="Pn4-KD-Ham" secondAttribute="leading" constant="20" id="yK9-wT-bSH"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="3e3-Qb-5vj"/>
+                <constraint firstItem="Pn4-KD-Ham" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Wg-8C-hJg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dhM-qX-sIF" secondAttribute="bottom" id="DqC-1w-Wcu"/>
                 <constraint firstAttribute="trailing" secondItem="d5U-45-PIf" secondAttribute="trailing" id="OP9-Ue-WaS"/>
                 <constraint firstAttribute="trailing" secondItem="dhM-qX-sIF" secondAttribute="trailing" id="UWr-cX-Uen"/>
+                <constraint firstAttribute="trailing" secondItem="Pn4-KD-Ham" secondAttribute="trailing" id="n7E-o0-xrb"/>
+                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="Pn4-KD-Ham" secondAttribute="bottom" id="nH9-qx-Sld"/>
                 <constraint firstItem="d5U-45-PIf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nu1-Cf-wfJ"/>
+                <constraint firstItem="Pn4-KD-Ham" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="v6v-Na-hFa"/>
                 <constraint firstItem="dhM-qX-sIF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ykg-Fj-dYB"/>
                 <constraint firstItem="dhM-qX-sIF" firstAttribute="top" secondItem="d5U-45-PIf" secondAttribute="bottom" id="z9e-jk-Wj5"/>
             </constraints>
@@ -104,6 +130,9 @@
     <resources>
         <namedColor name="dark_mint_main">
             <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray700_sub">
+            <color red="0.40392156862745099" green="0.43137254901960786" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_mint">
             <color red="0.89411764705882357" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
