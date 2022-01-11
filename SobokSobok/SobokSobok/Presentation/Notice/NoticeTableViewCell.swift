@@ -8,8 +8,6 @@
 import UIKit
 
 final class NoticeTableViewCell: UITableViewCell {
-
-    static let cellIdentifier = "NoticeTableViewCell"
     
     // MARK: - @IBOutlet Properties
     @IBOutlet var noticeImage: UIImageView!
