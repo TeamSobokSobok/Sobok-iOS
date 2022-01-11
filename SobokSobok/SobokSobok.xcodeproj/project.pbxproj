@@ -33,6 +33,8 @@
 		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21A9E278D8F82007D10F6 /* TimeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A9D278D8F82007D10F6 /* TimeHeaderView.swift */; };
 		BDD21AA0278D8F94007D10F6 /* TimeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A9F278D8F94007D10F6 /* TimeHeaderView.xib */; };
+		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
+		BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */; };
 		BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA580278997E1000C0AF8 /* Color.xcassets */; };
 		BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA58227899C25000C0AF8 /* Image.xcassets */; };
 		BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA5942789B2A2000C0AF8 /* generate.py */; };
@@ -81,6 +83,8 @@
 		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDD21A9D278D8F82007D10F6 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeHeaderView.swift; path = SobokSobok/Presentation/Home/TimeHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		BDD21A9F278D8F94007D10F6 /* TimeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeHeaderView.xib; path = SobokSobok/Presentation/Home/TimeHeaderView.xib; sourceTree = SOURCE_ROOT; };
+		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Home/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MedicineCollectionViewCell.xib; path = SobokSobok/Presentation/Home/MedicineCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		BDDAA580278997E1000C0AF8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BDDAA58227899C25000C0AF8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		BDDAA5942789B2A2000C0AF8 /* generate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = generate.py; sourceTree = "<group>"; };
@@ -420,6 +424,8 @@
 			children = (
 				BDD21A9D278D8F82007D10F6 /* TimeHeaderView.swift */,
 				BDD21A9F278D8F94007D10F6 /* TimeHeaderView.xib */,
+				BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */,
+				BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
@@ -596,6 +603,7 @@
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
+				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
