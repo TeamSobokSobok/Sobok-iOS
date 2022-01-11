@@ -29,6 +29,8 @@
 		BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */; };
 		BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */; };
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
+		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
+		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA580278997E1000C0AF8 /* Color.xcassets */; };
 		BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA58227899C25000C0AF8 /* Image.xcassets */; };
 		BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA5942789B2A2000C0AF8 /* generate.py */; };
@@ -73,6 +75,8 @@
 		BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDDAA580278997E1000C0AF8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BDDAA58227899C25000C0AF8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		BDDAA5942789B2A2000C0AF8 /* generate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = generate.py; sourceTree = "<group>"; };
@@ -358,6 +362,8 @@
 		BD515E67278776D5003BD5A4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
+				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
+				BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +592,7 @@
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
