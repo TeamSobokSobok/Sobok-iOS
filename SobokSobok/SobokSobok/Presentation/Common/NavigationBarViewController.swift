@@ -10,9 +10,9 @@ import UIKit
 class NavigationBarViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
-    @IBOutlet var previousButton: UIButton!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var nextButton: UILabel!
+    @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nextButton: UILabel!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
