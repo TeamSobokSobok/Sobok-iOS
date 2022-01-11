@@ -13,7 +13,7 @@ final class NoticeViewController: UIViewController {
     @IBOutlet var notificationTableView: UITableView!
     
     // MARK: - Properties
-    var noticeList: [NoticeListData] = []
+    var noticeList: [NoticeListData] = NoticeListData.dummy
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -21,7 +21,6 @@ final class NoticeViewController: UIViewController {
         assignDelegation()
         registerXib()
         setTableView()
-        initNoticeList()
     }
     
     // MARK: - Functions
@@ -35,17 +34,7 @@ final class NoticeViewController: UIViewController {
     }
     
     func registerXib() {
-        notificationTableView.register(UINib(nibName: NoticeTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: NoticeTableViewCell.cellIdentifier)
-    }
-    
-    func initNoticeList() {
-        noticeList.append(contentsOf: [
-            NoticeListData(noticeImageName: "icCalendarAlarmMint", noticeTitle: "지민지민님이 캘린더 공유를 요청했어요", noticeTime: "오후 12:35"),
-            NoticeListData(noticeImageName: "icFillAlarmMint", noticeTitle: "수현이님이 복약 정보를 전송했어요", noticeTime: "오전 10:40"),
-            NoticeListData(noticeImageName: "icFillAlarmGray", noticeTitle: "효영님의 약 전송을 거절했어요", noticeTime: "오전 8:21"),
-            NoticeListData(noticeImageName: "icFillAlarmMint", noticeTitle: "나는야효영이라네로를님이 복약 정보를 전송했어요", noticeTime: "2022.01.06"),
-            NoticeListData(noticeImageName: "icFillAlarmGray", noticeTitle: "나는야효영이라네로를님의 약 전송을 거절했어요", noticeTime: "2022.01.06")
-        ])
+        notificationTableView.register(NoticeTableViewCell.self)
     }
 }
 
@@ -56,7 +45,7 @@ extension NoticeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = notificationTableView.dequeueReusableCell(withIdentifier: NoticeTableViewCell.cellIdentifier) as? NoticeTableViewCell else {return UITableViewCell()}
+        guard let cell = notificationTableView.dequeueReusableCell(withIdentifier: NoticeTableViewCell.reuseIdentifier) as? NoticeTableViewCell else {return UITableViewCell()}
         cell.selectionStyle = .none
         cell.setData(noticeData: noticeList[indexPath.row])
         switch indexPath.row {
