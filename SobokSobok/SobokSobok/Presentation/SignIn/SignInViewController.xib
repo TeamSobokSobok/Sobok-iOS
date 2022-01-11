@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="YZl-h0-FMo" id="E3r-OX-rav"/>
+                <outlet property="passwordTextField" destination="8ka-MS-Fr1" id="h5W-g7-0Cd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,6 +58,9 @@
                     <color key="tintColor" name="black_sub"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="로그인"/>
+                    <connections>
+                        <action selector="touchUpToLogin:" destination="-1" eventType="touchUpInside" id="wNu-HE-u7p"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-eg-Ymd">
                     <rect key="frame" x="70" y="648" width="274" height="48"/>
