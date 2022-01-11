@@ -55,12 +55,17 @@ final class SignInViewController: BaseViewController {
     }
     
     @IBAction func touchUpToLogin(_ sender: Any) {
-        print("이메일:\(emailTextField.text),  비번:\(passwordTextField.text)")
+        tempAlert(title: "로그인", message: "이메일 : \(emailTextField.text), 비밀번호 : \(passwordTextField.text)")
     }
     
     @IBAction func touchUpToMoveToSignUpView(_ sender: Any) {
-        print("회원가입")
         navigationController?.pushViewController(SignUpViewController.instanceFromNib(), animated: true)
     }
     
+    func tempAlert(title:String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title:"확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated:true)
+    }
 }
