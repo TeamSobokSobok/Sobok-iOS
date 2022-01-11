@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="autoLogIn" destination="8t6-0N-HPV" id="QKe-Xq-kKz"/>
                 <outlet property="emailTextField" destination="YZl-h0-FMo" id="E3r-OX-rav"/>
                 <outlet property="logInButton" destination="LCW-KU-cVb" id="nMn-9l-UHP"/>
                 <outlet property="passwordTextField" destination="8ka-MS-Fr1" id="h5W-g7-0Cd"/>
@@ -50,7 +51,10 @@
                     <rect key="frame" x="70" y="539" width="108" height="31"/>
                     <color key="tintColor" name="black_sub"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system" title="자동 로그인"/>
+                    <buttonConfiguration key="configuration" style="plain" image="checkmark.square.fill" catalog="system" title="자동 로그인"/>
+                    <connections>
+                        <action selector="touchUpToSetAutoLogIn:" destination="-1" eventType="touchUpInside" id="ZVj-k8-PEK"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-KU-cVb">
                     <rect key="frame" x="70" y="585" width="274" height="48"/>
@@ -137,7 +141,7 @@
         </view>
     </objects>
     <resources>
-        <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

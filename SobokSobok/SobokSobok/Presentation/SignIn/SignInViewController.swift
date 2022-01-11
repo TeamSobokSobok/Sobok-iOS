@@ -13,12 +13,15 @@ final class SignInViewController: BaseViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    
+    @IBOutlet weak var autoLogIn: UIButton!
+    var isSetAutoLogin = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
     }
     
+
     private func checkTextField() {
         logInButton.isEnabled = false
         signUpButton.isEnabled = true
@@ -36,6 +39,18 @@ final class SignInViewController: BaseViewController {
             logInButton.isEnabled = true
         } else {
             logInButton.isEnabled = false
+        }
+    }
+    
+    
+    @IBAction func touchUpToSetAutoLogIn(_ sender: Any) {
+        if(isSetAutoLogin){
+            isSetAutoLogin = false
+            autoLogIn.setImage(UIImage(systemName: "square"), for: .normal)
+
+        } else {
+            isSetAutoLogin = true
+            autoLogIn.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
         }
     }
     
