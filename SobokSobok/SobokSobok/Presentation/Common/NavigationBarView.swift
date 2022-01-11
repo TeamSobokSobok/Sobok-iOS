@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationBarView: UIView {
+final class NavigationBarView: UIView {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var previousButton: UIButton!
