@@ -47,7 +47,7 @@
 		EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */; };
 		F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
-		F67CDBF6278D46EA00F70974 /* NavigationBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67CDBF4278D46EA00F70974 /* NavigationBarViewController.xib */; };
+		F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */; };
 		F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA442789EDE70035230D /* NoticeViewController.swift */; };
 		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
 		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
@@ -88,7 +88,7 @@
 		EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineTableViewCell.xib; sourceTree = "<group>"; };
 		F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
-		F67CDBF4278D46EA00F70974 /* NavigationBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarViewController.xib; sourceTree = "<group>"; };
+		F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		F69CAA442789EDE70035230D /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 			children = (
 				BD515E74278778FD003BD5A4 /* Sample */,
 				BD515E6E2787784D003BD5A4 /* BaseViewController.swift */,
-				F67CDBF4278D46EA00F70974 /* NavigationBarViewController.xib */,
+				F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */,
 				F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */,
 				BD149DCA278B31DC009AA416 /* TabBarItem.swift */,
 				BD149DCC278B3369009AA416 /* TabBarController.swift */,
@@ -513,7 +513,7 @@
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
-				F67CDBF6278D46EA00F70974 /* NavigationBarViewController.xib in Resources */,
+				F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
