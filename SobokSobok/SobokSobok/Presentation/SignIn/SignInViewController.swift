@@ -63,7 +63,7 @@ final class SignInViewController: BaseViewController {
     }
     
     @IBAction func touchUpToLogin(_ sender: Any) {
-        tempAlert(title: "로그인", message: "이메일 : \(emailTextField.text), 비밀번호 : \(passwordTextField.text)")
+        tempAlert(title: "로그인", message: "이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
     }
     
     @IBAction func touchUpToMoveToSignUpView(_ sender: Any) {

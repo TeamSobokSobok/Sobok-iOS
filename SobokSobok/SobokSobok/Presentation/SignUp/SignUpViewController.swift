@@ -50,7 +50,7 @@ final class SignUpViewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
         if(passwordTextField.text == rePasswordTextField.text) {
-            tempAlert(title: "회원가입", message: "이메일 : \(emailTextField.text), 비밀번호 : \(passwordTextField.text)")
+            tempAlert(title: "회원가입", message: "이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
         } else {
             tempAlert(title: "오류", message: "비밀번호를 확인해주세요")
         }
