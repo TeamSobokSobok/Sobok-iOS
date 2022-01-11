@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="LU6-Xm-bpc" id="ild-ei-a5L"/>
+                <outlet property="okayButton" destination="3jM-k7-QOd" id="ERo-gL-PCg"/>
+                <outlet property="passwordTextField" destination="LU6-Xm-bpc" id="xjf-Mb-Ohh"/>
+                <outlet property="rePasswordTextField" destination="fO5-Vf-KYD" id="5Rf-u1-tHh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
