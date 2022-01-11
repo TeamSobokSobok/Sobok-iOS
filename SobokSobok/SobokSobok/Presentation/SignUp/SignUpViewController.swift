@@ -38,6 +38,9 @@ final class SignUpViewController: BaseViewController {
         } else {
             okayButton.isEnabled = false
         }
-
+    }
+    
+    @IBAction func touchUpToSignUp(_ sender: Any) {
+        print("이메일:\(emailTextField.text), 비밀번호:\(passwordTextField.text)")
     }
 }
