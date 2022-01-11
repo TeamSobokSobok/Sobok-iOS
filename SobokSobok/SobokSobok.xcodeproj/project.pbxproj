@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
+		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 		BD515E65278776B5003BD5A4 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				9A18E7A9278D48120011FEB9 /* SignInViewController.swift */,
+				9A18E7AA278D48120011FEB9 /* SignInViewController.xib */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
+				9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
@@ -540,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
