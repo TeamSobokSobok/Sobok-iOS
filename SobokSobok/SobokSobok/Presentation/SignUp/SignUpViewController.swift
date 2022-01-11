@@ -25,7 +25,6 @@ final class SignUpViewController: BaseViewController {
         self.emailTextField.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
         self.passwordTextField.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
         self.rePasswordTextField.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
-
     }
     
     @objc func activateOkayButton(_ : UIButton){
@@ -41,6 +40,10 @@ final class SignUpViewController: BaseViewController {
     }
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
-        print("이메일:\(emailTextField.text), 비밀번호:\(passwordTextField.text)")
+        if(passwordTextField.text == rePasswordTextField.text) {
+            print("이메일:\(emailTextField.text), 비밀번호:\(passwordTextField.text)")
+        } else {
+            print("비밀번호를 확인해주시죠")
+        }
     }
 }
