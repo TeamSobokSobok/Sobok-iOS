@@ -28,6 +28,10 @@ final class SendInfoViewController: UIViewController {
         $0.setTitleColor(Color.mint, for: .normal)
     }
     
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var refuseButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,9 @@ final class SendInfoViewController: UIViewController {
     private func setUI() {
         [navigationView, navigationTitleLabel, xButton, nextButton].forEach {
             view.addSubview($0)
+        }
+        [refuseButton, acceptButton].forEach {
+            $0.cornerRadius = 12
         }
     }
     

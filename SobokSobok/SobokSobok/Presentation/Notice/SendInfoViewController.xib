@@ -4,13 +4,21 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendInfoViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="acceptButton" destination="VcN-fq-jOk" id="3mr-J2-WBo"/>
+                <outlet property="refuseButton" destination="BRi-7q-fpW" id="A84-HT-aLC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-45-PIf">
-                    <rect key="frame" x="0.0" y="102" width="375" height="622"/>
+                    <rect key="frame" x="0.0" y="102" width="375" height="588"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="250" constant="588" id="8c8-7v-StY"/>
@@ -34,11 +42,48 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhM-qX-sIF">
-                    <rect key="frame" x="0.0" y="724" width="375" height="88"/>
+                    <rect key="frame" x="0.0" y="690" width="375" height="88"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aAv-IS-zt7">
+                            <rect key="frame" x="20" y="14" width="335" height="52"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRi-7q-fpW">
+                                    <rect key="frame" x="0.0" y="0.0" width="162" height="52"/>
+                                    <color key="backgroundColor" name="light_mint"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="162" id="Mjv-5m-UaG"/>
+                                        <constraint firstAttribute="height" constant="52" id="YXx-ZX-KcQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="거절할래요">
+                                        <color key="titleColor" name="dark_mint_main"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-fq-jOk">
+                                    <rect key="frame" x="173" y="0.0" width="162" height="52"/>
+                                    <color key="backgroundColor" name="mint_main"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="162" id="LDl-3K-dHv"/>
+                                        <constraint firstAttribute="height" constant="52" id="X86-u0-VEB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="받을래요">
+                                        <color key="titleColor" name="white_sub"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="aAv-IS-zt7" firstAttribute="leading" secondItem="dhM-qX-sIF" secondAttribute="leading" constant="20" id="61W-El-KCd"/>
                         <constraint firstAttribute="width" constant="375" id="9DI-vi-WiS"/>
+                        <constraint firstAttribute="trailing" secondItem="aAv-IS-zt7" secondAttribute="trailing" constant="20" id="IXP-YH-ocK"/>
                         <constraint firstAttribute="height" constant="88" id="TfR-TH-Dd1"/>
+                        <constraint firstItem="aAv-IS-zt7" firstAttribute="top" secondItem="dhM-qX-sIF" secondAttribute="top" constant="14" id="auI-8R-HZY"/>
+                        <constraint firstAttribute="bottom" secondItem="aAv-IS-zt7" secondAttribute="bottom" constant="22" id="lg0-4k-mbF"/>
                     </constraints>
                 </view>
             </subviews>
@@ -46,7 +91,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="3e3-Qb-5vj"/>
-                <constraint firstAttribute="bottom" secondItem="dhM-qX-sIF" secondAttribute="bottom" id="DqC-1w-Wcu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dhM-qX-sIF" secondAttribute="bottom" id="DqC-1w-Wcu"/>
                 <constraint firstAttribute="trailing" secondItem="d5U-45-PIf" secondAttribute="trailing" id="OP9-Ue-WaS"/>
                 <constraint firstAttribute="trailing" secondItem="dhM-qX-sIF" secondAttribute="trailing" id="UWr-cX-Uen"/>
                 <constraint firstItem="d5U-45-PIf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nu1-Cf-wfJ"/>
@@ -57,6 +102,18 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_mint">
+            <color red="0.89411764705882357" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
