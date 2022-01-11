@@ -7,19 +7,21 @@
 
 import UIKit
 
+import EasyKit
+
 final class TabBarController: UITabBarController {
     // MARK: - Properties
     
-    var tabs: [UIViewController] = []
+    private var tabs: [UIViewController] = []
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.delegate = self
         setTabBarAppearance()
         setTabBarItems()
+        setDelegation()
     }
 
     override func viewDidLayoutSubviews() {
@@ -30,26 +32,20 @@ final class TabBarController: UITabBarController {
     }
 
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.tag == TabBarItem.medicine.rawValue {
-            selectMedicineTab()
-            guard let imageView = tabBar.subviews[item.tag + 1].subviews.compactMap({ $0 as? UIImageView }).first else { return }
-            bounceAnimation(imageView: imageView)
-        } else {
-            unselectMedicineTab()
-            guard let imageView = tabBar.subviews[item.tag + 1].subviews.compactMap({ $0 as? UIImageView }).first else { return }
-            bounceAnimation(imageView: imageView)
-        }
+        guard let imageView = tabBar.subviews[item.tag + 1].subviews.compactMap({ $0 as? UIImageView }).first else { return }
+        tabBarItemBounceAnimation(imageView: imageView)
     }
-    
-    // MARK: - Functions
-    
+}
+
+// MARK: - Functions
+
+extension TabBarController {
     private func setTabBarAppearance() {
+        UITabBar.clearShadow()
         UITabBar.appearance().tintColor = Color.black
         UITabBar.appearance().unselectedItemTintColor = Color.gray500
-        UITabBar.appearance().shadowImage = nil
-        UITabBar.appearance().backgroundImage = nil
-        UITabBar.appearance().backgroundColor = UIColor.white
 
+        // TODO: - 나중에 폰트 일괄 적용으로 수정
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         
@@ -73,7 +69,11 @@ final class TabBarController: UITabBarController {
         setViewControllers(tabs, animated: true)
     }
     
-    private func bounceAnimation(imageView: UIImageView) {
+    private func setDelegation() {
+        self.delegate = self
+    }
+    
+    private func tabBarItemBounceAnimation(imageView: UIImageView) {
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        usingSpringWithDamping: 0.5,
@@ -92,40 +92,21 @@ final class TabBarController: UITabBarController {
             }
         }
     }
-    
-    private func selectMedicineTab() {
-        tabs[3].tabBarItem.image = Image.icPlusActive
-        let fontAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: Color.mint!,
-            NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!
-        ]
-        tabs[3].tabBarItem.setTitleTextAttributes(fontAttributes, for: .normal)
-    }
-    
-    private func unselectMedicineTab() {
-        tabBar.tintColor = Color.black
-        tabs[3].tabBarItem.image = Image.icPlusInactive
-        let fontAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: Color.gray500!,
-            NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!
-        ]
-        tabs[3].tabBarItem.setTitleTextAttributes(fontAttributes, for: .normal)
-    }
 }
+
+// MARK: - TabBarController Delegate
 
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        let index = viewController.tabBarItem.tag
-        if index != 3 {
-            // 바텀 시트 off.
-            print("바텀 시트 off")
-            return true
+        let tabBarItemIndex = viewController.tabBarItem.tag
+        
+        if tabBarItemIndex == 3 {
+            // 이 부분에서 바텀 시트 띄우는 코드 쓰면 됨.
+            // 바텀 시트 on.
+            print("바텀 시트 on")
+            return false
         }
         
-        // 이 부분에서 바텀 시트 띄우는 코드 쓰면 됨.
-        // 바텀 시트 on.
-        print("바텀 시트 on")
-        
-        return false
+        return true
     }
 }
