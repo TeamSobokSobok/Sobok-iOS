@@ -8,5 +8,15 @@
 import UIKit
 
 final class TimeHeaderView: UICollectionReusableView {
+    
+    @IBOutlet weak var editButtonStackView: UIStackView!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        editButtonStackView.isHidden = false
+    }
 }
