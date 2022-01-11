@@ -16,8 +16,15 @@ final class SignInViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func toucuUpToSetAutoLogIn(_ sender: Any) {
+        print("자동로그인")
+    }
     @IBAction func touchUpToLogin(_ sender: Any) {
-        
+        print("이메일:\(emailTextField.text),  비번:\(passwordTextField.text)")
+    }
+    @IBAction func touchUpToMoveToSignUpView(_ sender: Any) {
+        print("회원가입")
+        navigationController?.pushViewController(SignUpViewController.instanceFromNib(), animated: true)
     }
     
 }

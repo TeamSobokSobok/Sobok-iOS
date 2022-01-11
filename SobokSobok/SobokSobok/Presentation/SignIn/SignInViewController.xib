@@ -49,6 +49,9 @@
                     <color key="tintColor" name="black_sub"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system" title="자동 로그인"/>
+                    <connections>
+                        <action selector="toucuUpToSetAutoLogIn:" destination="-1" eventType="touchUpInside" id="xKI-s0-4oz"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-KU-cVb">
                     <rect key="frame" x="70" y="585" width="274" height="48"/>
@@ -70,6 +73,9 @@
                     <color key="tintColor" name="black_sub"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="회원가입"/>
+                    <connections>
+                        <action selector="touchUpToMoveToSignUpView:" destination="-1" eventType="touchUpInside" id="FxU-ae-Pkx"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyd-kO-j8c">
                     <rect key="frame" x="112" y="726" width="89" height="31"/>
