@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+final class SignInViewController: BaseViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func touchUpToLogin(_ sender: Any) {
+        
     }
     
 }
