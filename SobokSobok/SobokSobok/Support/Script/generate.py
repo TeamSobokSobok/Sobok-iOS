@@ -90,9 +90,9 @@ def writeDataSource(filename, dataSource, savePath):
     # Write line
     for item in dataSource:
         if filename == "Color":
-            swiftFile.write("\tpublic static let " + item["key"] + " = " + "UIColor(named: \"" + item["value"] + "\")\n")
+            swiftFile.write("\tpublic static let " + item["key"] + " = " + "UIColor(named: \"" + item["value"] + "\")!\n")
         elif filename == "Image":
-            swiftFile.write("\tpublic static let " + item["key"] + " = " + "UIImage(named: \"" + item["value"] + "\")\n")
+            swiftFile.write("\tpublic static let " + item["key"] + " = " + "UIImage(named: \"" + item["value"] + "\")!\n")
         elif filename == "Notification":
             swiftFile.write("\tpublic static let " + item["key"] + " = " + "Notification.Name(\"" + item["value"] + "\")\n")
         else: # Text, URL, UserDefaultKey
