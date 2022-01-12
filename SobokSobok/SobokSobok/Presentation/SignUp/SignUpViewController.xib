@@ -25,13 +25,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입하실 이메일과 비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-YB-bvH">
-                    <rect key="frame" x="20" y="168" width="374" height="55"/>
+                    <rect key="frame" x="20" y="140" width="374" height="55"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jM-k7-QOd">
-                    <rect key="frame" x="20" y="775" width="374" height="31"/>
+                    <rect key="frame" x="20" y="754" width="374" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="mQ7-Vz-fqc"/>
+                    </constraints>
                     <color key="tintColor" name="dark_mint_main"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="확인"/>
@@ -40,7 +43,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="4TM-Et-UJ2">
-                    <rect key="frame" x="20" y="267" width="374" height="368"/>
+                    <rect key="frame" x="20" y="239" width="374" height="368"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nqw-QF-fKD" userLabel="이메일">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="104"/>
@@ -139,8 +142,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dgS-YB-bvH" secondAttribute="trailing" constant="20" id="5XX-Wj-F7W"/>
                 <constraint firstItem="4TM-Et-UJ2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LgM-3T-MZ0"/>
-                <constraint firstItem="dgS-YB-bvH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="124" id="RwS-JD-dQi"/>
-                <constraint firstItem="3jM-k7-QOd" firstAttribute="top" secondItem="4TM-Et-UJ2" secondAttribute="bottom" constant="140" id="fMo-Ka-y6O"/>
+                <constraint firstItem="dgS-YB-bvH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="96" id="RwS-JD-dQi"/>
                 <constraint firstItem="3jM-k7-QOd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kLg-b2-pPt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3jM-k7-QOd" secondAttribute="bottom" constant="56" id="r6Y-QA-y6K"/>
                 <constraint firstItem="4TM-Et-UJ2" firstAttribute="top" secondItem="dgS-YB-bvH" secondAttribute="bottom" constant="44" id="thi-7r-VLV"/>
