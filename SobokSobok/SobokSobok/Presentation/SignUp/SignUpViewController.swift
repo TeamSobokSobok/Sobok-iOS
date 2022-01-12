@@ -30,8 +30,7 @@ final class SignUpViewController: BaseViewController {
     private func checkTextField() {
         okayButton.isEnabled = false
         [emailTextField, passwordTextField, rePasswordTextField].forEach {
-        $0.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
-        }
+        $0.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)}
     }
     
     // Alert
