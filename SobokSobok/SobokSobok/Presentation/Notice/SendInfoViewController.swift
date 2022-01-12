@@ -27,16 +27,21 @@ final class SendInfoViewController: UIViewController {
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(Color.mint, for: .normal)
     }
+    private var sendInfoList: [SendInfoListData] = SendInfoListData.dummy
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var refuseButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var sendInfoCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUI()
         setConstraints()
+        assignDelegation()
+        registerXib()
     }
     
     // MARK: - Functions
@@ -73,7 +78,44 @@ final class SendInfoViewController: UIViewController {
         }
         
     }
+    
+    func assignDelegation() {
+        sendInfoCollectionView.delegate = self
+        sendInfoCollectionView.dataSource = self
+    }
+    
+    func registerXib() {
+        sendInfoCollectionView.register(SendInfoCollectionViewCell.self)
+    }
 }
 
+// MARK: - Extensions
+extension SendInfoViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sendInfoList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = sendInfoCollectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
+        cell.setData(sendInfoData: sendInfoList[indexPath.row])
+        cell.makeRoundedWithBorder(radius: 12, color: Color.gray300!.cgColor)
+        return cell
+    }
+    
+}
 
+extension SendInfoViewController: UICollectionViewDelegate { }
 
+extension SendInfoViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 11
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 335, height: 166)
+    }
+}
