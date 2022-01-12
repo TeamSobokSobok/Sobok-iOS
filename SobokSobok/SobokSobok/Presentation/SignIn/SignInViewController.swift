@@ -11,7 +11,7 @@ final class SignInViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var isSetAutoLogin : Bool = true
+    var isSetAutoLogin: Bool = true
 
     // MARK: - @IBOutlet Properties
     
