@@ -43,6 +43,12 @@ final class SignInViewController: BaseViewController {
         self.passwordTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
     }
     
+    private func setAutoLogIn( isSet: Bool, image: String) {
+        if isSet { isSetAutoLogin = false
+        } else { isSetAutoLogin = true }
+        autoLogIn.setImage(UIImage(systemName: image), for: .normal)
+    }
+    
     // Alert
     func tempAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -64,13 +70,8 @@ final class SignInViewController: BaseViewController {
     
     // MARK: @IBAction Properties
     @IBAction func touchUpToSetAutoLogIn(_ sender: UIButton) {
-        if isSetAutoLogin {
-            isSetAutoLogin = false
-            autoLogIn.setImage(UIImage(systemName: "square"), for: .normal)
-        } else {
-            isSetAutoLogin = true
-            autoLogIn.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-        }
+        if isSetAutoLogin { setAutoLogIn(isSet: true, image: "square")
+        } else { setAutoLogIn(isSet: false, image: "checkmark.square.fill") }
     }
     
     @IBAction func touchUpToLogin(_ sender: UIButton) {
