@@ -29,6 +29,12 @@
 		BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */; };
 		BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */; };
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
+		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
+		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
+		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
+		BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */; };
+		BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */; };
+		BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21AA6278DA85B007D10F6 /* TimeHeaderView.xib */; };
 		BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA580278997E1000C0AF8 /* Color.xcassets */; };
 		BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA58227899C25000C0AF8 /* Image.xcassets */; };
 		BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA5942789B2A2000C0AF8 /* generate.py */; };
@@ -73,6 +79,12 @@
 		BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Home/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MedicineCollectionViewCell.xib; path = SobokSobok/Presentation/Home/MedicineCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeHeaderView.swift; path = SobokSobok/Presentation/Home/TimeHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		BDD21AA6278DA85B007D10F6 /* TimeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeHeaderView.xib; path = SobokSobok/Presentation/Home/TimeHeaderView.xib; sourceTree = SOURCE_ROOT; };
 		BDDAA580278997E1000C0AF8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BDDAA58227899C25000C0AF8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		BDDAA5942789B2A2000C0AF8 /* generate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = generate.py; sourceTree = "<group>"; };
@@ -358,6 +370,9 @@
 		BD515E67278776D5003BD5A4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BDD21A9C278D8E35007D10F6 /* Views */,
+				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
+				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,6 +417,17 @@
 				BD515E71278778F9003BD5A4 /* SampleViewController.xib */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		BDD21A9C278D8E35007D10F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */,
+				BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */,
+				BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */,
+				BDD21AA6278DA85B007D10F6 /* TimeHeaderView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BDDAA5932789B271000C0AF8 /* Script */ = {
@@ -504,7 +530,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
+				BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
@@ -521,6 +549,7 @@
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
+				BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,9 +603,11 @@
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
+				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
+				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
@@ -585,6 +616,7 @@
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
