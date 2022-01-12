@@ -62,4 +62,3 @@ extension NoticeViewController: UITableViewDataSource {
 }
 
 extension NoticeViewController: UITableViewDelegate { }
-

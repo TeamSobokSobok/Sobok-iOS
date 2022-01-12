@@ -45,18 +45,17 @@ extension TabBarController {
         UITabBar.appearance().tintColor = Color.black
         UITabBar.appearance().unselectedItemTintColor = Color.gray500
 
-        // TODO: - 나중에 폰트 일괄 적용으로 수정
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         
         tabBar.layer.borderWidth = 1.0
-        tabBar.layer.borderColor = Color.gray200?.cgColor
+        tabBar.layer.borderColor = Color.gray200.cgColor
     }
 
     private func setTabBarItems() {
         tabs = [
-            UINavigationController(rootViewController: SampleViewController.instanceFromNib()),
-            UINavigationController(rootViewController: SampleViewController.instanceFromNib()),
+            UINavigationController(rootViewController: HomeViewController.instanceFromNib()),
+            UINavigationController(rootViewController: ShareViewController.instanceFromNib()),
             UINavigationController(rootViewController: SampleViewController.instanceFromNib()),
             UINavigationController(rootViewController: UIViewController())
         ]

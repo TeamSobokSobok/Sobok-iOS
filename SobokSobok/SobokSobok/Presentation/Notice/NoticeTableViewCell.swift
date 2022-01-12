@@ -35,11 +35,11 @@ final class NoticeTableViewCell: UITableViewCell {
 // MARK: - Extensions
 extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
-        set {
-            layer.cornerRadius = newValue
-        }
         get {
             return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
         }
     }
 }
