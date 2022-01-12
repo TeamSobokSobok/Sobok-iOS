@@ -8,17 +8,21 @@
 import UIKit
 
 final class SignInViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    var isSetAutoLogin = true
 
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var autoLogIn: UIButton!
-    
-    var isSetAutoLogin = true
 
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
@@ -26,6 +30,7 @@ final class SignInViewController: BaseViewController {
     }
     
     // MARK: - Functions
+    
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true
     }
@@ -34,12 +39,19 @@ final class SignInViewController: BaseViewController {
         logInButton.isEnabled = false
         signUpButton.isEnabled = true
         
-        self.emailTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)),for:.editingChanged)
+        self.emailTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
         self.passwordTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
     }
     
-    @objc func activateLogInButton(_ : UIButton){
-        
+    // Alert
+    func tempAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    @objc func activateLogInButton(_ : UIButton) {
         let emailFilled = emailTextField.hasText
         let passwordFilled = passwordTextField.hasText
         
@@ -51,30 +63,21 @@ final class SignInViewController: BaseViewController {
     }
     
     // MARK: @IBAction Properties
-    @IBAction func touchUpToSetAutoLogIn(_ sender: Any) {
-        if(isSetAutoLogin){
+    @IBAction func touchUpToSetAutoLogIn(_ sender: UIButton) {
+        if isSetAutoLogin {
             isSetAutoLogin = false
             autoLogIn.setImage(UIImage(systemName: "square"), for: .normal)
-
         } else {
             isSetAutoLogin = true
             autoLogIn.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
         }
     }
     
-    @IBAction func touchUpToLogin(_ sender: Any) {
+    @IBAction func touchUpToLogin(_ sender: UIButton) {
         tempAlert(title: "로그인", message: "이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
     }
     
-    @IBAction func touchUpToMoveToSignUpView(_ sender: Any) {
+    @IBAction func touchUpToMoveToSignUpView(_ sender: UIButton) {
         navigationController?.pushViewController(SignUpViewController.instanceFromNib(), animated: true)
-    }
-    
-    //MARK: Temporary
-    func tempAlert(title:String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title:"확인", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated:true)
     }
 }
