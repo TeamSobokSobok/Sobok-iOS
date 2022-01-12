@@ -46,11 +46,7 @@ final class SignUpViewController: BaseViewController {
         let passwordFilled = passwordTextField.hasText
         let rePasswordFilled = rePasswordTextField.hasText
         
-        if emailFilled && passwordFilled && rePasswordFilled {
-            okayButton.isEnabled = true
-        } else {
-            okayButton.isEnabled = false
-        }
+        okayButton.isEnabled = emailFilled && passwordFilled && rePasswordFilled ? true : false
     }
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
