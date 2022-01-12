@@ -19,7 +19,6 @@ final class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
-
     }
     
     // MARK: Functions
@@ -28,15 +27,22 @@ final class SignUpViewController: BaseViewController {
         rePasswordTextField.isSecureTextEntry = true
     }
 
-    private func checkTextField(){
+    private func checkTextField() {
         okayButton.isEnabled = false
-        
         self.emailTextField.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
         self.passwordTextField.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
         self.rePasswordTextField.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)
     }
     
-    @objc func activateOkayButton(_ : UIButton){
+    // Alert
+    func tempAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    @objc func activateOkayButton(_ : UIButton) {
         let emailFilled = emailTextField.hasText
         let passwordFilled = passwordTextField.hasText
         let rePasswordFilled = rePasswordTextField.hasText
@@ -49,18 +55,10 @@ final class SignUpViewController: BaseViewController {
     }
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
-        if(passwordTextField.text == rePasswordTextField.text) {
+        if passwordTextField.text == rePasswordTextField.text {
             tempAlert(title: "회원가입", message: "이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
         } else {
             tempAlert(title: "오류", message: "비밀번호를 확인해주세요")
         }
-    }
-    
-    //MARK: Temporary
-    func tempAlert(title:String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title:"확인", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated:true)
     }
 }
