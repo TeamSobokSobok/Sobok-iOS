@@ -11,8 +11,8 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     
-    var deleteCellClosure: (() -> ())?
-    var cellHeightClosure: (() -> ())?
+    var deleteCellClosure: (() -> Void)?
+    var cellHeightClosure: (() -> Void)?
     
     // MARK: - @IBOutlets
     
@@ -34,7 +34,7 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     
     private func setUI() {
-        medicineMainView.makeRoundedWithBorder(radius: 10, color: Color.gray300!.cgColor)
+        medicineMainView.makeRoundedWithBorder(radius: 10, color: Color.gray300.cgColor)
     }
     
     private func assignDelegate() {
@@ -62,8 +62,8 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
     @objc func medicineTextFieldDidChange(_ textField: UITextField) {
         if let medicineText = medicineTextField.text {
             !medicineText.isEmpty ?
-            checkMedicineTextField(color: Color.gray600!.cgColor, bool: false) :
-            checkMedicineTextField(color: Color.gray300!.cgColor, bool: true)
+            checkMedicineTextField(color: Color.gray600.cgColor, bool: false) :
+            checkMedicineTextField(color: Color.gray300.cgColor, bool: true)
         }
         
         // 글자 수 나타내기
@@ -94,7 +94,7 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
 // MARK: UITextField Delegate
 extension AddMyMedicineCollectionViewCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        checkMedicineTextField(color: Color.gray300!.cgColor, bool: true)
+        checkMedicineTextField(color: Color.gray300.cgColor, bool: true)
         updateUI()
         cellHeightClosure?()
     }

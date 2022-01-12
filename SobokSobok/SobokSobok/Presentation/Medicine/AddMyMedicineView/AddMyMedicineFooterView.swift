@@ -14,11 +14,11 @@ final class AddMyMedicineFooterView: UICollectionReusableView {
     
     // MARK: - Properties
     
-    var addMeidicineCellClosure : (() -> ())?
+    var addMeidicineCellClosure : (() -> Void)?
     
     let addMedicineCellButton = UIButton().then {
         $0.addTarget(self, action: #selector(addMedicineCellButtonClicked), for: .touchUpInside)
-        $0.makeRoundedWithBorder(radius: 10, color: Color.gray300!.cgColor)
+        $0.makeRoundedWithBorder(radius: 10, color: Color.gray300.cgColor)
         $0.tintColor = .black
         // 이미지 수정
         $0.setImage(UIImage(systemName: "plus"), for: .normal)

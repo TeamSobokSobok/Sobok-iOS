@@ -7,7 +7,7 @@
 import UIKit
 
 // MARK: - Protocol
-protocol AddPeopleViewDelegate {
+protocol AddPeopleViewDelegate: AnyObject {
     func popupDismissed()
 }
 
@@ -16,7 +16,7 @@ final class AddPeopleViewController: UIViewController {
     // MARK: - Properties
     // PickerView에서 선택한 이름을 저장해서 데이터전달 할 예정
     var selectedPeopleName = ""
-    var delegate : AddPeopleViewDelegate?
+    weak var delegate: AddPeopleViewDelegate?
     // 임시 더미데이터
     var peopleNameList = ["태현", "승찬", "은희", "선영"]
 
@@ -89,4 +89,3 @@ extension AddPeopleViewController: UIPickerViewDataSource {
         selectedPeopleName = peopleNameList[row]
     }
 }
-

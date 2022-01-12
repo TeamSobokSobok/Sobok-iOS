@@ -49,7 +49,7 @@ final class AddMyMedicineView: UIView {
     let peopleSelectButton = UIButton().then {
         $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = Color.gray300?.cgColor
+        $0.layer.borderColor = Color.gray300.cgColor
     }
     
     let whoLabel = UILabel().then {
