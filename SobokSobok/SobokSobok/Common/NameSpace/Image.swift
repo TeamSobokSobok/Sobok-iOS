@@ -35,4 +35,11 @@ public enum Image {
 	public static let icShareInactive = UIImage(named: "icShareInactive")
 	public static let icTextClose48 = UIImage(named: "icTextClose48")
 	public static let shareSmile = UIImage(named: "shareSmile")
+	public static let icProgress1 = UIImage(named: "icProgress1")
+	public static let Ellipse38 = UIImage(named: "Ellipse38")
+	public static let Ellipse64 = UIImage(named: "Ellipse64")
+	public static let Ellipse65 = UIImage(named: "Ellipse65")
+	public static let Ellipse94 = UIImage(named: "Ellipse65")
+	public static let Ellipse95 = UIImage(named: "Ellipse95")
+	public static let Union = UIImage(named: "Union")
 }
