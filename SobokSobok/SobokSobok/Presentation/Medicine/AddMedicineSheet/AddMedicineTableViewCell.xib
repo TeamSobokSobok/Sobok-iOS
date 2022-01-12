@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,7 +29,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkH-X4-m8L">
-                        <rect key="frame" x="85" y="30" width="44" height="22"/>
+                        <rect key="frame" x="85" y="30.5" width="44" height="21"/>
                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                         <color key="textColor" name="black_sub"/>
                         <nil key="highlightedColor"/>
@@ -46,8 +44,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="addMedicineLabel" destination="YkH-X4-m8L" id="EqN-Fu-BRV"/>
                 <outlet property="medicineImageView" destination="8NO-48-d7F" id="Emo-mE-QgI"/>
+                <outlet property="medicineTextLabel" destination="YkH-X4-m8L" id="EqN-Fu-BRV"/>
             </connections>
             <point key="canvasLocation" x="204.34782608695653" y="182.14285714285714"/>
         </tableViewCell>
