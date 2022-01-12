@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPeopleViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="addPeopleView" destination="HS3-Oy-I1p" id="Afi-jO-fBf"/>
+                <outlet property="confirmButton" destination="zZI-63-0l6" id="WLe-2R-UcR"/>
+                <outlet property="peopleNamePickerView" destination="vsm-NM-inv" id="aDO-VM-S9c"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-7W-66m">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.29934148413897282" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-Oy-I1p">
+                    <rect key="frame" x="0.0" y="591" width="414" height="305"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsm-NM-inv">
+                            <rect key="frame" x="20" y="33" width="374" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="xJM-m3-L2E"/>
+                            </constraints>
+                        </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZI-63-0l6">
+                            <rect key="frame" x="20" y="193" width="374" height="52"/>
+                            <color key="backgroundColor" name="mint_main"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="aJI-Gr-kBU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="확인">
+                                <color key="titleColor" name="white_sub"/>
+                            </state>
+                            <connections>
+                                <action selector="touchConfirmButton:" destination="-1" eventType="touchUpInside" id="5dm-vw-Hng"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zZI-63-0l6" secondAttribute="trailing" constant="20" id="R4J-Bk-khz"/>
+                        <constraint firstItem="zZI-63-0l6" firstAttribute="top" secondItem="vsm-NM-inv" secondAttribute="bottom" constant="10" id="UjC-C4-Vhl"/>
+                        <constraint firstItem="vsm-NM-inv" firstAttribute="top" secondItem="HS3-Oy-I1p" secondAttribute="top" constant="33" id="Y8Z-pB-skM"/>
+                        <constraint firstItem="vsm-NM-inv" firstAttribute="leading" secondItem="HS3-Oy-I1p" secondAttribute="leading" constant="20" id="biy-hb-DgD"/>
+                        <constraint firstAttribute="height" constant="305" id="e9D-Ek-nwt"/>
+                        <constraint firstItem="zZI-63-0l6" firstAttribute="leading" secondItem="HS3-Oy-I1p" secondAttribute="leading" constant="20" id="fEB-2e-KT8"/>
+                        <constraint firstAttribute="trailing" secondItem="vsm-NM-inv" secondAttribute="trailing" constant="20" id="mFj-Bh-I1v"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.28627737915407847" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SpB-7W-66m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BvH-bV-beT"/>
+                <constraint firstItem="SpB-7W-66m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XNZ-ln-9GG"/>
+                <constraint firstAttribute="bottom" secondItem="SpB-7W-66m" secondAttribute="bottom" id="aIA-g7-NnF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SpB-7W-66m" secondAttribute="trailing" id="bpN-1D-eq2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HS3-Oy-I1p" secondAttribute="trailing" id="fmg-eq-iA9"/>
+                <constraint firstAttribute="bottom" secondItem="HS3-Oy-I1p" secondAttribute="bottom" id="s26-k7-RHe"/>
+                <constraint firstItem="HS3-Oy-I1p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ubc-cF-0B0"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

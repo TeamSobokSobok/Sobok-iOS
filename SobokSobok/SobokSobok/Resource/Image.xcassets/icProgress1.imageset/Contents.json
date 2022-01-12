@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icMore48.png",
+      "filename" : "icProgress1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icMore48@2x.png",
+      "filename" : "icProgress1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icMore48@3x.png",
+      "filename" : "icProgress1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
