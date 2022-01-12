@@ -21,9 +21,9 @@ final class AddPeopleViewController: UIViewController {
     var peopleNameList = ["태현", "승찬", "은희", "선영"]
 
     // MARK: - @IBOutlets
-    @IBOutlet var addPeopleView: UIView!
-    @IBOutlet var peopleNamePickerView: UIPickerView!
-    @IBOutlet var confirmButton: UIButton!
+    @IBOutlet weak var addPeopleView: UIView!
+    @IBOutlet weak var peopleNamePickerView: UIPickerView!
+    @IBOutlet weak var confirmButton: UIButton!
     
     // MARK: View Life Cycle
     

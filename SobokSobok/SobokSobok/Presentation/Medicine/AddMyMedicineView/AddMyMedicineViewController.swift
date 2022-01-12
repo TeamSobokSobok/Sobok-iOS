@@ -13,8 +13,12 @@ final class AddMyMedicineViewController: BaseViewController {
     
     // MARK: Properties
     
-    var medicineData: [String] = []
-    let addMyMedicineView = AddMyMedicineView()
+    private var medicineData: [String] = [] {
+        didSet {
+            addMyMedicineView.collectionView.reloadData()
+        }
+    }
+    private let addMyMedicineView = AddMyMedicineView()
     
     override func loadView() {
         self.view = addMyMedicineView
@@ -24,25 +28,19 @@ final class AddMyMedicineViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundColor()
         assignDelegate()
-        collectionViewReload()
         actionPeopleSelectButton()
+    }
+    
+    override func style() {
+        view.backgroundColor = .white
     }
     
     // MARK: Functions
     
-    private func setBackgroundColor() {
-        view.backgroundColor = .white
-    }
-    
     private func assignDelegate() {
         addMyMedicineView.collectionView.delegate = self
         addMyMedicineView.collectionView.dataSource = self
-    }
-    
-    private func collectionViewReload() {
-        addMyMedicineView.collectionView.reloadData()
     }
     
     private func actionPeopleSelectButton() {
@@ -85,12 +83,11 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
             self.addMyMedicineView.collectionView.layoutIfNeeded()
             self.addMyMedicineView.collectionView.reloadData()
         }
- 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let cell = addMyMedicineView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.identifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
+        guard let cell = addMyMedicineView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
         
         // FooterView +버튼 클릭 시 셀 추가
         cell.addMeidicineCellClosure = {

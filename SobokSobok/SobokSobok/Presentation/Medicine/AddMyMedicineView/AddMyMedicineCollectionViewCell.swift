@@ -16,18 +16,18 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
     
     // MARK: - @IBOutlets
     
-    @IBOutlet var rootView: UIView!
-    @IBOutlet var medicineMainView: UIView!
-    @IBOutlet var medicineTextField: UITextField!
-    @IBOutlet var deleteTextButton: UIButton!
-    @IBOutlet var deleteMedicineCellButton: UIButton!
-    @IBOutlet var writingCountLabel: UILabel!
-    @IBOutlet var medicineCellHeight: NSLayoutConstraint!
+    @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var medicineMainView: UIView!
+    @IBOutlet weak var medicineTextField: UITextField!
+    @IBOutlet weak var deleteTextButton: UIButton!
+    @IBOutlet weak var deleteMedicineCellButton: UIButton!
+    @IBOutlet weak var writingCountLabel: UILabel!
+    @IBOutlet weak var medicineCellHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
-        setDeleteButton()
+        setTextField()
         assignDelegate()
     }
     
@@ -41,7 +41,7 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
         medicineTextField.delegate = self
     }
     
-    private func setDeleteButton() {
+    private func setTextField() {
         medicineTextField.addTarget(self, action: #selector(AddMyMedicineCollectionViewCell.medicineTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
     
@@ -53,7 +53,7 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
         writingCountLabel.isHidden = false
     }
     
-    private func changeUI() {
+    private func updateUI() {
         writingCountLabel.isHidden = true
         deleteTextButton.isHidden = true
         deleteMedicineCellButton.isHidden = false
@@ -63,7 +63,7 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
         if let medicineText = medicineTextField.text {
             !medicineText.isEmpty ?
             checkMedicineTextField(color: Color.gray600!.cgColor, bool: false) :
-                checkMedicineTextField(color: Color.gray300!.cgColor, bool: true)
+            checkMedicineTextField(color: Color.gray300!.cgColor, bool: true)
         }
         
         // 글자 수 나타내기
@@ -93,16 +93,14 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
 
 // MARK: UITextField Delegate
 extension AddMyMedicineCollectionViewCell: UITextFieldDelegate {
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         checkMedicineTextField(color: Color.gray300!.cgColor, bool: true)
-        changeUI()
+        updateUI()
         cellHeightClosure?()
     }
     
     // 텍스트필드 10글자까지 입력 가능하게 / 10글자 이상이면 입력 안 됨
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         let medicineText = medicineTextField.text ?? ""
         guard let stringRange = Range(range, in: medicineText) else { return false }
         let updatedText = medicineText.replacingCharacters(in: stringRange, with: string)

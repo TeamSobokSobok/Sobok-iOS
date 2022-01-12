@@ -70,8 +70,7 @@ final class AddMyMedicineView: UIView {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         
         $0.register(AddMyMedicineCollectionViewCell.self)
-        $0.register(AddMyMedicineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.identifier)
-        
+        $0.register(AddMyMedicineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier)
         let layout = UICollectionViewFlowLayout()
         
         layout.scrollDirection = .vertical

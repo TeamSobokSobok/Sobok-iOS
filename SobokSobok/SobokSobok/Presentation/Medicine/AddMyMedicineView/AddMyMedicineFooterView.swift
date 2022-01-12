@@ -14,8 +14,8 @@ final class AddMyMedicineFooterView: UICollectionReusableView {
     
     // MARK: - Properties
     
-    static let identifier = "FooterCollectionReusableView"
     var addMeidicineCellClosure : (() -> ())?
+    
     let addMedicineCellButton = UIButton().then {
         $0.addTarget(self, action: #selector(addMedicineCellButtonClicked), for: .touchUpInside)
         $0.makeRoundedWithBorder(radius: 10, color: Color.gray300!.cgColor)
