@@ -30,12 +30,20 @@ final class SignUpViewController: BaseViewController {
     @IBOutlet weak var rePasswordWarningStackView: UIStackView!
     
     // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
     }
+    
     override func style() {
+        // 텍스트필드 corner radius 처리 눈속임
         [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
+        
+        // 경고문구는 처음에 사라지게 만들기
+        emailWarningStackView.isHidden = true
+        passwordWarningStackView.isHidden = true
+        rePasswordWarningStackView.isHidden = true
         
         // 네비게이션 바 커스텀
         title = "회원가입"
@@ -56,7 +64,6 @@ final class SignUpViewController: BaseViewController {
     
     // 텍스트필드 addTarget
     private func checkTextField() {
-        emailWarningStackView.isHidden = true
         emailTextField.addTarget(self, action: #selector(self.checkEmailTextField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(self.checkPasswordTextField), for: .editingChanged)
         rePasswordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
@@ -69,20 +76,20 @@ final class SignUpViewController: BaseViewController {
         let emailTest = NSPredicate(format: "SELF MATCHES %@", validEmail)
           return emailTest.evaluate(with: input)
     }
+    
     private func checkPasswordRight (input: String) -> Bool {
         // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자]
-        let validEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", validEmail)
-          return emailTest.evaluate(with: input)
+        let validPassword = "[A-Z0-9a-z!@#$%^&*()_+=-]{8,16}"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", validPassword)
+          return passwordTest.evaluate(with: input)
     }
+    
     private func checkRepasswordRight (input: String) -> Bool {
         // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자]
         let validEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", validEmail)
           return emailTest.evaluate(with: input)
     }
-    
-    
 
     // Alert
     func tempAlert(title: String, message: String) {
@@ -99,7 +106,8 @@ final class SignUpViewController: BaseViewController {
     }
     
     @objc private func checkPasswordTextField() {
-        
+        passwordRight = checkPasswordRight(input: passwordTextField.text ?? "")
+        passwordWarningStackView.isHidden = passwordRight || !passwordTextField.hasText ? true : false
     }
     
     @objc private func checkRepasswordTextField() {
