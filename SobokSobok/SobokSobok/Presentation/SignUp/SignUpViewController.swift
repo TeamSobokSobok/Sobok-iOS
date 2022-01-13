@@ -18,10 +18,14 @@ final class SignUpViewController: BaseViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         checkTextField()
     }
     
     // MARK: Functions
+    private func setUI() {
+    }
+    
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true
         rePasswordTextField.isSecureTextEntry = true
