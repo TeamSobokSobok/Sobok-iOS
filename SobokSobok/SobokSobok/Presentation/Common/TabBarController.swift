@@ -100,12 +100,17 @@ extension TabBarController: UITabBarControllerDelegate {
         let tabBarItemIndex = viewController.tabBarItem.tag
         
         if tabBarItemIndex == 3 {
-            // 이 부분에서 바텀 시트 띄우는 코드 쓰면 됨.
-            // 바텀 시트 on.
-            print("바텀 시트 on")
+            let addMedicineSheet = AddMedicineSheet.instanceFromNib()
+            addMedicineSheet.modalPresentationStyle = .overCurrentContext
+            addMedicineSheet.modalTransitionStyle = .crossDissolve
+            self.present(addMedicineSheet, animated: false
+            ) {
+                DispatchQueue.main.async {
+                    addMedicineSheet.sheetWithAnimation()
+                }
+            }
             return false
         }
-        
         return true
     }
 }
