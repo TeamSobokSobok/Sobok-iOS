@@ -27,7 +27,6 @@
 		BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8827877F9C003BD5A4 /* SnapKit */; };
 		BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8B27877FAD003BD5A4 /* Kingfisher */; };
 		BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */; };
-		BD515E92278780EE003BD5A4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E91278780EE003BD5A4 /* Lottie */; };
 		BD515E9527878114003BD5A4 /* EasyKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E9427878114003BD5A4 /* EasyKit */; };
 		BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8E92788A01C009249D0 /* .swiftlint.yml */; };
 		BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */; };
@@ -57,7 +56,17 @@
 		EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */; };
 		EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */; };
 		EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */; };
-
+		EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */; };
+		EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */; };
+		EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */; };
+		EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EDF278FEB7800A34027 /* MedicineCalendarViewController.xib */; };
+		EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EE2278FFACB00A34027 /* MedicineSpecificDayViewController.swift */; };
+		EC950EE5278FFACB00A34027 /* MedicineSpecificDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EE3278FFACB00A34027 /* MedicineSpecificDayViewController.xib */; };
+		EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EE6278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift */; };
+		EC950EE9278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EE7278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib */; };
+		EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EEA2790012700A34027 /* MedicineDayTableViewCell.swift */; };
+		EC950EED2790012700A34027 /* MedicineDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EEB2790012700A34027 /* MedicineDayTableViewCell.xib */; };
+		EC950EF027906F0C00A34027 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EC950EEF27906F0C00A34027 /* Lottie */; };
 		ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */; };
 		ECAE92F2278D7EC90026D59A /* AddPeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECAE92F0278D7EC90026D59A /* AddPeopleViewController.xib */; };
 		ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */; };
@@ -72,7 +81,6 @@
 		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
 		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
 		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +127,16 @@
 		EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineSheet.xib; sourceTree = "<group>"; };
 		EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineTableViewCell.swift; sourceTree = "<group>"; };
 		EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineTableViewCell.xib; sourceTree = "<group>"; };
+		EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSecondViewController.swift; sourceTree = "<group>"; };
+		EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineSecondViewController.xib; sourceTree = "<group>"; };
+		EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCalendarViewController.swift; sourceTree = "<group>"; };
+		EC950EDF278FEB7800A34027 /* MedicineCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCalendarViewController.xib; sourceTree = "<group>"; };
+		EC950EE2278FFACB00A34027 /* MedicineSpecificDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSpecificDayViewController.swift; sourceTree = "<group>"; };
+		EC950EE3278FFACB00A34027 /* MedicineSpecificDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineSpecificDayViewController.xib; sourceTree = "<group>"; };
+		EC950EE6278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSpecificPeriodViewController.swift; sourceTree = "<group>"; };
+		EC950EE7278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineSpecificPeriodViewController.xib; sourceTree = "<group>"; };
+		EC950EEA2790012700A34027 /* MedicineDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDayTableViewCell.swift; sourceTree = "<group>"; };
+		EC950EEB2790012700A34027 /* MedicineDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineDayTableViewCell.xib; sourceTree = "<group>"; };
 		ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleViewController.swift; sourceTree = "<group>"; };
 		ECAE92F0278D7EC90026D59A /* AddPeopleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPeopleViewController.xib; sourceTree = "<group>"; };
 		ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineFooterView.swift; sourceTree = "<group>"; };
@@ -142,13 +160,13 @@
 			files = (
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
 				BDFE75DE278786AE00014BE1 /* Then in Frameworks */,
+				EC950EF027906F0C00A34027 /* Lottie in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
 				BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
 				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
 				BD515E8327877F0E003BD5A4 /* Moya in Frameworks */,
 				BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */,
-				BD515E92278780EE003BD5A4 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +450,8 @@
 		BD515E6A27877773003BD5A4 /* Medicine */ = {
 			isa = PBXGroup;
 			children = (
-				ECECEF90278C6BEC003D1454 /* AddMyMedicineView */,
+				EC950ED5278EFD4700A34027 /* AddMedicineFirst */,
+				EC950ED9278EFD9200A34027 /* AddMedicineSecond */,
 				EC037614278B372500CA4B54 /* AddMedicineSheet */,
 			);
 			path = Medicine;
@@ -484,18 +503,59 @@
 			path = AddMedicineSheet;
 			sourceTree = "<group>";
 		};
-		ECECEF90278C6BEC003D1454 /* AddMyMedicineView */ = {
+		EC950ED5278EFD4700A34027 /* AddMedicineFirst */ = {
+			isa = PBXGroup;
+			children = (
+				EC950ED8278EFD7400A34027 /* ViewControllers */,
+				EC950ED7278EFD6E00A34027 /* Cells */,
+				EC950ED6278EFD6600A34027 /* Views */,
+			);
+			path = AddMedicineFirst;
+			sourceTree = "<group>";
+		};
+		EC950ED6278EFD6600A34027 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */,
+				ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC950ED7278EFD6E00A34027 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */,
 				ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */,
-				ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EC950ED8278EFD7400A34027 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */,
 				ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */,
 				ECAE92F0278D7EC90026D59A /* AddPeopleViewController.xib */,
 			);
-			path = AddMyMedicineView;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EC950ED9278EFD9200A34027 /* AddMedicineSecond */ = {
+			isa = PBXGroup;
+			children = (
+				EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */,
+				EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */,
+				EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */,
+				EC950EDF278FEB7800A34027 /* MedicineCalendarViewController.xib */,
+				EC950EE2278FFACB00A34027 /* MedicineSpecificDayViewController.swift */,
+				EC950EE3278FFACB00A34027 /* MedicineSpecificDayViewController.xib */,
+				EC950EE6278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift */,
+				EC950EE7278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib */,
+				EC950EEA2790012700A34027 /* MedicineDayTableViewCell.swift */,
+				EC950EEB2790012700A34027 /* MedicineDayTableViewCell.xib */,
+			);
+			path = AddMedicineSecond;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,11 +581,11 @@
 				BD515E8827877F9C003BD5A4 /* SnapKit */,
 				BD515E8B27877FAD003BD5A4 /* Kingfisher */,
 				BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */,
-				BD515E91278780EE003BD5A4 /* Lottie */,
 				BD515E9427878114003BD5A4 /* EasyKit */,
 				BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */,
 				BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */,
 				BDFE75DD278786AE00014BE1 /* Then */,
+				EC950EEF27906F0C00A34027 /* Lottie */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -560,10 +620,10 @@
 				BD515E8727877F9C003BD5A4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BD515E8A27877FAD003BD5A4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				BD515E8D27878093003BD5A4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				BD515E90278780EE003BD5A4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */,
 				BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */,
+				EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -579,13 +639,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC950EED2790012700A34027 /* MedicineDayTableViewCell.xib in Resources */,
 				BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */,
+				EC950EE5278FFACB00A34027 /* MedicineSpecificDayViewController.xib in Resources */,
 				BD14F365278EB4B000F316AF /* ShareViewController.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
 				BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
+				EC950EE9278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
+				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
@@ -593,6 +657,7 @@
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
+				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
 				ECAE92F2278D7EC90026D59A /* AddPeopleViewController.xib in Resources */,
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */,
@@ -665,7 +730,10 @@
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
+				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
+				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
+				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
@@ -681,6 +749,8 @@
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
+				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
+				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 			);
@@ -751,7 +821,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -807,7 +877,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -938,14 +1008,6 @@
 				kind = branch;
 			};
 		};
-		BD515E90278780EE003BD5A4 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Taehyeon-Kim/EasyKit.git";
@@ -968,6 +1030,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
+			};
+		};
+		EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -993,11 +1063,6 @@
 			package = BD515E8D27878093003BD5A4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
-		BD515E91278780EE003BD5A4 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BD515E90278780EE003BD5A4 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
 		BD515E9427878114003BD5A4 /* EasyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */;
@@ -1017,6 +1082,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		EC950EEF27906F0C00A34027 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
