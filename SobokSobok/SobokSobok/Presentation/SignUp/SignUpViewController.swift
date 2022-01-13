@@ -13,10 +13,8 @@ final class SignUpViewController: BaseViewController {
     var emailRight: Bool = false
     var passwordRight: Bool = false
     var rePasswordRight: Bool = false
-    var totalViewPosition: CGFloat = 0
     
     // MARK: @IBOutlet Properties
-    
     @IBOutlet weak var totalView: UIView!
     @IBOutlet weak var okayButton: UIButton!
     // 텍스트필드
@@ -36,37 +34,6 @@ final class SignUpViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         checkTextField()
-        addKeyboardNotification()
-    }
-    
-    private func addKeyboardNotification() {
-        totalViewPosition = totalView.frame.origin.y
-
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(keyboardWillShow),
-          name: UIResponder.keyboardWillShowNotification,
-          object: nil
-        )
-        
-        NotificationCenter.default.addObserver(
-          self,
-          selector: #selector(keyboardWillHide),
-          name: UIResponder.keyboardWillHideNotification,
-          object: nil
-        )
-      }
-    
-    @objc private func keyboardWillShow(_ notification: Notification) {
-      if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-          self.totalView.frame.origin.y = totalViewPosition - 70
-      }
-    }
-      
-    @objc private func keyboardWillHide(_ notification: Notification) {
-      if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-          self.totalView.frame.origin.y = totalViewPosition + 22
-      }
     }
     
     // MARK: Functions
