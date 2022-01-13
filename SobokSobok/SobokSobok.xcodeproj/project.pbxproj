@@ -28,6 +28,13 @@
 		BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8B27877FAD003BD5A4 /* Kingfisher */; };
 		BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */; };
 		BD515E9527878114003BD5A4 /* EasyKit in Frameworks */ = {isa = PBXBuildFile; productRef = BD515E9427878114003BD5A4 /* EasyKit */; };
+		BD51AE252790640300314A94 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE242790640300314A94 /* Pretendard-Black.otf */; };
+		BD51AE272790641100314A94 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE262790641100314A94 /* Pretendard-ExtraBold.otf */; };
+		BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE282790641E00314A94 /* Pretendard-Medium.otf */; };
+		BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE2A2790642900314A94 /* Pretendard-Thin.otf */; };
+		BD51AE2D27906CC000314A94 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE2C27906CC000314A94 /* Font.swift */; };
+		BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */; };
+		BD51AE312790701800314A94 /* TypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE302790701800314A94 /* TypoStyle.swift */; };
 		BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8E92788A01C009249D0 /* .swiftlint.yml */; };
 		BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */; };
 		BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */; };
@@ -102,6 +109,13 @@
 		BD515E6E2787784D003BD5A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BD515E70278778F9003BD5A4 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		BD515E71278778F9003BD5A4 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		BD51AE242790640300314A94 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		BD51AE262790641100314A94 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		BD51AE282790641E00314A94 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		BD51AE2A2790642900314A94 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		BD51AE2C27906CC000314A94 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		BD51AE302790701800314A94 /* TypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoStyle.swift; sourceTree = "<group>"; };
 		BD64F8E92788A01C009249D0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -285,6 +299,7 @@
 		BD515E53278775FA003BD5A4 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				BD51AE302790701800314A94 /* TypoStyle.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -298,6 +313,7 @@
 				BDDAA5A82789BCD3000C0AF8 /* Text.swift */,
 				BDDAA5A62789BCD3000C0AF8 /* URL.swift */,
 				BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */,
+				BD51AE2C27906CC000314A94 /* Font.swift */,
 			);
 			path = NameSpace;
 			sourceTree = "<group>";
@@ -305,6 +321,7 @@
 		BD515E552787760A003BD5A4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -361,11 +378,15 @@
 		BD515E5C27877645003BD5A4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				BD51AE242790640300314A94 /* Pretendard-Black.otf */,
 				BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */,
+				BD51AE262790641100314A94 /* Pretendard-ExtraBold.otf */,
 				BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */,
 				BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */,
+				BD51AE282790641E00314A94 /* Pretendard-Medium.otf */,
 				BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */,
 				BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */,
+				BD51AE2A2790642900314A94 /* Pretendard-Thin.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -644,11 +665,13 @@
 				EC950EE5278FFACB00A34027 /* MedicineSpecificDayViewController.xib in Resources */,
 				BD14F365278EB4B000F316AF /* ShareViewController.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
+				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
 				BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				EC950EE9278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
+				BD51AE272790641100314A94 /* Pretendard-ExtraBold.otf in Resources */,
 				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
@@ -664,10 +687,12 @@
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
+				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
 				ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */,
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
+				BD51AE252790640300314A94 /* Pretendard-Black.otf in Resources */,
 				BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +752,7 @@
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
+				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
@@ -739,9 +765,11 @@
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
+				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,
+				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
