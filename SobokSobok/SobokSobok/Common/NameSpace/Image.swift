@@ -42,4 +42,7 @@ public enum Image {
 	public static let circleOrange = UIImage(named: "Ellipse65")!
 	public static let circlePink = UIImage(named: "Ellipse95")!
 	public static let icCalender = UIImage(named: "Union")!
+	public static let icBackSmall48 = UIImage(named: "icBackSmall48")!
+	public static let icCheckButton48 = UIImage(named: "icCheckButton48")!
+	public static let icVCheck = UIImage(named: "icVCheck")!
 }
