@@ -17,6 +17,7 @@ final class SignUpViewController: BaseViewController {
     // MARK: @IBOutlet Properties
     @IBOutlet weak var okayButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextFieldView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
     @IBOutlet weak var emailWarningStackView: UIStackView!
@@ -32,7 +33,7 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: Functions
     private func setUI() {
-        emailTextField.cornerRadius = 12
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
     
     private func securePassword() {

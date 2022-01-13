@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="Bdf-4X-ikb" id="cvj-cH-Zdq"/>
+                <outlet property="emailTextFieldView" destination="iaH-VC-WqO" id="CgY-8I-2ZH"/>
                 <outlet property="emailWarningStackView" destination="itb-y6-TcY" id="AAy-3c-HEM"/>
                 <outlet property="okayButton" destination="3jM-k7-QOd" id="ERo-gL-PCg"/>
                 <outlet property="passwordTextField" destination="LU6-Xm-bpc" id="xjf-Mb-Ohh"/>
@@ -42,22 +43,22 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaH-VC-WqO">
-                            <rect key="frame" x="0.0" y="26" width="240" height="54"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaH-VC-WqO" userLabel="이메일텍스트필드">
+                            <rect key="frame" x="0.0" y="26" width="374" height="54"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="soboksobok@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bdf-4X-ikb" userLabel="이메일">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="54"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="soboksobok@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bdf-4X-ikb" userLabel="이메일">
+                                    <rect key="frame" x="15" y="15" width="344" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="Bdf-4X-ikb" secondAttribute="bottom" id="FC2-5y-Vi7"/>
-                                <constraint firstItem="Bdf-4X-ikb" firstAttribute="top" secondItem="iaH-VC-WqO" secondAttribute="top" id="JWZ-S7-l1b"/>
-                                <constraint firstItem="Bdf-4X-ikb" firstAttribute="leading" secondItem="iaH-VC-WqO" secondAttribute="leading" id="MWM-uO-B3n"/>
+                                <constraint firstAttribute="bottom" secondItem="Bdf-4X-ikb" secondAttribute="bottom" constant="15" id="CBz-LX-Afa"/>
                                 <constraint firstAttribute="height" constant="54" id="UO2-7t-1DF"/>
-                                <constraint firstAttribute="trailing" secondItem="Bdf-4X-ikb" secondAttribute="trailing" id="ZUm-m2-JRo"/>
+                                <constraint firstAttribute="trailing" secondItem="Bdf-4X-ikb" secondAttribute="trailing" constant="15" id="ajW-Hy-Ogo"/>
+                                <constraint firstItem="Bdf-4X-ikb" firstAttribute="leading" secondItem="iaH-VC-WqO" secondAttribute="leading" constant="15" id="h1n-7T-iA4"/>
+                                <constraint firstItem="Bdf-4X-ikb" firstAttribute="top" secondItem="iaH-VC-WqO" secondAttribute="top" constant="15" id="nHN-b2-qxY"/>
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="itb-y6-TcY" userLabel="이메일 형식이 올바르지 않아요">
@@ -80,6 +81,9 @@
                             </subviews>
                         </stackView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="iaH-VC-WqO" firstAttribute="centerX" secondItem="cZc-Nb-vxf" secondAttribute="centerX" id="N8H-kG-qfR"/>
+                    </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ljr-Y9-NfJ" userLabel="비밀번호 스택">
                     <rect key="frame" x="20" y="299" width="374" height="106"/>
