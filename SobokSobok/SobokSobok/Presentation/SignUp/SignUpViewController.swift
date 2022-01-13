@@ -66,29 +66,28 @@ final class SignUpViewController: BaseViewController {
     private func checkTextField() {
         emailTextField.addTarget(self, action: #selector(self.checkEmailTextField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(self.checkPasswordTextField), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
         rePasswordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
     }
     
     // 정규식 체크
     private func checkEmailRight (input: String) -> Bool {
-        // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자]
+        // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자] 2~64글자
         let validEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", validEmail)
           return emailTest.evaluate(with: input)
     }
     
     private func checkPasswordRight (input: String) -> Bool {
-        // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자]
+        // 비밀번호 조건 : [대문자,소문자,숫자,특수기호] 8~16글자
         let validPassword = "[A-Z0-9a-z!@#$%^&*()_+=-]{8,16}"
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", validPassword)
           return passwordTest.evaluate(with: input)
     }
     
     private func checkRepasswordRight (input: String) -> Bool {
-        // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자]
-        let validEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", validEmail)
-          return emailTest.evaluate(with: input)
+        // 비밀번호 재입력 조건 : 비밀번호와 값이 같아야함
+        return passwordTextField.text == rePasswordTextField.text ? true : false
     }
 
     // Alert
@@ -109,11 +108,13 @@ final class SignUpViewController: BaseViewController {
     @objc private func checkPasswordTextField() {
         passwordRight = checkPasswordRight(input: passwordTextField.text ?? "")
         passwordWarningStackView.isHidden = passwordRight || !passwordTextField.hasText ? true : false
-        passwordTextFieldView.layer.borderColor = emailRight || !emailTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        passwordTextFieldView.layer.borderColor = passwordRight || !passwordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     @objc private func checkRepasswordTextField() {
-        
+        rePasswordRight = checkRepasswordRight(input: passwordTextField.text ?? "")
+        rePasswordWarningStackView.isHidden = rePasswordRight || !rePasswordTextField.hasText ? true : false
+        rePasswordTextFieldView.layer.borderColor = rePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     // 버튼 활성화
