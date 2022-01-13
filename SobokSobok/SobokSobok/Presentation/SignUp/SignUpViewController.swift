@@ -32,14 +32,21 @@ final class SignUpViewController: BaseViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
         checkTextField()
+    }
+    override func style() {
+        [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
+        
+        // 네비게이션 바 커스텀
+        title = "회원가입"
+        let backButton = UIBarButtonItem()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        backButton.title = ""
+        backButton.tintColor = .black
+        self.navigationController?.navigationBar.backgroundColor = .white
     }
     
     // MARK: Functions
-    private func setUI() {
-        [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
-    }
     
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true

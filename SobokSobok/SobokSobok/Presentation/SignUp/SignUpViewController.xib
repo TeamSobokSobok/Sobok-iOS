@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eY-fr-ddQ" userLabel="뷰">
-                    <rect key="frame" x="0.0" y="44" width="414" height="495"/>
+                    <rect key="frame" x="0.0" y="110" width="414" height="495"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입하실 이메일과 비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-YB-bvH">
                             <rect key="frame" x="20" y="22" width="374" height="55"/>
@@ -234,13 +234,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="1eY-fr-ddQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HrE-YV-Ldt"/>
+                <constraint firstItem="1eY-fr-ddQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="93e-qf-2L0"/>
                 <constraint firstItem="3jM-k7-QOd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kLg-b2-pPt"/>
                 <constraint firstItem="1eY-fr-ddQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mV6-D2-cCC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3jM-k7-QOd" secondAttribute="bottom" constant="22" id="r6Y-QA-y6K"/>
                 <constraint firstItem="1eY-fr-ddQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sK3-r1-f6Y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3jM-k7-QOd" secondAttribute="trailing" constant="20" id="vrd-VZ-Msm"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </view>
     </objects>
