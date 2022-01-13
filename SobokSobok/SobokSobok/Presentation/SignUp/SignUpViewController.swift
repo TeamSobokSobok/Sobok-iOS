@@ -14,6 +14,9 @@ final class SignUpViewController: BaseViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
+    @IBOutlet weak var emailWarning: UILabel!
+    @IBOutlet weak var passwordWarning: UILabel!
+    @IBOutlet weak var repasswordWarning: UILabel!
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
