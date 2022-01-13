@@ -103,11 +103,13 @@ final class SignUpViewController: BaseViewController {
     @objc private func checkEmailTextField() {
         emailRight = checkEmailRight(input: emailTextField.text ?? "")
         emailWarningStackView.isHidden = emailRight || !emailTextField.hasText ? true : false
+        emailTextFieldView.layer.borderColor = emailRight || !emailTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     @objc private func checkPasswordTextField() {
         passwordRight = checkPasswordRight(input: passwordTextField.text ?? "")
         passwordWarningStackView.isHidden = passwordRight || !passwordTextField.hasText ? true : false
+        passwordTextFieldView.layer.borderColor = emailRight || !emailTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     @objc private func checkRepasswordTextField() {
