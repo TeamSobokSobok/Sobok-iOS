@@ -9,8 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Black.otf">
+            <string>Pretendard-Black</string>
+        </array>
         <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-ExtraBold.otf">
+            <string>Pretendard-ExtraBold</string>
         </array>
         <array key="Pretendard-ExtraLight.otf">
             <string>Pretendard-ExtraLight</string>
@@ -18,11 +24,17 @@
         <array key="Pretendard-Light.otf">
             <string>Pretendard-Light</string>
         </array>
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
+        </array>
+        <array key="Pretendard-Thin.otf">
+            <string>Pretendard-Thin</string>
         </array>
     </customFonts>
     <objects>
@@ -37,7 +49,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="ewU-Ux-6s7">
-                    <rect key="frame" x="115.5" y="353" width="183.5" height="190.5"/>
+                    <rect key="frame" x="115.5" y="268" width="183.5" height="360.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복님, 오늘 먹을 약이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kQ-mQ-AcD">
                             <rect key="frame" x="0.0" y="0.0" width="183.5" height="20.5"/>
@@ -66,6 +78,30 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복님, 오늘 먹을 약이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aq-sA-ilB">
                             <rect key="frame" x="0.0" y="170" width="183.5" height="20.5"/>
                             <fontDescription key="fontDescription" name="Pretendard-ExtraLight" family="Pretendard" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복님, 오늘 먹을 약이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i72-QD-4Xc">
+                            <rect key="frame" x="0.0" y="212.5" width="183.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Black" family="Pretendard" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복님, 오늘 먹을 약이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssa-gB-OCN">
+                            <rect key="frame" x="0.0" y="255" width="183.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Pretendard-ExtraBold" family="Pretendard" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복님, 오늘 먹을 약이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2T-Xo-zND">
+                            <rect key="frame" x="0.0" y="297.5" width="183.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복님, 오늘 먹을 약이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6l-Ob-NcB">
+                            <rect key="frame" x="0.0" y="340" width="183.5" height="20.5"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Thin" family="Pretendard" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
