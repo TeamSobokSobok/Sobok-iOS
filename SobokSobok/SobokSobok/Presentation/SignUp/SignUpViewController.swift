@@ -62,11 +62,7 @@ final class SignUpViewController: BaseViewController {
     
     @objc private func checkEmailTextField() {
         emailRight = checkEmailRight(input: emailTextField.text ?? "")
-        if emailRight || !emailTextField.hasText {
-            emailWarningStackView.isHidden = true
-        } else {
-            emailWarningStackView.isHidden = false
-        }
+        emailWarningStackView.isHidden = emailRight || !emailTextField.hasText ? true : false
     }
     
     private func checkEmailRight (input: String) -> Bool {
