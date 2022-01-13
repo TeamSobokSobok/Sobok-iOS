@@ -37,13 +37,17 @@ final class SignUpViewController: BaseViewController {
     }
     
     override func style() {
-        // 텍스트필드 corner radius 처리 눈속임
+        // corner radius (텍스트필드, 버튼)
         [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
+        okayButton.makeRounded(radius: 12)
         
-        // 경고문구는 처음에 사라지게 만들기
+        // 초기세팅 : 경고문구 사라지게 만들기
         emailWarningStackView.isHidden = true
         passwordWarningStackView.isHidden = true
         rePasswordWarningStackView.isHidden = true
+        
+        // 초기세팅 : 버튼비활성화
+        okayButton.isEnabled = false
         
         // 네비게이션 바 커스텀
         title = "회원가입"
