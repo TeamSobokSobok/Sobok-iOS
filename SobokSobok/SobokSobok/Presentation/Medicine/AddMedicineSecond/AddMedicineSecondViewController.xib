@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineSecondViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="medicinePeriodButton" destination="lKe-wR-3hf" id="zcv-bL-rYe"/>
+                <outlet property="specificDayView" destination="dHZ-0U-QZf" id="DVR-up-j9C"/>
+                <outlet property="specificPeriodView" destination="g9Y-zU-eyp" id="Zwz-i8-ptT"/>
+                <outlet property="takeMedicineDayLabel" destination="JJx-5B-zfb" id="e9b-fm-e4r"/>
+                <outlet property="takeMedicinePeriodLabel" destination="L1e-1r-Q6T" id="T4M-rL-wt2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="medicineDateButtons" destination="sbu-w9-qCm" collectionClass="NSMutableArray" id="0Rx-RZ-ksY"/>
+                <outletCollection property="medicineDateButtons" destination="75S-lt-ofA" collectionClass="NSMutableArray" id="aYr-i5-e5C"/>
+                <outletCollection property="medicineDateButtons" destination="Wgy-tP-IIA" collectionClass="NSMutableArray" id="O5p-4n-x4o"/>
+                <outletCollection property="selectDateButtons" destination="lKe-wR-3hf" collectionClass="NSMutableArray" id="dLe-4h-Mpv"/>
+                <outletCollection property="selectDateButtons" destination="FEV-z5-XO8" collectionClass="NSMutableArray" id="2k2-pc-f40"/>
+                <outletCollection property="selectDateButtons" destination="kom-0J-pma" collectionClass="NSMutableArray" id="ixQ-2f-yb0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WND-8J-PPk">
+                    <rect key="frame" x="0.0" y="45" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Vtu-UQ-t0d"/>
+                        <constraint firstAttribute="width" constant="48" id="qzW-qL-wmB"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="icBack48"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6Y-fU-zoO">
+                    <rect key="frame" x="364" y="52.5" width="30" height="33"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="다음">
+                        <color key="titleColor" name="dark_mint_main"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 약 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-c7-ODV">
+                    <rect key="frame" x="158.5" y="59" width="97" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복약 기간을 선택해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-Dd-afr">
+                    <rect key="frame" x="20" y="127.5" width="153.5" height="18.5"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKe-wR-3hf">
+                    <rect key="frame" x="20" y="157" width="374" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="mUm-j1-zYn"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="medicinePeriodButtonClicked:" destination="-1" eventType="touchUpInside" id="j6b-qB-ueI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-Jh-otb">
+                    <rect key="frame" x="35" y="173.5" width="298" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMore48" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-DX-thg">
+                    <rect key="frame" x="343" y="160" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="0fy-26-0Jz"/>
+                        <constraint firstAttribute="height" constant="48" id="PgV-VV-pJ0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="얼마나 자주 먹는 약인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFH-fJ-gaE">
+                    <rect key="frame" x="20" y="294" width="161.5" height="18.5"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-YT-7uu">
+                    <rect key="frame" x="20" y="323.5" width="374" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbu-w9-qCm">
+                            <rect key="frame" x="0.0" y="0.0" width="118" height="48"/>
+                            <color key="backgroundColor" name="gray100_sub"/>
+                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="매일">
+                                <color key="titleColor" name="gray500_sub"/>
+                            </state>
+                            <connections>
+                                <action selector="selectMedicinePeriodButton:" destination="-1" eventType="touchUpInside" id="Hol-WF-kor"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75S-lt-ofA">
+                            <rect key="frame" x="128" y="0.0" width="118" height="48"/>
+                            <color key="backgroundColor" name="gray100_sub"/>
+                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="특정 요일">
+                                <color key="titleColor" name="gray500_sub"/>
+                            </state>
+                            <connections>
+                                <action selector="selectMedicinePeriodButton:" destination="-1" eventType="touchUpInside" id="bT4-nq-y1i"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-tP-IIA">
+                            <rect key="frame" x="256" y="0.0" width="118" height="48"/>
+                            <color key="backgroundColor" name="gray100_sub"/>
+                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="특정 간격">
+                                <color key="titleColor" name="gray500_sub"/>
+                            </state>
+                            <connections>
+                                <action selector="selectMedicinePeriodButton:" destination="-1" eventType="touchUpInside" id="yIz-Mt-vsX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="7yf-8c-24g"/>
+                        <constraint firstItem="75S-lt-ofA" firstAttribute="centerX" secondItem="ZGE-YT-7uu" secondAttribute="centerX" id="EkG-Lw-LNb"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-ec-KEi">
+                    <rect key="frame" x="20" y="382.5" width="374" height="0.0"/>
+                    <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHZ-0U-QZf">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEV-z5-XO8">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="54" id="c5c-no-zAE"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="specificDayButtonClicked:" destination="-1" eventType="touchUpInside" id="zAi-tN-muJ"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무슨 요일에 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-5B-zfb">
+                                    <rect key="frame" x="15" y="16.5" width="278" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qa-Kn-wh8">
+                                    <rect key="frame" x="323" y="3" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="RLR-Jq-7aC"/>
+                                        <constraint firstAttribute="width" constant="48" id="g5M-Z8-SLu"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icMore48"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="1qa-Kn-wh8" firstAttribute="centerY" secondItem="dHZ-0U-QZf" secondAttribute="centerY" id="2Cv-nT-Q9R"/>
+                                <constraint firstItem="JJx-5B-zfb" firstAttribute="centerY" secondItem="dHZ-0U-QZf" secondAttribute="centerY" id="342-V6-ugW"/>
+                                <constraint firstItem="FEV-z5-XO8" firstAttribute="top" secondItem="dHZ-0U-QZf" secondAttribute="top" id="MdP-Qn-ZgW"/>
+                                <constraint firstAttribute="trailing" secondItem="1qa-Kn-wh8" secondAttribute="trailing" constant="3" id="Mer-ws-lBX"/>
+                                <constraint firstItem="JJx-5B-zfb" firstAttribute="leading" secondItem="dHZ-0U-QZf" secondAttribute="leading" constant="15" id="Ty1-L2-LjV"/>
+                                <constraint firstAttribute="bottom" secondItem="FEV-z5-XO8" secondAttribute="bottom" id="ape-gp-3iI"/>
+                                <constraint firstAttribute="trailing" secondItem="FEV-z5-XO8" secondAttribute="trailing" id="fbh-2v-tSN"/>
+                                <constraint firstAttribute="height" constant="54" id="foh-CN-2ce"/>
+                                <constraint firstItem="FEV-z5-XO8" firstAttribute="leading" secondItem="dHZ-0U-QZf" secondAttribute="leading" id="gKP-eV-yxK"/>
+                                <constraint firstItem="1qa-Kn-wh8" firstAttribute="leading" secondItem="JJx-5B-zfb" secondAttribute="trailing" constant="30" id="oTN-pc-nUG"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-zU-eyp">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kom-0J-pma">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="specificPeriodButtonClicked:" destination="-1" eventType="touchUpInside" id="RQu-Z5-Ntk"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="며칠 간격으로 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-1r-Q6T">
+                                    <rect key="frame" x="15" y="16.5" width="278" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJK-pZ-mPZ">
+                                    <rect key="frame" x="323" y="3" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="Kkj-36-YUS"/>
+                                        <constraint firstAttribute="height" constant="48" id="wj4-Jr-UmB"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icMore48"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="AJK-pZ-mPZ" secondAttribute="trailing" constant="3" id="1aD-JC-Bpv"/>
+                                <constraint firstAttribute="height" constant="54" id="72j-Bm-9Qi"/>
+                                <constraint firstItem="AJK-pZ-mPZ" firstAttribute="leading" secondItem="L1e-1r-Q6T" secondAttribute="trailing" constant="30" id="BkL-tR-LuY"/>
+                                <constraint firstItem="L1e-1r-Q6T" firstAttribute="leading" secondItem="g9Y-zU-eyp" secondAttribute="leading" constant="15" id="D9n-PK-Ljj"/>
+                                <constraint firstItem="AJK-pZ-mPZ" firstAttribute="centerY" secondItem="g9Y-zU-eyp" secondAttribute="centerY" id="KG4-v0-Hlg"/>
+                                <constraint firstItem="kom-0J-pma" firstAttribute="leading" secondItem="g9Y-zU-eyp" secondAttribute="leading" id="cqK-T3-NwX"/>
+                                <constraint firstAttribute="bottom" secondItem="kom-0J-pma" secondAttribute="bottom" id="dJ4-yO-f36"/>
+                                <constraint firstItem="kom-0J-pma" firstAttribute="top" secondItem="g9Y-zU-eyp" secondAttribute="top" id="lwh-B5-WOT"/>
+                                <constraint firstItem="L1e-1r-Q6T" firstAttribute="centerY" secondItem="g9Y-zU-eyp" secondAttribute="centerY" id="nSP-yt-und"/>
+                                <constraint firstAttribute="trailing" secondItem="kom-0J-pma" secondAttribute="trailing" id="zZj-cA-s14"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ZGE-YT-7uu" firstAttribute="top" secondItem="TFH-fJ-gaE" secondAttribute="bottom" constant="11" id="3Eg-4i-Oes"/>
+                <constraint firstItem="lKe-wR-3hf" firstAttribute="top" secondItem="bOX-Dd-afr" secondAttribute="bottom" constant="11" id="3VK-Zu-QR4"/>
+                <constraint firstItem="bOX-Dd-afr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6yE-JH-gNE"/>
+                <constraint firstItem="ZGE-YT-7uu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Cyv-g8-eFZ"/>
+                <constraint firstItem="WND-8J-PPk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DLO-NI-P2r"/>
+                <constraint firstItem="aIR-ec-KEi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FMh-mB-5XF"/>
+                <constraint firstItem="bOX-Dd-afr" firstAttribute="top" secondItem="cJ0-c7-ODV" secondAttribute="bottom" constant="48" id="H0R-hn-siJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lKe-wR-3hf" secondAttribute="trailing" constant="20" id="KmR-Tc-KNr"/>
+                <constraint firstItem="C6Y-fU-zoO" firstAttribute="centerY" secondItem="WND-8J-PPk" secondAttribute="centerY" id="Ls9-CC-3rQ"/>
+                <constraint firstItem="WND-8J-PPk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="1" id="MFL-gm-mpE"/>
+                <constraint firstItem="TFH-fJ-gaE" firstAttribute="top" secondItem="lKe-wR-3hf" secondAttribute="bottom" constant="83" id="Phy-uw-1aT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C6Y-fU-zoO" secondAttribute="trailing" constant="20" id="PoR-oi-Jbq"/>
+                <constraint firstItem="lKe-wR-3hf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R5a-op-ig9"/>
+                <constraint firstItem="TFH-fJ-gaE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rl8-dH-qvN"/>
+                <constraint firstItem="yve-Jh-otb" firstAttribute="leading" secondItem="lKe-wR-3hf" secondAttribute="leading" constant="15" id="Vv0-uB-kWv"/>
+                <constraint firstItem="Gf8-DX-thg" firstAttribute="leading" secondItem="yve-Jh-otb" secondAttribute="trailing" constant="10" id="f9w-o3-Usf"/>
+                <constraint firstItem="cJ0-c7-ODV" firstAttribute="centerY" secondItem="WND-8J-PPk" secondAttribute="centerY" id="ftr-kY-yz8"/>
+                <constraint firstItem="cJ0-c7-ODV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jN9-x6-FEU"/>
+                <constraint firstItem="aIR-ec-KEi" firstAttribute="top" secondItem="ZGE-YT-7uu" secondAttribute="bottom" constant="11" id="lKV-2I-dSP"/>
+                <constraint firstItem="yve-Jh-otb" firstAttribute="centerY" secondItem="lKe-wR-3hf" secondAttribute="centerY" id="lLK-y6-acf"/>
+                <constraint firstItem="Gf8-DX-thg" firstAttribute="centerY" secondItem="lKe-wR-3hf" secondAttribute="centerY" id="q53-I5-elL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aIR-ec-KEi" secondAttribute="trailing" constant="20" id="wvU-G7-5Gm"/>
+                <constraint firstItem="Gf8-DX-thg" firstAttribute="trailing" secondItem="lKe-wR-3hf" secondAttribute="trailing" constant="-3" id="xGm-pE-hoX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZGE-YT-7uu" secondAttribute="trailing" constant="20" id="zo1-IP-Vxd"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icBack48" width="48" height="48"/>
+        <image name="icMore48" width="48" height="48"/>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray100_sub">
+            <color red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray500_sub">
+            <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
