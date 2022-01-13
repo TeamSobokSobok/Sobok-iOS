@@ -16,7 +16,9 @@ final class SignInViewController: BaseViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextFieldView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextFieldView: UIView!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
 
@@ -24,11 +26,16 @@ final class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         checkTextField()
         securePassword()
     }
     
     // MARK: - Functions
+    private func setUI() {
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+    }
     
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true

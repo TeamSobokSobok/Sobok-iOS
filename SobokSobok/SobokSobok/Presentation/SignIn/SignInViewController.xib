@@ -13,8 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="YZl-h0-FMo" id="E3r-OX-rav"/>
+                <outlet property="emailTextFieldView" destination="XtQ-P5-jc8" id="qEI-ha-m4b"/>
                 <outlet property="logInButton" destination="LCW-KU-cVb" id="nMn-9l-UHP"/>
                 <outlet property="passwordTextField" destination="8ka-MS-Fr1" id="h5W-g7-0Cd"/>
+                <outlet property="passwordTextFieldView" destination="C1Q-Fi-4p2" id="heH-64-TAh"/>
                 <outlet property="signUpButton" destination="Af8-eg-Ymd" id="Mab-u8-fkO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -35,33 +37,57 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="dhK-Tf-KKv" userLabel="세로">
                     <rect key="frame" x="20" y="237" width="374" height="119"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-h0-FMo" userLabel="이메일">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtQ-P5-jc8" userLabel="이메일텍스트뷰">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-h0-FMo" userLabel="이메일">
+                                    <rect key="frame" x="15" y="15" width="344" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="4K9-fe-Xhh"/>
+                                <constraint firstItem="YZl-h0-FMo" firstAttribute="leading" secondItem="XtQ-P5-jc8" secondAttribute="leading" constant="15" id="0aB-40-jet"/>
+                                <constraint firstItem="YZl-h0-FMo" firstAttribute="top" secondItem="XtQ-P5-jc8" secondAttribute="top" constant="15" id="EQa-ds-XcK"/>
+                                <constraint firstAttribute="bottom" secondItem="YZl-h0-FMo" secondAttribute="bottom" constant="15" id="QNh-uZ-YMU"/>
+                                <constraint firstAttribute="trailing" secondItem="YZl-h0-FMo" secondAttribute="trailing" constant="15" id="R5b-An-cIE"/>
+                                <constraint firstAttribute="height" constant="54" id="YzW-9A-J1O"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="12"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1Q-Fi-4p2" userLabel="비밀번호텍스트뷰">
                             <rect key="frame" x="0.0" y="65" width="374" height="54"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
+                                    <rect key="frame" x="15" y="15" width="344" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="JbF-73-M00"/>
+                                <constraint firstAttribute="bottom" secondItem="8ka-MS-Fr1" secondAttribute="bottom" constant="15" id="6Au-dL-uJL"/>
+                                <constraint firstItem="8ka-MS-Fr1" firstAttribute="leading" secondItem="C1Q-Fi-4p2" secondAttribute="leading" constant="15" id="QMc-S1-ySn"/>
+                                <constraint firstItem="8ka-MS-Fr1" firstAttribute="top" secondItem="C1Q-Fi-4p2" secondAttribute="top" constant="15" id="n91-Pu-r6e"/>
+                                <constraint firstAttribute="height" constant="54" id="qZt-go-cD6"/>
+                                <constraint firstAttribute="trailing" secondItem="8ka-MS-Fr1" secondAttribute="trailing" constant="15" id="rrB-EW-hlz"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="12"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
+                        </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="C1Q-Fi-4p2" firstAttribute="centerX" secondItem="dhK-Tf-KKv" secondAttribute="centerX" id="5Y9-dy-fye"/>
+                        <constraint firstItem="XtQ-P5-jc8" firstAttribute="centerX" secondItem="dhK-Tf-KKv" secondAttribute="centerX" id="wdn-OG-2do"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-KU-cVb">
                     <rect key="frame" x="20" y="382" width="374" height="54"/>
