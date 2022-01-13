@@ -100,13 +100,13 @@ extension TabBarController: UITabBarControllerDelegate {
         let tabBarItemIndex = viewController.tabBarItem.tag
         
         if tabBarItemIndex == 3 {
-            let addPeopleViewController = AddMedicineSheet.instanceFromNib()
-            addPeopleViewController.modalPresentationStyle = .overCurrentContext
-            addPeopleViewController.modalTransitionStyle = .crossDissolve            
-            self.present(addPeopleViewController, animated: false
+            let addMedicineSheet = AddMedicineSheet.instanceFromNib()
+            addMedicineSheet.modalPresentationStyle = .overCurrentContext
+            addMedicineSheet.modalTransitionStyle = .crossDissolve
+            self.present(addMedicineSheet, animated: false
             ) {
                 DispatchQueue.main.async {
-                    addPeopleViewController.sheetWithAnimation()
+                    addMedicineSheet.sheetWithAnimation()
                 }
             }
             return false
