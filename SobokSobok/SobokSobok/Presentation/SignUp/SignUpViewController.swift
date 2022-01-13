@@ -9,6 +9,11 @@ import UIKit
 
 final class SignUpViewController: BaseViewController {
 
+    // MARK: Properties
+    var emailRight: Bool = false
+    var passwordRight: Bool = false
+    var rePasswordRight: Bool = false
+    
     // MARK: @IBOutlet Properties
     @IBOutlet weak var okayButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,21 +26,43 @@ final class SignUpViewController: BaseViewController {
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         checkTextField()
     }
     
     // MARK: Functions
+    private func setUI() {
+        emailTextField.cornerRadius = 12
+    }
+    
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true
         rePasswordTextField.isSecureTextEntry = true
     }
-
+    
     private func checkTextField() {
-        okayButton.isEnabled = false
-        [emailTextField, passwordTextField, rePasswordTextField].forEach {
-        $0.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)}
+        emailWarningStackView.isHidden = true
+        emailTextField.addTarget(self, action: #selector(self.checkEmailTextField), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.checkPasswordTextField), for: .editingChanged)
+        rePasswordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
     }
     
+    @objc private func checkEmailTextField() {
+        if emailRight || !emailTextField.hasText {
+            emailWarningStackView.isHidden = true
+        } else {
+            emailWarningStackView.isHidden = false
+        }
+    }
+    
+    @objc private func checkPasswordTextField() {
+        
+    }
+    
+    @objc private func checkRepasswordTextField() {
+        
+    }
+
     // Alert
     func tempAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -45,11 +72,7 @@ final class SignUpViewController: BaseViewController {
     }
     
     @objc func activateOkayButton(_ : UIButton) {
-        let emailFilled = emailTextField.hasText
-        let passwordFilled = passwordTextField.hasText
-        let rePasswordFilled = rePasswordTextField.hasText
-        
-        okayButton.isEnabled = emailFilled && passwordFilled && rePasswordFilled ? true : false
+        okayButton.isEnabled = emailRight && passwordRight && rePasswordRight ? true : false
     }
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
