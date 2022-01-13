@@ -61,11 +61,19 @@ final class SignUpViewController: BaseViewController {
     }
     
     @objc private func checkEmailTextField() {
+        emailRight = checkEmailRight(input: emailTextField.text ?? "")
         if emailRight || !emailTextField.hasText {
             emailWarningStackView.isHidden = true
         } else {
             emailWarningStackView.isHidden = false
         }
+    }
+    
+    private func checkEmailRight (input: String) -> Bool {
+        // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자]
+        let validEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", validEmail)
+          return emailTest.evaluate(with: input)
     }
     
     @objc private func checkPasswordTextField() {
