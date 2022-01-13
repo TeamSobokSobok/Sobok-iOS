@@ -19,7 +19,6 @@ final class SignInViewController: BaseViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var autoLogIn: UIButton!
 
     // MARK: - View Life Cycle
     
@@ -63,10 +62,6 @@ final class SignInViewController: BaseViewController {
     }
     
     // MARK: @IBAction Properties
-    @IBAction func touchUpToSetAutoLogIn(_ sender: UIButton) {
-        isSetAutoLogin ? autoLogIn.setImage(UIImage(systemName: "square"), for: .normal) : autoLogIn.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-        isSetAutoLogin.toggle()
-    }
     
     @IBAction func touchUpToLogin(_ sender: UIButton) {
         tempAlert(title: "로그인", message: "이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")

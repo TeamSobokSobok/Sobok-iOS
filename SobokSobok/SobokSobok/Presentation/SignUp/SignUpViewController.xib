@@ -37,7 +37,9 @@
                     </constraints>
                     <color key="tintColor" name="mint_main"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="확인"/>
+                    <buttonConfiguration key="configuration" style="filled" title="확인">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                    </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="12"/>
