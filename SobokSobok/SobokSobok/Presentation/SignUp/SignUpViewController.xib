@@ -17,8 +17,10 @@
                 <outlet property="emailWarningStackView" destination="itb-y6-TcY" id="AAy-3c-HEM"/>
                 <outlet property="okayButton" destination="3jM-k7-QOd" id="ERo-gL-PCg"/>
                 <outlet property="passwordTextField" destination="LU6-Xm-bpc" id="xjf-Mb-Ohh"/>
+                <outlet property="passwordTextFieldView" destination="8wN-5t-vpk" id="Kra-E1-3P2"/>
                 <outlet property="passwordWarningStackView" destination="Ydh-UF-cgO" id="Zn4-FH-b3H"/>
                 <outlet property="rePasswordTextField" destination="fO5-Vf-KYD" id="5Rf-u1-tHh"/>
+                <outlet property="rePasswordTextFieldView" destination="Dcb-J4-rZh" id="lv2-eB-dYV"/>
                 <outlet property="rePasswordWarningStackView" destination="2ez-ye-BIa" id="JBY-qC-RbD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -94,14 +96,24 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="8~16자의 영문, 숫자, 특수문자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LU6-Xm-bpc" userLabel="비밀번호">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wN-5t-vpk" userLabel="비밀번호텍스트필드">
                             <rect key="frame" x="0.0" y="26" width="374" height="54"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="8~16자의 영문, 숫자, 특수문자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LU6-Xm-bpc" userLabel="비밀번호">
+                                    <rect key="frame" x="15" y="15" width="344" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="du9-Wz-7CL"/>
+                                <constraint firstAttribute="height" constant="54" id="2sx-9O-h0A"/>
+                                <constraint firstItem="LU6-Xm-bpc" firstAttribute="leading" secondItem="8wN-5t-vpk" secondAttribute="leading" constant="15" id="6w1-hq-x2y"/>
+                                <constraint firstAttribute="trailing" secondItem="LU6-Xm-bpc" secondAttribute="trailing" constant="15" id="Zuh-dN-ywv"/>
+                                <constraint firstItem="LU6-Xm-bpc" firstAttribute="top" secondItem="8wN-5t-vpk" secondAttribute="top" constant="15" id="h7E-ih-hAH"/>
+                                <constraint firstAttribute="bottom" secondItem="LU6-Xm-bpc" secondAttribute="bottom" constant="15" id="yGd-QF-Tln"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-UF-cgO" userLabel="비밀번호형식은어쩌구">
                             <rect key="frame" x="0.0" y="88" width="268.5" height="18"/>
                             <subviews>
@@ -123,7 +135,7 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="LU6-Xm-bpc" firstAttribute="centerX" secondItem="ljr-Y9-NfJ" secondAttribute="centerX" id="K1v-cz-q5s"/>
+                        <constraint firstItem="8wN-5t-vpk" firstAttribute="centerX" secondItem="ljr-Y9-NfJ" secondAttribute="centerX" id="ASm-gh-42Z"/>
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-dZ-aEK" userLabel="비밀번호 재입력 스택">
@@ -135,14 +147,24 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 한번 더 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-Vf-KYD" userLabel="비밀번호 재입력">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcb-J4-rZh" userLabel="비밀번호재입력 텍스트필드">
                             <rect key="frame" x="0.0" y="26" width="374" height="54"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 한번 더 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-Vf-KYD" userLabel="비밀번호 재입력">
+                                    <rect key="frame" x="15" y="15" width="344" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="aMu-9a-iZW"/>
+                                <constraint firstAttribute="bottom" secondItem="fO5-Vf-KYD" secondAttribute="bottom" constant="15" id="Nsv-YZ-o3n"/>
+                                <constraint firstAttribute="trailing" secondItem="fO5-Vf-KYD" secondAttribute="trailing" constant="15" id="dHi-Wy-LFd"/>
+                                <constraint firstAttribute="height" constant="54" id="eN2-Pb-vH7"/>
+                                <constraint firstItem="fO5-Vf-KYD" firstAttribute="top" secondItem="Dcb-J4-rZh" secondAttribute="top" constant="15" id="uOM-f5-flE"/>
+                                <constraint firstItem="fO5-Vf-KYD" firstAttribute="leading" secondItem="Dcb-J4-rZh" secondAttribute="leading" constant="15" id="zjd-sC-S8e"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2ez-ye-BIa" userLabel="비밀번호가 일치하지 않아요">
                             <rect key="frame" x="0.0" y="88" width="152.5" height="18"/>
                             <subviews>
@@ -164,7 +186,7 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="fO5-Vf-KYD" firstAttribute="centerX" secondItem="KeA-dZ-aEK" secondAttribute="centerX" id="g3e-f8-MNd"/>
+                        <constraint firstItem="Dcb-J4-rZh" firstAttribute="centerX" secondItem="KeA-dZ-aEK" secondAttribute="centerX" id="e91-IP-cTu"/>
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jM-k7-QOd">

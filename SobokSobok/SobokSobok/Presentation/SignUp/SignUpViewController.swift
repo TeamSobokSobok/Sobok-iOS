@@ -16,10 +16,14 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: @IBOutlet Properties
     @IBOutlet weak var okayButton: UIButton!
+    // 텍스트필드
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextFieldView: UIView!
     @IBOutlet weak var rePasswordTextField: UITextField!
+    @IBOutlet weak var rePasswordTextFieldView: UIView!
+    // 경고문
     @IBOutlet weak var emailWarningStackView: UIStackView!
     @IBOutlet weak var passwordWarningStackView: UIStackView!
     @IBOutlet weak var rePasswordWarningStackView: UIStackView!
@@ -34,6 +38,8 @@ final class SignUpViewController: BaseViewController {
     // MARK: Functions
     private func setUI() {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        rePasswordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
     
     private func securePassword() {
