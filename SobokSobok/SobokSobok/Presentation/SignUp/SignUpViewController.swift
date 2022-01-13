@@ -66,8 +66,8 @@ final class SignUpViewController: BaseViewController {
     private func checkTextField() {
         emailTextField.addTarget(self, action: #selector(self.checkEmailTextField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(self.checkPasswordTextField), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
-        rePasswordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
+        [passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)}
+        [emailTextField, passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)}
     }
     
     // 정규식 체크
