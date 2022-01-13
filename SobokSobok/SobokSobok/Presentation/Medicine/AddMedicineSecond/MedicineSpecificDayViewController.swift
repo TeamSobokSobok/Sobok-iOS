@@ -54,10 +54,8 @@ final class MedicineSpecificDayViewController: BaseViewController {
 // MARK: UITableViewDelegate
 extension MedicineSpecificDayViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         guard let cell = tableView.cellForRow(at: indexPath) as? MedicineDayTableViewCell else { return }
-        
-        cell.vCheckImage.isHidden = !cell.vCheckImage.isHidden
+        cell.vCheckImage.isHidden.toggle()
     }
 }
 
@@ -69,7 +67,6 @@ extension MedicineSpecificDayViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MedicineDayTableViewCell.self)
-        
         cell.dayLabel.text = dayList[indexPath.row]
         return cell
     }

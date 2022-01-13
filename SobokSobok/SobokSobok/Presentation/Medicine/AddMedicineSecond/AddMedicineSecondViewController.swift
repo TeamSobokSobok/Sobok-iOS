@@ -66,10 +66,10 @@ final class AddMedicineSecondViewController: BaseViewController {
     // MARK: - @IBActions
     
     @IBAction func selectMedicinePeriodButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
         let index = sender.tag
         switch index {
         case MedicineDayType.everyday.rawValue:
-            sender.isSelected = !sender.isSelected
             if sender.isSelected {
                 specificDayView.isHidden = true
                 specificPeriodView.isHidden = true
@@ -82,7 +82,6 @@ final class AddMedicineSecondViewController: BaseViewController {
                 updateMedicineButtonAttributes(button: medicineDateButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             }
         case MedicineDayType.specificDay.rawValue:
-            sender.isSelected = !sender.isSelected
             if sender.isSelected {                specificDayView.isHidden = false
                 specificPeriodView.isHidden = true
                 medicineDateButtons[0].isSelected = false
@@ -96,7 +95,6 @@ final class AddMedicineSecondViewController: BaseViewController {
                 updateMedicineButtonAttributes(button: medicineDateButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             }
         case MedicineDayType.specificPeriod.rawValue:
-            sender.isSelected = !sender.isSelected
             if sender.isSelected {
                 specificDayView.isHidden = true
                 specificPeriodView.isHidden = false

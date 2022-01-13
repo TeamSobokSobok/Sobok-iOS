@@ -28,7 +28,6 @@ final class MedicineSpecificPeriodViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
         assignDelegate()
     }
     
@@ -39,15 +38,16 @@ final class MedicineSpecificPeriodViewController: BaseViewController {
         }
     }
     
+    override func style() {
+        super.style()
+        mainView.makeRounded(radius: 15)
+    }
+    
     // MARK: - Functions
     
     private func assignDelegate() {
         dayPeriodPickerView.dataSource = self
         dayPeriodPickerView.delegate = self
-    }
-    
-    private func setUI() {
-        mainView.makeRounded(radius: 15)
     }
 }
 
@@ -64,19 +64,11 @@ extension MedicineSpecificPeriodViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return dayList.count
-        } else {
-            return periodList.count
-        }
+        component == 0 ? dayList.count : periodList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return dayList[row]
-        } else {
-            return periodList[row]
-        }
+        component == 0 ? dayList[row] : periodList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
