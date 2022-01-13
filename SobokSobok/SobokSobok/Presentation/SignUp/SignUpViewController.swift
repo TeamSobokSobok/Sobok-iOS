@@ -38,9 +38,7 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: Functions
     private func setUI() {
-        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
-        passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
-        rePasswordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
     }
     
     private func securePassword() {
