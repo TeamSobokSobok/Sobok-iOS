@@ -38,39 +38,54 @@
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-h0-FMo" userLabel="이메일">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="aXA-QA-IJ3"/>
+                                <constraint firstAttribute="height" constant="54" id="4K9-fe-Xhh"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
                             <rect key="frame" x="0.0" y="65" width="374" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="e5j-FN-iYP"/>
+                                <constraint firstAttribute="height" constant="54" id="JbF-73-M00"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCW-KU-cVb">
-                    <rect key="frame" x="20" y="382" width="374" height="52"/>
-                    <color key="backgroundColor" name="dark_mint_main"/>
+                    <rect key="frame" x="20" y="382" width="374" height="54"/>
+                    <color key="backgroundColor" name="mint_main"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="52" id="v5r-NH-KPG"/>
+                        <constraint firstAttribute="height" constant="54" id="wvX-d9-ygX"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="로그인"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="touchUpToLogin:" destination="-1" eventType="touchUpInside" id="wNu-HE-u7p"/>
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="NTi-HC-67E" userLabel="가로">
-                    <rect key="frame" x="81" y="460" width="252" height="31"/>
+                    <rect key="frame" x="120.5" y="462" width="173" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af8-eg-Ymd">
-                            <rect key="frame" x="0.0" y="0.0" width="113" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
                             <color key="tintColor" name="black_sub"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="회원가입"/>
@@ -79,27 +94,23 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUZ-2q-EBG">
-                            <rect key="frame" x="124" y="0.0" width="4" height="31"/>
+                            <rect key="frame" x="63" y="0.0" width="4" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeI-T6-NE2">
-                            <rect key="frame" x="139" y="0.0" width="113" height="31"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-11-usa">
+                            <rect key="frame" x="78" y="0.0" width="95" height="30"/>
                             <color key="tintColor" name="black_sub"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="비밀번호 재설정"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="비밀번호 재설정"/>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="sUZ-2q-EBG" firstAttribute="centerX" secondItem="NTi-HC-67E" secondAttribute="centerX" id="bs0-tH-Gcc"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="NTi-HC-67E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4TL-Nd-KJr"/>
                 <constraint firstItem="LCW-KU-cVb" firstAttribute="top" secondItem="dhK-Tf-KKv" secondAttribute="bottom" constant="26" id="6ug-X0-eHk"/>
                 <constraint firstItem="b91-7B-Gbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7W4-Ej-Jhh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b91-7B-Gbf" secondAttribute="trailing" constant="20" id="8nN-4H-xb1"/>
@@ -109,6 +120,7 @@
                 <constraint firstItem="dhK-Tf-KKv" firstAttribute="top" secondItem="b91-7B-Gbf" secondAttribute="bottom" constant="41" id="Rrv-oe-RJ3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dhK-Tf-KKv" secondAttribute="trailing" constant="20" id="ajG-2G-auV"/>
                 <constraint firstItem="LCW-KU-cVb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pD4-kM-6wB"/>
+                <constraint firstItem="NTi-HC-67E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tfV-Zy-pfQ"/>
                 <constraint firstItem="dhK-Tf-KKv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zzD-Zf-rQk"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
@@ -118,8 +130,8 @@
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="dark_mint_main">
-            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
