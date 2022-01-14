@@ -7,6 +7,8 @@
 
 import UIKit
 
+import FSCalendar
+
 final class MainViewController: BaseViewController {
 
     // MARK: - UI

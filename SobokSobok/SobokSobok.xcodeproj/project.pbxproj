@@ -47,6 +47,7 @@
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
 		BD9857A22791CA97009883FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A02791CA97009883FC /* MainViewController.swift */; };
 		BD9857A32791CA97009883FC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* MainViewController.xib */; };
+		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
 		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
@@ -187,6 +188,7 @@
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
 				BDFE75DE278786AE00014BE1 /* Then in Frameworks */,
 				EC950EF027906F0C00A34027 /* Lottie in Frameworks */,
+				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
 				BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
@@ -641,6 +643,7 @@
 				BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */,
 				BDFE75DD278786AE00014BE1 /* Then */,
 				EC950EEF27906F0C00A34027 /* Lottie */,
+				BD9857A52791CE27009883FC /* FSCalendar */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -679,6 +682,7 @@
 				BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */,
 				EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -1084,6 +1088,14 @@
 				kind = branch;
 			};
 		};
+		BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1135,6 +1147,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */;
 			productName = EasyKit;
+		};
+		BD9857A52791CE27009883FC /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
