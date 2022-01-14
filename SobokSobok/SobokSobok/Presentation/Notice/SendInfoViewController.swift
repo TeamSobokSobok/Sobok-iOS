@@ -115,6 +115,8 @@ extension SendInfoViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.row {
+        case 0:
+            return CGSize(width: 335, height: 48)
         case sendInfoList.count:
             return CGSize(width: 335, height: 76)
         default:

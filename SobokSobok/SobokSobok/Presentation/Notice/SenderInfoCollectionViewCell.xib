@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-sp-xMb">
-                        <rect key="frame" x="20" y="18" width="164" height="19"/>
+                        <rect key="frame" x="20" y="27" width="164" height="18.5"/>
                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
                         <color key="textColor" name="gray700_sub"/>
                         <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
             <color key="backgroundColor" name="white_sub"/>
             <constraints>
                 <constraint firstItem="PeE-sp-xMb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="4EN-dC-01V"/>
-                <constraint firstAttribute="bottom" secondItem="PeE-sp-xMb" secondAttribute="bottom" constant="11" id="ymE-Ch-37I"/>
+                <constraint firstItem="PeE-sp-xMb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="27" id="8KD-qD-KWI"/>
             </constraints>
             <connections>
                 <outlet property="senderInfoLabel" destination="PeE-sp-xMb" id="PQ7-0k-ly8"/>
