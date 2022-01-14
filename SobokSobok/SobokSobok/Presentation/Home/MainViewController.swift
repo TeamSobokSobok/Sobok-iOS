@@ -29,6 +29,8 @@ final class MainViewController: BaseViewController {
             calendarAnimatedState ?
             calendar.setScope(.month, animated: true) :
             calendar.setScope(.week, animated: true)
+            
+            scopeLabel.text = calendarAnimatedState ? "월" : "주"
         }
     }
     
