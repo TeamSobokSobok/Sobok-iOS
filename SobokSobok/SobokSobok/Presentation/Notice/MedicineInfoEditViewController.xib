@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,14 +17,55 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="987"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGe-1V-jMK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="865"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lug-hc-0pQ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="865"/>
+                            <color key="backgroundColor" name="white_sub"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="lug-hc-0pQ" firstAttribute="leading" secondItem="dGe-1V-jMK" secondAttribute="leading" id="S8W-te-XTG"/>
+                        <constraint firstAttribute="bottom" secondItem="lug-hc-0pQ" secondAttribute="bottom" id="lzn-tz-E3r"/>
+                        <constraint firstItem="lug-hc-0pQ" firstAttribute="width" secondItem="IWW-eH-6jN" secondAttribute="width" id="oVJ-RD-2vy"/>
+                        <constraint firstItem="lug-hc-0pQ" firstAttribute="top" secondItem="dGe-1V-jMK" secondAttribute="top" id="tmE-RU-wop"/>
+                        <constraint firstItem="lug-hc-0pQ" firstAttribute="height" secondItem="IWW-eH-6jN" secondAttribute="height" priority="250" id="wLz-yR-DUm"/>
+                        <constraint firstAttribute="trailing" secondItem="lug-hc-0pQ" secondAttribute="trailing" id="y6d-9v-RDh"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="yHe-qI-Pnn"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="IWW-eH-6jN"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-r2-FRw">
+                    <rect key="frame" x="0.0" y="865" width="375" height="122"/>
+                    <color key="backgroundColor" name="white_sub"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="122" id="xXd-vY-8DL"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="84"/>
+            <constraints>
+                <constraint firstItem="dGe-1V-jMK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5XE-SK-w9a"/>
+                <constraint firstItem="oDj-r2-FRw" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Dlq-Rv-RDC"/>
+                <constraint firstItem="oDj-r2-FRw" firstAttribute="top" secondItem="dGe-1V-jMK" secondAttribute="bottom" id="Ej5-Ga-Adu"/>
+                <constraint firstItem="oDj-r2-FRw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N8U-4j-2Vy"/>
+                <constraint firstAttribute="trailing" secondItem="oDj-r2-FRw" secondAttribute="trailing" id="QbC-gr-M5h"/>
+                <constraint firstItem="dGe-1V-jMK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gcQ-Qt-Gur"/>
+                <constraint firstItem="dGe-1V-jMK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tgm-nz-bRW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="132" y="83.128078817733993"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
