@@ -47,6 +47,9 @@ final class SignUpViewController: BaseViewController {
         // 버튼비활성화
         confirmButton.isEnabled = false
         
+        // 비밀번호 안보이게하기
+        [passwordTextField, rePasswordTextField].forEach({$0.isSecureTextEntry = true})
+        
         // 네비게이션 바 커스텀
         title = "회원가입"
         let backButton = UIBarButtonItem()
