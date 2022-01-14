@@ -18,8 +18,8 @@ final class MainViewController: BaseViewController {
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var collectionView: UIView!
+
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     let someDates = ["2022-01-09", "2022-01-22", "2022-01-30"]
@@ -50,6 +50,11 @@ final class MainViewController: BaseViewController {
         super.viewDidLoad()
         setCalendar()
         setCalendarStyle()
+        setCollectionView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setCollectionViewHeight()
     }
 
     override func style() {
@@ -78,6 +83,16 @@ final class MainViewController: BaseViewController {
         calendar.appearance.titleDefaultColor = Color.black
         calendar.appearance.titleTodayColor = Color.black
         calendar.appearance.todayColor = .clear
+    }
+    
+    private func setCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(MedicineCollectionViewCell.self)
+        collectionView.register(TimeHeaderView.nib,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: TimeHeaderView.reuseIdentifier)
+        self.view.layoutIfNeeded()
     }
     
     @IBAction func scopeButtonTapped(_ sender: Any) {
@@ -154,5 +169,70 @@ extension MainViewController: FSCalendarDelegateAppearance {
             let position = calendar.monthPosition(for: cell)
             self.configure(cell: cell, for: date!, at: position)
         }
+    }
+}
+
+// MARK: - CollectionView
+
+extension MainViewController: CollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MedicineCollectionViewCell.self)
+        cell.contentView.backgroundColor = Color.white
+        cell.contentView.makeRounded(radius: 12)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: TimeHeaderView.reuseIdentifier,
+                for: indexPath
+            ) as? TimeHeaderView else { return UICollectionReusableView() }
+            if indexPath.section == 0 {
+                headerView.editButtonStackView.isHidden = false
+            } else {
+                headerView.editButtonStackView.isHidden = true
+            }
+            return headerView
+        default:
+            assert(false, "헤더 뷰 찾을 수 없음")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let width: CGFloat = collectionView.frame.width
+        let height: CGFloat = 77
+        return CGSize(width: width, height: height)
+    }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func setCollectionViewHeight() {
+        collectionViewHeight.constant = collectionView.contentSize.height
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        let width = 335 / 375 * screenWidth
+        let height = width * 140 / 335
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }
