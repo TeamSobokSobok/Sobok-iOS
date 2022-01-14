@@ -16,10 +16,16 @@ final class MainViewController: BaseViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
     
+    @IBOutlet weak var calendar: FSCalendar! {
+        didSet {
+            calendar.delegate = self
+            calendar.dataSource = self
+        }
+    }
+    @IBOutlet weak var calendarHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func style() {
@@ -28,4 +34,12 @@ final class MainViewController: BaseViewController {
     
     @IBAction func scopeButtonTapped(_ sender: Any) {
     }
+}
+
+// MARK: - FSCalendar
+
+extension MainViewController: FSCalendarDelegate {}
+
+extension MainViewController: FSCalendarDataSource {
+    
 }
