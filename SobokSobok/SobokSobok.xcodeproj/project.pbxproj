@@ -35,6 +35,10 @@
 		BD51AE2D27906CC000314A94 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE2C27906CC000314A94 /* Font.swift */; };
 		BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */; };
 		BD51AE312790701800314A94 /* TypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE302790701800314A94 /* TypoStyle.swift */; };
+		BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE352790A97400314A94 /* StickerBottomSheet.swift */; };
+		BD51AE382790A97400314A94 /* StickerBottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE362790A97400314A94 /* StickerBottomSheet.xib */; };
+		BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE3A2790BF1500314A94 /* StickerCollectionViewCell.swift */; };
+		BD51AE3D2790BF1500314A94 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */; };
 		BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8E92788A01C009249D0 /* .swiftlint.yml */; };
 		BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */; };
 		BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */; };
@@ -116,6 +120,10 @@
 		BD51AE2C27906CC000314A94 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		BD51AE302790701800314A94 /* TypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoStyle.swift; sourceTree = "<group>"; };
+		BD51AE352790A97400314A94 /* StickerBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerBottomSheet.swift; sourceTree = "<group>"; };
+		BD51AE362790A97400314A94 /* StickerBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickerBottomSheet.xib; sourceTree = "<group>"; };
+		BD51AE3A2790BF1500314A94 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = SobokSobok/Presentation/Common/Sheet/StickerCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = SobokSobok/Presentation/Common/Sheet/StickerCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		BD64F8E92788A01C009249D0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -358,6 +366,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD51AE342790A93200314A94 /* Sheet */,
 				BD515E74278778FD003BD5A4 /* Sample */,
 				BD515E6E2787784D003BD5A4 /* BaseViewController.swift */,
 				F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */,
@@ -492,6 +501,25 @@
 				BD515E71278778F9003BD5A4 /* SampleViewController.xib */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		BD51AE342790A93200314A94 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				BD51AE392790BE3400314A94 /* StickerBottomSheet */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
+		BD51AE392790BE3400314A94 /* StickerBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				BD51AE352790A97400314A94 /* StickerBottomSheet.swift */,
+				BD51AE362790A97400314A94 /* StickerBottomSheet.xib */,
+				BD51AE3A2790BF1500314A94 /* StickerCollectionViewCell.swift */,
+				BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */,
+			);
+			path = StickerBottomSheet;
 			sourceTree = "<group>";
 		};
 		BDD21A9C278D8E35007D10F6 /* Views */ = {
@@ -681,6 +709,7 @@
 				F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
+				BD51AE382790A97400314A94 /* StickerBottomSheet.xib in Resources */,
 				ECAE92F2278D7EC90026D59A /* AddPeopleViewController.xib in Resources */,
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */,
@@ -693,6 +722,7 @@
 				ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */,
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
 				BD51AE252790640300314A94 /* Pretendard-Black.otf in Resources */,
+				BD51AE3D2790BF1500314A94 /* StickerCollectionViewCell.xib in Resources */,
 				BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,6 +775,7 @@
 			files = (
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
+				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
@@ -764,6 +795,7 @@
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
+				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
@@ -924,7 +956,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQHZUCMHSH;
+				DEVELOPMENT_TEAM = W895YM7ZMH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";
@@ -956,7 +988,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQHZUCMHSH;
+				DEVELOPMENT_TEAM = W895YM7ZMH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";

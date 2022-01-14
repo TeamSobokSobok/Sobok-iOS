@@ -45,4 +45,5 @@ public enum Image {
 	public static let icBackSmall48 = UIImage(named: "icBackSmall48")!
 	public static let icCheckButton48 = UIImage(named: "icCheckButton48")!
 	public static let icVCheck = UIImage(named: "icVCheck")!
+	public static let icSobok = UIImage(named: "icSobok")!
 }
