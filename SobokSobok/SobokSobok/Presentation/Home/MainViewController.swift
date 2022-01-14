@@ -34,7 +34,6 @@ final class MainViewController: BaseViewController {
             calendarAnimatedState ?
             calendar.setScope(.month, animated: true) :
             calendar.setScope(.week, animated: true)
-            
             scopeLabel.text = calendarAnimatedState ? "월" : "주"
         }
     }
@@ -45,6 +44,17 @@ final class MainViewController: BaseViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    fileprivate let kformatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M월 d일 EEEE"
+        return formatter
+    }()
+    
+    var selectedDate: String = "" {
+        didSet {
+            dateLabel.text = selectedDate
+        }
+    }
     
     // 데이터라고 가정
     fileprivate var pillNames: [String] = ["홍삼", "비타민C", "루테인", "혈압약", "알로에", "당뇨약"] {
@@ -72,6 +82,7 @@ final class MainViewController: BaseViewController {
         titleLabel.setTypoStyle(typoStyle: .header1)
         dateLabel.setTypoStyle(typoStyle: .title2)
         scopeLabel.setTypoStyle(typoStyle: .body7)
+        selectedDate = kformatter.string(from: Date())
     }
     
     // MARK: - Functions
@@ -93,6 +104,7 @@ final class MainViewController: BaseViewController {
         calendar.appearance.titleDefaultColor = Color.black
         calendar.appearance.titleTodayColor = Color.black
         calendar.appearance.todayColor = .clear
+        calendar.placeholderType = .none
     }
     
     private func setCollectionView() {
@@ -171,6 +183,8 @@ extension MainViewController: FSCalendarDataSource {
 extension MainViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         pillNames = pillNames.reversed()
+        selectedDate = kformatter.string(from: date)
+        
         calendar.select(date)
         self.configureVisibleCells()
     }
