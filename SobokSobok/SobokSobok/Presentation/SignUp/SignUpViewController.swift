@@ -89,7 +89,7 @@ final class SignUpViewController: BaseViewController {
     
     private func checkRepasswordRight (input: String) -> Bool {
         // 비밀번호 재입력 조건 : 비밀번호와 값이 같아야함
-        return passwordTextField.text == rePasswordTextField.text ? true : false
+        return passwordTextField.text == rePasswordTextField.text
     }
 
     // Alert
