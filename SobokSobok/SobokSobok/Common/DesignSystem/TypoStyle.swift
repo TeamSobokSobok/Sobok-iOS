@@ -101,4 +101,20 @@ extension UILabel {
                                                     .paragraphStyle: paragraphStyle])
         }
     }
+    
+    func setTypoStyle(typoStyle: TypoStyle) {
+        let font = typoStyle.font
+        let kernValue = typoStyle.labelDescription.kern
+        let lineSpacing = typoStyle.labelDescription.lineHeight
+        
+        if let labelText = text, labelText.count > 0 {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = lineSpacing
+            attributedText = NSAttributedString(string: labelText,
+                                                attributes: [
+                                                    .font: font,
+                                                    .kern: kernValue,
+                                                    .paragraphStyle: paragraphStyle])
+        }
+    }
 }
