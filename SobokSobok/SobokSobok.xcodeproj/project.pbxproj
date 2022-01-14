@@ -92,6 +92,8 @@
 		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
 		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
 		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
+		F6A62FB12791C0D4003425A1 /* MedicineInfoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */; };
+		F6A62FB22791C0D5003425A1 /* MedicineInfoEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +175,8 @@
 		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineInfoEditViewController.swift; sourceTree = "<group>"; };
+		F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineInfoEditViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,6 +477,8 @@
 				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
 				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
 				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+				F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */,
+				F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
+				F6A62FB22791C0D5003425A1 /* MedicineInfoEditViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
@@ -804,6 +811,7 @@
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
+				F6A62FB12791C0D4003425A1 /* MedicineInfoEditViewController.swift in Sources */,
 				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
