@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetNickNameVIewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="checkDuplicationButton" destination="Lkl-cX-QCB" id="zcj-Vb-bYu"/>
+                <outlet property="nickNameTextField" destination="LiK-iX-PYE" id="DYO-nf-riN"/>
+                <outlet property="nickNameTextFieldView" destination="4t0-cf-gZv" id="pMf-eo-SqL"/>
+                <outlet property="signUpButton" destination="ATZ-VC-f9q" id="Nw9-L1-9RZ"/>
+                <outlet property="titleTextLabel" destination="Fcf-fc-fjJ" id="qs4-SL-9ol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,11 +39,11 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-cf-gZv">
-                    <rect key="frame" x="20" y="191" width="374" height="48.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-cf-gZv" userLabel="닉네임뷰">
+                    <rect key="frame" x="20" y="191" width="374" height="52"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="소보기" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-iX-PYE">
-                            <rect key="frame" x="15" y="15" width="344" height="18.5"/>
+                            <rect key="frame" x="15" y="15" width="344" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -47,15 +52,21 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="LiK-iX-PYE" secondAttribute="bottom" constant="15" id="3Sj-UL-ON7"/>
                         <constraint firstItem="LiK-iX-PYE" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="top" constant="15" id="Ova-Iw-c6i"/>
+                        <constraint firstAttribute="height" constant="52" id="apb-uG-T8R"/>
                         <constraint firstItem="LiK-iX-PYE" firstAttribute="leading" secondItem="4t0-cf-gZv" secondAttribute="leading" constant="15" id="d0q-cJ-O0S"/>
                         <constraint firstAttribute="trailing" secondItem="LiK-iX-PYE" secondAttribute="trailing" constant="15" id="xMe-m4-srv"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
-                    <rect key="frame" x="313.5" y="257.5" width="72.5" height="31"/>
+                    <rect key="frame" x="310" y="261" width="76" height="32"/>
                     <color key="tintColor" name="dark_mint_main"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="중복확인"/>
+                    <buttonConfiguration key="configuration" style="plain" title="중복확인">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="touchUpToCheckDuplication:" destination="-1" eventType="touchUpInside" id="nOy-js-pu8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
                     <rect key="frame" x="20" y="739" width="374" height="52"/>
@@ -73,7 +84,24 @@
                             <real key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="touchUpToSignUp:" destination="-1" eventType="touchUpInside" id="uAo-z2-1TS"/>
+                    </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-1I-4Bj">
+                    <rect key="frame" x="327" y="292" width="0.0" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
+                    <rect key="frame" x="322" y="293" width="52" height="1"/>
+                    <color key="backgroundColor" name="dark_mint_main"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -87,14 +115,17 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkl-cX-QCB" secondAttribute="trailing" constant="28" id="JKY-K4-FOJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ATZ-VC-f9q" secondAttribute="bottom" constant="22" id="M4u-nd-fFc"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="S1O-rX-tAf"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="width" secondItem="Lkl-cX-QCB" secondAttribute="width" multiplier="0.684211" id="ZKe-Dh-v3e"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="eD8-Lz-g8z"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" id="gx0-Ca-d7g"/>
                 <constraint firstItem="ATZ-VC-f9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m1r-sC-g3f"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="centerX" secondItem="Lkl-cX-QCB" secondAttribute="centerX" id="nXC-Xn-64L"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ATZ-VC-f9q" secondAttribute="trailing" constant="20" id="rgw-EP-WGz"/>
                 <constraint firstItem="4t0-cf-gZv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yGx-qr-6Ls"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fcf-fc-fjJ" secondAttribute="trailing" constant="20" id="yvZ-5J-khp"/>
             </constraints>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="133" y="80"/>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </view>
     </objects>
     <resources>

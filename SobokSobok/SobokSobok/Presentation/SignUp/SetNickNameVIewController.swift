@@ -7,10 +7,32 @@
 
 import UIKit
 
-class SetNickNameVIewController: UIViewController {
+final class SetNickNameVIewController: BaseViewController {
 
+    // MARK: @IBOutlet Properties
+    @IBOutlet weak var titleTextLabel: UILabel!
+    @IBOutlet weak var nickNameTextFieldView: UIView!
+    @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var checkDuplicationButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+    
+    override func style() {
+        nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+    }
+    
+    // MARK: @IBAction Properties
+    @IBAction func touchUpToCheckDuplication(_ sender: Any) {
+        print("닉네임중복확인")
+    }
+    
+    @IBAction func touchUpToSignUp(_ sender: Any) {
+        print("닉네임 : \(nickNameTextField.text ?? "" )")
+    }
+    
 }
