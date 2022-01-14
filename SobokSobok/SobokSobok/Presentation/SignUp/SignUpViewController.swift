@@ -10,9 +10,9 @@ import UIKit
 final class SignUpViewController: BaseViewController {
 
     // MARK: Properties
-    var emailRight: Bool = false
-    var passwordRight: Bool = false
-    var rePasswordRight: Bool = false
+    var isEmailRight: Bool = false
+    var isPasswordRight: Bool = false
+    var isRePasswordRight: Bool = false
     
     // MARK: @IBOutlet Properties
     @IBOutlet weak var totalView: UIView!
@@ -104,26 +104,26 @@ final class SignUpViewController: BaseViewController {
     
     // 조건에 따른 경고문구 숨김여부 결정
     @objc private func checkEmailTextField() {
-        emailRight = checkEmailRight(input: emailTextField.text ?? "")
-        emailWarningStackView.isHidden = emailRight || !emailTextField.hasText ? true : false
-        emailTextFieldView.layer.borderColor = emailRight || !emailTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        isEmailRight = checkEmailRight(input: emailTextField.text ?? "")
+        emailWarningStackView.isHidden = isEmailRight || !emailTextField.hasText ? true : false
+        emailTextFieldView.layer.borderColor = isEmailRight || !emailTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     @objc private func checkPasswordTextField() {
-        passwordRight = checkPasswordRight(input: passwordTextField.text ?? "")
-        passwordWarningStackView.isHidden = passwordRight || !passwordTextField.hasText ? true : false
-        passwordTextFieldView.layer.borderColor = passwordRight || !passwordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        isPasswordRight = checkPasswordRight(input: passwordTextField.text ?? "")
+        passwordWarningStackView.isHidden = isPasswordRight || !passwordTextField.hasText ? true : false
+        passwordTextFieldView.layer.borderColor = isPasswordRight || !passwordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     @objc private func checkRepasswordTextField() {
-        rePasswordRight = checkRepasswordRight(input: passwordTextField.text ?? "")
-        rePasswordWarningStackView.isHidden = rePasswordRight || !rePasswordTextField.hasText ? true : false
-        rePasswordTextFieldView.layer.borderColor = rePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        isRePasswordRight = checkRepasswordRight(input: passwordTextField.text ?? "")
+        rePasswordWarningStackView.isHidden = isRePasswordRight || !rePasswordTextField.hasText ? true : false
+        rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     // 버튼 활성화
     @objc func activateOkayButton(_ : UIButton) {
-        okayButton.isEnabled = emailRight && passwordRight && rePasswordRight ? true : false
+        okayButton.isEnabled = isEmailRight && isPasswordRight && isRePasswordRight
     }
     
     // 회원가입 버튼 클릭
