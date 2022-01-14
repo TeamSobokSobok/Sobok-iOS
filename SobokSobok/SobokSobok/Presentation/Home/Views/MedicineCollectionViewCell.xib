@@ -107,6 +107,10 @@
                 <constraint firstItem="16E-3I-gZV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="pHd-nZ-fR9"/>
             </constraints>
             <size key="customSize" width="391" height="123"/>
+            <connections>
+                <outlet property="pillColorView" destination="16E-3I-gZV" id="FC0-pS-1Re"/>
+                <outlet property="pillName" destination="zyw-hg-RmU" id="k1O-vK-9Ov"/>
+            </connections>
             <point key="canvasLocation" x="77.536231884057983" y="145.98214285714286"/>
         </collectionViewCell>
     </objects>

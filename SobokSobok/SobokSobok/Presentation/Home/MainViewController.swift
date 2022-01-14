@@ -46,6 +46,13 @@ final class MainViewController: BaseViewController {
         return formatter
     }()
     
+    // 데이터라고 가정
+    fileprivate var pillNames: [String] = ["홍삼", "비타민C", "루테인", "혈압약", "알로에", "당뇨약"] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -163,6 +170,7 @@ extension MainViewController: FSCalendarDataSource {
 
 extension MainViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        pillNames = pillNames.reversed()
         calendar.select(date)
         self.configureVisibleCells()
     }
@@ -191,6 +199,7 @@ extension MainViewController: CollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MedicineCollectionViewCell.self)
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
+        cell.pillName.text = pillNames[indexPath.row % 6]
         return cell
     }
     
