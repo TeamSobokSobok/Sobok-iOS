@@ -27,6 +27,13 @@ final class SetNickNameVIewController: BaseViewController {
         warningTextField.isHidden = true
         signUpButton.isEnabled = false
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        
+        // 네비게이션바 세팅
+        title = "프로필 입력"
+        let backButton = UIBarButtonItem()
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        backButton.title = ""
+        backButton.tintColor = .black
     }
     
     // MARK: @IBAction Properties

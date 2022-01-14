@@ -50,16 +50,16 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eY-fr-ddQ" userLabel="뷰">
-                    <rect key="frame" x="0.0" y="110" width="414" height="495"/>
+                    <rect key="frame" x="0.0" y="140" width="414" height="473"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입하실 이메일과 비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-YB-bvH">
-                            <rect key="frame" x="20" y="22" width="374" height="55"/>
+                            <rect key="frame" x="20" y="0.0" width="374" height="55"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ljr-Y9-NfJ" userLabel="비밀번호 스택">
-                            <rect key="frame" x="20" y="255" width="374" height="106"/>
+                            <rect key="frame" x="20" y="233" width="374" height="106"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM7-lP-LjL">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="18"/>
@@ -110,7 +110,7 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-dZ-aEK" userLabel="비밀번호 재입력 스택">
-                            <rect key="frame" x="20" y="389" width="374" height="106"/>
+                            <rect key="frame" x="20" y="367" width="374" height="106"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghb-8j-XvT">
                                     <rect key="frame" x="0.0" y="0.0" width="95" height="18"/>
@@ -161,7 +161,7 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-Nb-vxf" userLabel="이메일 스택">
-                            <rect key="frame" x="20" y="121" width="374" height="106"/>
+                            <rect key="frame" x="20" y="99" width="374" height="106"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-uJ-6ls">
                                     <rect key="frame" x="0.0" y="0.0" width="39" height="18"/>
@@ -217,7 +217,7 @@
                         <constraint firstAttribute="trailing" secondItem="cZc-Nb-vxf" secondAttribute="trailing" constant="20" id="0Yj-2l-xAn"/>
                         <constraint firstItem="KeA-dZ-aEK" firstAttribute="leading" secondItem="1eY-fr-ddQ" secondAttribute="leading" constant="20" id="11o-zy-ufU"/>
                         <constraint firstItem="dgS-YB-bvH" firstAttribute="leading" secondItem="1eY-fr-ddQ" secondAttribute="leading" constant="20" id="2NV-lr-dZj"/>
-                        <constraint firstItem="dgS-YB-bvH" firstAttribute="top" secondItem="1eY-fr-ddQ" secondAttribute="top" constant="22" id="Jvs-uk-aNC"/>
+                        <constraint firstItem="dgS-YB-bvH" firstAttribute="top" secondItem="1eY-fr-ddQ" secondAttribute="top" id="Jvs-uk-aNC"/>
                         <constraint firstItem="KeA-dZ-aEK" firstAttribute="top" secondItem="ljr-Y9-NfJ" secondAttribute="bottom" constant="28" id="Lxj-rg-aVf"/>
                         <constraint firstAttribute="trailing" secondItem="KeA-dZ-aEK" secondAttribute="trailing" constant="20" id="Oxu-EE-kDP"/>
                         <constraint firstItem="cZc-Nb-vxf" firstAttribute="top" secondItem="dgS-YB-bvH" secondAttribute="bottom" constant="44" id="bdf-7I-jdh"/>
@@ -233,7 +233,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="1eY-fr-ddQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="93e-qf-2L0"/>
+                <constraint firstItem="1eY-fr-ddQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="52" id="93e-qf-2L0"/>
                 <constraint firstItem="3jM-k7-QOd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kLg-b2-pPt"/>
                 <constraint firstItem="1eY-fr-ddQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mV6-D2-cCC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3jM-k7-QOd" secondAttribute="bottom" constant="22" id="r6Y-QA-y6K"/>
