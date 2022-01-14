@@ -9,9 +9,16 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicineInfoEditViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="acceptButton" destination="w66-fM-Qgy" id="8cl-v7-iZ1"/>
+                <outlet property="deleteButton" destination="Ldv-gN-RyF" id="ty6-SI-sbv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,8 +48,45 @@
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-r2-FRw">
                     <rect key="frame" x="0.0" y="865" width="375" height="122"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="cQi-IG-cbn">
+                            <rect key="frame" x="20" y="14" width="335" height="52"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldv-gN-RyF">
+                                    <rect key="frame" x="0.0" y="0.0" width="162" height="52"/>
+                                    <color key="backgroundColor" name="light_mint"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="162" id="bLm-Tb-8y3"/>
+                                        <constraint firstAttribute="height" constant="52" id="qfT-hp-2zy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="삭제">
+                                        <color key="titleColor" name="dark_mint_main"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w66-fM-Qgy">
+                                    <rect key="frame" x="173" y="0.0" width="162" height="52"/>
+                                    <color key="backgroundColor" name="mint_main"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="DOw-0J-aGn"/>
+                                        <constraint firstAttribute="width" constant="162" id="e7U-Le-y4s"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="확인">
+                                        <color key="titleColor" name="white_sub"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
                     <color key="backgroundColor" name="white_sub"/>
                     <constraints>
+                        <constraint firstItem="cQi-IG-cbn" firstAttribute="leading" secondItem="oDj-r2-FRw" secondAttribute="leading" constant="20" id="FdR-Xp-krq"/>
+                        <constraint firstItem="cQi-IG-cbn" firstAttribute="top" secondItem="oDj-r2-FRw" secondAttribute="top" constant="14" id="Ioh-wH-MdN"/>
+                        <constraint firstAttribute="bottom" secondItem="cQi-IG-cbn" secondAttribute="bottom" constant="56" id="XCw-Cf-OcJ"/>
+                        <constraint firstAttribute="trailing" secondItem="cQi-IG-cbn" secondAttribute="trailing" constant="20" id="sOc-c3-y6m"/>
                         <constraint firstAttribute="height" constant="122" id="xXd-vY-8DL"/>
                     </constraints>
                 </view>
@@ -63,6 +107,15 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_mint">
+            <color red="0.89411764705882357" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="white_sub">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

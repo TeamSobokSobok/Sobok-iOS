@@ -24,6 +24,10 @@ final class MedicineInfoEditViewController: UIViewController {
         $0.setImage(Image.icBack48, for: .normal)
     }
     
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,10 @@ final class MedicineInfoEditViewController: UIViewController {
         [navigationView, navigationTitleLabel, backButton].forEach {
             view.addSubview($0)
         }
+        [deleteButton, acceptButton].forEach {
+            $0?.cornerRadius = 12
+        }
+            
         // TODO: - 폰트 스타일 확인 필요
 //        navigationTitleLabel.setTypoStyle(
 //            font: TypoStyle.body5.font,
