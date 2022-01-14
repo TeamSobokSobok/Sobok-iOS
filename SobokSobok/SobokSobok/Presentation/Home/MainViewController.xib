@@ -18,6 +18,7 @@
                 <outlet property="collectionViewHeight" destination="F6w-CN-oSJ" id="Tc1-Hv-4dW"/>
                 <outlet property="dateLabel" destination="TRg-tS-4sP" id="YjP-OE-L5U"/>
                 <outlet property="scopeLabel" destination="F1M-Wo-RXw" id="Qhd-di-p5P"/>
+                <outlet property="scrollView" destination="oCy-nq-f7E" id="OWW-hA-brV"/>
                 <outlet property="titleLabel" destination="yR4-AJ-9vY" id="qSr-dQ-Grh"/>
                 <outlet property="view" destination="yIU-Ls-Bzt" id="egq-3n-ofk"/>
             </connections>
@@ -28,9 +29,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yR4-AJ-9vY">
-                    <rect key="frame" x="20" y="84" width="179.33333333333334" height="40.666666666666657"/>
-                    <string key="text">적적한 소복님
-오늘도 양주 꼭 챙겨 드세요</string>
+                    <rect key="frame" x="20" y="84" width="164.66666666666666" height="40.666666666666657"/>
+                    <string key="text">소중한 소복님
+오늘도 약 꼭 챙겨 드세요</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -163,7 +164,7 @@
                 <constraint firstItem="oCy-nq-f7E" firstAttribute="top" secondItem="yR4-AJ-9vY" secondAttribute="bottom" constant="22" id="xmb-Xr-5PF"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
-            <point key="canvasLocation" x="769" y="153"/>
+            <point key="canvasLocation" x="768.79999999999995" y="152.95566502463055"/>
         </view>
     </objects>
     <resources>

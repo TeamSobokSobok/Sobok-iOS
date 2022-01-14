@@ -12,6 +12,8 @@ import FSCalendar
 final class MainViewController: BaseViewController {
 
     // MARK: - UI
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
@@ -51,6 +53,7 @@ final class MainViewController: BaseViewController {
         setCalendar()
         setCalendarStyle()
         setCollectionView()
+        scrollView.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,6 +91,7 @@ final class MainViewController: BaseViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = Color.gray150
         collectionView.register(MedicineCollectionViewCell.self)
         collectionView.register(TimeHeaderView.nib,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -233,6 +237,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        UIEdgeInsets(top: 0, left: 20, bottom: 32, right: 20)
+    }
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.backgroundColor  = scrollView.contentOffset.y > UIScreen.main.bounds.height / 2 ? Color.gray150 : Color.white
     }
 }
