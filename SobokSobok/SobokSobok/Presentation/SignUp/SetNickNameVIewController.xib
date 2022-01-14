@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetNickNameVIewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="checkDuplicationButton" destination="Lkl-cX-QCB" id="zcj-Vb-bYu"/>
+                <outlet property="checkDuplicationButtonBottomLine" destination="ePI-CH-nAs" id="ESY-zb-AOt"/>
                 <outlet property="nickNameTextField" destination="LiK-iX-PYE" id="DYO-nf-riN"/>
                 <outlet property="nickNameTextFieldView" destination="4t0-cf-gZv" id="pMf-eo-SqL"/>
                 <outlet property="signUpButton" destination="ATZ-VC-f9q" id="FXo-Md-bjG"/>
@@ -69,6 +70,13 @@
                         <action selector="touchUpToCheckDuplication:" destination="-1" eventType="touchUpInside" id="nOy-js-pu8"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
+                    <rect key="frame" x="322" y="323" width="52" height="1"/>
+                    <color key="backgroundColor" name="gray500_sub"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
                     <rect key="frame" x="20" y="739" width="374" height="52"/>
                     <color key="backgroundColor" name="mint_main"/>
@@ -96,13 +104,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
-                    <rect key="frame" x="322" y="323" width="52" height="1"/>
-                    <color key="backgroundColor" name="gray500_sub"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2~10자리의 한글, 영문, 숫자만 사용 가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-tD-bOJ">
                     <rect key="frame" x="30" y="276" width="235.5" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>

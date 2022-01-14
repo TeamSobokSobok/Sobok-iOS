@@ -19,13 +19,14 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var checkDuplicationButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var warningTextLabel: UILabel!
+    @IBOutlet weak var checkDuplicationButtonBottomLine: UIView!
     
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
-    }
+     }
     
     override func style() {
         warningTextLabel.isHidden = true
@@ -49,12 +50,22 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     @objc private func checkTextField() {
+        // 글자수 제한
         if nickNameTextField.text?.count ?? 0 > 10 {
                 nickNameTextField.deleteBackward()
             }
+        
+        // 정규식 검사
         isNickNameRight = checkNickNameRight(input: nickNameTextField.text ?? "")
+        
+        // 조건에 따라 경고문 보여주기
         warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
         nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        
+        // 조건에 따라 버튼 활성화
+        [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
+        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
+        checkDuplicationButton.tintColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
     }
     
     // MARK: @IBAction Properties
