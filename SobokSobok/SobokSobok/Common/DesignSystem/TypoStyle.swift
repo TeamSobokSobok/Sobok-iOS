@@ -50,7 +50,7 @@ extension TypoStyle {
         case .body1:    return FontDescription(font: .pretendardBold, size: 22)
         case .body2:    return FontDescription(font: .pretendardSemibold, size: 18)
         case .body3:    return FontDescription(font: .pretendardExtraBold, size: 17)
-        case .body4:    return FontDescription(font: .pretendardSemibold, size: 16)
+        case .body4:    return FontDescription(font: .pretendardReular, size: 16)
         case .body5:    return FontDescription(font: .pretendardSemibold, size: 15)
         case .body6:    return FontDescription(font: .pretendardMedium, size: 14)
         case .body7:    return FontDescription(font: .pretendardSemibold, size: 13)
