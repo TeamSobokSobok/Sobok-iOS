@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,10 +35,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-cf-gZv">
-                    <rect key="frame" x="20" y="191" width="374" height="64"/>
+                    <rect key="frame" x="20" y="191" width="374" height="48.5"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-iX-PYE">
-                            <rect key="frame" x="15" y="15" width="344" height="34"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="소보기" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-iX-PYE">
+                            <rect key="frame" x="15" y="15" width="344" height="18.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -50,17 +51,46 @@
                         <constraint firstAttribute="trailing" secondItem="LiK-iX-PYE" secondAttribute="trailing" constant="15" id="xMe-m4-srv"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
+                    <rect key="frame" x="295" y="257.5" width="91" height="31"/>
+                    <color key="tintColor" name="dark_mint_main"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="중복확인"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
+                    <rect key="frame" x="20" y="739" width="374" height="52"/>
+                    <color key="backgroundColor" name="mint_main"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="hW3-6X-aIL"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="회원가입">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Lkl-cX-QCB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="295" id="28D-cA-sLZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4t0-cf-gZv" secondAttribute="trailing" constant="20" id="2UO-Q2-nx1"/>
                 <constraint firstItem="TBZ-0Z-cZ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6DR-F9-dol"/>
                 <constraint firstItem="TBZ-0Z-cZ3" firstAttribute="top" secondItem="Fcf-fc-fjJ" secondAttribute="bottom" constant="44" id="704-K9-jO7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TBZ-0Z-cZ3" secondAttribute="trailing" constant="20" id="9gR-hP-J1l"/>
                 <constraint firstItem="4t0-cf-gZv" firstAttribute="top" secondItem="TBZ-0Z-cZ3" secondAttribute="bottom" constant="8" id="AUe-W1-Whi"/>
+                <constraint firstItem="Lkl-cX-QCB" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="bottom" constant="18" id="FW6-Zu-u3v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkl-cX-QCB" secondAttribute="trailing" constant="28" id="JKY-K4-FOJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ATZ-VC-f9q" secondAttribute="bottom" constant="22" id="M4u-nd-fFc"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="S1O-rX-tAf"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="eD8-Lz-g8z"/>
+                <constraint firstItem="ATZ-VC-f9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m1r-sC-g3f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ATZ-VC-f9q" secondAttribute="trailing" constant="20" id="rgw-EP-WGz"/>
                 <constraint firstItem="4t0-cf-gZv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yGx-qr-6Ls"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fcf-fc-fjJ" secondAttribute="trailing" constant="20" id="yvZ-5J-khp"/>
             </constraints>
@@ -69,6 +99,12 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
