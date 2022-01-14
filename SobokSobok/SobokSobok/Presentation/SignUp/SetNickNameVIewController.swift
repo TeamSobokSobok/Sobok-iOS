@@ -14,7 +14,6 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var nickNameTextFieldView: UIView!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var checkDuplicationButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
     
     // MARK: View Life Cycle
     

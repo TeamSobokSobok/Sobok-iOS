@@ -15,7 +15,6 @@
                 <outlet property="checkDuplicationButton" destination="Lkl-cX-QCB" id="zcj-Vb-bYu"/>
                 <outlet property="nickNameTextField" destination="LiK-iX-PYE" id="DYO-nf-riN"/>
                 <outlet property="nickNameTextFieldView" destination="4t0-cf-gZv" id="pMf-eo-SqL"/>
-                <outlet property="signUpButton" destination="ATZ-VC-f9q" id="Nw9-L1-9RZ"/>
                 <outlet property="titleTextLabel" destination="Fcf-fc-fjJ" id="qs4-SL-9ol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -84,9 +83,6 @@
                             <real key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="touchUpToSignUp:" destination="-1" eventType="touchUpInside" id="uAo-z2-1TS"/>
-                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-1I-4Bj">
                     <rect key="frame" x="327" y="292" width="0.0" height="0.0"/>
@@ -102,6 +98,12 @@
                         <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2~10자리의 영문, 숫자만 사용 가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-tD-bOJ">
+                    <rect key="frame" x="30" y="246" width="205.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" name="pill_color_red"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,7 +118,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ATZ-VC-f9q" secondAttribute="bottom" constant="22" id="M4u-nd-fFc"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="S1O-rX-tAf"/>
                 <constraint firstItem="ePI-CH-nAs" firstAttribute="width" secondItem="Lkl-cX-QCB" secondAttribute="width" multiplier="0.684211" id="ZKe-Dh-v3e"/>
+                <constraint firstItem="ld6-tD-bOJ" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="bottom" constant="3" id="aYu-DU-ON7"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="eD8-Lz-g8z"/>
+                <constraint firstItem="ld6-tD-bOJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="eGg-15-3co"/>
                 <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" id="gx0-Ca-d7g"/>
                 <constraint firstItem="ATZ-VC-f9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m1r-sC-g3f"/>
                 <constraint firstItem="ePI-CH-nAs" firstAttribute="centerX" secondItem="Lkl-cX-QCB" secondAttribute="centerX" id="nXC-Xn-64L"/>
@@ -134,6 +138,9 @@
         </namedColor>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pill_color_red">
+            <color red="1" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
