@@ -25,7 +25,6 @@ final class SetNickNameVIewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
-        nickNameTextField
     }
     
     override func style() {
@@ -50,6 +49,9 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     @objc private func checkTextField() {
+        if nickNameTextField.text?.count ?? 0 > 10 {
+                nickNameTextField.deleteBackward()
+            }
         isNickNameRight = checkNickNameRight(input: nickNameTextField.text ?? "")
         warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
         nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
