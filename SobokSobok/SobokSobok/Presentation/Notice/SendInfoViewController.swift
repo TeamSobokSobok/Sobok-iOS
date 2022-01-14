@@ -75,6 +75,7 @@ final class SendInfoViewController: UIViewController {
     func registerXib() {
         sendInfoCollectionView.register(SendInfoCollectionViewCell.self)
         sendInfoCollectionView.register(FooterCollectionViewCell.self)
+        sendInfoCollectionView.register(SenderInfoCollectionViewCell.self)
     }
 }
 
@@ -85,10 +86,14 @@ extension SendInfoViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == sendInfoList.count {
+        switch indexPath.row {
+        case 0:
+            let header = collectionView.dequeueReusableCell(for: indexPath, cellType: SenderInfoCollectionViewCell.self)
+            return header
+        case sendInfoList.count:
             let footer = collectionView.dequeueReusableCell(for: indexPath, cellType: FooterCollectionViewCell.self)
             return footer
-        } else {
+        default:
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
             cell.setData(sendInfoData: sendInfoList[indexPath.row])
             cell.makeRoundedWithBorder(radius: 12, color: Color.gray300!.cgColor)
@@ -109,9 +114,10 @@ extension SendInfoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == sendInfoList.count {
+        switch indexPath.row {
+        case sendInfoList.count:
             return CGSize(width: 335, height: 76)
-        } else {
+        default:
             return CGSize(width: 335, height: 166)
         }
     }

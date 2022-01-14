@@ -57,6 +57,8 @@
 		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
 		F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */; };
 		F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */; };
+		F6A62FAD27918AC7003425A1 /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
+		F6A62FAE27918AC7003425A1 /* SenderInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
+		F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +392,8 @@
 				F6538FA6278D814900B20B5E /* SendInfoViewController.swift */,
 				F6538FA7278D814900B20B5E /* SendInfoViewController.xib */,
 				F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */,
+				F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */,
+				F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */,
 				F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */,
 				F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */,
 				F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */,
@@ -533,6 +539,7 @@
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
+				F6A62FAE27918AC7003425A1 /* SenderInfoCollectionViewCell.xib in Resources */,
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				F6538FB1278DBBC100B20B5E /* SendInfoCollectionViewCell.xib in Resources */,
 				F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */,
@@ -592,6 +599,7 @@
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
+				F6A62FAD27918AC7003425A1 /* SenderInfoCollectionViewCell.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,

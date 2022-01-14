@@ -70,7 +70,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="QP1-Xp-lKR">
-                        <rect key="frame" x="24" y="75.5" width="230.5" height="69"/>
+                        <rect key="frame" x="24" y="75.5" width="240" height="69"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="123-6V-Sxw">
                                 <rect key="frame" x="0.0" y="0.0" width="1" height="69"/>
@@ -81,7 +81,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WaD-It-mec">
-                                <rect key="frame" x="14" y="0.0" width="216.5" height="69"/>
+                                <rect key="frame" x="14" y="0.0" width="226" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1주에 한 번" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA4-7z-e3X">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="17"/>
@@ -93,7 +93,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUm-Q7-SjU">
-                                        <rect key="frame" x="0.0" y="29" width="216.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="29" width="226" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="226" id="6c0-7A-0mL"/>
+                                        </constraints>
                                         <string key="text">오전 11:00, 오전 12:00, 오후 10:00,
 오후 11:00, 오후 12:00, 오후 10:00</string>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
@@ -101,6 +104,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="mUm-Q7-SjU" firstAttribute="top" secondItem="oA4-7z-e3X" secondAttribute="bottom" constant="12" id="mBS-8n-psN"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>

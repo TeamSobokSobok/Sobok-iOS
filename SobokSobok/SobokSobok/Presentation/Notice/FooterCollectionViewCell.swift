@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FooterCollectionViewCell: UICollectionViewCell {
+final class FooterCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

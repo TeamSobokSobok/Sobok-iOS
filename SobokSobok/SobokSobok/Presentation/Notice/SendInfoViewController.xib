@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Regular.otf">
-            <string>Pretendard-Regular</string>
-        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -32,8 +29,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-45-PIf">
-                    <rect key="frame" x="0.0" y="150" width="375" height="540"/>
+                    <rect key="frame" x="0.0" y="102" width="375" height="588"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="250" constant="642" id="1ah-TM-v20"/>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mvx-qi-gEc">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="50" height="50"/>
@@ -41,24 +41,6 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-KD-Ham">
-                    <rect key="frame" x="0.0" y="102" width="375" height="48"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-4B-Ug0">
-                            <rect key="frame" x="20" y="18.666666666666671" width="163.33333333333334" height="18.333333333333329"/>
-                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
-                            <color key="textColor" name="gray700_sub"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="375" id="3eT-At-pXC"/>
-                        <constraint firstAttribute="bottom" secondItem="MPI-4B-Ug0" secondAttribute="bottom" constant="11" id="KSc-Wb-hMt"/>
-                        <constraint firstAttribute="height" constant="48" id="tNK-qn-G9Y"/>
-                        <constraint firstItem="MPI-4B-Ug0" firstAttribute="leading" secondItem="Pn4-KD-Ham" secondAttribute="leading" constant="20" id="yK9-wT-bSH"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbL-aL-g1e">
                     <rect key="frame" x="0.0" y="690" width="375" height="122"/>
                     <subviews>
@@ -108,16 +90,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Pn4-KD-Ham" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Wg-8C-hJg"/>
                 <constraint firstAttribute="bottom" secondItem="hbL-aL-g1e" secondAttribute="bottom" id="98Q-mP-hRH"/>
+                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="A8Z-wB-pnw"/>
                 <constraint firstAttribute="trailing" secondItem="d5U-45-PIf" secondAttribute="trailing" id="OP9-Ue-WaS"/>
                 <constraint firstAttribute="bottom" secondItem="d5U-45-PIf" secondAttribute="bottom" constant="122" id="QYF-a6-uzd"/>
                 <constraint firstItem="hbL-aL-g1e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RMh-vf-2Sj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hbL-aL-g1e" secondAttribute="trailing" id="lRb-xC-t7Y"/>
-                <constraint firstAttribute="trailing" secondItem="Pn4-KD-Ham" secondAttribute="trailing" id="n7E-o0-xrb"/>
-                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="Pn4-KD-Ham" secondAttribute="bottom" id="nH9-qx-Sld"/>
+                <constraint firstAttribute="trailing" secondItem="hbL-aL-g1e" secondAttribute="trailing" id="lRb-xC-t7Y"/>
                 <constraint firstItem="d5U-45-PIf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nu1-Cf-wfJ"/>
-                <constraint firstItem="Pn4-KD-Ham" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="v6v-Na-hFa"/>
             </constraints>
             <point key="canvasLocation" x="132" y="83.497536945812811"/>
         </view>
@@ -125,9 +104,6 @@
     <resources>
         <namedColor name="dark_mint_main">
             <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray700_sub">
-            <color red="0.40392156862745099" green="0.43137254901960786" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_mint">
             <color red="0.89411764705882357" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
