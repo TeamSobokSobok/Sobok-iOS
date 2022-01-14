@@ -18,17 +18,18 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var checkDuplicationButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var warningTextField: UILabel!
+    @IBOutlet weak var warningTextLabel: UILabel!
     
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        nickNameTextField
     }
     
     override func style() {
-        warningTextField.isHidden = true
+        warningTextLabel.isHidden = true
         signUpButton.isEnabled = false
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         
@@ -50,7 +51,7 @@ final class SetNickNameVIewController: BaseViewController {
     
     @objc private func checkTextField() {
         isNickNameRight = checkNickNameRight(input: nickNameTextField.text ?? "")
-        warningTextField.isHidden = isNickNameRight || !nickNameTextField.hasText
+        warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
         nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     

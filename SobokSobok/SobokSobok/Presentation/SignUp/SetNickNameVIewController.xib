@@ -18,7 +18,7 @@
                 <outlet property="signUpButton" destination="ATZ-VC-f9q" id="FXo-Md-bjG"/>
                 <outlet property="titleTextLabel" destination="Fcf-fc-fjJ" id="qs4-SL-9ol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="warningTextField" destination="ld6-tD-bOJ" id="2wp-SS-MFQ"/>
+                <outlet property="warningTextLabel" destination="ld6-tD-bOJ" id="gjv-yS-UVn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
