@@ -14,6 +14,8 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var nickNameTextFieldView: UIView!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var checkDuplicationButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var warningTextField: UILabel!
     
     // MARK: View Life Cycle
     
@@ -22,6 +24,8 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     override func style() {
+        warningTextField.isHidden = true
+        signUpButton.isEnabled = false
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
     

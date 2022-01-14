@@ -15,8 +15,10 @@
                 <outlet property="checkDuplicationButton" destination="Lkl-cX-QCB" id="zcj-Vb-bYu"/>
                 <outlet property="nickNameTextField" destination="LiK-iX-PYE" id="DYO-nf-riN"/>
                 <outlet property="nickNameTextFieldView" destination="4t0-cf-gZv" id="pMf-eo-SqL"/>
+                <outlet property="signUpButton" destination="ATZ-VC-f9q" id="FXo-Md-bjG"/>
                 <outlet property="titleTextLabel" destination="Fcf-fc-fjJ" id="qs4-SL-9ol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="warningTextField" destination="ld6-tD-bOJ" id="2wp-SS-MFQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -58,7 +60,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
                     <rect key="frame" x="310" y="261" width="76" height="32"/>
-                    <color key="tintColor" name="dark_mint_main"/>
+                    <color key="tintColor" name="gray500_sub"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="중복확인">
                         <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -83,6 +85,9 @@
                             <real key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="touchUpToSignUp:" destination="-1" eventType="touchUpInside" id="fho-w2-oV8"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-1I-4Bj">
                     <rect key="frame" x="327" y="292" width="0.0" height="0.0"/>
@@ -93,7 +98,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
                     <rect key="frame" x="322" y="293" width="52" height="1"/>
-                    <color key="backgroundColor" name="dark_mint_main"/>
+                    <color key="backgroundColor" name="gray500_sub"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
                     </constraints>
@@ -133,8 +138,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="dark_mint_main">
-            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="gray500_sub">
+            <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
