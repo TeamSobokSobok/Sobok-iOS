@@ -20,8 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendInfoViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
-                <outlet property="acceptButton" destination="VcN-fq-jOk" id="3mr-J2-WBo"/>
-                <outlet property="refuseButton" destination="BRi-7q-fpW" id="A84-HT-aLC"/>
+                <outlet property="acceptButton" destination="bSb-PH-6HN" id="miL-S2-LoZ"/>
+                <outlet property="refuseButton" destination="snv-mK-QBn" id="Ice-iL-K42"/>
                 <outlet property="sendInfoCollectionView" destination="d5U-45-PIf" id="kxP-YX-y1Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,10 +34,6 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-45-PIf">
                     <rect key="frame" x="0.0" y="150" width="375" height="540"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="250" constant="540" id="8c8-7v-StY"/>
-                        <constraint firstAttribute="width" constant="375" id="NDp-12-h5P"/>
-                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mvx-qi-gEc">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="50" height="50"/>
@@ -45,18 +41,36 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhM-qX-sIF">
-                    <rect key="frame" x="0.0" y="690" width="375" height="88"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-KD-Ham">
+                    <rect key="frame" x="0.0" y="102" width="375" height="48"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aAv-IS-zt7">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-4B-Ug0">
+                            <rect key="frame" x="20" y="18.666666666666671" width="163.33333333333334" height="18.333333333333329"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
+                            <color key="textColor" name="gray700_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="3eT-At-pXC"/>
+                        <constraint firstAttribute="bottom" secondItem="MPI-4B-Ug0" secondAttribute="bottom" constant="11" id="KSc-Wb-hMt"/>
+                        <constraint firstAttribute="height" constant="48" id="tNK-qn-G9Y"/>
+                        <constraint firstItem="MPI-4B-Ug0" firstAttribute="leading" secondItem="Pn4-KD-Ham" secondAttribute="leading" constant="20" id="yK9-wT-bSH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbL-aL-g1e">
+                    <rect key="frame" x="0.0" y="690" width="375" height="122"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-Ri-94a">
                             <rect key="frame" x="20" y="14" width="335" height="52"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRi-7q-fpW">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snv-mK-QBn">
                                     <rect key="frame" x="0.0" y="0.0" width="162" height="52"/>
                                     <color key="backgroundColor" name="light_mint"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="162" id="Mjv-5m-UaG"/>
-                                        <constraint firstAttribute="height" constant="52" id="YXx-ZX-KcQ"/>
+                                        <constraint firstAttribute="height" constant="52" id="Zyf-SA-Gk4"/>
+                                        <constraint firstAttribute="width" constant="162" id="pYh-RR-fJs"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -64,12 +78,12 @@
                                         <color key="titleColor" name="dark_mint_main"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcN-fq-jOk">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSb-PH-6HN">
                                     <rect key="frame" x="173" y="0.0" width="162" height="52"/>
                                     <color key="backgroundColor" name="mint_main"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="162" id="LDl-3K-dHv"/>
-                                        <constraint firstAttribute="height" constant="52" id="X86-u0-VEB"/>
+                                        <constraint firstAttribute="height" constant="52" id="QhS-9O-9nB"/>
+                                        <constraint firstAttribute="width" constant="162" id="hzL-fu-MU1"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -82,31 +96,12 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="aAv-IS-zt7" firstAttribute="leading" secondItem="dhM-qX-sIF" secondAttribute="leading" constant="20" id="61W-El-KCd"/>
-                        <constraint firstAttribute="width" constant="375" id="9DI-vi-WiS"/>
-                        <constraint firstAttribute="trailing" secondItem="aAv-IS-zt7" secondAttribute="trailing" constant="20" id="IXP-YH-ocK"/>
-                        <constraint firstAttribute="height" constant="88" id="TfR-TH-Dd1"/>
-                        <constraint firstItem="aAv-IS-zt7" firstAttribute="top" secondItem="dhM-qX-sIF" secondAttribute="top" constant="14" id="auI-8R-HZY"/>
-                        <constraint firstAttribute="bottom" secondItem="aAv-IS-zt7" secondAttribute="bottom" constant="22" id="lg0-4k-mbF"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-KD-Ham">
-                    <rect key="frame" x="0.0" y="102" width="375" height="48"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-4B-Ug0">
-                            <rect key="frame" x="20" y="27" width="163.33333333333334" height="21"/>
-                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
-                            <color key="textColor" name="gray700_sub"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="375" id="3eT-At-pXC"/>
-                        <constraint firstAttribute="bottom" secondItem="MPI-4B-Ug0" secondAttribute="bottom" id="KSc-Wb-hMt"/>
-                        <constraint firstItem="MPI-4B-Ug0" firstAttribute="top" secondItem="Pn4-KD-Ham" secondAttribute="top" constant="27" id="ouK-13-MF7"/>
-                        <constraint firstAttribute="height" constant="48" id="tNK-qn-G9Y"/>
-                        <constraint firstItem="MPI-4B-Ug0" firstAttribute="leading" secondItem="Pn4-KD-Ham" secondAttribute="leading" constant="20" id="yK9-wT-bSH"/>
+                        <constraint firstAttribute="bottom" secondItem="QyR-Ri-94a" secondAttribute="bottom" constant="56" id="4Pf-dn-lRi"/>
+                        <constraint firstItem="QyR-Ri-94a" firstAttribute="top" secondItem="hbL-aL-g1e" secondAttribute="top" constant="14" id="N8G-VU-nyy"/>
+                        <constraint firstItem="QyR-Ri-94a" firstAttribute="leading" secondItem="hbL-aL-g1e" secondAttribute="leading" constant="20" id="kzd-cQ-ohZ"/>
+                        <constraint firstAttribute="width" constant="375" id="nQq-P4-JS9"/>
+                        <constraint firstAttribute="trailing" secondItem="QyR-Ri-94a" secondAttribute="trailing" constant="20" id="qTX-X5-XLM"/>
+                        <constraint firstAttribute="height" constant="122" id="yjf-uO-xP6"/>
                     </constraints>
                 </view>
             </subviews>
@@ -114,15 +109,15 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Pn4-KD-Ham" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Wg-8C-hJg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dhM-qX-sIF" secondAttribute="bottom" id="DqC-1w-Wcu"/>
+                <constraint firstAttribute="bottom" secondItem="hbL-aL-g1e" secondAttribute="bottom" id="98Q-mP-hRH"/>
                 <constraint firstAttribute="trailing" secondItem="d5U-45-PIf" secondAttribute="trailing" id="OP9-Ue-WaS"/>
-                <constraint firstAttribute="trailing" secondItem="dhM-qX-sIF" secondAttribute="trailing" id="UWr-cX-Uen"/>
+                <constraint firstAttribute="bottom" secondItem="d5U-45-PIf" secondAttribute="bottom" constant="122" id="QYF-a6-uzd"/>
+                <constraint firstItem="hbL-aL-g1e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RMh-vf-2Sj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hbL-aL-g1e" secondAttribute="trailing" id="lRb-xC-t7Y"/>
                 <constraint firstAttribute="trailing" secondItem="Pn4-KD-Ham" secondAttribute="trailing" id="n7E-o0-xrb"/>
                 <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="Pn4-KD-Ham" secondAttribute="bottom" id="nH9-qx-Sld"/>
                 <constraint firstItem="d5U-45-PIf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nu1-Cf-wfJ"/>
                 <constraint firstItem="Pn4-KD-Ham" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="v6v-Na-hFa"/>
-                <constraint firstItem="dhM-qX-sIF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ykg-Fj-dYB"/>
-                <constraint firstItem="dhM-qX-sIF" firstAttribute="top" secondItem="d5U-45-PIf" secondAttribute="bottom" id="z9e-jk-Wj5"/>
             </constraints>
             <point key="canvasLocation" x="132" y="83.497536945812811"/>
         </view>

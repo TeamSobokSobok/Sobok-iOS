@@ -74,22 +74,27 @@ final class SendInfoViewController: UIViewController {
     
     func registerXib() {
         sendInfoCollectionView.register(SendInfoCollectionViewCell.self)
+        sendInfoCollectionView.register(FooterCollectionViewCell.self)
     }
 }
 
 // MARK: - Extensions
 extension SendInfoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sendInfoList.count
+        return sendInfoList.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = sendInfoCollectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
-        cell.setData(sendInfoData: sendInfoList[indexPath.row])
-        cell.makeRoundedWithBorder(radius: 12, color: Color.gray300!.cgColor)
-        return cell
+        if indexPath.row == sendInfoList.count {
+            let footer = collectionView.dequeueReusableCell(for: indexPath, cellType: FooterCollectionViewCell.self)
+            return footer
+        } else {
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
+            cell.setData(sendInfoData: sendInfoList[indexPath.row])
+            cell.makeRoundedWithBorder(radius: 12, color: Color.gray300!.cgColor)
+            return cell
+        }
     }
-    
 }
 
 extension SendInfoViewController: UICollectionViewDelegate { }
@@ -104,6 +109,10 @@ extension SendInfoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 335, height: 166)
+        if indexPath.row == sendInfoList.count {
+            return CGSize(width: 335, height: 76)
+        } else {
+            return CGSize(width: 335, height: 166)
+        }
     }
 }
