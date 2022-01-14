@@ -130,7 +130,8 @@ final class SignUpViewController: BaseViewController {
     // 회원가입 버튼 클릭
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if passwordTextField.text == rePasswordTextField.text {
-            tempAlert(title: "회원가입", message: "이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
+            print("이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
+            navigationController?.pushViewController(SetNickNameVIewController.instanceFromNib(), animated: true)
         } else {
             tempAlert(title: "오류", message: "비밀번호를 확인해주세요")
         }

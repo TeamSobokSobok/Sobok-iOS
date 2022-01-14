@@ -51,8 +51,8 @@
                         <constraint firstAttribute="trailing" secondItem="LiK-iX-PYE" secondAttribute="trailing" constant="15" id="xMe-m4-srv"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
-                    <rect key="frame" x="295" y="257.5" width="91" height="31"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
+                    <rect key="frame" x="313.5" y="257.5" width="72.5" height="31"/>
                     <color key="tintColor" name="dark_mint_main"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="중복확인"/>
@@ -78,7 +78,6 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Lkl-cX-QCB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="295" id="28D-cA-sLZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4t0-cf-gZv" secondAttribute="trailing" constant="20" id="2UO-Q2-nx1"/>
                 <constraint firstItem="TBZ-0Z-cZ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6DR-F9-dol"/>
                 <constraint firstItem="TBZ-0Z-cZ3" firstAttribute="top" secondItem="Fcf-fc-fjJ" secondAttribute="bottom" constant="44" id="704-K9-jO7"/>
