@@ -132,10 +132,10 @@
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Home/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MedicineCollectionViewCell.xib; path = SobokSobok/Presentation/Home/MedicineCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeHeaderView.swift; path = SobokSobok/Presentation/Home/TimeHeaderView.swift; sourceTree = SOURCE_ROOT; };
-		BDD21AA6278DA85B007D10F6 /* TimeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeHeaderView.xib; path = SobokSobok/Presentation/Home/TimeHeaderView.xib; sourceTree = SOURCE_ROOT; };
+		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Home/Views/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MedicineCollectionViewCell.xib; path = SobokSobok/Presentation/Home/Views/MedicineCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeHeaderView.swift; path = SobokSobok/Presentation/Home/Views/TimeHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		BDD21AA6278DA85B007D10F6 /* TimeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TimeHeaderView.xib; path = SobokSobok/Presentation/Home/Views/TimeHeaderView.xib; sourceTree = SOURCE_ROOT; };
 		BDDAA580278997E1000C0AF8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BDDAA58227899C25000C0AF8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		BDDAA5942789B2A2000C0AF8 /* generate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = generate.py; sourceTree = "<group>"; };
@@ -450,7 +450,7 @@
 		BD515E67278776D5003BD5A4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BDD21A9C278D8E35007D10F6 /* Views */,
+				BD98575F2791762D009883FC /* Views */,
 				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
 				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
 			);
@@ -522,7 +522,7 @@
 			path = StickerBottomSheet;
 			sourceTree = "<group>";
 		};
-		BDD21A9C278D8E35007D10F6 /* Views */ = {
+		BD98575F2791762D009883FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */,
