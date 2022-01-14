@@ -12,17 +12,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="confirmButton" destination="3jM-k7-QOd" id="YU7-JI-4Zk"/>
                 <outlet property="emailTextField" destination="Bdf-4X-ikb" id="cvj-cH-Zdq"/>
                 <outlet property="emailTextFieldView" destination="iaH-VC-WqO" id="CgY-8I-2ZH"/>
                 <outlet property="emailWarningStackView" destination="itb-y6-TcY" id="AAy-3c-HEM"/>
-                <outlet property="okayButton" destination="3jM-k7-QOd" id="ERo-gL-PCg"/>
                 <outlet property="passwordTextField" destination="LU6-Xm-bpc" id="xjf-Mb-Ohh"/>
                 <outlet property="passwordTextFieldView" destination="8wN-5t-vpk" id="Kra-E1-3P2"/>
                 <outlet property="passwordWarningStackView" destination="Ydh-UF-cgO" id="Zn4-FH-b3H"/>
                 <outlet property="rePasswordTextField" destination="fO5-Vf-KYD" id="5Rf-u1-tHh"/>
                 <outlet property="rePasswordTextFieldView" destination="Dcb-J4-rZh" id="lv2-eB-dYV"/>
                 <outlet property="rePasswordWarningStackView" destination="2ez-ye-BIa" id="JBY-qC-RbD"/>
-                <outlet property="totalView" destination="1eY-fr-ddQ" id="CXV-hw-dfm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -10,13 +10,12 @@ import UIKit
 final class SignUpViewController: BaseViewController {
 
     // MARK: Properties
-    var isEmailRight: Bool = false
-    var isPasswordRight: Bool = false
-    var isRePasswordRight: Bool = false
+    private var isEmailRight: Bool = false
+    private var isPasswordRight: Bool = false
+    private var isRePasswordRight: Bool = false
     
     // MARK: @IBOutlet Properties
-    @IBOutlet weak var totalView: UIView!
-    @IBOutlet weak var okayButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
     // 텍스트필드
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
@@ -39,7 +38,7 @@ final class SignUpViewController: BaseViewController {
     override func style() {
         // corner radius (텍스트필드, 버튼)
         [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
-        okayButton.makeRounded(radius: 12)
+         confirmButton.makeRounded(radius: 12)
         
         // 초기세팅 : 경고문구 사라지게 만들기
         emailWarningStackView.isHidden = true
@@ -47,7 +46,7 @@ final class SignUpViewController: BaseViewController {
         rePasswordWarningStackView.isHidden = true
         
         // 초기세팅 : 버튼비활성화
-        okayButton.isEnabled = false
+        confirmButton.isEnabled = false
         
         // 네비게이션 바 커스텀
         title = "회원가입"
@@ -123,7 +122,7 @@ final class SignUpViewController: BaseViewController {
     
     // 버튼 활성화
     @objc func activateOkayButton(_ : UIButton) {
-        okayButton.isEnabled = isEmailRight && isPasswordRight && isRePasswordRight
+        confirmButton.isEnabled = isEmailRight && isPasswordRight && isRePasswordRight
     }
     
     // 회원가입 버튼 클릭
