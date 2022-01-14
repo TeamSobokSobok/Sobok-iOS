@@ -9,6 +9,9 @@ import UIKit
 
 final class SetNickNameVIewController: BaseViewController {
 
+    // MARK: Properties
+    private var isNickNameRight: Bool = false
+    
     // MARK: @IBOutlet Properties
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var nickNameTextFieldView: UIView!
@@ -21,6 +24,7 @@ final class SetNickNameVIewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
     }
     
     override func style() {
@@ -34,6 +38,20 @@ final class SetNickNameVIewController: BaseViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         backButton.title = ""
         backButton.tintColor = .black
+    }
+    
+    // MARK: Functions
+    private func checkNickNameRight (input: String) -> Bool {
+        // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
+        let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
+        let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
+          return nickNameTest.evaluate(with: input)
+    }
+    
+    @objc private func checkTextField() {
+        isNickNameRight = checkNickNameRight(input: nickNameTextField.text ?? "")
+        warningTextField.isHidden = isNickNameRight || !nickNameTextField.hasText
+        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     // MARK: @IBAction Properties
