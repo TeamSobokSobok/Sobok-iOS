@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddTimeCollectionViewCell" customModule="SobokSobok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="77"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="77"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByT-fB-Pcy">
+                        <rect key="frame" x="0.0" y="0.0" width="297" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKG-DN-ias">
+                                <rect key="frame" x="16" y="15" width="75" height="47"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-vL-QeI">
+                                <rect key="frame" x="246" y="14.5" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="cBK-K9-Cxs"/>
+                                    <constraint firstAttribute="width" constant="48" id="rtt-WL-zcc"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icPlusActive"/>
+                                <connections>
+                                    <action selector="xButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="NfI-Hh-TPQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qKG-DN-ias" secondAttribute="bottom" constant="15" id="0Bv-S9-xaW"/>
+                            <constraint firstAttribute="trailing" secondItem="CQI-vL-QeI" secondAttribute="trailing" constant="3" id="3ld-l7-Noq"/>
+                            <constraint firstItem="qKG-DN-ias" firstAttribute="top" secondItem="ByT-fB-Pcy" secondAttribute="top" constant="15" id="U0x-Xj-W4o"/>
+                            <constraint firstItem="CQI-vL-QeI" firstAttribute="centerY" secondItem="qKG-DN-ias" secondAttribute="centerY" id="bHD-4C-MhM"/>
+                            <constraint firstItem="qKG-DN-ias" firstAttribute="leading" secondItem="ByT-fB-Pcy" secondAttribute="leading" constant="16" id="ve1-IZ-IE3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ByT-fB-Pcy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KBU-zg-Hiq"/>
+                <constraint firstAttribute="bottom" secondItem="ByT-fB-Pcy" secondAttribute="bottom" id="YUb-de-G9A"/>
+                <constraint firstItem="ByT-fB-Pcy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fDT-tE-ioV"/>
+                <constraint firstAttribute="trailing" secondItem="ByT-fB-Pcy" secondAttribute="trailing" id="tX1-sa-Mt6"/>
+            </constraints>
+            <size key="customSize" width="297" height="77"/>
+            <connections>
+                <outlet property="mainView" destination="ByT-fB-Pcy" id="zfi-u0-bMi"/>
+            </connections>
+            <point key="canvasLocation" x="180.43478260869566" y="108.81696428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icPlusActive" width="40" height="40"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
