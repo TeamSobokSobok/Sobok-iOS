@@ -90,12 +90,20 @@
 		ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */; };
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
 		F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */; };
+		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
+		F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FA7278D814900B20B5E /* SendInfoViewController.xib */; };
+		F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */; };
+		F6538FB1278DBBC100B20B5E /* SendInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */; };
+		F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
-		F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */; };
 		F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA442789EDE70035230D /* NoticeViewController.swift */; };
 		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
 		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
 		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
+		F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */; };
+		F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */; };
+		F6A62FAD27918AC7003425A1 /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
+		F6A62FAE27918AC7003425A1 /* SenderInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,12 +182,20 @@
 		ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
 		F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
+		F6538FA7278D814900B20B5E /* SendInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoViewController.xib; sourceTree = "<group>"; };
+		F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoListDataModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
-		F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
 		F69CAA442789EDE70035230D /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
+		F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */,
+				F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,8 +395,6 @@
 				BD51AE342790A93200314A94 /* Sheet */,
 				BD515E74278778FD003BD5A4 /* Sample */,
 				BD515E6E2787784D003BD5A4 /* BaseViewController.swift */,
-				F67CDBF4278D46EA00F70974 /* NavigationBarView.xib */,
-				F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */,
 				BD149DCA278B31DC009AA416 /* TabBarItem.swift */,
 				BD149DCC278B3369009AA416 /* TabBarController.swift */,
 			);
@@ -484,6 +499,14 @@
 				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
 				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
 				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+				F6538FA6278D814900B20B5E /* SendInfoViewController.swift */,
+				F6538FA7278D814900B20B5E /* SendInfoViewController.xib */,
+				F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */,
+				F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */,
+				F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */,
+				F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */,
+				F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */,
+				F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -724,6 +747,7 @@
 				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
+				F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
@@ -737,8 +761,11 @@
 				9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
+				F6A62FAE27918AC7003425A1 /* SenderInfoCollectionViewCell.xib in Resources */,
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
+				F6538FB1278DBBC100B20B5E /* SendInfoCollectionViewCell.xib in Resources */,
+				F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
 				ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */,
@@ -799,11 +826,14 @@
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
+				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
+				F6A62FAD27918AC7003425A1 /* SenderInfoCollectionViewCell.swift in Sources */,
+				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
@@ -812,6 +842,7 @@
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
+				F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
@@ -827,11 +858,11 @@
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
-				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BD9857A22791CA97009883FC /* MainViewController.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
+				F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
 				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,

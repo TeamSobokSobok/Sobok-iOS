@@ -48,4 +48,5 @@ public enum Image {
 	public static let icSobok = UIImage(named: "icSobok")!
 	public static let icArrowDropDown48 = UIImage(named: "icArrowDropDown48")!
 	public static let icArrowDropDown14 = UIImage(named: "icArrowDropDown14")!
+	public static let timePlusIcon = UIImage(named: "timePlusIcon")!
 }
