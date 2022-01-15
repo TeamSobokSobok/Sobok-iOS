@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SnapKit
+
 final class SetNickNameVIewController: BaseViewController {
 
     // MARK: Properties
@@ -83,7 +85,7 @@ final class SetNickNameVIewController: BaseViewController {
         var toastLabel = UILabel()
         // 토스트 위치
         toastLabel = UILabel(frame: CGRect(x: 20,
-                                           y: 0,
+                                           y: self.view.safeAreaLayoutGuide.layoutFrame.height,
                                            width: self.view.frame.size.width - 40,
                                            height: 47))
         // 토스트 색

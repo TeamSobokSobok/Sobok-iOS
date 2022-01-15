@@ -78,7 +78,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
-                    <rect key="frame" x="20" y="739" width="374" height="52"/>
+                    <rect key="frame" x="20" y="788" width="374" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="hW3-6X-aIL"/>
                     </constraints>
@@ -135,7 +135,7 @@
                 <constraint firstItem="4t0-cf-gZv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yGx-qr-6Ls"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fcf-fc-fjJ" secondAttribute="trailing" constant="20" id="yvZ-5J-khp"/>
             </constraints>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </view>
     </objects>
