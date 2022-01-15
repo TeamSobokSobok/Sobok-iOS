@@ -59,9 +59,9 @@
                         <constraint firstAttribute="trailing" secondItem="LiK-iX-PYE" secondAttribute="trailing" constant="15" id="xMe-m4-srv"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
                     <rect key="frame" x="310" y="291" width="76" height="32"/>
-                    <color key="tintColor" name="gray500_sub"/>
+                    <color key="tintColor" name="dark_mint_main"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="중복확인">
                         <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -79,13 +79,14 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
                     <rect key="frame" x="20" y="739" width="374" height="52"/>
-                    <color key="backgroundColor" name="mint_main"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="hW3-6X-aIL"/>
                     </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="회원가입">
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="tintColor" name="mint_main"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="회원가입"/>
+                    <buttonConfiguration key="configuration" style="filled" title="회원가입">
                         <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
@@ -139,6 +140,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="gray500_sub">
             <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

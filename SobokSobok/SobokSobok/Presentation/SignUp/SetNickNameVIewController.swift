@@ -29,9 +29,11 @@ final class SetNickNameVIewController: BaseViewController {
      }
     
     override func style() {
-        warningTextLabel.isHidden = true
-        signUpButton.isEnabled = false
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+
+        // 초기 세팅
+        warningTextLabel.isHidden = true
+        [checkDuplicationButton, signUpButton].forEach({$0?.isEnabled = false})
         
         // 네비게이션바 세팅
         title = "프로필 입력"
@@ -65,16 +67,38 @@ final class SetNickNameVIewController: BaseViewController {
         // 조건에 따라 버튼 활성화
         [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
         checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
-        checkDuplicationButton.tintColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
     }
     
     // MARK: @IBAction Properties
     @IBAction func touchUpToCheckDuplication(_ sender: Any) {
-        print("닉네임중복확인")
+        showToast(message: "dhkdhkd")
     }
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
         print("닉네임 : \(nickNameTextField.text ?? "" )")
     }
     
+    func showToast(message: String) {
+        // 토스트 선언
+        var toastLabel = UILabel()
+        // 토스트 위치
+        toastLabel = UILabel(frame: CGRect(x: 20,
+                                           y: 0,
+                                           width: self.view.frame.size.width - 40,
+                                           height: 47))
+        // 토스트 색
+        toastLabel.backgroundColor = UIColor(cgColor: Color.black.cgColor)
+        toastLabel.textColor = UIColor(cgColor: Color.white.cgColor)
+        // 토스트 값
+        toastLabel.text = message
+        // 토스트 모양
+        toastLabel.textAlignment = .center
+        toastLabel.layer.cornerRadius = 12
+        toastLabel.clipsToBounds = true
+        // 토스트 애니메이션
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1.0, delay: 0.1,
+                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
+                       completion: {_ in toastLabel.removeFromSuperview() })
+    }
 }
