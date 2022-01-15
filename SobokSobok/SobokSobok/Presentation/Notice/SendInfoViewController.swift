@@ -46,7 +46,7 @@ final class SendInfoViewController: UIViewController {
             view.addSubview($0)
         }
         [refuseButton, acceptButton].forEach {
-            $0.cornerRadius = 12
+            $0?.makeRounded(radius: 12)
         }
     }
     
@@ -96,7 +96,7 @@ extension SendInfoViewController: UICollectionViewDataSource {
         default:
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
             cell.setData(sendInfoData: sendInfoList[indexPath.row])
-            cell.makeRoundedWithBorder(radius: 12, color: Color.gray300!.cgColor)
+            cell.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
             return cell
         }
     }

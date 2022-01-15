@@ -12,7 +12,6 @@ class SenderInfoCollectionViewCell: UICollectionViewCell {
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var senderInfoLabel: UILabel!
     
-    // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }
