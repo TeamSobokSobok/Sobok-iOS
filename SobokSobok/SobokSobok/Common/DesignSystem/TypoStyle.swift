@@ -50,7 +50,7 @@ extension TypoStyle {
         case .body1:    return FontDescription(font: .pretendardBold, size: 22)
         case .body2:    return FontDescription(font: .pretendardSemibold, size: 18)
         case .body3:    return FontDescription(font: .pretendardExtraBold, size: 17)
-        case .body4:    return FontDescription(font: .pretendardSemibold, size: 16)
+        case .body4:    return FontDescription(font: .pretendardReular, size: 16)
         case .body5:    return FontDescription(font: .pretendardSemibold, size: 15)
         case .body6:    return FontDescription(font: .pretendardMedium, size: 14)
         case .body7:    return FontDescription(font: .pretendardSemibold, size: 13)
@@ -91,6 +91,22 @@ extension TypoStyle {
 
 extension UILabel {
     func setTypoStyle(font: UIFont, kernValue: Double = -0.6, lineSpacing: CGFloat = 4.0) {
+        if let labelText = text, labelText.count > 0 {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = lineSpacing
+            attributedText = NSAttributedString(string: labelText,
+                                                attributes: [
+                                                    .font: font,
+                                                    .kern: kernValue,
+                                                    .paragraphStyle: paragraphStyle])
+        }
+    }
+    
+    func setTypoStyle(typoStyle: TypoStyle) {
+        let font = typoStyle.font
+        let kernValue = typoStyle.labelDescription.kern
+        let lineSpacing = typoStyle.labelDescription.lineHeight
+        
         if let labelText = text, labelText.count > 0 {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = lineSpacing

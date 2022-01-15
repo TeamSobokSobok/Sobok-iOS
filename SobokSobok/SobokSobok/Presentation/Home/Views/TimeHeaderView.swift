@@ -10,7 +10,8 @@ import UIKit
 final class TimeHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var editButtonStackView: UIStackView!
-
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

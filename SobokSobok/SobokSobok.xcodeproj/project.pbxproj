@@ -45,6 +45,10 @@
 		BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */; };
 		BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */; };
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
+		BD9857A22791CA97009883FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A02791CA97009883FC /* MainViewController.swift */; };
+		BD9857A32791CA97009883FC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* MainViewController.xib */; };
+		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
+		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
 		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
 		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
@@ -130,6 +134,9 @@
 		BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BD9857A02791CA97009883FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BD9857A12791CA97009883FC /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Home/Views/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -183,6 +190,7 @@
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
 				BDFE75DE278786AE00014BE1 /* Then in Frameworks */,
 				EC950EF027906F0C00A34027 /* Lottie in Frameworks */,
+				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
 				BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
@@ -366,6 +374,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD9857A82791EB3E009883FC /* Views */,
 				BD51AE342790A93200314A94 /* Sheet */,
 				BD515E74278778FD003BD5A4 /* Sample */,
 				BD515E6E2787784D003BD5A4 /* BaseViewController.swift */,
@@ -453,6 +462,8 @@
 				BD98575F2791762D009883FC /* Views */,
 				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
 				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
+				BD9857A02791CA97009883FC /* MainViewController.swift */,
+				BD9857A12791CA97009883FC /* MainViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -529,6 +540,14 @@
 				BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */,
 				BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */,
 				BDD21AA6278DA85B007D10F6 /* TimeHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD9857A82791EB3E009883FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD9857A92791EB5C009883FC /* CalendarDayCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -635,6 +654,7 @@
 				BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */,
 				BDFE75DD278786AE00014BE1 /* Then */,
 				EC950EEF27906F0C00A34027 /* Lottie */,
+				BD9857A52791CE27009883FC /* FSCalendar */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -673,6 +693,7 @@
 				BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */,
 				EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -706,6 +727,7 @@
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
+				BD9857A32791CA97009883FC /* MainViewController.xib in Resources */,
 				F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
@@ -787,6 +809,7 @@
 				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
+				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
@@ -807,6 +830,7 @@
 				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
+				BD9857A22791CA97009883FC /* MainViewController.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
@@ -1076,6 +1100,14 @@
 				kind = branch;
 			};
 		};
+		BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1127,6 +1159,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */;
 			productName = EasyKit;
+		};
+		BD9857A52791CE27009883FC /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
