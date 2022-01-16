@@ -87,8 +87,8 @@
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
 		F61960EE2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */; };
 		F61960EF2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */; };
-		F61960F22793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F02793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift */; };
-		F61960F32793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960F12793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib */; };
+		F61960F22793E28D00FA49B7 /* MedicineTimeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F02793E28D00FA49B7 /* MedicineTimeFooterView.swift */; };
+		F61960F32793E28D00FA49B7 /* MedicineTimeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960F12793E28D00FA49B7 /* MedicineTimeFooterView.xib */; };
 		F61960F727941DEA00FA49B7 /* WeekSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */; };
 		F61960F827941DEA00FA49B7 /* WeekSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */; };
 		F61960FB27941E1600FA49B7 /* TermSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F927941E1600FA49B7 /* TermSelectViewController.swift */; };
@@ -180,8 +180,8 @@
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
 		F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTimeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTimeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
-		F61960F02793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTimeFooterCollectionViewCell.swift; sourceTree = "<group>"; };
-		F61960F12793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTimeFooterCollectionViewCell.xib; sourceTree = "<group>"; };
+		F61960F02793E28D00FA49B7 /* MedicineTimeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTimeFooterView.swift; sourceTree = "<group>"; };
+		F61960F12793E28D00FA49B7 /* MedicineTimeFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTimeFooterView.xib; sourceTree = "<group>"; };
 		F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSelectViewController.swift; sourceTree = "<group>"; };
 		F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekSelectViewController.xib; sourceTree = "<group>"; };
 		F61960F927941E1600FA49B7 /* TermSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermSelectViewController.swift; sourceTree = "<group>"; };
@@ -653,8 +653,8 @@
 				F61960FA27941E1600FA49B7 /* TermSelectViewController.xib */,
 				F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */,
 				F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */,
-				F61960F02793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift */,
-				F61960F12793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib */,
+				F61960F02793E28D00FA49B7 /* MedicineTimeFooterView.swift */,
+				F61960F12793E28D00FA49B7 /* MedicineTimeFooterView.xib */,
 			);
 			path = NoticeThrid;
 			sourceTree = "<group>";
@@ -751,7 +751,7 @@
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				EC950EE9278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
-				F61960F32793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib in Resources */,
+				F61960F32793E28D00FA49B7 /* MedicineTimeFooterView.xib in Resources */,
 				BD51AE272790641100314A94 /* Pretendard-ExtraBold.otf in Resources */,
 				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
@@ -858,7 +858,7 @@
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
-				F61960F22793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift in Sources */,
+				F61960F22793E28D00FA49B7 /* MedicineTimeFooterView.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,

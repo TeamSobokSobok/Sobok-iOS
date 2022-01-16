@@ -40,7 +40,7 @@
             <connections>
                 <outlet property="timePlusButton" destination="dPp-Sr-jvc" id="5Xo-Tc-Kdm"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+            <point key="canvasLocation" x="131.15942028985509" y="83.705357142857139"/>
         </collectionViewCell>
     </objects>
     <resources>
