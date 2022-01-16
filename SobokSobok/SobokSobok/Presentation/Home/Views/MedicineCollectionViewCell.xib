@@ -50,7 +50,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fIT-t6-iIT" userLabel="Sticker Stack View">
                         <rect key="frame" x="16" y="57" width="267" height="63"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-84-F1Q">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSobok" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-84-F1Q">
                                 <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
                                 <color key="backgroundColor" name="pill_color_blue"/>
                                 <constraints>
@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="width" constant="63" id="wx8-yO-e8Q"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-WR-U9B">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSobok" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-WR-U9B">
                                 <rect key="frame" x="68" y="0.0" width="63" height="63"/>
                                 <color key="backgroundColor" name="pill_color_orange"/>
                                 <constraints>
@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" constant="63" id="omY-kr-Kuw"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQQ-Ru-Wl7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSobok" translatesAutoresizingMaskIntoConstraints="NO" id="QQQ-Ru-Wl7">
                                 <rect key="frame" x="136" y="0.0" width="63" height="63"/>
                                 <color key="backgroundColor" name="pill_color_pink"/>
                                 <constraints>
@@ -74,7 +74,7 @@
                                     <constraint firstAttribute="height" constant="63" id="pjq-Fx-N2I"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IhF-Is-kQi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSobok" translatesAutoresizingMaskIntoConstraints="NO" id="IhF-Is-kQi">
                                 <rect key="frame" x="204" y="0.0" width="63" height="63"/>
                                 <color key="backgroundColor" name="pill_color_red"/>
                                 <constraints>
@@ -107,11 +107,16 @@
                 <constraint firstItem="16E-3I-gZV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="pHd-nZ-fR9"/>
             </constraints>
             <size key="customSize" width="391" height="123"/>
+            <connections>
+                <outlet property="pillColorView" destination="16E-3I-gZV" id="FC0-pS-1Re"/>
+                <outlet property="pillName" destination="zyw-hg-RmU" id="k1O-vK-9Ov"/>
+            </connections>
             <point key="canvasLocation" x="77.536231884057983" y="145.98214285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="icCheckUnselect56" width="56" height="56"/>
+        <image name="icSobok" width="84" height="84"/>
         <namedColor name="gray600_sub">
             <color red="0.51764705882352946" green="0.5490196078431373" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

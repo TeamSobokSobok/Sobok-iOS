@@ -16,6 +16,7 @@ final class HomeViewController: BaseViewController {
 
         setCollectionView()
         registerXibs()
+        showActionSheet()
     }
     
     private func setCollectionView() {
@@ -31,6 +32,19 @@ final class HomeViewController: BaseViewController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TimeHeaderView.reuseIdentifier)
         collectionView.register(MedicineCollectionViewCell.self)
+    }
+    
+    private func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let editAction = UIAlertAction(title: "약 수정", style: .default) { _ in }
+        let stopAction = UIAlertAction(title: "복약 중단", style: .default) { _ in }
+        let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        actionSheet.addAction(editAction)
+        actionSheet.addAction(stopAction)
+        actionSheet.addAction(deleteAction)
+        actionSheet.addAction(cancelAction)
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 
