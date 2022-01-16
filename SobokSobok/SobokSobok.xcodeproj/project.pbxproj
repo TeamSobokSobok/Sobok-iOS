@@ -481,10 +481,7 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
-				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
-				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
-				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+				F61960F427941D5800FA49B7 /* NoticeFirst */,
 				F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */,
 				F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */,
 				F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */,
@@ -623,6 +620,17 @@
 				EC950EEB2790012700A34027 /* MedicineDayTableViewCell.xib */,
 			);
 			path = AddMedicineSecond;
+			sourceTree = "<group>";
+		};
+		F61960F427941D5800FA49B7 /* NoticeFirst */ = {
+			isa = PBXGroup;
+			children = (
+				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
+				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
+				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
+				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+			);
+			path = NoticeFirst;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
