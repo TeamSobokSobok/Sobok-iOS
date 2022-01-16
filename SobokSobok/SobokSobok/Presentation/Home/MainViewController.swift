@@ -26,6 +26,11 @@ final class MainViewController: BaseViewController {
     
     let someDates = ["2022-01-09", "2022-01-22", "2022-01-30"]
     let allDates = ["2022-01-12", "2022-01-15", "2022-01-17"]
+    var editMode: Bool = false {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     // MARK: - Properties
     
@@ -115,11 +120,29 @@ final class MainViewController: BaseViewController {
         collectionView.register(TimeHeaderView.nib,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TimeHeaderView.reuseIdentifier)
+        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: collectionView.frame.width - 40, height: 140)
+        collectionView.collectionViewLayout = flowLayout
+        
         self.view.layoutIfNeeded()
     }
     
     @IBAction func scopeButtonTapped(_ sender: Any) {
         calendarAnimatedState.toggle()
+    }
+    
+    private func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let editAction = UIAlertAction(title: "약 수정", style: .default) { _ in }
+        let stopAction = UIAlertAction(title: "복약 중단", style: .default) { _ in }
+        let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        actionSheet.addAction(editAction)
+        actionSheet.addAction(stopAction)
+        actionSheet.addAction(deleteAction)
+        actionSheet.addAction(cancelAction)
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 
@@ -130,7 +153,6 @@ extension MainViewController: FSCalendarDelegate {
         calendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
     }
-
 }
 
 extension MainViewController: FSCalendarDataSource {
@@ -214,6 +236,31 @@ extension MainViewController: CollectionViewDelegate {
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pillNames[indexPath.row % 6]
+        
+        // 테스트 위한 코드
+        if indexPath.row % 2 == 0 {
+            cell.stickerStackView.isHidden = true
+            cell.stickerCountLabel.isHidden = true
+        }
+        
+        cell.editButton.isHidden = !editMode
+        cell.checkButton.isHidden = editMode
+        
+        cell.stickerClosure = { [weak self] in
+            guard let self = self else { return }
+                
+            let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
+            stickerBottomSheet.modalPresentationStyle = .overCurrentContext
+            stickerBottomSheet.modalTransitionStyle = .crossDissolve
+            self.tabBarController?.present(stickerBottomSheet, animated: false) {
+                stickerBottomSheet.showSheetWithAnimation()
+            }
+        }
+        
+        cell.editClosure = {
+            self.showActionSheet()
+        }
+        
         return cell
     }
     
@@ -229,6 +276,9 @@ extension MainViewController: CollectionViewDelegate {
                 headerView.editButtonStackView.isHidden = false
             } else {
                 headerView.editButtonStackView.isHidden = true
+            }
+            headerView.editModeClosure = {
+                self.editMode.toggle()
             }
             return headerView
         default:
@@ -246,13 +296,6 @@ extension MainViewController: CollectionViewDelegate {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func setCollectionViewHeight() {
         collectionViewHeight.constant = collectionView.contentSize.height
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let width = 335 / 375 * screenWidth
-        let height = width * 140 / 335
-        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
