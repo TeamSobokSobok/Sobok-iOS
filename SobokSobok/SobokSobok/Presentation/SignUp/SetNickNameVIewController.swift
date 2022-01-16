@@ -127,12 +127,12 @@ final class SetNickNameVIewController: BaseViewController {
     
     // MARK: @IBAction Properties
     
-    @IBAction func touchUpToCheckDuplication(_ sender: Any) {
+    @IBAction func touchUpToCheckDuplication(_ sender: UIButton) {
         showToast(message: "사용 가능한 닉네임이에요")
         isDuplicationChecked = true
     }
     
-    @IBAction func touchUpToSignUp(_ sender: Any) {
+    @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {

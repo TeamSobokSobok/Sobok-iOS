@@ -18,7 +18,7 @@ final class CompleteSignUpViewController: BaseViewController {
         title = "회원가입 완료"
     }
     
-    @IBAction func touchUpToStart(_ sender: Any) {
+    @IBAction func touchUpToStart(_ sender: UIButton) {
         print("로그인")
     }
     
