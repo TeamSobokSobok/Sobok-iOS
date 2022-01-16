@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,9 +17,36 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-Sr-jvc">
+                        <rect key="frame" x="143" y="3" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="dPp-Sr-jvc" secondAttribute="height" multiplier="1:1" id="N2j-zG-oql"/>
+                        </constraints>
+                        <color key="tintColor" name="gray500_sub"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="icPlus48"/>
+                    </button>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="gray100_sub"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dPp-Sr-jvc" secondAttribute="trailing" constant="144" id="Hrw-HF-m2o"/>
+                <constraint firstItem="dPp-Sr-jvc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="HzQ-vV-5E1"/>
+                <constraint firstAttribute="bottom" secondItem="dPp-Sr-jvc" secondAttribute="bottom" constant="3" id="f60-iG-qHy"/>
+                <constraint firstItem="dPp-Sr-jvc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="143" id="tqg-tL-OFN"/>
+            </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="icPlus48" width="48" height="48"/>
+        <namedColor name="gray100_sub">
+            <color red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray500_sub">
+            <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
