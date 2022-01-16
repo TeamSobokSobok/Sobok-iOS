@@ -45,6 +45,12 @@ final class TermSelectViewController: BaseViewController {
         super.style()
         termView.makeRounded(radius: 15)
     }
+    
+    //
+    @IBAction func touchUpToConfirmButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 }
 
 // MARK: - Extensions

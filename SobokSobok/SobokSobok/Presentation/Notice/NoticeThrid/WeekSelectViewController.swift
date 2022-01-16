@@ -51,6 +51,11 @@ final class WeekSelectViewController: BaseViewController {
     func registerXib() {
         weekTableView.register(WeekSelectTableViewCell.self)
     }
+    
+    @IBAction func touchUpToConfirmButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 }
 
 // MARK: - Extensions

@@ -44,6 +44,9 @@
                                     <state key="normal" title="확인">
                                         <color key="titleColor" name="dark_mint_main"/>
                                     </state>
+                                    <connections>
+                                        <action selector="touchUpToConfirmButton:" destination="-1" eventType="touchUpInside" id="uwK-LB-H0q"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

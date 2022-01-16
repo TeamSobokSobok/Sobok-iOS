@@ -44,6 +44,9 @@
                                     <state key="normal" title="확인">
                                         <color key="titleColor" name="dark_mint_main"/>
                                     </state>
+                                    <connections>
+                                        <action selector="touchUpToConfirmButton:" destination="-1" eventType="touchUpInside" id="9gE-Mm-h2Z"/>
+                                    </connections>
                                 </button>
                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrE-si-gCn">
                                     <rect key="frame" x="0.0" y="47" width="375" height="158"/>
