@@ -70,13 +70,13 @@ extension AddMedicineThirdViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let addMedicineSheet = MedicineTimeViewController.instanceFromNib()
-        addMedicineSheet.modalPresentationStyle = .overCurrentContext
-        addMedicineSheet.modalTransitionStyle = .crossDissolve
-        self.present(addMedicineSheet, animated: false
+        let addMedicineTimeSheet = MedicineTimeViewController.instanceFromNib()
+        addMedicineTimeSheet.modalPresentationStyle = .overCurrentContext
+        addMedicineTimeSheet.modalTransitionStyle = .crossDissolve
+        self.present(addMedicineTimeSheet, animated: false
         ) {
             DispatchQueue.main.async {
-                addMedicineSheet.sheetWithAnimation()
+                addMedicineTimeSheet.sheetWithAnimation()
             }
         }
     }
