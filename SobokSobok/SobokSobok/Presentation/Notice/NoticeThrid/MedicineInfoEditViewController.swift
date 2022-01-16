@@ -28,6 +28,7 @@ final class MedicineInfoEditViewController: UIViewController {
     @IBOutlet weak var takeTermLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var selectTimeCollectionView: UICollectionView!
     
     // MARK: - Properties
     let navigationView = UIView().then {
@@ -40,6 +41,11 @@ final class MedicineInfoEditViewController: UIViewController {
     let backButton = UIButton().then {
         $0.setImage(Image.icBack48, for: .normal)
     }
+    private var timeList: [String] = ["오전 8 : 00"] {
+        didSet {
+            selectTimeCollectionView.reloadData()
+        }
+    }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -47,6 +53,8 @@ final class MedicineInfoEditViewController: UIViewController {
         
         setUI()
         setConstraints()
+        assignDelegation()
+        registerXib()
     }
     
     // MARK: - Functions
@@ -100,6 +108,16 @@ final class MedicineInfoEditViewController: UIViewController {
         button.layer.borderColor = boardColor
         button.backgroundColor = backgroundColor
         button.setTitleColor(setTitleColor, for: .normal)
+    }
+    
+    func assignDelegation() {
+        selectTimeCollectionView.delegate = self
+        selectTimeCollectionView.dataSource = self
+    }
+    
+    func registerXib() {
+        selectTimeCollectionView.register(MedicineTimeInfoCollectionViewCell.self)
+        selectTimeCollectionView.register(MedicineTimeFooterView.self)
     }
     
     // MARK: - @IBAction Properties
@@ -163,4 +181,53 @@ final class MedicineInfoEditViewController: UIViewController {
         presentViewController(viewControllers: TermSelectViewController.self)
     }
     
+}
+
+// MARK: - Extensions
+extension MedicineInfoEditViewController: UICollectionViewDelegate { }
+
+extension MedicineInfoEditViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return timeList.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.row {
+        case timeList.count:
+            let footer = collectionView.dequeueReusableCell(for: indexPath, cellType: MedicineTimeFooterView.self)
+            footer.cornerRadius = 12
+            footer.addCellClosure = {
+                self.timeList.append("")
+            }
+            return footer
+        default:
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MedicineTimeInfoCollectionViewCell.self)
+            cell.makeRoundedWithBorder(radius: 12, color: Color.darkMint.cgColor)
+            cell.timeLabel.text = timeList[indexPath.row]
+            cell.deleteCellClosure = {
+                self.timeList.remove(at: 0)
+            }
+            return cell
+        }
+    }
+}
+
+extension MedicineInfoEditViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 11
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.row {
+        case timeList.count:
+            return CGSize(width: 335, height: 54)
+        default:
+            return CGSize(width: 335, height: 53)
+        }
+        
+    }
 }

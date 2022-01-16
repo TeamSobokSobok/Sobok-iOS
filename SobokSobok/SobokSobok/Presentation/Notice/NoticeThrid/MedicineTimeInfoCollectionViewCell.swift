@@ -13,9 +13,20 @@ class MedicineTimeInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     
+    // MARK: - Properties
+    var deleteCellClosure: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        deleteButton.addTarget(self, action: #selector(deleteCellButtonClicked), for: .touchUpInside)
     }
 
+    // MARK: - Functions
+    
+    func setTarget() {
+        
+    }
+    @objc func deleteCellButtonClicked() {
+        deleteCellClosure?()
+    }
 }
