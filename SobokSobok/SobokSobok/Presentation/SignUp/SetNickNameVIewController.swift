@@ -51,14 +51,10 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     // MARK: Functions
-    private func checkNickNameRight (input: String) -> Bool {
-        // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
-        let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
-        let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
-          return nickNameTest.evaluate(with: input)
-    }
-    
     @objc private func checkTextField() {
+        // 중복 여부 초기화
+        isDuplicationChecked = false
+        
         // 글자수 제한
         if nickNameTextField.text?.count ?? 0 > 10 {
                 nickNameTextField.deleteBackward()
@@ -88,22 +84,16 @@ final class SetNickNameVIewController: BaseViewController {
         isKeyboardOn = false
     }
     
-    // MARK: @IBAction Properties
-    @IBAction func touchUpToCheckDuplication(_ sender: Any) {
-        showToast(message: "사용 가능한 닉네임이에요")
-        isDuplicationChecked = true
+    // 닉네임 정규식 검사
+    private func checkNickNameRight (input: String) -> Bool {
+        // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
+        let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
+        let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
+          return nickNameTest.evaluate(with: input)
     }
     
-    @IBAction func touchUpToSignUp(_ sender: Any) {
-        if isDuplicationChecked {
-            navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
-        } else {
-            showToast(message: "닉네임 중복확인을 해주세요")
-        }
-    }
-    
+    // 토스트 메세지
     func showToast(message: String) {
-        // 선언
         let isKeyboardOn: Bool = self.isKeyboardOn
         let keyboardHeight: CGFloat = self.keyboardHeight
         var toastLabel = UILabel()
@@ -133,5 +123,20 @@ final class SetNickNameVIewController: BaseViewController {
         UIView.animate(withDuration: 1.0, delay: 0.1,
                        options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
                        completion: {_ in toastLabel.removeFromSuperview() })
+    }
+    
+    // MARK: @IBAction Properties
+    
+    @IBAction func touchUpToCheckDuplication(_ sender: Any) {
+        showToast(message: "사용 가능한 닉네임이에요")
+        isDuplicationChecked = true
+    }
+    
+    @IBAction func touchUpToSignUp(_ sender: Any) {
+        if isDuplicationChecked {
+            navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
+        } else {
+            showToast(message: "닉네임 중복확인을 해주세요")
+        }
     }
 }
