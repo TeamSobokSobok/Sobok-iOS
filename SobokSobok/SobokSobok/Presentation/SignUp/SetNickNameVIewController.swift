@@ -96,11 +96,13 @@ final class SetNickNameVIewController: BaseViewController {
         print("닉네임 : \(nickNameTextField.text ?? "" )")
     }
     
-    func showToast(message: String, iskeyboardOn: Bool, keyboardHeight: CGFloat) {
-        // 토스트 선언
+    func showToast(message: String) {
+        // 선언
+        let isKeyboardOn: Bool = self.isKeyboardOn
+        let keyboardHeight: CGFloat = self.keyboardHeight
         var toastLabel = UILabel()
         // 토스트 위치
-        if iskeyboardOn {
+        if isKeyboardOn {
             toastLabel = UILabel(frame: CGRect(x: 20,
                                                y: self.view.frame.size.height - keyboardHeight - 59,
                                                width: self.view.frame.size.width - 40,
@@ -111,7 +113,7 @@ final class SetNickNameVIewController: BaseViewController {
                                                width: self.view.frame.size.width - 40,
                                                height: 47))
         }
-                // 토스트 색
+        // 토스트 색
         toastLabel.backgroundColor = UIColor(cgColor: Color.black.cgColor)
         toastLabel.textColor = UIColor(cgColor: Color.white.cgColor)
         // 토스트 값
