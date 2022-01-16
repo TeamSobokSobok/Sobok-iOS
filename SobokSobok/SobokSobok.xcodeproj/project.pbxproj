@@ -11,6 +11,8 @@
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
+		9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */; };
+		9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */; };
 		9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */; };
 		9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF64AD127917951004D4D64 /* SetNickNameVIewController.xib */; };
 		BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCA278B31DC009AA416 /* TabBarItem.swift */; };
@@ -80,6 +82,8 @@
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
+		9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteSignUpViewController.xib; sourceTree = "<group>"; };
 		9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNickNameVIewController.swift; sourceTree = "<group>"; };
 		9AF64AD127917951004D4D64 /* SetNickNameVIewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetNickNameVIewController.xib; sourceTree = "<group>"; };
 		BD149DCA278B31DC009AA416 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				9A9E6209278D575800D900A6 /* SignUpViewController.xib */,
 				9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */,
 				9AF64AD127917951004D4D64 /* SetNickNameVIewController.xib */,
+				9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */,
+				9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
+				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
@@ -681,6 +688,7 @@
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
+				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
