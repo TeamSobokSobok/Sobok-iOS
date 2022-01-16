@@ -42,7 +42,6 @@ final class MedicineInfoEditViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
-        setConstraints()
         assignDelegation()
         registerXib()
     }
