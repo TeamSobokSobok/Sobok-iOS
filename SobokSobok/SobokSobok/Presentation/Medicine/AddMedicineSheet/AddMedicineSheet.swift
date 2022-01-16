@@ -9,10 +9,15 @@ import UIKit
 
 import EasyKit
 
-final class AddMedicineSheet: UIViewController {
+protocol AddMedicineSheetDismiss: AnyObject {
+    func addMedicineSheetdismiss()
+}
+
+final class AddMedicineSheet: BaseViewController {
 
     // MARK: Properties
     
+    weak var delegate: AddMedicineSheetDismiss?
     private let targetListForMedicine = [
         (image: Image.icMyFillPlus, text: "내 약 추가"),
         (image: Image.icFillSend, text: "다른 사람에게 약 전송")
@@ -20,7 +25,9 @@ final class AddMedicineSheet: UIViewController {
  
     // MARK: @IBOutlet Properties
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet var medicineTableView: UITableView!
+    @IBOutlet var sheetHeight: NSLayoutConstraint!
     
     // MARK: - View Life Cycle
     
@@ -29,12 +36,36 @@ final class AddMedicineSheet: UIViewController {
         assignDelegation()
     }
     
+    override func style() {
+        super.style()
+        mainView.makeRounded(radius: 20)
+        sheetHeight.constant = 0
+    }
     // MARK: - Functions
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dismiss(animated: true) {
+            self.delegate?.addMedicineSheetdismiss()
+        }
+    }
     
     func assignDelegation() {
         medicineTableView.dataSource = self
         medicineTableView.delegate = self
         medicineTableView.register(AddMedicineTableViewCell.self)
+    }
+    
+    func sheetWithAnimation() {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.sheetHeight.constant = 258
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func closeButtonClicked(_ sender: UIButton) {
+        self.dismiss(animated: true) {
+            self.delegate?.addMedicineSheetdismiss()
+        }
     }
 }
 

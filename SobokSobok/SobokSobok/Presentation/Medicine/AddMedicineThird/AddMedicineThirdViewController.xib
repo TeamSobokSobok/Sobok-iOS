@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineThirdViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="timeCollectionView" destination="12n-SH-pwj" id="8cA-UG-CDG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbu-gg-WCY">
+                    <rect key="frame" x="0.0" y="45" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="afa-eq-zMY"/>
+                        <constraint firstAttribute="width" constant="48" id="xOZ-SU-YuQ"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="icBack48"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRT-Sc-6ms">
+                    <rect key="frame" x="364" y="52.5" width="30" height="33"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="다음">
+                        <color key="titleColor" name="dark_mint_main"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 약 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-gc-8oK">
+                    <rect key="frame" x="158.5" y="59" width="97" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몇시에 약을 드셔야 하나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKh-oT-zWZ">
+                    <rect key="frame" x="20" y="127.5" width="161.5" height="18.5"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="12n-SH-pwj">
+                    <rect key="frame" x="0.0" y="157" width="414" height="605"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s3b-AZ-CTN">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="12n-SH-pwj" secondAttribute="bottom" constant="100" id="2lQ-0g-fhf"/>
+                <constraint firstItem="oKh-oT-zWZ" firstAttribute="top" secondItem="hPv-gc-8oK" secondAttribute="bottom" constant="48" id="N0X-t6-Tnf"/>
+                <constraint firstItem="kbu-gg-WCY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ng6-1l-AUP"/>
+                <constraint firstItem="12n-SH-pwj" firstAttribute="top" secondItem="oKh-oT-zWZ" secondAttribute="bottom" constant="11" id="Qhb-r4-v61"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="12n-SH-pwj" secondAttribute="trailing" id="eiE-Xl-ek6"/>
+                <constraint firstItem="hPv-gc-8oK" firstAttribute="centerY" secondItem="kbu-gg-WCY" secondAttribute="centerY" id="ejJ-D8-yd9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PRT-Sc-6ms" secondAttribute="trailing" constant="20" id="kvR-Yc-IdU"/>
+                <constraint firstItem="oKh-oT-zWZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oiJ-ud-B8H"/>
+                <constraint firstItem="12n-SH-pwj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sus-oI-SXM"/>
+                <constraint firstItem="hPv-gc-8oK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vvu-9X-2Z5"/>
+                <constraint firstItem="kbu-gg-WCY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="1" id="wfq-d4-3nb"/>
+                <constraint firstItem="PRT-Sc-6ms" firstAttribute="centerY" secondItem="kbu-gg-WCY" secondAttribute="centerY" id="z1r-pw-CS2"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="70"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icBack48" width="48" height="48"/>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
