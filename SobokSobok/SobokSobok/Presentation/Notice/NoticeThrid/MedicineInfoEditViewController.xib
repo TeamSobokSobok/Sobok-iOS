@@ -23,15 +23,16 @@
                 <outlet property="acceptButton" destination="w66-fM-Qgy" id="8cl-v7-iZ1"/>
                 <outlet property="deleteButton" destination="Ldv-gN-RyF" id="IlY-oH-9Eo"/>
                 <outlet property="medicineNameTextField" destination="ufQ-RO-56P" id="fVe-2x-pMQ"/>
+                <outlet property="selectTimeCollectionView" destination="tvd-YU-dLE" id="Pm6-GX-Jyz"/>
                 <outlet property="specificDayView" destination="82L-Zd-4ge" id="9Iz-T9-hUr"/>
                 <outlet property="specificTermView" destination="G7s-zZ-qrh" id="gQH-QC-yaS"/>
                 <outlet property="takeDayLabel" destination="gea-dz-bXE" id="tDx-0d-0I4"/>
                 <outlet property="takeTermLabel" destination="KCL-O4-AE5" id="f8J-Z4-4ql"/>
                 <outlet property="termSelectButton" destination="p1I-5S-EWc" id="kvk-uk-2i9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="selectButtons" destination="JLx-1Q-bfC" collectionClass="NSMutableArray" id="ShO-7c-4lX"/>
-                <outletCollection property="selectButtons" destination="s6n-qX-2fm" collectionClass="NSMutableArray" id="fbs-q0-hnM"/>
-                <outletCollection property="selectButtons" destination="vum-sh-bDm" collectionClass="NSMutableArray" id="NCc-Qg-hbi"/>
+                <outletCollection property="selectButtons" destination="JLx-1Q-bfC" collectionClass="NSMutableArray" id="Z6o-gB-DO2"/>
+                <outletCollection property="selectButtons" destination="s6n-qX-2fm" collectionClass="NSMutableArray" id="Fml-UX-yqw"/>
+                <outletCollection property="selectButtons" destination="vum-sh-bDm" collectionClass="NSMutableArray" id="7pu-Qs-DuG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -145,6 +146,9 @@
                             <state key="normal" title="매일">
                                 <color key="titleColor" name="gray500_sub"/>
                             </state>
+                            <connections>
+                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="YHw-AD-cXV"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-qX-2fm">
                             <rect key="frame" x="115" y="0.0" width="105" height="48"/>
@@ -199,10 +203,10 @@
                     <rect key="frame" x="20" y="431" width="335" height="77.666666666666686"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82L-Zd-4ge">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-aY-k5j">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="54" id="t0J-sp-7Uf"/>
                                     </constraints>
@@ -212,22 +216,19 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무슨 요일에 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-dz-bXE">
-                                    <rect key="frame" x="15" y="16.333333333333314" width="278" height="21.666666666666671"/>
+                                    <rect key="frame" x="15" y="16.333333333333314" width="239" height="21.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                     <color key="textColor" name="gray500_sub"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MG6-lo-Me6">
-                                    <rect key="frame" x="323" y="3" width="48" height="48"/>
+                                    <rect key="frame" x="284" y="3" width="48" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="48" id="VKG-dd-F0N"/>
                                         <constraint firstAttribute="height" constant="48" id="n7n-Sh-CjN"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" image="icMore48"/>
-                                    <connections>
-                                        <action selector="touchUpToPeriodButton:" destination="-1" eventType="touchUpInside" id="NJT-HF-2RX"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -245,23 +246,26 @@
                             </constraints>
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7s-zZ-qrh">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQB-EY-IA0">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="54" id="EGP-AP-1Yq"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="touchUpToPeriodButton:" destination="-1" eventType="touchUpInside" id="mUp-4a-sOx"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="며칠 간격으로 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCL-O4-AE5">
-                                    <rect key="frame" x="15" y="16.333333333333314" width="278" height="21.666666666666671"/>
+                                    <rect key="frame" x="15" y="16.333333333333314" width="239" height="21.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                     <color key="textColor" name="gray500_sub"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUJ-uN-UFx">
-                                    <rect key="frame" x="323" y="3" width="48" height="48"/>
+                                    <rect key="frame" x="284" y="3" width="48" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="jvV-za-ewJ"/>
                                         <constraint firstAttribute="width" constant="48" id="vDG-Ih-RO6"/>
