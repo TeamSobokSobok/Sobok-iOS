@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendStickerPopUpView" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="sendStickerPopUpView" destination="cUS-9D-75I" id="vNJ-jN-S7e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUS-9D-75I">
+                    <rect key="frame" x="20" y="235" width="335" height="343"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스티커 보내기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-4M-qQK">
+                            <rect key="frame" x="0.0" y="24" width="335" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="23" id="ZzC-GK-5Ee"/>
+                                <constraint firstAttribute="width" constant="335" id="rTT-qT-CCS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
+                            <color key="textColor" name="gray800_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4an-Un-9bw">
+                            <rect key="frame" x="279" y="12" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="4an-Un-9bw" secondAttribute="height" multiplier="1:1" id="iiI-uU-zPr"/>
+                            </constraints>
+                            <color key="tintColor" name="gray700_sub"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="icClose48"/>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2xZ-Iv-VKh">
+                            <rect key="frame" x="27" y="101" width="280" height="80"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-4Z-yap">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ai0-4Z-yap" secondAttribute="height" multiplier="1:1" id="TbN-bD-CPK"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icSobok"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC3-qg-0qj">
+                                    <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icSobok"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-cH-GWp">
+                                    <rect key="frame" x="200" y="0.0" width="80" height="80"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icSobok"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zCL-jH-BLp">
+                            <rect key="frame" x="27" y="219" width="280" height="80"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu0-2b-h1X">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Gu0-2b-h1X" secondAttribute="height" multiplier="1:1" id="mc4-4K-fe2"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icSobok"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxT-gB-wan">
+                                    <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icSobok"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo9-hI-cjE">
+                                    <rect key="frame" x="200" y="0.0" width="80" height="80"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icSobok"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zCL-jH-BLp" secondAttribute="trailing" constant="28" id="BbL-DW-RVH"/>
+                        <constraint firstItem="2xZ-Iv-VKh" firstAttribute="leading" secondItem="cUS-9D-75I" secondAttribute="leading" constant="27" id="BiZ-O8-Vrc"/>
+                        <constraint firstItem="4an-Un-9bw" firstAttribute="top" secondItem="cUS-9D-75I" secondAttribute="top" constant="12" id="Dhe-KY-S0M"/>
+                        <constraint firstItem="zCL-jH-BLp" firstAttribute="leading" secondItem="cUS-9D-75I" secondAttribute="leading" constant="27" id="Mbj-zf-EnQ"/>
+                        <constraint firstAttribute="trailing" secondItem="0Lh-4M-qQK" secondAttribute="trailing" id="TEn-iP-C7Y"/>
+                        <constraint firstItem="0Lh-4M-qQK" firstAttribute="top" secondItem="cUS-9D-75I" secondAttribute="top" constant="24" id="Xc1-0g-neu"/>
+                        <constraint firstAttribute="trailing" secondItem="2xZ-Iv-VKh" secondAttribute="trailing" constant="28" id="c7T-St-oG2"/>
+                        <constraint firstItem="2xZ-Iv-VKh" firstAttribute="top" secondItem="0Lh-4M-qQK" secondAttribute="bottom" constant="54" id="cle-bJ-wTa"/>
+                        <constraint firstItem="4an-Un-9bw" firstAttribute="leading" secondItem="cUS-9D-75I" secondAttribute="leading" constant="279" id="dfF-oX-HZp"/>
+                        <constraint firstItem="zCL-jH-BLp" firstAttribute="top" secondItem="2xZ-Iv-VKh" secondAttribute="bottom" constant="38" id="x18-jV-Tgp"/>
+                        <constraint firstItem="0Lh-4M-qQK" firstAttribute="leading" secondItem="cUS-9D-75I" secondAttribute="leading" id="xom-2w-H0U"/>
+                        <constraint firstAttribute="trailing" secondItem="4an-Un-9bw" secondAttribute="trailing" constant="8" id="ys0-hy-4Cw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cUS-9D-75I" secondAttribute="bottom" constant="200" id="1Nz-l2-30b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cUS-9D-75I" secondAttribute="trailing" constant="20" id="R7q-1M-jMH"/>
+                <constraint firstItem="cUS-9D-75I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WVB-1b-FEF"/>
+                <constraint firstItem="cUS-9D-75I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="191" id="zt3-LZ-yXh"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="53"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icClose48" width="48" height="48"/>
+        <image name="icSobok" width="84" height="84"/>
+        <namedColor name="gray700_sub">
+            <color red="0.40392156862745099" green="0.43137254901960786" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray800_sub">
+            <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

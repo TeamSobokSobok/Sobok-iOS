@@ -100,6 +100,8 @@
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
 		ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */; };
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
+		F611055E2794804B00C963F3 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611055C2794804B00C963F3 /* SendStickerPopUpViewController.swift */; };
+		F611055F2794804B00C963F3 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611055D2794804B00C963F3 /* SendStickerPopUpViewController.xib */; };
 		F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */; };
 		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
 		F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FA7278D814900B20B5E /* SendInfoViewController.xib */; };
@@ -201,6 +203,8 @@
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
 		ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
+		F611055C2794804B00C963F3 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
+		F611055D2794804B00C963F3 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FA7278D814900B20B5E /* SendInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoViewController.xib; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 				BD64F8E92788A01C009249D0 /* .swiftlint.yml */,
 				BD515E37278770C5003BD5A4 /* SobokSobok */,
 				BD515E36278770C5003BD5A4 /* Products */,
+				F611055B27947E9000C963F3 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -512,6 +517,8 @@
 			children = (
 				BD14F362278EB4B000F316AF /* ShareViewController.swift */,
 				BD14F363278EB4B000F316AF /* ShareViewController.xib */,
+				F611055C2794804B00C963F3 /* SendStickerPopUpViewController.swift */,
+				F611055D2794804B00C963F3 /* SendStickerPopUpViewController.xib */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -688,6 +695,14 @@
 			path = AddMedicineThird;
 			sourceTree = "<group>";
 		};
+		F611055B27947E9000C963F3 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -794,7 +809,6 @@
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				EC950EF527909B5800A34027 /* AddMedicineThirdViewController.xib in Resources */,
 				BD9857A32791CA97009883FC /* MainViewController.xib in Resources */,
-				F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC1C31142792F12E00972404 /* MedicineTimeViewController.xib in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
@@ -811,6 +825,7 @@
 				F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
+				F611055F2794804B00C963F3 /* SendStickerPopUpViewController.xib in Resources */,
 				ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */,
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
 				BD51AE252790640300314A94 /* Pretendard-Black.otf in Resources */,
@@ -875,7 +890,6 @@
 				ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
-				F6A62FAD27918AC7003425A1 /* SenderInfoCollectionViewCell.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
@@ -890,6 +904,7 @@
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
+				F611055E2794804B00C963F3 /* SendStickerPopUpViewController.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
