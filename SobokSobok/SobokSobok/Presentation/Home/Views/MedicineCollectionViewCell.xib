@@ -145,18 +145,35 @@
                             <constraint firstAttribute="height" constant="36" id="KlW-aK-Zvs"/>
                         </constraints>
                     </stackView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-5Q-UH4">
-                        <rect key="frame" x="315" y="4" width="56" height="56"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="56" id="eUW-Ff-Uoo"/>
-                            <constraint firstAttribute="height" constant="56" id="fnt-8k-cLk"/>
-                        </constraints>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="icCheckUnselect56"/>
-                        <connections>
-                            <action selector="checkButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="yUK-p9-VD4"/>
-                        </connections>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TV6-Kt-n79">
+                        <rect key="frame" x="259" y="4" width="112" height="56"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-5Q-UH4" userLabel="Edit Button">
+                                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="eUW-Ff-Uoo"/>
+                                    <constraint firstAttribute="height" constant="56" id="fnt-8k-cLk"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icEdit40"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="Aw2-zu-YYT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-mb-9ew" userLabel="Check Button">
+                                <rect key="frame" x="56" y="0.0" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Ekv-aL-hUf"/>
+                                    <constraint firstAttribute="width" constant="56" id="vr8-Rw-fh4"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icCheckUnselect56"/>
+                                <connections>
+                                    <action selector="checkButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="pda-d5-vLp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oc-cm-pxF">
                         <rect key="frame" x="332" y="106.66666666666667" width="25" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -167,21 +184,22 @@
             </view>
             <viewLayoutGuide key="safeArea" id="Fyt-m9-VdC"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="TV6-Kt-n79" secondAttribute="trailing" constant="4" id="7sm-1V-JZL"/>
                 <constraint firstItem="854-hb-RnR" firstAttribute="leading" secondItem="k4k-xJ-HfK" secondAttribute="leading" constant="20" id="H8Z-d1-dj7"/>
                 <constraint firstAttribute="bottom" secondItem="854-hb-RnR" secondAttribute="bottom" constant="20" id="YA7-Oh-6Kb"/>
                 <constraint firstItem="854-hb-RnR" firstAttribute="top" secondItem="k4k-xJ-HfK" secondAttribute="top" constant="19" id="blX-Do-Www"/>
                 <constraint firstItem="ktv-gk-zOy" firstAttribute="centerY" secondItem="sdh-55-dG6" secondAttribute="centerY" id="enM-jz-1HY"/>
                 <constraint firstAttribute="bottom" secondItem="0oc-cm-pxF" secondAttribute="bottom" constant="13" id="hYJ-Y3-gkc"/>
                 <constraint firstAttribute="trailing" secondItem="ktv-gk-zOy" secondAttribute="trailing" constant="18" id="lxh-4D-bDC"/>
-                <constraint firstItem="7d0-5Q-UH4" firstAttribute="centerY" secondItem="sdh-55-dG6" secondAttribute="centerY" id="sjw-4z-odo"/>
-                <constraint firstAttribute="trailing" secondItem="7d0-5Q-UH4" secondAttribute="trailing" constant="4" id="tqz-Vg-7Dt"/>
+                <constraint firstItem="TV6-Kt-n79" firstAttribute="centerY" secondItem="sdh-55-dG6" secondAttribute="centerY" id="wGE-uZ-7YA"/>
                 <constraint firstAttribute="trailing" secondItem="0oc-cm-pxF" secondAttribute="trailing" constant="18" id="ySl-Sv-VUk"/>
             </constraints>
             <size key="customSize" width="391" height="123"/>
             <connections>
                 <outlet property="buttonStackView" destination="ktv-gk-zOy" id="GRk-in-s5Q"/>
-                <outlet property="checkButton" destination="7d0-5Q-UH4" id="gfa-eh-Unf"/>
+                <outlet property="checkButton" destination="TbX-mb-9ew" id="05n-KG-mI9"/>
                 <outlet property="eatStateButton" destination="hsa-0j-a7J" id="qar-a1-4DD"/>
+                <outlet property="editButton" destination="7d0-5Q-UH4" id="0Ph-Ry-nuJ"/>
                 <outlet property="emotionButton" destination="q3p-ka-9Lt" id="1yU-Ed-ag1"/>
                 <outlet property="pillColorView" destination="34b-Ag-wzp" id="uJa-C6-mxg"/>
                 <outlet property="pillName" destination="sdh-55-dG6" id="rEI-23-heJ"/>
@@ -193,6 +211,7 @@
     </objects>
     <resources>
         <image name="icCheckUnselect56" width="56" height="56"/>
+        <image name="icEdit40" width="40" height="40"/>
         <image name="icEmotion36" width="36" height="36"/>
         <image name="icSobok" width="84" height="84"/>
         <namedColor name="black_sub">

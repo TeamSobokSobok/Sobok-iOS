@@ -26,6 +26,12 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var isEdit: Bool = false {
+        didSet {
+            updateUI()
+        }
+    }
+    
     var isChecked: Bool = false {
         didSet {
             isChecked ?
@@ -35,6 +41,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     }
     
     var stickerClosure: (() -> Void)?
+    var editClosure: (() -> Void)?
     
     // MARK: - IBOutlets
 
@@ -43,6 +50,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var buttonStackView: UIStackView!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var emotionButton: UIButton!
     @IBOutlet weak var eatStateButton: UIButton!
     
@@ -86,6 +94,11 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         eatStateButton.backgroundColor = eatState ? Color.lightMint : Color.gray150
         eatStateButton.setTitle(eatState ? "먹었어요" : "아직 안 먹었어요", for: .normal)
         eatStateButton.setTitleColor(eatState ? Color.darkMint : Color.gray600, for: .normal)
+        editButton.isHidden = !isEdit
+    }
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+        editClosure?()
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
