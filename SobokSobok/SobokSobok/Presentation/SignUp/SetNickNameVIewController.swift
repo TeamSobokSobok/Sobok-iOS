@@ -43,7 +43,7 @@ final class SetNickNameVIewController: BaseViewController {
         [checkDuplicationButton, signUpButton].forEach({$0?.isEnabled = false})
         
         // 네비게이션바 세팅
-        title = "프로필 입력"
+        title = "회원가입"
         let backButton = UIBarButtonItem()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         backButton.title = ""
