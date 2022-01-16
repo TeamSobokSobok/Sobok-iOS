@@ -61,6 +61,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icSobok"/>
+                                        <connections>
+                                            <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="vSZ-GZ-xCg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s82-yV-P6r">
                                         <rect key="frame" x="68" y="0.0" width="63" height="63"/>
@@ -70,6 +73,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icSobok"/>
+                                        <connections>
+                                            <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="wm8-89-nvn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2E-3Q-PNs">
                                         <rect key="frame" x="136" y="0.0" width="63" height="63"/>
@@ -79,6 +85,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icSobok"/>
+                                        <connections>
+                                            <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="IDZ-eY-VgK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfh-Sq-8lX">
                                         <rect key="frame" x="204" y="0.0" width="63" height="63"/>
@@ -88,6 +97,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="icSobok"/>
+                                        <connections>
+                                            <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="aKF-yp-2p6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

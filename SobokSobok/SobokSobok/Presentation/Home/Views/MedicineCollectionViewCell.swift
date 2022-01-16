@@ -34,6 +34,8 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var stickerClosure: (() -> Void)?
+    
     // MARK: - IBOutlets
 
     @IBOutlet weak var pillColorView: UIView!
@@ -88,5 +90,9 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     
     @IBAction func checkButtonTapped(_ sender: Any) {
         isChecked.toggle()
+    }
+    
+    @IBAction func stickerButtonTapped(_ sender: AnyObject) {
+        stickerClosure?()
     }
 }

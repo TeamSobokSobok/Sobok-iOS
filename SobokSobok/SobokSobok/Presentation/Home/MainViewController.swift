@@ -219,10 +219,23 @@ extension MainViewController: CollectionViewDelegate {
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pillNames[indexPath.row % 6]
+        
+        // 테스트 위한 코드
         if indexPath.row % 2 == 0 {
             cell.stickerStackView.isHidden = true
             cell.stickerCountLabel.isHidden = true
         }
+        cell.stickerClosure = { [weak self] in
+            guard let self = self else { return }
+                
+            let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
+            stickerBottomSheet.modalPresentationStyle = .overCurrentContext
+            stickerBottomSheet.modalTransitionStyle = .crossDissolve
+            self.tabBarController?.present(stickerBottomSheet, animated: false) {
+                stickerBottomSheet.showSheetWithAnimation()
+            }
+        }
+        
         return cell
     }
     
