@@ -115,6 +115,11 @@ final class MainViewController: BaseViewController {
         collectionView.register(TimeHeaderView.nib,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TimeHeaderView.reuseIdentifier)
+        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: collectionView.frame.width - 40, height: 140)
+        collectionView.collectionViewLayout = flowLayout
+        
         self.view.layoutIfNeeded()
     }
     
@@ -214,6 +219,10 @@ extension MainViewController: CollectionViewDelegate {
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pillNames[indexPath.row % 6]
+        if indexPath.row % 2 != 0 {
+            cell.stickerStackView.isHidden = true
+            cell.stickerCountLabel.isHidden = true
+        }
         return cell
     }
     
@@ -248,12 +257,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         collectionViewHeight.constant = collectionView.contentSize.height
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let width = 335 / 375 * screenWidth
-        let height = width * 140 / 335
-        return CGSize(width: width, height: height)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let screenWidth = UIScreen.main.bounds.width
+//        let width = 335 / 375 * screenWidth
+//        let height = width * 140 / 335
+//        return CGSize(width: width, height: height)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         8
