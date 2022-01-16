@@ -105,6 +105,7 @@
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
 		ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */; };
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
+		F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */; };
 		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
 		F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FA7278D814900B20B5E /* SendInfoViewController.xib */; };
 		F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */; };
@@ -210,6 +211,7 @@
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
 		ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
+		F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FA7278D814900B20B5E /* SendInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoViewController.xib; sourceTree = "<group>"; };
 		F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				EC950EF527909B5800A34027 /* AddMedicineThirdViewController.xib in Resources */,
 				BD9857A32791CA97009883FC /* MainViewController.xib in Resources */,
+				F67CDBF6278D46EA00F70974 /* NavigationBarView.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC1C31142792F12E00972404 /* MedicineTimeViewController.xib in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,

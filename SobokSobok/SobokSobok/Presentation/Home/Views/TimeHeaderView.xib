@@ -12,6 +12,9 @@
         <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
         </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -30,22 +33,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gMu-uv-txo">
-                    <rect key="frame" x="329" y="19" width="26" height="27"/>
+                    <rect key="frame" x="329" y="19" width="26" height="24"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7g-dr-4Pk">
-                            <rect key="frame" x="1.6666666666666856" y="0.0" width="23" height="26"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCc-gK-lew">
+                            <rect key="frame" x="0.0" y="0.0" width="26" height="23"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="26" id="U2D-gN-Oo4"/>
-                                <constraint firstAttribute="width" constant="23" id="cN3-kJ-WGs"/>
+                                <constraint firstAttribute="height" constant="23" id="1UP-DT-ATe"/>
+                                <constraint firstAttribute="width" constant="26" id="wD8-RR-oxM"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="수정"/>
-                            <connections>
-                                <action selector="editButtonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="bQe-Mm-iBL"/>
-                            </connections>
-                        </button>
+                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                            <color key="textColor" name="gray700_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-UM-zMd">
-                            <rect key="frame" x="0.0" y="26" width="26" height="1"/>
+                            <rect key="frame" x="0.0" y="23" width="26" height="1"/>
                             <color key="backgroundColor" name="gray700_sub"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="26" id="DoF-mW-iNK"/>
@@ -64,7 +65,6 @@
                 <constraint firstAttribute="trailing" secondItem="gMu-uv-txo" secondAttribute="trailing" constant="20" id="eHU-m4-UZl"/>
             </constraints>
             <connections>
-                <outlet property="editButton" destination="P7g-dr-4Pk" id="kx2-el-IE8"/>
                 <outlet property="editButtonStackView" destination="gMu-uv-txo" id="YWJ-md-rrA"/>
                 <outlet property="timeLabel" destination="DTP-LB-Qpk" id="EpK-Eg-I6R"/>
             </connections>
