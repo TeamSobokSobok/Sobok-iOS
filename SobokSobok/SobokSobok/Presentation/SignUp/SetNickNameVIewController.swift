@@ -11,13 +11,13 @@ import SnapKit
 
 final class SetNickNameVIewController: BaseViewController {
 
-    // MARK: Properties
+    // MARK: - Properties
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
     
-    // MARK: @IBOutlet Properties
+    // MARK: - @IBOutlet Properties
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var nickNameTextFieldView: UIView!
     @IBOutlet weak var nickNameTextField: UITextField!
@@ -26,13 +26,10 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var warningTextLabel: UILabel!
     @IBOutlet weak var checkDuplicationButtonBottomLine: UIView!
     
-    // MARK: View Life Cycle
-    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        checkField()
      }
     
     override func style() {
@@ -85,6 +82,12 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     // 닉네임 정규식 검사
+    private func checkField() {
+        nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     private func checkNickNameRight (input: String) -> Bool {
         // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
         let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
@@ -93,7 +96,7 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     // 토스트 메세지
-    func showToast(message: String) {
+    private func showToast(message: String) {
         let isKeyboardOn: Bool = self.isKeyboardOn
         let keyboardHeight: CGFloat = self.keyboardHeight
         var toastLabel = UILabel()
@@ -125,7 +128,7 @@ final class SetNickNameVIewController: BaseViewController {
                        completion: {_ in toastLabel.removeFromSuperview() })
     }
     
-    // MARK: @IBAction Properties
+    // MARK: - @IBAction Properties
     
     @IBAction func touchUpToCheckDuplication(_ sender: UIButton) {
         showToast(message: "사용 가능한 닉네임이에요")

@@ -10,7 +10,6 @@ import UIKit
 final class SignInViewController: BaseViewController {
     
     // MARK: - Properties
-    var isSetAutoLogin: Bool = true
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
 
@@ -25,18 +24,17 @@ final class SignInViewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
         checkTextField()
         securePassword()
         checkKeyboardOn()
     }
     
-    // MARK: - Functions
-    private func setUI() {
+    override func style() {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
     
+    // MARK: - Functions
     private func securePassword() {
         passwordTextField.isSecureTextEntry = true
     }
@@ -79,8 +77,8 @@ final class SignInViewController: BaseViewController {
                                                height: 47))
         }
         // 토스트 색
-        toastLabel.backgroundColor = UIColor(cgColor: Color.black.cgColor)
-        toastLabel.textColor = UIColor(cgColor: Color.white.cgColor)
+        toastLabel.backgroundColor = Color.black
+        toastLabel.textColor = Color.white
         // 토스트 값
         toastLabel.text = message
         // 토스트 모양
