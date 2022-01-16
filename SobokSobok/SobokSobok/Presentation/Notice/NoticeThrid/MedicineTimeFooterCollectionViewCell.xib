@@ -37,6 +37,9 @@
                 <constraint firstAttribute="bottom" secondItem="dPp-Sr-jvc" secondAttribute="bottom" constant="3" id="f60-iG-qHy"/>
                 <constraint firstItem="dPp-Sr-jvc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="143" id="tqg-tL-OFN"/>
             </constraints>
+            <connections>
+                <outlet property="timePlusButton" destination="dPp-Sr-jvc" id="5Xo-Tc-Kdm"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
         </collectionViewCell>
     </objects>

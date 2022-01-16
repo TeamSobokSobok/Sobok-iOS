@@ -495,18 +495,6 @@
 			children = (
 				F61960F427941D5800FA49B7 /* NoticeFirst */,
 				F61961012794354900FA49B7 /* NoticeThrid */,
-				F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */,
-				F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */,
-				F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */,
-				F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */,
-				F61960FD279420F600FA49B7 /* WeekSelectTableViewCell.swift */,
-				F61960FE279420F600FA49B7 /* WeekSelectTableViewCell.xib */,
-				F61960F927941E1600FA49B7 /* TermSelectViewController.swift */,
-				F61960FA27941E1600FA49B7 /* TermSelectViewController.xib */,
-				F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */,
-				F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */,
-				F61960F02793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift */,
-				F61960F12793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -655,6 +643,18 @@
 		F61961012794354900FA49B7 /* NoticeThrid */ = {
 			isa = PBXGroup;
 			children = (
+				F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */,
+				F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */,
+				F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */,
+				F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */,
+				F61960FD279420F600FA49B7 /* WeekSelectTableViewCell.swift */,
+				F61960FE279420F600FA49B7 /* WeekSelectTableViewCell.xib */,
+				F61960F927941E1600FA49B7 /* TermSelectViewController.swift */,
+				F61960FA27941E1600FA49B7 /* TermSelectViewController.xib */,
+				F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */,
+				F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */,
+				F61960F02793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.swift */,
+				F61960F12793E28D00FA49B7 /* MedicineTimeFooterCollectionViewCell.xib */,
 			);
 			path = NoticeThrid;
 			sourceTree = "<group>";

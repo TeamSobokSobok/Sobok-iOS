@@ -8,10 +8,11 @@
 import UIKit
 
 class MedicineTimeFooterCollectionViewCell: UICollectionViewCell {
-
+    
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var timePlusButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }
