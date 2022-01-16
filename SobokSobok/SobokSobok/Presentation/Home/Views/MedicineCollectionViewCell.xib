@@ -141,6 +141,9 @@
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="icCheckUnselect56"/>
+                        <connections>
+                            <action selector="checkButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="yUK-p9-VD4"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oc-cm-pxF">
                         <rect key="frame" x="332" y="106.66666666666667" width="25" height="20.333333333333329"/>

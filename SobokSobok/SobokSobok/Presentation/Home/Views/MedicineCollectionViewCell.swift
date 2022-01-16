@@ -14,7 +14,7 @@ public enum PillCellType {
 final class MedicineCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    var pillCellType: PillCellType = .share {
+    var pillCellType: PillCellType = .main {
         didSet {
             updateUI()
         }
@@ -23,6 +23,14 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     var eatState: Bool = false {
         didSet {
             updateUI()
+        }
+    }
+    
+    var isChecked: Bool = false {
+        didSet {
+            isChecked ?
+            checkButton.setImage(Image.icCheckSelect56, for: .normal) :
+            checkButton.setImage(Image.icCheckUnselect56, for: .normal)
         }
     }
     
@@ -60,6 +68,8 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         return layoutAttributes
     }
     
+    // MARK: - Functions
+    
     private func style() {
         checkButton.isHidden = false
         buttonStackView.isHidden = false
@@ -74,5 +84,9 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         eatStateButton.backgroundColor = eatState ? Color.lightMint : Color.gray150
         eatStateButton.setTitle(eatState ? "먹었어요" : "아직 안 먹었어요", for: .normal)
         eatStateButton.setTitleColor(eatState ? Color.darkMint : Color.gray600, for: .normal)
+    }
+    
+    @IBAction func checkButtonTapped(_ sender: Any) {
+        isChecked.toggle()
     }
 }
