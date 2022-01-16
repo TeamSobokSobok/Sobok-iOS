@@ -96,7 +96,7 @@ final class SetNickNameVIewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
         if isDuplicationChecked {
-            showToast(message: "\(nickNameTextField.text ?? "")")
+            navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
         }
