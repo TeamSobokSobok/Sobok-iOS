@@ -18,9 +18,7 @@ final class AddMedicineFourthViewController: BaseViewController {
     }
 
     // MARK: @IBOutlets
-    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var medicineInfoCollectionView: UICollectionView!
-    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +27,7 @@ final class AddMedicineFourthViewController: BaseViewController {
     
     override func style() {
         super.style()
-        mainView.makeRounded(radius: 8)
+         
     }
     
     // MARK: Functions
@@ -39,6 +37,7 @@ final class AddMedicineFourthViewController: BaseViewController {
         // register
         medicineInfoCollectionView.register(MedicineInfoCollectionViewCell.self)
         medicineInfoCollectionView.register(AddMyMedicineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier)
+        medicineInfoCollectionView.register(MedicineInfoHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MedicineInfoHeaderView.reuseIdentifier)
         // flowLayout
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 166)
@@ -53,6 +52,7 @@ extension AddMedicineFourthViewController: UICollectionViewDelegate {
 
 // MARK: UICollectionViewDataSource
 extension AddMedicineFourthViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return medicineList.count
     }
@@ -66,18 +66,34 @@ extension AddMedicineFourthViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
-        // FooterView +버튼 클릭 시 셀 추가
-        cell.addMedicineCellClosure = {
-            self.medicineList.append("")
+        switch kind {
+            case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MedicineInfoHeaderView.reuseIdentifier, for: indexPath) as? MedicineInfoHeaderView else { return UICollectionReusableView()}
+            return headerView
+            
+            case UICollectionView.elementKindSectionFooter:
+           
+            guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
+            
+            footerView.addMedicineCellClosure = {
+                self.medicineList.append("")
+            }
+            return footerView
+        default:
+            assert(false, "응 아니야")
+            
         }
-        return cell
-    }
+}
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension AddMedicineFourthViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 75)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
     }
 }
+
