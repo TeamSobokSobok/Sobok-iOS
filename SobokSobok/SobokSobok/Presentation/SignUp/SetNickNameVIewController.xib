@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetNickNameVIewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
@@ -36,13 +41,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBZ-0Z-cZ3">
-                    <rect key="frame" x="20" y="195" width="374" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <rect key="frame" x="20" y="195" width="374" height="18.5"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-cf-gZv" userLabel="닉네임뷰">
-                    <rect key="frame" x="20" y="221" width="374" height="52"/>
+                    <rect key="frame" x="20" y="221.5" width="374" height="52"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="소보기" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-iX-PYE">
                             <rect key="frame" x="15" y="15" width="344" height="22"/>
@@ -60,18 +65,18 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
-                    <rect key="frame" x="310" y="291" width="76" height="32"/>
+                    <rect key="frame" x="310" y="291.5" width="76" height="32.5"/>
                     <color key="tintColor" name="dark_mint_main"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="중복확인">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="touchUpToCheckDuplication:" destination="-1" eventType="touchUpInside" id="nOy-js-pu8"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
-                    <rect key="frame" x="322" y="323" width="52" height="1"/>
+                    <rect key="frame" x="322" y="324" width="52" height="1"/>
                     <color key="backgroundColor" name="gray500_sub"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
@@ -87,7 +92,7 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="회원가입"/>
                     <buttonConfiguration key="configuration" style="filled" title="회원가입">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                        <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -106,7 +111,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2~10자리의 한글, 영문, 숫자만 사용 가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-tD-bOJ">
-                    <rect key="frame" x="30" y="276" width="235.5" height="16"/>
+                    <rect key="frame" x="30" y="276.5" width="235.5" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" name="pill_color_red"/>
                     <nil key="highlightedColor"/>

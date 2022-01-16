@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
@@ -38,7 +43,7 @@
                     <color key="tintColor" name="mint_main"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="확인">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                        <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -50,7 +55,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eY-fr-ddQ" userLabel="뷰">
-                    <rect key="frame" x="0.0" y="140" width="414" height="473"/>
+                    <rect key="frame" x="0.0" y="140" width="414" height="474.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입하실 이메일과 비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-YB-bvH">
                             <rect key="frame" x="20" y="0.0" width="374" height="55"/>
@@ -59,16 +64,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ljr-Y9-NfJ" userLabel="비밀번호 스택">
-                            <rect key="frame" x="20" y="233" width="374" height="106"/>
+                            <rect key="frame" x="20" y="233.5" width="374" height="106.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM7-lP-LjL">
-                                    <rect key="frame" x="0.0" y="0.0" width="52" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="52" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wN-5t-vpk" userLabel="비밀번호텍스트필드">
-                                    <rect key="frame" x="0.0" y="26" width="374" height="54"/>
+                                    <rect key="frame" x="0.0" y="26.5" width="374" height="54"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="8~16자의 영문, 숫자, 특수문자" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LU6-Xm-bpc" userLabel="비밀번호">
                                             <rect key="frame" x="15" y="15" width="344" height="24"/>
@@ -86,7 +91,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-UF-cgO" userLabel="비밀번호형식은어쩌구">
-                                    <rect key="frame" x="0.0" y="88" width="268.5" height="18"/>
+                                    <rect key="frame" x="0.0" y="88.5" width="268.5" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMR-9y-tVj">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="18"/>
@@ -110,16 +115,16 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-dZ-aEK" userLabel="비밀번호 재입력 스택">
-                            <rect key="frame" x="20" y="367" width="374" height="106"/>
+                            <rect key="frame" x="20" y="368" width="374" height="106.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghb-8j-XvT">
-                                    <rect key="frame" x="0.0" y="0.0" width="95" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcb-J4-rZh" userLabel="비밀번호재입력 텍스트필드">
-                                    <rect key="frame" x="0.0" y="26" width="374" height="54"/>
+                                    <rect key="frame" x="0.0" y="26.5" width="374" height="54"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 한번 더 입력해 주세요" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-Vf-KYD" userLabel="비밀번호 재입력">
                                             <rect key="frame" x="15" y="15" width="344" height="24"/>
@@ -137,7 +142,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2ez-ye-BIa" userLabel="비밀번호가 일치하지 않아요">
-                                    <rect key="frame" x="0.0" y="88" width="152.5" height="18"/>
+                                    <rect key="frame" x="0.0" y="88.5" width="152.5" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B5-U1-z4f">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="18"/>
@@ -161,16 +166,16 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-Nb-vxf" userLabel="이메일 스택">
-                            <rect key="frame" x="20" y="99" width="374" height="106"/>
+                            <rect key="frame" x="20" y="99" width="374" height="106.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-uJ-6ls">
-                                    <rect key="frame" x="0.0" y="0.0" width="39" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="39" height="18.5"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaH-VC-WqO" userLabel="이메일텍스트필드">
-                                    <rect key="frame" x="0.0" y="26" width="374" height="54"/>
+                                    <rect key="frame" x="0.0" y="26.5" width="374" height="54"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="soboksobok@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bdf-4X-ikb" userLabel="이메일">
                                             <rect key="frame" x="15" y="15" width="344" height="24"/>
@@ -188,7 +193,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="itb-y6-TcY" userLabel="이메일 형식이 올바르지 않아요">
-                                    <rect key="frame" x="0.0" y="88" width="167" height="18"/>
+                                    <rect key="frame" x="0.0" y="88.5" width="167" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-vc-6wj">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="18"/>

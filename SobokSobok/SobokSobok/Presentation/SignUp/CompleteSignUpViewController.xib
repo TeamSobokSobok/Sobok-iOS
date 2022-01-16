@@ -43,7 +43,7 @@
                     <color key="tintColor" name="white_sub"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="시작하기">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                        <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
