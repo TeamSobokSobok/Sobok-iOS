@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicineSpecificPeriodViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="dayPeriodPickerView" destination="3Jj-ch-nnj" id="j5m-Jb-HLc"/>
+                <outlet property="mainView" destination="Vbq-Un-feR" id="Nfv-dK-hRH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeM-0e-NRB">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbq-Un-feR">
+                            <rect key="frame" x="0.0" y="591" width="414" height="305"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sc-Gg-h3j">
+                                    <rect key="frame" x="348" y="19" width="54" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="54" id="aZF-NB-tPc"/>
+                                        <constraint firstAttribute="height" constant="28" id="sLz-6L-ucL"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="확인">
+                                        <color key="titleColor" name="dark_mint_main"/>
+                                    </state>
+                                </button>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jj-ch-nnj">
+                                    <rect key="frame" x="0.0" y="47" width="414" height="158"/>
+                                </pickerView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="0Sc-Gg-h3j" secondAttribute="trailing" constant="12" id="9mw-Ne-Aah"/>
+                                <constraint firstItem="3Jj-ch-nnj" firstAttribute="top" secondItem="0Sc-Gg-h3j" secondAttribute="bottom" id="DSs-IQ-oOa"/>
+                                <constraint firstAttribute="trailing" secondItem="3Jj-ch-nnj" secondAttribute="trailing" id="LBB-xy-QeT"/>
+                                <constraint firstAttribute="height" constant="305" id="OYv-BX-30h"/>
+                                <constraint firstAttribute="bottom" secondItem="3Jj-ch-nnj" secondAttribute="bottom" constant="100" id="iby-HS-WaV"/>
+                                <constraint firstItem="0Sc-Gg-h3j" firstAttribute="top" secondItem="Vbq-Un-feR" secondAttribute="top" constant="19" id="jwD-5F-XeC"/>
+                                <constraint firstItem="3Jj-ch-nnj" firstAttribute="leading" secondItem="Vbq-Un-feR" secondAttribute="leading" id="pj5-YF-BXw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.49379248489425981" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Vbq-Un-feR" firstAttribute="leading" secondItem="WeM-0e-NRB" secondAttribute="leading" id="cy6-xF-wQu"/>
+                        <constraint firstAttribute="bottom" secondItem="Vbq-Un-feR" secondAttribute="bottom" id="eFT-Rf-Lcf"/>
+                        <constraint firstAttribute="trailing" secondItem="Vbq-Un-feR" secondAttribute="trailing" id="wep-yd-Flo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.51737160120845926" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WeM-0e-NRB" secondAttribute="trailing" id="H5A-Xy-iuF"/>
+                <constraint firstItem="WeM-0e-NRB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TUl-xq-eB3"/>
+                <constraint firstAttribute="bottom" secondItem="WeM-0e-NRB" secondAttribute="bottom" id="dX9-aR-LpO"/>
+                <constraint firstItem="WeM-0e-NRB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gNz-uY-0xz"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

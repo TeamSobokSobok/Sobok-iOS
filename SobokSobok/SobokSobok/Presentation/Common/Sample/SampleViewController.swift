@@ -19,7 +19,18 @@ import Then
 
 final class SampleViewController: BaseViewController {
 
+    @IBOutlet var fontLabel: [UILabel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TypoStyle.allCases.forEach {
+            fontLabel[$0.rawValue]
+                .setTypoStyle(
+                    font: $0.font,
+                    kernValue: $0.labelDescription.kern,
+                    lineSpacing: $0.labelDescription.lineHeight
+                )
+        }
     }
 }
