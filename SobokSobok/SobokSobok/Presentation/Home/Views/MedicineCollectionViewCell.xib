@@ -23,10 +23,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="854-hb-RnR">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="854-hb-RnR" userLabel="Container Stack View">
                         <rect key="frame" x="20" y="19" width="267" height="101"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6FG-Um-hhf">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6FG-Um-hhf" userLabel="Top Stack View">
                                 <rect key="frame" x="0.0" y="0.0" width="123.66666666666667" height="26"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34b-Ag-wzp">
@@ -93,24 +93,55 @@
                             </stackView>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhA-XV-Yww">
-                        <rect key="frame" x="315" y="4" width="56" height="56"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POd-4r-X6J">
+                        <rect key="frame" x="159" y="56" width="56" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="" image="icCheckUnselect56"/>
+                    </button>
+                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ktv-gk-zOy" userLabel="Button Stack View">
+                        <rect key="frame" x="199.33333333333337" y="14" width="157.66666666666663" height="36"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POd-4r-X6J">
-                                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-ka-9Lt">
+                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                <color key="backgroundColor" name="gray150_sub"/>
+                                <color key="tintColor" name="black_sub"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="" image="icCheckUnselect56"/>
+                                <state key="normal" image="icEmotion36"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-ka-9Lt">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsa-0j-a7J">
+                                <rect key="frame" x="41.000000000000007" y="0.0" width="116.66666666666669" height="36"/>
+                                <color key="backgroundColor" name="gray150_sub"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="" image="icEmotion36"/>
+                                <state key="normal" title="아직 안 먹었어요"/>
+                                <buttonConfiguration key="configuration" style="plain" title="아직 안 먹었어요">
+                                    <color key="baseForegroundColor" name="gray600_sub"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="56" id="RZZ-wj-R8e"/>
+                            <constraint firstAttribute="height" constant="36" id="KlW-aK-Zvs"/>
                         </constraints>
                     </stackView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-5Q-UH4">
+                        <rect key="frame" x="315" y="4" width="56" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="56" id="eUW-Ff-Uoo"/>
+                            <constraint firstAttribute="height" constant="56" id="fnt-8k-cLk"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="icCheckUnselect56"/>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oc-cm-pxF">
                         <rect key="frame" x="332" y="106.66666666666667" width="25" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -122,27 +153,39 @@
             <viewLayoutGuide key="safeArea" id="Fyt-m9-VdC"/>
             <constraints>
                 <constraint firstItem="854-hb-RnR" firstAttribute="leading" secondItem="k4k-xJ-HfK" secondAttribute="leading" constant="20" id="H8Z-d1-dj7"/>
-                <constraint firstItem="POd-4r-X6J" firstAttribute="centerY" secondItem="sdh-55-dG6" secondAttribute="centerY" id="Nap-ms-bbx"/>
-                <constraint firstAttribute="trailing" secondItem="xhA-XV-Yww" secondAttribute="trailing" constant="4" id="Q57-pL-Qga"/>
                 <constraint firstAttribute="bottom" secondItem="854-hb-RnR" secondAttribute="bottom" constant="20" id="YA7-Oh-6Kb"/>
                 <constraint firstItem="854-hb-RnR" firstAttribute="top" secondItem="k4k-xJ-HfK" secondAttribute="top" constant="19" id="blX-Do-Www"/>
+                <constraint firstItem="ktv-gk-zOy" firstAttribute="centerY" secondItem="sdh-55-dG6" secondAttribute="centerY" id="enM-jz-1HY"/>
                 <constraint firstAttribute="bottom" secondItem="0oc-cm-pxF" secondAttribute="bottom" constant="13" id="hYJ-Y3-gkc"/>
+                <constraint firstAttribute="trailing" secondItem="ktv-gk-zOy" secondAttribute="trailing" constant="18" id="lxh-4D-bDC"/>
+                <constraint firstItem="7d0-5Q-UH4" firstAttribute="centerY" secondItem="sdh-55-dG6" secondAttribute="centerY" id="sjw-4z-odo"/>
+                <constraint firstAttribute="trailing" secondItem="7d0-5Q-UH4" secondAttribute="trailing" constant="4" id="tqz-Vg-7Dt"/>
                 <constraint firstAttribute="trailing" secondItem="0oc-cm-pxF" secondAttribute="trailing" constant="18" id="ySl-Sv-VUk"/>
             </constraints>
             <size key="customSize" width="391" height="123"/>
             <connections>
+                <outlet property="buttonStackView" destination="ktv-gk-zOy" id="GRk-in-s5Q"/>
+                <outlet property="checkButton" destination="7d0-5Q-UH4" id="gfa-eh-Unf"/>
+                <outlet property="eatStateButton" destination="hsa-0j-a7J" id="qar-a1-4DD"/>
+                <outlet property="emotionButton" destination="q3p-ka-9Lt" id="1yU-Ed-ag1"/>
                 <outlet property="pillColorView" destination="34b-Ag-wzp" id="uJa-C6-mxg"/>
                 <outlet property="pillName" destination="sdh-55-dG6" id="rEI-23-heJ"/>
                 <outlet property="stickerCountLabel" destination="0oc-cm-pxF" id="rTn-Hj-Um9"/>
                 <outlet property="stickerStackView" destination="96t-aL-UfD" id="yN7-HJ-kgc"/>
             </connections>
-            <point key="canvasLocation" x="-18" y="310"/>
+            <point key="canvasLocation" x="-18.399999999999999" y="308.86699507389164"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="icCheckUnselect56" width="56" height="56"/>
         <image name="icEmotion36" width="36" height="36"/>
         <image name="icSobok" width="84" height="84"/>
+        <namedColor name="black_sub">
+            <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray150_sub">
+            <color red="0.93725490196078431" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="gray600_sub">
             <color red="0.51764705882352946" green="0.5490196078431373" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

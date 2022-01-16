@@ -219,7 +219,7 @@ extension MainViewController: CollectionViewDelegate {
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pillNames[indexPath.row % 6]
-        if indexPath.row % 2 != 0 {
+        if indexPath.row % 2 == 0 {
             cell.stickerStackView.isHidden = true
             cell.stickerCountLabel.isHidden = true
         }
