@@ -36,6 +36,10 @@ final class MedicineTimeViewController: BaseViewController {
         super.style()
         confirmButton.makeRounded(radius: 12)
         mainView.makeRounded(radius: 20)
+    }
+    
+    override func layout() {
+        super.layout()
         timePickerHeight.constant = 0
     }
     
