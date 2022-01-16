@@ -13,6 +13,8 @@ final class SetNickNameVIewController: BaseViewController {
 
     // MARK: Properties
     private var isNickNameRight: Bool = false
+    private var isKeyboardOn: Bool = false
+    private var keyboardHeight: CGFloat = 0
     
     // MARK: @IBOutlet Properties
     @IBOutlet weak var titleTextLabel: UILabel!
@@ -28,6 +30,8 @@ final class SetNickNameVIewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
      }
     
     override func style() {
@@ -71,24 +75,43 @@ final class SetNickNameVIewController: BaseViewController {
         checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
     }
     
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        isKeyboardOn = true
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        keyboardHeight = 0
+        isKeyboardOn = false
+    }
+    
     // MARK: @IBAction Properties
     @IBAction func touchUpToCheckDuplication(_ sender: Any) {
-        showToast(message: "dhkdhkd")
+        showToast(message: "dhkdhkd", iskeyboardOn: isKeyboardOn, keyboardHeight: keyboardHeight)
     }
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
         print("닉네임 : \(nickNameTextField.text ?? "" )")
     }
     
-    func showToast(message: String) {
+    func showToast(message: String, iskeyboardOn: Bool, keyboardHeight: CGFloat) {
         // 토스트 선언
         var toastLabel = UILabel()
         // 토스트 위치
-        toastLabel = UILabel(frame: CGRect(x: 20,
-                                           y: self.view.safeAreaLayoutGuide.layoutFrame.height,
-                                           width: self.view.frame.size.width - 40,
-                                           height: 47))
-        // 토스트 색
+        if iskeyboardOn {
+            toastLabel = UILabel(frame: CGRect(x: 20,
+                                               y: self.view.frame.size.height - keyboardHeight - 59,
+                                               width: self.view.frame.size.width - 40,
+                                               height: 47))
+        } else {
+            toastLabel = UILabel(frame: CGRect(x: 20,
+                                               y: self.view.frame.size.height - 95,
+                                               width: self.view.frame.size.width - 40,
+                                               height: 47))
+        }
+                // 토스트 색
         toastLabel.backgroundColor = UIColor(cgColor: Color.black.cgColor)
         toastLabel.textColor = UIColor(cgColor: Color.white.cgColor)
         // 토스트 값
