@@ -14,11 +14,12 @@ final class CompleteSignUpViewController: BaseViewController {
     }
     
     override func style() {
+        // 네비게이션 바
         title = "회원가입 완료"
-        let backButton = UIBarButtonItem()
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        backButton.title = ""
-        backButton.tintColor = .black
-        self.navigationController?.navigationBar.backgroundColor = .white
     }
+    
+    @IBAction func touchUpToStart(_ sender: Any) {
+        print("로그인")
+    }
+    
 }
