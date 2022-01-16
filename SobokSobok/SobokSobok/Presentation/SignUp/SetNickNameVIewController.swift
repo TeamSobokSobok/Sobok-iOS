@@ -13,6 +13,7 @@ final class SetNickNameVIewController: BaseViewController {
 
     // MARK: Properties
     private var isNickNameRight: Bool = false
+    private var isDuplicationChecked: Bool = false
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
     
@@ -89,11 +90,16 @@ final class SetNickNameVIewController: BaseViewController {
     
     // MARK: @IBAction Properties
     @IBAction func touchUpToCheckDuplication(_ sender: Any) {
-        showToast(message: "dhkdhkd", iskeyboardOn: isKeyboardOn, keyboardHeight: keyboardHeight)
+        showToast(message: "사용 가능한 닉네임이에요")
+        isDuplicationChecked = true
     }
     
     @IBAction func touchUpToSignUp(_ sender: Any) {
-        print("닉네임 : \(nickNameTextField.text ?? "" )")
+        if isDuplicationChecked {
+            showToast(message: "\(nickNameTextField.text ?? "")")
+        } else {
+            showToast(message: "닉네임 중복확인을 해주세요")
+        }
     }
     
     func showToast(message: String) {
