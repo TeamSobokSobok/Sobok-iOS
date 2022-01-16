@@ -31,16 +31,6 @@ final class MedicineInfoEditViewController: UIViewController {
     @IBOutlet weak var selectTimeCollectionView: UICollectionView!
     
     // MARK: - Properties
-    let navigationView = UIView().then {
-        $0.backgroundColor = .white
-    }
-    let navigationTitleLabel = UILabel().then {
-        $0.text = "복약 정보 수정"
-        $0.font = .systemFont(ofSize: 17)
-    }
-    let backButton = UIButton().then {
-        $0.setImage(Image.icBack48, for: .normal)
-    }
     private var timeList: [String] = ["오전 8 : 00"] {
         didSet {
             selectTimeCollectionView.reloadData()
@@ -59,9 +49,6 @@ final class MedicineInfoEditViewController: UIViewController {
     
     // MARK: - Functions
     private func setUI() {
-        [navigationView, navigationTitleLabel, backButton].forEach {
-            view.addSubview($0)
-        }
         [deleteButton, acceptButton].forEach {
             $0?.cornerRadius = 12
         }
@@ -77,23 +64,6 @@ final class MedicineInfoEditViewController: UIViewController {
 //            font: TypoStyle.body5.font,
 //            kernValue: TypoStyle.body5.labelDescription.kern,
 //            lineSpacing: TypoStyle.body5.labelDescription.lineHeight)
-    }
-    
-    private func setConstraints() {
-        navigationView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(102)
-        }
-        
-        navigationTitleLabel.snp.makeConstraints {
-            $0.centerX.equalTo(navigationView)
-            $0.bottom.equalTo(navigationView).inset(20)
-        }
-        
-        backButton.snp.makeConstraints {
-            $0.leading.equalTo(navigationView).inset(1)
-            $0.centerY.equalTo(navigationTitleLabel)
-        }
     }
     
     func presentViewController(viewControllers: UIViewController.Type) {
