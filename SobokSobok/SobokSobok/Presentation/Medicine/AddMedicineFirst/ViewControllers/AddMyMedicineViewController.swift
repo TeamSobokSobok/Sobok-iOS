@@ -90,7 +90,7 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
         guard let cell = addMyMedicineView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
         
         // FooterView +버튼 클릭 시 셀 추가
-        cell.addMeidicineCellClosure = {
+        cell.addMedicineCellClosure = {
             self.medicineData.append("")
             self.addMyMedicineView.collectionView.reloadData()
         }
