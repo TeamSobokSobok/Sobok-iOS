@@ -20,7 +20,6 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
     // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
     
     // MARK: - Functions
