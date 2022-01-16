@@ -10,16 +10,24 @@ import UIKit
 import Then
 import SnapKit
 
+enum TermType: Int, CaseIterable {
+    case everyday = 0
+    case specificDay
+    case specificTerm
+}
+
 final class MedicineInfoEditViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var medicineNameTextField: UITextField!
     @IBOutlet weak var termSelectButton: UIButton!
-    @IBOutlet weak var dayButton: UIButton!
-    @IBOutlet weak var weekButton: UIButton!
-    @IBOutlet weak var termButton: UIButton!
-    @IBOutlet weak var selectWeekButton: UIButton!
-    @IBOutlet weak var selectTermButton: UIButton!
+    @IBOutlet var selectButtons: [UIButton]!
+    @IBOutlet weak var specificDayView: UIView!
+    @IBOutlet weak var specificTermView: UIView!
+    @IBOutlet weak var takeDayLabel: UILabel!
+    @IBOutlet weak var takeTermLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var acceptButton: UIButton!
     
     // MARK: - Properties
     let navigationView = UIView().then {
@@ -32,10 +40,6 @@ final class MedicineInfoEditViewController: UIViewController {
     let backButton = UIButton().then {
         $0.setImage(Image.icBack48, for: .normal)
     }
-    
-    // MARK: - @IBOutlet Properties
-    @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var acceptButton: UIButton!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -53,10 +57,10 @@ final class MedicineInfoEditViewController: UIViewController {
         [deleteButton, acceptButton].forEach {
             $0?.cornerRadius = 12
         }
-        [dayButton, weekButton, termButton].forEach {
-            $0?.makeRoundedWithBorder(radius: 10, color: Color.darkMint.cgColor)
+        selectButtons.forEach {
+            $0.cornerRadius = 10
         }
-        [medicineNameTextField, termSelectButton, selectWeekButton, selectTermButton].forEach {
+        [medicineNameTextField, termSelectButton, specificDayView, specificTermView].forEach {
             $0?.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         }
             
@@ -84,9 +88,79 @@ final class MedicineInfoEditViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // 사용자가 처음 화면을 터치할 때 키보드 호출.
-        self.view.endEditing(true)
+    func presentViewController(viewControllers: UIViewController.Type) {
+        let viewController = viewControllers.instanceFromNib()
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.modalTransitionStyle = .crossDissolve
+        self.present(viewController, animated: true)
     }
-
+    
+    func updateTermButtonAttributes(button: UIButton, width: CGFloat, boardColor: CGColor, backgroundColor: UIColor, setTitleColor: UIColor) {
+        button.layer.borderWidth = width
+        button.layer.borderColor = boardColor
+        button.backgroundColor = backgroundColor
+        button.setTitleColor(setTitleColor, for: .normal)
+    }
+    
+    // MARK: - @IBAction Properties
+    @IBAction func touchUpToSelectButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        let index = sender.tag
+        switch index {
+        case TermType.everyday.rawValue:
+            if sender.isSelected {
+                specificDayView.isHidden = true
+                specificTermView.isHidden = true
+                selectButtons[2].isSelected = false
+                selectButtons[1].isSelected = false
+                updateTermButtonAttributes(button: selectButtons[0], width: 1, boardColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
+                updateTermButtonAttributes(button: selectButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[2], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+            } else {
+                updateTermButtonAttributes(button: selectButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+            }
+        case TermType.specificDay.rawValue:
+            if sender.isSelected {
+                specificDayView.isHidden = false
+                specificTermView.isHidden = true
+                selectButtons[0].isSelected = false
+                selectButtons[2].isSelected = false
+                updateTermButtonAttributes(button: selectButtons[1], width: 1, boardColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
+                updateTermButtonAttributes(button: selectButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[2], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+            } else {
+                specificDayView.isHidden = true
+                specificTermView.isHidden = true
+                updateTermButtonAttributes(button: selectButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+            }
+        case TermType.specificTerm.rawValue:
+            if sender.isSelected {
+                specificDayView.isHidden = true
+                specificTermView.isHidden = false
+                selectButtons[0].isSelected = false
+                selectButtons[1].isSelected = false
+                updateTermButtonAttributes(button: selectButtons[2], width: 1, boardColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
+                updateTermButtonAttributes(button: selectButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+            } else {
+                specificDayView.isHidden = true
+                specificTermView.isHidden = true
+                updateTermButtonAttributes(button: selectButtons[2], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+            }
+        default: break
+        }
+    }
+    
+    @IBAction func touchUpToTermButton(_ sender: UIButton) {
+        presentViewController(viewControllers: MedicineCalendarViewController.self)
+    }
+    
+    @IBAction func touchUpToDayButton(_ sender: Any) {
+        presentViewController(viewControllers: WeekSelectViewController.self)
+    }
+    
+    @IBAction func touchUpToPeriodButton(_ sender: Any) {
+        presentViewController(viewControllers: TermSelectViewController.self)
+    }
+    
 }
