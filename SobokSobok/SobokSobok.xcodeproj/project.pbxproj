@@ -20,6 +20,7 @@
 		BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCC278B3369009AA416 /* TabBarController.swift */; };
 		BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14F362278EB4B000F316AF /* ShareViewController.swift */; };
 		BD14F365278EB4B000F316AF /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD14F363278EB4B000F316AF /* ShareViewController.xib */; };
+		BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B3B27953B8100B1F59D /* PagerTab.swift */; };
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
@@ -133,6 +134,7 @@
 		BD149DCC278B3369009AA416 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BD14F362278EB4B000F316AF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		BD14F363278EB4B000F316AF /* ShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		BD2C8B3B27953B8100B1F59D /* PagerTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerTab.swift; sourceTree = "<group>"; };
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +250,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD2C8B3A27953B7300B1F59D /* PagerTab */ = {
+			isa = PBXGroup;
+			children = (
+				BD2C8B3B27953B8100B1F59D /* PagerTab.swift */,
+			);
+			path = PagerTab;
+			sourceTree = "<group>";
+		};
 		BD515E2C278770C5003BD5A4 = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +430,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD2C8B3A27953B7300B1F59D /* PagerTab */,
 				BD9857A82791EB3E009883FC /* Views */,
 				BD51AE342790A93200314A94 /* Sheet */,
 				BD515E74278778FD003BD5A4 /* Sample */,
@@ -895,6 +906,7 @@
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
+				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,

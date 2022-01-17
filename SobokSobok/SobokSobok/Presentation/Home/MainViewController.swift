@@ -9,7 +9,10 @@ import UIKit
 
 import FSCalendar
 
-final class MainViewController: BaseViewController {
+final class MainViewController: BaseViewController, PageComponentProtocol {
+    var pageTitle: String {
+        "수현"
+    }
 
     // MARK: - UI
     @IBOutlet weak var scrollView: UIScrollView!
@@ -51,6 +54,7 @@ final class MainViewController: BaseViewController {
     }()
     fileprivate let kformatter: DateFormatter = {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
         formatter.dateFormat = "M월 d일 EEEE"
         return formatter
     }()
@@ -84,7 +88,7 @@ final class MainViewController: BaseViewController {
 
     override func style() {
         super.style() // 오버라이딩 위해서는 부모 뷰 상속 필요
-        titleLabel.setTypoStyle(typoStyle: .header1)
+//        titleLabel.setTypoStyle(typoStyle: .header1)
         dateLabel.setTypoStyle(typoStyle: .title2)
         scopeLabel.setTypoStyle(typoStyle: .body7)
         selectedDate = kformatter.string(from: Date())
@@ -222,7 +226,7 @@ extension MainViewController: FSCalendarDelegateAppearance {
 
 // MARK: - CollectionView
 
-extension MainViewController: CollectionViewDelegate {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         3
     }
