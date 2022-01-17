@@ -9,11 +9,12 @@ import UIKit
 
 final class RequestSharingViewController: BaseViewController {
 
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var searchTextField: UITextField!
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func style() {
@@ -22,6 +23,9 @@ final class RequestSharingViewController: BaseViewController {
         let closeButton = UIBarButtonItem(image: UIImage(named: "icClose48"), style: .plain, target: self, action: #selector(self.closeToShareView))
         closeButton.tintColor = .black
         navigationItem.leftBarButtonItem = closeButton
+        
+        // 키보드 커스텀
+        searchTextField.returnKeyType = .search
     }
     
     // MARK: - Functions

@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RequestSharingViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="searchTextField" destination="2Mq-wI-8Y3" id="z7D-mO-tkn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
