@@ -68,8 +68,8 @@ final class AddMedicineSheet: BaseViewController {
         // presentingViewController가 탭바
         // 탭바의 selectedViewController를 사용하기 위해 타입 캐스팅
         self.dismiss(animated: true)
-        let viewController = self.presentingViewController as! UITabBarController
-        let selectedViewController = viewController.selectedViewController as! UINavigationController
+        guard let viewController = self.presentingViewController as? UITabBarController else { return }
+        guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
         let addMyMedicineViewController = AddMyMedicineViewController.instanceFromNib()
         addMyMedicineViewController.tossPill = tossPill
         selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
