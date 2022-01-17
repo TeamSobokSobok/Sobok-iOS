@@ -51,4 +51,5 @@ public enum Image {
 	public static let timePlusIcon = UIImage(named: "timePlusIcon")!
 	public static let icPlusGray = UIImage(named: "icPlusGray")!
 	public static let illustHome = UIImage(named: "illustHome")!
+	public static let calendarBackgroundToday = UIImage(named: "calendarBackgroundToday")!
 }

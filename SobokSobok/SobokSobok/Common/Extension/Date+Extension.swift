@@ -11,20 +11,30 @@ extension Date {
     enum FormatType {
         case full
         case year
+        case day
         case month
         case time
         
         var description: String {
             switch self {
             case .full:
-                return ""
+                return "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
             case .year:
-                <#code#>
+                return "yyyy-MM-dd"
+            case .day:
+                return "M월 d일 EEEE"
             case .month:
-                <#code#>
+                return "M월"
             case .time:
-                <#code#>
+                return "a h시"
             }
         }
+    }
+    
+    func toString(of type: FormatType) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = type.description
+        return dateFormatter.string(from: self)
     }
 }
