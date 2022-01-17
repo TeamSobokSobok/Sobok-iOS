@@ -7,18 +7,17 @@
 
 import UIKit
 
-class SendStickerPopUpViewController: UIViewController {
+final class SendStickerPopUpViewController: BaseViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var sendStickerPopUpView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
     }
     
     // MARK: - Functions
-    func setUI() {
+    override func style() {
         sendStickerPopUpView.makeRounded(radius: 20)
     }
 }
