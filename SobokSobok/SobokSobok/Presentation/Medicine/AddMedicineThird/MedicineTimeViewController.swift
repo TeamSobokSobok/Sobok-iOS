@@ -51,15 +51,15 @@ final class MedicineTimeViewController: BaseViewController {
     
     // MARK: Functions
     private func initTimeData() {
-        for i in 0..<60 {
+        for tmp in 0..<60 {
             var minute: String
-            minute = i < 10 ? "0" + "\(i)" : "\(i)"
+            minute = tmp < 10 ? "0" + "\(tmp)" : "\(tmp)"
             minuteList.append(minute)
         }
         
-        for i in 0..<24 {
+        for tmp in 0..<24 {
             var hour: String
-            hour =   i < 10 ? "0" + "\(i)" :  "\(i)"
+            hour =   tmp < 10 ? "0" + "\(tmp)" :  "\(tmp)"
             hourList.append(hour)
         }
     }
