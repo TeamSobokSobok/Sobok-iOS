@@ -23,12 +23,23 @@ final class HomeViewController: BaseViewController, PageComponentProtocol {
         super.layout()
         let calendarViewController = CalendarViewController.instanceFromNib()
         calendarViewController.tabType = .home
-        contentView.addSubview(calendarViewController.view)
+        embed(calendarViewController, inView: contentView)
+//        contentView.addSubview(calendarViewController.view)
     }
     
     override func style() {
         super.style()
         
         messageLabel.setTypoStyle(typoStyle: .header1)
+    }
+}
+
+extension UIViewController {
+    func embed(_ viewController:UIViewController, inView view: UIView) {
+        viewController.willMove(toParent: self)
+        viewController.view.frame = view.bounds
+        view.addSubview(viewController.view)
+        self.addChild(viewController)
+        viewController.didMove(toParent: self)
     }
 }
