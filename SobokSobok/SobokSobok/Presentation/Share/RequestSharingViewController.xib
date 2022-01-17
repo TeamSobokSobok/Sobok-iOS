@@ -41,7 +41,7 @@
                             <rect key="frame" x="15" y="15.5" width="20.5" height="22.5"/>
                             <color key="tintColor" name="gray400_sub"/>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임 검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Mq-wI-8Y3">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임 검색" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2Mq-wI-8Y3">
                             <rect key="frame" x="50.5" y="15" width="308.5" height="24"/>
                             <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
