@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Moya
 
 final class AddMedicineFourthViewController: BaseViewController {
-
+    
     // MARK: Property
     // 임시 데이터
     private var medicineList: [String] = [] {
@@ -16,18 +17,19 @@ final class AddMedicineFourthViewController: BaseViewController {
             medicineInfoCollectionView.reloadData()
         }
     }
-
+    
     // MARK: @IBOutlets
     @IBOutlet weak var medicineInfoCollectionView: UICollectionView!
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
+        getMyPillCount()
     }
     
     override func style() {
         super.style()
-         
+        
     }
     
     // MARK: Functions
@@ -67,23 +69,24 @@ extension AddMedicineFourthViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
-            case UICollectionView.elementKindSectionHeader:
+        case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MedicineInfoHeaderView.reuseIdentifier, for: indexPath) as? MedicineInfoHeaderView else { return UICollectionReusableView()}
             return headerView
             
-            case UICollectionView.elementKindSectionFooter:
-           
+        case UICollectionView.elementKindSectionFooter:
+            
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
             
             footerView.addMedicineCellClosure = {
                 self.medicineList.append("")
+                self.getMyPillCount()
             }
             return footerView
         default:
             assert(false, "응 아니야")
             
         }
-}
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -97,3 +100,24 @@ extension AddMedicineFourthViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension AddMedicineFourthViewController {
+    
+    func getMyPillCount() {
+        PillCountAPI.shared.getMyPillCount(completion: { (result) in
+            switch result {
+            case .success(let pill):
+                if let data = pill as? PillCount {
+                    print(data)// UI 등 할일 작성, reloadData 등등..
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
+}
