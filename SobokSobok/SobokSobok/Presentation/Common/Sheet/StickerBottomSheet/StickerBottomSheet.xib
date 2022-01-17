@@ -38,6 +38,7 @@
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXa-XU-vag">
                             <rect key="frame" x="319" y="11.666666666666686" width="48" height="48"/>
+                            <color key="tintColor" name="gray700_sub"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icClose48"/>
                             <connections>
@@ -79,6 +80,9 @@
     </objects>
     <resources>
         <image name="icClose48" width="48" height="48"/>
+        <namedColor name="gray700_sub">
+            <color red="0.40392156862745099" green="0.43137254901960786" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="gray800_sub">
             <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
