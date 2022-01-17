@@ -576,11 +576,11 @@
 		BD515E6A27877773003BD5A4 /* Medicine */ = {
 			isa = PBXGroup;
 			children = (
+				EC037614278B372500CA4B54 /* AddMedicineSheet */,
 				EC950ED5278EFD4700A34027 /* AddMedicineFirst */,
 				EC950ED9278EFD9200A34027 /* AddMedicineSecond */,
 				EC950EF127909B1C00A34027 /* AddMedicineThird */,
 				EC1C311527941CB000972404 /* AddMedicineFourth */,
-				EC037614278B372500CA4B54 /* AddMedicineSheet */,
 			);
 			path = Medicine;
 			sourceTree = "<group>";
@@ -650,10 +650,8 @@
 		EC037614278B372500CA4B54 /* AddMedicineSheet */ = {
 			isa = PBXGroup;
 			children = (
-				EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */,
-				EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */,
-				EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */,
-				EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */,
+				ECB845F62795C49E00433522 /* ViewControllers */,
+				ECB845F72795C4A900433522 /* Cells */,
 			);
 			path = AddMedicineSheet;
 			sourceTree = "<group>";
@@ -661,11 +659,9 @@
 		EC1C311527941CB000972404 /* AddMedicineFourth */ = {
 			isa = PBXGroup;
 			children = (
-				EC1C311627941CDF00972404 /* AddMedicineFourthViewController.swift */,
-				EC1C311727941CDF00972404 /* AddMedicineFourthViewController.xib */,
-				EC1C311A279428A500972404 /* MedicineInfoCollectionViewCell.swift */,
-				EC1C311B279428A500972404 /* MedicineInfoCollectionViewCell.xib */,
-				EC1C312227948D1300972404 /* MedicineInfoHeaderView.swift */,
+				ECB845F32795C47D00433522 /* ViewControllers */,
+				ECB845F42795C48600433522 /* Cells */,
+				ECB845F52795C49200433522 /* Views */,
 			);
 			path = AddMedicineFourth;
 			sourceTree = "<group>";
@@ -711,16 +707,8 @@
 		EC950ED9278EFD9200A34027 /* AddMedicineSecond */ = {
 			isa = PBXGroup;
 			children = (
-				EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */,
-				EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */,
-				EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */,
-				EC950EDF278FEB7800A34027 /* MedicineCalendarViewController.xib */,
-				EC950EE2278FFACB00A34027 /* MedicineSpecificDayViewController.swift */,
-				EC950EE3278FFACB00A34027 /* MedicineSpecificDayViewController.xib */,
-				EC950EE6278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift */,
-				EC950EE7278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib */,
-				EC950EEA2790012700A34027 /* MedicineDayTableViewCell.swift */,
-				EC950EEB2790012700A34027 /* MedicineDayTableViewCell.xib */,
+				ECB845EE2795C43E00433522 /* ViewControllers */,
+				ECB845EF2795C45200433522 /* Cells */,
 			);
 			path = AddMedicineSecond;
 			sourceTree = "<group>";
@@ -728,13 +716,9 @@
 		EC950EF127909B1C00A34027 /* AddMedicineThird */ = {
 			isa = PBXGroup;
 			children = (
-				EC950EF227909B5800A34027 /* AddMedicineThirdViewController.swift */,
-				EC950EF327909B5800A34027 /* AddMedicineThirdViewController.xib */,
-				EC950EF62790A88D00A34027 /* AddTimeCollectionViewCell.swift */,
-				EC950EF72790A88D00A34027 /* AddTimeCollectionViewCell.xib */,
-				EC1C310D2792CA5200972404 /* AddMedicineTimeFooterView.swift */,
-				EC1C31112792F12E00972404 /* MedicineTimeViewController.swift */,
-				EC1C31122792F12E00972404 /* MedicineTimeViewController.xib */,
+				ECB845F02795C46000433522 /* ViewControllers */,
+				ECB845F22795C47000433522 /* Cells */,
+				ECB845F12795C46900433522 /* Views */,
 			);
 			path = AddMedicineThird;
 			sourceTree = "<group>";
@@ -772,6 +756,102 @@
 				ECB845EA2795776F00433522 /* PillCountModel.swift */,
 			);
 			path = Medicine;
+			sourceTree = "<group>";
+		};
+		ECB845EE2795C43E00433522 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC950EE2278FFACB00A34027 /* MedicineSpecificDayViewController.swift */,
+				EC950EE3278FFACB00A34027 /* MedicineSpecificDayViewController.xib */,
+				EC950EE6278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift */,
+				EC950EE7278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib */,
+				EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */,
+				EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */,
+				EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */,
+				EC950EDF278FEB7800A34027 /* MedicineCalendarViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECB845EF2795C45200433522 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC950EEA2790012700A34027 /* MedicineDayTableViewCell.swift */,
+				EC950EEB2790012700A34027 /* MedicineDayTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ECB845F02795C46000433522 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C31112792F12E00972404 /* MedicineTimeViewController.swift */,
+				EC1C31122792F12E00972404 /* MedicineTimeViewController.xib */,
+				EC950EF227909B5800A34027 /* AddMedicineThirdViewController.swift */,
+				EC950EF327909B5800A34027 /* AddMedicineThirdViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECB845F12795C46900433522 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C310D2792CA5200972404 /* AddMedicineTimeFooterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECB845F22795C47000433522 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC950EF62790A88D00A34027 /* AddTimeCollectionViewCell.swift */,
+				EC950EF72790A88D00A34027 /* AddTimeCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ECB845F32795C47D00433522 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C311627941CDF00972404 /* AddMedicineFourthViewController.swift */,
+				EC1C311727941CDF00972404 /* AddMedicineFourthViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECB845F42795C48600433522 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C311A279428A500972404 /* MedicineInfoCollectionViewCell.swift */,
+				EC1C311B279428A500972404 /* MedicineInfoCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ECB845F52795C49200433522 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C312227948D1300972404 /* MedicineInfoHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECB845F62795C49E00433522 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */,
+				EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECB845F72795C4A900433522 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EC037610278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift */,
+				EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

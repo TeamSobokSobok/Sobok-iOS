@@ -85,6 +85,11 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
         usernameStackView.isHidden = tabType == .home
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLayoutSubviews() {
         setCollectionViewHeight()
     }

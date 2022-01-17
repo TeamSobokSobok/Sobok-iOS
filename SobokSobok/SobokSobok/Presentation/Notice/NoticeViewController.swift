@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class NoticeViewController: UIViewController {
+final class NoticeViewController: BaseViewController {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet var notificationTableView: UITableView!
@@ -21,6 +21,11 @@ final class NoticeViewController: UIViewController {
         assignDelegation()
         registerXib()
         setTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Functions

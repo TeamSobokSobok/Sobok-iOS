@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShareViewController: UIViewController {
+final class ShareViewController: BaseViewController {
 
     @IBOutlet weak var pagerTab: PagerTab!
     
@@ -22,5 +22,11 @@ final class ShareViewController: UIViewController {
         ]
         let style = PagerTab.Style.default
         pagerTab.setup(self, viewControllers: viewControllers, style: style)
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)      
+      
+        tabBarController?.tabBar.isHidden = false
     }
 }
