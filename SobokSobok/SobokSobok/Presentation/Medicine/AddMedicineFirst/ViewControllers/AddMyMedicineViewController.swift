@@ -47,16 +47,9 @@ final class AddMyMedicineViewController: BaseViewController {
     // MARK: Functions
     
     func divideViewControllerCase() {
-        switch tossPill {
-        case .me:
-            addMyMedicineView.whoLabel.text = "내가 먹을 약이에요"
-        case .friend:
-            addMyMedicineView.navigationTitleLabel.text = "약 전송하기"
-            addMyMedicineView.peopleLabel.text = "태현이"
-            addMyMedicineView.whoLabel.text = "태현이가 먹을 약이에요"
-        case .none:
-            break
-        }
+        addMyMedicineView.whoLabel.text = tossPill == .me ? "내가 먹을 약이에요" : "태현이에게 전송할 약이에요"
+        addMyMedicineView.navigationTitleLabel.text = tossPill == .me ? "내 약 추가하기" : "약 전송하기"
+        addMyMedicineView.peopleLabel.text = tossPill == .me ? "나" : "태현이"
     }
     
     private func assignDelegate() {
