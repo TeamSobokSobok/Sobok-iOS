@@ -6,7 +6,7 @@ public enum URLs {
 	public static let signUpURL = "/auth/signup"
 	public static let checkUsernameURL = "/user/name"
 	public static let getCalendarURL = "/schedule/calendar"
-	public static let getPillListURL = "/schedule/my/detail"
+	public static let getPillListURL = "/schedule/detail"
 	public static let editPillListURL = "/pill/{pillId}"
 	public static let stopPillListURL = "/pill/stop/{pillId}"
 	public static let deletePillURL = "/pill/{pillId}"

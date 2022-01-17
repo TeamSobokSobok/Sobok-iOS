@@ -9,7 +9,7 @@ import UIKit
 
 import FSCalendar
 
-final class MainViewController: BaseViewController, PageComponentProtocol {
+final class CalendarViewController: BaseViewController, PageComponentProtocol {
     var pageTitle: String {
         "수현"
     }
@@ -162,14 +162,14 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
 
 // MARK: - FSCalendar
 
-extension MainViewController: FSCalendarDelegate {
+extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
     }
 }
 
-extension MainViewController: FSCalendarDataSource {
+extension CalendarViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         guard let cell = calendar.dequeueReusableCell(
             withIdentifier: CalendarDayCell.reuseIdentifier,
@@ -216,7 +216,7 @@ extension MainViewController: FSCalendarDataSource {
     }
 }
 
-extension MainViewController: FSCalendarDelegateAppearance {
+extension CalendarViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         pillNames = pillNames.reversed()
         selectedDate = kformatter.string(from: date)
@@ -236,7 +236,7 @@ extension MainViewController: FSCalendarDelegateAppearance {
 
 // MARK: - CollectionView
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         3
     }
@@ -307,7 +307,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-extension MainViewController: UICollectionViewDelegateFlowLayout {
+extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func setCollectionViewHeight() {
         collectionViewHeight.constant = collectionView.contentSize.height
     }
@@ -321,7 +321,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension MainViewController: UIScrollViewDelegate {
+extension CalendarViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.backgroundColor  = scrollView.contentOffset.y > UIScreen.main.bounds.height / 2 ? Color.gray150 : Color.white
     }

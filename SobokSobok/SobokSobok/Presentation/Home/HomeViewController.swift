@@ -21,7 +21,7 @@ final class HomeViewController: BaseViewController, PageComponentProtocol {
     
     override func layout() {
         super.layout()
-        let calendarViewController = MainViewController.instanceFromNib()
+        let calendarViewController = CalendarViewController.instanceFromNib()
         calendarViewController.tabType = .home
         contentView.addSubview(calendarViewController.view)
     }

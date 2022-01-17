@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="SobokSobok" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="calendar" destination="TaG-N2-ayD" id="HpD-rK-Bm3"/>
                 <outlet property="calendarHeight" destination="qXW-fv-oVg" id="9mR-de-9U3"/>
