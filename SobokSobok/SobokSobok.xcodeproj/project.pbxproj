@@ -20,6 +20,7 @@
 		BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCC278B3369009AA416 /* TabBarController.swift */; };
 		BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14F362278EB4B000F316AF /* ShareViewController.swift */; };
 		BD14F365278EB4B000F316AF /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD14F363278EB4B000F316AF /* ShareViewController.xib */; };
+		BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B3B27953B8100B1F59D /* PagerTab.swift */; };
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
@@ -111,6 +112,8 @@
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
 		ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */; };
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
+		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
+		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
 		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
 		F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FA7278D814900B20B5E /* SendInfoViewController.xib */; };
 		F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */; };
@@ -138,6 +141,7 @@
 		BD149DCC278B3369009AA416 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BD14F362278EB4B000F316AF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		BD14F363278EB4B000F316AF /* ShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		BD2C8B3B27953B8100B1F59D /* PagerTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerTab.swift; sourceTree = "<group>"; };
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
 		ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
+		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
+		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FA7278D814900B20B5E /* SendInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoViewController.xib; sourceTree = "<group>"; };
 		F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -258,6 +264,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD2C8B3A27953B7300B1F59D /* PagerTab */ = {
+			isa = PBXGroup;
+			children = (
+				BD2C8B3B27953B8100B1F59D /* PagerTab.swift */,
+			);
+			path = PagerTab;
+			sourceTree = "<group>";
+		};
 		BD515E2C278770C5003BD5A4 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +445,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD2C8B3A27953B7300B1F59D /* PagerTab */,
 				BD9857A82791EB3E009883FC /* Views */,
 				BD51AE342790A93200314A94 /* Sheet */,
 				BD515E74278778FD003BD5A4 /* Sample */,
@@ -533,6 +548,8 @@
 			children = (
 				BD14F362278EB4B000F316AF /* ShareViewController.swift */,
 				BD14F363278EB4B000F316AF /* ShareViewController.xib */,
+				F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */,
+				F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -956,6 +973,7 @@
 				9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */,
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
+				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
 				EC1C311D279428A500972404 /* MedicineInfoCollectionViewCell.xib in Resources */,
 				F6538FB1278DBBC100B20B5E /* SendInfoCollectionViewCell.xib in Resources */,
 				F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */,
@@ -1023,11 +1041,13 @@
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
+				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */,
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
+				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
@@ -1218,7 +1238,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W895YM7ZMH;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";
@@ -1233,7 +1253,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sobokcorp.SobokSobok;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sobok.corp.SobokSobok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1250,7 +1270,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W895YM7ZMH;
+				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";
@@ -1265,7 +1285,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sobokcorp.SobokSobok;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sobok.corp.SobokSobok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

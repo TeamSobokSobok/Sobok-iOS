@@ -9,15 +9,10 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Pretendard-Bold.otf">
-            <string>Pretendard-Bold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="mT1-S7-pLf" id="08D-sX-IuO"/>
+                <outlet property="pagerTab" destination="GpT-bF-mgb" id="Emg-3O-fMx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,158 +21,35 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmz-WE-XjL">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="AsE-uB-ch5">
-                            <rect key="frame" x="20" y="85" width="30" height="24"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BI1-sg-udi">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="Yia-aC-1RB"/>
-                                        <constraint firstAttribute="height" constant="24" id="wDm-G7-e25"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="수현">
-                                        <color key="titleColor" name="white_sub"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-KS-VRQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="bWe-5F-hfk"/>
-                                        <constraint firstAttribute="width" constant="30" id="uY5-Le-k4H"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="수현">
-                                        <color key="titleColor" name="middle_mint_main"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-rv-GPI">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="cne-UI-jPg"/>
-                                        <constraint firstAttribute="width" constant="30" id="tZU-hR-4OM"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="수현">
-                                        <color key="titleColor" name="middle_mint_main"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PC1-W4-Qcg">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="24" id="Jnb-Qz-HeE"/>
-                                        <constraint firstAttribute="width" constant="30" id="gJH-nk-N50"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="수현">
-                                        <color key="titleColor" name="middle_mint_main"/>
-                                    </state>
-                                </button>
-                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-xa-w15">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="UNU-di-gNv"/>
-                                        <constraint firstAttribute="height" constant="24" id="bo7-7I-SZU"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="17"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="수현">
-                                        <color key="titleColor" name="middle_mint_main"/>
-                                    </state>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="2yB-Tn-6mM"/>
-                            </constraints>
-                        </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfV-Yu-l7n">
-                            <rect key="frame" x="320" y="73" width="48" height="48"/>
-                            <color key="tintColor" name="white_sub"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="icPlus48"/>
-                        </button>
-                    </subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpT-bF-mgb" customClass="PagerTab" customModule="SobokSobok" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="85" width="375" height="693"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wq5-Ti-Ifb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                     <color key="backgroundColor" name="mint_main"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="AsE-uB-ch5" secondAttribute="bottom" constant="14" id="5CW-pQ-Fto"/>
-                        <constraint firstAttribute="height" constant="123" id="QGG-Vh-pNu"/>
-                        <constraint firstAttribute="trailing" secondItem="gfV-Yu-l7n" secondAttribute="trailing" constant="7" id="a1V-Ft-cWi"/>
-                        <constraint firstItem="AsE-uB-ch5" firstAttribute="leading" secondItem="lmz-WE-XjL" secondAttribute="leading" constant="20" id="qT9-UJ-e6F"/>
-                        <constraint firstItem="gfV-Yu-l7n" firstAttribute="centerY" secondItem="AsE-uB-ch5" secondAttribute="centerY" id="zuG-SG-5sn"/>
+                        <constraint firstAttribute="height" constant="85" id="vOi-QY-myf"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수현이이름이10글자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5X-qb-o7p">
-                    <rect key="frame" x="20" y="143" width="193.33333333333334" height="29"/>
-                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="24"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-6Q-019">
-                    <rect key="frame" x="213.33333333333334" y="141.66666666666666" width="32" height="32"/>
-                    <color key="tintColor" name="gray400_sub"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="icPencil32"/>
-                </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcz-S9-WDa">
-                    <rect key="frame" x="0.0" y="186.66666666666666" width="375" height="124.99999999999997"/>
-                    <color key="backgroundColor" name="middle_mint_main"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="125" id="DWA-tL-cJo"/>
-                    </constraints>
-                </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mT1-S7-pLf">
-                    <rect key="frame" x="0.0" y="311.66666666666674" width="375" height="466.33333333333326"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0xl-GJ-SDT">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bcz-S9-WDa" secondAttribute="trailing" id="0KH-Zp-Yla"/>
-                <constraint firstItem="W5X-qb-o7p" firstAttribute="top" secondItem="lmz-WE-XjL" secondAttribute="bottom" constant="20" id="39d-91-Jb4"/>
-                <constraint firstItem="BWd-6Q-019" firstAttribute="leading" secondItem="W5X-qb-o7p" secondAttribute="trailing" id="54C-fb-A9U"/>
-                <constraint firstItem="BWd-6Q-019" firstAttribute="centerY" secondItem="W5X-qb-o7p" secondAttribute="centerY" id="BcU-EO-I3r"/>
-                <constraint firstItem="lmz-WE-XjL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F0x-Jq-et3"/>
-                <constraint firstItem="Bcz-S9-WDa" firstAttribute="top" secondItem="BWd-6Q-019" secondAttribute="bottom" constant="13" id="IPs-Zv-pEj"/>
-                <constraint firstItem="Bcz-S9-WDa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kxg-0A-cEa"/>
-                <constraint firstItem="mT1-S7-pLf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XDD-aB-IXA"/>
-                <constraint firstItem="mT1-S7-pLf" firstAttribute="top" secondItem="Bcz-S9-WDa" secondAttribute="bottom" id="dyj-I4-Nmv"/>
-                <constraint firstItem="lmz-WE-XjL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jk4-uB-gdG"/>
-                <constraint firstItem="W5X-qb-o7p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lyw-62-NPL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mT1-S7-pLf" secondAttribute="bottom" id="uDw-Ac-Uch"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mT1-S7-pLf" secondAttribute="trailing" id="wC4-bz-FZK"/>
-                <constraint firstItem="lmz-WE-XjL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wO7-kz-lJ4"/>
+                <constraint firstItem="Wq5-Ti-Ifb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2tF-7s-mRU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GpT-bF-mgb" secondAttribute="trailing" id="DPj-JL-f1j"/>
+                <constraint firstItem="Wq5-Ti-Ifb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ETe-ol-7lP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GpT-bF-mgb" secondAttribute="bottom" id="Hwe-aK-j3l"/>
+                <constraint firstItem="Wq5-Ti-Ifb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IqN-G1-dP3"/>
+                <constraint firstItem="GpT-bF-mgb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gfX-nG-az2"/>
+                <constraint firstItem="GpT-bF-mgb" firstAttribute="top" secondItem="Wq5-Ti-Ifb" secondAttribute="bottom" id="lPw-Hj-vXj"/>
             </constraints>
-            <point key="canvasLocation" x="138.40000000000001" y="146.30541871921181"/>
+            <point key="canvasLocation" x="138.40000000000001" y="145.56650246305421"/>
         </view>
     </objects>
     <resources>
-        <image name="icPencil32" width="32" height="32"/>
-        <image name="icPlus48" width="48" height="48"/>
-        <namedColor name="gray400_sub">
-            <color red="0.76078431372549016" green="0.78823529411764703" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="middle_mint_main">
-            <color red="0.55294117647058827" green="0.92156862745098034" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="white_sub">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

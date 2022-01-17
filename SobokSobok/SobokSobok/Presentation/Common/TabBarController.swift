@@ -54,7 +54,7 @@ extension TabBarController {
 
     private func setTabBarItems() {
         tabs = [
-            UINavigationController(rootViewController: MainViewController.instanceFromNib()),
+            UINavigationController(rootViewController: HomeViewController.instanceFromNib()),
             UINavigationController(rootViewController: ShareViewController.instanceFromNib()),
             UINavigationController(rootViewController: NoticeViewController.instanceFromNib()),
             UINavigationController(rootViewController: UIViewController())
