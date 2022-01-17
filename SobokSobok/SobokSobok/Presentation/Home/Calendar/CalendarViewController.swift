@@ -84,6 +84,7 @@ final class CalendarViewController: BaseViewController {
         usernameStackView.isHidden = tabType == .home
         usernameLabel.setTypoStyle(typoStyle: .header1)
         dateLabel.setTypoStyle(typoStyle: .title2)
+        dateLabel.text = Date().toString(of: .day)
         scopeLabel.setTypoStyle(typoStyle: .body7)
     }
     
