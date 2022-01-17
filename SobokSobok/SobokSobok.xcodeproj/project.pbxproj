@@ -272,6 +272,15 @@
 			path = PagerTab;
 			sourceTree = "<group>";
 		};
+		BD2C8B4D2795FD0D00B1F59D /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				BD9857A02791CA97009883FC /* CalendarViewController.swift */,
+				BD9857A12791CA97009883FC /* CalendarViewController.xib */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		BD515E2C278770C5003BD5A4 = {
 			isa = PBXGroup;
 			children = (
@@ -537,8 +546,7 @@
 				BD98575F2791762D009883FC /* Views */,
 				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
 				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
-				BD9857A02791CA97009883FC /* CalendarViewController.swift */,
-				BD9857A12791CA97009883FC /* CalendarViewController.xib */,
+				BD2C8B4D2795FD0D00B1F59D /* Calendar */,
 			);
 			path = Home;
 			sourceTree = "<group>";
