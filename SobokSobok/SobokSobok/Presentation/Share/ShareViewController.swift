@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShareViewController: UIViewController {
+final class ShareViewController: BaseViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -16,6 +16,12 @@ final class ShareViewController: UIViewController {
 
         setCollectionView()
         registerXibs()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
     }
     
     private func setCollectionView() {

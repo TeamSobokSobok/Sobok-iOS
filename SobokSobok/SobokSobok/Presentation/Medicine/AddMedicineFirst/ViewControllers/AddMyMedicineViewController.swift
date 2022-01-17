@@ -9,9 +9,15 @@ import UIKit
 
 import EasyKit
 
+
 final class AddMyMedicineViewController: BaseViewController {
     
+    enum TossPill: Int {
+        case me, friend
+    }
+    
     // MARK: Properties
+    var tossPill: TossPill?
     
     private var medicineData: [String] = [] {
         didSet {
@@ -30,13 +36,28 @@ final class AddMyMedicineViewController: BaseViewController {
         super.viewDidLoad()
         assignDelegate()
         actionPeopleSelectButton()
+        divideViewControllerCase()
     }
     
     override func style() {
         view.backgroundColor = .white
+        tabBarController?.tabBar.isHidden = true
     }
     
     // MARK: Functions
+    
+    func divideViewControllerCase() {
+        switch tossPill {
+        case .me:
+            addMyMedicineView.whoLabel.text = "내가 먹을 약이에요"
+        case .friend:
+            addMyMedicineView.navigationTitleLabel.text = "약 전송하기"
+            addMyMedicineView.peopleLabel.text = "태현이"
+            addMyMedicineView.whoLabel.text = "태현이가 먹을 약이에요"
+        case .none:
+            break
+        }
+    }
     
     private func assignDelegate() {
         addMyMedicineView.collectionView.delegate = self
@@ -45,13 +66,24 @@ final class AddMyMedicineViewController: BaseViewController {
     
     private func actionPeopleSelectButton() {
         addMyMedicineView.peopleSelectButton.addTarget(self, action: #selector(peopleSelectButtonClicked), for: .touchUpInside)
+        addMyMedicineView.nextButton.addTarget(self, action: #selector(pushMedicineSecondViewController), for: .touchUpInside)
+        addMyMedicineView.xButton.addTarget(self, action: #selector(popTabbarController), for: .touchUpInside)
     }
     
     @objc func peopleSelectButtonClicked() {
+        
         let addPeopleViewController = AddPeopleViewController.instanceFromNib()
         addPeopleViewController.modalPresentationStyle = .overCurrentContext
         addPeopleViewController.modalTransitionStyle = .crossDissolve
         self.present(addPeopleViewController, animated: true)
+    }
+    
+    @objc func pushMedicineSecondViewController() {
+        navigationController?.pushViewController(AddMedicineSecondViewController.instanceFromNib(), animated: true)
+    }
+    
+    @objc func popTabbarController() {
+        navigationController?.popViewController(animated: true)
     }
 }
 

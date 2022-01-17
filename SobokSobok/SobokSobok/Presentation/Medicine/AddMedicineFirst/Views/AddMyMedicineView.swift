@@ -18,11 +18,11 @@ final class AddMyMedicineView: UIView {
     
     let navigationTitleLabel = UILabel().then {
         $0.text = "내 약 추가하기"
-        $0.font = .systemFont(ofSize: 17)
+        $0.font = UIFont.font(.pretendardReular, ofSize: 17)
     }
     
     let xButton = UIButton().then {
-        $0.setImage(Image.icClose48, for: .normal)
+        $0.setImage(Image.icBack48, for: .normal)
     }
     
     let nextButton = UIButton().then {
@@ -99,7 +99,7 @@ final class AddMyMedicineView: UIView {
     func setConstraints() {
         navigationView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(102)
+            $0.height.equalTo(105)
         }
         
         navigationTitleLabel.snp.makeConstraints {
