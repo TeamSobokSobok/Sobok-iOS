@@ -64,7 +64,6 @@ final class AddMyMedicineViewController: BaseViewController {
     }
     
     @objc func peopleSelectButtonClicked() {
-        
         let addPeopleViewController = AddPeopleViewController.instanceFromNib()
         addPeopleViewController.modalPresentationStyle = .overCurrentContext
         addPeopleViewController.modalTransitionStyle = .crossDissolve
