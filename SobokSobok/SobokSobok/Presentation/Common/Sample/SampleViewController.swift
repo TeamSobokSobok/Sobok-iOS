@@ -24,6 +24,8 @@ final class SampleViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("1")
+        
         TypoStyle.allCases.forEach {
             fontLabel[$0.rawValue]
                 .setTypoStyle(

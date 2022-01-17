@@ -66,7 +66,6 @@
 		BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */; };
 		BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A42789BCD3000C0AF8 /* Notification.swift */; };
 		BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A52789BCD3000C0AF8 /* Image.swift */; };
-		BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A62789BCD3000C0AF8 /* URL.swift */; };
 		BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A72789BCD3000C0AF8 /* Color.swift */; };
 		BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A82789BCD3000C0AF8 /* Text.swift */; };
 		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
@@ -101,6 +100,12 @@
 		EC950EF92790A88D00A34027 /* AddTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EF72790A88D00A34027 /* AddTimeCollectionViewCell.xib */; };
 		ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */; };
 		ECAE92F2278D7EC90026D59A /* AddPeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECAE92F0278D7EC90026D59A /* AddPeopleViewController.xib */; };
+		ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845DD2795681E00433522 /* NetworkResult.swift */; };
+		ECB845E02795684E00433522 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845DF2795684E00433522 /* GenericResponse.swift */; };
+		ECB845E62795773800433522 /* PillCountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845E52795773800433522 /* PillCountAPI.swift */; };
+		ECB845E82795774B00433522 /* PillCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845E72795774B00433522 /* PillCountService.swift */; };
+		ECB845EB2795776F00433522 /* PillCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EA2795776F00433522 /* PillCountModel.swift */; };
+		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
 		ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */; };
 		ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */; };
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
@@ -175,7 +180,6 @@
 		BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		BDDAA5A42789BCD3000C0AF8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		BDDAA5A52789BCD3000C0AF8 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		BDDAA5A62789BCD3000C0AF8 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		BDDAA5A72789BCD3000C0AF8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BDDAA5A82789BCD3000C0AF8 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSheet.swift; sourceTree = "<group>"; };
@@ -206,6 +210,12 @@
 		EC950EF72790A88D00A34027 /* AddTimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTimeCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleViewController.swift; sourceTree = "<group>"; };
 		ECAE92F0278D7EC90026D59A /* AddPeopleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPeopleViewController.xib; sourceTree = "<group>"; };
+		ECB845DD2795681E00433522 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		ECB845DF2795684E00433522 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		ECB845E52795773800433522 /* PillCountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountAPI.swift; sourceTree = "<group>"; };
+		ECB845E72795774B00433522 /* PillCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountService.swift; sourceTree = "<group>"; };
+		ECB845EA2795776F00433522 /* PillCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountModel.swift; sourceTree = "<group>"; };
+		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineFooterView.swift; sourceTree = "<group>"; };
 		ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineView.swift; sourceTree = "<group>"; };
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
@@ -372,7 +382,7 @@
 				BDDAA5A52789BCD3000C0AF8 /* Image.swift */,
 				BDDAA5A42789BCD3000C0AF8 /* Notification.swift */,
 				BDDAA5A82789BCD3000C0AF8 /* Text.swift */,
-				BDDAA5A62789BCD3000C0AF8 /* URL.swift */,
+				ECB845EC279594E300433522 /* URLs.swift */,
 				BDDAA5A32789BCD2000C0AF8 /* UserDefaultKey.swift */,
 				BD51AE2C27906CC000314A94 /* Font.swift */,
 			);
@@ -413,6 +423,7 @@
 		BD515E5927877628003BD5A4 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				ECB845DC279567E700433522 /* APIModel */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -456,6 +467,7 @@
 		BD515E612787767A003BD5A4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				ECB845DB279567D700433522 /* APIServices */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -710,6 +722,41 @@
 			path = AddMedicineThird;
 			sourceTree = "<group>";
 		};
+		ECB845DB279567D700433522 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				ECB845DD2795681E00433522 /* NetworkResult.swift */,
+				ECB845DF2795684E00433522 /* GenericResponse.swift */,
+				ECB845E22795771B00433522 /* Medicine */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		ECB845DC279567E700433522 /* APIModel */ = {
+			isa = PBXGroup;
+			children = (
+				ECB845E92795775F00433522 /* Medicine */,
+			);
+			path = APIModel;
+			sourceTree = "<group>";
+		};
+		ECB845E22795771B00433522 /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+				ECB845E52795773800433522 /* PillCountAPI.swift */,
+				ECB845E72795774B00433522 /* PillCountService.swift */,
+			);
+			path = Medicine;
+			sourceTree = "<group>";
+		};
+		ECB845E92795775F00433522 /* Medicine */ = {
+			isa = PBXGroup;
+			children = (
+				ECB845EA2795776F00433522 /* PillCountModel.swift */,
+			);
+			path = Medicine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -891,17 +938,19 @@
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
+				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */,
+				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
+				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
-				BDDAA5AC2789BCD3000C0AF8 /* URL.swift in Sources */,
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
@@ -911,6 +960,7 @@
 				F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */,
+				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
@@ -922,6 +972,7 @@
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,
+				ECB845EB2795776F00433522 /* PillCountModel.swift in Sources */,
 				EC1C312327948D1300972404 /* MedicineInfoHeaderView.swift in Sources */,
 				EC950EF427909B5800A34027 /* AddMedicineThirdViewController.swift in Sources */,
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
@@ -943,6 +994,7 @@
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
+				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
