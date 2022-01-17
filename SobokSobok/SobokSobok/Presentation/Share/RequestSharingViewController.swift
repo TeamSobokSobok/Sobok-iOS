@@ -52,7 +52,7 @@ final class RequestSharingViewController: BaseViewController {
     }
     
     // MARK: - @IBAction
-    @IBAction func touchUpToRequestSharing(_ sender: Any) {
+    @IBAction func touchUpToRequestSharing(_ sender: UIButton) {
         print("\(resultTextLabel.text ?? "")")
     }
 }
