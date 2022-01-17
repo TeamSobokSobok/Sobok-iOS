@@ -24,6 +24,8 @@
                 <outlet property="dateLabel" destination="TRg-tS-4sP" id="YjP-OE-L5U"/>
                 <outlet property="scopeLabel" destination="F1M-Wo-RXw" id="Qhd-di-p5P"/>
                 <outlet property="scrollView" destination="oCy-nq-f7E" id="OWW-hA-brV"/>
+                <outlet property="usernameLabel" destination="KsP-aT-HMv" id="1tN-at-sgh"/>
+                <outlet property="usernameStackView" destination="gB4-e9-foF" id="mAd-e4-Wyq"/>
                 <outlet property="view" destination="yIU-Ls-Bzt" id="egq-3n-ofk"/>
             </connections>
         </placeholder>

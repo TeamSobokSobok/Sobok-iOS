@@ -30,7 +30,6 @@ class PagerTab: UIView {
     private let tabStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fill
-        $0.spacing = 62
         $0.backgroundColor = Color.mint
     }
 
@@ -107,8 +106,8 @@ class PagerTab: UIView {
 
     private func configureUI() {
         addSubview(tabStackView)
-        let spacingView = UIView()
-        tabStackView.addArrangedSubview(spacingView)
+        let leadingSpacingView = UIView()
+        tabStackView.addArrangedSubview(leadingSpacingView)
         tabStackView.addArrangedSubview(titleStackView)
         tabStackView.addArrangedSubview(addButton)
         addSubview(barBackgroundView)
@@ -121,9 +120,16 @@ class PagerTab: UIView {
             $0.height.equalTo(52)
         }
         
-        titleStackView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(20)
+        leadingSpacingView.snp.makeConstraints {
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(20)
         }
+        
+        titleStackView.snp.makeConstraints {
+            $0.leading.equalTo(leadingSpacingView.snp.trailing)
+        }
+        
+        tabStackView.setCustomSpacing(62, after: tabStackView.subviews[1])
         
         barBackgroundView.snp.makeConstraints {
             $0.top.equalTo(titleStackView.snp.bottom)

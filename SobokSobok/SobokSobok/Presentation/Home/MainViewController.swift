@@ -17,7 +17,8 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
     // MARK: - UI
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var usernameStackView: UIStackView!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
     
@@ -27,6 +28,7 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
+    var tabType: TabBarItem = .share
     let someDates = ["2022-01-09", "2022-01-22", "2022-01-30"]
     let allDates = ["2022-01-12", "2022-01-15", "2022-01-17"]
     var editMode: Bool = false {
@@ -80,6 +82,7 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
         setCalendarStyle()
         setCollectionView()
         scrollView.delegate = self
+        usernameStackView.isHidden = tabType == .home
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,7 +91,7 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
 
     override func style() {
         super.style() // 오버라이딩 위해서는 부모 뷰 상속 필요
-//        titleLabel.setTypoStyle(typoStyle: .header1)
+        usernameLabel.setTypoStyle(typoStyle: .header1)
         dateLabel.setTypoStyle(typoStyle: .title2)
         scopeLabel.setTypoStyle(typoStyle: .body7)
         selectedDate = kformatter.string(from: Date())
@@ -126,7 +129,9 @@ final class MainViewController: BaseViewController, PageComponentProtocol {
                                 withReuseIdentifier: TimeHeaderView.reuseIdentifier)
         
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flowLayout.estimatedItemSize = CGSize(width: collectionView.frame.width - 40, height: 140)
+        let screenSize = UIScreen.main.bounds.width
+        let sideMargin = 40 / 375 * screenSize
+        flowLayout.estimatedItemSize = CGSize(width: collectionView.frame.width - sideMargin, height: 140)
         collectionView.collectionViewLayout = flowLayout
         
         self.view.layoutIfNeeded()
