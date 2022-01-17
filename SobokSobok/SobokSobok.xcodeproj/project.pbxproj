@@ -113,6 +113,17 @@
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
 		ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */; };
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
+		F61960EE2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */; };
+		F61960EF2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */; };
+		F61960F22793E28D00FA49B7 /* MedicineTimeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F02793E28D00FA49B7 /* MedicineTimeFooterView.swift */; };
+		F61960F32793E28D00FA49B7 /* MedicineTimeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960F12793E28D00FA49B7 /* MedicineTimeFooterView.xib */; };
+		F61960F727941DEA00FA49B7 /* WeekSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */; };
+		F61960F827941DEA00FA49B7 /* WeekSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */; };
+		F61960FB27941E1600FA49B7 /* TermSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960F927941E1600FA49B7 /* TermSelectViewController.swift */; };
+		F61960FC27941E1600FA49B7 /* TermSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960FA27941E1600FA49B7 /* TermSelectViewController.xib */; };
+		F61960FF279420F600FA49B7 /* WeekSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61960FD279420F600FA49B7 /* WeekSelectTableViewCell.swift */; };
+		F6196100279420F600FA49B7 /* WeekSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61960FE279420F600FA49B7 /* WeekSelectTableViewCell.xib */; };
+		F6538FA5278D7DD600B20B5E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */; };
 		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
 		F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FA7278D814900B20B5E /* SendInfoViewController.xib */; };
 		F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */; };
@@ -123,6 +134,8 @@
 		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
 		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
 		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
+		F6A62FB12791C0D4003425A1 /* MedicineInfoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */; };
+		F6A62FB22791C0D5003425A1 /* MedicineInfoEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */; };
 		F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */; };
 		F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -225,6 +238,17 @@
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
 		ECECEF9A278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
+		F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTimeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTimeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		F61960F02793E28D00FA49B7 /* MedicineTimeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTimeFooterView.swift; sourceTree = "<group>"; };
+		F61960F12793E28D00FA49B7 /* MedicineTimeFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTimeFooterView.xib; sourceTree = "<group>"; };
+		F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSelectViewController.swift; sourceTree = "<group>"; };
+		F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekSelectViewController.xib; sourceTree = "<group>"; };
+		F61960F927941E1600FA49B7 /* TermSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermSelectViewController.swift; sourceTree = "<group>"; };
+		F61960FA27941E1600FA49B7 /* TermSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermSelectViewController.xib; sourceTree = "<group>"; };
+		F61960FD279420F600FA49B7 /* WeekSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSelectTableViewCell.swift; sourceTree = "<group>"; };
+		F61960FE279420F600FA49B7 /* WeekSelectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekSelectTableViewCell.xib; sourceTree = "<group>"; };
+		F6538FA4278D7DD600B20B5E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FA7278D814900B20B5E /* SendInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoViewController.xib; sourceTree = "<group>"; };
 		F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -235,6 +259,8 @@
 		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
 		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineInfoEditViewController.swift; sourceTree = "<group>"; };
+		F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineInfoEditViewController.xib; sourceTree = "<group>"; };
 		F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
 		F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -546,6 +572,8 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				F61960F427941D5800FA49B7 /* NoticeFirst */,
+				F61961012794354900FA49B7 /* NoticeThrid */,
 				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
 				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
 				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
@@ -714,6 +742,36 @@
 			path = AddMedicineSecond;
 			sourceTree = "<group>";
 		};
+		F61960F427941D5800FA49B7 /* NoticeFirst */ = {
+			isa = PBXGroup;
+			children = (
+				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
+				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
+				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
+				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+			);
+			path = NoticeFirst;
+			sourceTree = "<group>";
+		};
+		F61961012794354900FA49B7 /* NoticeThrid */ = {
+			isa = PBXGroup;
+			children = (
+				F6A62FAF2791C0D4003425A1 /* MedicineInfoEditViewController.swift */,
+				F6A62FB02791C0D4003425A1 /* MedicineInfoEditViewController.xib */,
+				F61960F527941DEA00FA49B7 /* WeekSelectViewController.swift */,
+				F61960F627941DEA00FA49B7 /* WeekSelectViewController.xib */,
+				F61960FD279420F600FA49B7 /* WeekSelectTableViewCell.swift */,
+				F61960FE279420F600FA49B7 /* WeekSelectTableViewCell.xib */,
+				F61960F927941E1600FA49B7 /* TermSelectViewController.swift */,
+				F61960FA27941E1600FA49B7 /* TermSelectViewController.xib */,
+				F61960EC2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift */,
+				F61960ED2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib */,
+				F61960F02793E28D00FA49B7 /* MedicineTimeFooterView.swift */,
+				F61960F12793E28D00FA49B7 /* MedicineTimeFooterView.xib */,
+			);
+			path = NoticeThrid;
+			sourceTree = "<group>";
+    }
 		EC950EF127909B1C00A34027 /* AddMedicineThird */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,9 +916,11 @@
 				EC950EF92790A88D00A34027 /* AddTimeCollectionViewCell.xib in Resources */,
 				EC950EE9278FFADA00A34027 /* MedicineSpecificPeriodViewController.xib in Resources */,
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
+				F61960F32793E28D00FA49B7 /* MedicineTimeFooterView.xib in Resources */,
 				BD51AE272790641100314A94 /* Pretendard-ExtraBold.otf in Resources */,
 				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
+				F6196100279420F600FA49B7 /* WeekSelectTableViewCell.xib in Resources */,
 				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
 				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
 				F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */,
@@ -872,17 +932,21 @@
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
 				EC1C31142792F12E00972404 /* MedicineTimeViewController.xib in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
+				F61960EF2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.xib in Resources */,
 				9A269023279558F60015F258 /* RequestSharingViewController.xib in Resources */,
 				BD51AE382790A97400314A94 /* StickerBottomSheet.xib in Resources */,
 				EC1C311927941CDF00972404 /* AddMedicineFourthViewController.xib in Resources */,
 				ECAE92F2278D7EC90026D59A /* AddPeopleViewController.xib in Resources */,
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */,
+				F61960FC27941E1600FA49B7 /* TermSelectViewController.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */,
 				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
+				F6A62FB22791C0D5003425A1 /* MedicineInfoEditViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
+				F61960F827941DEA00FA49B7 /* WeekSelectViewController.xib in Resources */,
 				EC1C311D279428A500972404 /* MedicineInfoCollectionViewCell.xib in Resources */,
 				F6538FB1278DBBC100B20B5E /* SendInfoCollectionViewCell.xib in Resources */,
 				F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */,
@@ -954,6 +1018,8 @@
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
+				F61960EE2793E27F00FA49B7 /* MedicineTimeInfoCollectionViewCell.swift in Sources */,
+				F6A62FAD27918AC7003425A1 /* SenderInfoCollectionViewCell.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
@@ -962,6 +1028,7 @@
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
+				F61960F727941DEA00FA49B7 /* WeekSelectViewController.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
 				F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */,
@@ -977,6 +1044,7 @@
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
+				F61960F22793E28D00FA49B7 /* MedicineTimeFooterView.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,
@@ -987,6 +1055,7 @@
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
+				F6A62FB12791C0D4003425A1 /* MedicineInfoEditViewController.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
@@ -996,12 +1065,14 @@
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
+				F61960FB27941E1600FA49B7 /* TermSelectViewController.swift in Sources */,
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
 				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
+				F61960FF279420F600FA49B7 /* WeekSelectTableViewCell.swift in Sources */,
 				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
