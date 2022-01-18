@@ -10,7 +10,6 @@ import UIKit
 final class SearchNicknameViewController: BaseViewController {
 
     // MARK: - @IBOutlet Properties
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var searchNicknameTextField: UITextField!
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var resultTextLabel: UILabel!
@@ -23,11 +22,15 @@ final class SearchNicknameViewController: BaseViewController {
     }
 
     override func style() {
+        navigationController?.navigationBar.isHidden = true
         resultTextLabel.isHidden = true
         noResultImageView.isHidden = true
     }
     
     // MARK: - @IBAction Properties
+    @IBAction func touchUpToClose(_ sender: Any) {
+        dismiss(animated: true)
+    }
     @IBAction func touchUpToAddFriend(_ sender: Any) {
         print("적복이")
     }

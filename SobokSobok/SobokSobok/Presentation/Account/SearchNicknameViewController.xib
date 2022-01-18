@@ -23,7 +23,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchNicknameViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
-                <outlet property="closeButton" destination="V4A-yS-mvd" id="egP-uX-9nA"/>
                 <outlet property="noResultImageView" destination="8d7-rm-x9E" id="wir-tH-X3o"/>
                 <outlet property="resultButton" destination="pCk-zB-dDT" id="YEV-Kn-ybM"/>
                 <outlet property="resultTextLabel" destination="Y5J-Mh-Uk5" id="lQG-u8-ydf"/>
@@ -46,23 +45,26 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공유 요청하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0B-yQ-lOk">
-                            <rect key="frame" x="77" y="57" width="260" height="20.5"/>
+                            <rect key="frame" x="77" y="59" width="260" height="20.5"/>
                             <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4A-yS-mvd">
-                            <rect key="frame" x="0.0" y="43.5" width="48" height="48"/>
+                            <rect key="frame" x="0.0" y="45" width="48" height="48"/>
                             <color key="tintColor" name="black_sub"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icClose48"/>
+                            <connections>
+                                <action selector="touchUpToClose:" destination="-1" eventType="touchUpInside" id="3Fj-Lt-KI5"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="g0B-yQ-lOk" firstAttribute="leading" secondItem="m3g-Pc-vFL" secondAttribute="leading" constant="77" id="6JB-OH-5MQ"/>
                         <constraint firstAttribute="height" constant="102" id="BU9-cx-gTd"/>
-                        <constraint firstItem="g0B-yQ-lOk" firstAttribute="top" secondItem="m3g-Pc-vFL" secondAttribute="top" constant="57" id="Nk5-8j-G43"/>
+                        <constraint firstItem="V4A-yS-mvd" firstAttribute="top" secondItem="m3g-Pc-vFL" secondAttribute="top" constant="45" id="Puf-2j-Klc"/>
                         <constraint firstItem="V4A-yS-mvd" firstAttribute="centerY" secondItem="g0B-yQ-lOk" secondAttribute="centerY" id="PvO-xz-cd9"/>
                         <constraint firstItem="V4A-yS-mvd" firstAttribute="leading" secondItem="m3g-Pc-vFL" secondAttribute="leading" id="kSp-lH-aKr"/>
                         <constraint firstAttribute="trailing" secondItem="g0B-yQ-lOk" secondAttribute="trailing" constant="77" id="mtF-qW-Ap9"/>
