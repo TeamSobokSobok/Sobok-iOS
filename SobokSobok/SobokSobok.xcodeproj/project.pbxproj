@@ -15,6 +15,7 @@
 		9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */; };
 		9A3DF0982796DE4900D07A8C /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0972796DE4900D07A8C /* SignInService.swift */; };
 		9A3DF09B2796E04900D07A8C /* SignInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09A2796E04900D07A8C /* SignInAPI.swift */; };
+		9A3DF09D2796E30D00D07A8C /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09C2796E30D00D07A8C /* SignInModel.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -146,6 +147,7 @@
 		9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
 		9A3DF0972796DE4900D07A8C /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
 		9A3DF09A2796E04900D07A8C /* SignInAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAPI.swift; sourceTree = "<group>"; };
+		9A3DF09C2796E30D00D07A8C /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -282,12 +284,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A3DF08D279660B000D07A8C /* SignUp */ = {
+		9A3DF08D279660B000D07A8C /* Sign */ = {
 			isa = PBXGroup;
 			children = (
 				9A3DF08B279660A400D07A8C /* SignUpModel.swift */,
+				9A3DF09C2796E30D00D07A8C /* SignInModel.swift */,
 			);
-			name = SignUp;
+			name = Sign;
 			sourceTree = "<group>";
 		};
 		9A3DF09027966A1900D07A8C /* SignUp */ = {
@@ -794,7 +797,7 @@
 		ECB845DC279567E700433522 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DF08D279660B000D07A8C /* SignUp */,
+				9A3DF08D279660B000D07A8C /* Sign */,
 				ECB845E92795775F00433522 /* Medicine */,
 			);
 			path = APIModel;
@@ -1097,6 +1100,7 @@
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
+				9A3DF09D2796E30D00D07A8C /* SignInModel.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
