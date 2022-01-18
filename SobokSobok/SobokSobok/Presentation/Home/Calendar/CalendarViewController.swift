@@ -183,8 +183,18 @@ extension CalendarViewController {
     public func showActionSheet() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let editAction = UIAlertAction(title: "약 수정", style: .default) { _ in }
-        let stopAction = UIAlertAction(title: "복약 중단", style: .default) { _ in }
-        let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in }
+        let stopAction = UIAlertAction(title: "복약 중단", style: .default) { _ in
+            self.showAlert(title: "정말로 복약을 중단하나요?",
+                           message: "복약을 중단하면 내일부터 약 알림이 오지 않아요",
+                           completionTitle: "복약 중단",
+                           cancelTitle: "취소")
+        }
+        let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in
+            self.showAlert(title: "정말로 약을 삭제하나요?",
+                           message: "해당 약에 대한 전체 복약 기록이 사라지고 알림도 오지 않아요",
+                           completionTitle: "삭제",
+                           cancelTitle: "취소")
+        }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         
         actionSheet.addAction(editAction, stopAction, deleteAction, cancelAction)
