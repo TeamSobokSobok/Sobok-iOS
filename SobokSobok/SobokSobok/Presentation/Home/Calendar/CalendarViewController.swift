@@ -15,7 +15,11 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var usernameStackView: UIStackView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel! {
+        didSet {
+            usernameLabel.text = tabName
+        }
+    }
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
     
@@ -104,7 +108,7 @@ final class CalendarViewController: BaseViewController {
 
 extension CalendarViewController {
     // MARK: - Set
-    
+
     private func setCalendar() {
         calendar.locale = Locale(identifier: "ko_KR")
         calendar.headerHeight = 0
@@ -268,6 +272,6 @@ extension CalendarViewController: UIScrollViewDelegate {
 
 extension CalendarViewController: PageComponentProtocol {
     var pageTitle: String {
-        return tabName
+        return "\(tabName.prefix(2))"
     }
 }

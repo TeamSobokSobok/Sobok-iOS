@@ -12,18 +12,17 @@ final class ShareViewController: BaseViewController {
     @IBOutlet weak var pagerTab: PagerTab!
     
     let calendarViewController = CalendarViewController.instanceFromNib()
+    var viewControllers: [PageComponentProtocol] = []
+    var groupItems = [Member]() {
+        didSet {
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewControllers: [PageComponentProtocol] = [
-            CalendarViewController.instanceFromNib(),
-            CalendarViewController.instanceFromNib(),
-            CalendarViewController.instanceFromNib(),
-            CalendarViewController.instanceFromNib(),
-            CalendarViewController.instanceFromNib()
-        ]
-        let style = PagerTab.Style.default
-        pagerTab.setup(self, viewControllers: viewControllers, style: style)
+        getGroupInfo()
+        
     }
   
     override func viewWillAppear(_ animated: Bool) {
@@ -31,5 +30,33 @@ final class ShareViewController: BaseViewController {
       
         tabBarController?.tabBar.isHidden = false
         calendarViewController.getSchedules(date: Date().toString(of: .year))
+    }
+}
+
+extension ShareViewController {
+    private func getGroupInfo() {
+        ShareAPI.shared.getGroupInfo { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? [Member] {
+                    self.groupItems = data
+                }
+                self.setContainerViewController(groupItems: self.groupItems)
+            default:
+                return
+            }
+        }
+    }
+    
+    private func setContainerViewController(groupItems: [Member]) {
+        for index in 0 ..< groupItems.count {
+            let calendarViewController = CalendarViewController.instanceFromNib()
+            let tabName: String = groupItems[index].memberName
+            calendarViewController.tabName = tabName
+            viewControllers.append(calendarViewController)
+        }
+        
+        let style = PagerTab.Style.default
+        pagerTab.setup(self, viewControllers: viewControllers, style: style)
     }
 }
