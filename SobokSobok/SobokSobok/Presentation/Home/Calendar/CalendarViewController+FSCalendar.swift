@@ -71,9 +71,9 @@ extension CalendarViewController: FSCalendarDataSource {
 
 extension CalendarViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        selectedDate = date.toString(of: .day)
-        
+        selectedDate = date.toString(of: .year)
         calendar.select(date)
+        getPillList(date: selectedDate)
         self.configureVisibleCells()
     }
     

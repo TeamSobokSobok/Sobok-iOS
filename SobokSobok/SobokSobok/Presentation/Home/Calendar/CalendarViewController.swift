@@ -28,16 +28,21 @@ final class CalendarViewController: BaseViewController {
     // MARK: - Properties
     /// Data
     var doingDates = [String]()
-    let doneDates = [String]()
+    var doneDates = [String]()
     var selectedDate: String = Date().toString(of: .day) {
         didSet {
             dateLabel.text = selectedDate
+            getSchedules(date: selectedDate)
         }
     }
     
     /// Item
-    var scheduleItems: [String] = []
-    var pillItems: [String] = []
+    var scheduleItems: [Schedule] = []
+    var pillItems: [PillList] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     let gregorian = Calendar(identifier: .gregorian)
     private var calendarExpandedState: Bool = false {
@@ -72,6 +77,8 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        getSchedules(date: Date().toString(of: .year))
+        getPillList(date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,7 +130,7 @@ extension CalendarViewController {
         flowLayout.minimumLineSpacing = 8
         let screenSize = UIScreen.main.bounds.width
         let sideMargin = 40 / 375 * screenSize
-        flowLayout.estimatedItemSize = CGSize(width: screenSize - sideMargin, height: 500)
+        flowLayout.estimatedItemSize = CGSize(width: screenSize - sideMargin, height: 140)
         collectionView.collectionViewLayout = flowLayout
         
         self.view.layoutIfNeeded()
@@ -176,21 +183,86 @@ extension CalendarViewController {
             stickerBottomSheet.showSheetWithAnimation()
         }
     }
+    
+    public func getSchedules(date: String) {
+        ScheduleAPI.shared.getCalendar(date: date) { [weak self] response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? [Schedule] else { return }
+                self?.scheduleItems = data
+                self?.parseSchedules()
+            default:
+                return
+            }
+        }
+    }
+    
+    private func parseSchedules() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Date.FormatType.full.description
+        let items = scheduleItems.map { [dateFormatter.date(from: $0.scheduleDate) as Any, $0.isComplete] }
+        
+        for item in items {
+            guard let scheduleDate = item[0] as? Date else { return }
+            guard let isComplete = item[1] as? String else { return }
+            
+            if isComplete == "doing" {
+                doingDates.append(scheduleDate.toString(of: .year))
+            } else if isComplete == "done" {
+                doneDates.append(scheduleDate.toString(of: .year))
+            }
+        }
+    }
+    
+    public func getPillList(date: String) {
+        ScheduleAPI.shared.getPillList(date: date) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? [PillList] else { return }
+                self.pillItems = data
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.setCollectionViewHeight()
+                    self.view.layoutIfNeeded()
+                }
+            default:
+                return
+            }
+        }
+    }
+    
+    public func checkPillDetail(scheduleId: Int) {
+        ScheduleAPI.shared.checkPill(scheduleId: scheduleId) {response in
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
+    }
+    
+    public func uncheckPillDetail(scheduleId: Int) {
+        ScheduleAPI.shared.uncheckPill(scheduleId: scheduleId) {response in
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
+    }
 }
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if section == 2 {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 100, right: 10)
-        } else {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        }
+        return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
     }
 }
 
 extension CalendarViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.backgroundColor  = scrollView.contentOffset.y > UIScreen.main.bounds.height / 2 ? Color.gray150 : Color.white
+        scrollView.backgroundColor  = scrollView.contentOffset.y > 100 ? Color.gray150 : Color.white
     }
 }
 

@@ -38,7 +38,7 @@
                     <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-lI-M6P">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaG-N2-ayD" customClass="FSCalendar">
                                     <rect key="frame" x="10" y="115" width="355" height="308"/>
@@ -48,10 +48,10 @@
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="h13-xi-bUt">
-                                    <rect key="frame" x="0.0" y="423" width="375" height="100"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <rect key="frame" x="0.0" y="423" width="375" height="50"/>
+                                    <color key="backgroundColor" name="white_sub"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="F6w-CN-oSJ"/>
+                                        <constraint firstAttribute="height" constant="50" id="F6w-CN-oSJ"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O2V-QG-5tm">
                                         <size key="itemSize" width="128" height="128"/>
@@ -142,7 +142,7 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="white_sub"/>
                             <constraints>
                                 <constraint firstItem="TaG-N2-ayD" firstAttribute="leading" secondItem="Ckg-lI-M6P" secondAttribute="leading" constant="10" id="Opy-tk-AUK"/>
                                 <constraint firstItem="h13-xi-bUt" firstAttribute="top" secondItem="TaG-N2-ayD" secondAttribute="bottom" id="SVc-Qw-cUh"/>
@@ -196,6 +196,9 @@
         </namedColor>
         <namedColor name="gray800_sub">
             <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

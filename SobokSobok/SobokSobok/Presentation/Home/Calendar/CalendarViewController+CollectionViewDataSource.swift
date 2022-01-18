@@ -12,13 +12,12 @@ import UIKit
 extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {    
     /// section
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        pillItems.count
-        3
+        pillItems.count
     }
     
     /// row in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        pillItems[section].scheduleList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -26,12 +25,21 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
             for: indexPath, cellType: MedicineCollectionViewCell.self
         )
         
+        let pill = pillItems[indexPath.section].scheduleList?[indexPath.row]
+        
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
-        cell.pillName.text = "약 이름 테스트"
+        cell.pillName.text = pill?.pillName
         
         cell.editButton.isHidden = !editMode
         cell.checkButton.isHidden = editMode
+        
+        if pill?.stickerImg?.count == 0 {
+            cell.stickerStackView.isHidden = true
+            cell.stickerCountLabel.isHidden = true
+        } else {
+            
+        }
         
         cell.stickerClosure = { [weak self] in
             guard let self = self else { return }
@@ -40,6 +48,15 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         
         cell.editClosure = {
             self.showActionSheet()
+        }
+        
+        cell.checkClosrue = {
+            guard let scheduleId = pill?.scheduleId else { return }
+            if cell.isChecked {
+                self.checkPillDetail(scheduleId: scheduleId)
+            } else {
+                self.uncheckPillDetail(scheduleId: scheduleId)
+            }
         }
         
         return cell
@@ -54,6 +71,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
                 for: indexPath
             ) as? TimeHeaderView else { return UICollectionReusableView() }
             
+            headerView.timeLabel.text = pillItems[indexPath.section].scheduleTime
             headerView.editButtonStackView.isHidden = indexPath.section != 0
             headerView.editModeClosure = {
                 self.editMode.toggle()

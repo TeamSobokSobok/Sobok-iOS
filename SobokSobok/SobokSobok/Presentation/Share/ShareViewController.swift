@@ -11,6 +11,8 @@ final class ShareViewController: BaseViewController {
 
     @IBOutlet weak var pagerTab: PagerTab!
     
+    let calendarViewController = CalendarViewController.instanceFromNib()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let viewControllers: [PageComponentProtocol] = [
@@ -28,5 +30,6 @@ final class ShareViewController: BaseViewController {
         super.viewWillAppear(animated)      
       
         tabBarController?.tabBar.isHidden = false
+        calendarViewController.getSchedules(date: Date().toString(of: .year))
     }
 }
