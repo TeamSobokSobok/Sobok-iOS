@@ -10,7 +10,8 @@ import UIKit
 final class SignInViewController: BaseViewController {
     
     // MARK: - Properties
-    var signInUser = SignInUser.shared
+    private var email: String?
+    private var password: String?
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
 
@@ -119,8 +120,8 @@ final class SignInViewController: BaseViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchUpToLogin(_ sender: UIButton) {
-        signInUser.email = emailTextField.text ?? ""
-        signInUser.password = passwordTextField.text ?? ""
+        email = emailTextField.text ?? ""
+        password = passwordTextField.text ?? ""
         signIn()
     }
     
@@ -131,10 +132,10 @@ final class SignInViewController: BaseViewController {
 
 extension SignInViewController {
     func signIn() {
-        guard let email = signInUser.email else {
+        guard let email = email else {
             return
         }
-        guard let password = signInUser.password else {
+        guard let password = password else {
             return
         }
         
