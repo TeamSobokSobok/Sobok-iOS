@@ -12,12 +12,23 @@ protocol TimePickerDismiss: AnyObject {
     func timePickerdismiss()
 }
 
+protocol SendPillTimeDelegate: AnyObject {
+    func sendTimeData(pillTime: String)
+}
+
 final class MedicineTimeViewController: BaseViewController {
     
     // MARK: Properties
-    private var hourList: [String] = []
-    private var minuteList: [String] = []
+    var hour = "1"
+    var minute = "00"
+    var dayNight = "오전"
+    var pillTime = "오전 1:00"
+    
+    var hourList: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    var minuteList: [String] = []
+    var morningList: [String] = ["오전", "오후"]
     weak var delegate: TimePickerDismiss?
+    weak var sendTimeDelegate: SendPillTimeDelegate?
     
     // MARK: @IBOutlets
     @IBOutlet weak var mainView: UIView!
@@ -55,13 +66,7 @@ final class MedicineTimeViewController: BaseViewController {
             var minute: String
             minute = tmp < 10 ? "0" + "\(tmp)" : "\(tmp)"
             minuteList.append(minute)
-        }
-        
-        for tmp in 0..<24 {
-            var hour: String
-            hour =   tmp < 10 ? "0" + "\(tmp)" :  "\(tmp)"
-            hourList.append(hour)
-        }
+    }
     }
     
     private func assiginDelegate() {
@@ -80,8 +85,11 @@ final class MedicineTimeViewController: BaseViewController {
     
     // MARK: @IBAction
     @IBAction func confirmButtonClicked(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            self.delegate?.timePickerdismiss()
+        self.dismiss(animated: true) { [weak self] in
+            if let pillTime = self?.pillTime {
+                self?.sendTimeDelegate?.sendTimeData(pillTime: pillTime)
+            }
+            self?.delegate?.timePickerdismiss()
         }
     }
 }
@@ -98,15 +106,39 @@ extension MedicineTimeViewController: UIPickerViewDataSource {
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        component == 0 ? hourList.count : minuteList.count
+        if component == 0 {
+            return morningList.count
+        } else if component == 1 {
+            return hourList.count
+        } else {
+            return minuteList.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        component == 0 ? hourList[row] : minuteList[row]
+        if component == 0 {
+            return morningList[row]
+        } else if component == 1 {
+            return hourList[row]
+        } else {
+            return minuteList[row]
+        }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerView.reloadAllComponents()
+        if component == 0 {
+            dayNight = morningList[row]
+        } else if component == 1{
+            hour = hourList[row]
+        } else {
+            minute = minuteList[row]
+        }
+        pillTime = dayNight + " " + hour + ":"  + minute
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

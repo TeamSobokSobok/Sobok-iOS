@@ -3,10 +3,10 @@ import UIKit
 public enum URLs {
 	public static let baseURL = "https://asia-northeast3-sobok-76d0a.cloudfunctions.net/api"
 	public static let signInURL = "/auth/login/email"
-	public static let signUpURL = "/auth/signup"
+	public static let signUpURL = "/auth"
 	public static let checkUsernameURL = "/user/name"
 	public static let getCalendarURL = "/schedule/calendar"
-	public static let getPillListURL = "/schedule/my/detail"
+	public static let getPillListURL = "/schedule/detail"
 	public static let editPillListURL = "/pill/{pillId}"
 	public static let stopPillListURL = "/pill/stop/{pillId}"
 	public static let deletePillURL = "/pill/{pillId}"
@@ -27,7 +27,7 @@ public enum URLs {
 	public static let getPillNoticeURL = "/notice"
 	public static let acceptPillNoticeURL = "/notice"
 	public static let addMyPillURL = "/pill"
-	public static let addFriendPillURL = "/pill/{receiverId}"
+	public static let addFriendPillURL = "/pill/member/{memberId}"
 	public static let getFriendPillCountURL = "/pill/{userId}"
 	public static let getMyPillCountURL = "/pill/count"
 }

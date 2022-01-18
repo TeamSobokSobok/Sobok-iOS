@@ -8,13 +8,15 @@
 import UIKit
 
 final class AddMedicineThirdViewController: BaseViewController {
-    
+ 
     // MARK: - Properties
-    private var medicineTimeData: [String] = [] {
+    private var medicineTimeData: [String] = ["오전 8:00", "오후 1:00", "오후 7:00"] {
         didSet {
             timeCollectionView.reloadData()
         }
     }
+    
+    var timeData = String()
     
     // MARK: @IBOutlet
     @IBOutlet weak var timeCollectionView: UICollectionView!
@@ -55,15 +57,17 @@ extension AddMedicineThirdViewController: UICollectionViewDelegate {
 
 // MARK: UICollectionViewDataSource
 extension AddMedicineThirdViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return medicineTimeData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AddTimeCollectionViewCell.self)
-        
+        cell.timeLabel.text = medicineTimeData[indexPath.row]
         cell.deleteCellClosure = {
-            self.medicineTimeData.remove(at: 0)
+            // delete했을 때 자신의 index값을 지워야 함
+            self.medicineTimeData.remove(at: indexPath.row)
         }
         return cell
     }
@@ -72,21 +76,18 @@ extension AddMedicineThirdViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMedicineTimeFooterView.reuseIdentifier, for: indexPath) as? AddMedicineTimeFooterView else { return UICollectionReusableView()}
         // FooterView +버튼 클릭 시 셀 추가
         cell.addCellClosure = {
-            self.medicineTimeData.append("")
-        }
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let addMedicineTimeSheet = MedicineTimeViewController.instanceFromNib()
-        addMedicineTimeSheet.modalPresentationStyle = .overCurrentContext
-        addMedicineTimeSheet.modalTransitionStyle = .crossDissolve
-        self.present(addMedicineTimeSheet, animated: false
-        ) {
-            DispatchQueue.main.async {
-                addMedicineTimeSheet.sheetWithAnimation()
+            let addMedicineTimeSheet = MedicineTimeViewController.instanceFromNib()
+            addMedicineTimeSheet.modalPresentationStyle = .overCurrentContext
+            addMedicineTimeSheet.modalTransitionStyle = .crossDissolve
+            addMedicineTimeSheet.sendTimeDelegate = self
+            self.present(addMedicineTimeSheet, animated: false
+            ) {
+                DispatchQueue.main.async {
+                    addMedicineTimeSheet.sheetWithAnimation()
+                }
             }
         }
+        return cell
     }
 }
 
@@ -98,5 +99,12 @@ extension AddMedicineThirdViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
+    }
+}
+
+// MARK: Delegate
+extension AddMedicineThirdViewController: SendPillTimeDelegate {
+    func sendTimeData(pillTime: String) {
+        medicineTimeData.append(pillTime)
     }
 }

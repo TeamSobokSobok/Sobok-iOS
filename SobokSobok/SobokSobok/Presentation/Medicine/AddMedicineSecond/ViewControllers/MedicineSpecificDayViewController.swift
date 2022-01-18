@@ -13,17 +13,30 @@ protocol MedicineViewDelegate: AnyObject {
     func popupDismissed()
 }
 
+protocol SendPillDayDelegate: AnyObject {
+    func sendDay(day: String)
+}
+
 final class MedicineSpecificDayViewController: BaseViewController {
     
     // MARK: - Properties
     
     let dayList: [String] = ["월", "화", "수", "목", "금", "토", "일"]
+    var monday = ""
+    var tuesday = ""
+    var wednesday = ""
+    var thursday = ""
+    var friday = ""
+    var saturday = ""
+    var sunday = ""
+    var days = String()
     
     // MARK: - @IBOutlets
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var dayTableView: UITableView!
     weak var delegate: MedicineViewDelegate?
+    weak var sendDelegate: SendPillDayDelegate?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
@@ -49,6 +62,14 @@ final class MedicineSpecificDayViewController: BaseViewController {
         dayTableView.dataSource = self
         dayTableView.delegate = self
     }
+    @IBAction func comfirmButtonClicked(_ sender: UIButton) {
+        self.dismiss(animated: true) { [weak self] in
+            if let day = self?.days {
+                self?.sendDelegate?.sendDay(day: day)
+            }
+            self?.delegate?.popupDismissed()
+        }
+    }
 }
 
 // MARK: UITableViewDelegate
@@ -56,6 +77,54 @@ extension MedicineSpecificDayViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? MedicineDayTableViewCell else { return }
         cell.vCheckImage.isHidden.toggle()
+        cell.isSelected.toggle()
+        switch indexPath.row {
+        case 0:
+            if cell.vCheckImage.isHidden {
+                monday = ""
+            } else {
+                monday = dayList[0]
+            }
+        case 1:
+            if cell.vCheckImage.isHidden {
+                tuesday = ""
+            } else {
+                tuesday = dayList[1]
+            }
+        case 2:
+            if cell.vCheckImage.isHidden {
+                wednesday = ""
+            } else {
+                wednesday = dayList[2]
+            }
+        case 3:
+            if cell.vCheckImage.isHidden {
+                thursday = ""
+            } else {
+                thursday = dayList[3]
+            }
+        case 4:
+            if cell.vCheckImage.isHidden {
+                friday = ""
+            } else {
+                friday = dayList[4]
+            }
+        case 5:
+            if cell.vCheckImage.isHidden {
+                saturday = ""
+            } else {
+                saturday = dayList[5]
+            }
+        case 6:
+            if cell.vCheckImage.isHidden {
+                sunday = ""
+            } else {
+                sunday = dayList[6]
+            }
+        default:
+            break
+        }
+        days = monday + tuesday + wednesday + thursday + friday + saturday + sunday
     }
 }
 

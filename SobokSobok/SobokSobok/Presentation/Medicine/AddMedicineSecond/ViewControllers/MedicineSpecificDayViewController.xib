@@ -31,7 +31,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUz-wU-v5M">
-                            <rect key="frame" x="0.0" y="591" width="414" height="305"/>
+                            <rect key="frame" x="0.0" y="396" width="414" height="500"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mL-kM-RlD">
                                     <rect key="frame" x="348" y="19" width="54" height="28"/>
@@ -44,9 +44,12 @@
                                     <state key="normal" title="확인">
                                         <color key="titleColor" name="dark_mint_main"/>
                                     </state>
+                                    <connections>
+                                        <action selector="comfirmButtonClicked:" destination="-1" eventType="touchUpInside" id="DAc-HS-vqu"/>
+                                    </connections>
                                 </button>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-Fa-kNH">
-                                    <rect key="frame" x="20" y="59" width="374" height="216"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-Fa-kNH">
+                                    <rect key="frame" x="20" y="59" width="374" height="411"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                             </subviews>
@@ -55,7 +58,7 @@
                                 <constraint firstItem="3ge-Fa-kNH" firstAttribute="leading" secondItem="vUz-wU-v5M" secondAttribute="leading" constant="20" id="JDU-y7-Qod"/>
                                 <constraint firstAttribute="trailing" secondItem="3ge-Fa-kNH" secondAttribute="trailing" constant="20" id="KQX-dH-4fa"/>
                                 <constraint firstAttribute="trailing" secondItem="3mL-kM-RlD" secondAttribute="trailing" constant="12" id="Kfe-4q-ijO"/>
-                                <constraint firstAttribute="height" constant="305" id="O7f-Sg-Te0"/>
+                                <constraint firstAttribute="height" constant="500" id="O7f-Sg-Te0"/>
                                 <constraint firstItem="3mL-kM-RlD" firstAttribute="top" secondItem="vUz-wU-v5M" secondAttribute="top" constant="19" id="UeA-KQ-pDc"/>
                                 <constraint firstItem="3ge-Fa-kNH" firstAttribute="top" secondItem="3mL-kM-RlD" secondAttribute="bottom" constant="12" id="YjC-YW-0EN"/>
                                 <constraint firstAttribute="bottom" secondItem="3ge-Fa-kNH" secondAttribute="bottom" constant="30" id="a1B-Yv-R1t"/>

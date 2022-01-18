@@ -50,4 +50,13 @@ public enum Image {
 	public static let icArrowDropDown14 = UIImage(named: "icArrowDropDown14")!
 	public static let timePlusIcon = UIImage(named: "timePlusIcon")!
 	public static let icPlusGray = UIImage(named: "icPlusGray")!
+	public static let illustHome = UIImage(named: "illustHome")!
+	public static let calendarBackgroundToday = UIImage(named: "calendarBackgroundToday")!
+	public static let illustAddFreind = UIImage(named: "illustAddFreind")!
+	public static let illustAlreadyFivePills = UIImage(named: "illustAlreadyFivePills")!
+	public static let illustNoFriend = UIImage(named: "illustNoFriend")!
+	public static let illustNoNotice = UIImage(named: "illustNoNotice")!
+	public static let illustNoPill = UIImage(named: "illustNoPill")!
+	public static let illustNoSearchResult = UIImage(named: "illustNoSearchResult")!
+	public static let illustWelcome = UIImage(named: "illustWelcome")!
 }
