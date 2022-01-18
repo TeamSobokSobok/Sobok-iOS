@@ -3,7 +3,7 @@ import UIKit
 public enum URLs {
 	public static let baseURL = "https://asia-northeast3-sobok-76d0a.cloudfunctions.net/api"
 	public static let signInURL = "/auth/login/email"
-	public static let signUpURL = "/auth/signup"
+	public static let signUpURL = "/auth"
 	public static let checkUsernameURL = "/user/name"
 	public static let getCalendarURL = "/schedule/calendar"
 	public static let getPillListURL = "/schedule/my/detail"

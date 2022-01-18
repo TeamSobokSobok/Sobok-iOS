@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
+		9A3DF08C279660A400D07A8C /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* SignUpModel.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -131,6 +132,7 @@
 /* Begin PBXFileReference section */
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		9A3DF08B279660A400D07A8C /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A3DF08D279660B000D07A8C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				9A3DF08B279660A400D07A8C /* SignUpModel.swift */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
 		BD2C8B3A27953B7300B1F59D /* PagerTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +746,7 @@
 		ECB845DC279567E700433522 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
+				9A3DF08D279660B000D07A8C /* SignUp */,
 				ECB845E92795775F00433522 /* Medicine */,
 			);
 			path = APIModel;
@@ -1090,6 +1101,7 @@
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
+				9A3DF08C279660A400D07A8C /* SignUpModel.swift in Sources */,
 				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
