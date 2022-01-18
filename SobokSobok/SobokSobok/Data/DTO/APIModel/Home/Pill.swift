@@ -21,3 +21,12 @@ struct Pill: Codable {
     let color: String
     let stickerImg: [String]?
 }
+
+struct PillDetail: Codable {
+    let scheduleId: Int
+    let pillId: Int
+    let userId: Int
+    let scheduleDate: String
+    let scheduleTime: String
+    let isCheck: Bool
+}

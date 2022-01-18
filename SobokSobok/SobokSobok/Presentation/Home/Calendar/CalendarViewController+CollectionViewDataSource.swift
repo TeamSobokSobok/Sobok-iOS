@@ -51,9 +51,9 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         cell.checkClosrue = {
+            guard let scheduleId = pill?.scheduleId else { return }
             if cell.isChecked {
-                print(pill?.scheduleId, "체크 요청")
-                
+                self.checkPillDetail(scheduleId: scheduleId)
             } else {
                 print(pill?.scheduleId, "해제 요청")
             }

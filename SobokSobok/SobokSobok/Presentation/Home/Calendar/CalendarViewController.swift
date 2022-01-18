@@ -230,6 +230,17 @@ extension CalendarViewController {
             }
         }
     }
+    
+    public func checkPillDetail(scheduleId: Int) {
+        ScheduleAPI.shared.checkPill(scheduleId: scheduleId) {response in
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
+    }
 }
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
