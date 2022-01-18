@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum CheckUsernameService {
-    case checkUsername(name: String)
+    case checkUsername(nickname: String)
 }
 
 extension CheckUsernameService: TargetType {
@@ -37,8 +37,8 @@ extension CheckUsernameService: TargetType {
     
     var task: Task {
         switch self {
-        case .checkUsername(let name):
-            return .requestParameters(parameters: ["name": name], encoding: JSONEncoding.default)
+        case .checkUsername(let nickname):
+            return .requestParameters(parameters: ["nickname": nickname], encoding: JSONEncoding.default)
         }
     }
     

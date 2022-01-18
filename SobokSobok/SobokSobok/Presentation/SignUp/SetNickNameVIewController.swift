@@ -13,6 +13,7 @@ final class SetNickNameVIewController: BaseViewController {
 
     // MARK: - Properties
     var signUpUser = SignUpUser.shared
+    var nickname: String?
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
     private var isKeyboardOn: Bool = false
@@ -132,13 +133,13 @@ final class SetNickNameVIewController: BaseViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchUpToCheckDuplication(_ sender: UIButton) {
-        showToast(message: "사용 가능한 닉네임이에요")
-        isDuplicationChecked = true
+        nickname = nickNameTextField.text ?? ""
+        checkUsername()
     }
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
-            signUpUser.name = nickNameTextField.text ?? ""
+            signUpUser.name = nickname
             signUp()
             print("성공했니? : \(signUpUser.email ?? ""), \(signUpUser.password ?? ""), \(signUpUser.name ?? "")")
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
@@ -170,6 +171,31 @@ extension SetNickNameVIewController {
                 print(data)
             case .requestErr(let message):
                 print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
+}
+
+extension SetNickNameVIewController {
+    func checkUsername() {
+        guard let nickname = nickname else {
+                   return
+               }
+        CheckUsernameAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
+            switch result {
+            case .success(_):
+                print("사용가능")
+                self.showToast(message: "사용 가능한 닉네임이에요")
+                self.isDuplicationChecked = true
+            case .requestErr(_):
+                self.showToast(message: "이미 사용중인 닉네임이에요")
+                print("사용중")
             case .pathErr:
                 print(".pathErr")
             case .serverErr:

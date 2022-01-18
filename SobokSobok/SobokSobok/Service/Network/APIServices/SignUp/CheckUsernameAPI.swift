@@ -15,8 +15,8 @@ public class CheckUsernameAPI {
     
     private init() {}
     
-    func checkUsername(name: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        checkUsernameProvider.request(.checkUsername(name: <#T##String#>)) { (result) in
+    func checkUsername(nickname: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        checkUsernameProvider.request(.checkUsername(nickname: nickname)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
