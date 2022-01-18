@@ -24,9 +24,9 @@ extension UIViewController {
                                                     preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: completionTitle, style: .default, handler: completionHandler)
-        let cancelAction = UIAlertAction(title: completionTitle, style: .default, handler: cancelHandler)
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: cancelHandler)
         
-        alertViewController.addAction(okAction, cancelAction)
+        alertViewController.addAction(cancelAction, okAction)
         self.present(alertViewController, animated: true)
     }
 }
