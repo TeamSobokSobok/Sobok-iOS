@@ -9,9 +9,6 @@ import Foundation
 
 // MARK: - SignUp
 struct SignUp: Codable {
-    let status: Int
-    let success: Bool
-    let message: String
     let data: SignUpResult?
 }
 

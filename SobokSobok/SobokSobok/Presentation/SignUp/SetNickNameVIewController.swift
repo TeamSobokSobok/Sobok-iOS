@@ -12,6 +12,7 @@ import SnapKit
 final class SetNickNameVIewController: BaseViewController {
 
     // MARK: - Properties
+    var signUpUser = SignUpUser.shared
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
     private var isKeyboardOn: Bool = false
@@ -137,9 +138,9 @@ final class SetNickNameVIewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
-            SignUpDataModel.shared.name = nickNameTextField.text ?? ""
+            signUpUser.name = nickNameTextField.text ?? ""
             signUp()
-            print("성공했니? : \(SignUpDataModel.shared.email ?? ""), \(SignUpDataModel.shared.password ?? ""), \(SignUpDataModel.shared.name ?? "")")
+            print("성공했니? : \(signUpUser.email ?? ""), \(signUpUser.password ?? ""), \(signUpUser.name ?? "")")
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
@@ -150,13 +151,13 @@ final class SetNickNameVIewController: BaseViewController {
 // MARK: - Extensions
 extension SetNickNameVIewController {
     func signUp() {
-        guard let email = SignUpDataModel.shared.email else {
+        guard let email = signUpUser.email else {
                    return
                }
-        guard let password = SignUpDataModel.shared.password else {
+        guard let password = signUpUser.password else {
                    return
                }
-        guard let name = SignUpDataModel.shared.name else {
+        guard let name = signUpUser.name else {
                    return
                }
         

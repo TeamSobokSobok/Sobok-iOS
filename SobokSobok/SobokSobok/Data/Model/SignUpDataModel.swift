@@ -7,12 +7,9 @@
 
 import UIKit
 
-struct SignUpDataModel {
+class SignUpUser {
+    static let shared = SignUpUser()
     var email: String?
     var password: String?
     var name: String?
-}
-
-extension SignUpDataModel {
-    static var shared: SignUpDataModel = SignUpDataModel()
 }
