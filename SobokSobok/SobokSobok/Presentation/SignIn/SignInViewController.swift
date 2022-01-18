@@ -10,6 +10,7 @@ import UIKit
 final class SignInViewController: BaseViewController {
     
     // MARK: - Properties
+    var signInUser = SignInUser.shared
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
 
@@ -118,14 +119,44 @@ final class SignInViewController: BaseViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchUpToLogin(_ sender: UIButton) {
+        signInUser.email = emailTextField.text ?? ""
+        signInUser.password = passwordTextField.text ?? ""
+        signIn()
         // 실패시
-        showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
-        
+//        showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
+
         // 성공시
+        showToast(message: "로그인 성공 : \(signInUser.email ?? ""), \(signInUser.password ?? "")")
         // 메인화면 이동
     }
     
     @IBAction func touchUpToMoveToSignUpView(_ sender: UIButton) {
         navigationController?.pushViewController(SignUpViewController.instanceFromNib(), animated: true)
+    }
+}
+
+extension SignInViewController {
+    func signIn() {
+        guard let email = signInUser.email else {
+            return
+        }
+        guard let password = signInUser.password else {
+            return
+        }
+        
+        SignInAPI.shared.signIn(email: email, password: password, completion: {(result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
     }
 }
