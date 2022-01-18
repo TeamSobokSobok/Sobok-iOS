@@ -55,13 +55,6 @@ final class CalendarDayCell: FSCalendarCell {
         let circleImageView = UIImageView(image: Image.calenderBackgroundSome)
         self.contentView.insertSubview(circleImageView, at: 0)
         self.circleImageView = circleImageView
-        
-        let selectionLayer = CAShapeLayer()
-        selectionLayer.fillColor = UIColor.black.cgColor
-        selectionLayer.actions = ["hidden": NSNull()]
-        self.contentView.layer.insertSublayer(selectionLayer, below: self.titleLabel!.layer)
-        self.selectionLayer = selectionLayer
-        
         self.shapeLayer.isHidden = true
     }
     
@@ -78,11 +71,6 @@ final class CalendarDayCell: FSCalendarCell {
                            y: self.contentView.bounds.minY + yPosition,
                            width: width,
                            height: width)
-        let rect = CGRect(x: self.contentView.bounds.minX + distance,
-                          y: self.contentView.bounds.maxY - 13,
-                          width: width,
-                          height: 3)
-        self.selectionLayer.frame = .zero
         self.circleImageView.frame = frame
         
         switch selectedType {
@@ -100,19 +88,12 @@ final class CalendarDayCell: FSCalendarCell {
             self.titleLabel.textColor = Color.black
             self.circleImageView.image = Image.calenderBackgroundSome
         case .today:
-            self.circleImageView.image = nil
             self.titleLabel.textColor = Color.black
             self.titleLabel.font = UIFont.font(.pretendardBold, ofSize: 22)
-            self.selectionLayer.frame = rect
-            self.selectionLayer.path = UIBezierPath(rect: self.selectionLayer.bounds).cgPath
+            self.circleImageView.image = Image.calendarBackgroundToday
         case .none:
             self.titleLabel.textColor = Color.black
             self.circleImageView.image = nil
-            self.selectionLayer.path = .none
         }
-    }
-    
-    override func prepareForReuse() {
-        selectionLayer.frame = .zero
     }
 }

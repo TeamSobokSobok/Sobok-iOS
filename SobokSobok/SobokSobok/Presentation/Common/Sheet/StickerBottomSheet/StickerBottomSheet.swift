@@ -27,7 +27,9 @@ final class StickerBottomSheet: BaseViewController {
     }
     
     override func style() {
-        containerView.makeRounded(radius: 20)
+        containerView.layer.cornerRadius = 20
+        containerView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        
         titleLabel.setTypoStyle(
             font: TypoStyle.body5.font,
             kernValue: TypoStyle.body5.labelDescription.kern,

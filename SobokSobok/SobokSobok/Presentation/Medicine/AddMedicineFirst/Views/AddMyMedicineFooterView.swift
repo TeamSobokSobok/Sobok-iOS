@@ -24,7 +24,7 @@ final class AddMyMedicineFooterView: UICollectionReusableView {
         $0.setImage(UIImage(systemName: "plus"), for: .normal)
     }
     
-    
+
     let withMedicineLabel = UILabel().then {
         $0.text = "복약 중인 약을 포함해 \n 최대 5개까지 저장할 수 있어요"
         $0.textAlignment = .center

@@ -11,6 +11,7 @@ import EasyKit
 
 protocol AddMedicineSheetDismiss: AnyObject {
     func addMedicineSheetdismiss()
+    func pushAddFirstViewController()
 }
 
 final class AddMedicineSheet: BaseViewController {
@@ -62,6 +63,18 @@ final class AddMedicineSheet: BaseViewController {
         }
     }
     
+    func pushMedicineFirstViewController(tossPill: AddMyMedicineViewController.TossPill) {
+        // 바텀시트 dismiss 후에 push를 해줘야 함.
+        // presentingViewController가 탭바
+        // 탭바의 selectedViewController를 사용하기 위해 타입 캐스팅
+        self.dismiss(animated: true)
+        guard let viewController = self.presentingViewController as? UITabBarController else { return }
+        guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
+        let addMyMedicineViewController = AddMyMedicineViewController.instanceFromNib()
+        addMyMedicineViewController.tossPill = tossPill
+        selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
+    }
+    
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true) {
             self.delegate?.addMedicineSheetdismiss()
@@ -92,7 +105,7 @@ extension AddMedicineSheet: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 추후에 나머지 뷰 만들면 연결 예정
+        indexPath.row == 0 ? pushMedicineFirstViewController(tossPill: .me) : pushMedicineFirstViewController(tossPill: .friend)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

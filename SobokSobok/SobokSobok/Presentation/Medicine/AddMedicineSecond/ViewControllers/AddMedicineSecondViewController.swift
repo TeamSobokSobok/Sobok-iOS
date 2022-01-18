@@ -113,7 +113,7 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     @IBAction func medicinePeriodButtonClicked(_ sender: UIButton) {
-        presentViewController(viewControllers: MedicineCalendarViewController.self)
+        navigationController?.pushViewController(MedicineCalendarViewController.instanceFromNib(), animated: true)
     }
     
     @IBAction func specificDayButtonClicked(_ sender: UIButton) {
@@ -122,5 +122,13 @@ final class AddMedicineSecondViewController: BaseViewController {
     
     @IBAction func specificPeriodButtonClicked(_ sender: UIButton) {
         presentViewController(viewControllers: MedicineSpecificPeriodViewController.self)
+    }
+    
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: UIButton) {
+        navigationController?.pushViewController(AddMedicineThirdViewController.instanceFromNib(), animated: true)
     }
 }

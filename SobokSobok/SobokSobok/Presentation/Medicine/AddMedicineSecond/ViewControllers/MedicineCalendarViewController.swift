@@ -12,4 +12,8 @@ final class MedicineCalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

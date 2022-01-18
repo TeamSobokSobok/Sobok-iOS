@@ -38,6 +38,14 @@ final class AddMedicineThirdViewController: BaseViewController {
         timeCollectionView.showsVerticalScrollIndicator = false
         timeCollectionView.collectionViewLayout = flowLayout
     }
+    
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: UIButton) {
+        navigationController?.pushViewController(AddMedicineFourthViewController.instanceFromNib(), animated: true)
+    }
 }
 
 // MARK: UICollectionViewDelegate
