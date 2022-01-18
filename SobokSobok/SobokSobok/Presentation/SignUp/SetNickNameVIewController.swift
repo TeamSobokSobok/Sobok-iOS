@@ -30,7 +30,7 @@ final class SetNickNameVIewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkField()
-     }
+    }
     
     override func style() {
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
@@ -137,6 +137,7 @@ final class SetNickNameVIewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
+            SignUpDataModel.shared.nickname = nickNameTextField.text ?? ""
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
