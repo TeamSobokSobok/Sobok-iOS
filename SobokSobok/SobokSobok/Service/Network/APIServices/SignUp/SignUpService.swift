@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum SignUpService {
-    case signUp (email: String, password: String, nickname: String)
+    case signUp (email: String, password: String, name: String)
     case checkUsername (nickname: String)
 }
 
@@ -20,7 +20,7 @@ extension SignUpService: TargetType {
     
     var path: String {
         switch self {
-        case .signUp:
+        case .signUp(_, _, _):
             return URLs.signUpURL
         case .checkUsername:
             return URLs.checkUsernameURL
@@ -29,7 +29,7 @@ extension SignUpService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .signUp:
+        case .signUp(_, _, _):
             return .post
         case .checkUsername:
             return .post
@@ -42,10 +42,14 @@ extension SignUpService: TargetType {
     
     var task: Task {
         switch self {
-        case .signUp(let email, let password, let nickname):
-            return .requestParameters(parameters: ["email": email, "password": password, "nickname": nickname], encoding: URLEncoding.queryString)
-        case .checkUsername(let nickname):
-            return .requestParameters(parameters: ["nickname": nickname], encoding: URLEncoding.queryString)
+        case .signUp(let email, let password, let name):
+            return .requestParameters(parameters: [
+                "email": email,
+                "password": password,
+                "name": name
+            ], encoding: JSONEncoding.default)
+        case .checkUsername(let name):
+            return .requestParameters(parameters: ["name": name], encoding: URLEncoding.default)
         }
     }
     
@@ -54,6 +58,4 @@ extension SignUpService: TargetType {
                 "Content-Type": "application/json"
             ]
         }
-    
-    
 }

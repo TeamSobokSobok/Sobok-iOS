@@ -137,10 +137,45 @@ final class SetNickNameVIewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
-            SignUpDataModel.shared.nickname = nickNameTextField.text ?? ""
+            SignUpDataModel.shared.name = nickNameTextField.text ?? ""
+            signUp()
+            print("성공했니? : \(SignUpDataModel.shared.email ?? ""), \(SignUpDataModel.shared.password ?? ""), \(SignUpDataModel.shared.name ?? "")")
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
         }
+    }
+}
+
+// MARK: - Extensions
+extension SetNickNameVIewController {
+    func signUp() {
+        guard let email = SignUpDataModel.shared.email else {
+                   return
+               }
+        guard let password = SignUpDataModel.shared.password else {
+                   return
+               }
+        guard let name = SignUpDataModel.shared.name else {
+                   return
+               }
+        
+        SignUpAPI.shared.signUp(email: email,
+                                password: password,
+                                name: name,
+                                completion: {(result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
     }
 }

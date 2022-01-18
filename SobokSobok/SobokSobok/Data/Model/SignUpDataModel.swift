@@ -10,9 +10,9 @@ import UIKit
 struct SignUpDataModel {
     var email: String?
     var password: String?
-    var nickname: String?
+    var name: String?
 }
 
 extension SignUpDataModel {
-    static var shared: SignUpDataModel = SignUpDataModel(email: "", password: "", nickname: "")
+    static var shared: SignUpDataModel = SignUpDataModel(email: "", password: "", name: "")
 }
