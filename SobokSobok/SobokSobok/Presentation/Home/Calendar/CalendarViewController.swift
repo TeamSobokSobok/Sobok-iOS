@@ -15,7 +15,11 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var usernameStackView: UIStackView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel! {
+        didSet {
+            usernameLabel.text = tabName
+        }
+    }
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
     
@@ -61,6 +65,12 @@ final class CalendarViewController: BaseViewController {
     
     var tabType: TabBarItem = .share
     var tabName: String = "수현"
+    var memberId: Int = 0 {
+        didSet {
+            print(memberId)
+        }
+    }
+    var groupId: Int = 0
     
     // MARK: - Life Cycles
     
@@ -77,8 +87,14 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        getSchedules(date: Date().toString(of: .year))
-        getPillList(date: Date().toString(of: .year))
+        
+        tabType == .home ?
+        getSchedules(date: Date().toString(of: .year)) :
+        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
+        
+        tabType == .home ?
+        getPillList(date: Date().toString(of: .year)) :
+        getFriendPillList(memberId: memberId, date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -104,7 +120,7 @@ final class CalendarViewController: BaseViewController {
 
 extension CalendarViewController {
     // MARK: - Set
-    
+
     private func setCalendar() {
         calendar.locale = Locale(identifier: "ko_KR")
         calendar.headerHeight = 0
@@ -197,7 +213,7 @@ extension CalendarViewController {
         }
     }
     
-    private func parseSchedules() {
+    public func parseSchedules() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = Date.FormatType.full.description
         let items = scheduleItems.map { [dateFormatter.date(from: $0.scheduleDate) as Any, $0.isComplete] }
@@ -268,6 +284,6 @@ extension CalendarViewController: UIScrollViewDelegate {
 
 extension CalendarViewController: PageComponentProtocol {
     var pageTitle: String {
-        return tabName
+        return "\(tabName.prefix(2))"
     }
 }

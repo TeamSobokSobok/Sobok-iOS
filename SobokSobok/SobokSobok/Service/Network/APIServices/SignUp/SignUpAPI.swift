@@ -41,9 +41,9 @@ public class SignUpAPI {
         
         switch statusCode {
         case 200:
-            return .success(decodedData.data)
+            return .success(decodedData.data as Any)
         case 400..<500:
-            return .requestErr(decodedData.message)
+            return .requestErr(decodedData.message as Any)
         case 500:
             return .serverErr
         default:

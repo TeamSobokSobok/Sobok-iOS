@@ -104,7 +104,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     
     @IBAction func checkButtonTapped(_ sender: Any) {
         isChecked.toggle()
-        checkClosrue?()
+        checkClosrue?() 
     }
     
     @IBAction func stickerButtonTapped(_ sender: AnyObject) {

@@ -10,7 +10,7 @@ import UIKit
 class MedicineInfoCollectionViewCell: UICollectionViewCell {
 
     // MARK: Property
-    var deleteCellClosure: (() -> ())?
+    var deleteCellClosure: (() -> Void)?
     
     // MARK: @IBOutlets
     @IBOutlet weak var periodStackView: UIStackView!

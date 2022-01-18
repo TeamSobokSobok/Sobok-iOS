@@ -10,7 +10,7 @@ import UIKit
 final class AddTimeCollectionViewCell: UICollectionViewCell {
 
     // MARK: Property
-    var deleteCellClosure: (() -> ())?
+    var deleteCellClosure: (() -> Void)?
     
     // MARK: @IBOutlet
     @IBOutlet weak var mainView: UIView!

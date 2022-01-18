@@ -1,21 +1,39 @@
 //
-//  ScheduleAPI.swift
+//  ShareAPI.swift
 //  SobokSobok
 //
-//  Created by taehy.k on 2022/01/18.
+//  Created by taehy.k on 2022/01/19.
 //
 
 import UIKit
 import Moya
 
-struct ScheduleAPI {
-    static let shared = ScheduleAPI()
-    var scheduleProvider = MoyaProvider<ScheduleService>()
+struct ShareAPI {
+    static let shared = ShareAPI()
+    var shareProvider = MoyaProvider<ShareService>()
     
     private init() { }
     
-    public func getCalendar(date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.getCalendar(date: date)) { (result) in
+    public func getGroupInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
+        shareProvider.request(.getGroupInfomation) { (result) in
+            
+            switch result {
+            case.success(let response):
+                
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, [Member].self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    public func getFriendCalendar(memberId: Int, date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        shareProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
             
             switch result {
             case.success(let response):
@@ -32,9 +50,9 @@ struct ScheduleAPI {
         }
     }
     
-    public func getPillList(date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.getPillList(date: date)) { (result) in
-            
+    public func getFriendPillList(memberId: Int, date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        shareProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
+            print(11111, result)
             switch result {
             case.success(let response):
                 
@@ -42,40 +60,6 @@ struct ScheduleAPI {
                 let data = response.data
                 
                 let networkResult = self.judgeStatus(by: statusCode, data, [PillList].self)
-                completion(networkResult)
-                
-            case .failure(let err):
-                print(err)
-            }
-        }
-    }
-    
-    public func checkPill(scheduleId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.checkPillDetail(scheduleId: scheduleId)) { (result) in
-            
-            switch result {
-            case.success(let response):
-                let statusCode = response.statusCode
-                let data = response.data
-                
-                let networkResult = self.judgeStatus(by: statusCode, data, PillDetail.self)
-                completion(networkResult)
-                
-            case .failure(let err):
-                print(err)
-            }
-        }
-    }
-    
-    public func uncheckPill(scheduleId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.uncheckPillDetail(scheduleId: scheduleId)) { (result) in
-            
-            switch result {
-            case.success(let response):
-                let statusCode = response.statusCode
-                let data = response.data
-                
-                let networkResult = self.judgeStatus(by: statusCode, data, PillDetail.self)
                 completion(networkResult)
                 
             case .failure(let err):
