@@ -10,6 +10,7 @@ import UIKit
 final class SignUpViewController: BaseViewController {
 
     // MARK: Properties
+    var signUpUser = SignUpUser.shared
     private var isEmailRight: Bool = false
     private var isPasswordRight: Bool = false
     private var isRePasswordRight: Bool = false
@@ -130,7 +131,8 @@ final class SignUpViewController: BaseViewController {
     // 회원가입 버튼 클릭
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if passwordTextField.text == rePasswordTextField.text {
-            print("이메일 : \(emailTextField.text ?? ""), 비밀번호 : \(passwordTextField.text ?? "")")
+            signUpUser.email = emailTextField.text ?? ""
+            signUpUser.password = passwordTextField.text ?? ""
             navigationController?.pushViewController(SetNickNameVIewController.instanceFromNib(), animated: true)
         } else {
             tempAlert(title: "오류", message: "비밀번호를 확인해주세요")
