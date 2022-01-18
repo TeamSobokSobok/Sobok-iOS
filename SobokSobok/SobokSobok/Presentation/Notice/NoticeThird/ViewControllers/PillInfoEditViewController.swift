@@ -29,7 +29,7 @@ final class PillInfoEditViewController: BaseViewController {
     @IBOutlet weak var selectTimeCollectionView: UICollectionView!
     
     // MARK: - Properties
-    private var timeList: [String] = ["오전 8 : 00", "오전 8 : 00", "오전 8 : 00"] {
+    private var timeList: [String] = [] {
         didSet {
             selectTimeCollectionView.reloadData()
         }
@@ -127,11 +127,16 @@ final class PillInfoEditViewController: BaseViewController {
     }
     
     @IBAction func touchUpToPeriodButton(_ sender: UIButton) {
+        // TODO: - 화면전환
         presentViewController(viewControllers: MedicineCalendarViewController.self)
     }
     
     @IBAction func touchUpToDayButton(_ sender: Any) {
         presentViewController(viewControllers: WeekSelectViewController.self)
+    }
+    
+    @IBAction func touchUpToTermButton(_ sender: Any) {
+        presentViewController(viewControllers: TermSelectViewController.self)
     }
 }
 
@@ -141,13 +146,13 @@ extension PillInfoEditViewController: UICollectionViewDelegate {
 
 extension PillInfoEditViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return timeList.count + 1
+        return timeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillTimeInfoCollectionViewCell.self)
             cell.makeRoundedWithBorder(radius: 12, color: Color.darkMint.cgColor)
-//            cell.timeLabel.text = timeList[indexPath.row]
+            cell.timeLabel.text = timeList[indexPath.row]
             cell.deleteCellClosure = {
                 self.timeList.remove(at: 0)
             }
@@ -157,9 +162,8 @@ extension PillInfoEditViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillTimeInfoFooterView.reuseIdentifier, for: indexPath) as? PillTimeInfoFooterView else { return UICollectionReusableView()}
-        // FooterView +버튼 클릭 시 셀 추가
         cell.addCellClosure = {
-            print("1")
+            self.timeList.append("")
         }
         return cell
     }

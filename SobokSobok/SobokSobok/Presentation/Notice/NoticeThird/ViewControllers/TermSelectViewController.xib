@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="termPickerView" destination="Xww-Qb-V4Z" id="Gfv-iO-0HJ"/>
                 <outlet property="termView" destination="JaO-eo-QNs" id="42f-lv-oWO"/>
+                <outlet property="view" destination="H05-DQ-R9m" id="K5W-cI-Ih2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

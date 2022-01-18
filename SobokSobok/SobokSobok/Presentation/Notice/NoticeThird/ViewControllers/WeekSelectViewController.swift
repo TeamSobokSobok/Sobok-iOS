@@ -17,11 +17,11 @@ final class WeekSelectViewController: BaseViewController {
     
     // MARK: - Properties
     let weekList: [String] = ["월", "화", "수", "목", "금", "토", "일"]
+    weak var delegate: WeekSelectViewDelegate?
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var weekView: UIView!
     @IBOutlet weak var weekTableView: UITableView!
-    weak var delegate: WeekSelectViewDelegate?
     
     // MARK: View Life Cycle
     override func viewDidLoad() {

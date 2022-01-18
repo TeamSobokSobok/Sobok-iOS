@@ -23,17 +23,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PillInfoEditViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
-                <outlet property="periodSelectButton" destination="QXU-cd-V2y" id="3dG-dD-8YR"/>
-                <outlet property="pillNameTextField" destination="Jxa-J0-Fk1" id="j2W-N1-1ve"/>
+                <outlet property="periodSelectButton" destination="QXU-cd-V2y" id="4aa-lx-5sC"/>
+                <outlet property="pillNameTextField" destination="Jxa-J0-Fk1" id="gUo-UW-LzO"/>
                 <outlet property="selectTimeCollectionView" destination="BTL-y8-Aex" id="BbN-o0-owe"/>
-                <outlet property="specificDayView" destination="zfm-RY-UQq" id="KmJ-h3-7Ns"/>
-                <outlet property="specificTermView" destination="TW1-JY-Kvd" id="21N-Od-Rdx"/>
-                <outlet property="takeDayLabel" destination="2es-B4-Dm8" id="cu1-LK-f7c"/>
-                <outlet property="takeTermLabel" destination="NEN-QN-2Hn" id="Dat-JF-7LW"/>
+                <outlet property="specificDayView" destination="zfm-RY-UQq" id="BTy-Uh-dOr"/>
+                <outlet property="specificTermView" destination="TW1-JY-Kvd" id="FDf-VZ-hm6"/>
+                <outlet property="takeDayLabel" destination="2es-B4-Dm8" id="2Wt-Zg-WFQ"/>
+                <outlet property="takeTermLabel" destination="NEN-QN-2Hn" id="hwi-8L-RsI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="selectButtons" destination="CaM-GI-Cfd" collectionClass="NSMutableArray" id="ccJ-6d-ujg"/>
-                <outletCollection property="selectButtons" destination="i4C-Cf-zIl" collectionClass="NSMutableArray" id="Z4a-9o-rMJ"/>
-                <outletCollection property="selectButtons" destination="BIC-BY-pbF" collectionClass="NSMutableArray" id="kag-j9-IIs"/>
+                <outletCollection property="selectButtons" destination="CaM-GI-Cfd" collectionClass="NSMutableArray" id="g1Q-eu-eal"/>
+                <outletCollection property="selectButtons" destination="i4C-Cf-zIl" collectionClass="NSMutableArray" id="ikV-iR-WkF"/>
+                <outletCollection property="selectButtons" destination="BIC-BY-pbF" collectionClass="NSMutableArray" id="OyC-kd-gHe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -88,6 +88,9 @@
                         <constraint firstAttribute="height" constant="54" id="Ghy-qx-kaZ"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="touchUpToPeriodButton:" destination="-1" eventType="touchUpInside" id="dO0-yt-X2T"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QD-fb-H05">
                     <rect key="frame" x="36" y="277.33333333333331" width="316" height="48"/>
@@ -132,7 +135,7 @@
                                 <color key="titleColor" name="gray500_sub"/>
                             </state>
                             <connections>
-                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="rAk-f2-yia"/>
+                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="Wuf-81-0Vs"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-Cf-zIl">
@@ -144,7 +147,7 @@
                                 <color key="titleColor" name="gray500_sub"/>
                             </state>
                             <connections>
-                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="LNr-py-Jct"/>
+                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="QbQ-Rv-zxH"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIC-BY-pbF">
@@ -156,7 +159,7 @@
                                 <color key="titleColor" name="gray500_sub"/>
                             </state>
                             <connections>
-                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="NPQ-X9-eju"/>
+                                <action selector="touchUpToSelectButton:" destination="-1" eventType="touchUpInside" id="snP-l6-FzO"/>
                             </connections>
                         </button>
                     </subviews>
@@ -174,7 +177,7 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <connections>
-                                        <action selector="touchUpToDayButton:" destination="-1" eventType="touchUpInside" id="eob-jS-Yhk"/>
+                                        <action selector="touchUpToDayButton:" destination="-1" eventType="touchUpInside" id="O1K-7D-bqs"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무슨 요일에 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2es-B4-Dm8">
@@ -210,11 +213,11 @@
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TW1-JY-Kvd" userLabel="specificTermView">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qip-05-V8a" userLabel="periodButton">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qip-05-V8a" userLabel="termButton">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <connections>
-                                        <action selector="touchUpToPeriodButton:" destination="-1" eventType="touchUpInside" id="B5g-lK-hbK"/>
+                                        <action selector="touchUpToTermButton:" destination="-1" eventType="touchUpInside" id="7ZN-dc-35z"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="며칠 간격으로 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEN-QN-2Hn">
