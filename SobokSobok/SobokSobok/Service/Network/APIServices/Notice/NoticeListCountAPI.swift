@@ -21,7 +21,6 @@ public struct NoticeListCountAPI {
             
             switch result {
             case .success(let response):
-                
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data)
@@ -55,13 +54,12 @@ public struct NoticeListCountAPI {
         
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<NoticeInfo>.self, from: data) else {return .pathErr}
-        return .success(decodedData)
+        return .success(decodedData.data as Any)
     }
     
     private func isUsedPathErrData(data: Data)  -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        
         guard let decodedData = try? decoder.decode(GenericResponse<NoticeInfo>.self, from: data) else {return .pathErr}
         return .requestErr(decodedData)
     }

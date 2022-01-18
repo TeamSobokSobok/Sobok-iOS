@@ -21,7 +21,6 @@ public struct PillMoreInfoAPI {
             
             switch result {
             case .success(let response):
-                
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data)
