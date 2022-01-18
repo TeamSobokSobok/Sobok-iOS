@@ -122,12 +122,6 @@ final class SignInViewController: BaseViewController {
         signInUser.email = emailTextField.text ?? ""
         signInUser.password = passwordTextField.text ?? ""
         signIn()
-        // 실패시
-//        showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
-
-        // 성공시
-        showToast(message: "로그인 성공 : \(signInUser.email ?? ""), \(signInUser.password ?? "")")
-        // 메인화면 이동
     }
     
     @IBAction func touchUpToMoveToSignUpView(_ sender: UIButton) {
@@ -146,10 +140,10 @@ extension SignInViewController {
         
         SignInAPI.shared.signIn(email: email, password: password, completion: {(result) in
             switch result {
-            case .success(let data):
-                print(data)
-            case .requestErr(let message):
-                print("requestErr", message)
+            case .success(_):
+                self.showToast(message: "로그인 성공 : \(email), \(password)")
+            case .requestErr(_):
+                self.showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
             case .pathErr:
                 print(".pathErr")
             case .serverErr:
