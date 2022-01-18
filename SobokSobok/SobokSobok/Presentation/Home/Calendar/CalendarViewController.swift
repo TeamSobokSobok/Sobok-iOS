@@ -179,7 +179,7 @@ extension CalendarViewController {
     }
     
     // MARK: - Helpers
-
+    
     public func showActionSheet() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let editAction = UIAlertAction(title: "약 수정", style: .default) { _ in }
@@ -187,18 +187,49 @@ extension CalendarViewController {
             self.showAlert(title: "정말로 복약을 중단하나요?",
                            message: "복약을 중단하면 내일부터 약 알림이 오지 않아요",
                            completionTitle: "복약 중단",
-                           cancelTitle: "취소")
+                           cancelTitle: "취소") {
+                _ in
+                self.stopPillList(pillId: 99, day: "2022-01-13")
+                
+            }
         }
         let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in
             self.showAlert(title: "정말로 약을 삭제하나요?",
                            message: "해당 약에 대한 전체 복약 기록이 사라지고 알림도 오지 않아요",
                            completionTitle: "삭제",
-                           cancelTitle: "취소")
+                           cancelTitle: "취소") {
+                _ in
+                self.deletePillList(pillId: 99)
+            }
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         
         actionSheet.addAction(editAction, stopAction, deleteAction, cancelAction)
         present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func stopPillList(pillId: Int, day: String) {
+        PillManagementAPI.shared.stopPillList(pillId: pillId, day: day) { response in
+            print(response)
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
+    }
+    
+    private func deletePillList(pillId: Int) {
+        PillManagementAPI.shared.deletePillList(pillId: pillId) { response in
+            print(response)
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
     }
     
     public func showStickerBottomSheet() {
