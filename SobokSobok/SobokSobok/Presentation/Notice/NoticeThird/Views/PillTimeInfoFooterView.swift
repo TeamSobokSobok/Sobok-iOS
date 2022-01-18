@@ -40,7 +40,6 @@ final class PillTimeInfoFooterView: UICollectionReusableView {
         $0.distribution = .fillEqually
         $0.spacing = 11
         $0.alignment = .center
-        
     }
     
     override init(frame: CGRect) {
@@ -48,7 +47,6 @@ final class PillTimeInfoFooterView: UICollectionReusableView {
         [addTimeCellButton, buttonStack, confirmButton, deleteButton].forEach {
             addSubview($0)
         }
-        
         buttonStack.addArrangedSubviews(deleteButton, confirmButton)
     }
     

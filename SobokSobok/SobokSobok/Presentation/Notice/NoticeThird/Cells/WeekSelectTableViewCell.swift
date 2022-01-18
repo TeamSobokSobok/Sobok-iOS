@@ -7,13 +7,9 @@
 
 import UIKit
 
-class WeekSelectTableViewCell: UITableViewCell {
+final class WeekSelectTableViewCell: UITableViewCell {
     
     // MARK: - @IBOutlets
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

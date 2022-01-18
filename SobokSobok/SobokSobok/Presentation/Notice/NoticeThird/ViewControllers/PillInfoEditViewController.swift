@@ -60,9 +60,9 @@ final class PillInfoEditViewController: BaseViewController {
         self.present(viewController, animated: true)
     }
     
-    func updateTermButtonAttributes(button: UIButton, width: CGFloat, boardColor: CGColor, backgroundColor: UIColor, setTitleColor: UIColor) {
+    func updateTermButtonAttributes(button: UIButton, width: CGFloat, borderColor: CGColor, backgroundColor: UIColor, setTitleColor: UIColor) {
         button.layer.borderWidth = width
-        button.layer.borderColor = boardColor
+        button.layer.borderColor = borderColor
         button.backgroundColor = backgroundColor
         button.setTitleColor(setTitleColor, for: .normal)
     }
@@ -88,11 +88,11 @@ final class PillInfoEditViewController: BaseViewController {
                 specificTermView.isHidden = true
                 selectButtons[2].isSelected = false
                 selectButtons[1].isSelected = false
-                updateTermButtonAttributes(button: selectButtons[0], width: 1, boardColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
-                updateTermButtonAttributes(button: selectButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
-                updateTermButtonAttributes(button: selectButtons[2], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[0], width: 1, borderColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
+                updateTermButtonAttributes(button: selectButtons[1], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[2], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             } else {
-                updateTermButtonAttributes(button: selectButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[0], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             }
         case TermType.specificDay.rawValue:
             if sender.isSelected {
@@ -100,13 +100,13 @@ final class PillInfoEditViewController: BaseViewController {
                 specificTermView.isHidden = true
                 selectButtons[0].isSelected = false
                 selectButtons[2].isSelected = false
-                updateTermButtonAttributes(button: selectButtons[1], width: 1, boardColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
-                updateTermButtonAttributes(button: selectButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
-                updateTermButtonAttributes(button: selectButtons[2], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[1], width: 1, borderColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
+                updateTermButtonAttributes(button: selectButtons[0], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[2], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             } else {
                 specificDayView.isHidden = true
                 specificTermView.isHidden = true
-                updateTermButtonAttributes(button: selectButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[1], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             }
         case TermType.specificTerm.rawValue:
             if sender.isSelected {
@@ -114,13 +114,13 @@ final class PillInfoEditViewController: BaseViewController {
                 specificTermView.isHidden = false
                 selectButtons[0].isSelected = false
                 selectButtons[1].isSelected = false
-                updateTermButtonAttributes(button: selectButtons[2], width: 1, boardColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
-                updateTermButtonAttributes(button: selectButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
-                updateTermButtonAttributes(button: selectButtons[1], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[2], width: 1, borderColor: Color.darkMint.cgColor, backgroundColor: Color.lightMint, setTitleColor: Color.darkMint)
+                updateTermButtonAttributes(button: selectButtons[0], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[1], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             } else {
                 specificDayView.isHidden = true
                 specificTermView.isHidden = true
-                updateTermButtonAttributes(button: selectButtons[2], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
+                updateTermButtonAttributes(button: selectButtons[2], width: 0, borderColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             }
         default: break
         }

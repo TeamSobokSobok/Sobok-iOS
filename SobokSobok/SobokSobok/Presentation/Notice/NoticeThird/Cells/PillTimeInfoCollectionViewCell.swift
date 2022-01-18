@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PillTimeInfoCollectionViewCell: UICollectionViewCell {
+final class PillTimeInfoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var timeLabel: UILabel!
@@ -26,6 +26,7 @@ class PillTimeInfoCollectionViewCell: UICollectionViewCell {
     func setTarget() {
         deleteButton.addTarget(self, action: #selector(deleteCellButtonClicked), for: .touchUpInside)
     }
+    
     @objc func deleteCellButtonClicked() {
         deleteCellClosure?()
     }
