@@ -183,7 +183,7 @@ extension PillInfoEditViewController: UICollectionViewDelegateFlowLayout {
         case timeList.count:
             return CGSize(width: 335, height: 54)
         default:
-            return CGSize(width: 334, height: 53)
+            return CGSize(width: 333, height: 53)
         }
     }
     
