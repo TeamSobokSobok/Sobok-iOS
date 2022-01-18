@@ -19,11 +19,32 @@ final class SearchNicknameViewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchNicknameTextField.delegate = self
     }
 
-    // MARK: - @IBAction Properties
+    override func style() {
+        resultTextLabel.isHidden = true
+        noResultImageView.isHidden = true
+    }
     
+    // MARK: - @IBAction Properties
     @IBAction func touchUpToAddFriend(_ sender: Any) {
         print("적복이")
     }
+}
+
+extension SearchNicknameViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      if searchNicknameTextField.text != "no" {
+          resultTextLabel.text = searchNicknameTextField.text ?? ""
+          resultTextLabel.isHidden = false
+          noResultImageView.isHidden = true
+          searchNicknameTextField.resignFirstResponder()
+    } else {
+        resultTextLabel.isHidden = true
+        noResultImageView.isHidden = false
+        searchNicknameTextField.resignFirstResponder()
+    }
+    return true
+  }
 }
