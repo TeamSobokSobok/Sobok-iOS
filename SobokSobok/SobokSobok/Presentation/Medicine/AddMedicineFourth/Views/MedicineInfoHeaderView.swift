@@ -28,6 +28,7 @@ class MedicineInfoHeaderView: UICollectionReusableView {
         $0.textColor = Color.darkMint
         
     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -62,6 +63,4 @@ class MedicineInfoHeaderView: UICollectionReusableView {
             $0.centerX.centerY.equalTo(mainView)
         }
     }
-    
-    
 }
