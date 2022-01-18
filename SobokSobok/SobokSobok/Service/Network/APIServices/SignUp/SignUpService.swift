@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum SignUpService {
-    case signUp (email: String, password: String)
+    case signUp (email: String, password: String, nickname: String)
     case checkUsername (nickname: String)
 }
 
@@ -42,8 +42,8 @@ extension SignUpService: TargetType {
     
     var task: Task {
         switch self {
-        case .signUp(let email, let password):
-            return .requestParameters(parameters: ["email": email, "password": password], encoding: URLEncoding.queryString)
+        case .signUp(let email, let password, let nickname):
+            return .requestParameters(parameters: ["email": email, "password": password, "nickname": nickname], encoding: URLEncoding.queryString)
         case .checkUsername(let nickname):
             return .requestParameters(parameters: ["nickname": nickname], encoding: URLEncoding.queryString)
         }
