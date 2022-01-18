@@ -12,6 +12,8 @@ import SnapKit
 final class SetNickNameVIewController: BaseViewController {
 
     // MARK: - Properties
+    var signUpUser = SignUpUser.shared
+    var nickname: String?
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
     private var isKeyboardOn: Bool = false
@@ -30,7 +32,7 @@ final class SetNickNameVIewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkField()
-     }
+    }
     
     override func style() {
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
@@ -131,15 +133,76 @@ final class SetNickNameVIewController: BaseViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchUpToCheckDuplication(_ sender: UIButton) {
-        showToast(message: "사용 가능한 닉네임이에요")
-        isDuplicationChecked = true
+        nickname = nickNameTextField.text ?? ""
+        checkUsername()
     }
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
+            signUpUser.name = nickname
+            signUp()
+            print("성공했니? : \(signUpUser.email ?? ""), \(signUpUser.password ?? ""), \(signUpUser.name ?? "")")
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
         }
+    }
+}
+
+// MARK: - Extensions
+extension SetNickNameVIewController {
+    func signUp() {
+        guard let email = signUpUser.email else {
+                   return
+               }
+        guard let password = signUpUser.password else {
+                   return
+               }
+        guard let name = signUpUser.name else {
+                   return
+               }
+        
+        SignUpAPI.shared.signUp(email: email,
+                                password: password,
+                                name: name,
+                                completion: {(result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
+}
+
+extension SetNickNameVIewController {
+    func checkUsername() {
+        guard let nickname = nickname else {
+                   return
+               }
+        CheckUsernameAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
+            switch result {
+            case .success(_):
+                print("사용가능")
+                self.showToast(message: "사용 가능한 닉네임이에요")
+                self.isDuplicationChecked = true
+            case .requestErr(_):
+                self.showToast(message: "이미 사용중인 닉네임이에요")
+                print("사용중")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
     }
 }
