@@ -12,8 +12,16 @@ final class HomeViewController: BaseViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     
+    let calendarViewController = CalendarViewController.instanceFromNib()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        calendarViewController.getSchedules(date: Date().toString(of: .year))
     }
 
     override func style() {
@@ -25,7 +33,6 @@ final class HomeViewController: BaseViewController {
     override func layout() {
         super.layout()
         
-        let calendarViewController = CalendarViewController.instanceFromNib()
         calendarViewController.tabType = .home
         embed(calendarViewController, inView: contentView)
     }

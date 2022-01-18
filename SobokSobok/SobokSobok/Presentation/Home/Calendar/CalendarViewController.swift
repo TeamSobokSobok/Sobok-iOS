@@ -28,16 +28,18 @@ final class CalendarViewController: BaseViewController {
     // MARK: - Properties
     /// Data
     var doingDates = [String]()
-    let doneDates = [String]()
+    var doneDates = [String]()
     var selectedDate: String = Date().toString(of: .day) {
         didSet {
             dateLabel.text = selectedDate
+            getSchedules(date: selectedDate)
+            getPillList(date: selectedDate)
         }
     }
     
     /// Item
-    var scheduleItems: [String] = []
-    var pillItems: [String] = []
+    var scheduleItems: [Schedule] = []
+    var pillItems: [PillList] = []
     
     let gregorian = Calendar(identifier: .gregorian)
     private var calendarExpandedState: Bool = false {
@@ -72,8 +74,8 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        getSchedules(date: "2022-01-14")
-        getPillList(date: "2022-01-14")
+        getSchedules(date: Date().toString(of: .year))
+        getPillList(date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -179,22 +181,43 @@ extension CalendarViewController {
         }
     }
     
-    private func getSchedules(date: String) {
-        ScheduleAPI.shared.getCalendar(date: date) { response in
+    public func getSchedules(date: String) {
+        ScheduleAPI.shared.getCalendar(date: date) { [weak self] response in
             switch response {
             case .success(let data):
-                print(data)
+                guard let data = data as? [Schedule] else { return }
+                self?.scheduleItems = data
+                self?.parseSchedules()
             default:
                 return
             }
         }
     }
     
-    private func getPillList(date: String) {
+    private func parseSchedules() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Date.FormatType.full.description
+        let items = scheduleItems.map { [dateFormatter.date(from: $0.scheduleDate) as Any, $0.isComplete] }
+        
+        for item in items {
+            guard let scheduleDate = item[0] as? Date else { return }
+            guard let isComplete = item[1] as? String else { return }
+            
+            if isComplete == "doing" {
+                doingDates.append(scheduleDate.toString(of: .year))
+            } else if isComplete == "done" {
+                doneDates.append(scheduleDate.toString(of: .year))
+            }
+        }
+    }
+    
+    public func getPillList(date: String) {
         ScheduleAPI.shared.getPillList(date: date) { response in
             switch response {
             case .success(let data):
-                print(data)
+                guard let data = data as? [PillList] else { return }
+                self.pillItems = data
+                print(self.pillItems)
             default:
                 return
             }
