@@ -241,6 +241,17 @@ extension CalendarViewController {
             }
         }
     }
+    
+    public func uncheckPillDetail(scheduleId: Int) {
+        ScheduleAPI.shared.uncheckPill(scheduleId: scheduleId) {response in
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
+    }
 }
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {

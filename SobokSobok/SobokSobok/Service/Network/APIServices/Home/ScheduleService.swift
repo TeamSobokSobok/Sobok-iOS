@@ -13,6 +13,7 @@ enum ScheduleService {
     case getCalendar(date: String)
     case getPillList(date: String)
     case checkPillDetail(scheduleId: Int)
+    case uncheckPillDetail(scheduleId: Int)
 }
 
 extension ScheduleService: TargetType {
@@ -28,6 +29,8 @@ extension ScheduleService: TargetType {
             return URLs.getPillListURL
         case .checkPillDetail(let scheduleId):
             return URLs.checkPillURL.replacingOccurrences(of: "{scheduleId}", with: "\(scheduleId)")
+        case .uncheckPillDetail(let scheduleId):
+            return URLs.uncheckPillURL.replacingOccurrences(of: "{scheduleId}", with: "\(scheduleId)")
         }
     }
         
@@ -35,7 +38,7 @@ extension ScheduleService: TargetType {
         switch self {
         case .getCalendar, .getPillList:
             return .get
-        case .checkPillDetail:
+        case .checkPillDetail, .uncheckPillDetail:
             return .put
         }
     }
@@ -48,14 +51,14 @@ extension ScheduleService: TargetType {
         switch self {
         case .getCalendar(let date), .getPillList(let date):
             return .requestParameters(parameters: ["date": date], encoding: URLEncoding.queryString)
-        case .checkPillDetail:
+        case .checkPillDetail, .uncheckPillDetail:
             return .requestPlain
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getCalendar, .getPillList, .checkPillDetail:
+        case .getCalendar, .getPillList, .checkPillDetail, .uncheckPillDetail:
             return APIConstants.headerWithToken
         }
     }

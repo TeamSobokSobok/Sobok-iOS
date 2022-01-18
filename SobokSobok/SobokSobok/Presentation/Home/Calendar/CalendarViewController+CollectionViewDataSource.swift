@@ -55,7 +55,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
             if cell.isChecked {
                 self.checkPillDetail(scheduleId: scheduleId)
             } else {
-                print(pill?.scheduleId, "해제 요청")
+                self.uncheckPillDetail(scheduleId: scheduleId)
             }
         }
         
