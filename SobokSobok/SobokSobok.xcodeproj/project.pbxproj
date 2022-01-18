@@ -10,6 +10,8 @@
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
 		9A3DF08C279660A400D07A8C /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* SignUpModel.swift */; };
+		9A3DF08F2796647B00D07A8C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08E2796647B00D07A8C /* SignUpService.swift */; };
+		9A3DF09227966A3A00D07A8C /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -133,6 +135,8 @@
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		9A3DF08B279660A400D07A8C /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		9A3DF08E2796647B00D07A8C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,15 @@
 				9A3DF08B279660A400D07A8C /* SignUpModel.swift */,
 			);
 			name = SignUp;
+			sourceTree = "<group>";
+		};
+		9A3DF09027966A1900D07A8C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				9A3DF08E2796647B00D07A8C /* SignUpService.swift */,
+				9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		BD2C8B3A27953B7300B1F59D /* PagerTab */ = {
@@ -738,6 +751,7 @@
 			children = (
 				ECB845DD2795681E00433522 /* NetworkResult.swift */,
 				ECB845DF2795684E00433522 /* GenericResponse.swift */,
+				9A3DF09027966A1900D07A8C /* SignUp */,
 				ECB845E22795771B00433522 /* Medicine */,
 			);
 			path = APIServices;
@@ -1057,6 +1071,7 @@
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
+				9A3DF09227966A3A00D07A8C /* SignUpAPI.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
@@ -1065,6 +1080,7 @@
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
+				9A3DF08F2796647B00D07A8C /* SignUpService.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
