@@ -10,6 +10,7 @@ import UIKit
 final class SaveNicknameViewController: BaseViewController {
 
     // MARK: - Properties
+    var nickname: String?
     private var nameCount: Int = 0
     
     // MARK: - @IBOutlet Properties
@@ -23,6 +24,7 @@ final class SaveNicknameViewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNickname()
     }
     
     override func style() {
@@ -31,6 +33,12 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     // MARK: - Functions
+    private func setNickname() {
+        if let nickname = nickname {
+            nicknameTextLabel.text = nickname
+            nicknameTextLabel.sizeToFit()
+        }
+    }
     @objc private func checkTextField() {
         // 글자수 카운트
         nameCount = searchTextField.text?.count ?? 0
