@@ -14,11 +14,11 @@ final class ShareViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let viewControllers: [PageComponentProtocol] = [
-            MainViewController.instanceFromNib(),
-            MainViewController.instanceFromNib(),
-            MainViewController.instanceFromNib(),
-            MainViewController.instanceFromNib(),
-            MainViewController.instanceFromNib()
+            CalendarViewController.instanceFromNib(),
+            CalendarViewController.instanceFromNib(),
+            CalendarViewController.instanceFromNib(),
+            CalendarViewController.instanceFromNib(),
+            CalendarViewController.instanceFromNib()
         ]
         let style = PagerTab.Style.default
         pagerTab.setup(self, viewControllers: viewControllers, style: style)
