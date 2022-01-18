@@ -33,13 +33,16 @@ final class CalendarViewController: BaseViewController {
         didSet {
             dateLabel.text = selectedDate
             getSchedules(date: selectedDate)
-            getPillList(date: selectedDate)
         }
     }
     
     /// Item
     var scheduleItems: [Schedule] = []
-    var pillItems: [PillList] = []
+    var pillItems: [PillList] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     let gregorian = Calendar(identifier: .gregorian)
     private var calendarExpandedState: Bool = false {
@@ -127,7 +130,7 @@ extension CalendarViewController {
         flowLayout.minimumLineSpacing = 8
         let screenSize = UIScreen.main.bounds.width
         let sideMargin = 40 / 375 * screenSize
-        flowLayout.estimatedItemSize = CGSize(width: screenSize - sideMargin, height: 500)
+        flowLayout.estimatedItemSize = CGSize(width: screenSize - sideMargin, height: 140)
         collectionView.collectionViewLayout = flowLayout
         
         self.view.layoutIfNeeded()
@@ -217,7 +220,11 @@ extension CalendarViewController {
             case .success(let data):
                 guard let data = data as? [PillList] else { return }
                 self.pillItems = data
-                print(self.pillItems)
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.setCollectionViewHeight()
+                    self.view.layoutIfNeeded()
+                }
             default:
                 return
             }
@@ -227,17 +234,13 @@ extension CalendarViewController {
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if section == 2 {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 100, right: 10)
-        } else {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        }
+        return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
     }
 }
 
 extension CalendarViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.backgroundColor  = scrollView.contentOffset.y > UIScreen.main.bounds.height / 2 ? Color.gray150 : Color.white
+        scrollView.backgroundColor  = scrollView.contentOffset.y > 100 ? Color.gray150 : Color.white
     }
 }
 
