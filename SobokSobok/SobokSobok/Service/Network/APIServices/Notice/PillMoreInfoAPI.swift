@@ -1,5 +1,5 @@
 //
-//  NoticeListCountAPI.swift
+//  PillMoreInfoAPI.swift
 //  SobokSobok
 //
 //  Created by 정은희 on 2022/01/18.
@@ -9,15 +9,15 @@ import Foundation
 
 import Moya
 
-public struct NoticeListCountAPI {
+public struct PillMoreInfoAPI {
     
-    static let shared = NoticeListCountAPI()
-    var noticeListCountProvider = MoyaProvider<NoticeListCountService>()
+    static let shared = PillMoreInfoAPI()
+    var pillMoreInfoProvider = MoyaProvider<PillMoreInfoService>()
     
     private init() { }
     
-    func getNoticeListCount(completion: @escaping (NetworkResult<Any>) -> Void) {
-        noticeListCountProvider.request(.getNoticeInfo) { result in
+    func getPillMoreInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
+        pillMoreInfoProvider.request(.getPillMoreInfo) { result in
             
             switch result {
             case .success(let response):
@@ -31,10 +31,9 @@ public struct NoticeListCountAPI {
             }
         }
     }
-    
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<NoticeInfo>.self, from: data)
+        guard let decodedData = try? decoder.decode(GenericResponse<PillMoreInfo>.self, from: data)
         else {
             return .pathErr
         }
@@ -54,7 +53,7 @@ public struct NoticeListCountAPI {
     private func isValidData(data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<NoticeInfo>.self, from: data) else {return .pathErr}
+        guard let decodedData = try? decoder.decode(GenericResponse<PillMoreInfo>.self, from: data) else {return .pathErr}
         return .success(decodedData)
     }
     
@@ -62,7 +61,7 @@ public struct NoticeListCountAPI {
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(GenericResponse<NoticeInfo>.self, from: data) else {return .pathErr}
+        guard let decodedData = try? decoder.decode(GenericResponse<PillMoreInfo>.self, from: data) else {return .pathErr}
         return .requestErr(decodedData)
     }
 }
