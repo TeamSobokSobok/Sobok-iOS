@@ -70,6 +70,8 @@
 		BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120EE2796B3850068B981 /* ScheduleAPI.swift */; };
 		BD7120F12796CFA50068B981 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F02796CFA50068B981 /* Pill.swift */; };
 		BD7120F4279717530068B981 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F3279717530068B981 /* ShareService.swift */; };
+		BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F5279722A50068B981 /* ShareAPI.swift */; };
+		BD7120F9279723A00068B981 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F8279723A00068B981 /* Member.swift */; };
 		BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A02791CA97009883FC /* CalendarViewController.swift */; };
 		BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* CalendarViewController.xib */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
@@ -207,6 +209,8 @@
 		BD7120EE2796B3850068B981 /* ScheduleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPI.swift; sourceTree = "<group>"; };
 		BD7120F02796CFA50068B981 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		BD7120F3279717530068B981 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
+		BD7120F5279722A50068B981 /* ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAPI.swift; sourceTree = "<group>"; };
+		BD7120F8279723A00068B981 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		BD9857A02791CA97009883FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
@@ -722,6 +726,15 @@
 			isa = PBXGroup;
 			children = (
 				BD7120F3279717530068B981 /* ShareService.swift */,
+				BD7120F5279722A50068B981 /* ShareAPI.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		BD7120F7279723950068B981 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				BD7120F8279723A00068B981 /* Member.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -847,6 +860,7 @@
 		ECB845DC279567E700433522 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
+				BD7120F7279723950068B981 /* Share */,
 				BD7120E72796A60D0068B981 /* Home */,
 				9A3DF08D279660B000D07A8C /* Sign */,
 				ECB845E92795775F00433522 /* Medicine */,
@@ -1148,6 +1162,7 @@
 			files = (
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
+				BD7120F9279723A00068B981 /* Member.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
@@ -1158,6 +1173,7 @@
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */,
+				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
