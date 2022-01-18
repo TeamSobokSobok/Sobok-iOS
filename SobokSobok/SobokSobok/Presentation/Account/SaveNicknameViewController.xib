@@ -89,8 +89,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fi1-Y4-NQK" userLabel="검색">
                     <rect key="frame" x="20" y="158.5" width="374" height="54"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2~10글자의 한글, 영문, 숫자" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SA2-9W-tha">
-                            <rect key="frame" x="15" y="15" width="344" height="24"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2~10글자의 한글, 영문, 숫자" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SA2-9W-tha">
+                            <rect key="frame" x="17" y="15" width="342" height="24"/>
                             <color key="textColor" name="gray900_sub"/>
                             <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
@@ -102,7 +102,7 @@
                         <constraint firstAttribute="trailing" secondItem="SA2-9W-tha" secondAttribute="trailing" constant="15" id="7GX-89-1Pa"/>
                         <constraint firstAttribute="height" constant="54" id="CHS-IG-lIm"/>
                         <constraint firstItem="SA2-9W-tha" firstAttribute="top" secondItem="fi1-Y4-NQK" secondAttribute="top" constant="15" id="gGZ-Mb-WRF"/>
-                        <constraint firstItem="SA2-9W-tha" firstAttribute="leading" secondItem="fi1-Y4-NQK" secondAttribute="leading" constant="15" id="lLj-he-EiX"/>
+                        <constraint firstItem="SA2-9W-tha" firstAttribute="leading" secondItem="fi1-Y4-NQK" secondAttribute="leading" constant="17" id="lLj-he-EiX"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R78-2I-rWP">
