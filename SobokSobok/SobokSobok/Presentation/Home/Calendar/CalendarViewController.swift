@@ -115,7 +115,7 @@ extension CalendarViewController {
     private func setCalendarStyle() {
         calendar.appearance.weekdayFont = TypoStyle.body7.font
         calendar.appearance.weekdayTextColor = Color.gray600
-        calendar.appearance.titleFont = UIFont.font(.pretendardReular, ofSize: 16)
+        calendar.appearance.titleFont = UIFont.font(.pretendardRegular, ofSize: 16)
         calendar.appearance.titleDefaultColor = Color.black
         calendar.appearance.titleTodayColor = Color.black
         calendar.appearance.todayColor = .clear

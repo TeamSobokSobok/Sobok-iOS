@@ -14,7 +14,7 @@ final class AddMyMedicineView: UIView {
 
     let navigationTitleLabel = UILabel().then {
         $0.text = "내 약 추가하기"
-        $0.font = UIFont.font(.pretendardReular, ofSize: 17)
+        $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
     
     let xButton = UIButton().then {
@@ -96,7 +96,8 @@ final class AddMyMedicineView: UIView {
     func setConstraints() {
         navigationTitleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(20)
+            $0.top.equalTo(safeAreaLayoutGuide).inset(13)
+            $0.height.equalTo(24)
         }
         
         xButton.snp.makeConstraints {

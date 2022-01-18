@@ -64,7 +64,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몇시에 약을 드셔야 하나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKh-oT-zWZ">
                     <rect key="frame" x="20" y="127.5" width="161.5" height="18.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="12n-SH-pwj">
@@ -105,6 +105,9 @@
     <resources>
         <image name="icBack48" width="48" height="48"/>
         <image name="icProgress3" width="33" height="7"/>
+        <namedColor name="gray800_sub">
+            <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

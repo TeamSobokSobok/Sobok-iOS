@@ -75,7 +75,7 @@ final class CalendarDayCell: FSCalendarCell {
         
         switch selectedType {
         case .not:
-            self.titleLabel.font = UIFont.font(.pretendardReular, ofSize: 16)
+            self.titleLabel.font = UIFont.font(.pretendardRegular, ofSize: 16)
         case .single:
             self.titleLabel.font = UIFont.font(.pretendardBold, ofSize: 22)
         }
