@@ -54,6 +54,7 @@
 		BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */; };
 		BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */; };
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
+		BD7120E92796A61A0068B981 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120E82796A61A0068B981 /* Schedule.swift */; };
 		BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A02791CA97009883FC /* CalendarViewController.swift */; };
 		BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* CalendarViewController.xib */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
@@ -175,6 +176,7 @@
 		BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BD7120E82796A61A0068B981 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		BD9857A02791CA97009883FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
@@ -637,6 +639,21 @@
 			path = StickerBottomSheet;
 			sourceTree = "<group>";
 		};
+		BD7120E62796A5FB0068B981 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BD7120E72796A60D0068B981 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BD7120E82796A61A0068B981 /* Schedule.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BD98575F2791762D009883FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -746,6 +763,7 @@
 				ECB845DD2795681E00433522 /* NetworkResult.swift */,
 				ECB845DF2795684E00433522 /* GenericResponse.swift */,
 				ECB845E22795771B00433522 /* Medicine */,
+				BD7120E62796A5FB0068B981 /* Home */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -753,6 +771,7 @@
 		ECB845DC279567E700433522 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
+				BD7120E72796A60D0068B981 /* Home */,
 				ECB845E92795775F00433522 /* Medicine */,
 			);
 			path = APIModel;
@@ -1074,6 +1093,7 @@
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
+				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
 				F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
