@@ -59,4 +59,6 @@ public enum Image {
 	public static let illustNoPill = UIImage(named: "illustNoPill")!
 	public static let illustNoSearchResult = UIImage(named: "illustNoSearchResult")!
 	public static let illustWelcome = UIImage(named: "illustWelcome")!
+	public static let icProgress2 = UIImage(named: "icProgress2")!
+	public static let icProgress3 = UIImage(named: "icProgress3")!
 }

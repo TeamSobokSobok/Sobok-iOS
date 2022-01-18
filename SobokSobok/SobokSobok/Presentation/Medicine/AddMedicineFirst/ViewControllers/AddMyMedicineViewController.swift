@@ -50,6 +50,8 @@ final class AddMyMedicineViewController: BaseViewController {
         addMyMedicineView.whoLabel.text = tossPill == .me ? "내가 먹을 약이에요" : "태현이에게 전송할 약이에요"
         addMyMedicineView.navigationTitleLabel.text = tossPill == .me ? "내 약 추가하기" : "약 전송하기"
         addMyMedicineView.peopleLabel.text = tossPill == .me ? "나" : "태현이"
+        addMyMedicineView.morePillImage.isHidden = tossPill == .me ? true : false
+        addMyMedicineView.peopleSelectButton.isEnabled = tossPill == .me ? false : true
     }
     
     private func assignDelegate() {

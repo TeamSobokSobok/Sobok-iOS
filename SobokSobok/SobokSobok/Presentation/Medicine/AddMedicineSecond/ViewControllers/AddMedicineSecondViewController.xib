@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
@@ -53,10 +56,10 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6Y-fU-zoO">
                     <rect key="frame" x="364" y="52.5" width="30" height="33"/>
-                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="17"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="다음">
-                        <color key="titleColor" name="dark_mint_main"/>
+                        <color key="titleColor" name="mint_main"/>
                     </state>
                     <connections>
                         <action selector="nextButtonClicked:" destination="-1" eventType="touchUpInside" id="5YH-sT-Hs9"/>
@@ -64,7 +67,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 약 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-c7-ODV">
                     <rect key="frame" x="158.5" y="59" width="97" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -86,7 +89,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-Jh-otb">
                     <rect key="frame" x="35" y="173.5" width="298" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -165,8 +168,8 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무슨 요일에 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-5B-zfb">
-                                    <rect key="frame" x="15" y="16.5" width="278" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="15" y="16" width="278" height="22"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -205,8 +208,8 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="며칠 간격으로 먹나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-1r-Q6T">
-                                    <rect key="frame" x="15" y="16.5" width="278" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="15" y="16" width="278" height="22"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -236,6 +239,9 @@
                         </view>
                     </subviews>
                 </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProgress2" translatesAutoresizingMaskIntoConstraints="NO" id="x5m-Sd-Ipg">
+                    <rect key="frame" x="190.5" y="863" width="33" height="7"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -255,11 +261,13 @@
                 <constraint firstItem="lKe-wR-3hf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R5a-op-ig9"/>
                 <constraint firstItem="TFH-fJ-gaE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rl8-dH-qvN"/>
                 <constraint firstItem="yve-Jh-otb" firstAttribute="leading" secondItem="lKe-wR-3hf" secondAttribute="leading" constant="15" id="Vv0-uB-kWv"/>
+                <constraint firstAttribute="bottom" secondItem="x5m-Sd-Ipg" secondAttribute="bottom" constant="26" id="b1R-qI-YI6"/>
                 <constraint firstItem="Gf8-DX-thg" firstAttribute="leading" secondItem="yve-Jh-otb" secondAttribute="trailing" constant="10" id="f9w-o3-Usf"/>
                 <constraint firstItem="cJ0-c7-ODV" firstAttribute="centerY" secondItem="WND-8J-PPk" secondAttribute="centerY" id="ftr-kY-yz8"/>
                 <constraint firstItem="cJ0-c7-ODV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jN9-x6-FEU"/>
                 <constraint firstItem="aIR-ec-KEi" firstAttribute="top" secondItem="ZGE-YT-7uu" secondAttribute="bottom" constant="11" id="lKV-2I-dSP"/>
                 <constraint firstItem="yve-Jh-otb" firstAttribute="centerY" secondItem="lKe-wR-3hf" secondAttribute="centerY" id="lLK-y6-acf"/>
+                <constraint firstItem="x5m-Sd-Ipg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oaX-wG-PYk"/>
                 <constraint firstItem="Gf8-DX-thg" firstAttribute="centerY" secondItem="lKe-wR-3hf" secondAttribute="centerY" id="q53-I5-elL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aIR-ec-KEi" secondAttribute="trailing" constant="20" id="wvU-G7-5Gm"/>
                 <constraint firstItem="Gf8-DX-thg" firstAttribute="trailing" secondItem="lKe-wR-3hf" secondAttribute="trailing" constant="-3" id="xGm-pE-hoX"/>
@@ -271,14 +279,15 @@
     <resources>
         <image name="icBack48" width="48" height="48"/>
         <image name="icMore48" width="48" height="48"/>
-        <namedColor name="dark_mint_main">
-            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="icProgress2" width="33" height="7"/>
         <namedColor name="gray100_sub">
             <color red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray500_sub">
             <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
