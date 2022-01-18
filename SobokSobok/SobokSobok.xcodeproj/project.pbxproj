@@ -69,6 +69,7 @@
 		BD7120ED2796B15B0068B981 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120EC2796B15B0068B981 /* APIConstants.swift */; };
 		BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120EE2796B3850068B981 /* ScheduleAPI.swift */; };
 		BD7120F12796CFA50068B981 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F02796CFA50068B981 /* Pill.swift */; };
+		BD7120F4279717530068B981 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F3279717530068B981 /* ShareService.swift */; };
 		BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A02791CA97009883FC /* CalendarViewController.swift */; };
 		BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* CalendarViewController.xib */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
@@ -205,6 +206,7 @@
 		BD7120EC2796B15B0068B981 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		BD7120EE2796B3850068B981 /* ScheduleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPI.swift; sourceTree = "<group>"; };
 		BD7120F02796CFA50068B981 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		BD7120F3279717530068B981 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		BD9857A02791CA97009883FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
@@ -716,6 +718,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		BD7120F2279717370068B981 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				BD7120F3279717530068B981 /* ShareService.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		BD98575F2791762D009883FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +838,7 @@
 				9A3DF09027966A1900D07A8C /* SignUp */,
 				ECB845E22795771B00433522 /* Medicine */,
 				BD7120E62796A5FB0068B981 /* Home */,
+				BD7120F2279717370068B981 /* Share */,
 				BD7120EC2796B15B0068B981 /* APIConstants.swift */,
 			);
 			path = APIServices;
@@ -1191,6 +1202,7 @@
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
+				BD7120F4279717530068B981 /* ShareService.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
