@@ -28,7 +28,7 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     override func style() {
-        noText()
+        setWithNoneText()
         searchTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
     }
     
@@ -39,6 +39,7 @@ final class SaveNicknameViewController: BaseViewController {
             nicknameTextLabel.sizeToFit()
         }
     }
+    
     @objc private func checkTextField() {
         // 글자수 카운트
         nameCount = searchTextField.text?.count ?? 0
@@ -51,20 +52,20 @@ final class SaveNicknameViewController: BaseViewController {
         
         // 조건 분기처리
         if !searchTextField.hasText {
-            noText()
+            setWithNoneText()
         } else if !checkIsIncludeSpecial(input: searchTextField.text ?? "") {
             warningTextLabel.text = "특수문자 입력은 불가능해요"
-            warn()
+            setWarningVisible()
         } else if nameCount < 2 {
             warningTextLabel.text = "2자 이상 입력 가능해요"
-            warn()
+            setWarningVisible()
         } else {
-            right()
+            setRequestEnable()
         }
     }
     
     // 글자가 없을 때
-    private func noText() {
+    private func setWithNoneText() {
         searchView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         counterTextLabel.isHidden = true
         warningTextLabel.isHidden = true
@@ -72,7 +73,7 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     // 경고 세팅
-    private func warn() {
+    private func setWarningVisible() {
         searchView.makeRoundedWithBorder(radius: 12, color: Color.pillColorRed.cgColor)
         warningTextLabel.isHidden = false
         counterTextLabel.isHidden = false
@@ -81,7 +82,7 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     // 조건 맞을 때
-    private func right() {
+    private func setRequestEnable() {
         searchView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
         warningTextLabel.isHidden = true
         counterTextLabel.textColor = UIColor(cgColor: Color.gray600.cgColor)
@@ -96,11 +97,11 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     // MARK: - @IBAction Properties
-    @IBAction func touchUpToGoBack(_ sender: Any) {
+    @IBAction func touchUpToGoBack(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func touchUpToRequest(_ sender: Any) {
+    @IBAction func touchUpToRequest(_ sender: UIButton) {
         print("request")
     }
 }
