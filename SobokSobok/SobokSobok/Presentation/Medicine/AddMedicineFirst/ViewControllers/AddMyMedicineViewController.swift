@@ -11,13 +11,14 @@ import EasyKit
 
 
 final class AddMyMedicineViewController: BaseViewController {
-    
+
     enum TossPill: Int {
         case me, friend
     }
     
     // MARK: Properties
     var tossPill: TossPill?
+    var selectedPeopleName: String?
     
     private var medicineData: [String] = [] {
         didSet {
@@ -45,7 +46,6 @@ final class AddMyMedicineViewController: BaseViewController {
     }
     
     // MARK: Functions
-    
     func divideViewControllerCase() {
         addMyMedicineView.whoLabel.text = tossPill == .me ? "내가 먹을 약이에요" : "태현이에게 전송할 약이에요"
         addMyMedicineView.navigationTitleLabel.text = tossPill == .me ? "내 약 추가하기" : "약 전송하기"
@@ -67,6 +67,7 @@ final class AddMyMedicineViewController: BaseViewController {
         let addPeopleViewController = AddPeopleViewController.instanceFromNib()
         addPeopleViewController.modalPresentationStyle = .overCurrentContext
         addPeopleViewController.modalTransitionStyle = .crossDissolve
+        addPeopleViewController.sendDelegate = self
         self.present(addPeopleViewController, animated: true)
     }
     
@@ -97,7 +98,7 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
         
         // 셀 X버튼 클릭 시 셀 삭제
         cell.deleteCellClosure = {
-            self.medicineData.remove(at: 0)
+            self.medicineData.remove(at: indexPath.row)
             self.addMyMedicineView.collectionView.reloadData()
         }
         
@@ -132,5 +133,13 @@ extension AddMyMedicineViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
+    }
+}
+
+// MARK: Delegate
+extension AddMyMedicineViewController: SendPeopleNameDelegate {
+    func sendPeopleName(name: String) {
+        addMyMedicineView.peopleLabel.text = name
+        addMyMedicineView.whoLabel.text = "\(name)에게 전송할 약이에요"
     }
 }

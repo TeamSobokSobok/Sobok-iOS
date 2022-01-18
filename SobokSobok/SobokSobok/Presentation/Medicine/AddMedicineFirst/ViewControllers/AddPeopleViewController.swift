@@ -11,12 +11,17 @@ protocol AddPeopleViewDelegate: AnyObject {
     func popupDismissed()
 }
 
-final class AddPeopleViewController: UIViewController {
+protocol SendPeopleNameDelegate: AnyObject {
+    func sendPeopleName(name: String)
+}
+
+final class AddPeopleViewController: BaseViewController {
    
     // MARK: - Properties
     // PickerView에서 선택한 이름을 저장해서 데이터전달 할 예정
-    var selectedPeopleName = ""
+    var selectedPeopleName = String()
     weak var delegate: AddPeopleViewDelegate?
+    weak var sendDelegate: SendPeopleNameDelegate?
     // 임시 더미데이터
     var peopleNameList = ["태현", "승찬", "은희", "선영"]
 
@@ -54,8 +59,11 @@ final class AddPeopleViewController: UIViewController {
 
     // MARK: - @IBActions
     @IBAction func touchConfirmButton(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            self.delegate?.popupDismissed()
+        self.dismiss(animated: true) { [weak self] in
+            if let text = self?.selectedPeopleName {
+                self?.sendDelegate?.sendPeopleName(name: text)
+            }
+            self?.delegate?.popupDismissed()
         }
     }
 }

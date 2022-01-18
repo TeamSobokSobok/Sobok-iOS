@@ -66,6 +66,7 @@
             <size key="customSize" width="297" height="77"/>
             <connections>
                 <outlet property="mainView" destination="ByT-fB-Pcy" id="zfi-u0-bMi"/>
+                <outlet property="timeLabel" destination="qKG-DN-ias" id="MD0-JN-vte"/>
             </connections>
             <point key="canvasLocation" x="180.43478260869566" y="108.81696428571428"/>
         </collectionViewCell>

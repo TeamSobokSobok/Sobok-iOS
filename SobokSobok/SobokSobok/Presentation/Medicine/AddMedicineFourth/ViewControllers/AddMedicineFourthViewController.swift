@@ -92,7 +92,6 @@ extension AddMedicineFourthViewController: UICollectionViewDataSource {
             return footerView
         default:
             assert(false, "응 아니야")
-            
         }
     }
 }

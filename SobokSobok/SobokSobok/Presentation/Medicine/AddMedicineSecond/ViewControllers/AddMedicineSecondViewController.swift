@@ -16,7 +16,6 @@ enum MedicineDayType: Int, CaseIterable {
 final class AddMedicineSecondViewController: BaseViewController {
     
     // MARK: - @IBOutlets
-    
     @IBOutlet var selectDateButtons: [UIButton]!
     @IBOutlet var medicinePeriodButton: UIButton!
     @IBOutlet var medicineDateButtons: [UIButton]!
@@ -37,7 +36,6 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     // MARK: - Functions
-    
     private func setButtons() {
         medicineDateButtons.forEach {
             $0.makeRounded(radius: 10)
@@ -64,7 +62,6 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     // MARK: - @IBActions
-    
     @IBAction func selectMedicinePeriodButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         let index = sender.tag
@@ -117,11 +114,19 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     @IBAction func specificDayButtonClicked(_ sender: UIButton) {
-        presentViewController(viewControllers: MedicineSpecificDayViewController.self)
+        let addPeopleViewController = MedicineSpecificDayViewController.instanceFromNib()
+        addPeopleViewController.modalPresentationStyle = .overCurrentContext
+        addPeopleViewController.modalTransitionStyle = .crossDissolve
+        addPeopleViewController.sendDelegate = self
+        self.present(addPeopleViewController, animated: true)
     }
     
     @IBAction func specificPeriodButtonClicked(_ sender: UIButton) {
-        presentViewController(viewControllers: MedicineSpecificPeriodViewController.self)
+        let addPeopleViewController = MedicineSpecificPeriodViewController.instanceFromNib()
+        addPeopleViewController.modalPresentationStyle = .overCurrentContext
+        addPeopleViewController.modalTransitionStyle = .crossDissolve
+        addPeopleViewController.sendPeriodDelegate = self
+        self.present(addPeopleViewController, animated: true)
     }
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
@@ -132,3 +137,17 @@ final class AddMedicineSecondViewController: BaseViewController {
         navigationController?.pushViewController(AddMedicineThirdViewController.instanceFromNib(), animated: true)
     }
 }
+
+// MARK: Delegate
+extension AddMedicineSecondViewController: SendPillDayDelegate {
+    func sendDay(day: String) {
+        takeMedicineDayLabel.text = "\(day)"
+    }
+}
+
+extension AddMedicineSecondViewController: SendPeriodDelegate {
+    func sendPeriod(day: String) {
+        takeMedicinePeriodLabel.text = "\(day)"
+    }
+}
+
