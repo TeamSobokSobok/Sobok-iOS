@@ -14,6 +14,7 @@ final class AddTimeCollectionViewCell: UICollectionViewCell {
     
     // MARK: @IBOutlet
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet var timeLabel: UILabel!
     
     // MARK: View Life Cycle
     override func awakeFromNib() {

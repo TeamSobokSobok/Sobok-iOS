@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -42,7 +45,7 @@
                     </constraints>
                     <color key="tintColor" name="mint_main"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="확인">
+                    <buttonConfiguration key="configuration" style="filled" title="다음">
                         <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                     </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
@@ -55,21 +58,21 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eY-fr-ddQ" userLabel="뷰">
-                    <rect key="frame" x="0.0" y="140" width="414" height="474.5"/>
+                    <rect key="frame" x="0.0" y="140" width="414" height="475"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입하실 이메일과 비밀번호를 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-YB-bvH">
-                            <rect key="frame" x="20" y="0.0" width="374" height="55"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="20" y="0.0" width="374" height="55.5"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="23"/>
+                            <color key="textColor" name="gray800_sub"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ljr-Y9-NfJ" userLabel="비밀번호 스택">
-                            <rect key="frame" x="20" y="233.5" width="374" height="106.5"/>
+                            <rect key="frame" x="20" y="234" width="374" height="106.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AM7-lP-LjL">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="gray800_sub"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wN-5t-vpk" userLabel="비밀번호텍스트필드">
@@ -77,7 +80,8 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="8~16자의 영문, 숫자, 특수문자" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LU6-Xm-bpc" userLabel="비밀번호">
                                             <rect key="frame" x="15" y="15" width="344" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" name="gray900_sub"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -91,7 +95,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-UF-cgO" userLabel="비밀번호형식은어쩌구">
-                                    <rect key="frame" x="0.0" y="88.5" width="268.5" height="18"/>
+                                    <rect key="frame" x="0.0" y="88.5" width="265" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMR-9y-tVj">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="18"/>
@@ -102,8 +106,8 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8~16자리의 영문, 숫자, 특수문자만 사용 가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FId-4b-I2F" userLabel="비밀번호형식은어쩌구">
-                                            <rect key="frame" x="10" y="0.0" width="258.5" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <rect key="frame" x="10" y="0.0" width="255" height="16"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
                                             <color key="textColor" name="pill_color_red"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -115,12 +119,12 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KeA-dZ-aEK" userLabel="비밀번호 재입력 스택">
-                            <rect key="frame" x="20" y="368" width="374" height="106.5"/>
+                            <rect key="frame" x="20" y="368.5" width="374" height="106.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghb-8j-XvT">
                                     <rect key="frame" x="0.0" y="0.0" width="94.5" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="gray800_sub"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcb-J4-rZh" userLabel="비밀번호재입력 텍스트필드">
@@ -128,7 +132,8 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 한번 더 입력해 주세요" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-Vf-KYD" userLabel="비밀번호 재입력">
                                             <rect key="frame" x="15" y="15" width="344" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" name="gray900_sub"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -142,7 +147,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2ez-ye-BIa" userLabel="비밀번호가 일치하지 않아요">
-                                    <rect key="frame" x="0.0" y="88.5" width="152.5" height="18"/>
+                                    <rect key="frame" x="0.0" y="88.5" width="151.5" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B5-U1-z4f">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="18"/>
@@ -153,8 +158,8 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iID-Dt-Gg1">
-                                            <rect key="frame" x="10" y="0.0" width="142.5" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <rect key="frame" x="10" y="0.0" width="141.5" height="16"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
                                             <color key="textColor" name="pill_color_red"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -166,12 +171,12 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-Nb-vxf" userLabel="이메일 스택">
-                            <rect key="frame" x="20" y="99" width="374" height="106.5"/>
+                            <rect key="frame" x="20" y="99.5" width="374" height="106.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-uJ-6ls">
                                     <rect key="frame" x="0.0" y="0.0" width="39" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" name="gray800_sub"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaH-VC-WqO" userLabel="이메일텍스트필드">
@@ -179,7 +184,8 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="soboksobok@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bdf-4X-ikb" userLabel="이메일">
                                             <rect key="frame" x="15" y="15" width="344" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" name="gray900_sub"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -193,7 +199,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="itb-y6-TcY" userLabel="이메일 형식이 올바르지 않아요">
-                                    <rect key="frame" x="0.0" y="88.5" width="167" height="18"/>
+                                    <rect key="frame" x="0.0" y="88.5" width="166" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-vc-6wj">
                                             <rect key="frame" x="0.0" y="0.0" width="10" height="18"/>
@@ -204,8 +210,8 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 형식이 올바르지 않아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejO-1n-ptE">
-                                            <rect key="frame" x="10" y="0.0" width="157" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <rect key="frame" x="10" y="0.0" width="156" height="16"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
                                             <color key="textColor" name="pill_color_red"/>
                                             <color key="highlightedColor" name="black_sub"/>
                                         </label>
@@ -252,6 +258,12 @@
     <resources>
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray800_sub">
+            <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray900_sub">
+            <color red="0.20000000000000001" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,6 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
         </array>
@@ -33,25 +39,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-fc-fjJ">
-                    <rect key="frame" x="20" y="96" width="374" height="55"/>
+                    <rect key="frame" x="20" y="96" width="374" height="55.5"/>
                     <string key="text">소복소복에서 사용할
 닉네임을 입력해 주세요</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="23"/>
+                    <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBZ-0Z-cZ3">
-                    <rect key="frame" x="20" y="195" width="374" height="18.5"/>
+                    <rect key="frame" x="20" y="195.5" width="374" height="18.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-cf-gZv" userLabel="닉네임뷰">
-                    <rect key="frame" x="20" y="221.5" width="374" height="52"/>
+                    <rect key="frame" x="20" y="222" width="374" height="52"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="소보기" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-iX-PYE">
                             <rect key="frame" x="15" y="15" width="344" height="22"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="gray900_sub"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
@@ -65,7 +72,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
-                    <rect key="frame" x="310" y="291.5" width="76" height="32.5"/>
+                    <rect key="frame" x="310" y="292" width="76" height="32.5"/>
                     <color key="tintColor" name="dark_mint_main"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="중복확인">
@@ -76,7 +83,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
-                    <rect key="frame" x="322" y="324" width="52" height="1"/>
+                    <rect key="frame" x="322" y="324.5" width="52" height="1"/>
                     <color key="backgroundColor" name="gray500_sub"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
@@ -111,8 +118,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2~10자리의 한글, 영문, 숫자만 사용 가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-tD-bOJ">
-                    <rect key="frame" x="30" y="276.5" width="235.5" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <rect key="frame" x="30" y="277" width="232" height="16"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="13"/>
                     <color key="textColor" name="pill_color_red"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -150,6 +157,12 @@
         </namedColor>
         <namedColor name="gray500_sub">
             <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray800_sub">
+            <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray900_sub">
+            <color red="0.20000000000000001" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
