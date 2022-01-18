@@ -18,6 +18,7 @@
 		9A3DF09D2796E30D00D07A8C /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09C2796E30D00D07A8C /* SignInModel.swift */; };
 		9A3DF0A32796EC7800D07A8C /* CheckUsernameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A22796EC7800D07A8C /* CheckUsernameModel.swift */; };
 		9A3DF0A52796ECBE00D07A8C /* CheckUsernameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A42796ECBE00D07A8C /* CheckUsernameService.swift */; };
+		9A3DF0A72796EEA800D07A8C /* CheckUsernameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A62796EEA800D07A8C /* CheckUsernameAPI.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -152,6 +153,7 @@
 		9A3DF09C2796E30D00D07A8C /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		9A3DF0A22796EC7800D07A8C /* CheckUsernameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUsernameModel.swift; sourceTree = "<group>"; };
 		9A3DF0A42796ECBE00D07A8C /* CheckUsernameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUsernameService.swift; sourceTree = "<group>"; };
+		9A3DF0A62796EEA800D07A8C /* CheckUsernameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUsernameAPI.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				9A3DF08E2796647B00D07A8C /* SignUpService.swift */,
 				9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */,
 				9A3DF0A42796ECBE00D07A8C /* CheckUsernameService.swift */,
+				9A3DF0A62796EEA800D07A8C /* CheckUsernameAPI.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1136,6 +1139,7 @@
 				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
+				9A3DF0A72796EEA800D07A8C /* CheckUsernameAPI.swift in Sources */,
 				BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionViewDataSource.swift in Sources */,
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
