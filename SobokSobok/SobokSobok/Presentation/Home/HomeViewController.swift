@@ -7,28 +7,38 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController, PageComponentProtocol {
-    var pageTitle: String {
-        "수현"
-    }
-    
+final class HomeViewController: BaseViewController {
+
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
+    
+    let calendarViewController = CalendarViewController.instanceFromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func layout() {
-        super.layout()
-        let calendarViewController = MainViewController.instanceFromNib()
-        calendarViewController.tabType = .home
-        contentView.addSubview(calendarViewController.view)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        calendarViewController.getSchedules(date: Date().toString(of: .year))
     }
-    
+
     override func style() {
         super.style()
         
         messageLabel.setTypoStyle(typoStyle: .header1)
     }
+    
+    override func layout() {
+        super.layout()
+        
+        calendarViewController.tabType = .home
+        embed(calendarViewController, inView: contentView)
+    }
+}
+
+// MARK: - PageComponentProtocol
+extension HomeViewController: PageComponentProtocol {
+    var pageTitle: String { "" }
 }

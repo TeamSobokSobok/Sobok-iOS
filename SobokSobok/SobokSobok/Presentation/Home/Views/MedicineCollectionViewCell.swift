@@ -42,6 +42,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     
     var stickerClosure: (() -> Void)?
     var editClosure: (() -> Void)?
+    var checkClosrue: (() -> Void)?
     
     // MARK: - IBOutlets
 
@@ -103,6 +104,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     
     @IBAction func checkButtonTapped(_ sender: Any) {
         isChecked.toggle()
+        checkClosrue?()
     }
     
     @IBAction func stickerButtonTapped(_ sender: AnyObject) {

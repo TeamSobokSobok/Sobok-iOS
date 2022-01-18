@@ -9,11 +9,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Pretendard-SemiBold.otf">
-            <string>Pretendard-SemiBold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompleteSignUpViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
@@ -25,15 +20,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="meT-ba-GhM">
-                    <rect key="frame" x="103" y="235" width="208" height="271"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustWelcome" translatesAutoresizingMaskIntoConstraints="NO" id="meT-ba-GhM">
+                    <rect key="frame" x="80" y="312.5" width="254" height="271"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입이 완료되었어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxy-wE-ejj">
-                    <rect key="frame" x="52" y="538" width="310" height="22"/>
-                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
-                    <color key="textColor" name="black_sub"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nin-Uy-O2q">
                     <rect key="frame" x="20" y="788" width="374" height="52"/>
                     <color key="backgroundColor" name="mint_main"/>
@@ -58,25 +47,18 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Oxy-wE-ejj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="52" id="5LP-Y9-htl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="meT-ba-GhM" secondAttribute="trailing" constant="103" id="5pw-mr-qEL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nin-Uy-O2q" secondAttribute="trailing" constant="20" id="DhP-jq-Qhs"/>
-                <constraint firstItem="meT-ba-GhM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="103" id="GBg-WG-tMb"/>
-                <constraint firstItem="meT-ba-GhM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="147" id="THJ-Ic-vF7"/>
+                <constraint firstItem="meT-ba-GhM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="HJl-td-t7d"/>
+                <constraint firstItem="meT-ba-GhM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UVX-tU-aad"/>
                 <constraint firstItem="nin-Uy-O2q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UgE-Z5-8EY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nin-Uy-O2q" secondAttribute="bottom" constant="22" id="fgA-Ct-Nso"/>
-                <constraint firstItem="Oxy-wE-ejj" firstAttribute="top" secondItem="meT-ba-GhM" secondAttribute="bottom" constant="32" id="fmn-o8-6Gk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Oxy-wE-ejj" secondAttribute="bottom" constant="302" id="iVO-d6-Dsh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Oxy-wE-ejj" secondAttribute="trailing" constant="52" id="zLD-8b-wvW"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="133" y="80"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="black_sub">
-            <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="illustWelcome" width="254" height="271"/>
         <namedColor name="mint_main">
             <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
