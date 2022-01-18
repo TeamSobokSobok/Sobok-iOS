@@ -65,6 +65,12 @@ final class CalendarViewController: BaseViewController {
     
     var tabType: TabBarItem = .share
     var tabName: String = "수현"
+    var memberId: Int = 0 {
+        didSet {
+            print(memberId)
+        }
+    }
+    var groupId: Int = 0
     
     // MARK: - Life Cycles
     
@@ -81,8 +87,14 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        getSchedules(date: Date().toString(of: .year))
-        getPillList(date: Date().toString(of: .year))
+        
+        tabType == .home ?
+        getSchedules(date: Date().toString(of: .year)) :
+        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
+        
+        tabType == .home ?
+        getPillList(date: Date().toString(of: .year)) :
+        getFriendPillList(memberId: memberId, date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -201,7 +213,7 @@ extension CalendarViewController {
         }
     }
     
-    private func parseSchedules() {
+    public func parseSchedules() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = Date.FormatType.full.description
         let items = scheduleItems.map { [dateFormatter.date(from: $0.scheduleDate) as Any, $0.isComplete] }

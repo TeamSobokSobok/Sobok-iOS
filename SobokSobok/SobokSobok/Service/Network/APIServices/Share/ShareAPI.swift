@@ -10,12 +10,12 @@ import Moya
 
 struct ShareAPI {
     static let shared = ShareAPI()
-    var scheduleProvider = MoyaProvider<ShareService>()
+    var shareProvider = MoyaProvider<ShareService>()
     
     private init() { }
     
     public func getGroupInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.getGroupInfomation) { (result) in
+        shareProvider.request(.getGroupInfomation) { (result) in
             
             switch result {
             case.success(let response):
@@ -33,7 +33,7 @@ struct ShareAPI {
     }
     
     public func getFriendCalendar(memberId: Int, date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
+        shareProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
             
             switch result {
             case.success(let response):
@@ -51,8 +51,8 @@ struct ShareAPI {
     }
     
     public func getFriendPillList(memberId: Int, date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        scheduleProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
-            
+        shareProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
+            print(11111, result)
             switch result {
             case.success(let response):
                 
@@ -87,4 +87,3 @@ struct ShareAPI {
         }
     }
 }
-

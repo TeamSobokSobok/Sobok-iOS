@@ -51,8 +51,8 @@ extension ShareViewController {
     private func setContainerViewController(groupItems: [Member]) {
         for index in 0 ..< groupItems.count {
             let calendarViewController = CalendarViewController.instanceFromNib()
-            let tabName: String = groupItems[index].memberName
-            calendarViewController.tabName = tabName
+            calendarViewController.tabName = groupItems[index].memberName
+            calendarViewController.memberId = groupItems[index].memberId
             viewControllers.append(calendarViewController)
         }
         

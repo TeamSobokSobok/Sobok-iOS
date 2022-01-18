@@ -73,7 +73,15 @@ extension CalendarViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDate = date.toString(of: .year)
         calendar.select(date)
-        getPillList(date: selectedDate)
+        
+        tabType == .home ?
+        getSchedules(date: selectedDate) :
+        getFriendSchedules(memberId: memberId, date: selectedDate)
+        
+        tabType == .home ?
+        getPillList(date: selectedDate) :
+        getFriendPillList(memberId: memberId, date: selectedDate)
+        
         self.configureVisibleCells()
     }
     
