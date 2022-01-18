@@ -73,6 +73,7 @@ final class CalendarViewController: BaseViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         getSchedules(date: "2022-01-14")
+        getPillList(date: "2022-01-14")
     }
     
     override func viewDidLayoutSubviews() {
@@ -180,6 +181,17 @@ extension CalendarViewController {
     
     private func getSchedules(date: String) {
         ScheduleAPI.shared.getCalendar(date: date) { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
+    }
+    
+    private func getPillList(date: String) {
+        ScheduleAPI.shared.getPillList(date: date) { response in
             switch response {
             case .success(let data):
                 print(data)

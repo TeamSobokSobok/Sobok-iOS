@@ -11,6 +11,7 @@ import Moya
 
 enum ScheduleService {
     case getCalendar(date: String)
+    case getPillList(date: String)
 }
 
 extension ScheduleService: TargetType {
@@ -22,12 +23,14 @@ extension ScheduleService: TargetType {
         switch self {
         case .getCalendar:
             return URLs.getCalendarURL
+        case .getPillList:
+            return URLs.getPillListURL
         }
     }
         
     var method: Moya.Method {
         switch self {
-        case .getCalendar:
+        case .getCalendar, .getPillList:
             return .get
         }
     }
@@ -38,14 +41,14 @@ extension ScheduleService: TargetType {
     
     var task: Task {
         switch self {
-        case .getCalendar(let date):
+        case .getCalendar(let date), .getPillList(let date):
             return .requestParameters(parameters: ["date": date], encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getCalendar:
+        case .getCalendar, .getPillList:
             return APIConstants.headerWithToken
         }
     }
