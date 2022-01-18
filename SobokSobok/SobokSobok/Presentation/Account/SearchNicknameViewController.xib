@@ -23,6 +23,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchNicknameViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="V4A-yS-mvd" id="egP-uX-9nA"/>
+                <outlet property="noResultImageView" destination="8d7-rm-x9E" id="wir-tH-X3o"/>
+                <outlet property="resultButton" destination="pCk-zB-dDT" id="YEV-Kn-ybM"/>
+                <outlet property="resultTextLabel" destination="Y5J-Mh-Uk5" id="lQG-u8-ydf"/>
+                <outlet property="searchNicknameTextField" destination="qJ4-mC-JI0" id="aa2-pP-BD6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -103,6 +108,9 @@
                         <constraint firstAttribute="height" constant="25" id="DP3-wU-O8z"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="touchUpToAddFriend:" destination="-1" eventType="touchUpInside" id="TNt-no-L3K"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="적복이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5J-Mh-Uk5">
                     <rect key="frame" x="20" y="234.5" width="374" height="22"/>
