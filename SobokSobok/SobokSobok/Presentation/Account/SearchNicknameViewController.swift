@@ -37,7 +37,8 @@ final class SearchNicknameViewController: BaseViewController {
         dismiss(animated: true)
     }
     @IBAction func touchUpToAddFriend(_ sender: Any) {
-        print("적복이")
+        print("\(searchNicknameTextField.text ?? "")")
+        navigationController?.pushViewController(SaveNicknameViewController.instanceFromNib(), animated: true)
     }
 }
 
