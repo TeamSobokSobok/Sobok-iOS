@@ -18,13 +18,18 @@ final class SearchNicknameViewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchNicknameTextField.delegate = self
+        assignDelgation()
     }
 
     override func style() {
         navigationController?.navigationBar.isHidden = true
         resultTextLabel.isHidden = true
         noResultImageView.isHidden = true
+    }
+    
+    // MARK: - Functions
+    private func assignDelgation() {
+        searchNicknameTextField.delegate = self
     }
     
     // MARK: - @IBAction Properties
