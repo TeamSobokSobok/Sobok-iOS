@@ -14,5 +14,5 @@ struct SignUpDataModel {
 }
 
 extension SignUpDataModel {
-    static var shared: SignUpDataModel = SignUpDataModel(email: "", password: "", name: "")
+    static var shared: SignUpDataModel = SignUpDataModel()
 }
