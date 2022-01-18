@@ -72,6 +72,7 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        getSchedules(date: "2022-01-14")
     }
     
     override func viewDidLayoutSubviews() {
@@ -174,6 +175,17 @@ extension CalendarViewController {
         stickerBottomSheet.modalTransitionStyle = .crossDissolve
         self.tabBarController?.present(stickerBottomSheet, animated: false) {
             stickerBottomSheet.showSheetWithAnimation()
+        }
+    }
+    
+    private func getSchedules(date: String) {
+        ScheduleAPI.shared.getCalendar(date: date) { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
         }
     }
 }
