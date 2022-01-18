@@ -48,7 +48,8 @@ final class AddPeopleViewController: BaseViewController {
     }
     
     private func setUI() {
-        addPeopleView.makeRounded(radius: 15)
+        addPeopleView.layer.cornerRadius = 20
+        addPeopleView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         confirmButton.makeRounded(radius: 10)
     }
     

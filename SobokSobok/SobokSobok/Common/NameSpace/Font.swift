@@ -14,7 +14,7 @@ enum FontType: String {
     case pretendardExtraLight = "Pretendard-ExtraLight"
     case pretendardLight = "Pretendard-Light"
     case pretendardMedium = "Pretendard-Medium"
-    case pretendardReular = "Pretendard-Regular"
+    case pretendardRegular = "Pretendard-Regular"
     case pretendardSemibold = "Pretendard-SemiBold"
     case pretendardThin = "Pretendard-Thin"
     

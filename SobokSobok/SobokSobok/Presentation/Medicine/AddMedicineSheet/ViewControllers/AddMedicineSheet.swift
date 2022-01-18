@@ -10,7 +10,7 @@ import UIKit
 import EasyKit
 
 protocol AddMedicineSheetDismiss: AnyObject {
-    func addMedicineSheetdismiss()
+    func addMedicineSheetDismiss()
     func pushAddFirstViewController()
 }
 
@@ -39,14 +39,15 @@ final class AddMedicineSheet: BaseViewController {
     
     override func style() {
         super.style()
-        mainView.makeRounded(radius: 20)
+        mainView.layer.cornerRadius = 20
+        mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         sheetHeight.constant = 0
     }
-    // MARK: - Functions
     
+    // MARK: - Functions
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.dismiss(animated: true) {
-            self.delegate?.addMedicineSheetdismiss()
+            self.delegate?.addMedicineSheetDismiss()
         }
     }
     
@@ -77,7 +78,7 @@ final class AddMedicineSheet: BaseViewController {
     
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true) {
-            self.delegate?.addMedicineSheetdismiss()
+            self.delegate?.addMedicineSheetDismiss()
         }
     }
 }

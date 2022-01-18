@@ -12,13 +12,9 @@ import Then
 
 final class AddMyMedicineView: UIView {
 
-    let navigationView = UIView().then {
-        $0.backgroundColor = .white
-    }
-    
     let navigationTitleLabel = UILabel().then {
         $0.text = "내 약 추가하기"
-        $0.font = UIFont.font(.pretendardReular, ofSize: 17)
+        $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
     
     let xButton = UIButton().then {
@@ -28,6 +24,7 @@ final class AddMyMedicineView: UIView {
     let nextButton = UIButton().then {
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(Color.mint, for: .normal)
+        $0.titleLabel?.font = UIFont.font(.pretendardMedium, ofSize: 17)
     }
     
     let medicinePeopleLabel = UILabel().then {
@@ -91,36 +88,35 @@ final class AddMyMedicineView: UIView {
     }
     
     func setupView() {
-        [navigationView, navigationTitleLabel, xButton, nextButton, medicinePeopleLabel, peopleLabel, peopleSelectButton, morePillImage, whoLabel, medicineLabel, collectionView, progressImage].forEach {
+        [navigationTitleLabel, xButton, nextButton, medicinePeopleLabel, peopleLabel, peopleSelectButton, morePillImage, whoLabel, medicineLabel, collectionView, progressImage].forEach {
             addSubview($0)
         }
     }
     
     func setConstraints() {
-        navigationView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(105)
-        }
-        
         navigationTitleLabel.snp.makeConstraints {
-            $0.centerX.equalTo(navigationView)
-            $0.bottom.equalTo(navigationView).inset(20)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(safeAreaLayoutGuide).inset(13)
+            $0.height.equalTo(24)
         }
         
         xButton.snp.makeConstraints {
-            $0.leading.equalTo(navigationView).inset(1)
+            $0.leading.equalToSuperview()
+            $0.top.equalTo(safeAreaLayoutGuide).inset(1)
             $0.centerY.equalTo(navigationTitleLabel)
+            $0.height.equalTo(48)
+            $0.width.equalTo(48)
         }
         
         nextButton.snp.makeConstraints {
-            $0.trailing.equalTo(navigationView.snp.trailing).inset(20)
+            $0.trailing.equalToSuperview().inset(20)
             $0.centerY.equalTo(navigationTitleLabel)
             $0.height.equalTo(44)
             $0.width.equalTo(44)
         }
         
         medicinePeopleLabel.snp.makeConstraints {
-            $0.top.equalTo(navigationView.snp.bottom).offset(27)
+            $0.top.equalTo(navigationTitleLabel.snp.bottom).offset(48)
             $0.leading.equalToSuperview().inset(20)
         }
         
@@ -160,7 +156,7 @@ final class AddMyMedicineView: UIView {
         
         progressImage.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(safeAreaLayoutGuide).inset(30)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(26)
         }
     }
 }
