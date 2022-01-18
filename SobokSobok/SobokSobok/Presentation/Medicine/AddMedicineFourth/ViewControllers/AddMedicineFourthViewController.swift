@@ -45,6 +45,14 @@ final class AddMedicineFourthViewController: BaseViewController {
         flowLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 166)
         medicineInfoCollectionView.collectionViewLayout = flowLayout
     }
+    
+    @IBAction func backButtonClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: UIButton) {
+        navigationController?.pushViewController(TabBarController.instanceFromNib(), animated: true)
+    }
 }
 
 // MARK: UICollectionViewDelegate

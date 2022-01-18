@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeekSelectViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weekTableView" destination="fLd-8r-agC" id="rZ3-mu-Wwo"/>
+                <outlet property="weekView" destination="h8a-MW-aUh" id="ce5-x6-iCW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7a-BV-Aqq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8a-MW-aUh">
+                            <rect key="frame" x="0.0" y="418" width="375" height="394"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fLd-8r-agC">
+                                    <rect key="frame" x="20" y="55" width="335" height="314"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSx-Pi-v8f">
+                                    <rect key="frame" x="314" y="17" width="47" height="34"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="확인">
+                                        <color key="titleColor" name="dark_mint_main"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="touchUpToConfirmButton:" destination="-1" eventType="touchUpInside" id="uwK-LB-H0q"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="fLd-8r-agC" firstAttribute="top" secondItem="h8a-MW-aUh" secondAttribute="top" constant="55" id="3jF-0Y-9WM"/>
+                                <constraint firstAttribute="trailing" secondItem="fLd-8r-agC" secondAttribute="trailing" constant="20" id="LcL-9L-V8U"/>
+                                <constraint firstAttribute="height" constant="394" id="MgO-pN-sAg"/>
+                                <constraint firstAttribute="bottom" secondItem="fLd-8r-agC" secondAttribute="bottom" constant="25" id="OEE-dL-FS3"/>
+                                <constraint firstItem="fLd-8r-agC" firstAttribute="leading" secondItem="h8a-MW-aUh" secondAttribute="leading" constant="20" id="Tf1-O8-YQ7"/>
+                                <constraint firstAttribute="trailing" secondItem="eSx-Pi-v8f" secondAttribute="trailing" constant="14" id="UT2-xF-FFS"/>
+                                <constraint firstItem="eSx-Pi-v8f" firstAttribute="leading" secondItem="h8a-MW-aUh" secondAttribute="leading" constant="314" id="l8A-Zs-k2F"/>
+                                <constraint firstItem="eSx-Pi-v8f" firstAttribute="top" secondItem="h8a-MW-aUh" secondAttribute="top" constant="17" id="yCp-wW-mjw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="h8a-MW-aUh" secondAttribute="bottom" id="XNW-Yg-6Pd"/>
+                        <constraint firstItem="h8a-MW-aUh" firstAttribute="leading" secondItem="U7a-BV-Aqq" secondAttribute="leading" id="knF-Ol-QX6"/>
+                        <constraint firstAttribute="trailing" secondItem="h8a-MW-aUh" secondAttribute="trailing" id="mfw-0g-kN9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="U7a-BV-Aqq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6LR-JY-CAR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U7a-BV-Aqq" secondAttribute="trailing" id="Cw2-Gc-6xd"/>
+                <constraint firstItem="U7a-BV-Aqq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FaW-8V-cC5"/>
+                <constraint firstAttribute="bottom" secondItem="U7a-BV-Aqq" secondAttribute="bottom" id="JS1-zw-z3h"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="68"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="dark_mint_main">
+            <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
