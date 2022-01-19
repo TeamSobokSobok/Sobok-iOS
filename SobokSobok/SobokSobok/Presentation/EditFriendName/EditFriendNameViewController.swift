@@ -59,7 +59,7 @@ final class EditFriendNameViewController: BaseViewController {
         } else {
             setConfirmEnable()
         }
-       }
+    }
     
     // 글자가 없을 때
     private func setWithNoneText() {
