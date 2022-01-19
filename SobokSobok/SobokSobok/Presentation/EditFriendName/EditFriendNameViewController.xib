@@ -47,6 +47,9 @@
                             <color key="tintColor" name="black_sub"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icClose48"/>
+                            <connections>
+                                <action selector="touchUpToDIsmiss:" destination="-1" eventType="touchUpInside" id="89j-nN-wlJ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Enn-N8-eJT">
                             <rect key="frame" x="355.5" y="55.5" width="48.5" height="31"/>
@@ -54,6 +57,9 @@
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="확인"/>
                             <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                            <connections>
+                                <action selector="touchUpToConfirm:" destination="-1" eventType="touchUpInside" id="Jct-N3-ysi"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -92,4 +92,12 @@ final class EditFriendNameViewController: BaseViewController {
         let nameTest = NSPredicate(format: "SELF MATCHES %@", validName)
         return nameTest.evaluate(with: input)
     }
+    
+    // MARK: - @IBAction Properties
+    @IBAction func touchUpToConfirm(_ sender: Any) {
+    }
+    
+    @IBAction func touchUpToDIsmiss(_ sender: Any) {
+    }
+    
 }
