@@ -24,6 +24,7 @@
 		9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */; };
 		9A3DF0B0279742C400D07A8C /* SaveNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0AE279742C400D07A8C /* SaveNicknameViewController.xib */; };
 		9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */; };
+		9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0B627981D8600D07A8C /* AddAccountService.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -176,6 +177,7 @@
 		9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNicknameViewController.swift; sourceTree = "<group>"; };
 		9A3DF0AE279742C400D07A8C /* SaveNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveNicknameViewController.xib; sourceTree = "<group>"; };
 		9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNicknameModel.swift; sourceTree = "<group>"; };
+		9A3DF0B627981D8600D07A8C /* AddAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountService.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		9A3DF0B127981C1500D07A8C /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				9A3DF0B627981D8600D07A8C /* AddAccountService.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -886,7 +889,6 @@
 		ECB845DB279567D700433522 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DF0B127981C1500D07A8C /* Account */,
 				ECB845DD2795681E00433522 /* NetworkResult.swift */,
 				ECB845DF2795684E00433522 /* GenericResponse.swift */,
 				BD7120EC2796B15B0068B981 /* APIConstants.swift */,
@@ -895,6 +897,7 @@
 				ECB845E22795771B00433522 /* Medicine */,
 				BD7120E62796A5FB0068B981 /* Home */,
 				BD7120F2279717370068B981 /* Share */,
+				9A3DF0B127981C1500D07A8C /* Account */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1280,6 +1283,7 @@
 				BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */,
 				9A3DF09B2796E04900D07A8C /* SignInAPI.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
+				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
 				F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */,
