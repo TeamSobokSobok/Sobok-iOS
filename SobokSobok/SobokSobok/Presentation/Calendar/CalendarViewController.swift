@@ -26,7 +26,9 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var emptyImageView: UIImageView!
+    @IBOutlet weak var emptyViewHeight: NSLayoutConstraint!
+    
     // MARK: - Properties
 
     var doingDates = [String]()
@@ -84,14 +86,6 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        
-        tabType == .home ?
-        getSchedules(date: Date().toString(of: .year)) :
-        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
-        
-        tabType == .home ?
-        getPillList(date: Date().toString(of: .year)) :
-        getFriendPillList(memberId: memberId, date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -106,6 +100,7 @@ final class CalendarViewController: BaseViewController {
         dateLabel.setTypoStyle(typoStyle: .title2)
         dateLabel.text = Date().toString(of: .day)
         scopeLabel.setTypoStyle(typoStyle: .body7)
+        emptyImageView.image = tabType == .home ? Image.illustNoPill : Image.illustNoShare
     }
     
     @IBAction func scopeButtonTapped(_ sender: Any) {
@@ -208,14 +203,6 @@ extension CalendarViewController {
         self.tabBarController?.present(stickerBottomSheet, animated: false) {
             stickerBottomSheet.showSheetWithAnimation()
         }
-    }
-}
-
-// MARK: - UIScrollViewDelegate
-
-extension CalendarViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.backgroundColor  = scrollView.contentOffset.y > 100 ? Color.gray150 : Color.white
     }
 }
 

@@ -13,6 +13,7 @@ extension Date {
         case year
         case day
         case month
+        case second
         case time
         
         var description: String {
@@ -25,6 +26,8 @@ extension Date {
                 return "M월 d일 EEEE"
             case .month:
                 return "M월"
+            case .second:
+                return "HH:mm:ss"
             case .time:
                 return "a h시"
             }
