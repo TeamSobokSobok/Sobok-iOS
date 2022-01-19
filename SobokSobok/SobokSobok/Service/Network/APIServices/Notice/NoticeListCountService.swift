@@ -12,7 +12,7 @@ import Moya
 // MARK: - NoticeListCount Service
 
 enum NoticeListCountService {
-    case getNoticeInfo
+    case getNoticeInfo(senderId: Int, receiverId: Int, createdAt: String)
 }
 
 extension NoticeListCountService: TargetType {

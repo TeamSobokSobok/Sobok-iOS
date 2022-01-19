@@ -12,7 +12,7 @@ import Moya
 // MARK: - PillMoreInfo Service
 
 enum PillMoreInfoService {
-    case getPillMoreInfo
+    case getPillMoreInfo(senderId: Int, receiverId: Int, createdAt: String)
 }
 
 extension PillMoreInfoService: TargetType {
@@ -41,8 +41,8 @@ extension PillMoreInfoService: TargetType {
     
     var task: Task {
         switch self {
-        case .getPillMoreInfo:
-            return .requestPlain
+        case .getPillMoreInfo(let senderId, let receiverId, let createdAt):
+            return .requestParameters(parameters: ["senderId": senderId, "receiverId": receiverId, "createdAt": createdAt], encoding: URLEncoding.queryString)
         }
     }
     

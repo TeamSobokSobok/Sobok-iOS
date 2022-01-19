@@ -16,9 +16,8 @@ public struct PillMoreInfoAPI {
     
     private init() { }
     
-    func getPillMoreInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
-        pillMoreInfoProvider.request(.getPillMoreInfo) { result in
-            
+    func getPillMoreInfo(senderId: Int, receiverId: Int, createdAt: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        pillMoreInfoProvider.request(.getPillMoreInfo(senderId: senderId, receiverId: receiverId, createdAt: createdAt)) { result in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
@@ -59,7 +58,6 @@ public struct PillMoreInfoAPI {
     private func isUsedPathErrData(data: Data)  -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        
         guard let decodedData = try? decoder.decode(GenericResponse<PillMoreInfo>.self, from: data) else {return .pathErr}
         return .requestErr(decodedData)
     }

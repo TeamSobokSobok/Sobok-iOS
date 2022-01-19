@@ -16,9 +16,9 @@ public struct NoticeListCountAPI {
     
     private init() { }
     
-    func getNoticeListCount(completion: @escaping (NetworkResult<Any>) -> Void) {
-        noticeListCountProvider.request(.getNoticeInfo) { result in
-            
+    func getNoticeListCount(senderId: Int, receiverId: Int, createdAt: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        noticeListCountProvider.request(.getNoticeInfo(senderId: senderId, receiverId: receiverId, createdAt: createdAt)) { result in
+            print(result)
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
