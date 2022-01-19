@@ -76,7 +76,7 @@
 		BD7120F4279717530068B981 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F3279717530068B981 /* ShareService.swift */; };
 		BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F5279722A50068B981 /* ShareAPI.swift */; };
 		BD7120F9279723A00068B981 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F8279723A00068B981 /* Member.swift */; };
-		BD7120FB279738860068B981 /* CalendarViewController+ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FA279738860068B981 /* CalendarViewController+ShareAPI.swift */; };
+		BD7120FB279738860068B981 /* CalendarViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FA279738860068B981 /* CalendarViewController+Network.swift */; };
 		BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */; };
 		BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210227977DBC0068B981 /* PillManagementService.swift */; };
 		BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210427977DCC0068B981 /* PillManagementAPI.swift */; };
@@ -223,7 +223,7 @@
 		BD7120F3279717530068B981 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		BD7120F5279722A50068B981 /* ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAPI.swift; sourceTree = "<group>"; };
 		BD7120F8279723A00068B981 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		BD7120FA279738860068B981 /* CalendarViewController+ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+ShareAPI.swift"; sourceTree = "<group>"; };
+		BD7120FA279738860068B981 /* CalendarViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+Network.swift"; sourceTree = "<group>"; };
 		BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BD71210227977DBC0068B981 /* PillManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementService.swift; sourceTree = "<group>"; };
 		BD71210427977DCC0068B981 /* PillManagementAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementAPI.swift; sourceTree = "<group>"; };
@@ -367,7 +367,7 @@
 				BD9857A12791CA97009883FC /* CalendarViewController.xib */,
 				BD2C8B4E2795FD4F00B1F59D /* CalendarViewController+CollectionViewDataSource.swift */,
 				BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */,
-				BD7120FA279738860068B981 /* CalendarViewController+ShareAPI.swift */,
+				BD7120FA279738860068B981 /* CalendarViewController+Network.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -1272,7 +1272,7 @@
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 				BD7120F12796CFA50068B981 /* Pill.swift in Sources */,
-				BD7120FB279738860068B981 /* CalendarViewController+ShareAPI.swift in Sources */,
+				BD7120FB279738860068B981 /* CalendarViewController+Network.swift in Sources */,
 				9A3DF0A52796ECBE00D07A8C /* CheckUsernameService.swift in Sources */,
 				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
 			);
