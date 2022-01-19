@@ -15,7 +15,7 @@ final class SearchNicknameViewController: BaseViewController {
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var resultTextLabel: UILabel!
     @IBOutlet weak var noResultImageView: UIImageView!
-    
+        
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +35,15 @@ final class SearchNicknameViewController: BaseViewController {
     
     // 검색결과가 없을때
     private func setNoSearchResult() {
-        resultTextLabel.text = searchNicknameTextField.text ?? ""
-        resultTextLabel.isHidden = false
-        noResultImageView.isHidden = true
+        resultTextLabel.isHidden = true
+        noResultImageView.isHidden = false
     }
     
     // 검색결과가 있을때
     private func setYesSearchResult() {
-        resultTextLabel.isHidden = true
-        noResultImageView.isHidden = false
+        resultTextLabel.text = searchNicknameTextField.text ?? ""
+        resultTextLabel.isHidden = false
+        noResultImageView.isHidden = true
     }
     
     // MARK: - @IBAction Properties
@@ -54,7 +54,7 @@ final class SearchNicknameViewController: BaseViewController {
     @IBAction func touchUpToAddFriend(_ sender: Any) {
         // 닉네임 저장 (다음 뷰에서 사용하기 위함)
         searchedUser.username = resultTextLabel.text
-        
+
         // 화면 전환
         let nextVC = SaveNicknameViewController.instanceFromNib()
         nextVC.nickname = resultTextLabel.text ?? ""
@@ -78,8 +78,8 @@ extension SearchNicknameViewController {
         AddAccountAPI.shared.searchNickname(username: username, completion: {(result) in
             switch result {
             case .success(let data):
-                print(data)
-                if data == nil {
+                guard let data = data as? [SearchNicknameData] else { return }
+                if data.isEmpty {
                     self.setNoSearchResult()
                 } else {
                     self.setYesSearchResult()

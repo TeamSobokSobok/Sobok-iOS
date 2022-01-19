@@ -7,18 +7,8 @@
 
 import Foundation
 
-// MARK: - SearchNickname
-struct SearchNickname: Codable {
-    let data: SearchNicknameResult?
-}
-
-// MARK: - SearchNicknameResult
-struct SearchNicknameResult: Codable {
-    let memberID: Int
+// MARK: - SearchNicknameData
+struct SearchNicknameData: Codable {
+    let memberId: Int
     let memberName: String
-
-    enum CodingKeys: String, CodingKey {
-        case memberID = "memberId"
-        case memberName
-    }
 }
