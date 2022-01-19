@@ -12,8 +12,8 @@ import FSCalendar
 
 final class CalendarViewController: BaseViewController {
     // MARK: - UI
-    @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var usernameStackView: UIStackView!
     @IBOutlet weak var usernameLabel: UILabel! {
         didSet {
@@ -22,15 +22,13 @@ final class CalendarViewController: BaseViewController {
     }
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
-    
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
-
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
 
     // MARK: - Properties
-    /// Data
+
     var doingDates = [String]()
     var doneDates = [String]()
     var selectedDate: String = Date().toString(of: .day) {
@@ -39,8 +37,7 @@ final class CalendarViewController: BaseViewController {
             getSchedules(date: selectedDate)
         }
     }
-    
-    /// Item
+
     var scheduleItems: [Schedule] = []
     var pillItems: [PillList] = [] {
         didSet {
@@ -116,11 +113,9 @@ final class CalendarViewController: BaseViewController {
     }
 }
 
-// MARK: - Functions
+// MARK: - Set Functions
 
 extension CalendarViewController {
-    // MARK: - Set
-
     private func setCalendar() {
         calendar.locale = Locale(identifier: "ko_KR")
         calendar.headerHeight = 0
@@ -140,15 +135,12 @@ extension CalendarViewController {
     
     private func setCollectionView() {
         collectionView.backgroundColor = Color.gray150
-
-        // FlowLayout
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 8
         let screenSize = UIScreen.main.bounds.width
         let sideMargin = 40 / 375 * screenSize
         flowLayout.estimatedItemSize = CGSize(width: screenSize - sideMargin, height: 140)
         collectionView.collectionViewLayout = flowLayout
-        
         self.view.layoutIfNeeded()
     }
     
@@ -165,7 +157,6 @@ extension CalendarViewController {
         )
     }
     
-    /// 컬렉션뷰 높이 조정 함수
     public func setCollectionViewHeight() {
         collectionViewHeight.constant = collectionView.contentSize.height
     }
@@ -177,9 +168,11 @@ extension CalendarViewController {
         collectionView.dataSource = self
         scrollView.delegate = self
     }
-    
-    // MARK: - Helpers
-    
+}
+
+// MARK: - Helpers
+
+extension CalendarViewController {
     public func showActionSheet(pillId: Int, date: String) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let editAction = UIAlertAction(title: "약 수정", style: .default) { _ in }
