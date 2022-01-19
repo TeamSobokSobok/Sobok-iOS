@@ -22,8 +22,8 @@ extension AddAccountService: TargetType {
         switch self {
         case .searchNickname(_):
             return URLs.getFriendsURL
-        case .saveNickname(_,_):
-            return URLs.postCalendarURL
+        case .saveNickname(_, _):
+            return "/group"
         }
     }
     
@@ -31,7 +31,7 @@ extension AddAccountService: TargetType {
         switch self {
         case .searchNickname(_):
             return .get
-        case .saveNickname(_,_):
+        case .saveNickname(_, _):
             return .post
         }
     }
@@ -44,8 +44,8 @@ extension AddAccountService: TargetType {
         switch self {
         case .searchNickname(let username):
             return .requestParameters(parameters: ["username": username], encoding: URLEncoding.queryString)
-        case .saveNickname(let memberId, _):
-            return .requestParameters(parameters: ["memberId": memberId], encoding: URLEncoding.queryString)
+        case .saveNickname(let memberId, let memberName):
+            return .requestCompositeParameters(bodyParameters: ["memberName": memberName], bodyEncoding: JSONEncoding.default, urlParameters: ["memberId": memberId])
         }
     }
     

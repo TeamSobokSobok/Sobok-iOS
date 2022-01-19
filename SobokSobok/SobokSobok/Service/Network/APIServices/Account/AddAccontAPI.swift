@@ -33,8 +33,7 @@ public struct AddAccountAPI {
     }
     
     func saveNickname(memberId: Int, memberName: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        addAccountProvider.request(.saveNickname(memberId: memberId, memberName: memberName)) {
-            (result) in
+        addAccountProvider.request(.saveNickname(memberId: memberId, memberName: memberName)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode

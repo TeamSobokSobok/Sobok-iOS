@@ -101,6 +101,28 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     @IBAction func touchUpToRequest(_ sender: UIButton) {
-        print("request")
+        saveNickname()
+    }
+}
+
+extension SaveNicknameViewController {
+    func saveNickname() {
+        guard let memberID = SearchedUser.shared.searchedUserId else { return }
+        guard let savedName = self.searchTextField.text else { return }
+        
+        AddAccountAPI.shared.saveNickname(memberId: memberID, memberName: savedName, completion: {(result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
     }
 }
