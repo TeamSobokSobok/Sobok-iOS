@@ -445,6 +445,7 @@
 				BD515E69278776E6003BD5A4 /* Notice */,
 				BD515E6A27877773003BD5A4 /* Medicine */,
 				BD515E6B27877784003BD5A4 /* Account */,
+				BD2C8B4D2795FD0D00B1F59D /* Calendar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -640,7 +641,6 @@
 				BD98575F2791762D009883FC /* Views */,
 				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
 				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
-				BD2C8B4D2795FD0D00B1F59D /* Calendar */,
 			);
 			path = Home;
 			sourceTree = "<group>";
