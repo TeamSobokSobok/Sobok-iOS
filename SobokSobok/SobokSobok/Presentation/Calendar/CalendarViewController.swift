@@ -211,14 +211,6 @@ extension CalendarViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension CalendarViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
-    }
-}
-
 // MARK: - UIScrollViewDelegate
 
 extension CalendarViewController: UIScrollViewDelegate {

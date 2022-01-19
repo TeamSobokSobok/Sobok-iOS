@@ -7,9 +7,9 @@
 
 import UIKit
 
-// MARK: - CollectionView
+// MARK: - CollectionView DataSource
 
-extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CalendarViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         pillItems.count
     }
@@ -83,5 +83,19 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         let width: CGFloat = collectionView.frame.width
         let height: CGFloat = 77
         return CGSize(width: width, height: height)
+    }
+}
+
+// MARK: - CollectionView Delegate
+
+extension CalendarViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension CalendarViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
     }
 }
