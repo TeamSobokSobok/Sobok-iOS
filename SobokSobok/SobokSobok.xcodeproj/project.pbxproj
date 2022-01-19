@@ -23,6 +23,7 @@
 		9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A92797252300D07A8C /* SearchNicknameViewController.xib */; };
 		9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */; };
 		9A3DF0B0279742C400D07A8C /* SaveNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0AE279742C400D07A8C /* SaveNicknameViewController.xib */; };
+		9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -174,6 +175,7 @@
 		9A3DF0A92797252300D07A8C /* SearchNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNicknameViewController.xib; sourceTree = "<group>"; };
 		9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNicknameViewController.swift; sourceTree = "<group>"; };
 		9A3DF0AE279742C400D07A8C /* SaveNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveNicknameViewController.xib; sourceTree = "<group>"; };
+		9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNicknameModel.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -350,6 +352,21 @@
 				9A3DF09A2796E04900D07A8C /* SignInAPI.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		9A3DF0B127981C1500D07A8C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		9A3DF0B227981C4D00D07A8C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		BD2C8B3A27953B7300B1F59D /* PagerTab */ = {
@@ -869,14 +886,15 @@
 		ECB845DB279567D700433522 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				9A3DF0B127981C1500D07A8C /* Account */,
 				ECB845DD2795681E00433522 /* NetworkResult.swift */,
 				ECB845DF2795684E00433522 /* GenericResponse.swift */,
+				BD7120EC2796B15B0068B981 /* APIConstants.swift */,
 				9A3DF0992796DE5300D07A8C /* SignIn */,
 				9A3DF09027966A1900D07A8C /* SignUp */,
 				ECB845E22795771B00433522 /* Medicine */,
 				BD7120E62796A5FB0068B981 /* Home */,
 				BD7120F2279717370068B981 /* Share */,
-				BD7120EC2796B15B0068B981 /* APIConstants.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -884,6 +902,7 @@
 		ECB845DC279567E700433522 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
+				9A3DF0B227981C4D00D07A8C /* Account */,
 				BD7120F7279723950068B981 /* Share */,
 				BD7120E72796A60D0068B981 /* Home */,
 				9A3DF08D279660B000D07A8C /* Sign */,
@@ -1195,6 +1214,7 @@
 				9A3DF09D2796E30D00D07A8C /* SignInModel.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
+				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
