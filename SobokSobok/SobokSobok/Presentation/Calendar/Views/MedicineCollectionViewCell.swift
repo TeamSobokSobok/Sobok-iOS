@@ -111,3 +111,9 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         stickerClosure?()
     }
 }
+
+extension MedicineCollectionViewCell {
+    func setup(pill: Pill) {
+        
+    }
+}

@@ -67,7 +67,12 @@ extension CalendarViewController: UICollectionViewDataSource {
                 for: indexPath
             ) as? TimeHeaderView else { return UICollectionReusableView() }
             
-            headerView.timeLabel.text = pillItems[indexPath.section].scheduleTime
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = Date.FormatType.second.description
+            let date = dateFormatter.date(from: pillItems[indexPath.section].scheduleTime)
+            let time = date?.toString(of: .time)
+            headerView.timeLabel.text = time
+
             headerView.editButtonStackView.isHidden = indexPath.section != 0
             headerView.editModeClosure = {
                 self.editMode.toggle()
