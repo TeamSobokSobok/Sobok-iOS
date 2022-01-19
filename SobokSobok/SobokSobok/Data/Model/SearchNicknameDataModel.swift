@@ -9,6 +9,7 @@ import UIKit
 
 class SearchedUser {
     static let shared = SearchedUser()
-    var username: String?
+    var searchedUsername: String?
+    var searchedUserId: Int?
     var savedName: String?
 }

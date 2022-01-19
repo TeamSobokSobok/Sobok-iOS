@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: - SearchNicknameData
 struct SearchNicknameData: Codable {
-    let memberId: Int
-    let memberName: String
+    let memberId: Int?
+    let memberName: String?
 }

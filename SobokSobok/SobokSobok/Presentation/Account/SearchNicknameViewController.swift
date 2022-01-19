@@ -10,7 +10,6 @@ import UIKit
 final class SearchNicknameViewController: BaseViewController {
 
     // MARK: - @IBOutlet Properties
-    private var searchedUser = SearchedUser.shared
     @IBOutlet weak var searchNicknameTextField: UITextField!
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var resultTextLabel: UILabel!
@@ -45,19 +44,15 @@ final class SearchNicknameViewController: BaseViewController {
         resultTextLabel.isHidden = false
         noResultImageView.isHidden = true
     }
-    
+        
     // MARK: - @IBAction Properties
     @IBAction func touchUpToClose(_ sender: Any) {
         dismiss(animated: true)
     }
     
     @IBAction func touchUpToAddFriend(_ sender: Any) {
-        // 닉네임 저장 (다음 뷰에서 사용하기 위함)
-        searchedUser.username = resultTextLabel.text
-
         // 화면 전환
         let nextVC = SaveNicknameViewController.instanceFromNib()
-        nextVC.nickname = resultTextLabel.text ?? ""
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -83,6 +78,10 @@ extension SearchNicknameViewController {
                     self.setNoSearchResult()
                 } else {
                     self.setYesSearchResult()
+                    
+                    // 데이터 전달 (다음 뷰에서 사용하기 위함)
+                    SearchedUser.shared.searchedUserId = data[0].memberId
+                    SearchedUser.shared.searchedUsername = data[0].memberName
                 }
             case .requestErr(let message):
                 print("requestErr", message)
