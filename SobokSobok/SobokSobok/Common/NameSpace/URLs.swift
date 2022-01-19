@@ -28,6 +28,6 @@ public enum URLs {
 	public static let acceptPillNoticeURL = "/notice"
 	public static let addMyPillURL = "/pill"
 	public static let addFriendPillURL = "/pill/member/{memberId}"
-	public static let getFriendPillCountURL = "/pill/{userId}"
+	public static let getFriendPillCountURL = "/pill/{userId}/count"
 	public static let getMyPillCountURL = "/pill/count"
 }
