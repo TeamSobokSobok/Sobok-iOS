@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditFriendNameViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="confirmButton" destination="Enn-N8-eJT" id="zFM-VV-2UB"/>
                 <outlet property="counterTextLabel" destination="zyR-Yg-DY4" id="tnI-OA-5aW"/>
                 <outlet property="nameTextField" destination="qwZ-Bz-7bT" id="DjN-yQ-ST8"/>
                 <outlet property="nameTextFieldView" destination="52p-ov-AwO" id="NYu-zI-y1x"/>
