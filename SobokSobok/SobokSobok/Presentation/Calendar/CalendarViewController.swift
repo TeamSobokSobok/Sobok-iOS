@@ -64,7 +64,7 @@ final class CalendarViewController: BaseViewController {
     var tabName: String = "수현"
     var memberId: Int = 0 {
         didSet {
-            print(memberId)
+//            print(memberId)
         }
     }
     var groupId: Int = 0

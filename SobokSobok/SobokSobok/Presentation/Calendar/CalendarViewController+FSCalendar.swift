@@ -30,11 +30,7 @@ extension CalendarViewController: FSCalendarDataSource {
         configure(cell: cell, for: date, at: position)
         return cell
     }
-    
-    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
 
-    }
-    
     private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         guard let cell = cell as? CalendarDayCell else { return }
         
@@ -72,6 +68,7 @@ extension CalendarViewController: FSCalendarDataSource {
 extension CalendarViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDate = date.toString(of: .year)
+        dateLabel.text = date.toString(of: .day)
         calendar.select(date)
         
         tabType == .home ?
