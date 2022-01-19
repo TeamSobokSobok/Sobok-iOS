@@ -7,15 +7,13 @@
 
 import UIKit
 
-// MARK: - CollectionView
+// MARK: - CollectionView DataSource
 
-extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {    
-    /// section
+extension CalendarViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         pillItems.count
     }
     
-    /// row in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pillItems[section].scheduleList?.count ?? 0
     }
@@ -34,13 +32,10 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         cell.editButton.isHidden = !editMode
         cell.checkButton.isHidden = editMode
         
-        if pill?.stickerImg?.count == 0 {
-            cell.stickerStackView.isHidden = true
-            cell.stickerCountLabel.isHidden = true
-        } else {
-            
-        }
-        
+        let stickerCount = pill?.stickerImg?.count ?? 0
+        cell.stickerStackView.isHidden = stickerCount == 0
+        cell.stickerCountLabel.isHidden = stickerCount == 0
+
         cell.stickerClosure = { [weak self] in
             guard let self = self else { return }
             self.showStickerBottomSheet()
@@ -88,5 +83,19 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         let width: CGFloat = collectionView.frame.width
         let height: CGFloat = 77
         return CGSize(width: width, height: height)
+    }
+}
+
+// MARK: - CollectionView Delegate
+
+extension CalendarViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension CalendarViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
     }
 }
