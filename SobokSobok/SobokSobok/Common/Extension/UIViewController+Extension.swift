@@ -15,8 +15,7 @@ extension UIViewController {
                    message: String,
                    completionTitle: String? = nil,
                    cancelTitle: String? = "취소",
-                   completionHandler: CompletionHandler = nil,
-                   cancelHandler: CancelHandler = nil) {
+                   completionHandler: CompletionHandler = nil) {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
         
@@ -24,7 +23,7 @@ extension UIViewController {
                                                     preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: completionTitle, style: .default, handler: completionHandler)
-        let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: cancelHandler)
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: nil)
         
         alertViewController.addAction(cancelAction, okAction)
         self.present(alertViewController, animated: true)
