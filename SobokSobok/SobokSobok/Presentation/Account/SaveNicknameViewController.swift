@@ -87,10 +87,33 @@ final class SaveNicknameViewController: BaseViewController {
         counterTextLabel.textColor = UIColor(cgColor: Color.gray600.cgColor)
         requestButton.isEnabled = true
     }
+    // 토스트 메세지
+    private func showToast(message: String) {
+        var toastLabel = UILabel()
+        // 토스트 위치
+        toastLabel = UILabel(frame: CGRect(x: 20,
+                                           y: self.view.frame.size.height - 95,
+                                           width: self.view.frame.size.width - 40,
+                                           height: 47))
+        // 토스트 색
+        toastLabel.backgroundColor = Color.black
+        toastLabel.textColor = Color.white
+        // 토스트 값
+        toastLabel.text = message
+        // 토스트 모양
+        toastLabel.textAlignment = .center
+        toastLabel.layer.cornerRadius = 12
+        toastLabel.clipsToBounds = true
+        // 토스트 애니메이션
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1.5, delay: 0.1,
+                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
+                       completion: {_ in toastLabel.removeFromSuperview() })
+    }
     
     // 정규식 체크
     private func checkIsIncludeSpecial (input: String) -> Bool {
-        let validNickName = "[A-Za-z가-힣0-9]{1,10}"
+        let validNickName = "[A-Za-z가-힣0-9ㄱ-ㅎㅏ-ㅣ]{1,10}"
         let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
           return nickNameTest.evaluate(with: input)
     }
@@ -101,6 +124,28 @@ final class SaveNicknameViewController: BaseViewController {
     }
     
     @IBAction func touchUpToRequest(_ sender: UIButton) {
-        print("request")
+        saveNickname()
+    }
+}
+
+extension SaveNicknameViewController {
+    func saveNickname() {
+        guard let memberID = SearchedUser.shared.searchedUserId else { return }
+        guard let savedName = self.searchTextField.text else { return }
+        
+        AddAccountAPI.shared.saveNickname(memberId: memberID, memberName: savedName, completion: {(result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .requestErr(_):
+                self.showToast(message: "이미 추가된 사람이에요")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
     }
 }

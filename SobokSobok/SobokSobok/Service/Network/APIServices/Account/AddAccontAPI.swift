@@ -23,7 +23,7 @@ public struct AddAccountAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data, [SearchNicknameData].self)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -32,9 +32,25 @@ public struct AddAccountAPI {
         }
     }
     
-    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+    func saveNickname(memberId: Int, memberName: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        addAccountProvider.request(.saveNickname(memberId: memberId, memberName: memberName)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, [SaveNicknameData].self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    private func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ object: T.Type?) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<[SearchNicknameData]>.self, from: data)
+        guard let decodedData = try? decoder.decode(GenericResponse<T>.self, from: data)
         else {
             return .pathErr
         }
