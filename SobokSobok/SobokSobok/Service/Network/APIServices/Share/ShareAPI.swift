@@ -51,11 +51,9 @@ struct ShareAPI {
     }
     
     public func getFriendPillList(memberId: Int, date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        shareProvider.request(.getFriendCalendar(memberId: memberId, date: date)) { (result) in
-            print(11111, result)
+        shareProvider.request(.getFriendPillList(memberId: memberId, date: date)) { (result) in
             switch result {
             case.success(let response):
-                
                 let statusCode = response.statusCode
                 let data = response.data
                 

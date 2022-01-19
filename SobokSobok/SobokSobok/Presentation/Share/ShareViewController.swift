@@ -29,7 +29,7 @@ final class ShareViewController: BaseViewController {
         super.viewWillAppear(animated)      
       
         tabBarController?.tabBar.isHidden = false
-        calendarViewController.getSchedules(date: Date().toString(of: .year))
+//        calendarViewController.getSchedules(date: Date().toString(of: .year))
     }
 }
 

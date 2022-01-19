@@ -23,6 +23,7 @@ extension CalendarViewController: UICollectionViewDataSource {
             for: indexPath, cellType: MedicineCollectionViewCell.self
         )
         
+        cell.pillCellType = tabType == .home ? .home : .share
         let pill = pillItems[indexPath.section].scheduleList?[indexPath.row]
         
         cell.contentView.backgroundColor = Color.white
@@ -30,9 +31,9 @@ extension CalendarViewController: UICollectionViewDataSource {
         cell.pillName.text = pill?.pillName
         
         cell.editButton.isHidden = !editMode
-        cell.checkButton.isHidden = editMode
+        cell.checkButton.isHidden = editMode || tabType == .share
         
-        let stickerCount = pill?.stickerImg?.count ?? 0
+        let stickerCount = pill?.stickerId?.count ?? 0
         cell.stickerStackView.isHidden = stickerCount == 0
         cell.stickerCountLabel.isHidden = stickerCount == 0
 
@@ -55,6 +56,8 @@ extension CalendarViewController: UICollectionViewDataSource {
             }
         }
         
+        cell.eatState = pill?.isCheck ?? false
+        
         return cell
     }
     
@@ -72,11 +75,11 @@ extension CalendarViewController: UICollectionViewDataSource {
             let date = dateFormatter.date(from: pillItems[indexPath.section].scheduleTime)
             let time = date?.toString(of: .time)
             headerView.timeLabel.text = time
-
             headerView.editButtonStackView.isHidden = indexPath.section != 0
             headerView.editModeClosure = {
                 self.editMode.toggle()
             }
+            headerView.editButtonStackView.isHidden = tabType == .share
             
             return headerView
         default:

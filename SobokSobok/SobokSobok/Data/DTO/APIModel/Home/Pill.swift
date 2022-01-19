@@ -19,7 +19,7 @@ struct Pill: Codable {
     let scheduleTime: String
     let isCheck: Bool
     let color: String
-    let stickerImg: [String]?
+//    let stickerImg: [String]?
     let stickerId: [String]?
 }
 

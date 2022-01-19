@@ -8,13 +8,13 @@
 import UIKit
 
 public enum PillCellType {
-    case main, share
+    case home, share
 }
 
 final class MedicineCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    var pillCellType: PillCellType = .main {
+    var pillCellType: PillCellType = .home {
         didSet {
             updateUI()
         }
@@ -89,7 +89,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateUI() {
-        buttonStackView.isHidden = pillCellType == .main
+        buttonStackView.isHidden = pillCellType == .home
         checkButton.isHidden = pillCellType == .share
         emotionButton.isHidden = !eatState
         eatStateButton.backgroundColor = eatState ? Color.lightMint : Color.gray150

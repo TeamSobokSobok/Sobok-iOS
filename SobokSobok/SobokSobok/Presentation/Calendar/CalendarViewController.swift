@@ -64,7 +64,7 @@ final class CalendarViewController: BaseViewController {
     var tabName: String = "수현"
     var memberId: Int = 0 {
         didSet {
-//            print(memberId)
+            print(memberId)
         }
     }
     var groupId: Int = 0
@@ -79,6 +79,14 @@ final class CalendarViewController: BaseViewController {
         setCalendar()
         setCalendarStyle()
         setCollectionView()
+        
+        tabType == .home ?
+        getSchedules(date: Date().toString(of: .year)) :
+        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
+        
+        tabType == .home ?
+        getPillList(date: Date().toString(of: .year)) :
+        getFriendPillList(id: memberId, date: Date().toString(of: .year))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +99,7 @@ final class CalendarViewController: BaseViewController {
         
         tabType == .home ?
         getPillList(date: Date().toString(of: .year)) :
-        getFriendPillList(memberId: memberId, date: Date().toString(of: .year))
+        getFriendPillList(id: memberId, date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {

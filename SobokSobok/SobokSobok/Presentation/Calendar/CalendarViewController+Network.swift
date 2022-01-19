@@ -128,13 +128,17 @@ extension CalendarViewController {
         }
     }
     
-    public func getFriendPillList(memberId: Int, date: String) {
-        ShareAPI.shared.getFriendPillList(memberId: memberId, date: date) { response in
-            print(22222, response)
+    public func getFriendPillList(id: Int, date: String) {
+        ShareAPI.shared.getFriendPillList(memberId: id, date: date) { response in
             switch response {
             case .success(let data):
                 guard let data = data as? [PillList] else { return }
-                print(33333, data)
+                self.pillItems = data
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.setCollectionViewHeight()
+                    self.view.layoutIfNeeded()
+                }
             default:
                 return
             }
