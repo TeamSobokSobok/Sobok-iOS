@@ -90,7 +90,7 @@ final class SaveNicknameViewController: BaseViewController {
     
     // 정규식 체크
     private func checkIsIncludeSpecial (input: String) -> Bool {
-        let validNickName = "[A-Za-z가-힣0-9]{1,10}"
+        let validNickName = "[A-Za-z가-힣0-9ㄱ-ㅎㅏ-ㅣ]{1,10}"
         let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
           return nickNameTest.evaluate(with: input)
     }
