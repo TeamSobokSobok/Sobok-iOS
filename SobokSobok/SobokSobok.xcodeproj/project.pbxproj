@@ -77,6 +77,9 @@
 		BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F5279722A50068B981 /* ShareAPI.swift */; };
 		BD7120F9279723A00068B981 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120F8279723A00068B981 /* Member.swift */; };
 		BD7120FB279738860068B981 /* CalendarViewController+ShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FA279738860068B981 /* CalendarViewController+ShareAPI.swift */; };
+		BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */; };
+		BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210227977DBC0068B981 /* PillManagementService.swift */; };
+		BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210427977DCC0068B981 /* PillManagementAPI.swift */; };
 		BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A02791CA97009883FC /* CalendarViewController.swift */; };
 		BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* CalendarViewController.xib */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
@@ -221,6 +224,9 @@
 		BD7120F5279722A50068B981 /* ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAPI.swift; sourceTree = "<group>"; };
 		BD7120F8279723A00068B981 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		BD7120FA279738860068B981 /* CalendarViewController+ShareAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+ShareAPI.swift"; sourceTree = "<group>"; };
+		BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		BD71210227977DBC0068B981 /* PillManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementService.swift; sourceTree = "<group>"; };
+		BD71210427977DCC0068B981 /* PillManagementAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementAPI.swift; sourceTree = "<group>"; };
 		BD9857A02791CA97009883FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
@@ -502,6 +508,7 @@
 			children = (
 				BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */,
 				BD2C8B56279612BC00B1F59D /* Date+Extension.swift */,
+				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -724,6 +731,8 @@
 			children = (
 				BD7120EA2796A7150068B981 /* ScheduleService.swift */,
 				BD7120EE2796B3850068B981 /* ScheduleAPI.swift */,
+				BD71210227977DBC0068B981 /* PillManagementService.swift */,
+				BD71210427977DCC0068B981 /* PillManagementAPI.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1196,6 +1205,7 @@
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignUpAPI.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
+				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
 				BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
@@ -1210,6 +1220,7 @@
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
+				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
 				F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */,
@@ -1221,6 +1232,7 @@
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
+				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
 				BD7120ED2796B15B0068B981 /* APIConstants.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
