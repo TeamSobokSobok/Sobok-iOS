@@ -23,7 +23,7 @@ extension AddAccountService: TargetType {
         case .searchNickname(_):
             return URLs.getFriendsURL
         case .saveNickname(_, _):
-            return "/group"
+            return URLs.postCalendarURL
         }
     }
     
