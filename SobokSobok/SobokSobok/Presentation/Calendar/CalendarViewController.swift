@@ -86,14 +86,6 @@ final class CalendarViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        
-//        tabType == .home ?
-//        getSchedules(date: Date().toString(of: .year)) :
-//        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
-//        
-//        tabType == .home ?
-//        getPillList(date: Date().toString(of: .year)) :
-//        getFriendPillList(id: memberId, date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -108,6 +100,7 @@ final class CalendarViewController: BaseViewController {
         dateLabel.setTypoStyle(typoStyle: .title2)
         dateLabel.text = Date().toString(of: .day)
         scopeLabel.setTypoStyle(typoStyle: .body7)
+        emptyImageView.image = tabType == .home ? Image.illustNoPill : Image.illustNoShare
     }
     
     @IBAction func scopeButtonTapped(_ sender: Any) {
