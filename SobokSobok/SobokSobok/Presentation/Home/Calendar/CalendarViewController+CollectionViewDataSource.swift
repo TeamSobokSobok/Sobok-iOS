@@ -47,7 +47,8 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         cell.editClosure = {
-            self.showActionSheet()
+            self.showActionSheet(pillId: pill?.pillId ?? 0, date: self.selectedDate)
+            collectionView.reloadData()
         }
         
         cell.checkClosrue = {

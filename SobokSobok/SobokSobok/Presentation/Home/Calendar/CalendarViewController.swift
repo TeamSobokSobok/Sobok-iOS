@@ -180,16 +180,16 @@ extension CalendarViewController {
     
     // MARK: - Helpers
     
-    public func showActionSheet() {
+    public func showActionSheet(pillId: Int, date: String) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let editAction = UIAlertAction(title: "약 수정", style: .default) { _ in }
         let stopAction = UIAlertAction(title: "복약 중단", style: .default) { _ in
             self.showAlert(title: "정말로 복약을 중단하나요?",
                            message: "복약을 중단하면 내일부터 약 알림이 오지 않아요",
                            completionTitle: "복약 중단",
-                           cancelTitle: "취소") {
-                _ in
-                self.stopPillList(pillId: 99, day: "2022-01-13")
+                           cancelTitle: "취소") { _ in
+                print(pillId, date, "복약중단")
+                self.stopPillList(pillId: pillId, day: date)
                 
             }
         }
@@ -197,9 +197,9 @@ extension CalendarViewController {
             self.showAlert(title: "정말로 약을 삭제하나요?",
                            message: "해당 약에 대한 전체 복약 기록이 사라지고 알림도 오지 않아요",
                            completionTitle: "삭제",
-                           cancelTitle: "취소") {
-                _ in
-                self.deletePillList(pillId: 99)
+                           cancelTitle: "취소") { _ in
+                print(pillId, date, "약삭제")
+                self.deletePillList(pillId: pillId)
             }
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
