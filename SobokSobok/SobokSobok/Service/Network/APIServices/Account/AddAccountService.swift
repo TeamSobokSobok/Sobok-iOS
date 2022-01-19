@@ -19,8 +19,8 @@ extension AddAccountService: TargetType {
     
     var path: String {
         switch self {
-        case .searchNickname(let username):
-            return URLs.getFriendsURL + "?username=\(username)"
+        case .searchNickname(_):
+            return URLs.getFriendsURL
         }
     }
     
@@ -32,13 +32,13 @@ extension AddAccountService: TargetType {
     }
     
     var sampleData: Data {
-            return Data()
+        return Data()
     }
     
     var task: Task {
         switch self {
-        case .searchNickname:
-            return .requestPlain
+        case .searchNickname(let username):
+            return .requestParameters(parameters: ["username": username], encoding: URLEncoding.queryString)
         }
     }
     
@@ -47,7 +47,7 @@ extension AddAccountService: TargetType {
         case .searchNickname:
             return [
                 "Content-Type": "application/json",
-                "accesstoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoiZWRAZ21haWwuY29tIiwibmFtZSI6bnVsbCwiaWRGaXJlYmFzZSI6InVOR2llMWxKWDNTREpTQnFSWHhLZUhqMnJhMzMiLCJpYXQiOjE2NDE4ODYzNjUsImV4cCI6MTY0NDQ3ODM2NSwiaXNzIjoid2Vzb3B0In0.K9xOhsd1G3sHAo89LRbLHaPySX8PeOW3kxvbbYaVeNA"
+                "accesstoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJuYW1lIjpudWxsLCJpZEZpcmViYXNlIjoiTnBRVmhYdUg3eVUwUkpVdUV6Zks3NldWckFGMiIsImlhdCI6MTY0MjA5MjkwMiwiZXhwIjoxNjQ0Njg0OTAyLCJpc3MiOiJ3ZXNvcHQifQ.fZ4bodbWJ3AlgD_c0oE5OyAW2WaXDeQHtApZLaZjdGI"
             ]
         }
     }
