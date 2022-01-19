@@ -11,11 +11,25 @@ import UIKit
 
 extension CalendarViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        pillItems.count
+        if pillItems.count == 0 {
+            emptyImageView.isHidden = false
+            emptyViewHeight.constant = 300
+            view.layoutIfNeeded()
+            return 0
+        } else {
+            emptyImageView.isHidden = true
+            emptyViewHeight.constant = 0
+            view.layoutIfNeeded()
+            return pillItems.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pillItems[section].scheduleList?.count ?? 0
+        if pillItems.count == 0 {
+            return 0
+        } else {
+            return pillItems[section].scheduleList?.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

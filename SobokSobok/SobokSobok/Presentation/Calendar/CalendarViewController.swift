@@ -26,7 +26,9 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var emptyImageView: UIImageView!
+    @IBOutlet weak var emptyViewHeight: NSLayoutConstraint!
+    
     // MARK: - Properties
 
     var doingDates = [String]()
@@ -79,27 +81,19 @@ final class CalendarViewController: BaseViewController {
         setCalendar()
         setCalendarStyle()
         setCollectionView()
-        
-        tabType == .home ?
-        getSchedules(date: Date().toString(of: .year)) :
-        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
-        
-        tabType == .home ?
-        getPillList(date: Date().toString(of: .year)) :
-        getFriendPillList(id: memberId, date: Date().toString(of: .year))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         
-        tabType == .home ?
-        getSchedules(date: Date().toString(of: .year)) :
-        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
-        
-        tabType == .home ?
-        getPillList(date: Date().toString(of: .year)) :
-        getFriendPillList(id: memberId, date: Date().toString(of: .year))
+//        tabType == .home ?
+//        getSchedules(date: Date().toString(of: .year)) :
+//        getFriendSchedules(memberId: memberId, date: Date().toString(of: .year))
+//        
+//        tabType == .home ?
+//        getPillList(date: Date().toString(of: .year)) :
+//        getFriendPillList(id: memberId, date: Date().toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
