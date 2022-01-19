@@ -157,6 +157,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="gray150_sub"/>
                     <constraints>
                         <constraint firstItem="Ckg-lI-M6P" firstAttribute="leading" secondItem="kxI-Im-inX" secondAttribute="leading" id="Azq-pU-91s"/>
                         <constraint firstItem="Ckg-lI-M6P" firstAttribute="top" secondItem="kxI-Im-inX" secondAttribute="top" id="Jtk-cg-oWs"/>

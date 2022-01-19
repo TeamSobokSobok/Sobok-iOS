@@ -211,14 +211,6 @@ extension CalendarViewController {
     }
 }
 
-// MARK: - UIScrollViewDelegate
-
-extension CalendarViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.backgroundColor  = scrollView.contentOffset.y > 100 ? Color.gray150 : Color.white
-    }
-}
-
 // MARK: - PageComponentProtocol
 
 extension CalendarViewController: PageComponentProtocol {

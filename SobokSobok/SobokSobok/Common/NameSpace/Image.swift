@@ -61,4 +61,5 @@ public enum Image {
 	public static let illustWelcome = UIImage(named: "illustWelcome")!
 	public static let icProgress2 = UIImage(named: "icProgress2")!
 	public static let icProgress3 = UIImage(named: "icProgress3")!
+	public static let icCloseFill = UIImage(named: "icCloseFill")!
 }
