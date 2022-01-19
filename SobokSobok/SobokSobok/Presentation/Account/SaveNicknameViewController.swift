@@ -10,7 +10,6 @@ import UIKit
 final class SaveNicknameViewController: BaseViewController {
 
     // MARK: - Properties
-    var nickname: String?
     private var nameCount: Int = 0
     
     // MARK: - @IBOutlet Properties
@@ -34,7 +33,7 @@ final class SaveNicknameViewController: BaseViewController {
     
     // MARK: - Functions
     private func setNickname() {
-        if let nickname = nickname {
+        if let nickname = SearchedUser.shared.searchedUsername {
             nicknameTextLabel.text = nickname
             nicknameTextLabel.sizeToFit()
         }
