@@ -11,6 +11,7 @@ final class SaveNicknameViewController: BaseViewController {
 
     // MARK: - Properties
     private var nameCount: Int = 0
+    private var isRight: Bool = false
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var nicknameTextLabel: UILabel!
@@ -29,6 +30,7 @@ final class SaveNicknameViewController: BaseViewController {
     override func style() {
         setWithNoneText()
         searchTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        searchTextField.addTarget(self, action: #selector(self.completeTyping), for: .editingDidEnd)
     }
     
     // MARK: - Functions
@@ -53,12 +55,15 @@ final class SaveNicknameViewController: BaseViewController {
         if !searchTextField.hasText {
             setWithNoneText()
         } else if !checkIsIncludeSpecial(input: searchTextField.text ?? "") {
+            isRight = false
             warningTextLabel.text = "특수문자 입력은 불가능해요"
             setWarningVisible()
         } else if nameCount < 2 {
+            isRight = false
             warningTextLabel.text = "2자 이상 입력 가능해요"
             setWarningVisible()
         } else {
+            isRight = true
             setRequestEnable()
         }
     }
@@ -71,7 +76,7 @@ final class SaveNicknameViewController: BaseViewController {
         requestButton.isEnabled = false
     }
     
-    // 경고 세팅
+    // 조건 맞지 않을 때
     private func setWarningVisible() {
         searchView.makeRoundedWithBorder(radius: 12, color: Color.pillColorRed.cgColor)
         warningTextLabel.isHidden = false
@@ -87,6 +92,16 @@ final class SaveNicknameViewController: BaseViewController {
         counterTextLabel.textColor = UIColor(cgColor: Color.gray600.cgColor)
         requestButton.isEnabled = true
     }
+    
+    // 조건에 맞는 타이핑 완료했을 때
+    @objc private func completeTyping() {
+        if isRight {
+            searchTextField.resignFirstResponder()
+            searchView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+            counterTextLabel.isHidden = true
+        }
+    }
+    
     // 토스트 메세지
     private func showToast(message: String) {
         var toastLabel = UILabel()
