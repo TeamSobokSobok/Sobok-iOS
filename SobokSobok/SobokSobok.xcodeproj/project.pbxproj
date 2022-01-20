@@ -28,6 +28,8 @@
 		9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0B82798250A00D07A8C /* AddAccontAPI.swift */; };
 		9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0BA279832F800D07A8C /* SearchNicknameDataModel.swift */; };
 		9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */; };
+		9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C42798CE4300D07A8C /* EditFriendNameViewController.swift */; };
+		9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -184,6 +186,8 @@
 		9A3DF0B82798250A00D07A8C /* AddAccontAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccontAPI.swift; sourceTree = "<group>"; };
 		9A3DF0BA279832F800D07A8C /* SearchNicknameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNicknameDataModel.swift; sourceTree = "<group>"; };
 		9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNicknameModel.swift; sourceTree = "<group>"; };
+		9A3DF0C42798CE4300D07A8C /* EditFriendNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendNameViewController.swift; sourceTree = "<group>"; };
+		9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFriendNameViewController.xib; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +384,15 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		9A3DF0C32798CE2F00D07A8C /* EditFriendName */ = {
+			isa = PBXGroup;
+			children = (
+				9A3DF0C42798CE4300D07A8C /* EditFriendNameViewController.swift */,
+				9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */,
+			);
+			path = EditFriendName;
+			sourceTree = "<group>";
+		};
 		BD2C8B3A27953B7300B1F59D /* PagerTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +478,7 @@
 		BD515E4F27877579003BD5A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9A3DF0C32798CE2F00D07A8C /* EditFriendName */,
 				BD515E5A27877635003BD5A4 /* Common */,
 				BD515E64278776B0003BD5A4 /* Splash */,
 				BD515E65278776B5003BD5A4 /* SignIn */,
@@ -1135,6 +1149,7 @@
 				BD51AE272790641100314A94 /* Pretendard-ExtraBold.otf in Resources */,
 				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
+				9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */,
 				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
 				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
 				F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */,
@@ -1253,6 +1268,7 @@
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
+				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
 				F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */,
