@@ -135,6 +135,9 @@
 		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
 		F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */; };
 		F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */; };
+		F6FC97DE2799E825007B5AF2 /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97DD2799E825007B5AF2 /* AcceptPillModel.swift */; };
+		F6FC97E02799E88C007B5AF2 /* AcceptPillInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97DF2799E88B007B5AF2 /* AcceptPillInfoAPI.swift */; };
+		F6FC97E22799EA3D007B5AF2 /* AcceptPillInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97E12799EA3D007B5AF2 /* AcceptPillInfoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -259,6 +262,9 @@
 		F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
 		F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		F6FC97DD2799E825007B5AF2 /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
+		F6FC97DF2799E88B007B5AF2 /* AcceptPillInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillInfoAPI.swift; sourceTree = "<group>"; };
+		F6FC97E12799EA3D007B5AF2 /* AcceptPillInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillInfoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -890,6 +896,7 @@
 			children = (
 				F60D44B02796D36A001CC759 /* NoticeListCountModel.swift */,
 				F60D44B72796F6B6001CC759 /* PillMoreInfoModel.swift */,
+				F6FC97DD2799E825007B5AF2 /* AcceptPillModel.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -901,6 +908,8 @@
 				F60D44B52796DBF8001CC759 /* NoticeListCountService.swift */,
 				F60D44BB2796F781001CC759 /* PillMoreInfoAPI.swift */,
 				F60D44B92796F778001CC759 /* PillMoreInfoService.swift */,
+				F6FC97DF2799E88B007B5AF2 /* AcceptPillInfoAPI.swift */,
+				F6FC97E12799EA3D007B5AF2 /* AcceptPillInfoService.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1087,6 +1096,7 @@
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
+				F6FC97E02799E88C007B5AF2 /* AcceptPillInfoAPI.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				F60D44B42796DB7C001CC759 /* NoticeListCountAPI.swift in Sources */,
@@ -1149,7 +1159,9 @@
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
 				F60D44BC2796F781001CC759 /* PillMoreInfoAPI.swift in Sources */,
+				F6FC97E22799EA3D007B5AF2 /* AcceptPillInfoService.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
+				F6FC97DE2799E825007B5AF2 /* AcceptPillModel.swift in Sources */,
 				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,

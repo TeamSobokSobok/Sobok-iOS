@@ -9,7 +9,6 @@ import UIKit
 
 import Then
 import SnapKit
-import Lottie
 
 final class SendInfoViewController: UIViewController {
     
@@ -49,6 +48,15 @@ final class SendInfoViewController: UIViewController {
         assignDelegation()
         registerXib()
         getPillMoreInfo(senderId: 26, receiverId: 27, createdAt: "2022-01-13T16:59:57.168")
+    }
+    
+    // MARK: - @IBAction Properties
+    @IBAction func touchUpToClickAcceptButton(_ sender: UIButton) {
+        // TODO: - 개수 초과 경고창 (데이터 전달)
+        // TODO: - 화면 연결 (홈 화면)
+        
+    }
+    @IBAction func touchUpToClickRejectButton(_ sender: UIButton) {
     }
     
     // MARK: - Functions
@@ -102,6 +110,7 @@ extension SendInfoViewController: UICollectionViewDataSource {
         switch indexPath.row {
         case -1:    // TODO: - 0번째 셀인 case
             let header = collectionView.dequeueReusableCell(for: indexPath, cellType: SenderInfoCollectionViewCell.self)
+            header.setData(sendInfoData: sendInfoList!)
             return header
         case items?.pillData?.count:
             let footer = collectionView.dequeueReusableCell(for: indexPath, cellType: FooterCollectionViewCell.self)
@@ -150,6 +159,23 @@ extension SendInfoViewController {
                     print("*** 넘어온 데이터 ***", data)
                     self.items = data
                 }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
+    
+    func putAcceptPillInfo(sendGroupId: Int, isOkay: String) {
+        AcceptPillInfoAPI.shared.putAcceptPillInfo(sendGroupId: sendGroupId, isOkay: isOkay, completion: { [self] responseData in
+            switch responseData {
+            case .success(let data):
+                print("----", data)
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:
