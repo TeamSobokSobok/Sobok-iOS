@@ -14,7 +14,7 @@ final class SearchNicknameViewController: BaseViewController {
     @IBOutlet weak var resultButton: UIButton!
     @IBOutlet weak var resultTextLabel: UILabel!
     @IBOutlet weak var noResultImageView: UIImageView!
-    
+        
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,30 +32,66 @@ final class SearchNicknameViewController: BaseViewController {
         searchNicknameTextField.delegate = self
     }
     
+    // 검색결과가 없을때
+    private func setNoSearchResult() {
+        resultTextLabel.isHidden = true
+        noResultImageView.isHidden = false
+    }
+    
+    // 검색결과가 있을때
+    private func setYesSearchResult() {
+        resultTextLabel.text = searchNicknameTextField.text ?? ""
+        resultTextLabel.isHidden = false
+        noResultImageView.isHidden = true
+    }
+        
     // MARK: - @IBAction Properties
     @IBAction func touchUpToClose(_ sender: Any) {
         dismiss(animated: true)
     }
     
     @IBAction func touchUpToAddFriend(_ sender: Any) {
+        // 화면 전환
         let nextVC = SaveNicknameViewController.instanceFromNib()
-        nextVC.nickname = resultTextLabel.text ?? ""
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
 extension SearchNicknameViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-      if searchNicknameTextField.text != "no" {
-          resultTextLabel.text = searchNicknameTextField.text ?? ""
-          resultTextLabel.isHidden = false
-          noResultImageView.isHidden = true
-          searchNicknameTextField.resignFirstResponder()
-    } else {
-        resultTextLabel.isHidden = true
-        noResultImageView.isHidden = false
-        searchNicknameTextField.resignFirstResponder()
-    }
+      searchNickname()
+      searchNicknameTextField.resignFirstResponder()
     return true
   }
+}
+
+extension SearchNicknameViewController {
+    func searchNickname() {
+        guard let username = searchNicknameTextField.text else {
+                   return
+        }
+        AddAccountAPI.shared.searchNickname(username: username, completion: {(result) in
+            switch result {
+            case .success(let data):
+                guard let data = data as? [SearchNicknameData] else { return }
+                if data.isEmpty {
+                    self.setNoSearchResult()
+                } else {
+                    self.setYesSearchResult()
+                    
+                    // 데이터 전달 (다음 뷰에서 사용하기 위함)
+                    SearchedUser.shared.searchedUserId = data[0].memberId
+                    SearchedUser.shared.searchedUsername = data[0].memberName
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
 }
