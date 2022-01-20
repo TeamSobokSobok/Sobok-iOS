@@ -32,7 +32,8 @@ final class StickerCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(stickers: Stickers) {
-        print(stickers.stickerId, "전체스티커")
         stickerImageView.image = bigStickers[stickers.stickerId]
+        stickerTitleLabel.text = stickers.username
+        stickerTitleLabel.isHidden = false
     }
 }
