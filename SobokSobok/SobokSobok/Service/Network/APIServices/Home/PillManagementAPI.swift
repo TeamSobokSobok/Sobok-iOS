@@ -15,7 +15,6 @@ struct PillManagementAPI {
     
     public func stopPillList(pillId: Int, day: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         pillManagementProvider.request(.stopPillList(pillId: pillId, day: day)) { (result) in
-            print(result)
             switch result {
             case.success(let response):
                 
@@ -33,7 +32,6 @@ struct PillManagementAPI {
     
     public func deletePillList(pillId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         pillManagementProvider.request(.deletePillList(pillId: pillId)) { (result) in
-            print(result)
             switch result {
             case.success(let response):
                 

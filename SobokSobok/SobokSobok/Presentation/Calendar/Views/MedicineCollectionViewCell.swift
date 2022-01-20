@@ -126,7 +126,6 @@ extension MedicineCollectionViewCell {
         for iii in 0..<stickerId.count {
             stickerButtons[iii].isHidden = false
             stickerButtons[iii].setImage(stickers[stickerId[iii].stickerId], for: .normal)
-        }
-//        stickerCountLabel.text = count > 0 ? "+ \(count)" : "" 
+        } 
     }
 }

@@ -93,7 +93,7 @@ extension CalendarViewController {
             print(response)
             switch response {
             case .success(let data):
-                print(data)
+                return
             default:
                 return
             }
@@ -105,7 +105,7 @@ extension CalendarViewController {
             print(response)
             switch response {
             case .success(let data):
-                print(data)
+                return
             default:
                 return
             }

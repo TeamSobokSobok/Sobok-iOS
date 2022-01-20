@@ -80,6 +80,7 @@ extension CalendarViewController: UICollectionViewDataSource {
         }
         
         cell.eatState = pill?.isCheck ?? false
+        cell.isChecked = pill?.isCheck ?? false
         
         return cell
     }

@@ -22,6 +22,7 @@ final class CalendarViewController: BaseViewController {
     }
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
+    @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -38,7 +39,6 @@ final class CalendarViewController: BaseViewController {
             dateLabel.text = selectedDate
         }
     }
-
     var scheduleItems: [Schedule] = []
     var pillItems: [PillList] = [] {
         didSet {
@@ -59,6 +59,7 @@ final class CalendarViewController: BaseViewController {
             calendar.setScope(.month, animated: true) :
             calendar.setScope(.week, animated: true)
             scopeLabel.text = calendarExpandedState ? "월" : "주"
+            arrowImageView.image = calendarExpandedState ? Image.icArrowUp16 : Image.icArrowDropDown16
         }
     }
     var editMode: Bool = false {
