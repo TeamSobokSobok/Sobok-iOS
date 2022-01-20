@@ -67,6 +67,9 @@
                 <constraint firstAttribute="trailing" secondItem="CXn-Hf-68r" secondAttribute="trailing" id="nHK-k0-xQ2"/>
             </constraints>
             <size key="customSize" width="296" height="67"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="96R-jx-fIV" id="peh-Dk-0YL"/>
+            </connections>
             <point key="canvasLocation" x="309.4202898550725" y="89.0625"/>
         </collectionViewCell>
     </objects>
