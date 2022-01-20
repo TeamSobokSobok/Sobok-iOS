@@ -21,6 +21,7 @@ struct Pill: Codable {
     let color: String
 //    let stickerImg: [String]?
     let stickerId: [StickerId]?
+    let stickerTotalCount: Int
 }
 
 struct PillDetail: Codable {

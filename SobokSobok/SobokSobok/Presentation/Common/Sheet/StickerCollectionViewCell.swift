@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 final class StickerCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var stickerImageView: UIImageView!
@@ -14,9 +16,17 @@ final class StickerCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        style()
+    }
+    
+    private func style() {
+        stickerTitleLabel.isHidden = true
     }
 
-    public func configure() {
-        
+    public func configure(stickers: Stickers) {
+//        let url = URL(string: )
+//        let data = try? Data(contentsOf: url!)
+//        print(data!)
+//        stickerImageView.image = UIImage(data: data!)
     }
 }

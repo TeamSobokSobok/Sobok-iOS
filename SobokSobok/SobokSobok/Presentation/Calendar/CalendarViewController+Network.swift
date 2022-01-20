@@ -149,11 +149,13 @@ extension CalendarViewController {
 
 extension CalendarViewController {
     public func checkSticker(scheduleId: Int) {
-        StickerAPI.shared.checkSticker(scheduleId: 1143) { response in
+        StickerAPI.shared.checkSticker(scheduleId: scheduleId) { [weak self] response in
             switch response {
             case .success(let data):
                 guard let data = data as? [Stickers] else { return }
-//                print(data)
+                self?.stickerItems = data
+                self?.stickerCounts[scheduleId] = data.count
+                self?.showStickerBottomSheet(stickers: data)
             default:
                 return
             }

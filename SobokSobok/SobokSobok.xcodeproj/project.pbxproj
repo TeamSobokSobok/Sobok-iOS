@@ -105,8 +105,6 @@
 		BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A52789BCD3000C0AF8 /* Image.swift */; };
 		BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A72789BCD3000C0AF8 /* Color.swift */; };
 		BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A82789BCD3000C0AF8 /* Text.swift */; };
-		BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */; };
-		BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
 		EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03760C278B2E4000CA4B54 /* AddMedicineSheet.swift */; };
 		EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC03760D278B2E4000CA4B54 /* AddMedicineSheet.xib */; };
@@ -325,11 +323,9 @@
 				EC950EF027906F0C00A34027 /* Lottie in Frameworks */,
 				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
-				BDFE75D6278782AA00014BE1 /* FirebaseAnalytics in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
 				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
 				BD515E8327877F0E003BD5A4 /* Moya in Frameworks */,
-				BDFE75D8278782AA00014BE1 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1082,8 +1078,6 @@
 				BD515E8B27877FAD003BD5A4 /* Kingfisher */,
 				BD515E8E27878093003BD5A4 /* IQKeyboardManagerSwift */,
 				BD515E9427878114003BD5A4 /* EasyKit */,
-				BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */,
-				BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */,
 				BDFE75DD278786AE00014BE1 /* Then */,
 				EC950EEF27906F0C00A34027 /* Lottie */,
 				BD9857A52791CE27009883FC /* FSCalendar */,
@@ -1122,7 +1116,6 @@
 				BD515E8A27877FAD003BD5A4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				BD515E8D27878093003BD5A4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */,
-				BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */,
 				EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
@@ -1606,14 +1599,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
 		BDFE75DC278786AE00014BE1 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
@@ -1662,16 +1647,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
-		};
-		BDFE75D5278782AA00014BE1 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		BDFE75D7278782AA00014BE1 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BDFE75D4278782AA00014BE1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
 		};
 		BDFE75DD278786AE00014BE1 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

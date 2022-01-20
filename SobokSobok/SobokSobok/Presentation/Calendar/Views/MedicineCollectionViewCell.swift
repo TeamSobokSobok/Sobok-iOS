@@ -49,7 +49,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         3: Image.sticker3,
         4: Image.sticker4,
         5: Image.sticker5,
-        6: Image.sticker6,
+        6: Image.sticker6
     ]
     
     // MARK: - IBOutlets
@@ -127,8 +127,6 @@ extension MedicineCollectionViewCell {
             stickerButtons[iii].isHidden = false
             stickerButtons[iii].setImage(stickers[stickerId[iii].stickerId], for: .normal)
         }
-        
-        let count = stickerId.count - 4
-        stickerCountLabel.text = count > 0 ? "+ \(count)" : ""
+//        stickerCountLabel.text = count > 0 ? "+ \(count)" : "" 
     }
 }

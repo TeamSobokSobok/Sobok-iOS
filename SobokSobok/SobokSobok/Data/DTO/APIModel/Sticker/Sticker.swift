@@ -10,6 +10,7 @@ import Foundation
 struct Stickers: Codable {
     let likeScheduleId: Int
     let scheduleId: Int
+    let stickerId: Int
     let stickerImg: String
     let username: String
     let isMySticker: Bool

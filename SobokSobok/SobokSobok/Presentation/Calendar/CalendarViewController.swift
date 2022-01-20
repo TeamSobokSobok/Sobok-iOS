@@ -45,6 +45,12 @@ final class CalendarViewController: BaseViewController {
             collectionView.reloadData()
         }
     }
+    var stickerItems: [Stickers] = []
+    var stickerCounts: [Int: Int] = [:] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     let gregorian = Calendar(identifier: .gregorian)
     private var calendarExpandedState: Bool = false {
@@ -191,10 +197,11 @@ extension CalendarViewController {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    public func showStickerBottomSheet() {
+    public func showStickerBottomSheet(stickers: [Stickers]) {
         let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
         stickerBottomSheet.modalPresentationStyle = .overCurrentContext
         stickerBottomSheet.modalTransitionStyle = .crossDissolve
+        stickerBottomSheet.stickers = stickers
         self.tabBarController?.present(stickerBottomSheet, animated: false) {
             stickerBottomSheet.showSheetWithAnimation()
         }
