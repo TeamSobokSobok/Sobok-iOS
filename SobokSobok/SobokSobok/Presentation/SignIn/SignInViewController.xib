@@ -165,14 +165,14 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b91-7B-Gbf" secondAttribute="trailing" constant="20" id="8nN-4H-xb1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LCW-KU-cVb" secondAttribute="trailing" constant="20" id="CQT-Ca-ppD"/>
                 <constraint firstItem="NTi-HC-67E" firstAttribute="top" secondItem="LCW-KU-cVb" secondAttribute="bottom" constant="26" id="D3H-OK-deh"/>
-                <constraint firstItem="b91-7B-Gbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="53" id="HMp-Pi-RE0"/>
+                <constraint firstItem="b91-7B-Gbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="97" id="HMp-Pi-RE0"/>
                 <constraint firstItem="dhK-Tf-KKv" firstAttribute="top" secondItem="b91-7B-Gbf" secondAttribute="bottom" constant="41" id="Rrv-oe-RJ3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dhK-Tf-KKv" secondAttribute="trailing" constant="20" id="ajG-2G-auV"/>
                 <constraint firstItem="LCW-KU-cVb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pD4-kM-6wB"/>
                 <constraint firstItem="NTi-HC-67E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tfV-Zy-pfQ"/>
                 <constraint firstItem="dhK-Tf-KKv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zzD-Zf-rQk"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>
     </objects>

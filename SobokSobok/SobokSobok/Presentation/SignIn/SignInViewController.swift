@@ -25,7 +25,7 @@ final class SignInViewController: BaseViewController {
     }
     
     override func style() {
-        inactivateTextField(emailTextFieldView)
+        inactivateTextField()
         titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Bold", size: 23)!, kernValue: 0, lineSpacing: 8)
         logInButton.isEnabled = false
         logInButton.makeRounded(radius: 12)
@@ -33,27 +33,28 @@ final class SignInViewController: BaseViewController {
     
     // MARK: - Functions
     private func addTarget() {
-        emailTextField.addTarget(self, action: #selector(activateEmailTextField(_:)), for: .editingDidBegin)
-        passwordTextField.addTarget(self, action: #selector(activatePasswordTextField(_:)), for: .editingDidBegin)
-        [emailTextField, passwordTextField].forEach({$0.addTarget(self, action: #selector(inactivateTextField(_:)), for: .editingDidEnd)})
-        
-        [emailTextField, passwordTextField].forEach({$0.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)})
+        emailTextField.addTarget(self, action: #selector(self.activateEmailTextField), for: .editingDidBegin)
+        passwordTextField.addTarget(self, action: #selector(self.activatePasswordTextField), for: .editingDidBegin)
+        [emailTextField, passwordTextField].forEach({$0.addTarget(self, action: #selector(self.inactivateTextField), for: .editingDidEnd)})
+        [emailTextField, passwordTextField].forEach({$0.addTarget(self, action: #selector(self.activateLogInButton), for: .editingChanged)})
     }
     
     // 텍스트 필드 활성화
-    @objc private func activateEmailTextField(_ : UIView) {
+    @objc private func activateEmailTextField() {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
     }
-    @objc private func activatePasswordTextField(_ : UIView) {
+    @objc private func activatePasswordTextField() {
         passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
     }
-    @objc private func inactivateTextField(_: UIView) {
+    
+    // 텍스트 필드 비활성화
+    @objc private func inactivateTextField() {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
     
     // 버튼 활성화
-    @objc func activateLogInButton(_ : UIButton) {
+    @objc private func activateLogInButton() {
         logInButton.isEnabled = emailTextField.hasText && passwordTextField.hasText
     }
     
