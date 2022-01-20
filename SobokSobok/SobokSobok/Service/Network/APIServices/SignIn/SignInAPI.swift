@@ -34,7 +34,7 @@ public class SignInAPI {
     private func judgeStatus(by statusCode: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try?
-                decoder.decode(GenericResponse<SignUp>.self, from: data)
+                decoder.decode(GenericResponse<User>.self, from: data)
         else {
             return .pathErr
         }

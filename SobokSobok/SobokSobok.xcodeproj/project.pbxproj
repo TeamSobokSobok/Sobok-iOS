@@ -9,16 +9,12 @@
 /* Begin PBXBuildFile section */
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
-		9A3DF08C279660A400D07A8C /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* SignUpModel.swift */; };
-		9A3DF08F2796647B00D07A8C /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08E2796647B00D07A8C /* SignUpService.swift */; };
-		9A3DF09227966A3A00D07A8C /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */; };
+		9A3DF08C279660A400D07A8C /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* Sign.swift */; };
+		9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08E2796647B00D07A8C /* SignService.swift */; };
+		9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09127966A3A00D07A8C /* SignAPI.swift */; };
 		9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */; };
 		9A3DF0982796DE4900D07A8C /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0972796DE4900D07A8C /* SignInService.swift */; };
 		9A3DF09B2796E04900D07A8C /* SignInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09A2796E04900D07A8C /* SignInAPI.swift */; };
-		9A3DF09D2796E30D00D07A8C /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09C2796E30D00D07A8C /* SignInModel.swift */; };
-		9A3DF0A32796EC7800D07A8C /* CheckUsernameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A22796EC7800D07A8C /* CheckUsernameModel.swift */; };
-		9A3DF0A52796ECBE00D07A8C /* CheckUsernameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A42796ECBE00D07A8C /* CheckUsernameService.swift */; };
-		9A3DF0A72796EEA800D07A8C /* CheckUsernameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A62796EEA800D07A8C /* CheckUsernameAPI.swift */; };
 		9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A82797252300D07A8C /* SearchNicknameViewController.swift */; };
 		9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A92797252300D07A8C /* SearchNicknameViewController.xib */; };
 		9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */; };
@@ -176,16 +172,12 @@
 /* Begin PBXFileReference section */
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
-		9A3DF08B279660A400D07A8C /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
-		9A3DF08E2796647B00D07A8C /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
-		9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
+		9A3DF08B279660A400D07A8C /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		9A3DF08E2796647B00D07A8C /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		9A3DF09127966A3A00D07A8C /* SignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAPI.swift; sourceTree = "<group>"; };
 		9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
 		9A3DF0972796DE4900D07A8C /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
 		9A3DF09A2796E04900D07A8C /* SignInAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAPI.swift; sourceTree = "<group>"; };
-		9A3DF09C2796E30D00D07A8C /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
-		9A3DF0A22796EC7800D07A8C /* CheckUsernameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUsernameModel.swift; sourceTree = "<group>"; };
-		9A3DF0A42796ECBE00D07A8C /* CheckUsernameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUsernameService.swift; sourceTree = "<group>"; };
-		9A3DF0A62796EEA800D07A8C /* CheckUsernameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUsernameAPI.swift; sourceTree = "<group>"; };
 		9A3DF0A82797252300D07A8C /* SearchNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNicknameViewController.swift; sourceTree = "<group>"; };
 		9A3DF0A92797252300D07A8C /* SearchNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNicknameViewController.xib; sourceTree = "<group>"; };
 		9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNicknameViewController.swift; sourceTree = "<group>"; };
@@ -357,9 +349,7 @@
 		9A3DF08D279660B000D07A8C /* Sign */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DF08B279660A400D07A8C /* SignUpModel.swift */,
-				9A3DF09C2796E30D00D07A8C /* SignInModel.swift */,
-				9A3DF0A22796EC7800D07A8C /* CheckUsernameModel.swift */,
+				9A3DF08B279660A400D07A8C /* Sign.swift */,
 			);
 			name = Sign;
 			sourceTree = "<group>";
@@ -367,10 +357,8 @@
 		9A3DF09027966A1900D07A8C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DF08E2796647B00D07A8C /* SignUpService.swift */,
-				9A3DF09127966A3A00D07A8C /* SignUpAPI.swift */,
-				9A3DF0A42796ECBE00D07A8C /* CheckUsernameService.swift */,
-				9A3DF0A62796EEA800D07A8C /* CheckUsernameAPI.swift */,
+				9A3DF08E2796647B00D07A8C /* SignService.swift */,
+				9A3DF09127966A3A00D07A8C /* SignAPI.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1292,7 +1280,6 @@
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */,
-				9A3DF09D2796E30D00D07A8C /* SignInModel.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
@@ -1306,7 +1293,7 @@
 				9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
-				9A3DF09227966A3A00D07A8C /* SignUpAPI.swift in Sources */,
+				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
@@ -1320,8 +1307,7 @@
 				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
-				9A3DF0A32796EC7800D07A8C /* CheckUsernameModel.swift in Sources */,
-				9A3DF08F2796647B00D07A8C /* SignUpService.swift in Sources */,
+				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
@@ -1335,7 +1321,6 @@
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
-				9A3DF0A72796EEA800D07A8C /* CheckUsernameAPI.swift in Sources */,
 				BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */,
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
@@ -1378,14 +1363,13 @@
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
-				9A3DF08C279660A400D07A8C /* SignUpModel.swift in Sources */,
+				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
 				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,
 				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 				BD7120F12796CFA50068B981 /* Pill.swift in Sources */,
 				BD7120FB279738860068B981 /* CalendarViewController+Network.swift in Sources */,
-				9A3DF0A52796ECBE00D07A8C /* CheckUsernameService.swift in Sources */,
 				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

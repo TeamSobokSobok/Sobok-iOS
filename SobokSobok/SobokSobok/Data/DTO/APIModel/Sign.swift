@@ -7,14 +7,9 @@
 
 import Foundation
 
-// MARK: - SignUp
-struct SignUp: Codable {
-    let data: SignUpResult?
-}
-
 // MARK: - SignUpResult
 struct SignUpResult: Codable {
-    let user: User
+    let user: User?
     let accesstoken: String
 }
 
@@ -24,3 +19,6 @@ struct User: Codable {
     let username, email, idFirebase, createdAt: String
     let updatedAt: String
 }
+
+// MARK: - CheckUsernameResult
+struct CheckUsernameResult: Codable {}

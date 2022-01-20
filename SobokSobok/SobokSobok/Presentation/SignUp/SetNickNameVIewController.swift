@@ -12,7 +12,7 @@ import SnapKit
 final class SetNickNameVIewController: BaseViewController {
 
     // MARK: - Properties
-    var signUpUser = SignUpUser.shared
+    private var user = SignUpUserData.shared
     var nickname: String?
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
@@ -141,7 +141,7 @@ final class SetNickNameVIewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
-            signUpUser.name = nickname
+            user.name = nickname
             signUp()
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
@@ -156,15 +156,13 @@ extension SetNickNameVIewController {
     // 닉네임 중복 검사 서버 통신 함수
     func checkUsername() {
         guard let nickname = nickname else { return }
-        CheckUsernameAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
+        SignAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
             switch result {
             case .success(_):
-                print("사용가능")
                 self.showToast(message: "사용 가능한 닉네임이에요")
                 self.isDuplicationChecked = true
             case .requestErr(_):
                 self.showToast(message: "이미 사용중인 닉네임이에요")
-                print("사용중")
             case .pathErr:
                 print(".pathErr")
             case .serverErr:
@@ -177,18 +175,17 @@ extension SetNickNameVIewController {
     
     // 회원가입 서버 통신 함수
     func signUp() {
-        guard let email = signUpUser.email else { return }
-        guard let password = signUpUser.password else { return }
-        guard let name = signUpUser.name else { return }
+        guard let email = user.email else { return }
+        guard let password = user.password else { return }
+        guard let name = user.name else { return }
         
-        SignUpAPI.shared.signUp(email: email,
+        SignAPI.shared.signUp(email: email,
                                 password: password,
                                 name: name,
                                 completion: {(result) in
             switch result {
-            case .success(let data):
-                print(data)
-                print("성공했니? : \(self.signUpUser.email ?? ""), \(self.signUpUser.password ?? ""), \(self.signUpUser.name ?? "")")
+            case .success:
+                print("성공했니? : \(self.user.email ?? ""), \(self.user.password ?? ""), \(self.user.name ?? "")")
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:
