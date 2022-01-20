@@ -9,13 +9,8 @@ import UIKit
 
 final class SignInViewController: BaseViewController {
     
-    // MARK: - Properties
-    private var email: String?
-    private var password: String?
-    private var isKeyboardOn: Bool = false
-    private var keyboardHeight: CGFloat = 0
-
     // MARK: - @IBOutlet Properties
+    @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,10 +23,11 @@ final class SignInViewController: BaseViewController {
         super.viewDidLoad()
         checkTextField()
         securePassword()
-        checkKeyboardOn()
     }
     
     override func style() {
+        titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Bold", size: 23)!, kernValue: 0, lineSpacing: 8)
+        logInButton.makeRounded(radius: 12)
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
@@ -44,13 +40,12 @@ final class SignInViewController: BaseViewController {
     private func checkTextField() {
         logInButton.isEnabled = false
         signUpButton.isEnabled = true
+        emailTextField.addTarget(self, action: #selector(activateEmailTextField(_:)), for: .editingDidBegin)
+        emailTextField.addTarget(self, action: #selector(inactivateEmailTextField(_:)), for: .editingDidEnd)
+        passwordTextField.addTarget(self, action: #selector(activatePasswordTextField(_:)), for: .editingDidEnd)
+        passwordTextField.addTarget(self, action: #selector(inactivatePasswordTextField(_:)), for: .editingDidEnd)
         self.emailTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
         self.passwordTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
-    }
-    
-    private func checkKeyboardOn() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // Alert
@@ -62,22 +57,13 @@ final class SignInViewController: BaseViewController {
     }
         
     // 토스트 메세지
-    func showToast(message: String) {
-        let isKeyboardOn: Bool = self.isKeyboardOn
-        let keyboardHeight: CGFloat = self.keyboardHeight
+    private func showToast(message: String) {
         var toastLabel = UILabel()
         // 토스트 위치
-        if isKeyboardOn {
-            toastLabel = UILabel(frame: CGRect(x: 20,
-                                               y: self.view.frame.size.height - keyboardHeight - 59,
-                                               width: self.view.frame.size.width - 40,
-                                               height: 47))
-        } else {
-            toastLabel = UILabel(frame: CGRect(x: 20,
-                                               y: self.view.frame.size.height - 95,
-                                               width: self.view.frame.size.width - 40,
-                                               height: 47))
-        }
+        toastLabel = UILabel(frame: CGRect(x: 20,
+                                           y: self.view.frame.size.height - 95,
+                                           width: self.view.frame.size.width - 40,
+                                           height: 47))
         // 토스트 색
         toastLabel.backgroundColor = Color.black
         toastLabel.textColor = Color.white
@@ -89,23 +75,24 @@ final class SignInViewController: BaseViewController {
         toastLabel.clipsToBounds = true
         // 토스트 애니메이션
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 1.0, delay: 0.1,
+        UIView.animate(withDuration: 1.5, delay: 0.1,
                        options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
                        completion: {_ in toastLabel.removeFromSuperview() })
     }
-    
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-                keyboardHeight = keyboardFrame.cgRectValue.height
-            }
-        isKeyboardOn = true
-        }
         
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        keyboardHeight = 0
-        isKeyboardOn = false
+    @objc private func activateEmailTextField(_ : UIView) {
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
     }
-        
+    @objc private func inactivateEmailTextField(_ : UIView) {
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+    }
+    @objc private func activatePasswordTextField(_ : UIView) {
+        passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
+    }
+    @objc private func inactivatePasswordTextField(_ : UIView) {
+        passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+    }
+    
     @objc func activateLogInButton(_ : UIButton) {
         let emailFilled = emailTextField.hasText
         let passwordFilled = passwordTextField.hasText
@@ -120,8 +107,8 @@ final class SignInViewController: BaseViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchUpToLogin(_ sender: UIButton) {
-        email = emailTextField.text ?? ""
-        password = passwordTextField.text ?? ""
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         signIn()
     }
     
@@ -132,10 +119,10 @@ final class SignInViewController: BaseViewController {
 
 extension SignInViewController {
     func signIn() {
-        guard let email = email else {
+        guard let email = emailTextField.text else {
             return
         }
-        guard let password = password else {
+        guard let password = passwordTextField.text else {
             return
         }
         

@@ -29,6 +29,7 @@
                 <outlet property="passwordTextField" destination="8ka-MS-Fr1" id="h5W-g7-0Cd"/>
                 <outlet property="passwordTextFieldView" destination="C1Q-Fi-4p2" id="heH-64-TAh"/>
                 <outlet property="signUpButton" destination="Af8-eg-Ymd" id="Mab-u8-fkO"/>
+                <outlet property="titleTextLabel" destination="b91-7B-Gbf" id="aAg-KP-J1K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,9 +38,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b91-7B-Gbf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b91-7B-Gbf">
                     <rect key="frame" x="20" y="141" width="374" height="55.5"/>
-                    <string key="text">소중한 사람과 함께하는 
+                    <string key="text">소중한 사람과 함께하는
 매일의 복약 체크</string>
                     <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="23"/>
                     <color key="textColor" name="black_sub"/>
@@ -51,7 +52,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtQ-P5-jc8" userLabel="이메일텍스트뷰">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-h0-FMo" userLabel="이메일">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 주소" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-h0-FMo" userLabel="이메일">
                                     <rect key="frame" x="15" y="15" width="344" height="24"/>
                                     <color key="textColor" name="gray900_sub"/>
                                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
@@ -75,7 +76,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1Q-Fi-4p2" userLabel="비밀번호텍스트뷰">
                             <rect key="frame" x="0.0" y="65" width="374" height="54"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
                                     <rect key="frame" x="15" y="15" width="344" height="24"/>
                                     <color key="textColor" name="gray900_sub"/>
                                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
