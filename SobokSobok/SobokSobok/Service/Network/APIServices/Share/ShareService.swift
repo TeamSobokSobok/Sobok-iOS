@@ -60,8 +60,13 @@ extension ShareService: TargetType {
 
     var headers: [String: String]? {
         switch self {
-        case .getGroupInfomation, .getFriendCalendar, .getFriendPillList, .editFriendUsername:
+        case .getGroupInfomation, .getFriendCalendar, .getFriendPillList:
             return APIConstants.headerWithToken
+            
+        case .editFriendUsername:
+            return [
+                "accesstoken": APIConstants.accessToken27
+            ]
         }
     }
 }

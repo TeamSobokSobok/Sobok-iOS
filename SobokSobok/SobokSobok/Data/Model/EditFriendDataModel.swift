@@ -9,6 +9,6 @@ import UIKit
 
 class EditFriend {
     static let shared = EditFriend()
-    var groupId: Int = 31
+    var groupId: Int?
     var memberName: String?
 }
