@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol AddMyMedicineCollectionViewCellDelegate: AnyObject {
+    func cellTextFieldChange(for cell: AddMyMedicineCollectionViewCell)
+}
+
 final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    var medicineTextFieldText = String()
     var deleteCellClosure: (() -> Void)?
     var cellHeightClosure: (() -> Void)?
+    var index: Int?
+    weak var delegate: AddMyMedicineCollectionViewCellDelegate?
     
     // MARK: - @IBOutlets
     
@@ -97,6 +104,7 @@ extension AddMyMedicineCollectionViewCell: UITextFieldDelegate {
         checkMedicineTextField(color: Color.gray300.cgColor, bool: true)
         updateUI()
         cellHeightClosure?()
+        self.delegate?.cellTextFieldChange(for: self)
     }
     
     // 텍스트필드 10글자까지 입력 가능하게 / 10글자 이상이면 입력 안 됨

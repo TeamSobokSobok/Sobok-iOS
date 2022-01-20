@@ -24,6 +24,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineSecondViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="medicinePeriodButton" destination="lKe-wR-3hf" id="zcv-bL-rYe"/>
+                <outlet property="navigationTitleLabel" destination="cJ0-c7-ODV" id="cIe-oM-kMN"/>
                 <outlet property="specificDayView" destination="dHZ-0U-QZf" id="DVR-up-j9C"/>
                 <outlet property="specificPeriodView" destination="g9Y-zU-eyp" id="Zwz-i8-ptT"/>
                 <outlet property="takeMedicineDayLabel" destination="JJx-5B-zfb" id="e9b-fm-e4r"/>
@@ -240,7 +241,7 @@
                     </subviews>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProgress2" translatesAutoresizingMaskIntoConstraints="NO" id="x5m-Sd-Ipg">
-                    <rect key="frame" x="190.5" y="863" width="33" height="7"/>
+                    <rect key="frame" x="190.5" y="829" width="33" height="7"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -261,7 +262,7 @@
                 <constraint firstItem="lKe-wR-3hf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R5a-op-ig9"/>
                 <constraint firstItem="TFH-fJ-gaE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rl8-dH-qvN"/>
                 <constraint firstItem="yve-Jh-otb" firstAttribute="leading" secondItem="lKe-wR-3hf" secondAttribute="leading" constant="15" id="Vv0-uB-kWv"/>
-                <constraint firstAttribute="bottom" secondItem="x5m-Sd-Ipg" secondAttribute="bottom" constant="26" id="b1R-qI-YI6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="x5m-Sd-Ipg" secondAttribute="bottom" constant="26" id="b1R-qI-YI6"/>
                 <constraint firstItem="Gf8-DX-thg" firstAttribute="leading" secondItem="yve-Jh-otb" secondAttribute="trailing" constant="10" id="f9w-o3-Usf"/>
                 <constraint firstItem="cJ0-c7-ODV" firstAttribute="centerY" secondItem="WND-8J-PPk" secondAttribute="centerY" id="ftr-kY-yz8"/>
                 <constraint firstItem="cJ0-c7-ODV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jN9-x6-FEU"/>

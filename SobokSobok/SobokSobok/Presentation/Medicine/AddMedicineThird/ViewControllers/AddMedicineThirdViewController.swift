@@ -9,25 +9,49 @@ import UIKit
 
 final class AddMedicineThirdViewController: BaseViewController {
  
+    enum TossPill: Int {
+        case me, friend
+    }
+    
     // MARK: - Properties
     private var medicineTimeData: [String] = ["오전 8:00", "오후 1:00", "오후 7:00"] {
         didSet {
             timeCollectionView.reloadData()
+            UserDefaults.standard.set(medicineTimeData, forKey: "time")
+            print(medicineTimeData)
         }
     }
     
+    var tossPill: TossPill?
     var timeData = String()
     
     // MARK: @IBOutlet
+    @IBOutlet weak var navigationTitleLabel: UILabel!
     @IBOutlet weak var timeCollectionView: UICollectionView!
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
+        
+        switch tossPill {
+        case .me:
+            navigationTitleLabel.text = "내 약 추가하기"
+        case .friend:
+            navigationTitleLabel.text = "약 전송하기"
+        default :
+            break
+        }
     }
     
     // MARK: Function
+    
+    func pushMedicineFourthViewController(tossPill: AddMedicineFourthViewController.TossPill) {
+        let addMyMedicineViewController = AddMedicineFourthViewController.instanceFromNib()
+        addMyMedicineViewController.tossPill = tossPill
+        navigationController?.pushViewController(addMyMedicineViewController, animated: true)
+    }
+    
     private func setCollectionView() {
         timeCollectionView.dataSource = self
         timeCollectionView.delegate = self
@@ -46,7 +70,7 @@ final class AddMedicineThirdViewController: BaseViewController {
     }
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
-        navigationController?.pushViewController(AddMedicineFourthViewController.instanceFromNib(), animated: true)
+        tossPill == .me ? pushMedicineFourthViewController(tossPill: .me) : pushMedicineFourthViewController(tossPill: .friend)
     }
 }
 
@@ -73,7 +97,9 @@ extension AddMedicineThirdViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMedicineTimeFooterView.reuseIdentifier, for: indexPath) as? AddMedicineTimeFooterView else { return UICollectionReusableView()}
+        
         // FooterView +버튼 클릭 시 셀 추가
         cell.addCellClosure = {
             let addMedicineTimeSheet = MedicineTimeViewController.instanceFromNib()
@@ -87,6 +113,14 @@ extension AddMedicineThirdViewController: UICollectionViewDataSource {
                 }
             }
         }
+        if medicineTimeData.count == 6 {
+            cell.addMedicineCellButton.isHidden = true
+            cell.countCautionLabel.isHidden = false
+        } else {
+            cell.addMedicineCellButton.isHidden = false
+            cell.countCautionLabel.isHidden = true
+        }
+        
         return cell
     }
 }

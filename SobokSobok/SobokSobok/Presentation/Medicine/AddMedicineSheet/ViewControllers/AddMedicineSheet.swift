@@ -17,7 +17,7 @@ protocol AddMedicineSheetDismiss: AnyObject {
 final class AddMedicineSheet: BaseViewController {
 
     // MARK: Properties
-    
+    var pillNumber = Int()
     weak var delegate: AddMedicineSheetDismiss?
     private let targetListForMedicine = [
         (image: Image.icMyFillPlus, text: "내 약 추가"),
@@ -35,6 +35,7 @@ final class AddMedicineSheet: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
+        getMyPillCount()
     }
     
     override func style() {
@@ -49,6 +50,11 @@ final class AddMedicineSheet: BaseViewController {
         self.dismiss(animated: true) {
             self.delegate?.addMedicineSheetDismiss()
         }
+    }
+    
+    private func updateData(data: PillCount) {
+        pillNumber = data.pillCount
+        print(pillNumber)
     }
     
     func assignDelegation() {
@@ -106,10 +112,47 @@ extension AddMedicineSheet: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexPath.row == 0 ? pushMedicineFirstViewController(tossPill: .me) : pushMedicineFirstViewController(tossPill: .friend)
+        if indexPath.row == 0 {
+            if pillNumber == 0 {
+                self.dismiss(animated: true)
+                guard let viewController = self.presentingViewController as? UITabBarController else { return }
+                guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
+                let addMyMedicineViewController = PillLimitViewController.instanceFromNib()
+                selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
+            } else {
+                pushMedicineFirstViewController(tossPill: .me)
+            }
+           
+        } else {
+            pushMedicineFirstViewController(tossPill: .friend)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 82
     }
 }
+
+extension AddMedicineSheet {
+    
+    func getMyPillCount() {
+        PillCountAPI.shared.getMyPillCount(completion: { (result) in
+            switch result {
+            case .success(let pill):
+                if let data = pill as? PillCount {
+                    print(data)
+                    self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
+}
+

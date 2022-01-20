@@ -14,28 +14,46 @@ enum MedicineDayType: Int, CaseIterable {
 }
 
 final class AddMedicineSecondViewController: BaseViewController {
+ 
+    enum TossPill: Int {
+        case me, friend
+    }
+    
+    var tossPill: TossPill?
     
     // MARK: - @IBOutlets
     @IBOutlet var selectDateButtons: [UIButton]!
     @IBOutlet var medicinePeriodButton: UIButton!
     @IBOutlet var medicineDateButtons: [UIButton]!
-    @IBOutlet var specificDayView: UIView!
-    @IBOutlet var specificPeriodView: UIView!
-    @IBOutlet var takeMedicineDayLabel: UILabel!
-    @IBOutlet var takeMedicinePeriodLabel: UILabel!
+    @IBOutlet weak var specificDayView: UIView!
+    @IBOutlet weak var specificPeriodView: UIView!
+    @IBOutlet weak var takeMedicineDayLabel: UILabel!
+    @IBOutlet weak var takeMedicinePeriodLabel: UILabel!
+    @IBOutlet weak var navigationTitleLabel: UILabel!
     
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtons()
+        divideTossPill()  
     }
     
     override func style() {
         view.backgroundColor = .white
     }
     
+    func divideTossPill() {
+        navigationTitleLabel.text = tossPill == .me ? "내 약 추가하기" : "약 전송하기"
+    }
+    
     // MARK: - Functions
+    func pushMedicineThirdViewController(tossPill: AddMedicineThirdViewController.TossPill) {
+        let addMyMedicineViewController = AddMedicineThirdViewController.instanceFromNib()
+        addMyMedicineViewController.tossPill = tossPill
+        navigationController?.pushViewController(addMyMedicineViewController, animated: true)
+    }
+    
     private func setButtons() {
         medicineDateButtons.forEach {
             $0.makeRounded(radius: 10)
@@ -62,6 +80,7 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     // MARK: - @IBActions
+    // 추후 코드 리팩토링
     @IBAction func selectMedicinePeriodButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         let index = sender.tag
@@ -113,20 +132,21 @@ final class AddMedicineSecondViewController: BaseViewController {
         navigationController?.pushViewController(MedicineCalendarViewController.instanceFromNib(), animated: true)
     }
     
+    // 추후 코드 리팩토링
     @IBAction func specificDayButtonClicked(_ sender: UIButton) {
-        let addPeopleViewController = MedicineSpecificDayViewController.instanceFromNib()
-        addPeopleViewController.modalPresentationStyle = .overCurrentContext
-        addPeopleViewController.modalTransitionStyle = .crossDissolve
-        addPeopleViewController.sendDelegate = self
-        self.present(addPeopleViewController, animated: true)
+        let medicineSpecificDayViewController = MedicineSpecificDayViewController.instanceFromNib()
+        medicineSpecificDayViewController.modalPresentationStyle = .overCurrentContext
+        medicineSpecificDayViewController.modalTransitionStyle = .crossDissolve
+        medicineSpecificDayViewController.sendDelegate = self
+        self.present(medicineSpecificDayViewController, animated: true)
     }
     
     @IBAction func specificPeriodButtonClicked(_ sender: UIButton) {
-        let addPeopleViewController = MedicineSpecificPeriodViewController.instanceFromNib()
-        addPeopleViewController.modalPresentationStyle = .overCurrentContext
-        addPeopleViewController.modalTransitionStyle = .crossDissolve
-        addPeopleViewController.sendPeriodDelegate = self
-        self.present(addPeopleViewController, animated: true)
+        let medicineSpecificPeriodViewController = MedicineSpecificPeriodViewController.instanceFromNib()
+        medicineSpecificPeriodViewController.modalPresentationStyle = .overCurrentContext
+        medicineSpecificPeriodViewController.modalTransitionStyle = .crossDissolve
+        medicineSpecificPeriodViewController.sendPeriodDelegate = self
+        self.present(medicineSpecificPeriodViewController, animated: true)
     }
     
     @IBAction func backButtonClicked(_ sender: UIButton) {
@@ -134,7 +154,7 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
-        navigationController?.pushViewController(AddMedicineThirdViewController.instanceFromNib(), animated: true)
+        tossPill == .me ? pushMedicineThirdViewController(tossPill: .me) : pushMedicineThirdViewController(tossPill: .friend)
     }
 }
 
@@ -142,12 +162,16 @@ final class AddMedicineSecondViewController: BaseViewController {
 extension AddMedicineSecondViewController: SendPillDayDelegate {
     func sendDay(day: String) {
         takeMedicineDayLabel.text = "\(day)"
+        // UserDefaults 저장
+        UserDefaults.standard.set(takeMedicineDayLabel.text, forKey: "day")
     }
 }
 
 extension AddMedicineSecondViewController: SendPeriodDelegate {
     func sendPeriod(day: String) {
         takeMedicinePeriodLabel.text = "\(day)"
+        // UserDefaults 저장
+        UserDefaults.standard.set(takeMedicinePeriodLabel.text, forKey: "period")
     }
 }
 
