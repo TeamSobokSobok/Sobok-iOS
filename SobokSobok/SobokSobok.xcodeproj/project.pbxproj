@@ -13,8 +13,6 @@
 		9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08E2796647B00D07A8C /* SignService.swift */; };
 		9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09127966A3A00D07A8C /* SignAPI.swift */; };
 		9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */; };
-		9A3DF0982796DE4900D07A8C /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0972796DE4900D07A8C /* SignInService.swift */; };
-		9A3DF09B2796E04900D07A8C /* SignInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF09A2796E04900D07A8C /* SignInAPI.swift */; };
 		9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A82797252300D07A8C /* SearchNicknameViewController.swift */; };
 		9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0A92797252300D07A8C /* SearchNicknameViewController.xib */; };
 		9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */; };
@@ -176,8 +174,6 @@
 		9A3DF08E2796647B00D07A8C /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		9A3DF09127966A3A00D07A8C /* SignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAPI.swift; sourceTree = "<group>"; };
 		9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataModel.swift; sourceTree = "<group>"; };
-		9A3DF0972796DE4900D07A8C /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
-		9A3DF09A2796E04900D07A8C /* SignInAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAPI.swift; sourceTree = "<group>"; };
 		9A3DF0A82797252300D07A8C /* SearchNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNicknameViewController.swift; sourceTree = "<group>"; };
 		9A3DF0A92797252300D07A8C /* SearchNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchNicknameViewController.xib; sourceTree = "<group>"; };
 		9A3DF0AD279742C400D07A8C /* SaveNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNicknameViewController.swift; sourceTree = "<group>"; };
@@ -354,22 +350,13 @@
 			name = Sign;
 			sourceTree = "<group>";
 		};
-		9A3DF09027966A1900D07A8C /* SignUp */ = {
+		9A3DF09027966A1900D07A8C /* Sign */ = {
 			isa = PBXGroup;
 			children = (
 				9A3DF08E2796647B00D07A8C /* SignService.swift */,
 				9A3DF09127966A3A00D07A8C /* SignAPI.swift */,
 			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		9A3DF0992796DE5300D07A8C /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				9A3DF0972796DE4900D07A8C /* SignInService.swift */,
-				9A3DF09A2796E04900D07A8C /* SignInAPI.swift */,
-			);
-			path = SignIn;
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		9A3DF0B127981C1500D07A8C /* Account */ = {
@@ -924,8 +911,7 @@
 				ECB845DD2795681E00433522 /* NetworkResult.swift */,
 				ECB845DF2795684E00433522 /* GenericResponse.swift */,
 				BD7120EC2796B15B0068B981 /* APIConstants.swift */,
-				9A3DF0992796DE5300D07A8C /* SignIn */,
-				9A3DF09027966A1900D07A8C /* SignUp */,
+				9A3DF09027966A1900D07A8C /* Sign */,
 				ECB845E22795771B00433522 /* Medicine */,
 				BD7120E62796A5FB0068B981 /* Home */,
 				BD7120F2279717370068B981 /* Share */,
@@ -1352,9 +1338,7 @@
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				EC950EF82790A88D00A34027 /* AddTimeCollectionViewCell.swift in Sources */,
-				9A3DF0982796DE4900D07A8C /* SignInService.swift in Sources */,
 				BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */,
-				9A3DF09B2796E04900D07A8C /* SignInAPI.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
 				F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */,

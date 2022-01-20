@@ -9,6 +9,7 @@ import Foundation
 import Moya
 
 enum SignService {
+    case signIn (email: String, password: String)
     case signUp (email: String, password: String, name: String)
     case checkUsername (nickname: String)
 }
@@ -20,6 +21,8 @@ extension SignService: TargetType {
     
     var path: String {
         switch self {
+        case .signIn:
+            return URLs.signInURL
         case .signUp:
             return URLs.signUpURL
         case .checkUsername:
@@ -29,19 +32,17 @@ extension SignService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .signUp:
-            return .post
-        case .checkUsername:
+        case .signIn, .signUp, .checkUsername:
             return .post
         }
     }
     
-    var sampleData: Data {
-        return Data()
-    }
-    
     var task: Task {
         switch self {
+        case .signIn(let email, let password):
+            return .requestParameters(parameters: ["email": email,
+                                                   "password": password],
+                                      encoding: JSONEncoding.default)
         case .signUp(let email, let password, let name):
             return .requestParameters(parameters: [
                 "email": email,

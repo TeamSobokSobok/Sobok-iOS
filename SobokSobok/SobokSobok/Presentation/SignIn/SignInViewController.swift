@@ -93,11 +93,11 @@ extension SignInViewController {
     func signIn() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        SignInAPI.shared.signIn(email: email, password: password, completion: {(result) in
+        SignAPI.shared.signIn(email: email, password: password, completion: {(result) in
             switch result {
-            case .success(_):
+            case .success:
                 self.showToast(message: "로그인 성공 : \(email), \(password)")
-            case .requestErr(_):
+            case .requestErr:
                 self.showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
             case .pathErr:
                 print(".pathErr")

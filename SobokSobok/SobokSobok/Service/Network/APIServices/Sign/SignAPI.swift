@@ -15,16 +15,28 @@ public class SignAPI {
     
     private init() {}
     
+    func signIn(email: String, password: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        signProvider.request(.signIn(email: email, password: password)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, [User].self)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
     func signUp(email: String, password: String, name: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         signProvider.request(.signUp(email: email, password: password, name: name)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                
                 let networkResult = self.judgeStatus(by: statusCode, data, [SignUpResult].self)
                 completion(networkResult)
-                
             case .failure(let err):
                 print(err)
             }
@@ -37,10 +49,8 @@ public class SignAPI {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                
                 let networkResult = self.judgeStatus(by: statusCode, data, [CheckUsernameResult].self)
                 completion(networkResult)
-                
             case .failure(let err):
                 print(err)
             }
@@ -53,7 +63,6 @@ public class SignAPI {
         else {
             return .pathErr
         }
-        
         switch statusCode {
         case 200:
             return .success(decodedData.data as Any)
