@@ -69,4 +69,10 @@ public enum Image {
 	public static let sticker4 = UIImage(named: "sticker4")!
 	public static let sticker5 = UIImage(named: "sticker5")!
 	public static let sticker6 = UIImage(named: "sticker6")!
+	public static let bigSticker1 = UIImage(named: "bigSticker1")!
+	public static let bigSticker2 = UIImage(named: "bigSticker2")!
+	public static let bigSticker3 = UIImage(named: "bigSticker3")!
+	public static let bigSticker4 = UIImage(named: "bigSticker4")!
+	public static let bigSticker5 = UIImage(named: "bigSticker5")!
+	public static let bigSticker6 = UIImage(named: "bigSticker6")!
 }

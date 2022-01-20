@@ -10,6 +10,14 @@ import UIKit
 import Kingfisher
 
 final class StickerCollectionViewCell: UICollectionViewCell {
+    let bigStickers: [Int: UIImage] = [
+        1: Image.bigSticker1,
+        2: Image.bigSticker2,
+        3: Image.bigSticker3,
+        4: Image.bigSticker4,
+        5: Image.bigSticker5,
+        6: Image.bigSticker6
+    ]
 
     @IBOutlet weak var stickerImageView: UIImageView!
     @IBOutlet weak var stickerTitleLabel: UILabel!
@@ -24,9 +32,7 @@ final class StickerCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(stickers: Stickers) {
-//        let url = URL(string: )
-//        let data = try? Data(contentsOf: url!)
-//        print(data!)
-//        stickerImageView.image = UIImage(data: data!)
+        print(stickers.stickerId, "전체스티커")
+        stickerImageView.image = bigStickers[stickers.stickerId]
     }
 }
