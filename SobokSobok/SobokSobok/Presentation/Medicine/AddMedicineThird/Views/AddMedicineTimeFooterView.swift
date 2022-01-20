@@ -19,9 +19,19 @@ final class AddMedicineTimeFooterView: UICollectionReusableView {
         $0.setImage(Image.icPlusGray, for: .normal)
     }
     
+    let countCautionLabel = UILabel().then {
+        $0.textAlignment = .center
+        $0.text = "최대 6개의 알림 시간을 설정할 수 있습니다."
+        $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
+        $0.textColor = Color.gray500
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(addMedicineCellButton)
+        countCautionLabel.isHidden = true
+        [countCautionLabel, addMedicineCellButton].forEach {
+            addSubview($0)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +45,11 @@ final class AddMedicineTimeFooterView: UICollectionReusableView {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(UIScreen.main.bounds.width - 40)
             $0.height.equalTo(54)
+        }
+        
+        countCautionLabel.snp.makeConstraints {
+            $0.top.equalTo(34)
+            $0.centerX.equalToSuperview()
         }
     }
     

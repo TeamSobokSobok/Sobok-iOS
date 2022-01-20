@@ -12,6 +12,7 @@ import Moya
 
 enum PillCountService {
     case getMyPillCount
+    case getFriendPillCount(userId: Int)
 }
 
 extension PillCountService: TargetType {
@@ -23,12 +24,14 @@ extension PillCountService: TargetType {
         switch self {
         case .getMyPillCount:
             return URLs.getMyPillCountURL
+        case .getFriendPillCount(let userId):
+            return URLs.getFriendPillCountURL.replacingOccurrences(of: "{userId}", with: "\(userId)")
         }
     }
         
     var method: Moya.Method {
         switch self {
-        case .getMyPillCount:
+        case .getMyPillCount, .getFriendPillCount(_):
             return .get
         }
     }
@@ -39,7 +42,7 @@ extension PillCountService: TargetType {
     
     var task: Task {
         switch self {
-        case .getMyPillCount:
+        case .getMyPillCount, .getFriendPillCount(_):
             return .requestPlain
         }
     }
@@ -47,10 +50,10 @@ extension PillCountService: TargetType {
     var headers: [String: String]? {
         
         switch self {
-        case .getMyPillCount:
+        case .getMyPillCount, .getFriendPillCount(_):
             return [
                 "Content-Type": "application/json",
-                "accesstoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoiZWRAZ21haWwuY29tIiwibmFtZSI6bnVsbCwiaWRGaXJlYmFzZSI6InVOR2llMWxKWDNTREpTQnFSWHhLZUhqMnJhMzMiLCJpYXQiOjE2NDE4ODYzNjUsImV4cCI6MTY0NDQ3ODM2NSwiaXNzIjoid2Vzb3B0In0.K9xOhsd1G3sHAo89LRbLHaPySX8PeOW3kxvbbYaVeNA"
+                "accesstoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImVtYWlsIjoiYmJkQGdtYWlsLmNvbSIsIm5hbWUiOm51bGwsImlkRmlyZWJhc2UiOiJaNVRBM2VWaFVwZHdCV2hHdEpiOVJsWkZMM3YyIiwiaWF0IjoxNjQxODkzNjc1LCJleHAiOjE2NDQ0ODU2NzUsImlzcyI6Indlc29wdCJ9.Qc20TVDA2ptT8SClPC6TsCeFK8_3wQX0RISunGCX90k"
             ]
         }
     }
