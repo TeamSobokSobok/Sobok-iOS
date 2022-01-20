@@ -13,16 +13,6 @@ import Lottie
 
 final class SendInfoViewController: UIViewController {
     
-    /*
-     1. 헤더뷰 불러오기 (case)
-     2. 날짜 형식 변환 ✔️
-     3. 날짜 start, end 합치기 ✔️
-     4. 시간 배열 3개씩 끊어서 꺼내오기 ✔️
-     5. 이미지 이름 처리 ✔️
-     6. 뷰컨에 2~5 적용
-     7. 테이블뷰 셀 간격 피그마 디자인 수정 반영 ✔️
-     */
-    
     // MARK: - Properties
     let navigationView = UIView().then {
         $0.backgroundColor = .white

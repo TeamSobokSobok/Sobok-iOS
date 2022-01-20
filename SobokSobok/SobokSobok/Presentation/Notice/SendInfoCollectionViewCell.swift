@@ -32,15 +32,13 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Functions
     func setData(sendInfoData: PillData) {
-        // 전달해야 하는 것: 약 색깔, 이름, 복용 기간, 간격, 시간
-        medicineColor.image = pillColors[sendInfoData.color]    // 1️⃣ 약 색깔
-        medicineNameLabel.text = sendInfoData.pillName  // 2️⃣ 약 이름
+        medicineColor.image = pillColors[sendInfoData.color]
+        medicineNameLabel.text = sendInfoData.pillName
         let date = changeToDate(from: sendInfoData.startDate,
                                 to: sendInfoData.endDate)
-        dateLabel.text = date   // 3️⃣ 복용 기간
-        termLabel.text = sendInfoData.scheduleDay   // 4️⃣ 복용 간격
+        dateLabel.text = date
+        termLabel.text = sendInfoData.scheduleDay
         
-        // 시간 배열 생성
         var scheduleString: String = ""
         let scheduleTime = sendInfoData.scheduleTime
         for (index, value) in scheduleTime.enumerated() {
@@ -55,8 +53,7 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
                 scheduleString += "\(time), "
             }
         }
-        timeLabel.text = scheduleString // 5️⃣ 복용 시간
-
+        timeLabel.text = scheduleString
     }
     
     func changeToDate(from start: String, to end: String) -> String {
