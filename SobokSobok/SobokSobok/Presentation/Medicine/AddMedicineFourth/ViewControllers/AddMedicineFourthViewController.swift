@@ -10,8 +10,13 @@ import Moya
 
 final class AddMedicineFourthViewController: BaseViewController {
     
+    enum TossPill: Int {
+        case me, friend
+    }
+    
     // MARK: Property
-    // 임시 데이터
+    var tossPill: TossPill?
+    var pillNumber = Int()
     private var medicineList: [String] = [] {
         didSet {
             medicineInfoCollectionView.reloadData()
@@ -19,20 +24,32 @@ final class AddMedicineFourthViewController: BaseViewController {
     }
     
     // MARK: @IBOutlets
+    @IBOutlet weak var navigationTitleLabel: UILabel!
     @IBOutlet weak var medicineInfoCollectionView: UICollectionView!
+    
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
-        getMyPillCount()
+        divideTossPill()
     }
     
-    override func style() {
-        super.style()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFriendPillCount(userId: 24)
     }
     
     // MARK: Functions
+    
+    private func divideTossPill() {
+        navigationTitleLabel.text = tossPill == .me ? "내 약 목록" : "약 전송 목록"
+    }
+    
+    private func updateData(data: PillCount) {
+        pillNumber = data.pillCount
+        medicineInfoCollectionView.reloadData()
+    }
+
     private func setCollectionView() {
         medicineInfoCollectionView.delegate = self
         medicineInfoCollectionView.dataSource = self
@@ -51,7 +68,11 @@ final class AddMedicineFourthViewController: BaseViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: UIButton) {
-        navigationController?.pushViewController(TabBarController.instanceFromNib(), animated: true)
+        let sendInfoViewController = SendPillInfoViewController.instanceFromNib()
+        sendInfoViewController.modalPresentationStyle = .overCurrentContext
+        sendInfoViewController.modalTransitionStyle = .crossDissolve
+        addMyFill()
+        self.present(sendInfoViewController, animated: true)
     }
 }
 
@@ -79,11 +100,15 @@ extension AddMedicineFourthViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MedicineInfoHeaderView.reuseIdentifier, for: indexPath) as? MedicineInfoHeaderView else { return UICollectionReusableView()}
+            headerView.addPillLabel.text = "\(pillNumber)개 더 추가할 수 있어요"
             return headerView
             
         case UICollectionView.elementKindSectionFooter:
             
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
+            
+            // footerView 재사용
+            footerView.withLabel.text = "새로운 약 추가하기"
             
             footerView.addMedicineCellClosure = {
                 self.medicineList.append("")
@@ -114,7 +139,7 @@ extension AddMedicineFourthViewController {
             switch result {
             case .success(let pill):
                 if let data = pill as? PillCount {
-                    print(data)// UI 등 할일 작성, reloadData 등등..
+                    print(data)
                 }
             case .requestErr(let message):
                 print("requestErr", message)
@@ -126,5 +151,36 @@ extension AddMedicineFourthViewController {
                 print("networkFail")
             }
         })
+    }
+    
+    func getFriendPillCount(userId: Int) {
+        PillCountAPI.shared.getFriendPillCount(userId: userId, completion: { (result) in
+            switch result {
+            case .success(let pill):
+                if let data = pill as? PillCount {
+                    self.updateData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
+    
+    func addMyFill() {
+        AddPillAPI.shared.addMyPill(pillName: "홍삼", isStop: false, color: "1", start: "2022-01-09", end: "2022-01-15", cycle: "1", day: "월, 수, 금, 일", time: ["07:00:00", "19:00:00"], specific: "1week") { response in
+            print(response)
+            switch response {
+            case .success(let data):
+                print(data)
+            default:
+                return
+            }
+        }
     }
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendPillInfoViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fey-f3-Dmt">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-lk-HRR">
+                            <rect key="frame" x="62" y="352.5" width="290" height="191"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마에게 2개의 약 정보를 보낼게요" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dra-uG-Ivy">
+                                    <rect key="frame" x="60" y="41" width="170" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6o-u8-s7u">
+                                    <rect key="frame" x="125.5" y="134" width="39" height="30"/>
+                                    <color key="backgroundColor" name="mint_main"/>
+                                    <color key="tintColor" name="white_sub"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="보내기"/>
+                                    <connections>
+                                        <action selector="sendButtonClicked:" destination="-1" eventType="touchUpInside" id="dpy-iO-10k"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHD-gZ-gIl">
+                                    <rect key="frame" x="251" y="14" width="24" height="24"/>
+                                    <color key="tintColor" name="black_sub"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="icCloseFill"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="dra-uG-Ivy" firstAttribute="top" secondItem="GHD-gZ-gIl" secondAttribute="bottom" constant="3" id="5oZ-Wl-bhH"/>
+                                <constraint firstItem="z6o-u8-s7u" firstAttribute="centerX" secondItem="DE6-lk-HRR" secondAttribute="centerX" id="LxJ-LX-1Kt"/>
+                                <constraint firstAttribute="trailing" secondItem="GHD-gZ-gIl" secondAttribute="trailing" constant="15" id="O4Z-lj-dsz"/>
+                                <constraint firstItem="GHD-gZ-gIl" firstAttribute="top" secondItem="DE6-lk-HRR" secondAttribute="top" constant="14" id="OAu-2d-Qlb"/>
+                                <constraint firstItem="dra-uG-Ivy" firstAttribute="centerX" secondItem="DE6-lk-HRR" secondAttribute="centerX" id="Om8-M2-nmH"/>
+                                <constraint firstItem="dra-uG-Ivy" firstAttribute="height" secondItem="DE6-lk-HRR" secondAttribute="height" multiplier="0.25" id="YAv-2u-VMA"/>
+                                <constraint firstAttribute="bottom" secondItem="z6o-u8-s7u" secondAttribute="bottom" constant="27" id="qdW-PJ-Vdr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="DE6-lk-HRR" firstAttribute="centerY" secondItem="Fey-f3-Dmt" secondAttribute="centerY" id="0e2-QX-KJE"/>
+                        <constraint firstItem="DE6-lk-HRR" firstAttribute="height" secondItem="Fey-f3-Dmt" secondAttribute="height" multiplier="0.21317" id="4nL-LH-IFH"/>
+                        <constraint firstItem="DE6-lk-HRR" firstAttribute="centerX" secondItem="Fey-f3-Dmt" secondAttribute="centerX" id="HVH-Nj-4qH"/>
+                        <constraint firstItem="DE6-lk-HRR" firstAttribute="width" secondItem="Fey-f3-Dmt" secondAttribute="width" multiplier="0.7" id="xda-il-KKn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Fey-f3-Dmt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="69V-gE-MQX"/>
+                <constraint firstItem="Fey-f3-Dmt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TtB-27-VTI"/>
+                <constraint firstAttribute="bottom" secondItem="Fey-f3-Dmt" secondAttribute="bottom" id="neW-it-bSW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fey-f3-Dmt" secondAttribute="trailing" id="qOf-eg-aH4"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icCloseFill" width="24" height="24"/>
+        <namedColor name="black_sub">
+            <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

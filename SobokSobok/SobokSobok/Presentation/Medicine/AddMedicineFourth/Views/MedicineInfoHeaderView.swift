@@ -12,6 +12,8 @@ import Then
 
 class MedicineInfoHeaderView: UICollectionReusableView {
         
+    var number: Int?
+    
     let pillInfoLabel = UILabel().then {
         $0.text = "내가 먹을 약이에요"
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
