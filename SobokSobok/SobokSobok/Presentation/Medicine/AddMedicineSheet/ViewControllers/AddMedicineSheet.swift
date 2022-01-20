@@ -36,7 +36,6 @@ final class AddMedicineSheet: BaseViewController {
         super.viewDidLoad()
         assignDelegation()
         getMyPillCount()
-        print("bottomsheet")
     }
     
     override func style() {
@@ -127,8 +126,6 @@ extension AddMedicineSheet: UITableViewDataSource {
         } else {
             pushMedicineFirstViewController(tossPill: .friend)
         }
-        
-//        indexPath.row == 0 ? pushMedicineFirstViewController(tossPill: .me) : pushMedicineFirstViewController(tossPill: .friend)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

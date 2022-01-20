@@ -12,7 +12,7 @@ struct SendPill: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: AddPillInfo
+    let data: AddPillInfo?
 }
 
 // MARK: - AddPillInfo

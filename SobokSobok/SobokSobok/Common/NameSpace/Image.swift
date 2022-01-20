@@ -63,4 +63,10 @@ public enum Image {
 	public static let icProgress3 = UIImage(named: "icProgress3")!
 	public static let icCloseFill = UIImage(named: "icCloseFill")!
 	public static let illustNoShare = UIImage(named: "illustNoShare")!
+	public static let sticker1 = UIImage(named: "sticker1")!
+	public static let sticker2 = UIImage(named: "sticker2")!
+	public static let sticker3 = UIImage(named: "sticker3")!
+	public static let sticker4 = UIImage(named: "sticker4")!
+	public static let sticker5 = UIImage(named: "sticker5")!
+	public static let sticker6 = UIImage(named: "sticker6")!
 }

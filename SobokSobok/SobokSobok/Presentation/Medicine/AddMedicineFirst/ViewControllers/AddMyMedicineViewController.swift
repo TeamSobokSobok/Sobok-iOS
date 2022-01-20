@@ -18,15 +18,11 @@ final class AddMyMedicineViewController: BaseViewController {
     // MARK: Properties
     var tossPill: TossPill?
     var selectedPeopleName: String?
-    
     var medicineData: [String] = [] {
         didSet {
             addMyMedicineView.collectionView.reloadData()
         }
     }
-    
-    var examopleData: [String] = []
-    
     private let addMyMedicineView = AddMyMedicineView()
     
     override func loadView() {
@@ -69,9 +65,9 @@ final class AddMyMedicineViewController: BaseViewController {
     }
     
     func pushMedicineSecondViewController(tossPill: AddMedicineSecondViewController.TossPill) {
-        let addMyMedicineViewController = AddMedicineSecondViewController.instanceFromNib()
-        addMyMedicineViewController.tossPill = tossPill
-        navigationController?.pushViewController(addMyMedicineViewController, animated: true)
+        let addMedicineSecondViewController = AddMedicineSecondViewController.instanceFromNib()
+        addMedicineSecondViewController.tossPill = tossPill
+        navigationController?.pushViewController(addMedicineSecondViewController, animated: true)
     }
     
     @objc func peopleSelectButtonClicked() {
@@ -163,9 +159,9 @@ extension AddMyMedicineViewController: SendPeopleNameDelegate {
 }
 
 extension AddMyMedicineViewController: AddMyMedicineCollectionViewCellDelegate {
-    func textFieldChange(for cell: AddMyMedicineCollectionViewCell) {
+    func cellTextFieldChange(for cell: AddMyMedicineCollectionViewCell) {
         guard let index = cell.index else {return}
-        medicineData[index] = cell.exampleText
+        medicineData[index] = cell.medicineTextFieldText
         UserDefaults.standard.set(medicineData, forKey: "medicineData")
     }
 }
