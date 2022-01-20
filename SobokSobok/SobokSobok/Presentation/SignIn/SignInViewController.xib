@@ -76,11 +76,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1Q-Fi-4p2" userLabel="비밀번호텍스트뷰">
                             <rect key="frame" x="0.0" y="65" width="374" height="54"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-MS-Fr1" userLabel="비밀번호">
                                     <rect key="frame" x="15" y="15" width="344" height="24"/>
                                     <color key="textColor" name="gray900_sub"/>
                                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="12"/>
