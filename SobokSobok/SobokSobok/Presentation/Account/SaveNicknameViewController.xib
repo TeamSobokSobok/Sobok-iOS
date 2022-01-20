@@ -67,7 +67,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAp-UO-oTM">
-                    <rect key="frame" x="20" y="129" width="278.5" height="18.5"/>
+                    <rect key="frame" x="20" y="129" width="320.5" height="18.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임이10글자시네요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-82-ehV">
                             <rect key="frame" x="0.0" y="0.0" width="133.5" height="18.5"/>
@@ -75,8 +75,8 @@
                             <color key="textColor" name="dark_mint_main"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님을 어떻게 저장할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-t8-gnL">
-                            <rect key="frame" x="133.5" y="0.0" width="145" height="18.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님을 어떤 이름으로 저장할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-t8-gnL">
+                            <rect key="frame" x="133.5" y="0.0" width="187" height="18.5"/>
                             <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
