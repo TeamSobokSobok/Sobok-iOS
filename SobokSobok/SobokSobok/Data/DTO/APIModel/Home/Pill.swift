@@ -20,7 +20,7 @@ struct Pill: Codable {
     let isCheck: Bool
     let color: String
 //    let stickerImg: [String]?
-    let stickerId: [String]?
+    let stickerId: [StickerId]?
 }
 
 struct PillDetail: Codable {

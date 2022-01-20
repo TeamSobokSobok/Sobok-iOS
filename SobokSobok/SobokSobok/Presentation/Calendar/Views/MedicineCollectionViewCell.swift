@@ -43,6 +43,14 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     var stickerClosure: (() -> Void)?
     var editClosure: (() -> Void)?
     var checkClosrue: (() -> Void)?
+    var stickers: [Int: UIImage] = [
+        1: Image.sticker1,
+        2: Image.sticker2,
+        3: Image.sticker3,
+        4: Image.sticker4,
+        5: Image.sticker5,
+        6: Image.sticker6,
+    ]
     
     // MARK: - IBOutlets
 
@@ -58,6 +66,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var stickerStackView: UIStackView!
     @IBOutlet weak var stickerCountLabel: UILabel!
     
+    @IBOutlet var stickerButtons: [UIButton]!
     // MARK: - Override
     
     override func awakeFromNib() {
@@ -113,7 +122,13 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
 }
 
 extension MedicineCollectionViewCell {
-    func setup(pill: Pill) {
+    func setSticker(stickerId: [StickerId]) {
+        for iii in 0..<stickerId.count {
+            stickerButtons[iii].isHidden = false
+            stickerButtons[iii].setImage(stickers[stickerId[iii].stickerId], for: .normal)
+        }
         
+        let count = stickerId.count - 4
+        stickerCountLabel.text = count > 0 ? "+ \(count)" : ""
     }
 }

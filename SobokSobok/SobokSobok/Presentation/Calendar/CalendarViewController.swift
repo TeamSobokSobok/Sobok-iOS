@@ -36,7 +36,6 @@ final class CalendarViewController: BaseViewController {
     var selectedDate: String = Date().toString(of: .day) {
         didSet {
             dateLabel.text = selectedDate
-            getSchedules(date: selectedDate)
         }
     }
 
@@ -64,11 +63,7 @@ final class CalendarViewController: BaseViewController {
     
     var tabType: TabBarItem = .share
     var tabName: String = "수현"
-    var memberId: Int = 0 {
-        didSet {
-            print(memberId)
-        }
-    }
+    var memberId: Int = 0
     var groupId: Int = 0
     
     // MARK: - Life Cycles

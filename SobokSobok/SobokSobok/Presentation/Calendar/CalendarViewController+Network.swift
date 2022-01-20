@@ -48,6 +48,7 @@ extension CalendarViewController {
             case .success(let data):
                 guard let data = data as? [PillList] else { return }
                 self.pillItems = data
+                
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.setCollectionViewHeight()
@@ -139,6 +140,20 @@ extension CalendarViewController {
                     self.setCollectionViewHeight()
                     self.view.layoutIfNeeded()
                 }
+            default:
+                return
+            }
+        }
+    }
+}
+
+extension CalendarViewController {
+    public func checkSticker(scheduleId: Int) {
+        StickerAPI.shared.checkSticker(scheduleId: 1143) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? [Stickers] else { return }
+//                print(data)
             default:
                 return
             }

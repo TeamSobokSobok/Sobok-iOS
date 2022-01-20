@@ -50,9 +50,16 @@ extension CalendarViewController: UICollectionViewDataSource {
         let stickerCount = pill?.stickerId?.count ?? 0
         cell.stickerStackView.isHidden = stickerCount == 0
         cell.stickerCountLabel.isHidden = stickerCount == 0
-
+        
+        if stickerCount > 0 {
+            if let stickerId = pill?.stickerId {
+                cell.setSticker(stickerId: stickerId)
+            }
+        }
+        
         cell.stickerClosure = { [weak self] in
             guard let self = self else { return }
+            self.checkSticker(scheduleId: 1143)
             self.showStickerBottomSheet()
         }
         
