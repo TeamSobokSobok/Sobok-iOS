@@ -9,8 +9,19 @@ import UIKit
 
 import Then
 import SnapKit
+import Lottie
 
 final class SendInfoViewController: UIViewController {
+    
+    /*
+     1. 헤더뷰 불러오기 (case)
+     2. 날짜 형식 변환 ✔️
+     3. 날짜 start, end 합치기 ✔️
+     4. 시간 배열 3개씩 끊어서 꺼내오기 ✔️
+     5. 이미지 이름 처리 ✔️
+     6. 뷰컨에 2~5 적용
+     7. 테이블뷰 셀 간격 피그마 디자인 수정 반영 ✔️
+     */
     
     // MARK: - Properties
     let navigationView = UIView().then {
@@ -23,7 +34,16 @@ final class SendInfoViewController: UIViewController {
     let xButton = UIButton().then {
         $0.setImage(Image.icClose48, for: .normal)
     }
-    private var sendInfoList: [SendInfoListData] = SendInfoListData.dummy
+    private var sendInfoList: PillMoreInfo? {
+        didSet {
+            sendInfoCollectionView.reloadData()
+        }
+    }
+    var items: PillMoreInfo? {
+        didSet {
+            sendInfoCollectionView.reloadData()
+        }
+    }
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var refuseButton: UIButton!
@@ -38,6 +58,7 @@ final class SendInfoViewController: UIViewController {
         setConstraints()
         assignDelegation()
         registerXib()
+        getPillMoreInfo(senderId: 26, receiverId: 27, createdAt: "2022-01-13T16:59:57.168")
     }
     
     // MARK: - Functions
@@ -48,6 +69,7 @@ final class SendInfoViewController: UIViewController {
         [refuseButton, acceptButton].forEach {
             $0?.makeRounded(radius: 12)
         }
+        xButton.tintColor = Color.black
     }
     
     private func setConstraints() {
@@ -82,20 +104,23 @@ final class SendInfoViewController: UIViewController {
 // MARK: - Extensions
 extension SendInfoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sendInfoList.count + 1
+        guard let count = items?.pillData?.count else { return 0 }
+        return count + 1 // 푸터뷰 넣기 위해 +1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row {
-        case 0:
+        case -1:    // TODO: - 0번째 셀인 case
             let header = collectionView.dequeueReusableCell(for: indexPath, cellType: SenderInfoCollectionViewCell.self)
             return header
-        case sendInfoList.count:
+        case items?.pillData?.count:
             let footer = collectionView.dequeueReusableCell(for: indexPath, cellType: FooterCollectionViewCell.self)
             return footer
         default:
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
-            cell.setData(sendInfoData: sendInfoList[indexPath.row])
+            if let pillData = items?.pillData?[indexPath.row] {
+                cell.setData(sendInfoData: pillData)
+            }
             cell.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
             return cell
         }
@@ -115,12 +140,35 @@ extension SendInfoViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.row {
-        case 0:
+        case -1:
             return CGSize(width: 335, height: 48)
-        case sendInfoList.count:
+        case items?.pillData?.count:
             return CGSize(width: 335, height: 76)
         default:
             return CGSize(width: 335, height: 166)
         }
+    }
+}
+
+extension SendInfoViewController {
+    
+    func getPillMoreInfo(senderId: Int, receiverId: Int, createdAt: String) {
+        PillMoreInfoAPI.shared.getPillMoreInfo(senderId: senderId, receiverId: receiverId, createdAt: createdAt, completion: { [self] responseData in
+            switch responseData {
+            case .success(let pillInfoList):
+                if let data = pillInfoList as? PillMoreInfo {
+                    print("*** 넘어온 데이터 ***", data)
+                    self.items = data
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
     }
 }

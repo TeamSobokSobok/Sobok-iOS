@@ -24,6 +24,7 @@ public struct PillMoreInfoAPI {
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data)
                 completion(networkResult)
+                print(networkResult)
             case .failure(let err):
                 print(err)
             }
@@ -52,7 +53,7 @@ public struct PillMoreInfoAPI {
         
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<PillMoreInfo>.self, from: data) else {return .pathErr}
-        return .success(decodedData)
+        return .success(decodedData.data)
     }
     
     private func isUsedPathErrData(data: Data)  -> NetworkResult<Any> {
