@@ -25,6 +25,7 @@ final class SignInViewController: BaseViewController {
     }
     
     override func style() {
+        navigationController?.navigationBar.isHidden = true
         inactivateTextField()
         titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Bold", size: 23)!, kernValue: 0, lineSpacing: 8)
         logInButton.isEnabled = false
