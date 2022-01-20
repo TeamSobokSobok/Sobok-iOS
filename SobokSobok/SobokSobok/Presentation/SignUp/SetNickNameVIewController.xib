@@ -108,13 +108,6 @@
                         <action selector="touchUpToCheckDuplication:" destination="-1" eventType="touchUpInside" id="nOy-js-pu8"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
-                    <rect key="frame" x="342" y="351" width="36" height="1"/>
-                    <color key="backgroundColor" name="gray500_sub"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="Zrc-gH-5C0"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-1I-4Bj">
                     <rect key="frame" x="327" y="393" width="0.0" height="0.0"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,6 +142,13 @@
                         <action selector="touchUpToSignUp:" destination="-1" eventType="touchUpInside" id="fho-w2-oV8"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
+                    <rect key="frame" x="334" y="351" width="52" height="1"/>
+                    <color key="backgroundColor" name="gray500_sub"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="E12-nk-9X8"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,22 +162,22 @@
                 <constraint firstItem="Lkl-cX-QCB" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="bottom" constant="18" id="FW6-Zu-u3v"/>
                 <constraint firstItem="mFd-jy-tVf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Iwy-2A-C53"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkl-cX-QCB" secondAttribute="trailing" constant="28" id="JKY-K4-FOJ"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" id="P7N-6D-ZLo"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="S1O-rX-tAf"/>
                 <constraint firstItem="ATZ-VC-f9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SYy-NT-CHi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mFd-jy-tVf" secondAttribute="trailing" id="Tjb-Sb-B8E"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="top" secondItem="mFd-jy-tVf" secondAttribute="bottom" constant="22" id="U9n-eF-zEI"/>
-                <constraint firstItem="ePI-CH-nAs" firstAttribute="width" secondItem="Lkl-cX-QCB" secondAttribute="width" multiplier="0.684211" id="ZKe-Dh-v3e"/>
                 <constraint firstItem="ld6-tD-bOJ" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="bottom" constant="3" id="aYu-DU-ON7"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="width" secondItem="Lkl-cX-QCB" secondAttribute="width" id="dW3-3x-lkn"/>
                 <constraint firstItem="ld6-tD-bOJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="eGg-15-3co"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ATZ-VC-f9q" secondAttribute="trailing" constant="20" id="gaR-9F-6By"/>
-                <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" id="gx0-Ca-d7g"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ATZ-VC-f9q" secondAttribute="bottom" constant="22" id="ltb-PP-MQl"/>
-                <constraint firstItem="ePI-CH-nAs" firstAttribute="centerX" secondItem="Lkl-cX-QCB" secondAttribute="centerX" id="nXC-Xn-64L"/>
                 <constraint firstItem="4t0-cf-gZv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yGx-qr-6Ls"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="centerX" secondItem="Lkl-cX-QCB" secondAttribute="centerX" id="yIi-bv-0rD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fcf-fc-fjJ" secondAttribute="trailing" constant="20" id="yvZ-5J-khp"/>
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="246" y="85"/>
+            <point key="canvasLocation" x="244.92753623188409" y="84.375"/>
         </view>
     </objects>
     <resources>
