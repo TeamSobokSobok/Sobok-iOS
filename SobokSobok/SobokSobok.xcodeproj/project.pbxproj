@@ -30,6 +30,8 @@
 		9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */; };
 		9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C42798CE4300D07A8C /* EditFriendNameViewController.swift */; };
 		9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */; };
+		9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */; };
+		9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0CC2799F4C800D07A8C /* EditFriendDataModel.swift */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADB609D2794E2CC00FDC7ED /* SenderInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */; };
@@ -195,6 +197,8 @@
 		9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNicknameModel.swift; sourceTree = "<group>"; };
 		9A3DF0C42798CE4300D07A8C /* EditFriendNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendNameViewController.swift; sourceTree = "<group>"; };
 		9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFriendNameViewController.xib; sourceTree = "<group>"; };
+		9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendUsername.swift; sourceTree = "<group>"; };
+		9A3DF0CC2799F4C800D07A8C /* EditFriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendDataModel.swift; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -591,6 +595,7 @@
 				F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */,
 				F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */,
 				9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */,
+				9A3DF0CC2799F4C800D07A8C /* EditFriendDataModel.swift */,
 				9A3DF0BA279832F800D07A8C /* SearchNicknameDataModel.swift */,
 			);
 			path = Model;
@@ -817,6 +822,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7120F8279723A00068B981 /* Member.swift */,
+				9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -1278,6 +1284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
 				BD7120F9279723A00068B981 /* Member.swift in Sources */,
@@ -1289,6 +1296,7 @@
 				F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
+				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
