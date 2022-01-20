@@ -109,6 +109,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     
     @IBAction func editButtonTapped(_ sender: Any) {
         editClosure?()
+        print("click")
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {

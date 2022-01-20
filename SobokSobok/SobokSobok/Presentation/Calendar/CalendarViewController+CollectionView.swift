@@ -44,8 +44,13 @@ extension CalendarViewController: UICollectionViewDataSource {
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pill?.pillName
         
-        cell.editButton.isHidden = !editMode
-        cell.checkButton.isHidden = editMode || tabType == .share
+        cell.checkButton.isHidden = editMode ?? false || tabType == .share
+        cell.editButton.isHidden = editMode ?? false
+        
+        cell.editClosure = {
+            self.showActionSheet(pillId: pill?.pillId ?? 0, date: self.selectedDate)
+            collectionView.reloadData()
+        }
 
         let stickerCount = pill?.stickerId?.count ?? 0
         cell.stickerStackView.isHidden = stickerCount == 0
@@ -63,11 +68,6 @@ extension CalendarViewController: UICollectionViewDataSource {
         cell.stickerClosure = { [weak self] in
             guard let self = self else { return }
             self.checkSticker(scheduleId: pill?.scheduleId ?? 0)
-        }
-        
-        cell.editClosure = {
-            self.showActionSheet(pillId: pill?.pillId ?? 0, date: self.selectedDate)
-            collectionView.reloadData()
         }
         
         cell.checkClosrue = {
@@ -99,11 +99,11 @@ extension CalendarViewController: UICollectionViewDataSource {
             let date = dateFormatter.date(from: pillItems[indexPath.section].scheduleTime)
             let time = date?.toString(of: .time)
             headerView.timeLabel.text = time
-            headerView.editButtonStackView.isHidden = indexPath.section != 0
+            headerView.editButtonStackView.isHidden = tabType == .share
+            headerView.editButtonStackView.isHidden = indexPath.section != 0 && tabType == .home
             headerView.editModeClosure = {
                 self.editMode.toggle()
             }
-            headerView.editButtonStackView.isHidden = tabType == .share
             
             return headerView
         default:
