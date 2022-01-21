@@ -29,10 +29,10 @@
                     <rect key="frame" x="80" y="282.5" width="254" height="271"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEi-Cn-QyM">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회윈가입 완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9X-Mc-PQU">
-                            <rect key="frame" x="160.5" y="60" width="93" height="21"/>
+                            <rect key="frame" x="160.5" y="28" width="93" height="21"/>
                             <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="N9X-Mc-PQU" secondAttribute="bottom" constant="21" id="498-NO-aCS"/>
-                        <constraint firstAttribute="height" constant="102" id="gBw-Ud-caF"/>
+                        <constraint firstAttribute="height" constant="70" id="gBw-Ud-caF"/>
                         <constraint firstItem="N9X-Mc-PQU" firstAttribute="centerX" secondItem="yEi-Cn-QyM" secondAttribute="centerX" id="zj2-sH-alO"/>
                     </constraints>
                 </view>
@@ -76,9 +76,9 @@
                 <constraint firstItem="nin-Uy-O2q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UgE-Z5-8EY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nin-Uy-O2q" secondAttribute="bottom" constant="22" id="fgA-Ct-Nso"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yEi-Cn-QyM" secondAttribute="trailing" id="j3D-iL-Jzf"/>
-                <constraint firstItem="yEi-Cn-QyM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jNo-Jq-7FE"/>
+                <constraint firstItem="yEi-Cn-QyM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jNo-Jq-7FE"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="133" y="80"/>
         </view>
     </objects>

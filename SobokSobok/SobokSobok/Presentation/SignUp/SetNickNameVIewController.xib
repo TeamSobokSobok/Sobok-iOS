@@ -39,16 +39,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFd-jy-tVf">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDr-YN-wJC">
-                            <rect key="frame" x="177.5" y="61" width="59" height="20"/>
+                            <rect key="frame" x="177.5" y="29" width="59" height="20"/>
                             <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ym3-5Q-qVu">
-                            <rect key="frame" x="1" y="47" width="48" height="48"/>
+                            <rect key="frame" x="1" y="15" width="48" height="48"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icBack48"/>
                             <connections>
@@ -62,11 +62,11 @@
                         <constraint firstItem="ym3-5Q-qVu" firstAttribute="leading" secondItem="mFd-jy-tVf" secondAttribute="leading" constant="1" id="4U8-8Y-EU8"/>
                         <constraint firstAttribute="bottom" secondItem="HDr-YN-wJC" secondAttribute="bottom" constant="21" id="7U9-r9-FJY"/>
                         <constraint firstItem="ym3-5Q-qVu" firstAttribute="centerY" secondItem="HDr-YN-wJC" secondAttribute="centerY" id="Kbr-IC-bTk"/>
-                        <constraint firstAttribute="height" constant="102" id="ogu-Qy-6Ja"/>
+                        <constraint firstAttribute="height" constant="70" id="ogu-Qy-6Ja"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-fc-fjJ">
-                    <rect key="frame" x="20" y="124" width="374" height="55.5"/>
+                    <rect key="frame" x="20" y="136" width="374" height="55.5"/>
                     <string key="text">소복소복에서 사용할
 닉네임을 입력해 주세요</string>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="23"/>
@@ -74,13 +74,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBZ-0Z-cZ3">
-                    <rect key="frame" x="20" y="223.5" width="374" height="18.5"/>
+                    <rect key="frame" x="20" y="235.5" width="374" height="18.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                     <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t0-cf-gZv" userLabel="닉네임뷰">
-                    <rect key="frame" x="20" y="250" width="374" height="52"/>
+                    <rect key="frame" x="20" y="262" width="374" height="52"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="소보기" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LiK-iX-PYE">
                             <rect key="frame" x="15" y="15" width="344" height="22"/>
@@ -99,7 +99,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-cX-QCB">
-                    <rect key="frame" x="334" y="320" width="52" height="31"/>
+                    <rect key="frame" x="334" y="332" width="52" height="31"/>
                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                     <color key="tintColor" name="dark_mint_main"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -116,7 +116,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2~10자리의 한글, 영문, 숫자만 사용 가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-tD-bOJ">
-                    <rect key="frame" x="30" y="305" width="232" height="16"/>
+                    <rect key="frame" x="30" y="317" width="232" height="16"/>
                     <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="13"/>
                     <color key="textColor" name="pill_color_red"/>
                     <nil key="highlightedColor"/>
@@ -143,7 +143,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
-                    <rect key="frame" x="334" y="351" width="52" height="1"/>
+                    <rect key="frame" x="334" y="363" width="52" height="1"/>
                     <color key="backgroundColor" name="gray500_sub"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="E12-nk-9X8"/>
@@ -160,7 +160,7 @@
                 <constraint firstItem="mFd-jy-tVf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="A5Q-cq-CAc"/>
                 <constraint firstItem="4t0-cf-gZv" firstAttribute="top" secondItem="TBZ-0Z-cZ3" secondAttribute="bottom" constant="8" id="AUe-W1-Whi"/>
                 <constraint firstItem="Lkl-cX-QCB" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="bottom" constant="18" id="FW6-Zu-u3v"/>
-                <constraint firstItem="mFd-jy-tVf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Iwy-2A-C53"/>
+                <constraint firstItem="mFd-jy-tVf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Iwy-2A-C53"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkl-cX-QCB" secondAttribute="trailing" constant="28" id="JKY-K4-FOJ"/>
                 <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" id="P7N-6D-ZLo"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="S1O-rX-tAf"/>
