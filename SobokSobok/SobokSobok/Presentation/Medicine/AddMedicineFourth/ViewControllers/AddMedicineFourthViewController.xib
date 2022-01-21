@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
@@ -17,8 +20,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineFourthViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="addNumberLabel" destination="qOd-z1-0V2" id="tbU-hj-ueZ"/>
+                <outlet property="addView" destination="yEw-Gj-cfr" id="eRi-xz-BGx"/>
                 <outlet property="medicineInfoCollectionView" destination="ExL-uz-59v" id="fne-Wp-3jh"/>
                 <outlet property="navigationTitleLabel" destination="30D-Dk-ZrV" id="ach-Cf-6Ej"/>
+                <outlet property="peopleNameLabel" destination="XC9-Mc-1eE" id="l1J-n9-P9d"/>
+                <outlet property="saveButton" destination="gaf-oj-VVc" id="uhQ-CO-IYL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,7 +64,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-uz-59v">
-                    <rect key="frame" x="0.0" y="123" width="414" height="739"/>
+                    <rect key="frame" x="0.0" y="189" width="414" height="673"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oUp-IR-Efx">
                         <size key="itemSize" width="128" height="128"/>
@@ -66,6 +73,43 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-5E-gNR">
+                    <rect key="frame" x="0.0" y="115" width="414" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 먹을 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC9-Mc-1eE">
+                            <rect key="frame" x="20" y="0.0" width="111.5" height="18.5"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEw-Gj-cfr">
+                            <rect key="frame" x="20" y="25.5" width="374" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0개 더 추가할 수 있어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOd-z1-0V2">
+                                    <rect key="frame" x="116.5" y="7.5" width="141" height="19"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
+                                    <color key="textColor" name="dark_mint_main"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="light_mint"/>
+                            <constraints>
+                                <constraint firstItem="qOd-z1-0V2" firstAttribute="centerY" secondItem="yEw-Gj-cfr" secondAttribute="centerY" id="U3q-fS-frb"/>
+                                <constraint firstAttribute="height" constant="34" id="WCg-LF-3fg"/>
+                                <constraint firstItem="qOd-z1-0V2" firstAttribute="centerX" secondItem="yEw-Gj-cfr" secondAttribute="centerX" id="q8Y-3X-mhA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="yEw-Gj-cfr" firstAttribute="top" secondItem="XC9-Mc-1eE" secondAttribute="bottom" constant="7" id="Bau-jW-XVu"/>
+                        <constraint firstItem="yEw-Gj-cfr" firstAttribute="leading" secondItem="IR9-5E-gNR" secondAttribute="leading" constant="20" id="F0A-cb-pUg"/>
+                        <constraint firstAttribute="trailing" secondItem="yEw-Gj-cfr" secondAttribute="trailing" constant="20" id="Jh5-oG-xXN"/>
+                        <constraint firstItem="XC9-Mc-1eE" firstAttribute="leading" secondItem="IR9-5E-gNR" secondAttribute="leading" constant="20" id="SQq-tB-kSN"/>
+                        <constraint firstItem="XC9-Mc-1eE" firstAttribute="top" secondItem="IR9-5E-gNR" secondAttribute="top" id="u1o-fU-Niq"/>
+                        <constraint firstAttribute="height" constant="66" id="y7C-No-k9D"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,9 +117,12 @@
                 <constraint firstItem="30D-Dk-ZrV" firstAttribute="centerY" secondItem="0hk-1h-sS7" secondAttribute="centerY" id="0TR-Cf-7HT"/>
                 <constraint firstItem="ExL-uz-59v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="G0X-hE-iUq"/>
                 <constraint firstItem="30D-Dk-ZrV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UAg-Cy-QJR"/>
-                <constraint firstItem="ExL-uz-59v" firstAttribute="firstBaseline" secondItem="30D-Dk-ZrV" secondAttribute="baseline" constant="48" id="VoF-eg-7x8"/>
+                <constraint firstItem="ExL-uz-59v" firstAttribute="top" secondItem="IR9-5E-gNR" secondAttribute="bottom" constant="8" symbolic="YES" id="UKq-fP-mx8"/>
+                <constraint firstItem="ExL-uz-59v" firstAttribute="firstBaseline" secondItem="30D-Dk-ZrV" secondAttribute="baseline" constant="114" id="VoF-eg-7x8"/>
                 <constraint firstItem="gaf-oj-VVc" firstAttribute="centerY" secondItem="0hk-1h-sS7" secondAttribute="centerY" id="XF9-1u-bTT"/>
                 <constraint firstItem="0hk-1h-sS7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cTl-Ux-UCY"/>
+                <constraint firstItem="IR9-5E-gNR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dlO-eD-ffM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IR9-5E-gNR" secondAttribute="trailing" id="eN3-Md-Fr9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ExL-uz-59v" secondAttribute="trailing" id="feq-aH-KPS"/>
                 <constraint firstItem="0hk-1h-sS7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="1" id="jR5-JL-Ktt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ExL-uz-59v" secondAttribute="bottom" id="onj-Gn-tON"/>
@@ -88,6 +135,9 @@
         <image name="icBack48" width="48" height="48"/>
         <namedColor name="dark_mint_main">
             <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_mint">
+            <color red="0.89411764705882357" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

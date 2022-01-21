@@ -113,12 +113,14 @@ extension AddMedicineSheet: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            if pillNumber == 0 {
+            if pillNumber < 0 {
                 self.dismiss(animated: true)
                 guard let viewController = self.presentingViewController as? UITabBarController else { return }
                 guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
                 let addMyMedicineViewController = PillLimitViewController.instanceFromNib()
                 selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
+            } else if pillNumber == 0 {
+                pushMedicineFirstViewController(tossPill: .me)
             } else {
                 pushMedicineFirstViewController(tossPill: .me)
             }

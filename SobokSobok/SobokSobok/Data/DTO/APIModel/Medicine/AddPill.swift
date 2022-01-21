@@ -46,16 +46,53 @@ struct SendPillInfo: Codable {
 
 
 // MARK: - SendInfo
-struct SendInfoPill: Codable {
-    let pillList: [PillListData]
+
+struct PillListData: Codable {
+    let pillName: String
+    let isStop: Bool
+    let color: String
+    let start: String
+    let end: String
+    let cycle: String
+    let day: String?
+    let time: [String]
+    let specific: String?
+    
+    init (_ pillName: String, _ isStop: Bool, _ color: String, _ start: String, _ end: String, _ cycle: String, _ day: String?, _ time: [String], _ specific: String?) {
+        self.pillName = pillName
+        self.isStop = isStop
+        self.color = color
+        self.start = start
+        self.end = end
+        self.cycle = cycle
+        self.day = day
+        self.time = time
+        self.specific = specific
+    }
+}
+
+struct PillLists: Codable {
+    let pillList: [PillListRequest]?
 }
 
 // MARK: - PillList
-struct PillListData: Codable {
+struct PillListRequest: Codable {
     let pillName: String
     let isStop: Bool
     let color, start, end, cycle: String
     let day: String?
     let time: [String]
     let specific: String?
+    
+    init (_ pillName: String, _ isStop: Bool, _ color: String, _ start: String, _ end: String, _ cycle: String, _ day: String?, _ time: [String], _ specific: String? = nil) {
+        self.pillName = pillName
+        self.isStop = isStop
+        self.color = color
+        self.start = start
+        self.end = end
+        self.cycle = cycle
+        self.day = day
+        self.time = time
+        self.specific = specific
+    }
 }

@@ -9,8 +9,8 @@ import Foundation
 import Moya
 
 enum AddPillService {
-    case addMyPill(pillName: String, isStop: Bool, color: String, start: String, end: String, cycle: String, day: String, time: [String], specific: String)
-    case addFriendPill(memberId: Int, pillName: String, isStop: Bool, color: String, start: String, end: String, cycle: String, day: String, time: [String], specific: String)
+    case addMyPill(body: PillLists)
+    case addFriendPill(memberId: Int, body: PillLists)
 }
 
 extension AddPillService: TargetType {
@@ -20,9 +20,9 @@ extension AddPillService: TargetType {
     
     var path: String {
         switch self {
-        case .addMyPill(_, _, _, _, _, _, _, _, _):
+        case .addMyPill:
             return URLs.addMyPillURL
-        case .addFriendPill(let memberId, _, _, _, _, _, _, _, _, _):
+        case .addFriendPill(let memberId, _):
             return URLs.addFriendPillURL.replacingOccurrences(of: "{memberId}", with: "\(memberId)")
         }
     }
@@ -40,28 +40,14 @@ extension AddPillService: TargetType {
     
     var task: Task {
         switch self {
-        case .addMyPill(let pillName, let isStop, let color, let start, let end, let cycle, let day, let time, let specific):
-            return .requestParameters(parameters: ["pillName": pillName,
-                                                   "isStop": isStop,
-                                                   "color": color,
-                                                   "start": start,
-                                                   "end": end,
-                                                   "cycle": cycle,
-                                                   "day": day,
-                                                   "time": time,
-                                                   "specific": specific], encoding: JSONEncoding.default)
-        case .addFriendPill(_, let pillName, let isStop, let color, let start, let end, let cycle, let day, let time, let specific):
-           return .requestParameters(parameters: ["pillName": pillName,
-                                                  "isStop": isStop,
-                                                  "color": color,
-                                                  "start": start,
-                                                  "end": end,
-                                                  "cycle": cycle,
-                                                  "day": day,
-                                                  "time": time,
-                                                  "specific": specific], encoding: JSONEncoding.default)
+        case .addMyPill(let body):
+            return .requestJSONEncodable(body)
+
+        case .addFriendPill(let memberId, let body):
+            return .requestCompositeParameters(bodyParameters: ["pillId" : body.pillList ?? ""], bodyEncoding: JSONEncoding.default, urlParameters: ["memberId" : memberId])
         }
     }
+   
     
     var headers: [String: String]? {
             return [

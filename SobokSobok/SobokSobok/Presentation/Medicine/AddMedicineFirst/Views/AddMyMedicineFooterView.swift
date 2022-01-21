@@ -71,7 +71,9 @@ final class AddMyMedicineFooterView: UICollectionReusableView {
         }
         
         withMedicineLabel.snp.makeConstraints {
-            $0.top.equalTo(addMedicineCellButton.snp.bottom).offset(20)
+            $0.top.equalTo(addMedicineCellButton.snp.bottom).offset(34)
+            $0.height.equalTo(42
+            )
             $0.centerX.equalToSuperview()
         }
     }
