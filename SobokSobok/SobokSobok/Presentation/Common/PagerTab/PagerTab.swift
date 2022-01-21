@@ -37,7 +37,7 @@ class PagerTab: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 22
         stackView.backgroundColor = Color.mint
         return stackView
@@ -75,6 +75,7 @@ class PagerTab: UIView {
     }()
 
     private let containerView: UIView = UIView()
+    
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
 
     private var selectedButton = false
@@ -109,7 +110,8 @@ class PagerTab: UIView {
         let leadingSpacingView = UIView()
         tabStackView.addArrangedSubview(leadingSpacingView)
         tabStackView.addArrangedSubview(titleStackView)
-        tabStackView.addArrangedSubview(addButton)
+        tabStackView.addArrangedSubview(UILabel())
+        addSubview(addButton)
         addSubview(barBackgroundView)
         barBackgroundView.addSubview(barView)
         addSubview(containerView)
@@ -129,7 +131,9 @@ class PagerTab: UIView {
             $0.leading.equalTo(leadingSpacingView.snp.trailing)
         }
         
-        tabStackView.setCustomSpacing(62, after: tabStackView.subviews[1])
+        addButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview()
+        }
         
         barBackgroundView.snp.makeConstraints {
             $0.top.equalTo(titleStackView.snp.bottom)
@@ -172,6 +176,9 @@ class PagerTab: UIView {
     private func updatePagerTabButton() {
         let barCount = pageContents.count
         pageContents.forEach { content in
+            content.button.snp.makeConstraints {
+                $0.width.equalTo(30)
+            }
             titleStackView.addArrangedSubview(content.button)
         }
         barView.snp.makeConstraints {
