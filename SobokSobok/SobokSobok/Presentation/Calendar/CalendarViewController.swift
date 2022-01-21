@@ -187,6 +187,7 @@ extension CalendarViewController {
                 self.stopPillList(pillId: pillId, day: date)
                 self.getPillList(date: self.selectedDate)
                 self.collectionView.reloadData()
+                self.view.layoutSubviews()
             }
         }
         let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in
