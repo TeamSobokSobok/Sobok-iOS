@@ -83,6 +83,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToAcceptButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F3d-cy-UQB"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
@@ -104,6 +107,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="acceptButton" destination="GGo-kF-log" id="auF-p0-Umf"/>
                 <outlet property="confirmButton" destination="0zC-7t-gWs" id="ZU1-qz-mJX"/>
                 <outlet property="noticeImage" destination="AgL-0F-azo" id="JeG-li-nsA"/>
                 <outlet property="noticeStatus" destination="4SF-6c-dPv" id="CPf-Gc-u4k"/>

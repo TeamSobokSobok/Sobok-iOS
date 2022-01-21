@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,18 +13,18 @@
         <array key="Pretendard-Medium.otf">
             <string>Pretendard-Medium</string>
         </array>
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
         <array key="Pretendard-SemiBold.otf">
             <string>Pretendard-SemiBold</string>
-        </array>
-        <array key="TimesNewRoman.ttf">
-            <string>.SFUI-Regular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PillInfoEditViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="periodSelectButton" destination="QXU-cd-V2y" id="4aa-lx-5sC"/>
-                <outlet property="pillNameTextField" destination="Jxa-J0-Fk1" id="gUo-UW-LzO"/>
+                <outlet property="pillNameTextField" destination="TIf-NU-9wj" id="eUP-eZ-BLk"/>
                 <outlet property="selectTimeCollectionView" destination="BTL-y8-Aex" id="BbN-o0-owe"/>
                 <outlet property="specificDayView" destination="zfm-RY-UQq" id="BTy-Uh-dOr"/>
                 <outlet property="specificTermView" destination="TW1-JY-Kvd" id="FDf-VZ-hm6"/>
@@ -46,7 +47,7 @@
                         <constraint firstAttribute="height" constant="24" id="4Q1-id-jy7"/>
                         <constraint firstAttribute="width" constant="220" id="T9v-FI-flL"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name=".SFUI-Regular" family=".AppleSystemUIFont" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                     <color key="textColor" name="gray900_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -57,6 +58,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="icBack48"/>
+                    <connections>
+                        <action selector="touchUpToBackButton:" destination="-1" eventType="touchUpInside" id="oev-nV-Ig0"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8f-xk-uBp">
                     <rect key="frame" x="19.999999999999996" y="129" width="42.666666666666657" height="18.333333333333343"/>
@@ -64,14 +68,28 @@
                     <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jxa-J0-Fk1" userLabel="Name Text Field">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIf-NU-9wj">
                     <rect key="frame" x="20" y="158.33333333333334" width="335" height="54"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jxa-J0-Fk1" userLabel="Name Text Field">
+                            <rect key="frame" x="16" y="15" width="303" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Ef8-xw-LtA"/>
+                                <constraint firstAttribute="width" constant="303" id="Rtm-0R-50u"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="54" id="Ef8-xw-LtA"/>
+                        <constraint firstAttribute="width" constant="335" id="G5c-tN-WgB"/>
+                        <constraint firstAttribute="height" constant="54" id="ImM-Pp-pHA"/>
+                        <constraint firstItem="Jxa-J0-Fk1" firstAttribute="top" secondItem="TIf-NU-9wj" secondAttribute="top" constant="15" id="LW3-fg-mNA"/>
+                        <constraint firstAttribute="bottom" secondItem="Jxa-J0-Fk1" secondAttribute="bottom" constant="14" id="oC1-8s-zJx"/>
+                        <constraint firstItem="Jxa-J0-Fk1" firstAttribute="leading" secondItem="TIf-NU-9wj" secondAttribute="leading" constant="16" id="qR7-3g-0QP"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복약 기간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-h2-CPA">
                     <rect key="frame" x="19.999999999999996" y="242.33333333333334" width="55.666666666666657" height="21.000000000000028"/>
                     <constraints>
@@ -271,7 +289,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="uBL-h2-CPA" firstAttribute="top" secondItem="TIf-NU-9wj" secondAttribute="bottom" constant="30" id="08i-F6-C68"/>
                 <constraint firstItem="BTL-y8-Aex" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4JT-Go-nd8"/>
+                <constraint firstItem="TIf-NU-9wj" firstAttribute="top" secondItem="T8f-xk-uBp" secondAttribute="bottom" constant="11" id="4Xf-aY-XM9"/>
                 <constraint firstAttribute="bottom" secondItem="BTL-y8-Aex" secondAttribute="bottom" id="7gG-aQ-7yg"/>
                 <constraint firstItem="BTL-y8-Aex" firstAttribute="top" secondItem="Hcy-N2-zaa" secondAttribute="bottom" constant="11" id="86K-eV-xJi"/>
                 <constraint firstAttribute="trailing" secondItem="QXU-cd-V2y" secondAttribute="trailing" constant="20" id="8fe-j9-B6v"/>
@@ -279,8 +299,6 @@
                 <constraint firstItem="0sj-eV-do5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="1" id="BJE-6k-lyl"/>
                 <constraint firstItem="5O9-YO-K6z" firstAttribute="top" secondItem="PJ0-5S-2sT" secondAttribute="bottom" constant="11" id="Bf4-bj-cRv"/>
                 <constraint firstItem="Hcy-N2-zaa" firstAttribute="top" secondItem="5O9-YO-K6z" secondAttribute="bottom" constant="30" id="BqU-0i-qHa"/>
-                <constraint firstItem="uBL-h2-CPA" firstAttribute="top" secondItem="Jxa-J0-Fk1" secondAttribute="bottom" constant="30" id="CkB-Xl-wUt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jxa-J0-Fk1" secondAttribute="trailing" constant="20" id="DNj-17-JLO"/>
                 <constraint firstItem="T8f-xk-uBp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="EpI-M5-Gfa"/>
                 <constraint firstAttribute="trailing" secondItem="iTx-Tg-5xE" secondAttribute="trailing" constant="77" id="Gc3-hL-Mka"/>
                 <constraint firstItem="5QD-fb-H05" firstAttribute="centerY" secondItem="QXU-cd-V2y" secondAttribute="centerY" id="J3H-Dv-bge"/>
@@ -289,22 +307,22 @@
                 <constraint firstItem="Qwq-Ql-IKG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="RBX-FV-dWz"/>
                 <constraint firstItem="Hcy-N2-zaa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UUP-Wy-QTf"/>
                 <constraint firstItem="Qwq-Ql-IKG" firstAttribute="top" secondItem="QXU-cd-V2y" secondAttribute="bottom" constant="30" id="Vt8-UE-luK"/>
-                <constraint firstItem="Jxa-J0-Fk1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WO1-de-5L4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5O9-YO-K6z" secondAttribute="trailing" constant="20" id="XMM-LJ-KQ0"/>
                 <constraint firstItem="PJ0-5S-2sT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YIb-zR-cWE"/>
                 <constraint firstItem="uBL-h2-CPA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZXY-or-cjM"/>
                 <constraint firstItem="QXU-cd-V2y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="avh-gz-hR6"/>
-                <constraint firstItem="Jxa-J0-Fk1" firstAttribute="top" secondItem="T8f-xk-uBp" secondAttribute="bottom" constant="11" id="bYK-Ng-Dfq"/>
+                <constraint firstItem="TIf-NU-9wj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bR7-5j-Bhu"/>
                 <constraint firstItem="PJ0-5S-2sT" firstAttribute="top" secondItem="Qwq-Ql-IKG" secondAttribute="bottom" constant="11" id="gNo-Ks-Ga1"/>
                 <constraint firstItem="BTL-y8-Aex" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gee-7Z-cYY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PJ0-5S-2sT" secondAttribute="trailing" constant="20" id="h6S-1g-xQL"/>
                 <constraint firstItem="5O9-YO-K6z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ja3-Yx-G5b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TIf-NU-9wj" secondAttribute="trailing" constant="20" id="kVP-NY-Wlv"/>
                 <constraint firstItem="QXU-cd-V2y" firstAttribute="top" secondItem="uBL-h2-CPA" secondAttribute="bottom" constant="11" id="kxT-SY-Ol2"/>
                 <constraint firstItem="iTx-Tg-5xE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="57" id="u79-Dz-C7w"/>
                 <constraint firstItem="5QD-fb-H05" firstAttribute="leading" secondItem="QXU-cd-V2y" secondAttribute="leading" constant="16" id="xUV-41-D1a"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="132" y="64.285714285714292"/>
+            <point key="canvasLocation" x="132" y="63.916256157635473"/>
         </view>
     </objects>
     <resources>
