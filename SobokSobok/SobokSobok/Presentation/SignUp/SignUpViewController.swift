@@ -64,7 +64,8 @@ final class SignUpViewController: BaseViewController {
         rePasswordTextField.addTarget(self, action: #selector(self.inactivateRepasswordTextField), for: .editingDidEnd)
         
         // 버튼 활성화 조건
-        [emailTextField, passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)}
+        [passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.activateOkayButton), for: .editingChanged)}
+        emailTextField.addTarget(self, action: #selector(self.activateOkayButton), for: .editingDidEnd)
     }
 
     // 정규식 체크
@@ -125,12 +126,12 @@ final class SignUpViewController: BaseViewController {
     }
     
     // 버튼 활성화
-    @objc func activateOkayButton(_ : UIButton) {
+    @objc func activateOkayButton() {
         confirmButton.isEnabled = isEmailRight && isPasswordRight && isRePasswordRight
     }
     
     // MARK: - @IBAction Properties
-    @IBAction func touchUpToPopToSIgnInVIew(_ sender: Any) {
+    @IBAction func touchUpToPopToSIgnInVIew(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
