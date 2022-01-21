@@ -4,7 +4,7 @@
 
 <br />
 
-# 💭 About
+## 💭 About
 
 > 여러분은 소중한 사람의 건강을 지키기 위해 어떤 노력을 하고 계신가요?  
 > 
@@ -15,19 +15,18 @@
 > **나의 복약 체크는 물론, 소중한 사람의 복약까지 확인할 수 있는 ‘소복소복’**
 > **우리의 건강을 챙기는 매일의 실천입니다** 🙂
 
+<img width="1363" alt="스크린샷 2022-01-22 오전 5 27 36" src="https://user-images.githubusercontent.com/75469131/150595708-bd84f11e-ed2d-4dfe-9242-1b69e10756ac.png">
+
 <br />
 
-# ✨ Main Feat
+## ✨ Main Feat
 
 - **`홈`** 
 나의 복약을 체크하고, 상대방이 보내준 응원스티커를 확인할 수 있습니다.
-
 - **`공유`** 
 소중한 사람의 복약 캘린더를 확인하고, 응원을 보낼 수 있습니다.
-
 - **`알림`**
 캘린더 공유 요청과 전송받은 복약 정보를 확인할 수 있습니다.
-
 - **`추가`** 
 내 복약 정보를 추가하고, 소중한 사람에게 복약 일정을 전송할 수 있습니다.
 
@@ -35,14 +34,12 @@
 
 <br />
 
-# 🍎 Team Member - `iOS`
+## 🍎 Team Member - `iOS`
 
 |<img src="./Asset/태현.png" width=200>|<img src="./Asset/승찬.png" width=200>|<img src="./Asset/은희.png" width=200>|<img src="./Asset/선영.png" width=200>|
 |:--:|:--:|:--:|:--:|
 |**태현**|**승찬**|**은희**|**선영**|
 |[@Taehyeon-Kim](https://github.com/Taehyeon-Kim)|[@seungchan2](https://github.com/seungchan2)|[@EunHee-Jeong](https://github.com/EunHee-Jeong)|[@seondal](https://github.com/seondal)|
-
-<br />
 
 #### 태현
 `메인 뷰` `스티커 확인` `수정하기` `내 약 상세 (중복)` `공유 캘린더(중복)` `공유 스티커 확인` `공유 스티커 보내기` `공유 보낸 스티커 수정`
@@ -62,7 +59,7 @@
 
 <br />
 
-# 📚 Library
+## 📚 Library
 
 | Name | Tag |
 | --- | --- |
@@ -74,7 +71,7 @@
 
 <br />
 
-# 🕹 Convention
+## 🕹 Convention
 
 `Coding Convention` · `Commit Convention`
 
@@ -237,7 +234,7 @@ force_cast:
 
 <br />
 
-# 🐾 Branch Strategy
+## 🐾 Branch Strategy
 
 `Git Flow` · `GitHub Flow`
 
@@ -281,7 +278,7 @@ force_cast:
 
 <br />
 
-# 🗂 Folder Architecture
+## 🗂 Folder Architecture
 
 <details markdown="1">
 <summary>폴더링을 소개합니다✨</summary>
@@ -342,3 +339,14 @@ force_cast:
     - Info.plist
 
 </details>
+
+<br />
+
+## 📺 Detail
+
+<img width="1382" alt="스크린샷 2022-01-22 오전 5 23 14" src="https://user-images.githubusercontent.com/75469131/150596235-e23c3b2e-42b5-44ba-bdc7-a472fa091a79.png">
+<img width="1366" alt="스크린샷 2022-01-22 오전 5 23 27" src="https://user-images.githubusercontent.com/75469131/150596252-57a9fac1-90d4-43f9-83c1-4e6079b557e5.png">
+<img width="1374" alt="스크린샷 2022-01-22 오전 5 24 05" src="https://user-images.githubusercontent.com/75469131/150596255-4103c1e9-f9c0-414f-a50b-f641b81df2e2.png">
+<img width="1377" alt="스크린샷 2022-01-22 오전 5 24 14" src="https://user-images.githubusercontent.com/75469131/150596256-f170d503-8e3b-4edf-b8e7-5ac7e240633b.png">
+<img width="1362" alt="스크린샷 2022-01-22 오전 5 24 26" src="https://user-images.githubusercontent.com/75469131/150596258-c6a81ed6-6ca2-4c93-ab84-7652030ad818.png">
+
