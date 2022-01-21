@@ -164,7 +164,6 @@ extension PillInfoEditViewController: UICollectionViewDataSource {
             return cell
         }
     
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillTimeInfoFooterView.reuseIdentifier, for: indexPath) as? PillTimeInfoFooterView else { return UICollectionReusableView()}
         cell.addCellClosure = {

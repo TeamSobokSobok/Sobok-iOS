@@ -33,7 +33,7 @@ enum APIConstants {
     static var headerWithToken: [String: String] {
         [
             NetworkHeaderKey.contentType.rawValue: APIConstants.applicationJSON,
-            NetworkHeaderKey.accessToken.rawValue: APIConstants.accessToken24
+            NetworkHeaderKey.accessToken.rawValue: APIConstants.accessToken23
         ]
     }
 }

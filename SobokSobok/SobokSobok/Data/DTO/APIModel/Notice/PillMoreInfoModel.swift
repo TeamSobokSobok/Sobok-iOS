@@ -17,7 +17,7 @@ struct PillMoreInfo: Codable {
 struct PillData: Codable {
     let pillID: Int
     let pillName, color, startDate, endDate: String
-    let scheduleCycle, scheduleDay: String
+    let scheduleCycle, scheduleDay: String?
     let scheduleSpecific: String?
     let scheduleTime: [String]
 

@@ -52,6 +52,7 @@ extension NoticeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = notificationTableView.dequeueReusableCell(for: indexPath, cellType: NoticeTableViewCell.self)
         cell.selectionStyle = .none
+        cell.contentView.backgroundColor = .clear
         cell.setData(noticeData: noticeList[indexPath.row])
         cell.index = indexPath.row
         cell.delegate = self
@@ -73,6 +74,7 @@ extension NoticeViewController: UITableViewDelegate { }
 extension NoticeViewController: ComponentProductCellDelegate {
     func selectedInfoButton(index: Int) {
         let nextVC = SendInfoViewController.instanceFromNib()
+        nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true)
     }
 }

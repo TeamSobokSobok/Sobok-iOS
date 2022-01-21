@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-45-PIf">
-                    <rect key="frame" x="0.0" y="29" width="375" height="661"/>
+                    <rect key="frame" x="0.0" y="102" width="375" height="588"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="250" constant="642" id="1ah-TM-v20"/>
@@ -59,6 +59,9 @@
                                     <state key="normal" title="거절할래요">
                                         <color key="titleColor" name="dark_mint_main"/>
                                     </state>
+                                    <connections>
+                                        <action selector="refuseButtonTapped:" destination="-1" eventType="touchUpInside" id="t1V-Zh-imk"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSb-PH-6HN">
                                     <rect key="frame" x="173" y="0.0" width="162" height="52"/>
@@ -72,6 +75,9 @@
                                     <state key="normal" title="받을래요">
                                         <color key="titleColor" name="white_sub"/>
                                     </state>
+                                    <connections>
+                                        <action selector="acceptButtonTapped:" destination="-1" eventType="touchUpInside" id="K80-9E-qAb"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -91,7 +97,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="hbL-aL-g1e" secondAttribute="bottom" id="98Q-mP-hRH"/>
-                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="A8Z-wB-pnw"/>
+                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="102" id="A8Z-wB-pnw"/>
                 <constraint firstAttribute="trailing" secondItem="d5U-45-PIf" secondAttribute="trailing" id="OP9-Ue-WaS"/>
                 <constraint firstAttribute="bottom" secondItem="d5U-45-PIf" secondAttribute="bottom" constant="122" id="QYF-a6-uzd"/>
                 <constraint firstItem="hbL-aL-g1e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RMh-vf-2Sj"/>
