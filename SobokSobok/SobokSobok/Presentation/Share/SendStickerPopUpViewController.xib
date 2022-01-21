@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ii-Mn-1mS">
-                    <rect key="frame" x="20" y="235" width="335" height="343"/>
+                    <rect key="frame" x="20" y="228" width="335" height="356"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스티커 보내기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHQ-RJ-CKC">
                             <rect key="frame" x="0.0" y="24" width="335" height="18.333333333333329"/>
@@ -44,87 +44,137 @@
                             <color key="tintColor" name="gray700_sub"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icClose48"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="bzV-pe-kPX"/>
+                            </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-wX-FrS">
-                            <rect key="frame" x="27" y="96.333333333333314" width="280" height="84"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-r1-fLz">
+                            <rect key="frame" x="27.666666666666657" y="114" width="280" height="188"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgd-jL-WGG">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="84"/>
-                                    <color key="tintColor" name="gray700_sub"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="icSobok"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIY-BZ-hr9">
-                                    <rect key="frame" x="100" y="0.0" width="80" height="84"/>
-                                    <color key="tintColor" name="gray700_sub"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="icSobok"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evq-Qn-HEE">
-                                    <rect key="frame" x="200" y="0.0" width="80" height="84"/>
-                                    <color key="tintColor" name="gray700_sub"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="icSobok"/>
-                                </button>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bge-JR-PPx">
-                            <rect key="frame" x="27" y="208.33333333333331" width="280" height="84"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Y0-OD-nhc">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="84"/>
-                                    <color key="tintColor" name="gray700_sub"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="icSobok"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jE-1E-5Kp">
-                                    <rect key="frame" x="100" y="0.0" width="80" height="84"/>
-                                    <color key="tintColor" name="gray700_sub"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="icSobok"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qf-NP-Iyi">
-                                    <rect key="frame" x="200" y="0.0" width="80" height="84"/>
-                                    <color key="tintColor" name="gray700_sub"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="icSobok"/>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-wX-FrS">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgd-jL-WGG">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="IlW-JP-h6w"/>
+                                                <constraint firstAttribute="width" constant="80" id="Yyw-7L-5iw"/>
+                                            </constraints>
+                                            <color key="tintColor" name="gray700_sub"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bigSticker1"/>
+                                            <connections>
+                                                <action selector="sendStickerButtonTapped:" destination="-1" eventType="touchUpInside" id="srW-oG-PVY"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIY-BZ-hr9">
+                                            <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="UnB-l1-s93"/>
+                                                <constraint firstAttribute="height" constant="80" id="Xx0-8p-p8n"/>
+                                            </constraints>
+                                            <color key="tintColor" name="gray700_sub"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bigSticker2"/>
+                                            <connections>
+                                                <action selector="sendStickerButtonTapped:" destination="-1" eventType="touchUpInside" id="dmY-Lr-n0A"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evq-Qn-HEE">
+                                            <rect key="frame" x="200" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="3MZ-hZ-ZXK"/>
+                                                <constraint firstAttribute="height" constant="80" id="cDs-eL-77M"/>
+                                            </constraints>
+                                            <color key="tintColor" name="gray700_sub"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bigSticker3"/>
+                                            <connections>
+                                                <action selector="sendStickerButtonTapped:" destination="-1" eventType="touchUpInside" id="rvm-ky-FuF"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bge-JR-PPx">
+                                    <rect key="frame" x="0.0" y="108" width="280" height="80"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Y0-OD-nhc">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="6Dk-Ty-LbO"/>
+                                                <constraint firstAttribute="width" constant="80" id="JCm-yz-c9m"/>
+                                            </constraints>
+                                            <color key="tintColor" name="gray700_sub"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bigSticker4"/>
+                                            <connections>
+                                                <action selector="sendStickerButtonTapped:" destination="-1" eventType="touchUpInside" id="mV1-RT-hxC"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jE-1E-5Kp">
+                                            <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="VTo-C7-slf"/>
+                                                <constraint firstAttribute="height" constant="80" id="dl5-42-BoI"/>
+                                            </constraints>
+                                            <color key="tintColor" name="gray700_sub"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bigSticker5"/>
+                                            <connections>
+                                                <action selector="sendStickerButtonTapped:" destination="-1" eventType="touchUpInside" id="KbL-cp-Qru"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qf-NP-Iyi">
+                                            <rect key="frame" x="200" y="0.0" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="KTg-qT-OJf"/>
+                                                <constraint firstAttribute="height" constant="80" id="pn0-VN-gUs"/>
+                                            </constraints>
+                                            <color key="tintColor" name="gray700_sub"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="bigSticker6"/>
+                                            <connections>
+                                                <action selector="sendStickerButtonTapped:" destination="-1" eventType="touchUpInside" id="FxC-Lo-TnE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="0e2-aC-vlP" firstAttribute="top" secondItem="1ii-Mn-1mS" secondAttribute="top" constant="12" id="49d-KP-mdE"/>
-                        <constraint firstAttribute="trailing" secondItem="ehW-wX-FrS" secondAttribute="trailing" constant="28" id="CAm-pB-oy0"/>
-                        <constraint firstItem="Bge-JR-PPx" firstAttribute="leading" secondItem="1ii-Mn-1mS" secondAttribute="leading" constant="27" id="CGo-WP-DaJ"/>
-                        <constraint firstAttribute="height" constant="343" id="HDh-8J-24w"/>
-                        <constraint firstItem="ehW-wX-FrS" firstAttribute="leading" secondItem="1ii-Mn-1mS" secondAttribute="leading" constant="27" id="HQ6-Li-wNx"/>
+                        <constraint firstAttribute="bottom" secondItem="7h7-r1-fLz" secondAttribute="bottom" constant="54" id="Cqm-sq-P1y"/>
                         <constraint firstAttribute="trailing" secondItem="0e2-aC-vlP" secondAttribute="trailing" constant="8" id="Jy4-W1-luf"/>
-                        <constraint firstAttribute="trailing" secondItem="Bge-JR-PPx" secondAttribute="trailing" constant="28" id="K8f-ii-IQI"/>
                         <constraint firstItem="NHQ-RJ-CKC" firstAttribute="leading" secondItem="1ii-Mn-1mS" secondAttribute="leading" id="Qvc-Ue-CcB"/>
+                        <constraint firstItem="7h7-r1-fLz" firstAttribute="centerX" secondItem="1ii-Mn-1mS" secondAttribute="centerX" id="UuW-Tm-q4k"/>
                         <constraint firstItem="0e2-aC-vlP" firstAttribute="leading" secondItem="1ii-Mn-1mS" secondAttribute="leading" constant="279" id="ZAd-2U-eE2"/>
                         <constraint firstItem="NHQ-RJ-CKC" firstAttribute="top" secondItem="1ii-Mn-1mS" secondAttribute="top" constant="24" id="ZLv-AH-Avp"/>
-                        <constraint firstAttribute="width" constant="335" id="cQp-17-X9H"/>
-                        <constraint firstItem="Bge-JR-PPx" firstAttribute="top" secondItem="ehW-wX-FrS" secondAttribute="bottom" constant="28" id="nYC-p5-j0f"/>
+                        <constraint firstItem="7h7-r1-fLz" firstAttribute="top" secondItem="0e2-aC-vlP" secondAttribute="bottom" constant="54" id="Zy4-iZ-oIu"/>
                         <constraint firstAttribute="trailing" secondItem="NHQ-RJ-CKC" secondAttribute="trailing" id="rR4-6G-a3U"/>
-                        <constraint firstItem="ehW-wX-FrS" firstAttribute="top" secondItem="NHQ-RJ-CKC" secondAttribute="bottom" constant="54" id="uTo-Qu-XCd"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="1ii-Mn-1mS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7cV-1i-4gI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1ii-Mn-1mS" secondAttribute="trailing" constant="20" id="NQp-1l-ADg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1ii-Mn-1mS" secondAttribute="bottom" constant="200" id="bK0-pv-7t0"/>
                 <constraint firstItem="1ii-Mn-1mS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dRl-Jj-TKv"/>
-                <constraint firstItem="1ii-Mn-1mS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="191" id="kwh-jC-ZIt"/>
+                <constraint firstItem="1ii-Mn-1mS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nV2-20-mkJ"/>
             </constraints>
             <point key="canvasLocation" x="132" y="84"/>
         </view>
     </objects>
     <resources>
+        <image name="bigSticker1" width="171" height="171"/>
+        <image name="bigSticker2" width="171" height="171"/>
+        <image name="bigSticker3" width="171" height="171"/>
+        <image name="bigSticker4" width="171" height="171"/>
+        <image name="bigSticker5" width="171" height="171"/>
+        <image name="bigSticker6" width="171" height="171"/>
         <image name="icClose48" width="48" height="48"/>
-        <image name="icSobok" width="84" height="84"/>
         <namedColor name="gray700_sub">
             <color red="0.40392156862745099" green="0.43137254901960786" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

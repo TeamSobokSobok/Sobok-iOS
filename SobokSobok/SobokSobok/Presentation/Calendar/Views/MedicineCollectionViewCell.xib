@@ -109,12 +109,15 @@
                                 <color key="backgroundColor" name="gray150_sub"/>
                                 <color key="tintColor" name="black_sub"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icEmotion36"/>
+                                <state key="normal" image="icEmotionEnd36"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="emotionButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="K3E-yp-avK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsa-0j-a7J">
                                 <rect key="frame" x="41.000000000000007" y="0.0" width="116.66666666666669" height="36"/>
@@ -206,7 +209,7 @@
     <resources>
         <image name="icCheckUnselect56" width="56" height="56"/>
         <image name="icEdit40" width="40" height="40"/>
-        <image name="icEmotion36" width="36" height="36"/>
+        <image name="icEmotionEnd36" width="36" height="36"/>
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

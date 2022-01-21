@@ -22,6 +22,7 @@ struct Pill: Codable {
 //    let stickerImg: [String]?
     let stickerId: [StickerId]?
     let stickerTotalCount: Int
+    let isLikedSchedule: Bool?
 }
 
 struct PillDetail: Codable {

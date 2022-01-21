@@ -10,6 +10,7 @@ import Moya
 
 enum StickerService {
     case checkSticker(scheduleId: Int)
+    case postSticker(scheduleId: Int, stickerId: Int)
 }
 
 extension StickerService: TargetType {
@@ -21,6 +22,8 @@ extension StickerService: TargetType {
         switch self {
         case .checkSticker(let scheduleId):
             return URLs.checkStickerURL.replacingOccurrences(of: "{scheduleId}", with: "\(scheduleId)")
+        case .postSticker(let scheduleId, _):
+            return URLs.postStickerURL.replacingOccurrences(of: "{scheduleId}", with: "\(scheduleId)")
         }
     }
     
@@ -28,6 +31,8 @@ extension StickerService: TargetType {
         switch self {
         case .checkSticker(_):
             return .get
+        case .postSticker:
+            return .post
         }
     }
     
@@ -39,12 +44,14 @@ extension StickerService: TargetType {
         switch self {
         case .checkSticker:
             return .requestPlain
+        case .postSticker(_, let stickerId):
+            return .requestParameters(parameters: ["stickerId": stickerId], encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .checkSticker:
+        case .checkSticker, .postSticker:
             return APIConstants.headerWithToken
         }
     }

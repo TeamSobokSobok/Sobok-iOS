@@ -64,7 +64,7 @@ extension CalendarViewController: UICollectionViewDataSource {
         
         let stickerTotalCount = pill?.stickerTotalCount ?? 0
         cell.stickerCountLabel.text = stickerTotalCount > 4 ? "+ \(stickerTotalCount - stickerCount)" : ""
-        
+   
         cell.stickerClosure = { [weak self] in
             guard let self = self else { return }
             self.checkSticker(scheduleId: pill?.scheduleId ?? 0)
@@ -79,6 +79,16 @@ extension CalendarViewController: UICollectionViewDataSource {
             }
         }
         
+        cell.emotionClosure = {
+            let stickerPopUpView = SendStickerPopUpViewController.instanceFromNib()
+            stickerPopUpView.modalPresentationStyle = .overCurrentContext
+            stickerPopUpView.modalTransitionStyle = .crossDissolve
+            stickerPopUpView.scheduleId = pill?.scheduleId ?? 0
+            stickerPopUpView.delegate = self
+            self.present(stickerPopUpView, animated: false, completion: nil)
+        }
+        
+        cell.isLikedState = pill?.isLikedSchedule ?? false
         cell.eatState = pill?.isCheck ?? false
         cell.isChecked = pill?.isCheck ?? false
         
@@ -129,5 +139,11 @@ extension CalendarViewController: UICollectionViewDelegate {
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
+    }
+}
+
+extension CalendarViewController: StickerPopUpDelegate {
+    func sendStickerDidEnd() {
+        print("포스트 요청 성공")
     }
 }

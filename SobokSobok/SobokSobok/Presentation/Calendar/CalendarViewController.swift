@@ -68,6 +68,12 @@ final class CalendarViewController: BaseViewController {
         }
     }
     
+    var emotionState: Bool = false {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     var tabType: TabBarItem = .share
     var tabName: String = "수현"
     var memberId: Int = 0
