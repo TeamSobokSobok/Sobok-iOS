@@ -19,6 +19,8 @@ final class SendStickerPopUpViewController: BaseViewController {
     // MARK: - Properties
     var scheduleId: Int = 0
     weak var delegate: StickerPopUpDelegate?
+    var isLikedState: Bool = false
+    var likeScheduleId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,8 @@ final class SendStickerPopUpViewController: BaseViewController {
     }
     
     @IBAction func sendStickerButtonTapped(_ sender: UIButton) {
+        isLikedState ?
+        editSticker(stickerId: sender.tag) :
         postSticker(stickerId: sender.tag)
         self.dismiss(animated: true, completion: nil)
     }
@@ -48,6 +52,18 @@ final class SendStickerPopUpViewController: BaseViewController {
             switch response {
             case .success(_):
                 self.delegate?.sendStickerDidEnd()
+            default:
+                return
+            }
+        }
+    }
+    
+    public func editSticker(stickerId: Int) {
+        StickerAPI.shared.editSticker(likeScheduleId: likeScheduleId, stickerId: stickerId) { response in
+            switch response {
+            case .success(_):
+                return
+//                self.delegate?.sendStickerDidEnd()
             default:
                 return
             }

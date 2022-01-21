@@ -84,6 +84,8 @@ extension CalendarViewController: UICollectionViewDataSource {
             stickerPopUpView.modalPresentationStyle = .overCurrentContext
             stickerPopUpView.modalTransitionStyle = .crossDissolve
             stickerPopUpView.scheduleId = pill?.scheduleId ?? 0
+            stickerPopUpView.likeScheduleId = pill?.stickerId?[0].likeScheduleId ?? 0
+            stickerPopUpView.isLikedState = pill?.isLikedSchedule ?? false
             stickerPopUpView.delegate = self
             self.present(stickerPopUpView, animated: false, completion: nil)
         }
