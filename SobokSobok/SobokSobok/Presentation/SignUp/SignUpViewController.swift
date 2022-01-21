@@ -17,7 +17,12 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: @IBOutlet Properties
     @IBOutlet weak var titleTextLabel: UILabel!
-    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!{
+        didSet {
+            confirmButton.backgroundColor = confirmButton.isEnabled ? Color.mint : Color.gray200
+            confirmButton.tintColor = confirmButton.isEnabled ? Color.white : Color.gray500
+        }
+    }
     // 텍스트필드
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
@@ -112,7 +117,7 @@ final class SignUpViewController: BaseViewController {
         rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     @objc private func inactivatePasswordTextField() {
-        passwordTextFieldView.layer.borderColor = isPasswordRight ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        passwordTextFieldView.layer.borderColor = isPasswordRight || !passwordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     // 비밀번호 확인 텍필 값 바뀔 떄
@@ -122,7 +127,7 @@ final class SignUpViewController: BaseViewController {
         rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
     }
     @objc private func inactivateRepasswordTextField() {
-        rePasswordTextFieldView.layer.borderColor = isRePasswordRight ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     // 버튼 활성화
