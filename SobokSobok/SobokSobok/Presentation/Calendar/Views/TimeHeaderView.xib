@@ -12,6 +12,9 @@
         <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
         </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -33,13 +36,15 @@
                     <rect key="frame" x="329" y="19" width="26" height="27"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7g-dr-4Pk">
-                            <rect key="frame" x="1.6666666666666856" y="0.0" width="23" height="26"/>
+                            <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="26" id="U2D-gN-Oo4"/>
-                                <constraint firstAttribute="width" constant="23" id="cN3-kJ-WGs"/>
+                                <constraint firstAttribute="width" constant="26" id="cN3-kJ-WGs"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="수정"/>
+                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                            <color key="tintColor" name="gray700_sub"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="수정"/>
                             <connections>
                                 <action selector="editButtonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="bQe-Mm-iBL"/>
                             </connections>

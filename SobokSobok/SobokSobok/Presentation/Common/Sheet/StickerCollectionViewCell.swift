@@ -7,16 +7,33 @@
 
 import UIKit
 
+import Kingfisher
+
 final class StickerCollectionViewCell: UICollectionViewCell {
+    let bigStickers: [Int: UIImage] = [
+        1: Image.bigSticker1,
+        2: Image.bigSticker2,
+        3: Image.bigSticker3,
+        4: Image.bigSticker4,
+        5: Image.bigSticker5,
+        6: Image.bigSticker6
+    ]
 
     @IBOutlet weak var stickerImageView: UIImageView!
     @IBOutlet weak var stickerTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        style()
+    }
+    
+    private func style() {
+        stickerTitleLabel.isHidden = true
     }
 
-    public func configure() {
-        
+    public func configure(stickers: Stickers) {
+        stickerImageView.image = bigStickers[stickers.stickerId]
+        stickerTitleLabel.text = stickers.username
+        stickerTitleLabel.isHidden = false
     }
 }

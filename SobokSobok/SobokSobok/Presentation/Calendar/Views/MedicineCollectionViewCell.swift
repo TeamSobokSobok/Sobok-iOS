@@ -20,6 +20,12 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var isLikedState: Bool = false {
+        didSet {
+            updateUI()
+        }
+    }
+    
     var eatState: Bool = false {
         didSet {
             updateUI()
@@ -43,6 +49,15 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     var stickerClosure: (() -> Void)?
     var editClosure: (() -> Void)?
     var checkClosrue: (() -> Void)?
+    var emotionClosure: (() -> Void)?
+    var stickers: [Int: UIImage] = [
+        1: Image.sticker1,
+        2: Image.sticker2,
+        3: Image.sticker3,
+        4: Image.sticker4,
+        5: Image.sticker5,
+        6: Image.sticker6
+    ]
     
     // MARK: - IBOutlets
 
@@ -58,6 +73,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var stickerStackView: UIStackView!
     @IBOutlet weak var stickerCountLabel: UILabel!
     
+    @IBOutlet var stickerButtons: [UIButton]!
     // MARK: - Override
     
     override func awakeFromNib() {
@@ -92,6 +108,7 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
         buttonStackView.isHidden = pillCellType == .home
         checkButton.isHidden = pillCellType == .share
         emotionButton.isHidden = !eatState
+        emotionButton.setImage(isLikedState ? Image.icEmotionEnd36 : Image.icEmotion36, for: .normal)
         eatStateButton.backgroundColor = eatState ? Color.lightMint : Color.gray150
         eatStateButton.setTitle(eatState ? "먹었어요" : "아직 안 먹었어요", for: .normal)
         eatStateButton.setTitleColor(eatState ? Color.darkMint : Color.gray600, for: .normal)
@@ -110,10 +127,17 @@ final class MedicineCollectionViewCell: UICollectionViewCell {
     @IBAction func stickerButtonTapped(_ sender: AnyObject) {
         stickerClosure?()
     }
+    
+    @IBAction func emotionButtonTapped(_ sender: Any) {
+        emotionClosure?()
+    }
 }
 
 extension MedicineCollectionViewCell {
-    func setup(pill: Pill) {
-        
+    func setSticker(stickerId: [StickerId]) {
+        for iii in 0..<stickerId.count {
+            stickerButtons[iii].isHidden = false
+            stickerButtons[iii].setImage(stickers[stickerId[iii].stickerId], for: .normal)
+        } 
     }
 }

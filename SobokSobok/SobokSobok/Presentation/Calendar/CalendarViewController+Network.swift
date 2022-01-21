@@ -48,6 +48,7 @@ extension CalendarViewController {
             case .success(let data):
                 guard let data = data as? [PillList] else { return }
                 self.pillItems = data
+                
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.setCollectionViewHeight()
@@ -91,8 +92,8 @@ extension CalendarViewController {
         PillManagementAPI.shared.stopPillList(pillId: pillId, day: day) { response in
             print(response)
             switch response {
-            case .success(let data):
-                print(data)
+            case .success:
+                return
             default:
                 return
             }
@@ -103,8 +104,8 @@ extension CalendarViewController {
         PillManagementAPI.shared.deletePillList(pillId: pillId) { response in
             print(response)
             switch response {
-            case .success(let data):
-                print(data)
+            case .success:
+                return
             default:
                 return
             }
@@ -139,6 +140,22 @@ extension CalendarViewController {
                     self.setCollectionViewHeight()
                     self.view.layoutIfNeeded()
                 }
+            default:
+                return
+            }
+        }
+    }
+}
+
+extension CalendarViewController {
+    public func checkSticker(scheduleId: Int) {
+        StickerAPI.shared.checkSticker(scheduleId: scheduleId) { [weak self] response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? [Stickers] else { return }
+                self?.stickerItems = data
+                self?.stickerCounts[scheduleId] = data.count
+                self?.showStickerBottomSheet(stickers: data)
             default:
                 return
             }

@@ -133,7 +133,7 @@ extension MedicineTimeViewController: UIPickerViewDataSource {
         pickerView.reloadAllComponents()
         if component == 0 {
             dayNight = morningList[row]
-        } else if component == 1{
+        } else if component == 1 {
             hour = hourList[row]
         } else {
             minute = minuteList[row]

@@ -18,7 +18,7 @@ public enum URLs {
 	public static let getFriendPillListURL = "/schedule/{memberId}/detail"
 	public static let editFriendUsernameURL = "/group/{groupId}/name"
 	public static let getStickerURL = "/sticker"
-	public static let postStickerURL = "/sticker/{schedlueId}"
+	public static let postStickerURL = "/sticker/{scheduleId}"
 	public static let editStickerURL = "/sticker/my/{likeScheduleId}"
 	public static let getFriendsURL = "/user"
 	public static let postCalendarURL = "/group"

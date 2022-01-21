@@ -13,7 +13,7 @@ protocol SendPillInfoDelegate: AnyObject {
 
 final class SendPillInfoViewController: BaseViewController {
 
-    var delegate: SendPillInfoDelegate?
+    weak var delegate: SendPillInfoDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
