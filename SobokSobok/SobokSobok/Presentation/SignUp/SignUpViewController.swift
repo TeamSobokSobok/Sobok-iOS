@@ -10,7 +10,7 @@ import UIKit
 final class SignUpViewController: BaseViewController {
 
     // MARK: Properties
-    var signUpUser = SignUpUser.shared
+    private var user = SignUpUserData.shared
     private var isEmailRight: Bool = false
     private var isPasswordRight: Bool = false
     private var isRePasswordRight: Bool = false
@@ -136,8 +136,8 @@ final class SignUpViewController: BaseViewController {
     
     // 회원가입 버튼 클릭
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
-        signUpUser.email = emailTextField.text ?? ""
-        signUpUser.password = passwordTextField.text ?? ""
+        user.email = emailTextField.text ?? ""
+        user.password = passwordTextField.text ?? ""
         navigationController?.pushViewController(SetNickNameVIewController.instanceFromNib(), animated: true)
     }
 }

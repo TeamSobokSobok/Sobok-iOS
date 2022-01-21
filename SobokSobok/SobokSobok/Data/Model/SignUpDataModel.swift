@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SignUpUser {
-    static let shared = SignUpUser()
+class SignUpUserData {
+    static let shared = SignUpUserData()
     var email: String?
     var password: String?
     var name: String?
