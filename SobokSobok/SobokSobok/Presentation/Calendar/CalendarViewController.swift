@@ -184,9 +184,10 @@ extension CalendarViewController {
                            message: "복약을 중단하면 내일부터 약 알림이 오지 않아요",
                            completionTitle: "복약 중단",
                            cancelTitle: "취소") { _ in
-                print(pillId, date, "복약중단")
                 self.stopPillList(pillId: pillId, day: date)
-                
+                self.getPillList(date: self.selectedDate)
+                self.collectionView.reloadData()
+                self.view.layoutSubviews()
             }
         }
         let deleteAction = UIAlertAction(title: "약 삭제", style: .default) { _ in
@@ -194,8 +195,10 @@ extension CalendarViewController {
                            message: "해당 약에 대한 전체 복약 기록이 사라지고 알림도 오지 않아요",
                            completionTitle: "삭제",
                            cancelTitle: "취소") { _ in
-                print(pillId, date, "약삭제")
                 self.deletePillList(pillId: pillId)
+                self.getPillList(date: self.selectedDate)
+                self.collectionView.reloadData()
+                self.view.layoutSubviews()
             }
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
