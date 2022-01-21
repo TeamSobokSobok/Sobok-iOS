@@ -121,12 +121,11 @@
                     <color key="textColor" name="pill_color_red"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VC-f9q">
                     <rect key="frame" x="20" y="788" width="374" height="52"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="52" id="hW3-6X-aIL"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="tintColor" name="mint_main"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="회원가입"/>
@@ -143,7 +142,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-CH-nAs" userLabel="밑줄">
-                    <rect key="frame" x="334" y="363" width="52" height="1"/>
+                    <rect key="frame" x="334" y="360" width="52" height="1"/>
                     <color key="backgroundColor" name="gray500_sub"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="E12-nk-9X8"/>
@@ -162,7 +161,7 @@
                 <constraint firstItem="Lkl-cX-QCB" firstAttribute="top" secondItem="4t0-cf-gZv" secondAttribute="bottom" constant="18" id="FW6-Zu-u3v"/>
                 <constraint firstItem="mFd-jy-tVf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Iwy-2A-C53"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lkl-cX-QCB" secondAttribute="trailing" constant="28" id="JKY-K4-FOJ"/>
-                <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" id="P7N-6D-ZLo"/>
+                <constraint firstItem="ePI-CH-nAs" firstAttribute="top" secondItem="Lkl-cX-QCB" secondAttribute="bottom" constant="-3" id="P7N-6D-ZLo"/>
                 <constraint firstItem="Fcf-fc-fjJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="S1O-rX-tAf"/>
                 <constraint firstItem="ATZ-VC-f9q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SYy-NT-CHi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mFd-jy-tVf" secondAttribute="trailing" id="Tjb-Sb-B8E"/>
