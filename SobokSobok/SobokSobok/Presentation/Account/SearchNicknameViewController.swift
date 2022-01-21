@@ -78,13 +78,10 @@ extension SearchNicknameViewController: UITextFieldDelegate {
 
 extension SearchNicknameViewController {
     func searchNickname() {
-        guard let username = searchNicknameTextField.text else {
-                   return
-        }
+        guard let username = searchNicknameTextField.text else { return }
         AddAccountAPI.shared.searchNickname(username: username, completion: {(result) in
             switch result {
             case .success(let data):
-                print(data)
                 guard let data = data as? [SearchNicknameData] else { return }
                 if data.isEmpty {
                     self.setNoSearchResult()

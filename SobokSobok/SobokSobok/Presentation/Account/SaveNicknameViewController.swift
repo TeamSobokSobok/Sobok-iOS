@@ -151,8 +151,8 @@ extension SaveNicknameViewController {
         AddAccountAPI.shared.saveNickname(memberId: memberID, memberName: savedName, completion: {(result) in
             switch result {
             case .success(let data):
-                print(data)
-            case .requestErr(_):
+                self.dismiss(animated: true)
+            case .requestErr:
                 self.showToast(message: "이미 추가된 사람이에요")
             case .pathErr:
                 print(".pathErr")
