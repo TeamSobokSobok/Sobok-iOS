@@ -20,6 +20,8 @@ final class PillInfoEditViewController: BaseViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var pillNameTextField: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var counterTextLabel: UILabel!
     @IBOutlet weak var periodSelectButton: UIButton!
     @IBOutlet var selectButtons: [UIButton]!
     @IBOutlet weak var specificDayView: UIView!
@@ -34,6 +36,7 @@ final class PillInfoEditViewController: BaseViewController {
             selectTimeCollectionView.reloadData()
         }
     }
+    private var nameCount: Int = 0
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -66,6 +69,34 @@ final class PillInfoEditViewController: BaseViewController {
         button.backgroundColor = backgroundColor
         button.setTitleColor(setTitleColor, for: .normal)
     }
+    
+    override func style() {
+        nameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+    }
+    
+    @objc private func checkTextField() {
+            if nameTextField.hasText {
+                setSearchTextFieldAvailable()
+            } else {
+                setSearchTextFieldUnavailable()
+            }
+        
+            if nameTextField.text?.count ?? 0 > 10 {
+                nameTextField.deleteBackward()
+            }
+        
+            nameCount = nameTextField.text?.count ?? 0
+            counterTextLabel.text = "\(nameCount) / 10"
+        }
+
+        private func setSearchTextFieldAvailable () {
+            pillNameTextField.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
+            counterTextLabel.isHidden = false
+        }
+        private func setSearchTextFieldUnavailable () {
+            pillNameTextField.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+            counterTextLabel.isHidden = true
+        }
     
     func assignDelegation() {
         selectTimeCollectionView.delegate = self

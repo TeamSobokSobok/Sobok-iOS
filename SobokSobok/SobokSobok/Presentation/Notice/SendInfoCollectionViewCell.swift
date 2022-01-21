@@ -34,7 +34,6 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
     // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-//        timeLabel.setTextWithLineHeight1(text: "오전 11:00, 오전 12:00, 오후 10:00,\n오후 11:00, 오후 12:00, 오후 10:00", lineHeight: 21)
     }
     
     @IBAction func touchUpToEditButton(_ sender: Any) {
@@ -65,6 +64,10 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
             }
         }
         timeLabel.text = scheduleString
+    }
+    
+    private func setUI() {
+        timeLabel.setTextWithLineHeight1(text: "오전 11:00, 오전 12:00, 오후 10:00,\n오후 11:00, 오후 12:00, 오후 10:00", lineHeight: 21)
     }
 }
 

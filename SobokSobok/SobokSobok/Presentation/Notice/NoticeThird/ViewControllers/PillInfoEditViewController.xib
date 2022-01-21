@@ -23,6 +23,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PillInfoEditViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="counterTextLabel" destination="qqN-Dn-5iu" id="4aH-da-5mL"/>
+                <outlet property="nameTextField" destination="Jxa-J0-Fk1" id="hRI-S3-crC"/>
                 <outlet property="periodSelectButton" destination="QXU-cd-V2y" id="4aa-lx-5sC"/>
                 <outlet property="pillNameTextField" destination="TIf-NU-9wj" id="eUP-eZ-BLk"/>
                 <outlet property="selectTimeCollectionView" destination="BTL-y8-Aex" id="BbN-o0-owe"/>
@@ -269,8 +271,8 @@
                         </view>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="복약 기간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcy-N2-zaa">
-                    <rect key="frame" x="19.999999999999996" y="476.66666666666669" width="55.666666666666657" height="18.333333333333314"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="약 먹는 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcy-N2-zaa">
+                    <rect key="frame" x="20" y="476.66666666666669" width="72" height="18.333333333333314"/>
                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                     <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
@@ -285,6 +287,16 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqN-Dn-5iu">
+                    <rect key="frame" x="318" y="218" width="40" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="WAg-cb-H4n"/>
+                        <constraint firstAttribute="height" constant="18" id="op0-aq-Uva"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
+                    <color key="textColor" name="gray600_sub"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -292,6 +304,7 @@
                 <constraint firstItem="uBL-h2-CPA" firstAttribute="top" secondItem="TIf-NU-9wj" secondAttribute="bottom" constant="30" id="08i-F6-C68"/>
                 <constraint firstItem="BTL-y8-Aex" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4JT-Go-nd8"/>
                 <constraint firstItem="TIf-NU-9wj" firstAttribute="top" secondItem="T8f-xk-uBp" secondAttribute="bottom" constant="11" id="4Xf-aY-XM9"/>
+                <constraint firstItem="qqN-Dn-5iu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="318" id="4fb-y7-GtE"/>
                 <constraint firstAttribute="bottom" secondItem="BTL-y8-Aex" secondAttribute="bottom" id="7gG-aQ-7yg"/>
                 <constraint firstItem="BTL-y8-Aex" firstAttribute="top" secondItem="Hcy-N2-zaa" secondAttribute="bottom" constant="11" id="86K-eV-xJi"/>
                 <constraint firstAttribute="trailing" secondItem="QXU-cd-V2y" secondAttribute="trailing" constant="20" id="8fe-j9-B6v"/>
@@ -311,7 +324,7 @@
                 <constraint firstItem="PJ0-5S-2sT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YIb-zR-cWE"/>
                 <constraint firstItem="uBL-h2-CPA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZXY-or-cjM"/>
                 <constraint firstItem="QXU-cd-V2y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="avh-gz-hR6"/>
-                <constraint firstItem="TIf-NU-9wj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bR7-5j-Bhu"/>
+                <constraint firstItem="qqN-Dn-5iu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="218" id="bgd-bk-KPN"/>
                 <constraint firstItem="PJ0-5S-2sT" firstAttribute="top" secondItem="Qwq-Ql-IKG" secondAttribute="bottom" constant="11" id="gNo-Ks-Ga1"/>
                 <constraint firstItem="BTL-y8-Aex" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gee-7Z-cYY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PJ0-5S-2sT" secondAttribute="trailing" constant="20" id="h6S-1g-xQL"/>
@@ -337,6 +350,9 @@
         </namedColor>
         <namedColor name="gray500_sub">
             <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray600_sub">
+            <color red="0.51764705882352946" green="0.5490196078431373" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray800_sub">
             <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
