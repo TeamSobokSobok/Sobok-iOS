@@ -150,4 +150,3 @@ extension AddMedicineSecondViewController: SendPeriodDelegate {
         takeMedicinePeriodLabel.text = "\(day)"
     }
 }
-

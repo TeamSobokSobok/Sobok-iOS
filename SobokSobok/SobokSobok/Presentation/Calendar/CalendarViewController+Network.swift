@@ -92,7 +92,7 @@ extension CalendarViewController {
         PillManagementAPI.shared.stopPillList(pillId: pillId, day: day) { response in
             print(response)
             switch response {
-            case .success(let data):
+            case .success:
                 return
             default:
                 return
@@ -104,7 +104,7 @@ extension CalendarViewController {
         PillManagementAPI.shared.deletePillList(pillId: pillId) { response in
             print(response)
             switch response {
-            case .success(let data):
+            case .success:
                 return
             default:
                 return
