@@ -44,7 +44,6 @@ struct SendPillInfo: Codable {
     }
 }
 
-
 // MARK: - SendInfo
 struct SendInfoPill: Codable {
     let pillList: [PillListData]

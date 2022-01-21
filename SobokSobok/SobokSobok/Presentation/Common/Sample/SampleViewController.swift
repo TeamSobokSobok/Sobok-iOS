@@ -8,7 +8,6 @@
 import UIKit
 
 import EasyKit
-import FirebaseAnalytics
 import IQKeyboardManagerSwift
 import Kingfisher
 import Lottie
