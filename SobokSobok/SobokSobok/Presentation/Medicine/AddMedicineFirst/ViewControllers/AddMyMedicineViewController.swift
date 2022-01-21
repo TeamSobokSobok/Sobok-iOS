@@ -23,6 +23,7 @@ final class AddMyMedicineViewController: BaseViewController {
             addMyMedicineView.collectionView.reloadData()
         }
     }
+    
     private let addMyMedicineView = AddMyMedicineView()
     
     override func loadView() {
@@ -50,7 +51,6 @@ final class AddMyMedicineViewController: BaseViewController {
         addMyMedicineView.peopleLabel.text = tossPill == .me ? "나" : "태현이"
         addMyMedicineView.morePillImage.isHidden = tossPill == .me
         addMyMedicineView.peopleSelectButton.isEnabled = tossPill == .friend
-        
     }
     
     private func assignDelegate() {
@@ -67,9 +67,10 @@ final class AddMyMedicineViewController: BaseViewController {
     func pushMedicineSecondViewController(tossPill: AddMedicineSecondViewController.TossPill) {
         let addMedicineSecondViewController = AddMedicineSecondViewController.instanceFromNib()
         addMedicineSecondViewController.tossPill = tossPill
+        addMedicineSecondViewController.medicineData = medicineData
         navigationController?.pushViewController(addMedicineSecondViewController, animated: true)
     }
-    
+                  
     @objc func peopleSelectButtonClicked() {
         let addPeopleViewController = AddPeopleViewController.instanceFromNib()
         addPeopleViewController.modalPresentationStyle = .overCurrentContext
@@ -106,6 +107,7 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
         cell.index = indexPath.row
         cell.medicineTextField.text = medicineData[indexPath.row]
         //         셀 X버튼 클릭 시 셀 삭제
+        
         cell.deleteCellClosure = {
             self.medicineData.remove(at: indexPath.row)
             collectionView.reloadData()
@@ -119,6 +121,7 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
         // FooterView +버튼 클릭 시 셀 추가
         cell.addMedicineCellClosure = {
             self.medicineData.append("")
+            self.addMyMedicineView.collectionView.reloadData()
         }
         
         // 추후 코드 리팩토링 예정
@@ -155,6 +158,7 @@ extension AddMyMedicineViewController: SendPeopleNameDelegate {
     func sendPeopleName(name: String) {
         addMyMedicineView.peopleLabel.text = name
         addMyMedicineView.whoLabel.text = "\(name)에게 전송할 약이에요"
+        UserDefaults.standard.set(name, forKey: "friendName")
     }
 }
 
@@ -162,6 +166,7 @@ extension AddMyMedicineViewController: AddMyMedicineCollectionViewCellDelegate {
     func cellTextFieldChange(for cell: AddMyMedicineCollectionViewCell) {
         guard let index = cell.index else {return}
         medicineData[index] = cell.medicineTextFieldText
+        addMyMedicineView.collectionView.reloadData()
         UserDefaults.standard.set(medicineData, forKey: "medicineData")
     }
 }

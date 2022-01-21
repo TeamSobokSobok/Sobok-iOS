@@ -17,11 +17,16 @@ final class PillLimitViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        pillLimitView.xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
     }
-    
+
     override func style() {
         super.style()
         view.backgroundColor = .white
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    @objc func xButtonClicked() {
+        navigationController?.popViewController(animated: true)
     }
 }

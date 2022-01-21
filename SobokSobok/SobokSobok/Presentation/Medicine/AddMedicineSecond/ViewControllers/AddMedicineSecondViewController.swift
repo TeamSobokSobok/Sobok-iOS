@@ -20,7 +20,10 @@ final class AddMedicineSecondViewController: BaseViewController {
     }
     
     var tossPill: TossPill?
+    var medicineData: [String] = []
     
+    var dayData = String()
+    var specificData = String()
     // MARK: - @IBOutlets
     @IBOutlet var selectDateButtons: [UIButton]!
     @IBOutlet var medicinePeriodButton: UIButton!
@@ -36,7 +39,8 @@ final class AddMedicineSecondViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtons()
-        divideTossPill()  
+        divideTossPill()
+        print(medicineData)
     }
     
     override func style() {
@@ -51,6 +55,9 @@ final class AddMedicineSecondViewController: BaseViewController {
     func pushMedicineThirdViewController(tossPill: AddMedicineThirdViewController.TossPill) {
         let addMyMedicineViewController = AddMedicineThirdViewController.instanceFromNib()
         addMyMedicineViewController.tossPill = tossPill
+        addMyMedicineViewController.medicineData = medicineData
+        addMyMedicineViewController.day = dayData
+        addMyMedicineViewController.specific = specificData
         navigationController?.pushViewController(addMyMedicineViewController, animated: true)
     }
     
@@ -98,7 +105,10 @@ final class AddMedicineSecondViewController: BaseViewController {
                 updateMedicineButtonAttributes(button: medicineDateButtons[0], width: 0, boardColor: Color.gray100.cgColor, backgroundColor: Color.gray100, setTitleColor: Color.gray500)
             }
         case MedicineDayType.specificDay.rawValue:
-            if sender.isSelected {                specificDayView.isHidden = false
+            if sender.isSelected {
+                UserDefaults.standard.removeObject(forKey: "period")
+                print(UserDefaults.standard.removeObject(forKey: "period"))
+                specificDayView.isHidden = false
                 specificPeriodView.isHidden = true
                 medicineDateButtons[0].isSelected = false
                 medicineDateButtons[2].isSelected = false
@@ -112,6 +122,8 @@ final class AddMedicineSecondViewController: BaseViewController {
             }
         case MedicineDayType.specificPeriod.rawValue:
             if sender.isSelected {
+                UserDefaults.standard.removeObject(forKey: "day")
+                print(UserDefaults.standard.removeObject(forKey: "day"))
                 specificDayView.isHidden = true
                 specificPeriodView.isHidden = false
                 medicineDateButtons[0].isSelected = false
@@ -162,15 +174,15 @@ final class AddMedicineSecondViewController: BaseViewController {
 extension AddMedicineSecondViewController: SendPillDayDelegate {
     func sendDay(day: String) {
         takeMedicineDayLabel.text = "\(day)"
-        // UserDefaults 저장
-        UserDefaults.standard.set(takeMedicineDayLabel.text, forKey: "day")
+        dayData = takeMedicineDayLabel.text!
+        
     }
 }
 
 extension AddMedicineSecondViewController: SendPeriodDelegate {
     func sendPeriod(day: String) {
         takeMedicinePeriodLabel.text = "\(day)"
-        // UserDefaults 저장
-        UserDefaults.standard.set(takeMedicinePeriodLabel.text, forKey: "period")
+        specificData = takeMedicinePeriodLabel.text!
+
     }
 }
