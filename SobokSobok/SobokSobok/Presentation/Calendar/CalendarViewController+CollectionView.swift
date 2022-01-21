@@ -75,7 +75,12 @@ extension CalendarViewController: UICollectionViewDataSource {
             if cell.isChecked {
                 self.checkPillDetail(scheduleId: scheduleId)
             } else {
-                self.uncheckPillDetail(scheduleId: scheduleId)
+                self.showAlert(title: "복약하지 않은 약인가요",
+                               message: "복약을 취소하면 소중한 사람들의 응원도 같이 삭제되어요",
+                               completionTitle: "복약 취소",
+                               cancelTitle: "취소") { _ in
+                    self.uncheckPillDetail(scheduleId: scheduleId)
+                }
             }
         }
         
