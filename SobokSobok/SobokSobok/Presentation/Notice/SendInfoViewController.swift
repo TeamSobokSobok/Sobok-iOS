@@ -48,15 +48,17 @@ final class SendInfoViewController: UIViewController {
         assignDelegation()
         registerXib()
         getPillMoreInfo(senderId: 26, receiverId: 27, createdAt: "2022-01-13T16:59:57.168")
+        putAcceptPillInfo(senderId: 27, receiverId: 24, createdAt: "2022-01-21T03:48:08.196", isOkay: "true")
     }
     
     // MARK: - @IBAction Properties
     @IBAction func touchUpToClickAcceptButton(_ sender: UIButton) {
         // TODO: - 개수 초과 경고창 (데이터 전달)
         // TODO: - 화면 연결 (홈 화면)
-        
+        AcceptStatusData.status.acceptStatus = "false"
     }
     @IBAction func touchUpToClickRejectButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
     
     // MARK: - Functions
@@ -171,8 +173,8 @@ extension SendInfoViewController {
         })
     }
     
-    func putAcceptPillInfo(sendGroupId: Int, isOkay: String) {
-        AcceptPillInfoAPI.shared.putAcceptPillInfo(sendGroupId: sendGroupId, isOkay: isOkay, completion: { [self] responseData in
+    func putAcceptPillInfo(senderId: Int, receiverId: Int, createdAt: String, isOkay: String) {
+        AcceptPillInfoAPI.shared.putAcceptPillInfo(senderId: senderId, receiverId: receiverId, createdAt: createdAt, isOkay: isOkay, completion: { [self] responseData in
             switch responseData {
             case .success(let data):
                 print("----", data)
