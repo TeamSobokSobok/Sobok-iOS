@@ -17,12 +17,7 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: @IBOutlet Properties
     @IBOutlet weak var titleTextLabel: UILabel!
-    @IBOutlet weak var confirmButton: UIButton!{
-        didSet {
-            confirmButton.backgroundColor = confirmButton.isEnabled ? Color.mint : Color.gray200
-            confirmButton.tintColor = confirmButton.isEnabled ? Color.white : Color.gray500
-        }
-    }
+    @IBOutlet weak var confirmButton: UIButton!
     // 텍스트필드
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
