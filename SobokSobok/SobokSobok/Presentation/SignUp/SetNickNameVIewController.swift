@@ -69,7 +69,7 @@ final class SetNickNameVIewController: BaseViewController {
         
         // 조건에 따라 버튼 활성화
         [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
-        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
+        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
     }
     
     // 입력 완료했을 때
