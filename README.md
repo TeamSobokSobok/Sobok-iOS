@@ -59,6 +59,10 @@
 #### [선영](https://github.com/seondal)
 `로그인` `회원가입` `친구 이름 수정` `캘린더 공유 닉네임 조회` `캘린더 공유 요청`
 
+---
+
+[어려웠던 부분과 극복 과정 보러가기](https://baejiann120.notion.site/Overcome-5e7c95d4783e468fa848b5e26b1473d7)
+
 <br />
 
 # 📚 Library
