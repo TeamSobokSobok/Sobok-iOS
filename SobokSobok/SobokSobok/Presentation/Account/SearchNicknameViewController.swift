@@ -19,6 +19,7 @@ final class SearchNicknameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelgation()
+        checkTextField()
     }
 
     override func style() {
@@ -28,6 +29,16 @@ final class SearchNicknameViewController: BaseViewController {
     }
     
     // MARK: - Functions
+    private func checkTextField() {
+        searchNicknameTextField.addTarget(self, action: #selector(self.limitTextCount), for: .editingChanged)
+    }
+    
+    @objc private func limitTextCount() {
+        if searchNicknameTextField.text?.count ?? 0 > 10 {
+            searchNicknameTextField.deleteBackward()
+        }
+    }
+    
     private func assignDelgation() {
         searchNicknameTextField.delegate = self
     }

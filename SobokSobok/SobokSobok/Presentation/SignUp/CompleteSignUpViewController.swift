@@ -14,9 +14,7 @@ final class CompleteSignUpViewController: BaseViewController {
     }
     
     override func style() {
-        // 네비게이션 바
-        title = "회원가입 완료"
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func touchUpToStart(_ sender: UIButton) {

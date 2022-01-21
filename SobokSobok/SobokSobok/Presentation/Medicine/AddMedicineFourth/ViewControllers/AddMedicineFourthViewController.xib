@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineFourthViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="medicineInfoCollectionView" destination="ExL-uz-59v" id="fne-Wp-3jh"/>
+                <outlet property="navigationTitleLabel" destination="30D-Dk-ZrV" id="ach-Cf-6Ej"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,13 +51,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 약 추가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30D-Dk-ZrV">
-                    <rect key="frame" x="158.5" y="59" width="97" height="20.5"/>
+                    <rect key="frame" x="158.5" y="59" width="97" height="20"/>
                     <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-uz-59v">
-                    <rect key="frame" x="0.0" y="123.5" width="414" height="738.5"/>
+                    <rect key="frame" x="0.0" y="123" width="414" height="739"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oUp-IR-Efx">
                         <size key="itemSize" width="128" height="128"/>

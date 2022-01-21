@@ -11,5 +11,4 @@ class SearchedUser {
     static let shared = SearchedUser()
     var searchedUsername: String?
     var searchedUserId: Int?
-    var savedName: String?
 }

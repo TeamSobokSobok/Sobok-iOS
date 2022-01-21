@@ -10,7 +10,7 @@ import UIKit
 import EasyKit
 
 final class AddMyMedicineViewController: BaseViewController {
-
+    
     enum TossPill: Int {
         case me, friend
     }
@@ -18,8 +18,7 @@ final class AddMyMedicineViewController: BaseViewController {
     // MARK: Properties
     var tossPill: TossPill?
     var selectedPeopleName: String?
-    
-    private var medicineData: [String] = [] {
+    var medicineData: [String] = [] {
         didSet {
             addMyMedicineView.collectionView.reloadData()
         }
@@ -51,6 +50,7 @@ final class AddMyMedicineViewController: BaseViewController {
         addMyMedicineView.peopleLabel.text = tossPill == .me ? "나" : "태현이"
         addMyMedicineView.morePillImage.isHidden = tossPill == .me
         addMyMedicineView.peopleSelectButton.isEnabled = tossPill == .friend
+        
     }
     
     private func assignDelegate() {
@@ -60,8 +60,14 @@ final class AddMyMedicineViewController: BaseViewController {
     
     private func actionPeopleSelectButton() {
         addMyMedicineView.peopleSelectButton.addTarget(self, action: #selector(peopleSelectButtonClicked), for: .touchUpInside)
-        addMyMedicineView.nextButton.addTarget(self, action: #selector(pushMedicineSecondViewController), for: .touchUpInside)
+        addMyMedicineView.nextButton.addTarget(self, action: #selector(pushDivideMedicineSecondViewController), for: .touchUpInside)
         addMyMedicineView.xButton.addTarget(self, action: #selector(popTabbarController), for: .touchUpInside)
+    }
+    
+    func pushMedicineSecondViewController(tossPill: AddMedicineSecondViewController.TossPill) {
+        let addMedicineSecondViewController = AddMedicineSecondViewController.instanceFromNib()
+        addMedicineSecondViewController.tossPill = tossPill
+        navigationController?.pushViewController(addMedicineSecondViewController, animated: true)
     }
     
     @objc func peopleSelectButtonClicked() {
@@ -72,8 +78,8 @@ final class AddMyMedicineViewController: BaseViewController {
         self.present(addPeopleViewController, animated: true)
     }
     
-    @objc func pushMedicineSecondViewController() {
-        navigationController?.pushViewController(AddMedicineSecondViewController.instanceFromNib(), animated: true)
+    @objc func pushDivideMedicineSecondViewController() {
+        tossPill == .me ? pushMedicineSecondViewController(tossPill: .me) : pushMedicineSecondViewController(tossPill: .friend)
     }
     
     @objc func popTabbarController() {
@@ -96,18 +102,13 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AddMyMedicineCollectionViewCell.self)
-        
-        // 셀 X버튼 클릭 시 셀 삭제
+        cell.delegate = self
+        cell.index = indexPath.row
+        cell.medicineTextField.text = medicineData[indexPath.row]
+        //         셀 X버튼 클릭 시 셀 삭제
         cell.deleteCellClosure = {
             self.medicineData.remove(at: indexPath.row)
-            self.addMyMedicineView.collectionView.reloadData()
-        }
-        
-        // 셀 Height 조정 -> 수정 필요
-        cell.cellHeightClosure = {
-            cell.medicineCellHeight.constant = 82
-            self.addMyMedicineView.collectionView.layoutIfNeeded()
-            self.addMyMedicineView.collectionView.reloadData()
+            collectionView.reloadData()
         }
         return cell
     }
@@ -118,7 +119,19 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
         // FooterView +버튼 클릭 시 셀 추가
         cell.addMedicineCellClosure = {
             self.medicineData.append("")
-            self.addMyMedicineView.collectionView.reloadData()
+        }
+        
+        // 추후 코드 리팩토링 예정
+        if self.medicineData.count == 5 {
+            cell.addMedicineCellButton.isHidden = true
+            cell.withMedicineLabel.isHidden = true
+            cell.plusImage.isHidden = true
+            cell.withLabel.isHidden = true
+        } else {
+            cell.addMedicineCellButton.isHidden = false
+            cell.withMedicineLabel.isHidden = true
+            cell.plusImage.isHidden = false
+            cell.withLabel.isHidden = false
         }
         return cell
     }
@@ -129,8 +142,8 @@ extension AddMyMedicineViewController: UICollectionViewDataSource {
 extension AddMyMedicineViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 40, height: 80)
-     }
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 82)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
@@ -142,5 +155,13 @@ extension AddMyMedicineViewController: SendPeopleNameDelegate {
     func sendPeopleName(name: String) {
         addMyMedicineView.peopleLabel.text = name
         addMyMedicineView.whoLabel.text = "\(name)에게 전송할 약이에요"
+    }
+}
+
+extension AddMyMedicineViewController: AddMyMedicineCollectionViewCellDelegate {
+    func cellTextFieldChange(for cell: AddMyMedicineCollectionViewCell) {
+        guard let index = cell.index else {return}
+        medicineData[index] = cell.medicineTextFieldText
+        UserDefaults.standard.set(medicineData, forKey: "medicineData")
     }
 }
