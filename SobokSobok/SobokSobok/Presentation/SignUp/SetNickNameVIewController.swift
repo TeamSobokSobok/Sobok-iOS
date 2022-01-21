@@ -13,6 +13,7 @@ final class SetNickNameVIewController: BaseViewController {
 
     // MARK: - Properties
     private var user = SignUpUserData.shared
+    private let userDefaults = UserDefaults.standard
     var nickname: String?
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
@@ -143,7 +144,6 @@ final class SetNickNameVIewController: BaseViewController {
         if isDuplicationChecked {
             user.name = nickname
             signUp()
-            navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
         }
@@ -158,10 +158,10 @@ extension SetNickNameVIewController {
         guard let nickname = nickname else { return }
         SignAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
             switch result {
-            case .success(_):
+            case .success:
                 self.showToast(message: "사용 가능한 닉네임이에요")
                 self.isDuplicationChecked = true
-            case .requestErr(_):
+            case .requestErr:
                 self.showToast(message: "이미 사용중인 닉네임이에요")
             case .pathErr:
                 print(".pathErr")
@@ -180,12 +180,17 @@ extension SetNickNameVIewController {
         guard let name = user.name else { return }
         
         SignAPI.shared.signUp(email: email,
-                                password: password,
-                                name: name,
-                                completion: {(result) in
+                              password: password,
+                              name: name,
+                              completion: {(result) in
             switch result {
-            case .success:
-                print("성공했니? : \(self.user.email ?? ""), \(self.user.password ?? ""), \(self.user.name ?? "")")
+            case .success(let data):
+                guard let data = data as? SignUpResult else { return }
+                // 데이터 전달
+                self.userDefaults.set(data.user?.username, forKey: "username")
+                self.userDefaults.set(data.accesstoken, forKey: "accessToken")
+                // 화면 전환 -> 회원가입 완료
+                self.navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
             case .requestErr(let message):
                 print("requestErr", message)
             case .pathErr:

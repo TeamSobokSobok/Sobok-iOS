@@ -9,6 +9,9 @@ import UIKit
 
 final class SignInViewController: BaseViewController {
     
+    // MARK: - Properties
+    private let userDefaults = UserDefaults.standard
+
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -95,8 +98,14 @@ extension SignInViewController {
         guard let password = passwordTextField.text else { return }
         SignAPI.shared.signIn(email: email, password: password, completion: {(result) in
             switch result {
-            case .success:
-                self.showToast(message: "로그인 성공 : \(email), \(password)")
+            case .success(let data):
+                guard let data = data as? User else { return }
+                // 데이터 전달
+                self.userDefaults.set(data.username, forKey: "username")
+                self.userDefaults.set(data.accessToken, forKey: "accessToken")
+                print("\(data.username),\(data.accessToken)")
+                // 화면 이동
+                self.navigationController?.pushViewController(TabBarController.instanceFromNib(), animated: true)
             case .requestErr:
                 self.showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
             case .pathErr:

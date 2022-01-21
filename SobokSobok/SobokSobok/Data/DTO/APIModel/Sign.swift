@@ -15,9 +15,13 @@ struct SignUpResult: Codable {
 
 // MARK: - User
 struct User: Codable {
-    let id: Int
-    let username, email, idFirebase, createdAt: String
-    let updatedAt: String
+    let id: Int?
+    let username: String?
+    let email: String?
+    let idFirebase: String?
+    let accessToken: String?
+    let createdAt: String?
+    let updatedAt: String?
 }
 
 // MARK: - CheckUsernameResult

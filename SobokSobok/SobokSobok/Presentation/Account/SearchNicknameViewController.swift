@@ -78,9 +78,7 @@ extension SearchNicknameViewController: UITextFieldDelegate {
 
 extension SearchNicknameViewController {
     func searchNickname() {
-        guard let username = searchNicknameTextField.text else {
-                   return
-        }
+        guard let username = searchNicknameTextField.text else { return }
         AddAccountAPI.shared.searchNickname(username: username, completion: {(result) in
             switch result {
             case .success(let data):
@@ -89,7 +87,6 @@ extension SearchNicknameViewController {
                     self.setNoSearchResult()
                 } else {
                     self.setYesSearchResult()
-                    
                     // 데이터 전달 (다음 뷰에서 사용하기 위함)
                     SearchedUser.shared.searchedUserId = data[0].memberId
                     SearchedUser.shared.searchedUsername = data[0].memberName
