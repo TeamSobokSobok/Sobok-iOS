@@ -12,6 +12,9 @@
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -63,7 +66,7 @@
                                             <constraint firstAttribute="width" constant="15" id="jGV-3N-3vx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022년 11월 30일 ~ 2023년 1월 11일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-Gq-7F0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022년 1월 22일 ~ 2022년 2월 1일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfF-Gq-7F0">
                                         <rect key="frame" x="22" y="0.0" width="220" height="14"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" name="gray500_sub"/>
@@ -89,7 +92,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="IsE-10-S8I"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                                 <color key="textColor" name="gray700_sub"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -140,6 +143,7 @@
             <size key="customSize" width="334" height="309"/>
             <connections>
                 <outlet property="periodStackView" destination="L7G-Z6-Fxz" id="tTs-B7-nlV"/>
+                <outlet property="pillNameLabel" destination="Xup-Yu-66K" id="51N-e7-yBI"/>
                 <outlet property="timeLabel" destination="hHb-Op-Fem" id="uWv-Ou-fKb"/>
             </connections>
             <point key="canvasLocation" x="156.52173913043478" y="217.96875"/>

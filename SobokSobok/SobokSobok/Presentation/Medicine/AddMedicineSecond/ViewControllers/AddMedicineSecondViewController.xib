@@ -88,7 +88,7 @@
                         <action selector="medicinePeriodButtonClicked:" destination="-1" eventType="touchUpInside" id="j6b-qB-ueI"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-Jh-otb">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.01.22 ~ 2022.02.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-Jh-otb">
                     <rect key="frame" x="35" y="174.5" width="298" height="20.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="17"/>
                     <nil key="textColor"/>

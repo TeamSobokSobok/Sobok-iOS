@@ -18,9 +18,12 @@ final class AddMedicineThirdViewController: BaseViewController {
         didSet {
             timeCollectionView.reloadData()
             UserDefaults.standard.set(medicineTimeData, forKey: "time")
-            print(medicineTimeData)
         }
     }
+    
+    var medicineData: [String] = []
+    var day = String()
+    var specific = String()
     
     var tossPill: TossPill?
     var timeData = String()
@@ -34,6 +37,9 @@ final class AddMedicineThirdViewController: BaseViewController {
         super.viewDidLoad()
         setCollectionView()
         
+        print(medicineData)
+        print(day)
+        print(specific)
         switch tossPill {
         case .me:
             navigationTitleLabel.text = "내 약 추가하기"
@@ -49,6 +55,10 @@ final class AddMedicineThirdViewController: BaseViewController {
     func pushMedicineFourthViewController(tossPill: AddMedicineFourthViewController.TossPill) {
         let addMyMedicineViewController = AddMedicineFourthViewController.instanceFromNib()
         addMyMedicineViewController.tossPill = tossPill
+        addMyMedicineViewController.medicineData = medicineData
+        addMyMedicineViewController.time = medicineTimeData
+        addMyMedicineViewController.day = day
+        addMyMedicineViewController.specific = specific
         navigationController?.pushViewController(addMyMedicineViewController, animated: true)
     }
     

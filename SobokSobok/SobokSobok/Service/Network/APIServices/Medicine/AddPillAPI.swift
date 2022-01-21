@@ -15,8 +15,8 @@ public class AddPillAPI {
     
     private init() {}
     
-    func addMyPill(pillName: String, isStop: Bool, color: String, start: String, end: String, cycle: String, day: String, time: [String], specific: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        addPillProvider.request(.addMyPill(pillName: pillName, isStop: isStop, color: color, start: start, end: end, cycle: cycle, day: day, time: time, specific: specific)) { (result) in
+    func addMyPill(body: PillLists, completion: @escaping (NetworkResult<Any>) -> Void) {
+        addPillProvider.request(.addMyPill(body: body)) { (result) in
             
             switch result {
             case.success(let response):
@@ -24,7 +24,7 @@ public class AddPillAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, PillListData.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, PillLists.self)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -33,16 +33,16 @@ public class AddPillAPI {
         }
     }
     
-    func addFriendPill(memberId: Int, pillName: String, isStop: Bool, color: String, start: String, end: String, cycle: String, day: String, time: [String], specific: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        addPillProvider.request(.addFriendPill(memberId: memberId, pillName: pillName, isStop: isStop, color: color, start: start, end: end, cycle: cycle, day: day, time: time, specific: specific)) { (result) in
-            
+    func addFriendPill(memberId: Int, body: PillLists, completion: @escaping (NetworkResult<Any>) -> Void) {
+        addPillProvider.request(.addFriendPill(memberId: memberId, body: body)) { (result) in
+            print(result)
             switch result {
             case.success(let response):
                 
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, PillListData.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, PillLists.self)
                 completion(networkResult)
                 
             case .failure(let err):

@@ -15,6 +15,7 @@ class MedicineInfoCollectionViewCell: UICollectionViewCell {
     // MARK: @IBOutlets
     @IBOutlet weak var periodStackView: UIStackView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet var pillNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

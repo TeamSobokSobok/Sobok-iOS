@@ -14,7 +14,6 @@ protocol AddMyMedicineCollectionViewCellDelegate: AnyObject {
 final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    
     var medicineTextFieldText = String()
     var deleteCellClosure: (() -> Void)?
     var cellHeightClosure: (() -> Void)?
@@ -101,9 +100,12 @@ final class AddMyMedicineCollectionViewCell: UICollectionViewCell {
 // MARK: UITextField Delegate
 extension AddMyMedicineCollectionViewCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let medicineText = medicineTextField.text else { return }
         checkMedicineTextField(color: Color.gray300.cgColor, bool: true)
         updateUI()
         cellHeightClosure?()
+        medicineTextFieldText = medicineText
         self.delegate?.cellTextFieldChange(for: self)
     }
     

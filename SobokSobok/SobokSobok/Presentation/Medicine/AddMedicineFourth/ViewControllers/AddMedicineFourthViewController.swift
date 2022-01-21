@@ -6,17 +6,32 @@
 //
 
 import UIKit
+
 import Moya
+
 
 final class AddMedicineFourthViewController: BaseViewController {
     
     enum TossPill: Int {
         case me, friend
     }
-    
+
     // MARK: Property
     var tossPill: TossPill?
+    var medicine : [Any] = []
     var pillNumber = Int()
+    
+    var checkCount = Int()
+    var checkPillCount = Int()
+    var number: Int = 0
+    
+    
+    var medicineData: [String] = []
+    var time: [String] = []
+    var day = String()
+    var specific = String()
+    
+
     private var medicineList: [String] = [] {
         didSet {
             medicineInfoCollectionView.reloadData()
@@ -24,7 +39,12 @@ final class AddMedicineFourthViewController: BaseViewController {
     }
     
     // MARK: @IBOutlets
+
+    @IBOutlet weak var addView: UIView!
+    @IBOutlet weak var peopleNameLabel: UILabel!
     @IBOutlet weak var navigationTitleLabel: UILabel!
+    @IBOutlet weak var addNumberLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var medicineInfoCollectionView: UICollectionView!
     
     // MARK: View Life Cycle
@@ -32,31 +52,113 @@ final class AddMedicineFourthViewController: BaseViewController {
         super.viewDidLoad()
         setCollectionView()
         divideTossPill()
+        getMyPillCount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getFriendPillCount(userId: 24)
+        divideTossPill()
+    }
+    
+    override func style() {
+        super.style()
+        addView.makeRounded(radius: 8)
     }
     
     // MARK: Functions
     
+    func pushAddMedicineViewController(tossPill: AddMyMedicineViewController.TossPill) {
+        let addMyMedicineViewController = AddMyMedicineViewController.instanceFromNib()
+        addMyMedicineViewController.tossPill = tossPill
+        navigationController?.pushViewController(addMyMedicineViewController, animated: true)
+    }
+    
     private func divideTossPill() {
-        navigationTitleLabel.text = tossPill == .me ? "내 약 목록" : "약 전송 목록"
+        guard let nickname = UserDefaults.standard.string(forKey: "friendName") else { return }
+        switch tossPill {
+        case .me:
+            navigationTitleLabel.text = "내 약 목록"
+            peopleNameLabel.text = "내가 먹을 약이에요"
+            getMyPillCount()
+            saveButton.setTitle("저장", for: .normal)
+            addView.isHidden = false
+        case .friend:
+            navigationTitleLabel.text = "약 전송 목록"
+            peopleNameLabel.text = "\(nickname)에게 전송할 약이에요"
+            getFriendPillCount(userId: 24)
+            saveButton.setTitle("전송", for: .normal)
+            addView.isHidden = true
+        default:
+            break
+        }
     }
     
     private func updateData(data: PillCount) {
-        pillNumber = data.pillCount
-        medicineInfoCollectionView.reloadData()
+        switch tossPill {
+        case .me :
+            if data.pillCount < 0 {
+                checkCount = -data.pillCount + medicineData.count
+                addNumberLabel.text = "저장 가능한 약 개수가 \(checkCount)개 초과되었어요"
+                addView.backgroundColor = Color.lightPink
+                addNumberLabel.textColor = Color.pillColorRed
+                saveButton.setTitleColor(Color.gray400, for: .normal)
+                saveButton.isEnabled = false
+            } else if data.pillCount == 0 {
+                if data.pillCount - medicineData.count < 0 {
+                    checkCount = medicineData.count
+                    addNumberLabel.text = "저장 가능한 약 개수가 \(checkCount)개 초과되었어요"
+                    addView.backgroundColor = Color.lightPink
+                    addNumberLabel.textColor = Color.pillColorRed
+                    saveButton.setTitleColor(Color.gray400, for: .normal)
+                    saveButton.isEnabled = false
+                } else {
+                    checkPillCount = 0
+                    addNumberLabel.text = "\(checkPillCount)개 더 추가할 수 있어요"
+                    addView.backgroundColor = Color.lightMint
+                    addNumberLabel.textColor = Color.darkMint
+                    saveButton.setTitleColor(Color.mint, for: .normal)
+                    saveButton.isEnabled = true
+                }
+            } else {
+                if data.pillCount - medicineData.count < 0 {
+                    checkCount = -(data.pillCount - medicineData.count)
+                    addNumberLabel.text = "저장 가능한 약 개수가 \(checkCount)개 초과되었어요"
+                    addView.backgroundColor = Color.lightPink
+                    addNumberLabel.textColor = Color.pillColorRed
+                    saveButton.setTitleColor(Color.gray400, for: .normal)
+                    saveButton.isEnabled = false
+                } else if data.pillCount - medicineData.count == 0 {
+                    checkCount = 0
+                    addNumberLabel.text = "\(checkCount)개 더 추가할 수 있어요"
+                    addView.backgroundColor = Color.lightMint
+                    addNumberLabel.textColor = Color.darkMint
+                    saveButton.setTitleColor(Color.mint, for: .normal)
+                    saveButton.isEnabled = true
+                } else {
+                    checkPillCount = data.pillCount - medicineData.count
+                    addNumberLabel.text = "\(checkPillCount)개 더 추가할 수 있어요"
+                    addView.backgroundColor = Color.lightMint
+                    addNumberLabel.textColor = Color.darkMint
+                    saveButton.setTitleColor(Color.mint, for: .normal)
+                    saveButton.isEnabled = true
+                }
+            }
+            pillNumber = data.pillCount
+            medicineInfoCollectionView.reloadData()
+        case .friend:
+            print("friend")
+        default:
+            break
+        }
     }
-
+    
     private func setCollectionView() {
         medicineInfoCollectionView.delegate = self
         medicineInfoCollectionView.dataSource = self
         // register
         medicineInfoCollectionView.register(MedicineInfoCollectionViewCell.self)
         medicineInfoCollectionView.register(AddMyMedicineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier)
-        medicineInfoCollectionView.register(MedicineInfoHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MedicineInfoHeaderView.reuseIdentifier)
+
         // flowLayout
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 166)
@@ -68,11 +170,18 @@ final class AddMedicineFourthViewController: BaseViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: UIButton) {
-        let sendInfoViewController = SendPillInfoViewController.instanceFromNib()
-        sendInfoViewController.modalPresentationStyle = .overCurrentContext
-        sendInfoViewController.modalTransitionStyle = .crossDissolve
-        addMyFill()
-        self.present(sendInfoViewController, animated: true)
+        guard let nickname = UserDefaults.standard.string(forKey: "friendName") else { return }
+        switch tossPill {
+        case .me:
+            let tabbarController = TabBarController.instanceFromNib()
+            navigationController?.pushViewController(tabbarController, animated: true)
+               addMyFill()
+        case .friend:
+            let tabbarController = TabBarController.instanceFromNib()
+            navigationController?.pushViewController(tabbarController, animated: true)
+        default:
+            break
+        }
     }
 }
 
@@ -85,48 +194,82 @@ extension AddMedicineFourthViewController: UICollectionViewDelegate {
 extension AddMedicineFourthViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return medicineList.count
+        return medicineData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MedicineInfoCollectionViewCell.self)
+        
+        cell.pillNameLabel.text = medicineData[indexPath.row]
+        cell.timeLabel.text = setData(timeData: time)
         cell.deleteCellClosure = {
-            self.medicineList.remove(at: 0)
+            self.medicineData.remove(at: indexPath.row)
+            collectionView.reloadData()
+            self.number -= -1
+            switch self.tossPill {
+            case .me :
+                if self.checkCount > 0 {
+                    self.addNumberLabel.text = "저장 가능한 약 개수가 \(self.checkCount - self.number)개 초과되었어요"
+                    if self.checkCount - self.number == 0 {
+                        self.addNumberLabel.text = "0개 더 추가할 수 있어요"
+                        self.addView.backgroundColor = Color.lightMint
+                        self.addNumberLabel.textColor = Color.darkMint
+                        self.saveButton.setTitleColor(Color.mint, for: .normal)
+                        self.saveButton.isEnabled = true
+                    } else if self.checkCount - self.number < 1 {
+                        self.addNumberLabel.text = "\(-(self.checkCount - self.number))개 더 추가할 수 있어요"
+                        self.addView.backgroundColor = Color.lightMint
+                        self.addNumberLabel.textColor = Color.darkMint
+                        self.saveButton.setTitleColor(Color.mint, for: .normal)
+                        self.saveButton.isEnabled = true
+                    }
+                } else if self.checkCount == 0 {
+                    self.addNumberLabel.text = "\(self.checkCount + self.number)개 더 추가할 수 있어요"
+                }
+                if self.checkPillCount > 0 {
+                    self.addNumberLabel.text = "\(self.checkPillCount + self.number)개 더 추가할 수 있어요"
+                }
+            case .friend :
+                print("firend")
+            default :
+                break
+            }
         }
         return cell
     }
     
+    func setData(timeData: [String]) -> String {
+           var scheduleString: String = ""
+           let scheduleTime = timeData
+           for (index, value) in scheduleTime.enumerated() {
+               if index == scheduleTime.count - 1 {
+                   scheduleString += "\(value)"
+               } else if index % 3 == 2 {
+                   scheduleString += "\(value)\n"
+               } else {
+                   scheduleString += "\(value), "
+               }
+           }
+        return scheduleString
+       }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MedicineInfoHeaderView.reuseIdentifier, for: indexPath) as? MedicineInfoHeaderView else { return UICollectionReusableView()}
-            headerView.addPillLabel.text = "\(pillNumber)개 더 추가할 수 있어요"
-            return headerView
-            
-        case UICollectionView.elementKindSectionFooter:
-            
+       
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
             
             // footerView 재사용
             footerView.withLabel.text = "새로운 약 추가하기"
-            
+            footerView.withMedicineLabel.text = tossPill == .me ? "복약 중인 약을 포함해 \n 최대 5개까지 저장할 수 있어요" : "최대 5개까지 전송할 수 있어요"
             footerView.addMedicineCellClosure = {
-                self.medicineList.append("")
-                self.getMyPillCount()
+                self.tossPill == .me ? self.pushAddMedicineViewController(tossPill: .me) : self.pushAddMedicineViewController(tossPill: .friend)
             }
             return footerView
-        default:
-            assert(false, "응 아니야")
         }
-    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension AddMedicineFourthViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 40, height: 75)
-    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
     }
@@ -139,7 +282,7 @@ extension AddMedicineFourthViewController {
             switch result {
             case .success(let pill):
                 if let data = pill as? PillCount {
-                    print(data)
+                    self.updateData(data: data)
                 }
             case .requestErr(let message):
                 print("requestErr", message)
@@ -173,7 +316,41 @@ extension AddMedicineFourthViewController {
     }
     
     func addMyFill() {
-        AddPillAPI.shared.addMyPill(pillName: "홍삼", isStop: false, color: "1", start: "2022-01-09", end: "2022-01-15", cycle: "1", day: "월, 수, 금, 일", time: ["07:00:00", "19:00:00"], specific: "1week") { response in
+        let colorArray: [String] = ["1", "2", "3", "4", "5"]
+        var items: [PillListRequest] = []
+        for (index, value) in medicineData.enumerated() {
+            let body = PillListRequest(value, false, colorArray.randomElement()!, "2022-01-22", "2022-02-01", "3", nil, ["07:00:00"], "1week")
+            items.append(body)
+        }
+        let lists = PillLists(pillList: items)
+        AddPillAPI.shared.addMyPill(body: lists) { response in
+
+            switch response {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func addMyFriendFill() {
+        let array: [String] = ["1", "2", "3", "4", "5"]
+        let body = PillListRequest("홍삼", false, array.randomElement() ?? "2", "2022-01-09", "2022-01-15", "2", "월, 수, 금, 일", [
+            "07:00:00",
+            "19:00:00"
+        ], nil)
+        var items: [PillListRequest] = []
+        items.append(body)
+        let lists = PillLists(pillList: items)
+        
+        AddPillAPI.shared.addFriendPill(memberId: 24, body: lists) { response in
             print(response)
             switch response {
             case .success(let data):
