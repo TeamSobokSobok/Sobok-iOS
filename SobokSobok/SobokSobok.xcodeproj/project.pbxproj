@@ -157,6 +157,7 @@
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
 		F60BAEB8279B3E690012707C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB6279B3E690012707C /* SplashView.xib */; };
 		ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BF7279B24FA00B5A32C /* APIConstants.swift */; };
+		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
 		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
 		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
@@ -328,6 +329,7 @@
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F60BAEB6279B3E690012707C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		ECF96BF7279B24FA00B5A32C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
 		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 		BD515E5B27877641003BD5A4 /* Gif */ = {
 			isa = PBXGroup;
 			children = (
+				F60BAEB9279B4AB40012707C /* splash.json */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -1273,6 +1276,7 @@
 				BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
 				F6FC9803279A9A0A007B5AF2 /* TermSelectViewController.xib in Resources */,
+				F60BAEBA279B4AB40012707C /* splash.json in Resources */,
 				9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
 				EC950EF92790A88D00A34027 /* AddTimeCollectionViewCell.xib in Resources */,
