@@ -4,7 +4,7 @@
 
 <br />
 
-## 💭 About
+# 💭 About
 
 > 여러분은 소중한 사람의 건강을 지키기 위해 어떤 노력을 하고 계신가요?  
 > 
@@ -15,30 +15,27 @@
 > **나의 복약 체크는 물론, 소중한 사람의 복약까지 확인할 수 있는 ‘소복소복’**
 > **우리의 건강을 챙기는 매일의 실천입니다** 🙂
 
----
-
 <br />
 
-## ✨ Main Feat
+# ✨ Main Feat
 
-- **홈** 
+- **`홈`** 
 나의 복약을 체크하고, 상대방이 보내준 응원스티커를 확인할 수 있습니다.
 
-- **공유** 
+- **`공유`** 
 소중한 사람의 복약 캘린더를 확인하고, 응원을 보낼 수 있습니다.
 
-- **알림**
+- **`알림`**
 캘린더 공유 요청과 전송받은 복약 정보를 확인할 수 있습니다.
 
-- **추가** 
+- **`추가`** 
 내 복약 정보를 추가하고, 소중한 사람에게 복약 일정을 전송할 수 있습니다.
 
-
----
+![This is the last](https://user-images.githubusercontent.com/75469131/150535885-e6c38a60-19b0-4957-8919-2c78074cdb50.png)
 
 <br />
 
-## 🍎 Team Member - `iOS`
+# 🍎 Team Member - `iOS`
 
 |<img src="./Asset/태현.png" width=200>|<img src="./Asset/승찬.png" width=200>|<img src="./Asset/은희.png" width=200>|<img src="./Asset/선영.png" width=200>|
 |:--:|:--:|:--:|:--:|
@@ -53,17 +50,18 @@
 #### [승찬](https://github.com/seungchan2)
 `내 약 추가 액션시트` `약 추가` `복용 기간 선택` `복용 기간 캘린더` `알림 시간 설정` `추가 목록`
 
+
 #### [은희](https://github.com/EunHee-Jeong)
 `알림 목록` `약 전송 요청` `약 매일 수정`
+
+---
 
 #### [선영](https://github.com/seondal)
 `로그인` `회원가입` `친구 이름 수정` `캘린더 공유 닉네임 조회` `캘린더 공유 요청`
 
----
-
 <br />
 
-## 📚 Library
+# 📚 Library
 
 | Name | Tag |
 | --- | --- |
@@ -73,11 +71,9 @@
 | IQKeyboardManager | Layout, Keyboard |
 | Kingfisher | Image Caching | 
 
----
-
 <br />
 
-## 🕹 Convention
+# 🕹 Convention
 
 `Coding Convention` · `Commit Convention`
 
@@ -222,25 +218,25 @@ force_cast:
 
   > 🚨 총 9개의 커밋 타입으로 구분한다.
   
-  [Docs]   문서 작성 및 수정 작업(README 등)
-  [Add]    기능이 아닌 것 생성 및 추가 작업(파일·익스텐션·프로토콜 등)
-  [Feat]   새로운 기능 추가 작업
-  [Style]  UI 관련 작업(UI 컴포넌트, Xib 파일, 컬러·폰트 작업 등)
-  [Fix]    에러 및 버그 수정, 기능에 대한 수정 작업
-  [Edit]   Fix가 아닌 모든 수정 작업(주석, 파일 및 폴더 위치, 코드 스타일 등)
-  [Del]    파일, 에셋 등 삭제 작업
-  [Set]    세팅 관련 작업
-  [Test]   테스트 관련 작업
-  
+```  
+[Docs]   문서 작성 및 수정 작업(README 등)
+[Add]    기능이 아닌 것 생성 및 추가 작업(파일·익스텐션·프로토콜 등)
+[Feat]   새로운 기능 추가 작업
+[Style]  UI 관련 작업(UI 컴포넌트, Xib 파일, 컬러·폰트 작업 등)
+[Fix]    에러 및 버그 수정, 기능에 대한 수정 작업
+[Edit]   Fix가 아닌 모든 수정 작업(주석, 파일 및 폴더 위치, 코드 스타일 등)
+[Del]    파일, 에셋 등 삭제 작업
+[Set]    세팅 관련 작업
+[Test]   테스트 관련 작업
+```  
 </details>
 
 [자세히 보기](https://baejiann120.notion.site/Convention-334f61e9e0a94f02abf4b4ebc979bbf3)
  
----
 
 <br />
 
-## 🐾 Branch Strategy
+# 🐾 Branch Strategy
 
 `Git Flow` · `GitHub Flow`
 
@@ -282,11 +278,9 @@ force_cast:
 
 </details>
 
----
-
 <br />
 
-## 🗂 Folder Architecture
+# 🗂 Folder Architecture
 
 <details markdown="1">
 <summary>폴더링을 소개합니다✨</summary>
