@@ -33,6 +33,10 @@ final class SplashView: BaseViewController {
     private func addLottieView() {
         view.addSubview(lottiView)
         lottiView.isHidden = false
-        lottiView.play()
+        lottiView.play { (finished) in
+            let nextVC = SignInViewController.instanceFromNib()
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 }
