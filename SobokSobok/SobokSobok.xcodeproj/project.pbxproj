@@ -94,6 +94,8 @@
 		BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */; };
 		BDC83B49279AE791009C52A1 /* NoticeListCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */; };
 		BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */; };
+		BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */; };
+		BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */; };
 		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
 		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
@@ -266,6 +268,8 @@
 		BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
 		BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCountModel.swift; sourceTree = "<group>"; };
 		BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillMoreInfoModel.swift; sourceTree = "<group>"; };
+		BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
+		BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Calendar/Views/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -874,6 +878,8 @@
 		BDC83B42279AE556009C52A1 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */,
+				BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1444,6 +1450,7 @@
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				F6FC9800279A9A0A007B5AF2 /* WeekSelectViewController.swift in Sources */,
+				BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */,
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,
 				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
@@ -1462,6 +1469,7 @@
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
+				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
 				EC950EF82790A88D00A34027 /* AddTimeCollectionViewCell.swift in Sources */,
 				F6FC9804279A9A0A007B5AF2 /* TermSelectViewController.swift in Sources */,
 				BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */,
