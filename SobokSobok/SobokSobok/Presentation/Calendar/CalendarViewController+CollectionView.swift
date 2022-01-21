@@ -44,8 +44,8 @@ extension CalendarViewController: UICollectionViewDataSource {
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pill?.pillName
         
-        cell.checkButton.isHidden = editMode || tabType == .share
-        cell.editButton.isHidden = editMode
+        cell.checkButton.isHidden = true || tabType == .share
+        cell.editButton.isHidden = false
         
         cell.editClosure = {
             self.showActionSheet(pillId: pill?.pillId ?? 0, date: self.selectedDate)
