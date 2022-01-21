@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,12 +22,10 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NoticeTableViewCell" customModule="SobokSobok" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="335" height="135"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="335" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kh2-TG-HbB">
-                        <rect key="frame" x="0.0" y="4" width="335" height="127"/>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGW-ve-TYB">
                         <rect key="frame" x="0.0" y="4" width="335" height="127"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,105 +52,49 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-7t-gWs">
                         <rect key="frame" x="18" y="68.5" width="299" height="40"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalendarAlarmMint" translatesAutoresizingMaskIntoConstraints="NO" id="AgL-0F-azo">
-                                <rect key="frame" x="18" y="22" width="33.5" height="33.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-vQ-cRF">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
+                                <color key="backgroundColor" name="light_mint"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="33.5" id="RBj-vy-lkF"/>
-                                    <constraint firstAttribute="height" constant="33.5" id="dRP-j4-qNv"/>
+                                    <constraint firstAttribute="width" constant="145" id="CDL-3f-Lyi"/>
+                                    <constraint firstAttribute="height" constant="40" id="bQI-oJ-R14"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오후 12:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukb-RU-4bP">
-                                <rect key="frame" x="60" y="44.5" width="257" height="14.5"/>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
-                                <color key="textColor" name="gray500_sub"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-7t-gWs">
-                                <rect key="frame" x="18" y="75" width="299" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-vQ-cRF">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
-                                        <color key="backgroundColor" name="light_mint"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="145" id="CDL-3f-Lyi"/>
-                                            <constraint firstAttribute="height" constant="40" id="bQI-oJ-R14"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="거절">
-                                            <color key="titleColor" name="dark_mint_main"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-kF-log">
-                                        <rect key="frame" x="154" y="0.0" width="145" height="40"/>
-                                        <color key="backgroundColor" name="mint_main"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="145" id="Z0T-0J-cjm"/>
-                                            <constraint firstAttribute="height" constant="40" id="tjd-Tz-fpm"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="수락">
-                                            <color key="titleColor" name="white_sub"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="touchUpToAcceptButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F3d-cy-UQB"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수현이님이 캘린더 공유를 요청했어요" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SF-6c-dPv">
-                                <rect key="frame" x="60" y="22" width="257" height="18.5"/>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="거절">
+                                    <color key="titleColor" name="dark_mint_main"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-kF-log">
+                                <rect key="frame" x="154" y="0.0" width="145" height="40"/>
+                                <color key="backgroundColor" name="mint_main"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="Z0T-0J-cjm"/>
+                                    <constraint firstAttribute="height" constant="40" id="tjd-Tz-fpm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="수락">
+                                    <color key="titleColor" name="white_sub"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToAcceptButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F3d-cy-UQB"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4SF-6c-dPv" firstAttribute="top" secondItem="Kh2-TG-HbB" secondAttribute="top" constant="22" id="4Fw-F4-WyK"/>
-                            <constraint firstAttribute="trailing" secondItem="4SF-6c-dPv" secondAttribute="trailing" constant="18" id="53K-Ep-dER"/>
-                            <constraint firstItem="4SF-6c-dPv" firstAttribute="leading" secondItem="Kh2-TG-HbB" secondAttribute="leading" constant="60" id="6pe-1M-tLe"/>
-                            <constraint firstItem="ukb-RU-4bP" firstAttribute="leading" secondItem="Kh2-TG-HbB" secondAttribute="leading" constant="60" id="Gp9-Zh-p2T"/>
-                            <constraint firstItem="AgL-0F-azo" firstAttribute="leading" secondItem="Kh2-TG-HbB" secondAttribute="leading" constant="18" id="RYw-zc-zYW"/>
-                            <constraint firstItem="ukb-RU-4bP" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" constant="4" id="T0y-nc-GSw"/>
-                            <constraint firstItem="AgL-0F-azo" firstAttribute="top" secondItem="Kh2-TG-HbB" secondAttribute="top" constant="22" id="dlc-4M-Ll7"/>
-                            <constraint firstAttribute="trailing" secondItem="ukb-RU-4bP" secondAttribute="trailing" constant="18" id="iAD-7Z-Ol0"/>
-                            <constraint firstItem="0zC-7t-gWs" firstAttribute="top" secondItem="ukb-RU-4bP" secondAttribute="bottom" constant="16" id="m3G-Gc-yby"/>
-                            <constraint firstItem="0zC-7t-gWs" firstAttribute="leading" secondItem="Kh2-TG-HbB" secondAttribute="leading" constant="18" id="xHq-36-gwq"/>
-                            <constraint firstAttribute="trailing" secondItem="0zC-7t-gWs" secondAttribute="trailing" constant="18" id="zf6-td-rKv"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="12"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
+                    </stackView>
                 </subviews>
-                <color key="backgroundColor" name="gray150_sub"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Kh2-TG-HbB" secondAttribute="trailing" id="K9Z-Yl-enS"/>
-                    <constraint firstItem="Kh2-TG-HbB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tn2-ZG-Vbz"/>
-                    <constraint firstAttribute="bottom" secondItem="Kh2-TG-HbB" secondAttribute="bottom" constant="4" id="kvA-AR-hLF"/>
-                    <constraint firstItem="Kh2-TG-HbB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="scy-LQ-zw9"/>
-                </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                    <real key="value" value="0.0"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
                     <constraint firstItem="AgL-0F-azo" firstAttribute="leading" secondItem="gGW-ve-TYB" secondAttribute="leading" constant="18.25" id="1Gt-Rl-Uxj"/>
                     <constraint firstItem="AgL-0F-azo" firstAttribute="top" secondItem="gGW-ve-TYB" secondAttribute="top" constant="22.5" id="2SP-ed-Pzl"/>
                     <constraint firstAttribute="trailing" secondItem="gGW-ve-TYB" secondAttribute="trailing" id="8Xd-rX-4dc"/>
@@ -186,9 +127,6 @@
         <image name="icCalendarAlarmMint" width="34" height="34"/>
         <namedColor name="dark_mint_main">
             <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray150_sub">
-            <color red="0.93725490196078431" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray500_sub">
             <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
