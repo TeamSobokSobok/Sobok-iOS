@@ -4,6 +4,7 @@ disabled_rules:
 - orphaned_doc_comment
 - nesting
 - function_body_length
+- function_parameter_count
 
 opt_in_rules:
 - anyobject_protocol
