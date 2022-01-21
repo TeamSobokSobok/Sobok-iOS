@@ -56,4 +56,3 @@ extension AddPillService: TargetType {
             ]
         }
 }
-

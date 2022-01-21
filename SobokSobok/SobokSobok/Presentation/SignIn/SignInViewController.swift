@@ -9,13 +9,8 @@ import UIKit
 
 final class SignInViewController: BaseViewController {
     
-    // MARK: - Properties
-    private var email: String?
-    private var password: String?
-    private var isKeyboardOn: Bool = false
-    private var keyboardHeight: CGFloat = 0
-
     // MARK: - @IBOutlet Properties
+    @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,105 +21,69 @@ final class SignInViewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkTextField()
-        securePassword()
-        checkKeyboardOn()
+        addTarget()
     }
     
     override func style() {
+        navigationController?.navigationBar.isHidden = true
+        inactivateTextField()
+        titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Bold", size: 23)!, kernValue: 0, lineSpacing: 8)
+        logInButton.isEnabled = false
+        logInButton.makeRounded(radius: 12)
+    }
+    
+    // MARK: - Functions
+    private func addTarget() {
+        emailTextField.addTarget(self, action: #selector(self.activateEmailTextField), for: .editingDidBegin)
+        passwordTextField.addTarget(self, action: #selector(self.activatePasswordTextField), for: .editingDidBegin)
+        [emailTextField, passwordTextField].forEach({$0.addTarget(self, action: #selector(self.inactivateTextField), for: .editingDidEnd)})
+        [emailTextField, passwordTextField].forEach({$0.addTarget(self, action: #selector(self.activateLogInButton), for: .editingChanged)})
+    }
+    
+    // 텍스트 필드 활성화
+    @objc private func activateEmailTextField() {
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
+    }
+    @objc private func activatePasswordTextField() {
+        passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
+    }
+    
+    // 텍스트 필드 비활성화
+    @objc private func inactivateTextField() {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         passwordTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
     
-    // MARK: - Functions
-    private func securePassword() {
-        passwordTextField.isSecureTextEntry = true
-    }
-
-    private func checkTextField() {
-        logInButton.isEnabled = false
-        signUpButton.isEnabled = true
-        self.emailTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
-        self.passwordTextField.addTarget(self, action: #selector(self.activateLogInButton(_:)), for: .editingChanged)
+    // 버튼 활성화
+    @objc private func activateLogInButton() {
+        logInButton.isEnabled = emailTextField.hasText && passwordTextField.hasText
     }
     
-    private func checkKeyboardOn() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    // Alert
-    func tempAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
-        
     // 토스트 메세지
-    func showToast(message: String) {
-        let isKeyboardOn: Bool = self.isKeyboardOn
-        let keyboardHeight: CGFloat = self.keyboardHeight
+    private func showToast(message: String) {
         var toastLabel = UILabel()
-        // 토스트 위치
-        if isKeyboardOn {
-            toastLabel = UILabel(frame: CGRect(x: 20,
-                                               y: self.view.frame.size.height - keyboardHeight - 59,
-                                               width: self.view.frame.size.width - 40,
-                                               height: 47))
-        } else {
-            toastLabel = UILabel(frame: CGRect(x: 20,
-                                               y: self.view.frame.size.height - 95,
-                                               width: self.view.frame.size.width - 40,
-                                               height: 47))
-        }
-        // 토스트 색
+        toastLabel = UILabel(frame: CGRect(x: 20,
+                                           y: self.view.frame.size.height - 95,
+                                           width: self.view.frame.size.width - 40,
+                                           height: 47))
         toastLabel.backgroundColor = Color.black
         toastLabel.textColor = Color.white
-        // 토스트 값
         toastLabel.text = message
-        // 토스트 모양
         toastLabel.textAlignment = .center
         toastLabel.layer.cornerRadius = 12
         toastLabel.clipsToBounds = true
-        // 토스트 애니메이션
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 1.0, delay: 0.1,
+        UIView.animate(withDuration: 1.5, delay: 0.1,
                        options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
                        completion: {_ in toastLabel.removeFromSuperview() })
     }
     
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-                keyboardHeight = keyboardFrame.cgRectValue.height
-            }
-        isKeyboardOn = true
-        }
-        
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        keyboardHeight = 0
-        isKeyboardOn = false
-    }
-        
-    @objc func activateLogInButton(_ : UIButton) {
-        let emailFilled = emailTextField.hasText
-        let passwordFilled = passwordTextField.hasText
-        
-        if emailFilled && passwordFilled {
-            logInButton.isEnabled = true
-        } else {
-            logInButton.isEnabled = false
-        }
-    }
-    
     // MARK: - @IBAction Properties
-    
     @IBAction func touchUpToLogin(_ sender: UIButton) {
-        email = emailTextField.text ?? ""
-        password = passwordTextField.text ?? ""
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
         signIn()
     }
-    
     @IBAction func touchUpToMoveToSignUpView(_ sender: UIButton) {
         navigationController?.pushViewController(SignUpViewController.instanceFromNib(), animated: true)
     }
@@ -132,18 +91,13 @@ final class SignInViewController: BaseViewController {
 
 extension SignInViewController {
     func signIn() {
-        guard let email = email else {
-            return
-        }
-        guard let password = password else {
-            return
-        }
-        
-        SignInAPI.shared.signIn(email: email, password: password, completion: {(result) in
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        SignAPI.shared.signIn(email: email, password: password, completion: {(result) in
             switch result {
-            case .success(_):
+            case .success:
                 self.showToast(message: "로그인 성공 : \(email), \(password)")
-            case .requestErr(_):
+            case .requestErr:
                 self.showToast(message: "이메일 또는 비밀번호를 다시 확인해주세요")
             case .pathErr:
                 print(".pathErr")

@@ -10,13 +10,19 @@ import UIKit
 final class SignUpViewController: BaseViewController {
 
     // MARK: Properties
-    var signUpUser = SignUpUser.shared
+    private var user = SignUpUserData.shared
     private var isEmailRight: Bool = false
     private var isPasswordRight: Bool = false
     private var isRePasswordRight: Bool = false
     
     // MARK: @IBOutlet Properties
-    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var titleTextLabel: UILabel!
+    @IBOutlet weak var confirmButton: UIButton!{
+        didSet {
+            confirmButton.backgroundColor = confirmButton.isEnabled ? Color.mint : Color.gray200
+            confirmButton.tintColor = confirmButton.isEnabled ? Color.white : Color.gray500
+        }
+    }
     // 텍스트필드
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
@@ -30,14 +36,15 @@ final class SignUpViewController: BaseViewController {
     @IBOutlet weak var rePasswordWarningStackView: UIStackView!
     
     // MARK: View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkTextField()
     }
-    
     override func style() {
-        
+        navigationController?.navigationBar.isHidden = true
+    
+        titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Medium", size: 23)!, kernValue: 0, lineSpacing: 8)
+    
         // corner radius (텍스트필드, 버튼)
         [emailTextFieldView, passwordTextFieldView, rePasswordTextFieldView].forEach {$0.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)}
          confirmButton.makeRounded(radius: 12)
@@ -47,35 +54,25 @@ final class SignUpViewController: BaseViewController {
         
         // 버튼비활성화
         confirmButton.isEnabled = false
-        
-        // 비밀번호 안보이게하기
-        [passwordTextField, rePasswordTextField].forEach({$0.isSecureTextEntry = true})
-        
-        // 네비게이션 바 커스텀
-        title = "회원가입"
-        let backButton = UIBarButtonItem()
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        backButton.title = ""
-        backButton.tintColor = .black
-        self.navigationController?.navigationBar.backgroundColor = .white
     }
     
     // MARK: Functions
-    
-    // 비밀번호 숨기기
-    private func securePassword() {
-        passwordTextField.isSecureTextEntry = true
-        rePasswordTextField.isSecureTextEntry = true
-    }
-    
-    // 텍스트필드 addTarget
     private func checkTextField() {
+        // 입력 중 일때
         emailTextField.addTarget(self, action: #selector(self.checkEmailTextField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(self.checkPasswordTextField), for: .editingChanged)
-        [passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)}
-        [emailTextField, passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.activateOkayButton(_:)), for: .editingChanged)}
+        rePasswordTextField.addTarget(self, action: #selector(self.checkRepasswordTextField), for: .editingChanged)
+                
+        // 입력 완료했을 때
+        emailTextField.addTarget(self, action: #selector(self.inactivateEmailTextField), for: .editingDidEnd)
+        passwordTextField.addTarget(self, action: #selector(self.inactivatePasswordTextField), for: .editingDidEnd)
+        rePasswordTextField.addTarget(self, action: #selector(self.inactivateRepasswordTextField), for: .editingDidEnd)
+        
+        // 버튼 활성화 조건
+        [passwordTextField, rePasswordTextField].forEach {$0.addTarget(self, action: #selector(self.activateOkayButton), for: .editingChanged)}
+        emailTextField.addTarget(self, action: #selector(self.activateOkayButton), for: .editingDidEnd)
     }
-    
+
     // 정규식 체크
     private func checkEmailRight (input: String) -> Bool {
         // 이메일 조건 : [대문자,소문자,숫자,특수기호] + 골뱅이(@) + [대문자,소문자,숫자,.,-] + 점(.) + [대문자,소문자] 2~64글자
@@ -95,47 +92,58 @@ final class SignUpViewController: BaseViewController {
         // 비밀번호 재입력 조건 : 비밀번호와 값이 같아야함
         return passwordTextField.text == rePasswordTextField.text
     }
-
-    // Alert
-    func tempAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
     
-    // 조건에 따른 경고문구 숨김여부 결정
+    // 이메일 텍필 값 바뀔 때
     @objc private func checkEmailTextField() {
+        emailTextFieldView.layer.borderColor = Color.gray600.cgColor
+        emailWarningStackView.isHidden = true
+    }
+    @objc private func inactivateEmailTextField() {
         isEmailRight = checkEmailRight(input: emailTextField.text ?? "")
         emailWarningStackView.isHidden = isEmailRight || !emailTextField.hasText ? true : false
         emailTextFieldView.layer.borderColor = isEmailRight || !emailTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
+    // 비밀번호 텍필 값 바뀔 때
     @objc private func checkPasswordTextField() {
+        // 비밀번호 텍필
         isPasswordRight = checkPasswordRight(input: passwordTextField.text ?? "")
         passwordWarningStackView.isHidden = isPasswordRight || !passwordTextField.hasText ? true : false
-        passwordTextFieldView.layer.borderColor = isPasswordRight || !passwordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
-    }
-    
-    @objc private func checkRepasswordTextField() {
+        passwordTextFieldView.layer.borderColor = isPasswordRight || !passwordTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
+        
+        // 비밀번호 확인 텍필
         isRePasswordRight = checkRepasswordRight(input: passwordTextField.text ?? "")
         rePasswordWarningStackView.isHidden = isRePasswordRight || !rePasswordTextField.hasText ? true : false
         rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
+    @objc private func inactivatePasswordTextField() {
+        passwordTextFieldView.layer.borderColor = isPasswordRight || !passwordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+    }
+    
+    // 비밀번호 확인 텍필 값 바뀔 떄
+    @objc private func checkRepasswordTextField() {
+        isRePasswordRight = checkRepasswordRight(input: passwordTextField.text ?? "")
+        rePasswordWarningStackView.isHidden = isRePasswordRight || !rePasswordTextField.hasText ? true : false
+        rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
+    }
+    @objc private func inactivateRepasswordTextField() {
+        rePasswordTextFieldView.layer.borderColor = isRePasswordRight || !rePasswordTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+    }
     
     // 버튼 활성화
-    @objc func activateOkayButton(_ : UIButton) {
+    @objc func activateOkayButton() {
         confirmButton.isEnabled = isEmailRight && isPasswordRight && isRePasswordRight
+    }
+    
+    // MARK: - @IBAction Properties
+    @IBAction func touchUpToPopToSIgnInVIew(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
     // 회원가입 버튼 클릭
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
-        if passwordTextField.text == rePasswordTextField.text {
-            signUpUser.email = emailTextField.text ?? ""
-            signUpUser.password = passwordTextField.text ?? ""
-            navigationController?.pushViewController(SetNickNameVIewController.instanceFromNib(), animated: true)
-        } else {
-            tempAlert(title: "오류", message: "비밀번호를 확인해주세요")
-        }
+        user.email = emailTextField.text ?? ""
+        user.password = passwordTextField.text ?? ""
+        navigationController?.pushViewController(SetNickNameVIewController.instanceFromNib(), animated: true)
     }
 }

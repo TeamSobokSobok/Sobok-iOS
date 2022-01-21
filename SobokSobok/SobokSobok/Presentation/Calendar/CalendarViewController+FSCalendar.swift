@@ -70,14 +70,14 @@ extension CalendarViewController: FSCalendarDelegateAppearance {
         selectedDate = date.toString(of: .year)
         dateLabel.text = date.toString(of: .day)
         calendar.select(date)
-
-        tabType == .home ?
-        getSchedules(date: selectedDate) :
-        getFriendSchedules(memberId: memberId, date: selectedDate)
         
-        tabType == .home ?
-        getPillList(date: selectedDate) :
-        getFriendPillList(id: memberId, date: selectedDate)
+        if tabType == .home {
+            getSchedules(date: selectedDate)
+            getPillList(date: selectedDate)
+        } else {
+            getFriendSchedules(memberId: memberId, date: selectedDate)
+            getFriendPillList(id: memberId, date: selectedDate)
+        }
         
         self.configureVisibleCells()
     }

@@ -186,4 +186,3 @@ extension AddMedicineSecondViewController: SendPeriodDelegate {
 
     }
 }
-

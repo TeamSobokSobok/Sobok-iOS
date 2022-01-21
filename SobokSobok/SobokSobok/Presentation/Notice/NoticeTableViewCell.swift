@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate: AnyObject {
+    func selectedInfoButton(index: Int)
+}
+
 final class NoticeTableViewCell: UITableViewCell {
     
     // MARK: - @IBOutlet Properties
@@ -14,10 +18,18 @@ final class NoticeTableViewCell: UITableViewCell {
     @IBOutlet var noticeStatus: UILabel!
     @IBOutlet var noticeTime: UILabel!
     @IBOutlet var confirmButton: UIStackView!
+    @IBOutlet weak var acceptButton: UIButton!
+    
+    var index: Int = 0
+    weak var delegate: ComponentProductCellDelegate?
     
     // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    @IBAction func touchUpToAcceptButton(_ sender: Any) {
+        self.delegate?.selectedInfoButton(index: index)
     }
 
     // MARK: - Functions

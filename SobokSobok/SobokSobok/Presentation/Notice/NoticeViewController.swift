@@ -52,7 +52,10 @@ extension NoticeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = notificationTableView.dequeueReusableCell(for: indexPath, cellType: NoticeTableViewCell.self)
         cell.selectionStyle = .none
+        cell.contentView.backgroundColor = .clear
         cell.setData(noticeData: noticeList[indexPath.row])
+        cell.index = indexPath.row
+        cell.delegate = self
         switch indexPath.row {
         case 2:
             cell.confirmButton.subviews.forEach { $0.isHidden = true }
@@ -67,3 +70,11 @@ extension NoticeViewController: UITableViewDataSource {
 }
 
 extension NoticeViewController: UITableViewDelegate { }
+
+extension NoticeViewController: ComponentProductCellDelegate {
+    func selectedInfoButton(index: Int) {
+        let nextVC = SendInfoViewController.instanceFromNib()
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true)
+    }
+}

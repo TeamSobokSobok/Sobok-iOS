@@ -61,7 +61,7 @@ extension TypoStyle {
     
     public var labelDescription: LabelDescription {
         switch self {
-        case .header1:       return LabelDescription(kern: -0.24, lineHeight: 1.47)
+        case .header1:       return LabelDescription(kern: -0.24, lineHeight: 3.53)
         
         case .title1:   return LabelDescription(kern: 0, lineHeight: 1.5)
         case .title2:   return LabelDescription(kern: 0, lineHeight: 1.35)

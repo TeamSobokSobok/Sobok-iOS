@@ -36,41 +36,68 @@ extension CalendarViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             for: indexPath, cellType: MedicineCollectionViewCell.self
         )
+        let pill = pillItems[indexPath.section].scheduleList?[indexPath.row] // data
+        cell.pillCellType = tabType == .home ? .home : .share                // 홈탭, 공유탭에서 사용할 셀 결정
         
-        cell.pillCellType = tabType == .home ? .home : .share
-        let pill = pillItems[indexPath.section].scheduleList?[indexPath.row]
-        
+        // 공통
         cell.contentView.backgroundColor = Color.white
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pill?.pillName
         
-        cell.editButton.isHidden = !editMode
-        cell.checkButton.isHidden = editMode || tabType == .share
-        
         let stickerCount = pill?.stickerId?.count ?? 0
         cell.stickerStackView.isHidden = stickerCount == 0
         cell.stickerCountLabel.isHidden = stickerCount == 0
-
+        if stickerCount > 0 {
+            if let stickerId = pill?.stickerId {
+                cell.setSticker(stickerId: stickerId)
+            }
+        }
+        let stickerTotalCount = pill?.stickerTotalCount ?? 0
+        cell.stickerCountLabel.text = stickerTotalCount > 4 ? "+ \(stickerTotalCount - stickerCount)" : ""
+   
         cell.stickerClosure = { [weak self] in
             guard let self = self else { return }
-            self.showStickerBottomSheet()
+            self.checkSticker(scheduleId: pill?.scheduleId ?? 0)
         }
         
+        if cell.pillCellType == .home {
+            cell.isChecked = pill?.isCheck ?? false
+            cell.checkButton.isHidden = editMode
+            cell.editButton.isHidden = !editMode
+            cell.checkClosrue = {
+                guard let scheduleId = pill?.scheduleId else { return }
+                if cell.isChecked {
+                    self.checkPillDetail(scheduleId: scheduleId)
+                } else {
+                    self.showAlert(title: "복약하지 않은 약인가요",
+                                   message: "복약을 취소하면 소중한 사람들의 응원도 같이 삭제되어요",
+                                   completionTitle: "복약 취소",
+                                   cancelTitle: "취소") { _ in
+                        self.uncheckPillDetail(scheduleId: scheduleId)
+                    }
+                }
+            }
+        } else {
+            cell.emotionClosure = {
+                let stickerPopUpView = SendStickerPopUpViewController.instanceFromNib()
+                stickerPopUpView.modalPresentationStyle = .overCurrentContext
+                stickerPopUpView.modalTransitionStyle = .crossDissolve
+                stickerPopUpView.scheduleId = pill?.scheduleId ?? 0
+                stickerPopUpView.likeScheduleId = pill?.stickerId?[0].likeScheduleId ?? 0
+                stickerPopUpView.isLikedState = pill?.isLikedSchedule ?? false
+                stickerPopUpView.delegate = self
+                self.present(stickerPopUpView, animated: false, completion: nil)
+            }
+            
+            cell.isLikedState = pill?.isLikedSchedule ?? false
+            cell.eatState = pill?.isCheck ?? false
+        }
+        
+        // ... 수정 아이콘
         cell.editClosure = {
             self.showActionSheet(pillId: pill?.pillId ?? 0, date: self.selectedDate)
             collectionView.reloadData()
         }
-        
-        cell.checkClosrue = {
-            guard let scheduleId = pill?.scheduleId else { return }
-            if cell.isChecked {
-                self.checkPillDetail(scheduleId: scheduleId)
-            } else {
-                self.uncheckPillDetail(scheduleId: scheduleId)
-            }
-        }
-        
-        cell.eatState = pill?.isCheck ?? false
         
         return cell
     }
@@ -89,11 +116,15 @@ extension CalendarViewController: UICollectionViewDataSource {
             let date = dateFormatter.date(from: pillItems[indexPath.section].scheduleTime)
             let time = date?.toString(of: .time)
             headerView.timeLabel.text = time
-            headerView.editButtonStackView.isHidden = indexPath.section != 0
-            headerView.editModeClosure = {
-                self.editMode.toggle()
+            
+            if tabType == .share {
+                headerView.editButtonStackView.isHidden = true
+            } else {
+                headerView.editButtonStackView.isHidden = indexPath.section != 0
+                headerView.editModeClosure = {
+                    self.editMode.toggle()
+                }
             }
-            headerView.editButtonStackView.isHidden = tabType == .share
             
             return headerView
         default:
@@ -119,5 +150,11 @@ extension CalendarViewController: UICollectionViewDelegate {
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
+    }
+}
+
+extension CalendarViewController: StickerPopUpDelegate {
+    func sendStickerDidEnd() {
+        print("포스트 요청 성공")
     }
 }

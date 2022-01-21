@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,19 +21,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-sp-xMb">
-                        <rect key="frame" x="20" y="27" width="164" height="18.5"/>
-                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
-                        <color key="textColor" name="gray700_sub"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iAG-KH-ayf">
+                        <rect key="frame" x="0.0" y="27" width="183.5" height="18.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="효영님이 전송해준 약이에요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-sp-xMb">
+                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="15"/>
+                                <color key="textColor" name="gray700_sub"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" name="white_sub"/>
             <constraints>
-                <constraint firstItem="PeE-sp-xMb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="4EN-dC-01V"/>
-                <constraint firstItem="PeE-sp-xMb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="27" id="8KD-qD-KWI"/>
+                <constraint firstItem="iAG-KH-ayf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="27" id="HW7-sd-xL1"/>
+                <constraint firstAttribute="bottom" secondItem="iAG-KH-ayf" secondAttribute="bottom" constant="2.5" id="UUa-jn-xFh"/>
+                <constraint firstAttribute="trailing" secondItem="iAG-KH-ayf" secondAttribute="trailing" constant="191.5" id="aW6-38-RGN"/>
+                <constraint firstItem="iAG-KH-ayf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" symbolic="YES" id="tsS-ob-erk"/>
             </constraints>
             <connections>
                 <outlet property="senderInfoLabel" destination="PeE-sp-xMb" id="PQ7-0k-ly8"/>

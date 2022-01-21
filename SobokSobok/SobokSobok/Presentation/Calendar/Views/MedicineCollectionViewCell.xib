@@ -60,7 +60,6 @@
                                             <constraint firstAttribute="width" constant="63" id="wdH-HP-5QN"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="icSobok"/>
                                         <connections>
                                             <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="vSZ-GZ-xCg"/>
                                         </connections>
@@ -72,7 +71,6 @@
                                             <constraint firstAttribute="width" constant="63" id="vnw-7w-oU2"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="icSobok"/>
                                         <connections>
                                             <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="wm8-89-nvn"/>
                                         </connections>
@@ -84,7 +82,6 @@
                                             <constraint firstAttribute="height" constant="63" id="sri-er-baJ"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="icSobok"/>
                                         <connections>
                                             <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="IDZ-eY-VgK"/>
                                         </connections>
@@ -96,7 +93,6 @@
                                             <constraint firstAttribute="width" constant="63" id="ZE9-FR-TE7"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="icSobok"/>
                                         <connections>
                                             <action selector="stickerButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="aKF-yp-2p6"/>
                                         </connections>
@@ -105,29 +101,29 @@
                             </stackView>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POd-4r-X6J">
-                        <rect key="frame" x="159" y="56" width="56" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="" image="icCheckUnselect56"/>
-                    </button>
                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ktv-gk-zOy" userLabel="Button Stack View">
-                        <rect key="frame" x="199.33333333333337" y="14" width="157.66666666666663" height="36"/>
+                        <rect key="frame" x="207.33333333333337" y="18" width="149.66666666666663" height="28"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-ka-9Lt">
-                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                 <color key="backgroundColor" name="gray150_sub"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="ERv-QN-dWq"/>
+                                </constraints>
                                 <color key="tintColor" name="black_sub"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icEmotion36"/>
+                                <state key="normal" image="icEmotionEnd36"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="emotionButtonTapped:" destination="k4k-xJ-HfK" eventType="touchUpInside" id="K3E-yp-avK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsa-0j-a7J">
-                                <rect key="frame" x="41.000000000000007" y="0.0" width="116.66666666666669" height="36"/>
+                                <rect key="frame" x="33.000000000000007" y="0.0" width="116.66666666666669" height="28"/>
                                 <color key="backgroundColor" name="gray150_sub"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="아직 안 먹었어요"/>
@@ -142,7 +138,7 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="36" id="KlW-aK-Zvs"/>
+                            <constraint firstAttribute="height" constant="28" id="KlW-aK-Zvs"/>
                         </constraints>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TV6-Kt-n79">
@@ -174,7 +170,7 @@
                             </button>
                         </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oc-cm-pxF">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oc-cm-pxF">
                         <rect key="frame" x="332" y="106.66666666666667" width="25" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="gray600_sub"/>
@@ -205,6 +201,10 @@
                 <outlet property="pillName" destination="sdh-55-dG6" id="rEI-23-heJ"/>
                 <outlet property="stickerCountLabel" destination="0oc-cm-pxF" id="rTn-Hj-Um9"/>
                 <outlet property="stickerStackView" destination="96t-aL-UfD" id="yN7-HJ-kgc"/>
+                <outletCollection property="stickerButtons" destination="hlf-B0-TTc" collectionClass="NSMutableArray" id="PkU-g1-7Ya"/>
+                <outletCollection property="stickerButtons" destination="s82-yV-P6r" collectionClass="NSMutableArray" id="111-g9-SXE"/>
+                <outletCollection property="stickerButtons" destination="c2E-3Q-PNs" collectionClass="NSMutableArray" id="4hr-rp-3Fx"/>
+                <outletCollection property="stickerButtons" destination="Jfh-Sq-8lX" collectionClass="NSMutableArray" id="vKa-fU-sxI"/>
             </connections>
             <point key="canvasLocation" x="-18.399999999999999" y="308.86699507389164"/>
         </collectionViewCell>
@@ -212,8 +212,7 @@
     <resources>
         <image name="icCheckUnselect56" width="56" height="56"/>
         <image name="icEdit40" width="40" height="40"/>
-        <image name="icEmotion36" width="36" height="36"/>
-        <image name="icSobok" width="84" height="84"/>
+        <image name="icEmotionEnd36" width="36" height="36"/>
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

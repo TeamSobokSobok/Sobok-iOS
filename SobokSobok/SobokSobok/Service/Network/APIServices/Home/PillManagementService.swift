@@ -44,7 +44,7 @@ extension PillManagementService: TargetType {
     var task: Task {
         switch self {
         case .stopPillList(_, let day):
-            return .requestParameters(parameters: ["day": day], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["day": day], encoding: URLEncoding.queryString)
         case .deletePillList:
             return .requestPlain
         }

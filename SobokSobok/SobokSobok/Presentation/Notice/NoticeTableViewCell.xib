@@ -5,7 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,6 +26,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="335" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGW-ve-TYB">
+                        <rect key="frame" x="0.0" y="4" width="335" height="127"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalendarAlarmMint" translatesAutoresizingMaskIntoConstraints="NO" id="AgL-0F-azo">
                         <rect key="frame" x="18.5" y="26.5" width="33.5" height="33.5"/>
                         <constraints>
@@ -83,27 +87,34 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToAcceptButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F3d-cy-UQB"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="AgL-0F-azo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.25" id="1Gt-Rl-Uxj"/>
-                    <constraint firstItem="AgL-0F-azo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26.25" id="2SP-ed-Pzl"/>
-                    <constraint firstAttribute="trailing" secondItem="ukb-RU-4bP" secondAttribute="trailing" constant="24" id="OGS-bH-8fB"/>
-                    <constraint firstItem="4SF-6c-dPv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="W3P-b1-6hK"/>
-                    <constraint firstItem="4SF-6c-dPv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="ay2-HW-cc2"/>
-                    <constraint firstItem="ukb-RU-4bP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="bIY-31-YKe"/>
-                    <constraint firstAttribute="bottom" secondItem="0zC-7t-gWs" secondAttribute="bottom" constant="26.5" id="cye-kT-FPP"/>
-                    <constraint firstAttribute="trailing" secondItem="4SF-6c-dPv" secondAttribute="trailing" constant="24" id="hHf-XB-i8J"/>
+                    <constraint firstItem="AgL-0F-azo" firstAttribute="leading" secondItem="gGW-ve-TYB" secondAttribute="leading" constant="18.25" id="1Gt-Rl-Uxj"/>
+                    <constraint firstItem="AgL-0F-azo" firstAttribute="top" secondItem="gGW-ve-TYB" secondAttribute="top" constant="22.5" id="2SP-ed-Pzl"/>
+                    <constraint firstAttribute="trailing" secondItem="gGW-ve-TYB" secondAttribute="trailing" id="8Xd-rX-4dc"/>
+                    <constraint firstItem="gGW-ve-TYB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IcM-XH-ny0"/>
+                    <constraint firstItem="gGW-ve-TYB" firstAttribute="trailing" secondItem="ukb-RU-4bP" secondAttribute="trailing" constant="24" id="OGS-bH-8fB"/>
+                    <constraint firstItem="4SF-6c-dPv" firstAttribute="leading" secondItem="gGW-ve-TYB" secondAttribute="leading" constant="60" id="W3P-b1-6hK"/>
+                    <constraint firstItem="4SF-6c-dPv" firstAttribute="top" secondItem="gGW-ve-TYB" secondAttribute="top" constant="19" id="ay2-HW-cc2"/>
+                    <constraint firstItem="ukb-RU-4bP" firstAttribute="leading" secondItem="gGW-ve-TYB" secondAttribute="leading" constant="60" id="bIY-31-YKe"/>
+                    <constraint firstAttribute="bottom" secondItem="gGW-ve-TYB" secondAttribute="bottom" constant="4" id="bee-hr-gP3"/>
+                    <constraint firstItem="gGW-ve-TYB" firstAttribute="bottom" secondItem="0zC-7t-gWs" secondAttribute="bottom" constant="22.5" id="cye-kT-FPP"/>
+                    <constraint firstItem="gGW-ve-TYB" firstAttribute="trailing" secondItem="4SF-6c-dPv" secondAttribute="trailing" constant="24" id="hHf-XB-i8J"/>
+                    <constraint firstItem="gGW-ve-TYB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="jej-qC-aSh"/>
                     <constraint firstItem="0zC-7t-gWs" firstAttribute="top" secondItem="ukb-RU-4bP" secondAttribute="bottom" constant="12.5" id="lv3-Rb-Hd4"/>
                     <constraint firstAttribute="trailing" secondItem="0zC-7t-gWs" secondAttribute="trailing" constant="18" id="sQD-28-EJu"/>
                     <constraint firstItem="ukb-RU-4bP" firstAttribute="top" secondItem="4SF-6c-dPv" secondAttribute="bottom" id="uxG-FV-DaG"/>
                     <constraint firstItem="0zC-7t-gWs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="ymj-03-aL5"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="acceptButton" destination="GGo-kF-log" id="auF-p0-Umf"/>
                 <outlet property="confirmButton" destination="0zC-7t-gWs" id="ZU1-qz-mJX"/>
                 <outlet property="noticeImage" destination="AgL-0F-azo" id="JeG-li-nsA"/>
                 <outlet property="noticeStatus" destination="4SF-6c-dPv" id="CPf-Gc-u4k"/>
@@ -129,5 +140,8 @@
         <namedColor name="white_sub">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

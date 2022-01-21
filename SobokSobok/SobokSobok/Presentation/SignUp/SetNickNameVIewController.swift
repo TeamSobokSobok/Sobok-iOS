@@ -12,7 +12,7 @@ import SnapKit
 final class SetNickNameVIewController: BaseViewController {
 
     // MARK: - Properties
-    var signUpUser = SignUpUser.shared
+    private var user = SignUpUserData.shared
     var nickname: String?
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
@@ -35,21 +35,22 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     override func style() {
+        titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Medium", size: 23)!, kernValue: 0, lineSpacing: 8)
+        navigationController?.navigationBar.isHidden = true
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
-
-        // 초기 세팅
         warningTextLabel.isHidden = true
+        signUpButton.makeRounded(radius: 12)
         [checkDuplicationButton, signUpButton].forEach({$0?.isEnabled = false})
-        
-        // 네비게이션바 세팅
-        title = "회원가입"
-        let backButton = UIBarButtonItem()
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        backButton.title = ""
-        backButton.tintColor = .black
     }
     
     // MARK: Functions
+    private func checkField() {
+        nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        nickNameTextField.addTarget(self, action: #selector(self.inactivateTextField), for: .editingDidEnd)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     @objc private func checkTextField() {
         // 중복 여부 초기화
         isDuplicationChecked = false
@@ -64,34 +65,32 @@ final class SetNickNameVIewController: BaseViewController {
         
         // 조건에 따라 경고문 보여주기
         warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
-        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
+        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
         
         // 조건에 따라 버튼 활성화
         [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
-        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray500.cgColor)
+        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
     }
     
+    // 입력 완료했을 때
+    @objc private func inactivateTextField() {
+        nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+    }
+    
+    // 키보드 Notification
     @objc private func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             keyboardHeight = keyboardFrame.cgRectValue.height
         }
         isKeyboardOn = true
     }
-    
     @objc private func keyboardWillHide(_ notification: Notification) {
         keyboardHeight = 0
         isKeyboardOn = false
     }
     
-    // 닉네임 정규식 검사
-    private func checkField() {
-        nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
+    // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
     private func checkNickNameRight (input: String) -> Bool {
-        // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
         let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
         let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
           return nickNameTest.evaluate(with: input)
@@ -131,6 +130,9 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     // MARK: - @IBAction Properties
+    @IBAction func touchUpToDismiss(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func touchUpToCheckDuplication(_ sender: UIButton) {
         nickname = nickNameTextField.text ?? ""
@@ -139,9 +141,8 @@ final class SetNickNameVIewController: BaseViewController {
     
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
-            signUpUser.name = nickname
+            user.name = nickname
             signUp()
-            print("성공했니? : \(signUpUser.email ?? ""), \(signUpUser.password ?? ""), \(signUpUser.name ?? "")")
             navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
@@ -151,26 +152,17 @@ final class SetNickNameVIewController: BaseViewController {
 
 // MARK: - Extensions
 extension SetNickNameVIewController {
-    func signUp() {
-        guard let email = signUpUser.email else {
-                   return
-               }
-        guard let password = signUpUser.password else {
-                   return
-               }
-        guard let name = signUpUser.name else {
-                   return
-               }
-        
-        SignUpAPI.shared.signUp(email: email,
-                                password: password,
-                                name: name,
-                                completion: {(result) in
+    
+    // 닉네임 중복 검사 서버 통신 함수
+    func checkUsername() {
+        guard let nickname = nickname else { return }
+        SignAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
             switch result {
-            case .success(let data):
-                print(data)
-            case .requestErr(let message):
-                print("requestErr", message)
+            case .success(_):
+                self.showToast(message: "사용 가능한 닉네임이에요")
+                self.isDuplicationChecked = true
+            case .requestErr(_):
+                self.showToast(message: "이미 사용중인 닉네임이에요")
             case .pathErr:
                 print(".pathErr")
             case .serverErr:
@@ -180,22 +172,22 @@ extension SetNickNameVIewController {
             }
         })
     }
-}
-
-extension SetNickNameVIewController {
-    func checkUsername() {
-        guard let nickname = nickname else {
-                   return
-               }
-        CheckUsernameAPI.shared.checkUsername(nickname: nickname, completion: {(result) in
+    
+    // 회원가입 서버 통신 함수
+    func signUp() {
+        guard let email = user.email else { return }
+        guard let password = user.password else { return }
+        guard let name = user.name else { return }
+        
+        SignAPI.shared.signUp(email: email,
+                                password: password,
+                                name: name,
+                                completion: {(result) in
             switch result {
-            case .success(_):
-                print("사용가능")
-                self.showToast(message: "사용 가능한 닉네임이에요")
-                self.isDuplicationChecked = true
-            case .requestErr(_):
-                self.showToast(message: "이미 사용중인 닉네임이에요")
-                print("사용중")
+            case .success:
+                print("성공했니? : \(self.user.email ?? ""), \(self.user.password ?? ""), \(self.user.name ?? "")")
+            case .requestErr(let message):
+                print("requestErr", message)
             case .pathErr:
                 print(".pathErr")
             case .serverErr:

@@ -38,10 +38,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVm-0s-1SU" userLabel="네비게이션">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-Ui-RDk">
-                            <rect key="frame" x="0.0" y="45" width="48" height="48"/>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-Ui-RDk">
+                            <rect key="frame" x="0.0" y="13" width="48" height="48"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icBack48"/>
                             <connections>
@@ -49,7 +49,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공유 요청하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPh-Mh-oMc">
-                            <rect key="frame" x="77" y="59" width="260" height="20.5"/>
+                            <rect key="frame" x="77" y="28.5" width="260" height="20.5"/>
                             <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
@@ -58,16 +58,14 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="yBQ-Ui-RDk" firstAttribute="leading" secondItem="EVm-0s-1SU" secondAttribute="leading" id="25u-lS-3Cn"/>
-                        <constraint firstAttribute="bottom" secondItem="yBQ-Ui-RDk" secondAttribute="bottom" constant="9" id="P9J-B6-K4s"/>
+                        <constraint firstAttribute="bottom" secondItem="JPh-Mh-oMc" secondAttribute="bottom" constant="21" id="J0J-DE-QXD"/>
                         <constraint firstItem="JPh-Mh-oMc" firstAttribute="leading" secondItem="EVm-0s-1SU" secondAttribute="leading" constant="77" id="WNc-Th-7Ax"/>
-                        <constraint firstAttribute="height" constant="102" id="fdI-kD-90t"/>
+                        <constraint firstAttribute="height" constant="70" id="fdI-kD-90t"/>
                         <constraint firstAttribute="trailing" secondItem="JPh-Mh-oMc" secondAttribute="trailing" constant="77" id="tcQ-TO-N1P"/>
-                        <constraint firstItem="JPh-Mh-oMc" firstAttribute="centerY" secondItem="yBQ-Ui-RDk" secondAttribute="centerY" id="x7a-P7-Itf"/>
-                        <constraint firstItem="yBQ-Ui-RDk" firstAttribute="top" secondItem="EVm-0s-1SU" secondAttribute="top" constant="45" id="zn3-ab-JXO"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAp-UO-oTM">
-                    <rect key="frame" x="20" y="129" width="278.5" height="18.5"/>
+                    <rect key="frame" x="20" y="141" width="320.5" height="18.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임이10글자시네요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-82-ehV">
                             <rect key="frame" x="0.0" y="0.0" width="133.5" height="18.5"/>
@@ -75,8 +73,8 @@
                             <color key="textColor" name="dark_mint_main"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님을 어떻게 저장할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-t8-gnL">
-                            <rect key="frame" x="133.5" y="0.0" width="145" height="18.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님을 어떤 이름으로 저장할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-t8-gnL">
+                            <rect key="frame" x="133.5" y="0.0" width="187" height="18.5"/>
                             <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
@@ -87,7 +85,7 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fi1-Y4-NQK" userLabel="검색">
-                    <rect key="frame" x="20" y="158.5" width="374" height="54"/>
+                    <rect key="frame" x="20" y="170.5" width="374" height="54"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2~10글자의 한글, 영문, 숫자" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SA2-9W-tha">
                             <rect key="frame" x="17" y="15" width="342" height="24"/>
@@ -106,7 +104,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R78-2I-rWP">
-                    <rect key="frame" x="20" y="240.5" width="374" height="46"/>
+                    <rect key="frame" x="20" y="252.5" width="374" height="46"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icNotice" translatesAutoresizingMaskIntoConstraints="NO" id="eEl-Pm-QSD">
                             <rect key="frame" x="14" y="13" width="20" height="20"/>
@@ -141,7 +139,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5D-a5-coz">
-                    <rect key="frame" x="361" y="215.5" width="33" height="18"/>
+                    <rect key="frame" x="361" y="227.5" width="33" height="18"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
                     <color key="textColor" name="gray600_sub"/>
                     <nil key="highlightedColor"/>
@@ -166,7 +164,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="특수문자 입력은 불가능해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJR-Fe-L6i">
-                    <rect key="frame" x="20" y="215.5" width="141.5" height="18"/>
+                    <rect key="frame" x="20" y="227.5" width="141.5" height="18"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
                     <color key="textColor" name="pill_color_red"/>
                     <nil key="highlightedColor"/>
@@ -179,7 +177,7 @@
                 <constraint firstItem="fi1-Y4-NQK" firstAttribute="top" secondItem="JAp-UO-oTM" secondAttribute="bottom" constant="11" id="Cnn-3m-SsS"/>
                 <constraint firstItem="fi1-Y4-NQK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Kq3-DM-AEv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K5D-a5-coz" secondAttribute="trailing" constant="20" id="Ve9-99-7RJ"/>
-                <constraint firstItem="EVm-0s-1SU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ybu-6I-88o"/>
+                <constraint firstItem="EVm-0s-1SU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ybu-6I-88o"/>
                 <constraint firstItem="K5D-a5-coz" firstAttribute="top" secondItem="fi1-Y4-NQK" secondAttribute="bottom" constant="3" id="ces-aE-ZZN"/>
                 <constraint firstItem="Ygj-IR-wBA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="db0-yk-s57"/>
                 <constraint firstItem="R78-2I-rWP" firstAttribute="top" secondItem="ZJR-Fe-L6i" secondAttribute="bottom" constant="7" id="dfN-Fb-aHd"/>

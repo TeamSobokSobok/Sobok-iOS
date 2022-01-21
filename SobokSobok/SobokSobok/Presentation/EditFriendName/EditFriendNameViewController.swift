@@ -95,9 +95,34 @@ final class EditFriendNameViewController: BaseViewController {
     
     // MARK: - @IBAction Properties
     @IBAction func touchUpToConfirm(_ sender: Any) {
+        EditFriend.shared.groupId = 31 //화면 연결되면 전달 받아야함
+        EditFriend.shared.memberName = nameTextField.text ?? ""
+        editFriendName()
     }
     
     @IBAction func touchUpToDIsmiss(_ sender: Any) {
     }
     
+}
+
+extension EditFriendNameViewController {
+    func editFriendName() {
+        guard let groupId = EditFriend.shared.groupId else { return }
+        guard let memberName = EditFriend.shared.memberName else { return }
+        
+        ShareAPI.shared.editFriendUsername(groupId: groupId, memberName: memberName, completion: {(result) in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        })
+    }
 }
