@@ -19,7 +19,7 @@ enum TermType: Int, CaseIterable {
 final class PillInfoEditViewController: BaseViewController {
     
     // MARK: - @IBOutlet Properties
-    @IBOutlet weak var pillNameTextField: UITextField!
+    @IBOutlet weak var pillNameTextField: UIView!
     @IBOutlet weak var periodSelectButton: UIButton!
     @IBOutlet var selectButtons: [UIButton]!
     @IBOutlet weak var specificDayView: UIView!
@@ -78,6 +78,10 @@ final class PillInfoEditViewController: BaseViewController {
     }
     
     // MARK: - @IBAction Properties
+    @IBAction func touchUpToBackButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     @IBAction func touchUpToSelectButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         let index = sender.tag
@@ -152,7 +156,8 @@ extension PillInfoEditViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillTimeInfoCollectionViewCell.self)
             cell.makeRoundedWithBorder(radius: 12, color: Color.darkMint.cgColor)
-            cell.timeLabel.text = timeList[indexPath.row]
+//            cell.timeLabel.text = timeList[indexPath.row]
+            cell.timeLabel.text = "오후 8:00"
             cell.deleteCellClosure = {
                 self.timeList.remove(at: 0)
             }

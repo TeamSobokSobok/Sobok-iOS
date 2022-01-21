@@ -32,7 +32,7 @@ final class PillTimeInfoFooterView: UICollectionReusableView {
         $0.setTitleColor(Color.white, for: .normal)
         $0.addTarget(self, action: #selector(confirmButtonClicked), for: .touchUpInside)
         $0.makeRounded(radius: 12)
-        $0.backgroundColor = Color.darkMint
+        $0.backgroundColor = Color.mint
         $0.setTitle("확인", for: .normal)
     }
     let buttonStack = UIStackView().then {

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EditCellDelegate {
+    func selectedInfoButton(index: Int)
+}
+
 class SendInfoCollectionViewCell: UICollectionViewCell {
 
     // MARK: - @IBOutlet Properties
@@ -17,9 +21,17 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
+    var index: Int = 0
+    var delegate: EditCellDelegate?
+    
     // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        timeLabel.setTextWithLineHeight1(text: "오전 11:00, 오전 12:00, 오후 10:00,\n오후 11:00, 오후 12:00, 오후 10:00", lineHeight: 21)
+    }
+    
+    @IBAction func touchUpToEditButton(_ sender: Any) {
+        self.delegate?.selectedInfoButton(index: index)
     }
     
     // MARK: - Functions
@@ -29,5 +41,23 @@ class SendInfoCollectionViewCell: UICollectionViewCell {
         dateLabel.text = sendInfoData.dateInfo
         termLabel.text = sendInfoData.termInfo
         timeLabel.text = sendInfoData.timeInfo
+    }
+}
+
+extension UILabel {
+    func setTextWithLineHeight1(text: String?, lineHeight: CGFloat) {
+        if let text = text {
+            let style = NSMutableParagraphStyle()
+            style.maximumLineHeight = lineHeight
+            style.minimumLineHeight = lineHeight
+            
+            let attributes: [NSAttributedString.Key: Any] = [
+                .paragraphStyle: style
+            ]
+                
+            let attrString = NSAttributedString(string: text,
+                                                attributes: attributes)
+            self.attributedText = attrString
+        }
     }
 }

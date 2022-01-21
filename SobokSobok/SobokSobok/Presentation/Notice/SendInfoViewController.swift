@@ -18,10 +18,11 @@ final class SendInfoViewController: UIViewController {
     }
     let navigationTitleLabel = UILabel().then {
         $0.text = "전송 받은 약"
-        $0.font = .systemFont(ofSize: 17)
+        $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
     let xButton = UIButton().then {
         $0.setImage(Image.icClose48, for: .normal)
+        $0.tintColor = Color.black
     }
     private var sendInfoList: [SendInfoListData] = SendInfoListData.dummy
     
@@ -38,6 +39,7 @@ final class SendInfoViewController: UIViewController {
         setConstraints()
         assignDelegation()
         registerXib()
+        addDismissButton()
     }
     
     // MARK: - Functions
@@ -65,6 +67,14 @@ final class SendInfoViewController: UIViewController {
             $0.leading.equalTo(navigationView).inset(1)
             $0.centerY.equalTo(navigationTitleLabel)
         }
+    }
+    
+    private func addDismissButton() {
+       xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func xButtonClicked() {
+        self.dismiss(animated: true)
     }
     
     func assignDelegation() {
@@ -95,6 +105,8 @@ extension SendInfoViewController: UICollectionViewDataSource {
             return footer
         default:
             let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: SendInfoCollectionViewCell.self)
+            cell.index = indexPath.row
+            cell.delegate = self
             cell.setData(sendInfoData: sendInfoList[indexPath.row])
             cell.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
             return cell
@@ -122,5 +134,12 @@ extension SendInfoViewController: UICollectionViewDelegateFlowLayout {
         default:
             return CGSize(width: 335, height: 166)
         }
+    }
+}
+
+extension SendInfoViewController: EditCellDelegate {
+    func selectedInfoButton(index: Int) {
+        let nextVC = PillInfoEditViewController.instanceFromNib()
+        self.present(nextVC, animated: true)
     }
 }

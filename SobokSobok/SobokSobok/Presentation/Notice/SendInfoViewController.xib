@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d5U-45-PIf">
-                    <rect key="frame" x="0.0" y="48" width="375" height="642"/>
+                    <rect key="frame" x="0.0" y="29" width="375" height="661"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="250" constant="642" id="1ah-TM-v20"/>
@@ -91,7 +91,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="hbL-aL-g1e" secondAttribute="bottom" id="98Q-mP-hRH"/>
-                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="A8Z-wB-pnw"/>
+                <constraint firstItem="d5U-45-PIf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="29" id="A8Z-wB-pnw"/>
                 <constraint firstAttribute="trailing" secondItem="d5U-45-PIf" secondAttribute="trailing" id="OP9-Ue-WaS"/>
                 <constraint firstAttribute="bottom" secondItem="d5U-45-PIf" secondAttribute="bottom" constant="122" id="QYF-a6-uzd"/>
                 <constraint firstItem="hbL-aL-g1e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RMh-vf-2Sj"/>
