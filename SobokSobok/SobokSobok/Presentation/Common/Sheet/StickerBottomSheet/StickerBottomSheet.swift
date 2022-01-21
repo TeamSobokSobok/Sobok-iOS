@@ -18,6 +18,10 @@ final class StickerBottomSheet: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sheetHeight: NSLayoutConstraint!
     
+    // MARK: - Properties
+    
+    var stickers: [Stickers] = []
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -83,11 +87,13 @@ final class StickerBottomSheet: BaseViewController {
 extension StickerBottomSheet: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StickerCollectionViewCell.self)
+        let sticker = stickers[indexPath.row]
+        cell.configure(stickers: sticker)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        9
+        return stickers.count
     }
 }
 

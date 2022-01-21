@@ -174,4 +174,3 @@ extension AddMedicineSecondViewController: SendPeriodDelegate {
         UserDefaults.standard.set(takeMedicinePeriodLabel.text, forKey: "period")
     }
 }
-

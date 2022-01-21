@@ -22,6 +22,7 @@ final class CalendarViewController: BaseViewController {
     }
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scopeLabel: UILabel!
+    @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -36,12 +37,16 @@ final class CalendarViewController: BaseViewController {
     var selectedDate: String = Date().toString(of: .day) {
         didSet {
             dateLabel.text = selectedDate
-            getSchedules(date: selectedDate)
         }
     }
-
     var scheduleItems: [Schedule] = []
     var pillItems: [PillList] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    var stickerItems: [Stickers] = []
+    var stickerCounts: [Int: Int] = [:] {
         didSet {
             collectionView.reloadData()
         }
@@ -54,6 +59,7 @@ final class CalendarViewController: BaseViewController {
             calendar.setScope(.month, animated: true) :
             calendar.setScope(.week, animated: true)
             scopeLabel.text = calendarExpandedState ? "월" : "주"
+            arrowImageView.image = calendarExpandedState ? Image.icArrowUp16 : Image.icArrowDropDown16
         }
     }
     var editMode: Bool = false {
@@ -62,13 +68,15 @@ final class CalendarViewController: BaseViewController {
         }
     }
     
-    var tabType: TabBarItem = .share
-    var tabName: String = "수현"
-    var memberId: Int = 0 {
+    var emotionState: Bool = false {
         didSet {
-            print(memberId)
+            collectionView.reloadData()
         }
     }
+    
+    var tabType: TabBarItem = .share
+    var tabName: String = "수현"
+    var memberId: Int = 0
     var groupId: Int = 0
     
     // MARK: - Life Cycles
@@ -196,10 +204,11 @@ extension CalendarViewController {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    public func showStickerBottomSheet() {
+    public func showStickerBottomSheet(stickers: [Stickers]) {
         let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
         stickerBottomSheet.modalPresentationStyle = .overCurrentContext
         stickerBottomSheet.modalTransitionStyle = .crossDissolve
+        stickerBottomSheet.stickers = stickers
         self.tabBarController?.present(stickerBottomSheet, animated: false) {
             stickerBottomSheet.showSheetWithAnimation()
         }

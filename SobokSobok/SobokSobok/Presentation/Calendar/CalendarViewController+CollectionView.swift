@@ -44,21 +44,30 @@ extension CalendarViewController: UICollectionViewDataSource {
         cell.contentView.makeRounded(radius: 12)
         cell.pillName.text = pill?.pillName
         
-        cell.editButton.isHidden = !editMode
         cell.checkButton.isHidden = editMode || tabType == .share
-        
-        let stickerCount = pill?.stickerId?.count ?? 0
-        cell.stickerStackView.isHidden = stickerCount == 0
-        cell.stickerCountLabel.isHidden = stickerCount == 0
-
-        cell.stickerClosure = { [weak self] in
-            guard let self = self else { return }
-            self.showStickerBottomSheet()
-        }
+        cell.editButton.isHidden = editMode
         
         cell.editClosure = {
             self.showActionSheet(pillId: pill?.pillId ?? 0, date: self.selectedDate)
             collectionView.reloadData()
+        }
+
+        let stickerCount = pill?.stickerId?.count ?? 0
+        cell.stickerStackView.isHidden = stickerCount == 0
+        cell.stickerCountLabel.isHidden = stickerCount == 0
+        
+        if stickerCount > 0 {
+            if let stickerId = pill?.stickerId {
+                cell.setSticker(stickerId: stickerId)
+            }
+        }
+        
+        let stickerTotalCount = pill?.stickerTotalCount ?? 0
+        cell.stickerCountLabel.text = stickerTotalCount > 4 ? "+ \(stickerTotalCount - stickerCount)" : ""
+   
+        cell.stickerClosure = { [weak self] in
+            guard let self = self else { return }
+            self.checkSticker(scheduleId: pill?.scheduleId ?? 0)
         }
         
         cell.checkClosrue = {
@@ -70,7 +79,20 @@ extension CalendarViewController: UICollectionViewDataSource {
             }
         }
         
+        cell.emotionClosure = {
+            let stickerPopUpView = SendStickerPopUpViewController.instanceFromNib()
+            stickerPopUpView.modalPresentationStyle = .overCurrentContext
+            stickerPopUpView.modalTransitionStyle = .crossDissolve
+            stickerPopUpView.scheduleId = pill?.scheduleId ?? 0
+            stickerPopUpView.likeScheduleId = pill?.stickerId?[0].likeScheduleId ?? 0
+            stickerPopUpView.isLikedState = pill?.isLikedSchedule ?? false
+            stickerPopUpView.delegate = self
+            self.present(stickerPopUpView, animated: false, completion: nil)
+        }
+        
+        cell.isLikedState = pill?.isLikedSchedule ?? false
         cell.eatState = pill?.isCheck ?? false
+        cell.isChecked = pill?.isCheck ?? false
         
         return cell
     }
@@ -89,11 +111,11 @@ extension CalendarViewController: UICollectionViewDataSource {
             let date = dateFormatter.date(from: pillItems[indexPath.section].scheduleTime)
             let time = date?.toString(of: .time)
             headerView.timeLabel.text = time
-            headerView.editButtonStackView.isHidden = indexPath.section != 0
+            headerView.editButtonStackView.isHidden = tabType == .share
+            headerView.editButtonStackView.isHidden = indexPath.section != 0 && tabType == .home
             headerView.editModeClosure = {
                 self.editMode.toggle()
             }
-            headerView.editButtonStackView.isHidden = tabType == .share
             
             return headerView
         default:
@@ -119,5 +141,11 @@ extension CalendarViewController: UICollectionViewDelegate {
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 20, right: 10)
+    }
+}
+
+extension CalendarViewController: StickerPopUpDelegate {
+    func sendStickerDidEnd() {
+        print("포스트 요청 성공")
     }
 }

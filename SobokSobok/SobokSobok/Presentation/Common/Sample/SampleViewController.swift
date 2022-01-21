@@ -9,7 +9,6 @@ import UIKit
 
 import EasyKit
 import FirebaseAnalytics
-import FirebaseCrashlytics
 import IQKeyboardManagerSwift
 import Kingfisher
 import Lottie
