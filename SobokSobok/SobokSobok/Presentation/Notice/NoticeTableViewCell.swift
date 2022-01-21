@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ComponentProductCellDelegate {
+protocol ComponentProductCellDelegate: AnyObject {
     func selectedInfoButton(index: Int)
 }
 
@@ -21,7 +21,7 @@ final class NoticeTableViewCell: UITableViewCell {
     @IBOutlet weak var acceptButton: UIButton!
     
     var index: Int = 0
-    var delegate: ComponentProductCellDelegate?
+    weak var delegate: ComponentProductCellDelegate?
     
     // MARK: - View Life Cycle
     override func awakeFromNib() {

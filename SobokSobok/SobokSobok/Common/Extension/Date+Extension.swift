@@ -15,6 +15,8 @@ extension Date {
         case month
         case second
         case time
+        case calendar
+        case calendarTime
         
         var description: String {
             switch self {
@@ -30,6 +32,10 @@ extension Date {
                 return "HH:mm:ss"
             case .time:
                 return "a h:mm"
+            case .calendar:
+                return "yyyy년 MM월 dd일"
+            case .calendarTime:
+                return "a HH:mm"
             }
         }
     }
