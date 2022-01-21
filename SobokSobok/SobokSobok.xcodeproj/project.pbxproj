@@ -138,6 +138,10 @@
 		F6FC97DE2799E825007B5AF2 /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97DD2799E825007B5AF2 /* AcceptPillModel.swift */; };
 		F6FC97E02799E88C007B5AF2 /* AcceptPillInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97DF2799E88B007B5AF2 /* AcceptPillInfoAPI.swift */; };
 		F6FC97E22799EA3D007B5AF2 /* AcceptPillInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97E12799EA3D007B5AF2 /* AcceptPillInfoService.swift */; };
+		F6FC97E4279A1AF1007B5AF2 /* AcceptPillDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97E3279A1AF1007B5AF2 /* AcceptPillDataModel.swift */; };
+		F6FC97E6279A6C12007B5AF2 /* AcceptCalenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97E5279A6C12007B5AF2 /* AcceptCalenderModel.swift */; };
+		F6FC97E8279A6C43007B5AF2 /* AcceptCalenderInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97E7279A6C43007B5AF2 /* AcceptCalenderInfoAPI.swift */; };
+		F6FC97EA279A6D60007B5AF2 /* AcceptCalenderInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97E9279A6D60007B5AF2 /* AcceptCalenderInfoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +269,10 @@
 		F6FC97DD2799E825007B5AF2 /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
 		F6FC97DF2799E88B007B5AF2 /* AcceptPillInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillInfoAPI.swift; sourceTree = "<group>"; };
 		F6FC97E12799EA3D007B5AF2 /* AcceptPillInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillInfoService.swift; sourceTree = "<group>"; };
+		F6FC97E3279A1AF1007B5AF2 /* AcceptPillDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillDataModel.swift; sourceTree = "<group>"; };
+		F6FC97E5279A6C12007B5AF2 /* AcceptCalenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCalenderModel.swift; sourceTree = "<group>"; };
+		F6FC97E7279A6C43007B5AF2 /* AcceptCalenderInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCalenderInfoAPI.swift; sourceTree = "<group>"; };
+		F6FC97E9279A6D60007B5AF2 /* AcceptCalenderInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCalenderInfoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +474,7 @@
 			children = (
 				F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */,
 				F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */,
+				F6FC97E3279A1AF1007B5AF2 /* AcceptPillDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -897,6 +906,7 @@
 				F60D44B02796D36A001CC759 /* NoticeListCountModel.swift */,
 				F60D44B72796F6B6001CC759 /* PillMoreInfoModel.swift */,
 				F6FC97DD2799E825007B5AF2 /* AcceptPillModel.swift */,
+				F6FC97E5279A6C12007B5AF2 /* AcceptCalenderModel.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -910,6 +920,8 @@
 				F60D44B92796F778001CC759 /* PillMoreInfoService.swift */,
 				F6FC97DF2799E88B007B5AF2 /* AcceptPillInfoAPI.swift */,
 				F6FC97E12799EA3D007B5AF2 /* AcceptPillInfoService.swift */,
+				F6FC97E7279A6C43007B5AF2 /* AcceptCalenderInfoAPI.swift */,
+				F6FC97E9279A6D60007B5AF2 /* AcceptCalenderInfoService.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1096,6 +1108,7 @@
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
+				F6FC97E6279A6C12007B5AF2 /* AcceptCalenderModel.swift in Sources */,
 				F6FC97E02799E88C007B5AF2 /* AcceptPillInfoAPI.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
@@ -1149,6 +1162,7 @@
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				F6FC97E8279A6C43007B5AF2 /* AcceptCalenderInfoAPI.swift in Sources */,
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				EC950EF82790A88D00A34027 /* AddTimeCollectionViewCell.swift in Sources */,
@@ -1156,8 +1170,10 @@
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				F6538FB0278DBBC100B20B5E /* SendInfoCollectionViewCell.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
+				F6FC97EA279A6D60007B5AF2 /* AcceptCalenderInfoService.swift in Sources */,
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
+				F6FC97E4279A1AF1007B5AF2 /* AcceptPillDataModel.swift in Sources */,
 				F60D44BC2796F781001CC759 /* PillMoreInfoAPI.swift in Sources */,
 				F6FC97E22799EA3D007B5AF2 /* AcceptPillInfoService.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
