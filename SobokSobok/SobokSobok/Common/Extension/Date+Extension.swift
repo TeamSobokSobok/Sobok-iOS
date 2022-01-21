@@ -29,7 +29,7 @@ extension Date {
             case .second:
                 return "HH:mm:ss"
             case .time:
-                return "a h시"
+                return "a h:mm"
             }
         }
     }
