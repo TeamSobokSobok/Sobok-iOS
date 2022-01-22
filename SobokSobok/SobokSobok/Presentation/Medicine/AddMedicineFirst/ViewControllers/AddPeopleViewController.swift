@@ -19,11 +19,18 @@ final class AddPeopleViewController: BaseViewController {
    
     // MARK: - Properties
     // PickerView에서 선택한 이름을 저장해서 데이터전달 할 예정
+    var tabName: String = ""
     var selectedPeopleName = String()
     weak var delegate: AddPeopleViewDelegate?
     weak var sendDelegate: SendPeopleNameDelegate?
     // 임시 더미데이터
-    var peopleNameList = ["태현", "승찬", "은희", "선영"]
+    var peopleNameList : [String] = []
+    var nameList : [String] = [] {
+        didSet {
+            peopleNamePickerView.reloadAllComponents()
+        }
+    }
+    var groupItems = [Member]()
 
     // MARK: - @IBOutlets
     @IBOutlet weak var addPeopleView: UIView!
@@ -36,6 +43,7 @@ final class AddPeopleViewController: BaseViewController {
         super.viewDidLoad()
         setUI()
         assignDelegate()
+        getGroupInfo()
     }
     
     // MARK: - Functions
@@ -45,6 +53,18 @@ final class AddPeopleViewController: BaseViewController {
         self.dismiss(animated: true) {
             self.delegate?.popupDismissed()
         }
+    }
+    
+    private func getFriendName(groupItems: [Member]) {
+        for index in 0 ..< groupItems.count {
+            tabName = groupItems[index].memberName
+            peopleNameList.append(tabName)
+        }
+        nameList = peopleNameList
+        }
+    
+    func updateData(data: Member) {
+        peopleNameList.append(data.memberName)
     }
     
     private func setUI() {
@@ -83,11 +103,11 @@ extension AddPeopleViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-           return peopleNameList.count
+           return nameList.count
        }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return peopleNameList[row]
+            return nameList[row]
         }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -95,6 +115,23 @@ extension AddPeopleViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedPeopleName = peopleNameList[row]
+        selectedPeopleName = nameList[row]
+    }
+}
+
+extension AddPeopleViewController {
+
+        private func getGroupInfo() {
+            ShareAPI.shared.getGroupInfo { response in
+                switch response {
+                case .success(let data):
+                    if let data = data as? [Member] {
+                        self.groupItems = data
+                    }
+                    self.getFriendName(groupItems: self.groupItems)
+                default:
+                    return
+                }
+        }
     }
 }

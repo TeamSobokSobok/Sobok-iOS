@@ -25,7 +25,6 @@ final class AddMedicineFourthViewController: BaseViewController {
     var checkPillCount = Int()
     var number: Int = 0
     
-    
     var medicineData: [String] = []
     var time: [String] = []
     var day = String()
@@ -39,7 +38,6 @@ final class AddMedicineFourthViewController: BaseViewController {
     }
     
     // MARK: @IBOutlets
-
     @IBOutlet weak var addView: UIView!
     @IBOutlet weak var peopleNameLabel: UILabel!
     @IBOutlet weak var navigationTitleLabel: UILabel!
@@ -88,6 +86,7 @@ final class AddMedicineFourthViewController: BaseViewController {
             getFriendPillCount(userId: 24)
             saveButton.setTitle("전송", for: .normal)
             addView.isHidden = true
+            peopleNameLabel.text = "\(nickname)에게 전송할 약이에요"
         default:
             break
         }
@@ -173,12 +172,14 @@ final class AddMedicineFourthViewController: BaseViewController {
         guard let nickname = UserDefaults.standard.string(forKey: "friendName") else { return }
         switch tossPill {
         case .me:
+            addMyFill()
             let tabbarController = TabBarController.instanceFromNib()
             navigationController?.pushViewController(tabbarController, animated: true)
-               addMyFill()
         case .friend:
-            let tabbarController = TabBarController.instanceFromNib()
-            navigationController?.pushViewController(tabbarController, animated: true)
+            showAlert(title: "\(nickname)에게 \n\(medicineData.count)개의 약 정보를 보낼게요", message: "", completionTitle: "보내기", cancelTitle: "취소") {_ in
+                let tabbarController = TabBarController.instanceFromNib()
+                self.navigationController?.pushViewController(tabbarController, animated: true)
+            }
         default:
             break
         }
@@ -319,7 +320,7 @@ extension AddMedicineFourthViewController {
         let colorArray: [String] = ["1", "2", "3", "4", "5"]
         var items: [PillListRequest] = []
         for (index, value) in medicineData.enumerated() {
-            let body = PillListRequest(value, false, colorArray.randomElement()!, "2022-01-22", "2022-02-01", "3", nil, ["07:00:00"], "1week")
+            let body = PillListRequest(value, false, colorArray.randomElement()!, "2022-01-22", "2022-02-26", "1", nil, ["08:00:00", "13:00:00", "19:00:00"], nil)
             items.append(body)
         }
         let lists = PillLists(pillList: items)
@@ -342,9 +343,8 @@ extension AddMedicineFourthViewController {
     
     func addMyFriendFill() {
         let array: [String] = ["1", "2", "3", "4", "5"]
-        let body = PillListRequest("홍삼", false, array.randomElement() ?? "2", "2022-01-09", "2022-01-15", "2", "월, 수, 금, 일", [
-            "07:00:00",
-            "19:00:00"
+        let body = PillListRequest("홍삼", false, array.randomElement() ?? "2", "2022-01-22", "2022-02-01", "1", nil, [
+            "08:00:00", "13:00:00", "19:00:00"
         ], nil)
         var items: [PillListRequest] = []
         items.append(body)

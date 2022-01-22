@@ -44,7 +44,7 @@ extension AddPillService: TargetType {
             return .requestJSONEncodable(body)
 
         case .addFriendPill(let memberId, let body):
-            return .requestCompositeParameters(bodyParameters: ["pillId" : body.pillList ?? ""], bodyEncoding: JSONEncoding.default, urlParameters: ["memberId" : memberId])
+            return .requestCompositeParameters(bodyParameters: ["pillList" : body.pillList], bodyEncoding: JSONEncoding.default, urlParameters: ["memberId" : memberId])
         }
     }
    
@@ -52,7 +52,7 @@ extension AddPillService: TargetType {
     var headers: [String: String]? {
             return [
                 "Content-Type": "application/json",
-                "accesstoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoiZWRAZ21haWwuY29tIiwibmFtZSI6bnVsbCwiaWRGaXJlYmFzZSI6InVOR2llMWxKWDNTREpTQnFSWHhLZUhqMnJhMzMiLCJpYXQiOjE2NDE4ODYzNjUsImV4cCI6MTY0NDQ3ODM2NSwiaXNzIjoid2Vzb3B0In0.K9xOhsd1G3sHAo89LRbLHaPySX8PeOW3kxvbbYaVeNA"
+                "accesstoken": APIConstants.accessToken27
             ]
         }
 }
