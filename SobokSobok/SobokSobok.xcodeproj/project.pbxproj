@@ -154,9 +154,9 @@
 		ECECEF9D278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */; };
 		ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BE52798EFB400B5A32C /* PillLimitView.swift */; };
 		ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */; };
+		ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BF7279B24FA00B5A32C /* APIConstants.swift */; };
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
 		F60BAEB8279B3E690012707C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB6279B3E690012707C /* SplashView.xib */; };
-		ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BF7279B24FA00B5A32C /* APIConstants.swift */; };
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
 		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
@@ -326,9 +326,9 @@
 		ECECEF9B278C7079003D1454 /* AddMyMedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMyMedicineCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECF96BE52798EFB400B5A32C /* PillLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLimitView.swift; sourceTree = "<group>"; };
 		ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLimitViewController.swift; sourceTree = "<group>"; };
+		ECF96BF7279B24FA00B5A32C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F60BAEB6279B3E690012707C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
-		ECF96BF7279B24FA00B5A32C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
 		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
@@ -1627,7 +1627,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DEVELOPMENT_TEAM = RQHZUCMHSH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";
@@ -1659,7 +1659,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DEVELOPMENT_TEAM = RQHZUCMHSH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";

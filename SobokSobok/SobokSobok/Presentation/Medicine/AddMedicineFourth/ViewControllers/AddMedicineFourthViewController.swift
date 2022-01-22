@@ -101,7 +101,7 @@ final class AddMedicineFourthViewController: BaseViewController {
                 addView.backgroundColor = Color.lightPink
                 addNumberLabel.textColor = Color.pillColorRed
                 saveButton.setTitleColor(Color.gray400, for: .normal)
-                saveButton.isEnabled = false
+                saveButton.isEnabled = false 
             } else if data.pillCount == 0 {
                 if data.pillCount - medicineData.count < 0 {
                     checkCount = medicineData.count

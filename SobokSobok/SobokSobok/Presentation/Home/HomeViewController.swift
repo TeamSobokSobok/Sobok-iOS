@@ -18,7 +18,6 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         calendarViewController.getSchedules(date: Date().toString(of: .year))
-        setSwipe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
