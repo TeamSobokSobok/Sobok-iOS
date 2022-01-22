@@ -36,10 +36,6 @@ final class AddMedicineThirdViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
-        
-        print(medicineData)
-        print(day)
-        print(specific)
         switch tossPill {
         case .me:
             navigationTitleLabel.text = "내 약 추가하기"

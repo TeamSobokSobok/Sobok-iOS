@@ -139,7 +139,7 @@ final class AddMyMedicineView: UIView {
         
         whoLabel.snp.makeConstraints {
             $0.top.equalTo(peopleSelectButton.snp.bottom).offset(5)
-            $0.leading.equalToSuperview().inset(20)
+            $0.leading.equalToSuperview().inset(25)
         }
         
         medicineLabel.snp.makeConstraints {

@@ -18,7 +18,7 @@ final class AddMyMedicineViewController: BaseViewController {
     // MARK: Properties
     var tossPill: TossPill?
     var selectedPeopleName: String?
-    var medicineData: [String] = [] {
+    var medicineData: [String] = [""] {
         didSet {
             addMyMedicineView.collectionView.reloadData()
         }
@@ -46,9 +46,9 @@ final class AddMyMedicineViewController: BaseViewController {
     
     // MARK: Functions
     func divideViewControllerCase() {
-        addMyMedicineView.whoLabel.text = tossPill == .me ? "내가 먹을 약이에요" : "태현이에게 전송할 약이에요"
+        addMyMedicineView.whoLabel.text = tossPill == .me ? "내가 먹을 약이에요" : "하니에게 전송할 약이에요"
         addMyMedicineView.navigationTitleLabel.text = tossPill == .me ? "내 약 추가하기" : "약 전송하기"
-        addMyMedicineView.peopleLabel.text = tossPill == .me ? "나" : "태현이"
+        addMyMedicineView.peopleLabel.text = tossPill == .me ? "나" : "하니"
         addMyMedicineView.morePillImage.isHidden = tossPill == .me
         addMyMedicineView.peopleSelectButton.isEnabled = tossPill == .friend
     }
