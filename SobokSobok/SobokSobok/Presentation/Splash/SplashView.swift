@@ -14,7 +14,7 @@ final class SplashView: BaseViewController {
     // MARK: - Properties
     lazy var lottiView: AnimationView = {
         let animationView = AnimationView(name: "splash")
-        animationView.frame = CGRect(x: 87, y: 276, width: 200, height: 260)
+        animationView.frame = CGRect(x: 87, y: 260, width: 200, height: 260)
         animationView.center = self.view.center
         animationView.contentMode = .scaleAspectFit
         animationView.stop()
@@ -33,6 +33,10 @@ final class SplashView: BaseViewController {
     private func addLottieView() {
         view.addSubview(lottiView)
         lottiView.isHidden = false
-        lottiView.play()
+        lottiView.play { (finished) in
+            let nextVC = SignInViewController.instanceFromNib()
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 }
