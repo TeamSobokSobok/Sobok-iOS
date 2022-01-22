@@ -69,15 +69,14 @@
                             <constraint firstItem="ukb-RU-4bP" firstAttribute="leading" secondItem="D8s-pE-l44" secondAttribute="leading" id="cbO-7w-hcJ"/>
                         </constraints>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-7t-gWs">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="0zC-7t-gWs">
                         <rect key="frame" x="18" y="78.5" width="299" height="40"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnY-vQ-cRF">
                                 <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
                                 <color key="backgroundColor" name="light_mint"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="CDL-3f-Lyi"/>
-                                    <constraint firstAttribute="height" constant="40" id="bQI-oJ-R14"/>
+                                    <constraint firstAttribute="height" constant="40" id="pmp-NY-Ebl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -94,8 +93,7 @@
                                 <rect key="frame" x="154" y="0.0" width="145" height="40"/>
                                 <color key="backgroundColor" name="mint_main"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="Z0T-0J-cjm"/>
-                                    <constraint firstAttribute="height" constant="40" id="tjd-Tz-fpm"/>
+                                    <constraint firstAttribute="height" constant="40" id="o0x-Im-jLt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="13"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>

@@ -8,7 +8,6 @@
 import UIKit
 
 final class ShareViewController: BaseViewController {
-
     @IBOutlet weak var pagerTab: PagerTab!
     
     let calendarViewController = CalendarViewController.instanceFromNib()
@@ -22,14 +21,21 @@ final class ShareViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGroupInfo()
-        
+        pagerTab.delegate = self
     }
   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)      
       
         tabBarController?.tabBar.isHidden = false
-//        calendarViewController.getSchedules(date: Date().toString(of: .year))
+
+    }
+}
+
+extension ShareViewController: PagerTabDelegate {
+    func addFriendDeleagte() {
+        let viewController = SearchNicknameViewController.instanceFromNib()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

@@ -56,14 +56,14 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QN6-Tl-6it">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustNoPill" translatesAutoresizingMaskIntoConstraints="NO" id="jar-do-Aog">
-                                                    <rect key="frame" x="60" y="95" width="255" height="215"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustNoPill" translatesAutoresizingMaskIntoConstraints="NO" id="jar-do-Aog">
+                                                    <rect key="frame" x="60" y="105" width="255" height="215"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" name="gray150_sub"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="400" id="6Lw-hH-Ia7"/>
-                                                <constraint firstItem="jar-do-Aog" firstAttribute="top" secondItem="QN6-Tl-6it" secondAttribute="top" constant="95" id="MJ4-6M-1HR"/>
+                                                <constraint firstItem="jar-do-Aog" firstAttribute="top" secondItem="QN6-Tl-6it" secondAttribute="top" constant="105" id="MJ4-6M-1HR"/>
                                                 <constraint firstItem="jar-do-Aog" firstAttribute="leading" secondItem="QN6-Tl-6it" secondAttribute="leading" constant="60" id="bbw-5v-5fj"/>
                                                 <constraint firstAttribute="trailing" secondItem="jar-do-Aog" secondAttribute="trailing" constant="60" id="m7q-Uw-WJy"/>
                                             </constraints>

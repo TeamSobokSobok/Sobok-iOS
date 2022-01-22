@@ -16,6 +16,10 @@ extension CalendarViewController: FSCalendarDelegate {
         calendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
     }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        calendar.reloadData()
+    }
 }
 
 // MARK: - FSCalendar DataSource

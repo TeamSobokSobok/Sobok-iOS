@@ -39,7 +39,11 @@ final class CalendarViewController: BaseViewController {
             dateLabel.text = selectedDate
         }
     }
-    var scheduleItems: [Schedule] = []
+    var scheduleItems: [Schedule] = [] {
+        didSet {
+            calendar.reloadData()
+        }
+    }
     var pillItems: [PillList] = [] {
         didSet {
             collectionView.reloadData()
@@ -187,6 +191,7 @@ extension CalendarViewController {
                 self.stopPillList(pillId: pillId, day: date)
                 self.getPillList(date: self.selectedDate)
                 self.collectionView.reloadData()
+                self.calendar.reloadData()
                 self.view.layoutSubviews()
             }
         }
@@ -198,6 +203,7 @@ extension CalendarViewController {
                 self.deletePillList(pillId: pillId)
                 self.getPillList(date: self.selectedDate)
                 self.collectionView.reloadData()
+                self.calendar.reloadData()
                 self.view.layoutSubviews()
             }
         }
