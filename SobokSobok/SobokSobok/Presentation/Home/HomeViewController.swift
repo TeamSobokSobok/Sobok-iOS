@@ -16,6 +16,9 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        calendarViewController.getSchedules(date: Date().toString(of: .year))
+        setSwipe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,5 +43,9 @@ final class HomeViewController: BaseViewController {
 
 // MARK: - PageComponentProtocol
 extension HomeViewController: PageComponentProtocol {
+    func addFriendDeleagte() {
+        return
+    }
+    
     var pageTitle: String { "" }
 }

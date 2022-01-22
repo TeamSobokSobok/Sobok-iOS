@@ -31,8 +31,9 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sce-Mc-uNJ">
-                    <rect key="frame" x="20" y="135" width="335" height="611"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sce-Mc-uNJ">
+                    <rect key="frame" x="20" y="135" width="335" height="677"/>
+                    <color key="backgroundColor" name="gray150_sub"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -48,7 +49,7 @@
                 <constraint firstItem="sce-Mc-uNJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9sh-QB-1go"/>
                 <constraint firstItem="sce-Mc-uNJ" firstAttribute="top" secondItem="x58-YT-CbT" secondAttribute="bottom" constant="22" id="Ei5-AN-Lv4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x58-YT-CbT" secondAttribute="trailing" constant="20" id="cqp-qM-vFx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sce-Mc-uNJ" secondAttribute="bottom" constant="32" id="f6n-uI-T7a"/>
+                <constraint firstAttribute="bottom" secondItem="sce-Mc-uNJ" secondAttribute="bottom" id="f6n-uI-T7a"/>
                 <constraint firstItem="x58-YT-CbT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="jXZ-8E-NyM"/>
                 <constraint firstItem="x58-YT-CbT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uWF-kl-QU5"/>
             </constraints>

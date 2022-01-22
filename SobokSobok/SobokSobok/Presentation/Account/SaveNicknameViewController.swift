@@ -140,6 +140,7 @@ final class SaveNicknameViewController: BaseViewController {
     
     @IBAction func touchUpToRequest(_ sender: UIButton) {
         saveNickname()
+        navigationController?.pushViewController(ShareViewController.instanceFromNib(), animated: true)
     }
 }
 
