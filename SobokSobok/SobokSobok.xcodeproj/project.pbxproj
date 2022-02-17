@@ -167,9 +167,6 @@
 		F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA442789EDE70035230D /* NoticeViewController.swift */; };
-		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
-		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
-		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
 		F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */; };
 		F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */; };
 		F6FC97FC279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97EF279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift */; };
@@ -339,9 +336,6 @@
 		F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoListDataModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F69CAA442789EDE70035230D /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
-		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
-		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
-		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
 		F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1147,7 +1141,6 @@
 		F605025627BBFBCC0010DEC8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
 				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -1156,8 +1149,6 @@
 		F605025827BBFBF70010DEC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
-				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1335,7 +1326,6 @@
 				F6FC97FF279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */,
-				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
 				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
 				F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
@@ -1359,7 +1349,6 @@
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */,
-				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
 				EC1C311D279428A500972404 /* MedicineInfoCollectionViewCell.xib in Resources */,
@@ -1457,7 +1446,6 @@
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
-				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
