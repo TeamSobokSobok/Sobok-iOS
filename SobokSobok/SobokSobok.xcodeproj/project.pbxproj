@@ -156,7 +156,9 @@
 		ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */; };
 		ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BF7279B24FA00B5A32C /* APIConstants.swift */; };
 		F605027627BE18790010DEC8 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027527BE18790010DEC8 /* EmptyView.swift */; };
+		F605027827BE24330010DEC8 /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */; };
 		F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */; };
+		F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */; };
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
 		F60BAEB8279B3E690012707C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB6279B3E690012707C /* SplashView.xib */; };
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
@@ -326,7 +328,9 @@
 		ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLimitViewController.swift; sourceTree = "<group>"; };
 		ECF96BF7279B24FA00B5A32C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		F605027527BE18790010DEC8 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
 		F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListView.swift; sourceTree = "<group>"; };
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F60BAEB6279B3E690012707C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
@@ -1152,6 +1156,7 @@
 		F605025827BBFBF70010DEC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1191,6 +1196,7 @@
 			isa = PBXGroup;
 			children = (
 				F605027527BE18790010DEC8 /* EmptyView.swift */,
+				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1447,6 +1453,7 @@
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				F60BAEB7279B3E690012707C /* SplashView.swift in Sources */,
+				F605027827BE24330010DEC8 /* NoticeListCollectionViewCell.swift in Sources */,
 				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
@@ -1502,6 +1509,7 @@
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
 				F6FC97FE279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
+				F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */,
 				BD7120F4279717530068B981 /* ShareService.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,

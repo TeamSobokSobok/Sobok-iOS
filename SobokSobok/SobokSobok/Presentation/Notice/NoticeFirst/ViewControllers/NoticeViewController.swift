@@ -12,12 +12,13 @@ final class NoticeViewController: BaseViewController {
     // MARK: - Properties
     private var noticeList: [NoticeListData] = NoticeListData.dummy
     private let emptyView = EmptyView()
+    private let noticeListView = NoticeListView()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        assignDelegation()
-//        registerXib()
+        
+        assignDelegation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +27,8 @@ final class NoticeViewController: BaseViewController {
     }
     
     override func loadView() {
-        view = emptyView
+//        view = emptyView
+        view = noticeListView
     }
     
     override func style() {
@@ -36,10 +38,25 @@ final class NoticeViewController: BaseViewController {
     
     // MARK: - Functions
     func assignDelegation() {
-       
+        noticeListView.noticeListCollectionView.delegate = self
+        noticeListView.noticeListCollectionView.dataSource = self
+    }
+}
+
+
+// MARK: - Extensions
+extension NoticeViewController: UICollectionViewDelegate { }
+
+extension NoticeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return noticeList.count
     }
     
-    func registerXib() {
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = noticeListView.noticeListCollectionView.dequeueReusableCell(for: indexPath, cellType: NoticeListCollectionViewCell.self)
+        cell.backgroundColor = Color.white
+        cell.makeRounded(radius: 12)
+        cell.setData(noticeListData: noticeList[indexPath.row])
+        return cell
     }
 }
