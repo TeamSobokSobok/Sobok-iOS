@@ -24,6 +24,7 @@ final class NoticeListView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 167)
         layout.minimumInteritemSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
         layout.scrollDirection = .vertical
         $0.collectionViewLayout = layout
         $0.backgroundColor = .clear
