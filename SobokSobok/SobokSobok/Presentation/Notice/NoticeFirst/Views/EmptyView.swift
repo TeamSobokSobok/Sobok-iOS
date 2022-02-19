@@ -10,46 +10,34 @@ import UIKit
 import SnapKit
 import Then
 
-final class EmptyView: UIView {
+extension UICollectionView {
     
-    // MARK: - Properties
-    private var titleLabel = UILabel().then {
-        $0.textAlignment = .left
-        $0.text = "소중한 지안님의 알림"
-        $0.textColor = Color.black
-        $0.font = UIFont.font(.pretendardBold, ofSize: 24)
-    }
-    private var sobokImage = UIImageView().then {
-        $0.image = Image.illustOops
-        $0.contentMode = .scaleAspectFit
-    }
-    private var descriptionLabel = UILabel().then() {
-        $0.textAlignment = .center
-        $0.text = "아직 도착한 알림이 없어요!"
-        $0.textColor = Color.gray500
-        $0.font = UIFont.font(.pretendardRegular, ofSize: 16)
-    }
-    
-    // MARK: - Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setUI()
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
-    // MARK: - Functions
-    private func setUI() {
-        [titleLabel, sobokImage, descriptionLabel].forEach {
-            addSubview($0)
+    func setEmptyView(title: String, image: UIImage, message: String) {
+        let emptyView = UIView().then {
+            $0.frame = CGRect(x: self.center.x, y: self.center.y, width: self.bounds.width, height: self.bounds.height)
         }
-    }
-    
-    private func setConstraints() {
+        
+        let titleLabel = UILabel().then {
+            $0.textAlignment = .left
+            $0.text = title
+            $0.textColor = Color.black
+            $0.font = UIFont.font(.pretendardBold, ofSize: 24)
+        }
+        let sobokImage = UIImageView().then {
+            $0.image = image
+            $0.contentMode = .scaleAspectFit
+        }
+        let descriptionLabel = UILabel().then() {
+            $0.textAlignment = .center
+            $0.text = message
+            $0.textColor = Color.gray500
+            $0.font = UIFont.font(.pretendardRegular, ofSize: 16)
+        }
+        
+        [titleLabel, sobokImage, descriptionLabel].forEach {
+            emptyView.addSubview($0)
+        }
+        
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(84)
             $0.left.equalTo(20)
@@ -67,6 +55,11 @@ final class EmptyView: UIView {
             $0.leading.equalToSuperview().offset(28)
             $0.width.equalTo(318)
         }
+        
+        self.backgroundView = emptyView
     }
     
+    func restore() {
+        self.backgroundView = nil
+    }
 }
