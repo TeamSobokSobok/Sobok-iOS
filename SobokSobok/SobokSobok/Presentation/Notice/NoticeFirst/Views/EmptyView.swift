@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 final class EmptyView: UIView {
-
+    
     // MARK: - Properties
     private var titleLabel = UILabel().then {
         $0.textAlignment = .left
@@ -29,13 +29,13 @@ final class EmptyView: UIView {
         $0.textColor = Color.gray500
         $0.font = UIFont.font(.pretendardRegular, ofSize: 16)
     }
-
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        [titleLabel, sobokImage, descriptionLabel].forEach {
-            addSubview($0)
-        }
+        
+        setUI()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -43,9 +43,13 @@ final class EmptyView: UIView {
     }
     
     // MARK: - Functions
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    private func setUI() {
+        [titleLabel, sobokImage, descriptionLabel].forEach {
+            addSubview($0)
+        }
+    }
+    
+    private func setConstraints() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(84)
             $0.left.equalTo(20)
@@ -63,6 +67,6 @@ final class EmptyView: UIView {
             $0.leading.equalToSuperview().offset(28)
             $0.width.equalTo(318)
         }
-
     }
+    
 }

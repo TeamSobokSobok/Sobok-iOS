@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 final class NoticeListView: UIView {
-
+    
     // MARK: - Properties
     private var titleLabel = UILabel().then {
         $0.textAlignment = .left
@@ -35,9 +35,9 @@ final class NoticeListView: UIView {
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        [titleLabel, noticeListCollectionView].forEach {
-            addSubview($0)
-        }
+        
+        setUI()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -45,20 +45,23 @@ final class NoticeListView: UIView {
     }
     
     // MARK: - Functions
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    private func setUI() {
+        [titleLabel, noticeListCollectionView].forEach {
+            addSubview($0)
+        }
+    }
+    
+    private func setConstraints() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(84)
             $0.leading.equalToSuperview().offset(20)
         }
-
+        
         noticeListCollectionView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(141)
             $0.leading.equalToSuperview().offset(20)
-            $0.bottom.equalToSuperview().offset(-32)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.trailing.equalToSuperview().offset(-20)
         }
     }
-
 }

@@ -57,11 +57,9 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        [noticeIcon, labelStack, buttonStack].forEach {
-            addSubview($0)
-        }
-        labelStack.addArrangedSubviews(noticeTitle, noticeTime)
-        buttonStack.addArrangedSubviews(refuseButton, acceptButton)
+        
+        setUI()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -69,8 +67,15 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Functions
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    private func setUI() {
+        [noticeIcon, labelStack, buttonStack].forEach {
+            addSubview($0)
+        }
+        labelStack.addArrangedSubviews(noticeTitle, noticeTime)
+        buttonStack.addArrangedSubviews(refuseButton, acceptButton)
+    }
+    
+    private func setConstraints() {
         noticeIcon.snp.makeConstraints {
             $0.top.equalToSuperview().inset(22.3)
             $0.leading.equalToSuperview().inset(17.3)
