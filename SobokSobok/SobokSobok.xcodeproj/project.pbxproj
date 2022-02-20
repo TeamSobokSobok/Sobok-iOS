@@ -742,19 +742,9 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				F605025527BBFBB30010DEC8 /* NoticeFirst */,
+				F605025927BBFC2F0010DEC8 /* NoticeSecond */,
 				F6FC97ED279A9A0A007B5AF2 /* NoticeThird */,
-				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
-				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
-				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
-				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
-				F6538FA6278D814900B20B5E /* SendInfoViewController.swift */,
-				F6538FA7278D814900B20B5E /* SendInfoViewController.xib */,
-				F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */,
-				F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */,
-				F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */,
-				F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */,
-				F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */,
-				F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1160,6 +1150,64 @@
 				ECF96BE52798EFB400B5A32C /* PillLimitView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F605025527BBFBB30010DEC8 /* NoticeFirst */ = {
+			isa = PBXGroup;
+			children = (
+				F605025827BBFBF70010DEC8 /* Cells */,
+				F605025627BBFBCC0010DEC8 /* ViewControllers */,
+			);
+			path = NoticeFirst;
+			sourceTree = "<group>";
+		};
+		F605025627BBFBCC0010DEC8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
+				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F605025827BBFBF70010DEC8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
+				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F605025927BBFC2F0010DEC8 /* NoticeSecond */ = {
+			isa = PBXGroup;
+			children = (
+				F605025C27BBFC680010DEC8 /* Cells */,
+				F605025A27BBFC360010DEC8 /* ViewControllers */,
+			);
+			path = NoticeSecond;
+			sourceTree = "<group>";
+		};
+		F605025A27BBFC360010DEC8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6538FA7278D814900B20B5E /* SendInfoViewController.xib */,
+				F6538FA6278D814900B20B5E /* SendInfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F605025C27BBFC680010DEC8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F6538FAE278DBBC100B20B5E /* SendInfoCollectionViewCell.swift */,
+				F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */,
+				F6A62FAC27918AC7003425A1 /* SenderInfoCollectionViewCell.xib */,
+				F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */,
+				F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */,
+				F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F6FC97ED279A9A0A007B5AF2 /* NoticeThird */ = {
@@ -1647,7 +1695,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DEVELOPMENT_TEAM = RQHZUCMHSH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";
@@ -1679,7 +1727,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W7P3R7ZL78;
+				DEVELOPMENT_TEAM = RQHZUCMHSH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SobokSobok/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "소복소복";
