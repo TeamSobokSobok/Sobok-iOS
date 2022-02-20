@@ -13,6 +13,9 @@ import Then
 final class NoticeListCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
+    lazy var accept: (() -> ()) = {}
+    lazy var refuse: (() -> ()) = {}
+    
     private var noticeIcon = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
@@ -58,6 +61,8 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addAcceptAlert()
+        addRefuseAlert()
         setUI()
         setConstraints()
     }
@@ -69,7 +74,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     private func setUI() {
         [noticeIcon, labelStack, buttonStack].forEach {
-            addSubview($0)
+            contentView.addSubview($0)
         }
         labelStack.addArrangedSubviews(noticeTitle, noticeTime)
         buttonStack.addArrangedSubviews(refuseButton, acceptButton)
@@ -100,6 +105,24 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(labelStack.snp.bottom).inset(-16)
             $0.leading.equalToSuperview().inset(18)
         }
+    }
+    
+    private func addAcceptAlert() {
+        acceptButton.addTarget(self, action: #selector(acceptButtonClicked), for: .touchUpInside)
+    }
+    
+    private func addRefuseAlert() {
+        refuseButton.addTarget(self, action: #selector(refuseButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    func acceptButtonClicked() {
+        accept()
+    }
+    
+    @objc
+    func refuseButtonClicked() {
+        refuse()
     }
     
     func setData(noticeListData: NoticeListData) {

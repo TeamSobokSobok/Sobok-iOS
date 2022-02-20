@@ -49,6 +49,7 @@ final class NoticeListView: UIView {
         [titleLabel, noticeListCollectionView].forEach {
             addSubview($0)
         }
+        self.backgroundColor = Color.gray150
     }
     
     private func setConstraints() {

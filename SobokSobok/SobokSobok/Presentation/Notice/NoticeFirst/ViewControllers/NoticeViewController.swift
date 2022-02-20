@@ -29,11 +29,6 @@ final class NoticeViewController: BaseViewController {
         view = noticeListView
     }
     
-    override func style() {
-        super.style()
-        view.backgroundColor = Color.gray150
-    }
-    
     // MARK: - Functions
     func assignDelegation() {
         noticeListView.noticeListCollectionView.delegate = self
@@ -61,6 +56,25 @@ extension NoticeViewController: UICollectionViewDataSource {
         cell.backgroundColor = Color.white
         cell.makeRounded(radius: 12)
         cell.setData(noticeListData: noticeList[indexPath.row])
+        cell.layoutIfNeeded()
+        cell.accept = { [unowned self] in
+            let alert = UIAlertController(title: "지민지민님이 캘린더 공유를 요청했어요", message: "수락하면 상대방이 지안님의 캘린더를\n볼 수 있어요!", preferredStyle: .alert)
+            let refuse = UIAlertAction(title: "취소", style: .default, handler: nil)
+            let accept = UIAlertAction(title: "확인", style: .default, handler: nil)
+            [refuse, accept].forEach {
+                alert.addAction($0)
+            }
+            self.present(alert, animated: true)
+        }
+        cell.refuse = { [unowned self] in
+            let alert = UIAlertController(title: "지민지민님의 캘린더 공유를 거절할까요?", message: "거절하면 상대방이 지안님의 캘린더를\n볼 수 없어요", preferredStyle: .alert)
+            let refuse = UIAlertAction(title: "취소", style: .default, handler: nil)
+            let accept = UIAlertAction(title: "확인", style: .default, handler: nil)
+            [refuse, accept].forEach {
+                alert.addAction($0)
+            }
+            self.present(alert, animated: true)
+        }
         return cell
     }
 }
