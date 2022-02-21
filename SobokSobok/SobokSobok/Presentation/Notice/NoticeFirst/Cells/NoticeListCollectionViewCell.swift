@@ -78,6 +78,9 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         }
         labelStack.addArrangedSubviews(noticeTitle, noticeTime)
         buttonStack.addArrangedSubviews(refuseButton, acceptButton)
+        self.backgroundColor = Color.white
+        self.makeRounded(radius: 12)
+        self.layoutIfNeeded()
     }
     
     private func setConstraints() {
