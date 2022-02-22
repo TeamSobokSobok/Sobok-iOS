@@ -20,19 +20,24 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.contentMode = .scaleAspectFit
     }
     private let noticeTitle = UILabel().then {
-        $0.textAlignment = .left
-        $0.numberOfLines = 0
-        $0.lineBreakMode = .byCharWrapping
-        $0.textColor = Color.gray900
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
+        $0.lineBreakMode = .byCharWrapping
+        $0.numberOfLines = 0
+        $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical)
+        $0.textColor = Color.gray900
+        $0.textAlignment = .left
     }
     private let noticeTime = UILabel().then {
+        $0.font = UIFont.font(.pretendardMedium, ofSize: 12)
+        $0.lineBreakMode = .byCharWrapping
+        $0.numberOfLines = 0
+        $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical)
         $0.textAlignment = .left
         $0.textColor = Color.gray500
-        $0.font = UIFont.font(.pretendardMedium, ofSize: 12)
     }
     private let labelStack = UIStackView().then {
         $0.axis = .vertical
+        $0.alignment = .fill
         $0.distribution = .fill
         $0.spacing = 4
     }
@@ -56,6 +61,11 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.spacing = 9
         $0.alignment = .center
     }
+    private let contentStack = UIStackView().then {
+        $0.axis = .vertical
+        $0.distribution = .fillProportionally
+        $0.spacing = 16
+    }
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -72,12 +82,22 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Functions
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        super.preferredLayoutAttributesFitting(layoutAttributes)
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        var frame = layoutAttributes.frame
+        frame.size.height = ceil(size.height)
+        layoutAttributes.frame = frame
+        return layoutAttributes
+    }
+    
     private func setUI() {
+        labelStack.addArrangedSubviews(noticeTitle, noticeTime)
+        buttonStack.addArrangedSubviews(refuseButton, acceptButton)
+        contentStack.addArrangedSubviews(noticeIcon, labelStack, buttonStack)
         [noticeIcon, labelStack, buttonStack].forEach {
             contentView.addSubview($0)
         }
-        labelStack.addArrangedSubviews(noticeTitle, noticeTime)
-        buttonStack.addArrangedSubviews(refuseButton, acceptButton)
         self.backgroundColor = Color.white
         self.makeRounded(radius: 12)
         self.layoutIfNeeded()
@@ -85,16 +105,21 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     
     private func setConstraints() {
         noticeIcon.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(22.3)
-            $0.leading.equalToSuperview().inset(17.3)
             $0.width.equalTo(33.5)
             $0.height.equalTo(33.5)
+            $0.top.equalToSuperview().offset(26.25)
+            $0.leading.equalToSuperview().offset(18.25)
+        }
+        noticeTitle.snp.makeConstraints {
+            $0.width.equalTo(257)
+        }
+        noticeTime.snp.makeConstraints {
+            $0.height.equalTo(17)
         }
         labelStack.snp.makeConstraints {
-            $0.width.equalTo(257)
-            $0.top.equalToSuperview().inset(22)
-            $0.leading.equalToSuperview().inset(60)
-            $0.trailing.equalToSuperview().inset(18)
+            $0.top.equalToSuperview().offset(23)
+            $0.leading.equalToSuperview().offset(60)
+            $0.trailing.equalToSuperview().inset(24)
         }
         refuseButton.snp.makeConstraints {
             $0.width.equalTo(145)
@@ -105,8 +130,10 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(40)
         }
         buttonStack.snp.makeConstraints {
-            $0.top.equalTo(labelStack.snp.bottom).inset(-16)
-            $0.leading.equalToSuperview().inset(18)
+            $0.height.equalTo(40)
+            $0.top.equalTo(labelStack.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(18)
+            $0.bottom.equalToSuperview().offset(-25)
         }
     }
     

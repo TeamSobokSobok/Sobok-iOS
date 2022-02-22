@@ -22,7 +22,7 @@ final class NoticeListView: UIView {
     
     let noticeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 167)
+        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 167)
         layout.minimumInteritemSpacing = 8
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
         layout.scrollDirection = .vertical
