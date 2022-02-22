@@ -42,24 +42,24 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.spacing = 4
     }
     private let refuseButton = UIButton().then {
-        $0.makeRounded(radius: 8)
         $0.backgroundColor = Color.lightMint
+        $0.makeRounded(radius: 8)
         $0.setTitle("거절", for: .normal)
         $0.setTitleColor(Color.darkMint, for: .normal)
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 13)
     }
     private let acceptButton = UIButton().then {
-        $0.makeRounded(radius: 8)
         $0.backgroundColor = Color.mint
+        $0.makeRounded(radius: 8)
         $0.setTitle("수락", for: .normal)
         $0.setTitleColor(Color.white, for: .normal)
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 13)
     }
     private let buttonStack = UIStackView().then {
+        $0.alignment = .center
         $0.axis = .horizontal
         $0.distribution = .fillEqually
         $0.spacing = 9
-        $0.alignment = .center
     }
     private let contentStack = UIStackView().then {
         $0.axis = .vertical
@@ -99,8 +99,8 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
             contentView.addSubview($0)
         }
         self.backgroundColor = Color.white
-        self.makeRounded(radius: 12)
         self.layoutIfNeeded()
+        self.makeRounded(radius: 12)
     }
     
     private func setConstraints() {
