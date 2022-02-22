@@ -16,41 +16,41 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     lazy var accept: (() -> ()) = {}
     lazy var refuse: (() -> ()) = {}
     
-    private var noticeIcon = UIImageView().then {
+    private let noticeIcon = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
-    private var noticeTitle = UILabel().then {
+    private let noticeTitle = UILabel().then {
         $0.textAlignment = .left
         $0.numberOfLines = 0
         $0.lineBreakMode = .byCharWrapping
         $0.textColor = Color.gray900
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
     }
-    private var noticeTime = UILabel().then {
+    private let noticeTime = UILabel().then {
         $0.textAlignment = .left
         $0.textColor = Color.gray500
         $0.font = UIFont.font(.pretendardMedium, ofSize: 12)
     }
-    private var labelStack = UIStackView().then {
+    private let labelStack = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill
         $0.spacing = 4
     }
-    private var refuseButton = UIButton().then {
+    private let refuseButton = UIButton().then {
         $0.makeRounded(radius: 8)
         $0.backgroundColor = Color.lightMint
         $0.setTitle("거절", for: .normal)
         $0.setTitleColor(Color.darkMint, for: .normal)
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 13)
     }
-    private var acceptButton = UIButton().then {
+    private let acceptButton = UIButton().then {
         $0.makeRounded(radius: 8)
         $0.backgroundColor = Color.mint
         $0.setTitle("수락", for: .normal)
         $0.setTitleColor(Color.white, for: .normal)
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 13)
     }
-    private var buttonStack = UIStackView().then {
+    private let buttonStack = UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
         $0.spacing = 9

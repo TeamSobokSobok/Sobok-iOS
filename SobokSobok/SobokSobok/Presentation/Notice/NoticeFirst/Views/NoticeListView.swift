@@ -13,7 +13,7 @@ import Then
 final class NoticeListView: UIView {
     
     // MARK: - Properties
-    private var titleLabel = UILabel().then {
+    private let titleLabel = UILabel().then {
         $0.textAlignment = .left
         $0.text = "소중한 지안님의 알림"
         $0.textColor = Color.black
