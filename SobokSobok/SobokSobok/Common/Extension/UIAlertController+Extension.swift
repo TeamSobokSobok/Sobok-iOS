@@ -11,7 +11,7 @@ public func makeAlert(title: String, message: String, accept: String, vc: UIView
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let acceptAction = UIAlertAction(title: accept, style: .default, handler: nil)
     let refuseAction = UIAlertAction(title: "취소", style: .default, handler: nil)
-    [acceptAction, refuseAction].forEach {
+    [refuseAction, acceptAction].forEach {
         alert.addAction($0)
     }
     vc.present(alert, animated: true)
