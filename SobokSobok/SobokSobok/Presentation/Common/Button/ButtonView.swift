@@ -12,15 +12,15 @@ import Then
 
 final class ButtonView: UIView {
     
-    private lazy var button1 = ButtonStyle.init(frame: CGRect(), mode: .lightMint, text: "거절", fontSize: 13)
+    private lazy var button1 = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절", fontSize: 13)
     
-    private lazy var button2 = ButtonStyle.init(frame: CGRect(), mode: .mainMint, text: "수락", fontSize: 13)
+    private lazy var button2 = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "수락", fontSize: 13)
     
-    private lazy var button3 = ButtonStyle.init(frame: CGRect(), mode: .lightMint, text: "거절할래요", fontSize: 18)
+    private lazy var button3 = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절할래요", fontSize: 18)
     
-    private lazy var button4 = ButtonStyle.init(frame: CGRect(), mode: .mainMint, text: "받을래요", fontSize: 18)
+    private lazy var button4 = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "받을래요", fontSize: 18)
     
-    private lazy var button5 = ButtonStyle.init(frame: CGRect(), mode: .mainMint, text: "선택 완료", fontSize: 18)
+    private lazy var button5 = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "선택 완료", fontSize: 18)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

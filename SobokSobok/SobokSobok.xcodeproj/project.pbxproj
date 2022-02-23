@@ -121,7 +121,7 @@
 		EC1C311927941CDF00972404 /* AddMedicineFourthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1C311727941CDF00972404 /* AddMedicineFourthViewController.xib */; };
 		EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C311A279428A500972404 /* MedicineInfoCollectionViewCell.swift */; };
 		EC1C311D279428A500972404 /* MedicineInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1C311B279428A500972404 /* MedicineInfoCollectionViewCell.xib */; };
-		EC4BF2ED27C0BA9000B28F90 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EC27C0BA9000B28F90 /* ButtonStyle.swift */; };
+		EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */; };
 		EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */; };
 		EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */; };
 		EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95727982E40002FC0E6 /* AddPillAPI.swift */; };
@@ -297,7 +297,7 @@
 		EC1C311727941CDF00972404 /* AddMedicineFourthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineFourthViewController.xib; sourceTree = "<group>"; };
 		EC1C311A279428A500972404 /* MedicineInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC1C311B279428A500972404 /* MedicineInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineInfoCollectionViewCell.xib; sourceTree = "<group>"; };
-		EC4BF2EC27C0BA9000B28F90 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobokButton.swift; sourceTree = "<group>"; };
 		EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		EC68A95727982E40002FC0E6 /* AddPillAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillAPI.swift; sourceTree = "<group>"; };
@@ -934,7 +934,7 @@
 		EC4BF2EB27C0BA8400B28F90 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				EC4BF2EC27C0BA9000B28F90 /* ButtonStyle.swift */,
+				EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */,
 				EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */,
 				EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */,
 			);
@@ -1432,7 +1432,7 @@
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
-				EC4BF2ED27C0BA9000B28F90 /* ButtonStyle.swift in Sources */,
+				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
 				F6FC9801279A9A0A007B5AF2 /* PillInfoEditViewController.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,

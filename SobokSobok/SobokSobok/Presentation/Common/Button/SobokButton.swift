@@ -14,10 +14,10 @@ enum ButtonMode: Int, CaseIterable {
     case mainMint
 }
 
-final class ButtonStyle: UIButton {
+final class SobokButton: UIButton {
     
-    var mode: ButtonMode
-    var text: String
+    private var mode: ButtonMode
+    private var text: String
     
     init(frame: CGRect, mode: ButtonMode, text: String, fontSize: CGFloat) {
         self.mode = mode
@@ -31,13 +31,13 @@ final class ButtonStyle: UIButton {
         fatalError()
     }
     
-    func setUI(text: String, fontSize: Int) {
+    private func setUI(text: String, fontSize: Int) {
         makeRounded(radius: 8)
         setTitle(text, for: .normal)
         titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: CGFloat(fontSize))
     }
     
-    func setupMode(mode: ButtonMode) {
+    private func setupMode(mode: ButtonMode) {
         self.mode = mode
         switch self.mode {
         case .lightMint:
