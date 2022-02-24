@@ -99,7 +99,6 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
             contentView.addSubview($0)
         }
         self.backgroundColor = Color.white
-        self.layoutIfNeeded()
         self.makeRounded(radius: 12)
     }
     
