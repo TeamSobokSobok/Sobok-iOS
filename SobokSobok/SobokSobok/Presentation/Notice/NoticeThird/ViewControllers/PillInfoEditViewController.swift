@@ -49,7 +49,7 @@ final class PillInfoEditViewController: BaseViewController {
     // MARK: - Functions
     private func setUI() {
         selectButtons.forEach {
-            $0.cornerRadius = 10
+            $0.makeRounded(radius: 10)
         }
         [pillNameTextField, periodSelectButton, specificDayView, specificTermView].forEach {
             $0?.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)

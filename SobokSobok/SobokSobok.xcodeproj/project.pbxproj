@@ -158,9 +158,14 @@
 		ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BE52798EFB400B5A32C /* PillLimitView.swift */; };
 		ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */; };
 		ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BF7279B24FA00B5A32C /* APIConstants.swift */; };
+		F605027627BE18790010DEC8 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027527BE18790010DEC8 /* EmptyView.swift */; };
+		F605027827BE24330010DEC8 /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */; };
+		F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */; };
+		F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */; };
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
 		F60BAEB8279B3E690012707C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB6279B3E690012707C /* SplashView.xib */; };
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
+		F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
 		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
 		F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* SendInfoViewController.swift */; };
@@ -169,10 +174,6 @@
 		F6538FB1278DBBC100B20B5E /* SendInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */; };
 		F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
-		F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA442789EDE70035230D /* NoticeViewController.swift */; };
-		F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA452789EDE70035230D /* NoticeViewController.xib */; };
-		F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */; };
-		F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */; };
 		F6A62FA9278F1F24003425A1 /* FooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */; };
 		F6A62FAA278F1F24003425A1 /* FooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */; };
 		F6FC97FC279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97EF279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift */; };
@@ -333,9 +334,14 @@
 		ECF96BE52798EFB400B5A32C /* PillLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLimitView.swift; sourceTree = "<group>"; };
 		ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLimitViewController.swift; sourceTree = "<group>"; };
 		ECF96BF7279B24FA00B5A32C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		F605027527BE18790010DEC8 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
+		F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListView.swift; sourceTree = "<group>"; };
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F60BAEB6279B3E690012707C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
 		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* SendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoViewController.swift; sourceTree = "<group>"; };
@@ -344,10 +350,6 @@
 		F6538FAF278DBBC100B20B5E /* SendInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoListDataModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
-		F69CAA442789EDE70035230D /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
-		F69CAA452789EDE70035230D /* NoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
-		F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
-		F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		F6A62FA7278F1F24003425A1 /* FooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterCollectionViewCell.xib; sourceTree = "<group>"; };
 		F6A62FAB27918AC7003425A1 /* SenderInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 				BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */,
 				BD2C8B56279612BC00B1F59D /* Date+Extension.swift */,
 				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
+				F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1155,6 +1158,7 @@
 		F605025527BBFBB30010DEC8 /* NoticeFirst */ = {
 			isa = PBXGroup;
 			children = (
+				F605027427BE186B0010DEC8 /* Views */,
 				F605025827BBFBF70010DEC8 /* Cells */,
 				F605025627BBFBCC0010DEC8 /* ViewControllers */,
 			);
@@ -1164,8 +1168,7 @@
 		F605025627BBFBCC0010DEC8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F69CAA452789EDE70035230D /* NoticeViewController.xib */,
-				F69CAA442789EDE70035230D /* NoticeViewController.swift */,
+				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1173,8 +1176,7 @@
 		F605025827BBFBF70010DEC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F69CAA4A2789EFF60035230D /* NoticeTableViewCell.swift */,
-				F69CAA4B2789EFF60035230D /* NoticeTableViewCell.xib */,
+				F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1208,6 +1210,15 @@
 				F6A62FA8278F1F24003425A1 /* FooterCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F605027427BE186B0010DEC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F605027527BE18790010DEC8 /* EmptyView.swift */,
+				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F6FC97ED279A9A0A007B5AF2 /* NoticeThird */ = {
@@ -1352,7 +1363,6 @@
 				F6FC97FF279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */,
-				F69CAA4D2789EFF60035230D /* NoticeTableViewCell.xib in Resources */,
 				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
 				F6538FA9278D814900B20B5E /* SendInfoViewController.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
@@ -1376,7 +1386,6 @@
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
 				9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */,
-				F69CAA472789EDE70035230D /* NoticeViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
 				EC1C311D279428A500972404 /* MedicineInfoCollectionViewCell.xib in Resources */,
@@ -1465,6 +1474,7 @@
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				F60BAEB7279B3E690012707C /* SplashView.swift in Sources */,
+				F605027827BE24330010DEC8 /* NoticeListCollectionViewCell.swift in Sources */,
 				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
@@ -1475,7 +1485,6 @@
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
-				F69CAA4C2789EFF60035230D /* NoticeTableViewCell.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
@@ -1494,6 +1503,7 @@
 				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
+				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
 				BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */,
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
@@ -1508,6 +1518,7 @@
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */,
+				F605027627BE18790010DEC8 /* EmptyView.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				F6FC9800279A9A0A007B5AF2 /* WeekSelectViewController.swift in Sources */,
@@ -1521,10 +1532,12 @@
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
 				F6FC97FE279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
+				F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */,
 				BD7120F4279717530068B981 /* ShareService.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
@@ -1544,7 +1557,6 @@
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
 				EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */,
-				F69CAA462789EDE70035230D /* NoticeViewController.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
 				BD7120F12796CFA50068B981 /* Pill.swift in Sources */,
