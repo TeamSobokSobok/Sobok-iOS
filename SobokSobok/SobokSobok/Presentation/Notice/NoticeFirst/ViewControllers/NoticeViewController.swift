@@ -54,7 +54,7 @@ extension NoticeViewController: UICollectionViewDataSource {
         let cell = noticeListView.noticeListCollectionView.dequeueReusableCell(for: indexPath, cellType: NoticeListCollectionViewCell.self)
         cell.setData(noticeListData: noticeList[indexPath.row])
         cell.accept = { [unowned self] in
-            makeAlert(title: "지민지민님이 캘린더 공유를 요청했어요", message: "수락하면 상대방이 지안님의 캘린더를\n볼 수 있어요!", accept: "확인", vc: self)
+            makeAlert(title: "지민지민님이 캘린더 공유를 요청했어요", message: "수락하면 상대방이 지안님의 캘린더를\n볼 수 있어요!", accept: "확인", vc: self, nextVC: PillInfoViewController.instanceFromNib())
         }
         cell.refuse = { [unowned self] in
             makeAlert(title: "지민지민님의 캘린더 공유를 거절할까요?", message: "거절하면 상대방이 지안님의 캘린더를\n볼 수 없어요", accept: "확인", vc: self)

@@ -17,6 +17,7 @@ final class PillInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addDissmiss()
         assignDelegation()
     }
     
@@ -25,9 +26,15 @@ final class PillInfoViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func assignDelegation() {
+    private func assignDelegation() {
         pillInfoView.pillInfoCollectionView.delegate = self
         pillInfoView.pillInfoCollectionView.dataSource = self
+    }
+    
+    private func addDissmiss() {
+        pillInfoView.closed = { [unowned self] in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

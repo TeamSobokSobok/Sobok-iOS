@@ -13,6 +13,8 @@ import Then
 final class PillInfoCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
+    lazy var openEditView: (() -> ()) = {}
+    
     private let pillColor = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
@@ -76,6 +78,7 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addEditButton()
         setUI()
         setConstraints()
     }
@@ -95,6 +98,15 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Functions
+    private func addEditButton() {
+        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    func editButtonClicked() {
+        openEditView()
+    }
+    
     private func setUI() {
         [topStack, editButton, middleStack, bottomStack].forEach {
             contentView.addSubview($0)

@@ -10,6 +10,8 @@ import UIKit
 final class PillInfoView: UIView {
 
     // MARK: - Properties
+    lazy var closed: (() -> ()) = {}
+    
     private let navigationView = UIView().then {
         $0.backgroundColor = .white
     }
@@ -50,6 +52,7 @@ final class PillInfoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addCloseButton()
         setUI()
         setConstraints()
     }
@@ -59,6 +62,15 @@ final class PillInfoView: UIView {
     }
     
     // MARK: - Functions
+    private func addCloseButton() {
+        xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    func xButtonClicked() {
+        closed()
+    }
+    
     private func setUI() {
         [navigationView, navigationTitleLabel, xButton, senderInfoLabel, pillInfoCollectionView, buttonStack].forEach {
             addSubview($0)
