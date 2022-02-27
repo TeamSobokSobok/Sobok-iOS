@@ -78,7 +78,7 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addEditButton()
+        addEditViewButton()
         setUI()
         setConstraints()
     }
@@ -98,12 +98,12 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Functions
-    private func addEditButton() {
-        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+    private func addEditViewButton() {
+        editButton.addTarget(self, action: #selector(editViewButtonClicked), for: .touchUpInside)
     }
     
     @objc
-    func editButtonClicked() {
+    func editViewButtonClicked() {
         openEditView()
     }
     
