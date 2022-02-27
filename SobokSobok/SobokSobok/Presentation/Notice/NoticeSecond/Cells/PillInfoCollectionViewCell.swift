@@ -58,10 +58,18 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
         $0.textAlignment = .left
         $0.textColor = Color.gray700
     }
-    private let bottomStack = UIStackView().then {
+    private let labelStack = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill
         $0.spacing = 12
+    }
+    private let lineView = UIView().then {
+        $0.backgroundColor = Color.gray500
+    }
+    private let bottomStack = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.spacing = 13
     }
     
     // MARK: - Initialization
@@ -93,7 +101,8 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
         }
         topStack.addArrangedSubviews(pillColor, pillNameLabel)
         middleStack.addArrangedSubviews(dateImage, dateLabel)
-        bottomStack.addArrangedSubviews(termLabel, timeLabel)
+        labelStack.addArrangedSubviews(termLabel, timeLabel)
+        bottomStack.addArrangedSubviews(lineView, labelStack)
         self.backgroundColor = Color.white
         self.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
@@ -127,12 +136,11 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(topStack.snp.bottom).offset(7)
             $0.leading.equalToSuperview().offset(22)
         }
-        termLabel.snp.makeConstraints {
-            $0.leading.equalTo(bottomStack).inset(13)
-        }
         timeLabel.snp.makeConstraints {
             $0.width.equalTo(240)
-            $0.leading.equalTo(bottomStack).inset(13)
+        }
+        lineView.snp.makeConstraints {
+            $0.width.equalTo(1)
         }
         bottomStack.snp.makeConstraints {
             $0.top.equalTo(middleStack.snp.bottom).offset(12)
