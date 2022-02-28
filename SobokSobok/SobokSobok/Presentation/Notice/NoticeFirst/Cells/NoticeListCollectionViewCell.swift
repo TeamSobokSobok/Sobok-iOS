@@ -65,6 +65,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         setConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError()
     }

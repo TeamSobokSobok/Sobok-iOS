@@ -38,6 +38,7 @@ final class PillInfoFooterView: UICollectionReusableView {
         setConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError()
     }

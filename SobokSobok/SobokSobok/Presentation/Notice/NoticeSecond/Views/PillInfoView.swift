@@ -57,6 +57,7 @@ final class PillInfoView: UIView {
         setConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError()
     }
