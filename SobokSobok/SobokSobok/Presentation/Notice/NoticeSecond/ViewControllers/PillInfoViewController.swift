@@ -19,6 +19,8 @@ final class PillInfoViewController: UIViewController {
         
         addDissmiss()
         assignDelegation()
+        refuseButtonClicked()
+        acceptButtonClicked()
     }
     
     override func loadView() {
@@ -33,7 +35,25 @@ final class PillInfoViewController: UIViewController {
     
     private func addDissmiss() {
         pillInfoView.closed = { [unowned self] in
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true)
+        }
+    }
+    
+    private func refuseButtonClicked() {
+        pillInfoView.sendedPillRefuse = { [unowned self] in
+            self.dismiss(animated: true) {
+                // TODO: - 서버통신 후 처리 (NoticdListView의 Cell 바뀌도록)
+            }
+        }
+    }
+    
+    private func acceptButtonClicked() {
+        pillInfoView.sendedPillAccept = { [unowned self] in
+            makeAcceptAlert(title: "복약 중인 약을 포함해\n최대 5개까지 저장할 수 있어요",
+                            vc: self,
+                            nextVC: NoticeViewController.instanceFromNib()) {
+                // TODO: - 서버통신 후 처리 (NoticdListView의 Cell 바뀌도록)
+            }
         }
     }
 }

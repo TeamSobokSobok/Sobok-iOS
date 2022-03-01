@@ -11,6 +11,8 @@ final class PillInfoView: UIView {
 
     // MARK: - Properties
     lazy var closed: (() -> ()) = {}
+    lazy var sendedPillAccept: (() -> ()) = {}
+    lazy var sendedPillRefuse: (() -> ()) = {}
     
     private let navigationView = UIView().then {
         $0.backgroundColor = .white
@@ -50,7 +52,9 @@ final class PillInfoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addAcceptButton()
         addCloseButton()
+        addRefuseButton()
         setUI()
         setConstraints()
     }
@@ -65,9 +69,27 @@ final class PillInfoView: UIView {
         xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
     }
     
+    private func addAcceptButton() {
+        acceptButton.addTarget(self, action: #selector(acceptButtonClicked), for: .touchUpInside)
+    }
+    
+    private func addRefuseButton() {
+        refuseButton.addTarget(self, action: #selector(refuseButtonClicked), for: .touchUpInside)
+    }
+    
     @objc
     func xButtonClicked() {
         closed()
+    }
+    
+    @objc
+    func acceptButtonClicked() {
+        sendedPillAccept()
+    }
+    
+    @objc
+    func refuseButtonClicked() {
+        sendedPillRefuse()
     }
     
     private func setUI() {
