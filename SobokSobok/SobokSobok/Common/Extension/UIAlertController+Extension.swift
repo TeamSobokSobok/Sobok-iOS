@@ -21,11 +21,10 @@ public func makeAlert(title: String, message: String, accept: String, vc: UIView
     vc.present(alert, animated: true, completion: completion)
 }
 
-public func makeAcceptAlert(title: String, vc: UIViewController, nextVC: UIViewController, completion: @escaping () -> Void) {
+public func makeAcceptAlert(title: String, vc: UIViewController, completion: @escaping () -> Void) {
     let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
     let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
-        nextVC.modalPresentationStyle = .fullScreen
-        vc.present(nextVC, animated: true, completion: completion)
+        vc.dismiss(animated: true, completion: completion)
     }
     alert.addAction(acceptAction)
     vc.present(alert, animated: true)

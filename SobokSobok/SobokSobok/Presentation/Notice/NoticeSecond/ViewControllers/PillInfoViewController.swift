@@ -49,9 +49,7 @@ final class PillInfoViewController: UIViewController {
     
     private func acceptButtonClicked() {
         pillInfoView.sendedPillAccept = { [unowned self] in
-            makeAcceptAlert(title: "복약 중인 약을 포함해\n최대 5개까지 저장할 수 있어요",
-                            vc: self,
-                            nextVC: NoticeViewController.instanceFromNib()) {
+            makeAcceptAlert(title: "복약 중인 약을 포함해\n최대 5개까지 저장할 수 있어요", vc: self) {
                 // TODO: - 서버통신 후 처리 (NoticdListView의 Cell 바뀌도록)
             }
         }
