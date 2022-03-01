@@ -23,12 +23,6 @@ final class PillInfoView: UIView {
         $0.setImage(Image.icClose48, for: .normal)
         $0.tintColor = Color.black
     }
-    private let senderInfoLabel = UILabel().then {
-        $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
-        $0.text = "효영님이 전송해준 약이에요"
-        $0.textAlignment = .left
-        $0.textColor = Color.gray700
-    }
     private let refuseButton = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절할래요", fontSize: 18)
     private let acceptButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "받을래요", fontSize: 18)
     private let buttonStack = UIStackView().then {
@@ -40,12 +34,14 @@ final class PillInfoView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 166)
         layout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 66)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 21)
         layout.minimumInteritemSpacing = 11
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 11, left: 0, bottom: 16, right: 0)
         layout.scrollDirection = .vertical
         $0.backgroundColor = .clear
         $0.collectionViewLayout = layout
         $0.register(PillInfoCollectionViewCell.self)
+        $0.register(PillInfoHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PillInfoHeaderView.reuseIdentifier)
         $0.register(PillInfoFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillInfoFooterView.reuseIdentifier)
         $0.showsVerticalScrollIndicator = false
     }
@@ -75,7 +71,7 @@ final class PillInfoView: UIView {
     }
     
     private func setUI() {
-        [navigationView, navigationTitleLabel, xButton, senderInfoLabel, pillInfoCollectionView, buttonStack].forEach {
+        [navigationView, navigationTitleLabel, xButton, pillInfoCollectionView, buttonStack].forEach {
             addSubview($0)
         }
         buttonStack.addArrangedSubviews(refuseButton, acceptButton)
@@ -97,12 +93,8 @@ final class PillInfoView: UIView {
             $0.leading.equalTo(navigationView).inset(1)
             $0.centerY.equalTo(navigationTitleLabel)
         }
-        senderInfoLabel.snp.makeConstraints {
-            $0.top.equalTo(navigationView.snp.bottom).offset(27)
-            $0.leading.equalToSuperview().offset(20)
-        }
         pillInfoCollectionView.snp.makeConstraints {
-            $0.top.equalTo(senderInfoLabel.snp.bottom).inset(-11)
+            $0.top.equalToSuperview().offset(129)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
         }

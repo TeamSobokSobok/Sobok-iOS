@@ -47,7 +47,7 @@ final class PillInfoFooterView: UICollectionReusableView {
     
     // MARK: - Functions
     private func setUI() {
-        addSubview(noticeStack)
+        self.addSubview(noticeStack)
         noticeStack.addArrangedSubviews(noticeIcon, noticeLabel)
         self.backgroundColor = Color.gray100
         self.makeRounded(radius: 8)

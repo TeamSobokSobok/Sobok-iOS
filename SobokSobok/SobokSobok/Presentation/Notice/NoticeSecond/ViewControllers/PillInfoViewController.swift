@@ -53,7 +53,15 @@ extension PillInfoViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let footer = pillInfoView.pillInfoCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillInfoFooterView.reuseIdentifier, for: indexPath) as? PillInfoFooterView else { return UICollectionReusableView() }
-        return footer
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = pillInfoView.pillInfoCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PillInfoHeaderView.reuseIdentifier, for: indexPath) as? PillInfoHeaderView else { return UICollectionReusableView() }
+            return header
+        case UICollectionView.elementKindSectionFooter:
+            guard let footer = pillInfoView.pillInfoCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PillInfoFooterView.reuseIdentifier, for: indexPath) as? PillInfoFooterView else { return UICollectionReusableView() }
+            return footer
+        default:
+            assert(false)
+        }
     }
 }
