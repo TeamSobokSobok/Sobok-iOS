@@ -39,12 +39,14 @@ final class PillInfoView: UIView {
     let pillInfoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 166)
+        layout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 66)
         layout.minimumInteritemSpacing = 11
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
         layout.scrollDirection = .vertical
-        
         $0.backgroundColor = .clear
         $0.collectionViewLayout = layout
         $0.register(PillInfoCollectionViewCell.self)
+        $0.register(PillInfoFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillInfoFooterView.reuseIdentifier)
         $0.showsVerticalScrollIndicator = false
     }
     

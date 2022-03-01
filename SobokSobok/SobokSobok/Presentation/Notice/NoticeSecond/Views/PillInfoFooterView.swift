@@ -21,12 +21,14 @@ final class PillInfoFooterView: UICollectionReusableView {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 14)
         $0.lineBreakMode = .byWordWrapping
         $0.numberOfLines = 0
+        $0.text = "전송받은 약이 내가 먹는 약과 다르다면\n수정해서 저장할 수 있어요"
         $0.textAlignment = .left
         $0.textColor = Color.gray500
     }
     private let noticeStack = UIStackView().then {
+        $0.alignment = .center
         $0.axis = .horizontal
-        $0.distribution = .fill
+        $0.distribution = .fillProportionally
         $0.spacing = 11
     }
     
@@ -58,10 +60,11 @@ final class PillInfoFooterView: UICollectionReusableView {
         }
         noticeLabel.snp.makeConstraints {
             $0.width.equalTo(240)
+            $0.height.equalTo(42)
         }
         noticeStack.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(12)
-            $0.leading.equalToSuperview().offset(13)
+            $0.top.equalToSuperview().inset(12)
+            $0.leading.equalToSuperview().offset(14)
         }
     }
 }

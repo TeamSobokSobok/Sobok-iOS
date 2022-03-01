@@ -51,4 +51,9 @@ extension PillInfoViewController: UICollectionViewDataSource {
         cell.setData(pillInfoData: pillInfoList[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let footer = pillInfoView.pillInfoCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillInfoFooterView.reuseIdentifier, for: indexPath) as? PillInfoFooterView else { return UICollectionReusableView() }
+        return footer
+    }
 }
