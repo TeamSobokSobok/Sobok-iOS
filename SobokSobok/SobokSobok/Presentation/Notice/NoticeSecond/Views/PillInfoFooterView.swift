@@ -28,8 +28,13 @@ final class PillInfoFooterView: UICollectionReusableView {
     private let noticeStack = UIStackView().then {
         $0.alignment = .center
         $0.axis = .horizontal
+        $0.backgroundColor = Color.gray100
         $0.distribution = .fillProportionally
+        $0.makeRounded(radius: 8)
         $0.spacing = 11
+    }
+    private let noticeView = UIView().then {
+        $0.backgroundColor = Color.white
     }
     
     // MARK: - Initialization
@@ -47,24 +52,32 @@ final class PillInfoFooterView: UICollectionReusableView {
     
     // MARK: - Functions
     private func setUI() {
-        self.addSubview(noticeStack)
         noticeStack.addArrangedSubviews(noticeIcon, noticeLabel)
-        self.backgroundColor = Color.gray100
-        self.makeRounded(radius: 8)
+        noticeView.addSubview(noticeStack)
+        self.addSubview(noticeView)
     }
     
     private func setConstraints() {
         noticeIcon.snp.makeConstraints {
             $0.width.equalTo(20)
             $0.height.equalTo(20)
+            $0.leading.equalTo(noticeStack).inset(12)
         }
         noticeLabel.snp.makeConstraints {
             $0.width.equalTo(240)
             $0.height.equalTo(42)
         }
         noticeStack.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(12)
-            $0.leading.equalToSuperview().offset(14)
+            $0.width.equalTo(335)
+            $0.height.equalTo(66)
+            $0.top.equalTo(noticeView)
+            $0.leading.equalTo(noticeView)
+            $0.bottom.equalTo(noticeView.snp.bottom).offset(-66)
+        }
+        noticeView.snp.makeConstraints {
+            $0.height.equalTo(132)
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
         }
     }
 }

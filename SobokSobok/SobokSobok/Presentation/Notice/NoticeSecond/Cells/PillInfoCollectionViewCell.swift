@@ -98,7 +98,6 @@ final class PillInfoCollectionViewCell: UICollectionViewCell {
         return layoutAttributes
     }
     
-    // MARK: - Functions
     private func addEditViewButton() {
         editButton.addTarget(self, action: #selector(editViewButtonClicked), for: .touchUpInside)
     }

@@ -17,10 +17,10 @@ final class PillInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        acceptButtonClicked()
         addDissmiss()
         assignDelegation()
         refuseButtonClicked()
-        acceptButtonClicked()
     }
     
     override func loadView() {

@@ -35,8 +35,8 @@ final class PillInfoView: UIView {
     let pillInfoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 166)
-        layout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 66)
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 21)
+        layout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 132)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 48)
         layout.minimumInteritemSpacing = 11
         layout.sectionInset = UIEdgeInsets(top: 11, left: 0, bottom: 16, right: 0)
         layout.scrollDirection = .vertical
@@ -116,14 +116,14 @@ final class PillInfoView: UIView {
             $0.centerY.equalTo(navigationTitleLabel)
         }
         pillInfoCollectionView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(129)
+            $0.top.equalToSuperview().offset(102)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
         }
         buttonStack.snp.makeConstraints {
             $0.width.equalTo(335)
             $0.height.equalTo(52)
-            $0.top.equalTo(pillInfoCollectionView.snp.bottom).offset(66)
+            $0.top.equalTo(pillInfoCollectionView.snp.bottom).offset(14)
             $0.leading.equalToSuperview().offset(20)
             $0.bottom.equalTo(safeAreaLayoutGuide).offset(-22)
         }
