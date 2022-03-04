@@ -47,7 +47,7 @@ final class AddPillFirstViewController: BaseViewController {
         // 하지만 자주 사용하지 않음 -> RxCocoa의 장점인 bind가 MainThread를 보장하기 때문에
         // 결론 bind를 사용한다면 Thread에 대한 고민 X
         pillTimeViewModel.pillTimeList.bind(to:
-                                        addPillFirstView.collectionView.rx.items(cellIdentifier: "PillTimeCollectionViewCell", cellType: PillTimeCollectionViewCell.self))
+        addPillFirstView.collectionView.rx.items(cellIdentifier: "PillTimeCollectionViewCell", cellType: PillTimeCollectionViewCell.self))
         { index, text, cell in
             cell.timeLabel.text = text
         }
@@ -72,8 +72,8 @@ final class AddPillFirstViewController: BaseViewController {
                     print("day")
                 case .period:
                   print("period")
-                case .none:
-                    break
+                default:
+                break
                 }
             }
             .disposed(by: disposeBag)
@@ -91,19 +91,17 @@ final class AddPillFirstViewController: BaseViewController {
             .drive(onNext: {
                 self.addPillFirstView.specificDayButton.isSelected = $0
                 self.addPillFirstView.specificView.specificLabel.text = "무슨 요일에 먹나요?"
-                self.addPillFirstView.specificView.isHidden = $0 ? false : true
+                self.addPillFirstView.specificView.isHidden = !$0
                 self.addPillFirstView.specific = .day
-                print(self.addPillFirstView.specific)
-                })
+            })
             .disposed(by: disposeBag)
         
         output.isSpecificPeriodSelected
             .drive(onNext: {
                 self.addPillFirstView.specificPeriodButton.isSelected = $0
                 self.addPillFirstView.specificView.specificLabel.text = "며칠 간격으로 먹나요?"
-                self.addPillFirstView.specificView.isHidden = $0 ? false : true
+                self.addPillFirstView.specificView.isHidden = !$0
                 self.addPillFirstView.specific = .period
-                print(self.addPillFirstView.specific)
                 })
             .disposed(by: disposeBag)
     }

@@ -8,12 +8,6 @@
 import UIKit.UIButton
 import Foundation
 
-enum Specific {
-    case everyday
-    case day
-    case period
-}
-
 final class SpecificButton: UIButton {
     
     private var specific: Specific?

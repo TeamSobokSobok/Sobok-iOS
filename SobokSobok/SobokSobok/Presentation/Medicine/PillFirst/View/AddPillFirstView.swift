@@ -10,7 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
-enum specific: CaseIterable {
+enum Specific {
+    case everyday
     case day
     case period
 }
@@ -87,7 +88,7 @@ final class AddPillFirstView: UIView {
             print("period")
         case .everyday:
             print("none")
-        case .none:
+        default:
             break
         }
     }
