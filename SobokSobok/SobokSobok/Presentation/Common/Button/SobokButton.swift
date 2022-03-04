@@ -12,6 +12,8 @@ import SnapKit
 enum ButtonMode: Int, CaseIterable {
     case lightMint
     case mainMint
+    case inactive
+    case active
 }
 
 final class SobokButton: UIButton {
@@ -46,7 +48,13 @@ final class SobokButton: UIButton {
         case .mainMint:
             backgroundColor = Color.mint
             setTitleColor(Color.white, for: .normal)
+        case .inactive:
+            backgroundColor = Color.gray100
+            setTitleColor(Color.gray500, for: .normal)
+        case .active:
+            backgroundColor = Color.lightMint
+            setTitleColor(Color.darkMint, for: .normal)
+            makeRoundedWithBorder(radius: 8, color: Color.darkMint.cgColor)
         }
     }
 }
-
