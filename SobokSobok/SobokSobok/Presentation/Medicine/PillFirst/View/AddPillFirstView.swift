@@ -10,12 +10,19 @@ import UIKit
 import SnapKit
 import Then
 
+enum specific: CaseIterable {
+    case day
+    case period
+}
+
 final class AddPillFirstView: UIView {
     
     let navigationView = NavigationView()
     
+    var specific: Specific?
+    
     private lazy var scrollView = UIScrollView().then {
-        $0.backgroundColor = Color.lightMint
+        $0.backgroundColor = Color.white
         $0.alwaysBounceVertical = true
     }
     
@@ -24,11 +31,11 @@ final class AddPillFirstView: UIView {
         $0.textColor = Color.gray800
         $0.text = "얼마나 자주 먹는 약인가요?"
     }
-    let everydayButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "매일", fontSize: 16)
-    let specificDayButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "특정 요일", fontSize: 16)
-    let specificPeriodButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "특정 간격", fontSize: 16)
     
-    private lazy var specificView = SpecificView().then {
+    lazy var everydayButton = SpecificButton(specific: .everyday)
+    lazy var specificDayButton = SpecificButton(specific: .day)
+    lazy var specificPeriodButton = SpecificButton(specific: .period)
+    lazy var specificView = SpecificView().then {
         $0.makeRoundedWithBorder(radius: 8, color: Color.gray300.cgColor)
     }
     
@@ -64,11 +71,41 @@ final class AddPillFirstView: UIView {
         $0.collectionViewLayout = layout
     }
     
+    convenience init(specific: Specific) {
+           self.init()
+           self.specific = specific
+      
+       }
+    
+    func setConfiguration() {
+        switch specific {
+        case .day:
+            setDay()
+            print("day")
+        case .period:
+            setPeriod()
+            print("period")
+        case .everyday:
+            print("none")
+        case .none:
+            break
+        }
+    }
+
+    func setDay() {
+        specificView.specificLabel.text = "무슨 요일에 먹나요?"
+    }
+
+    func setPeriod() {
+        specificView.specificLabel.text = "며칠 간격으로 먹나요?"
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setConstraints()
         hideBottomView()
+        self.setConfiguration()
     }
     
     required init?(coder: NSCoder) {
@@ -90,8 +127,13 @@ final class AddPillFirstView: UIView {
             scrollView.addSubview($0)
         }
         
-        horizontalStackView.addArrangedSubviews(everydayButton, specificDayButton, specificPeriodButton)
-        verticalStackView.addArrangedSubviews(periodLabel, horizontalStackView, specificView)
+        [everydayButton, specificDayButton, specificPeriodButton].forEach {
+            horizontalStackView.addArrangedSubview($0)
+        }
+        
+        [periodLabel, horizontalStackView, specificView].forEach {
+            verticalStackView.addArrangedSubview($0)
+        }
     }
     
     func setConstraints() {
@@ -110,6 +152,7 @@ final class AddPillFirstView: UIView {
         periodLabel.snp.makeConstraints {
             $0.top.equalTo(verticalStackView)
             $0.leading.equalTo(verticalStackView.snp.leading)
+            $0.height.equalTo(48)
         }
         
         verticalStackView.snp.makeConstraints {

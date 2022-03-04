@@ -17,7 +17,7 @@ final class NavigationView: UIView {
         $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
     
-    let xButton = UIButton().then {
+    private let xButton = UIButton().then {
         $0.setImage(Image.icClose48, for: .normal)
         $0.tintColor = Color.black
     }
@@ -44,13 +44,13 @@ final class NavigationView: UIView {
         super.init(coder: coder)
     }
     
-    func setupView() {
+    private func setupView() {
         [navigationTitleLabel, xButton, bottomFirstView, bottomSecondView, bottomThirdView].forEach {
             addSubview($0)
         }
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         navigationTitleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(safeAreaLayoutGuide).inset(13)
@@ -84,7 +84,6 @@ final class NavigationView: UIView {
             $0.trailing.equalToSuperview()
             $0.width.equalTo(UIScreen.main.bounds.width / 3)
             $0.height.equalTo(2)
-            
         }
     }
 }
