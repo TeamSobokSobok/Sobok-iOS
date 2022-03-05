@@ -40,6 +40,22 @@ final class AddPillFirstViewController: BaseViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    private func presentView() {
+//        let medicineSpecificDayViewController = PillDayViewController.instanceFromNib()
+//        medicineSpecificDayViewController.modalPresentationStyle = .overCurrentContext
+//        medicineSpecificDayViewController.modalTransitionStyle = .crossDissolve
+//        self.present(medicineSpecificDayViewController, animated: true)
+        let addMedicineSheet = PillDayViewController.instanceFromNib()
+        addMedicineSheet.modalPresentationStyle = .overCurrentContext
+        addMedicineSheet.modalTransitionStyle = .crossDissolve
+        self.present(addMedicineSheet, animated: false
+        ) {
+            DispatchQueue.main.async {
+                addMedicineSheet.sheetWithAnimation()
+            }
+        }
+    }
+    
     private func bind() {
         // bind -> MainThread에서 실행되는 것을 보장
         // subscribe를 통해 CollectionView를 만들 수 있지만 구현에 따라 Background에서 실행될 수 있으므로 MainThread를 보장하지 않음
@@ -69,7 +85,7 @@ final class AddPillFirstViewController: BaseViewController {
                 case .everyday:
                     print("everyday")
                 case .day:
-                    print("day")
+                    self.presentView()
                 case .period:
                   print("period")
                 default:
