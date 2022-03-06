@@ -21,7 +21,6 @@ final class SetNickNameVIewController: BaseViewController {
     private var keyboardHeight: CGFloat = 0
     
     // MARK: - @IBOutlet Properties
-    @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var nickNameTextFieldView: UIView!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var checkDuplicationButton: UIButton!
@@ -36,7 +35,6 @@ final class SetNickNameVIewController: BaseViewController {
     }
     
     override func style() {
-        titleTextLabel.setTypoStyle(font: UIFont(name: "Pretendard-Medium", size: 23)!, kernValue: 0, lineSpacing: 8)
         navigationController?.navigationBar.isHidden = true
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         warningTextLabel.isHidden = true
