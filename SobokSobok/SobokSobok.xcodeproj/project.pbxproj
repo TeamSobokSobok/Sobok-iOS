@@ -253,6 +253,7 @@
 		BD51AE362790A97400314A94 /* StickerBottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickerBottomSheet.xib; sourceTree = "<group>"; };
 		BD51AE3A2790BF1500314A94 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = SobokSobok/Presentation/Common/Sheet/StickerCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = SobokSobok/Presentation/Common/Sheet/StickerCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		BD52481927D509E800B3F5D5 /* SobokSobok.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SobokSobok.entitlements; sourceTree = "<group>"; };
 		BD64F8E92788A01C009249D0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -488,6 +489,7 @@
 		BD515E37278770C5003BD5A4 /* SobokSobok */ = {
 			isa = PBXGroup;
 			children = (
+				BD52481927D509E800B3F5D5 /* SobokSobok.entitlements */,
 				BD515E4C2787755A003BD5A4 /* Application */,
 				BD515E4D27877569003BD5A4 /* Common */,
 				BD515E4E27877571003BD5A4 /* Data */,
@@ -1559,10 +1561,9 @@
 				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				EC02140D27D1F66900CF3569 /* SpecificButton.swift in Sources */,
-				F6538FA8278D814900B20B5E /* SendInfoViewController.swift in Sources */,
+				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
-
 				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
 				BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */,
@@ -1612,7 +1613,6 @@
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
 				ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */,
 				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
-
 				EC0213F427CF51F700CF3569 /* PillTimeCollectionViewCell.swift in Sources */,
 				F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */,
 				BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */,
@@ -1796,8 +1796,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = SobokSobok/SobokSobok.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1816,7 +1817,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sobok.corp.SobokSobok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "provisioning file";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1828,8 +1829,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = SobokSobok/SobokSobok.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1848,7 +1850,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sobok.corp.SobokSobok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "provisioning file";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
