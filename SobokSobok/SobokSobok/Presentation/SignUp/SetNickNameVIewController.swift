@@ -57,7 +57,8 @@ final class SetNickNameVIewController: BaseViewController {
         limitNicknameText()
         checkIsNicknameRight()
         showWarning()
-        enableButton()
+        enableDuplicationCheckButton()
+        enableSignUpButton()
     }
     private func initializeDuplicationCheck() {
         isDuplicationChecked = false
@@ -80,15 +81,20 @@ final class SetNickNameVIewController: BaseViewController {
         warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
         nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
     }
-    private func enableButton() {
-        [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
-        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
-    }
 
     @objc private func inactivateTextField() {
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
-
+    
+    // MARK: 버튼 활성화 관련
+    private func enableDuplicationCheckButton() {
+        checkDuplicationButton.isEnabled = isNickNameRight
+        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
+    }
+    private func enableSignUpButton() {
+        signUpButton.isEnabled = isNickNameRight
+    }
+    
     // MARK: 토스트메세지 관련
     private func showToast(message: String) {
         let isKeyboardOn: Bool = self.isKeyboardOn
