@@ -15,8 +15,10 @@ final class SetNickNameVIewController: BaseViewController {
     private var user = SignUpUserData.shared
     private let userDefaults = UserDefaults.standard
     var nickname: String?
+    
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
+    
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
     
@@ -31,7 +33,7 @@ final class SetNickNameVIewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkField()
+        addTargetToTextField()
     }
     
     override func style() {
@@ -39,63 +41,55 @@ final class SetNickNameVIewController: BaseViewController {
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         warningTextLabel.isHidden = true
         signUpButton.makeRounded(radius: 12)
-        [checkDuplicationButton, signUpButton].forEach({$0?.isEnabled = false})
     }
     
     // MARK: Functions
-    private func checkField() {
-        nickNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+    private func addTargetToTextField() {
+        nickNameTextField.addTarget(self, action: #selector(self.activateTextField), for: .editingChanged)
         nickNameTextField.addTarget(self, action: #selector(self.inactivateTextField), for: .editingDidEnd)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc private func checkTextField() {
-        // 중복 여부 초기화
+    // MARK: 텍스트필드 관련
+    @objc private func activateTextField() {
+        initializeDuplicationCheck()
+        limitNicknameText()
+        checkIsNicknameRight()
+        showWarning()
+        enableButton()
+    }
+    private func initializeDuplicationCheck() {
         isDuplicationChecked = false
-        
-        // 글자수 제한
+    }
+    private func limitNicknameText() {
         if nickNameTextField.text?.count ?? 0 > 10 {
-                nickNameTextField.deleteBackward()
-            }
-        
-        // 정규식 검사
-        isNickNameRight = checkNickNameRight(input: nickNameTextField.text ?? "")
-        
-        // 조건에 따라 경고문 보여주기
-        warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
-        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
-        
-        // 조건에 따라 버튼 활성화
-        [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
-        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
-    }
-    
-    // 입력 완료했을 때
-    @objc private func inactivateTextField() {
-        nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
-    }
-    
-    // 키보드 Notification
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            keyboardHeight = keyboardFrame.cgRectValue.height
+            nickNameTextField.deleteBackward()
         }
-        isKeyboardOn = true
     }
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        keyboardHeight = 0
-        isKeyboardOn = false
+    private func checkIsNicknameRight() {
+        isNickNameRight = checkNicknameRegularExpression(input: nickNameTextField.text ?? "")
     }
-    
-    // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
-    private func checkNickNameRight (input: String) -> Bool {
+    private func checkNicknameRegularExpression (input: String) -> Bool {
+        // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
         let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
         let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
           return nickNameTest.evaluate(with: input)
     }
-    
-    // 토스트 메세지
+    private func showWarning() {
+        warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
+        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
+    }
+    private func enableButton() {
+        [signUpButton, checkDuplicationButton].forEach({$0?.isEnabled = isNickNameRight})
+        checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
+    }
+
+    @objc private func inactivateTextField() {
+        nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+    }
+
+    // MARK: 토스트메세지 관련
     private func showToast(message: String) {
         let isKeyboardOn: Bool = self.isKeyboardOn
         let keyboardHeight: CGFloat = self.keyboardHeight
@@ -126,6 +120,17 @@ final class SetNickNameVIewController: BaseViewController {
         UIView.animate(withDuration: 1.0, delay: 0.1,
                        options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
                        completion: {_ in toastLabel.removeFromSuperview() })
+    }
+    // 키보드 Notification
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        isKeyboardOn = true
+    }
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        keyboardHeight = 0
+        isKeyboardOn = false
     }
     
     // MARK: - @IBAction Properties
