@@ -20,4 +20,12 @@ class SocialSignInViewController: BaseViewController {
         kakaoLoginButton.makeRounded(radius: 6)
         appleLoginButton.makeRounded(radius: 6)
     }
+    
+    @IBAction func signInWithKakao(_ sender: Any) {
+        print("kakao")
+    }
+    @IBAction func signInWIthApple(_ sender: Any) {
+        print("apple")
+    }
+    
 }
