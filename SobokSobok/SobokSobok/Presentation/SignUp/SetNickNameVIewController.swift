@@ -18,6 +18,7 @@ final class SetNickNameVIewController: BaseViewController {
     
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
+    private var isTermChecked: Bool = false
     
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
@@ -92,7 +93,7 @@ final class SetNickNameVIewController: BaseViewController {
         checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
     }
     private func enableSignUpButton() {
-        signUpButton.isEnabled = isNickNameRight
+        signUpButton.isEnabled = isNickNameRight && isTermChecked
     }
     
     // MARK: 토스트메세지 관련
