@@ -19,7 +19,6 @@ final class SetNickNameVIewController: BaseViewController {
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
     
-    private var isTermChecked: Bool = false
     private var isFirstAgreed: Bool = false
     private var isSecondAgreed: Bool = false
     
@@ -41,7 +40,6 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var agreeAllButton: UIButton!
     @IBOutlet weak var agreeFirstButton: UIButton!
     @IBOutlet weak var agreeSecondButton: UIButton!
-    
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -115,7 +113,7 @@ final class SetNickNameVIewController: BaseViewController {
         checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
     }
     private func enableSignUpButton() {
-        signUpButton.isEnabled = isNickNameRight
+        signUpButton.isEnabled = isNickNameRight && isFirstAgreed && isSecondAgreed
     }
     
     // MARK: 토스트메세지 관련
@@ -178,15 +176,17 @@ final class SetNickNameVIewController: BaseViewController {
         isFirstAgreed = true
         isSecondAgreed = true
         checkTermButtons()
+        enableSignUpButton()
     }
     @IBAction func touchUpToAgreeFirst(_ sender: UIButton) {
         isFirstAgreed.toggle()
         checkTermButtons()
-        
+        enableSignUpButton()
     }
     @IBAction func touchUpToAgreeSecond(_ sender: UIButton) {
         isSecondAgreed.toggle()
         checkTermButtons()
+        enableSignUpButton()
     }
     private func checkTermButtons() {
         agreeAllButton.setImage( isFirstAgreed && isSecondAgreed ? UIImage(named: "icChecked") : UIImage(named: "icCheckedNot"), for: .normal)
