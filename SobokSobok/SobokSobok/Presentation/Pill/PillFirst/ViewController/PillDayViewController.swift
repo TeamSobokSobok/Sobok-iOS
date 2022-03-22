@@ -14,12 +14,20 @@ import RxSwift
 final class PillDayViewController: BaseViewController {
 
     let pillDayView = PillDayView()
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     let weekObservable = Observable.of(["월", "화", "수", "목", "금", "토", "일"])
     let dataObservable = Observable.of("")
+    private var pillTimeViewModel = PillTimeViewModel()
+    var delegate: PopUpDelegate?
   
     override func loadView() {
         self.view = pillDayView
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dismiss(animated: true) {
+            self.delegate?.popupDismissed()
+        }
     }
     
     override func viewDidLoad() {
@@ -34,19 +42,21 @@ final class PillDayViewController: BaseViewController {
         pillDayView.tableView.rx.itemSelected
           .subscribe(onNext: { [weak self] indexPath in
               guard let cell = self?.pillDayView.tableView.cellForRow(at: indexPath) as? PillDayTableViewCell else { return }
-
+              
+              
+              
               cell.checkImage.isHidden.toggle()
               cell.isSelected.toggle()
               
-              if cell.isSelected {
-                  print(self?.dataObservable)
-                    
-                      
-                  
-              }
+              cell.dayLabel.text = self?.pillTimeViewModel.exampleString.value
+
 
           })
           .disposed(by: disposeBag)
+        
+
+        
+
         
         Observable.zip(pillDayView.tableView.rx.modelSelected(String.self),
                        pillDayView.tableView.rx.itemSelected)
@@ -69,7 +79,10 @@ final class PillDayViewController: BaseViewController {
         super.style()
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
+    
+    
 
+    
 
 }
 

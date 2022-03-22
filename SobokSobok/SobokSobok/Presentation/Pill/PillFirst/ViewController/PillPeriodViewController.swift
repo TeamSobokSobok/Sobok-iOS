@@ -7,23 +7,32 @@
 
 import UIKit
 
-class PillPeriodViewController: UIViewController {
+final class PillPeriodViewController: BaseViewController {
 
+    let pillPeriodView = PillPeriodView()
+    var delegate: PopUpDelegate?
+    override func loadView() {
+        self.view = pillPeriodView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+   
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dismiss(animated: true) {
+            self.delegate?.popupDismissed()
+        }
+    }
+    
+    
+    override func style() {
+        super.style()
+        view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }
