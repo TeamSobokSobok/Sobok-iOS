@@ -31,6 +31,11 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var warningTextLabel: UILabel!
     @IBOutlet weak var checkDuplicationButtonBottomLine: UIView!
     
+    @IBOutlet weak var firstTerm: UIView!
+    @IBOutlet weak var secondTerm: UIView!
+    @IBOutlet weak var thirdTerm: UIView!
+    
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +125,7 @@ final class SetNickNameVIewController: BaseViewController {
         toastLabel.text = message
         // 토스트 모양
         toastLabel.textAlignment = .center
-        toastLabel.layer.cornerRadius = 12
+        toastLabel.layer.cornerRadius = 8
         toastLabel.clipsToBounds = true
         // 토스트 애니메이션
         self.view.addSubview(toastLabel)
