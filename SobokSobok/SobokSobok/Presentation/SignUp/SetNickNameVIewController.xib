@@ -161,19 +161,19 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJs-CF-nyl" userLabel="전체동의하기">
-                    <rect key="frame" x="20" y="374" width="374" height="52"/>
+                    <rect key="frame" x="20" y="374" width="374" height="51"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 동의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhz-Gd-VX5">
-                            <rect key="frame" x="16" y="15" width="100" height="22"/>
+                            <rect key="frame" x="16" y="15" width="100" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="Kn8-65-qNq"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                             <color key="textColor" name="dark_mint_main"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaR-lU-rvd" userLabel="전체동의">
-                            <rect key="frame" x="336" y="15" width="22" height="22"/>
+                            <rect key="frame" x="336" y="14.5" width="22" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="HaR-lU-rvd" secondAttribute="height" multiplier="1:1" id="5gn-cJ-op7"/>
                             </constraints>
@@ -192,7 +192,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUR-Zf-ogf" userLabel="상세약관]">
-                    <rect key="frame" x="20" y="426" width="374" height="86"/>
+                    <rect key="frame" x="20" y="425" width="374" height="86"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-DH-qyS">
                             <rect key="frame" x="16" y="52" width="165" height="16"/>

@@ -35,7 +35,6 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var secondTerm: UIView!
     @IBOutlet weak var thirdTerm: UIView!
     
-    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +46,16 @@ final class SetNickNameVIewController: BaseViewController {
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         warningTextLabel.isHidden = true
         signUpButton.makeRounded(radius: 12)
+        
+        // 약관 동의 테두리
+        firstTerm.makeRoundedWithBorder(radius: 0, color: Color.gray300.cgColor)
+        firstTerm.layer.cornerRadius = 12
+        firstTerm.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        
+        secondTerm.makeRoundedWithBorder(radius: 0, color: Color.gray300.cgColor, borderWith: 1)
+        
+        thirdTerm.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        thirdTerm.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMaxYCorner, .layerMinXMaxYCorner)
     }
     
     // MARK: Functions
@@ -216,5 +225,27 @@ extension SetNickNameVIewController {
                 print("networkFail")
             }
         })
+    }
+}
+
+extension CALayer {
+    func addBorder(_ arredge: [UIRectEdge], color: CGColor, width: CGFloat) {
+        for edge in arredge {
+            let border = CALayer()
+            switch edge {
+            case UIRectEdge.top:
+                border.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: width)
+            case UIRectEdge.bottom:
+                border.frame = CGRect.init(x: 0, y: frame.height - width, width: frame.width, height: width)
+            case UIRectEdge.left:
+                border.frame = CGRect.init(x: 0, y: 0, width: width, height: frame.height)
+            case UIRectEdge.right:
+                border.frame = CGRect.init(x: frame.width - width, y: 0, width: width, height: frame.height)
+            default:
+                break
+            }
+            border.backgroundColor = color
+            self.addSublayer(border)
+        }
     }
 }
