@@ -18,7 +18,10 @@ final class SetNickNameVIewController: BaseViewController {
     
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
+    
     private var isTermChecked: Bool = false
+    private var isFirstAgreed: Bool = false
+    private var isSecondAgreed: Bool = false
     
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
@@ -34,6 +37,11 @@ final class SetNickNameVIewController: BaseViewController {
     @IBOutlet weak var firstTerm: UIView!
     @IBOutlet weak var secondTerm: UIView!
     @IBOutlet weak var thirdTerm: UIView!
+    
+    @IBOutlet weak var agreeAllButton: UIButton!
+    @IBOutlet weak var agreeFirstButton: UIButton!
+    @IBOutlet weak var agreeSecondButton: UIButton!
+    
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -107,7 +115,7 @@ final class SetNickNameVIewController: BaseViewController {
         checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
     }
     private func enableSignUpButton() {
-        signUpButton.isEnabled = isNickNameRight && isTermChecked
+        signUpButton.isEnabled = isNickNameRight
     }
     
     // MARK: 토스트메세지 관련
@@ -142,6 +150,7 @@ final class SetNickNameVIewController: BaseViewController {
                        options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
                        completion: {_ in toastLabel.removeFromSuperview() })
     }
+    
     // 키보드 Notification
     @objc private func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -164,6 +173,28 @@ final class SetNickNameVIewController: BaseViewController {
         checkUsername()
     }
     
+    // MARK: 약관 동의 관련
+    @IBAction func touchUpToAgreeAll(_ sender: UIButton) {
+        isFirstAgreed = true
+        isSecondAgreed = true
+        checkTermButtons()
+    }
+    @IBAction func touchUpToAgreeFirst(_ sender: UIButton) {
+        isFirstAgreed.toggle()
+        checkTermButtons()
+        
+    }
+    @IBAction func touchUpToAgreeSecond(_ sender: UIButton) {
+        isSecondAgreed.toggle()
+        checkTermButtons()
+    }
+    private func checkTermButtons() {
+        agreeAllButton.setImage( isFirstAgreed && isSecondAgreed ? UIImage(named: "icChecked") : UIImage(named: "icCheckedNot"), for: .normal)
+        agreeFirstButton.setImage( isFirstAgreed ? UIImage(named: "icChecked") : UIImage(named: "icCheckedNot"), for: .normal)
+        agreeSecondButton.setImage( isSecondAgreed ? UIImage(named: "icChecked") : UIImage(named: "icCheckedNot"), for: .normal)
+    }
+    
+    // 회원가입
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
         if isDuplicationChecked {
             user.name = nickname
@@ -225,27 +256,5 @@ extension SetNickNameVIewController {
                 print("networkFail")
             }
         })
-    }
-}
-
-extension CALayer {
-    func addBorder(_ arredge: [UIRectEdge], color: CGColor, width: CGFloat) {
-        for edge in arredge {
-            let border = CALayer()
-            switch edge {
-            case UIRectEdge.top:
-                border.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: width)
-            case UIRectEdge.bottom:
-                border.frame = CGRect.init(x: 0, y: frame.height - width, width: frame.width, height: width)
-            case UIRectEdge.left:
-                border.frame = CGRect.init(x: 0, y: 0, width: width, height: frame.height)
-            case UIRectEdge.right:
-                border.frame = CGRect.init(x: frame.width - width, y: 0, width: width, height: frame.height)
-            default:
-                break
-            }
-            border.backgroundColor = color
-            self.addSublayer(border)
-        }
     }
 }
