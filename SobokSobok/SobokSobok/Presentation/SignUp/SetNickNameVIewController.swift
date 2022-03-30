@@ -54,8 +54,7 @@ final class SetNickNameVIewController: BaseViewController {
         signUpButton.makeRounded(radius: 12)
         
         // 약관 동의 테두리
-        firstTerm.makeRoundedWithBorder(radius: 0, color: Color.gray300.cgColor)
-        firstTerm.layer.cornerRadius = 12
+        firstTerm.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         firstTerm.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         
         secondTerm.makeRoundedWithBorder(radius: 0, color: Color.gray300.cgColor, borderWith: 1)

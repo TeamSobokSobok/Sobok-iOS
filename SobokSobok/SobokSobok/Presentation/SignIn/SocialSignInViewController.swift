@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SocialSignInViewController: BaseViewController {
+final class SocialSignInViewController: BaseViewController {
 
     @IBOutlet weak var kakaoLoginButton: UIView!
     @IBOutlet weak var appleLoginButton: UIView!
@@ -21,10 +21,10 @@ class SocialSignInViewController: BaseViewController {
         appleLoginButton.makeRounded(radius: 6)
     }
     
-    @IBAction func signInWithKakao(_ sender: Any) {
+    @IBAction func signInWithKakao(_ sender: UIView) {
         print("kakao")
     }
-    @IBAction func signInWIthApple(_ sender: Any) {
+    @IBAction func signInWIthApple(_ sender: UIView) {
         print("apple")
     }
     
