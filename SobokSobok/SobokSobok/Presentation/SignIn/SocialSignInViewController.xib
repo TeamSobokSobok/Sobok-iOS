@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialSignInViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="appleLoginButton" destination="rLM-yc-pdj" id="TvA-nT-Eez"/>
+                <outlet property="kakaoLoginButton" destination="kuT-c8-eMU" id="BFR-yA-AQo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소중한 사람과 함께하는  매일의 복약체크" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGy-Zg-XTb">
+                    <rect key="frame" x="20" y="88" width="374" height="55.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="23"/>
+                    <color key="textColor" name="gray800_sub"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k8l-SE-O6x">
+                    <rect key="frame" x="20" y="207.33333333333337" width="374" height="240"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="CmT-RH-HoG"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuT-c8-eMU" userLabel="카카오 로그인">
+                    <rect key="frame" x="20" y="606" width="374" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-r5-DuF" userLabel="kakao">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="signInWithKakao:" destination="-1" eventType="touchUpInside" id="BTb-ea-nYJ"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakaoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WT6-l5-rl3">
+                            <rect key="frame" x="14.999999999999998" y="15" width="19.333333333333329" height="18"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 로그인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXh-jH-tIv">
+                            <rect key="frame" x="62" y="16" width="250" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="WT6-l5-rl3" firstAttribute="leading" secondItem="kuT-c8-eMU" secondAttribute="leading" constant="15" id="8KR-gv-jws"/>
+                        <constraint firstAttribute="bottom" secondItem="WT6-l5-rl3" secondAttribute="bottom" constant="15" id="AMp-TX-LWY"/>
+                        <constraint firstAttribute="trailing" secondItem="MdN-r5-DuF" secondAttribute="trailing" id="D0y-f4-dq8"/>
+                        <constraint firstItem="qXh-jH-tIv" firstAttribute="leading" secondItem="kuT-c8-eMU" secondAttribute="leading" constant="62" id="Id6-2J-1Zn"/>
+                        <constraint firstAttribute="bottom" secondItem="MdN-r5-DuF" secondAttribute="bottom" id="Kja-aj-zq2"/>
+                        <constraint firstItem="MdN-r5-DuF" firstAttribute="leading" secondItem="kuT-c8-eMU" secondAttribute="leading" id="NBT-0O-Z0v"/>
+                        <constraint firstAttribute="trailing" secondItem="qXh-jH-tIv" secondAttribute="trailing" constant="62" id="Uzb-73-hXg"/>
+                        <constraint firstAttribute="height" constant="48" id="crx-zp-nqr"/>
+                        <constraint firstAttribute="bottom" secondItem="qXh-jH-tIv" secondAttribute="bottom" constant="12" id="eGY-Wx-jwv"/>
+                        <constraint firstItem="MdN-r5-DuF" firstAttribute="top" secondItem="kuT-c8-eMU" secondAttribute="top" id="jFb-nz-uMC"/>
+                        <constraint firstItem="WT6-l5-rl3" firstAttribute="top" secondItem="kuT-c8-eMU" secondAttribute="top" constant="15" id="zXn-Kx-NpO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-yc-pdj" userLabel="애플 로그인">
+                    <rect key="frame" x="20" y="666" width="372" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXi-yb-Wdf" userLabel="apple">
+                            <rect key="frame" x="0.0" y="0.0" width="372" height="48"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="signInWIthApple:" destination="-1" eventType="touchUpInside" id="rFd-aI-KDE"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Rd9-Js-q0r">
+                            <rect key="frame" x="15.000000000000002" y="15" width="17.666666666666671" height="18"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple로 로그인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh0-an-t8s">
+                            <rect key="frame" x="62" y="16" width="248" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="white_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Rd9-Js-q0r" firstAttribute="top" secondItem="rLM-yc-pdj" secondAttribute="top" constant="15" id="1bb-LJ-8Fv"/>
+                        <constraint firstAttribute="trailing" secondItem="yh0-an-t8s" secondAttribute="trailing" constant="62" id="4yf-Ni-2J0"/>
+                        <constraint firstAttribute="height" constant="48" id="90f-EN-Xaa"/>
+                        <constraint firstItem="yh0-an-t8s" firstAttribute="leading" secondItem="rLM-yc-pdj" secondAttribute="leading" constant="62" id="9II-Tt-nbQ"/>
+                        <constraint firstItem="bXi-yb-Wdf" firstAttribute="leading" secondItem="rLM-yc-pdj" secondAttribute="leading" id="BfI-WX-crp"/>
+                        <constraint firstAttribute="trailing" secondItem="bXi-yb-Wdf" secondAttribute="trailing" id="GTS-hD-WVn"/>
+                        <constraint firstItem="Rd9-Js-q0r" firstAttribute="leading" secondItem="rLM-yc-pdj" secondAttribute="leading" constant="15" id="GiM-Cw-jso"/>
+                        <constraint firstAttribute="bottom" secondItem="bXi-yb-Wdf" secondAttribute="bottom" id="HIT-rQ-r6l"/>
+                        <constraint firstAttribute="trailing" secondItem="yh0-an-t8s" secondAttribute="trailing" constant="62" id="O4p-dj-uTY"/>
+                        <constraint firstItem="yh0-an-t8s" firstAttribute="leading" secondItem="rLM-yc-pdj" secondAttribute="leading" constant="62" id="Tzj-ke-kUA"/>
+                        <constraint firstAttribute="bottom" secondItem="yh0-an-t8s" secondAttribute="bottom" constant="12" id="V6Y-5c-MNZ"/>
+                        <constraint firstAttribute="bottom" secondItem="Rd9-Js-q0r" secondAttribute="bottom" constant="15" id="djR-7D-A9h"/>
+                        <constraint firstItem="bXi-yb-Wdf" firstAttribute="top" secondItem="rLM-yc-pdj" secondAttribute="top" id="tIy-bg-s7Q"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uGy-Zg-XTb" secondAttribute="trailing" constant="20" id="JJ7-dn-P42"/>
+                <constraint firstItem="uGy-Zg-XTb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Oez-ce-wNU"/>
+                <constraint firstItem="k8l-SE-O6x" firstAttribute="top" secondItem="uGy-Zg-XTb" secondAttribute="bottom" constant="64" id="PiF-QR-MhY"/>
+                <constraint firstItem="kuT-c8-eMU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bDO-fK-5P2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rLM-yc-pdj" secondAttribute="trailing" constant="22" id="eXm-7D-yxq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k8l-SE-O6x" secondAttribute="trailing" constant="20" id="esZ-z6-QrV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rLM-yc-pdj" secondAttribute="bottom" constant="22" id="izc-ym-0tp"/>
+                <constraint firstItem="rLM-yc-pdj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pgj-y5-cYN"/>
+                <constraint firstItem="uGy-Zg-XTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="88" id="qX3-A5-tcb"/>
+                <constraint firstItem="rLM-yc-pdj" firstAttribute="top" secondItem="kuT-c8-eMU" secondAttribute="bottom" constant="12" id="rhp-XM-Z3N"/>
+                <constraint firstItem="k8l-SE-O6x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="xPq-d4-BAo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kuT-c8-eMU" secondAttribute="trailing" constant="20" id="zjy-VA-HgT"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="84.782608695652186"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="appleIcon" width="17.666666030883789" height="21"/>
+        <image name="kakaoIcon" width="19.333333969116211" height="18.333333969116211"/>
+        <namedColor name="gray800_sub">
+            <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

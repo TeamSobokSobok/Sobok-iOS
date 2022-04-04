@@ -26,6 +26,8 @@
 		9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */; };
 		9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */; };
 		9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF0CC2799F4C800D07A8C /* EditFriendDataModel.swift */; };
+		9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A979F0327D51CA4001760C0 /* SocialSignInViewController.swift */; };
+		9A979F0627D51CA4001760C0 /* SocialSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A979F0427D51CA4001760C0 /* SocialSignInViewController.xib */; };
 		9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E6208278D575800D900A6 /* SignUpViewController.swift */; };
 		9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E6209278D575800D900A6 /* SignUpViewController.xib */; };
 		9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */; };
@@ -218,6 +220,8 @@
 		9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFriendNameViewController.xib; sourceTree = "<group>"; };
 		9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendUsername.swift; sourceTree = "<group>"; };
 		9A3DF0CC2799F4C800D07A8C /* EditFriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFriendDataModel.swift; sourceTree = "<group>"; };
+		9A979F0327D51CA4001760C0 /* SocialSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignInViewController.swift; sourceTree = "<group>"; };
+		9A979F0427D51CA4001760C0 /* SocialSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialSignInViewController.xib; sourceTree = "<group>"; };
 		9A9E6208278D575800D900A6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9A9E6209278D575800D900A6 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
@@ -725,6 +729,8 @@
 			children = (
 				9A18E7A9278D48120011FEB9 /* SignInViewController.swift */,
 				9A18E7AA278D48120011FEB9 /* SignInViewController.xib */,
+				9A979F0327D51CA4001760C0 /* SocialSignInViewController.swift */,
+				9A979F0427D51CA4001760C0 /* SocialSignInViewController.xib */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -1455,6 +1461,7 @@
 				EC950EF527909B5800A34027 /* AddMedicineThirdViewController.xib in Resources */,
 				BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */,
 				BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */,
+				9A979F0627D51CA4001760C0 /* SocialSignInViewController.xib in Resources */,
 				EC1C31142792F12E00972404 /* MedicineTimeViewController.xib in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
 				BD51AE382790A97400314A94 /* StickerBottomSheet.xib in Resources */,
@@ -1632,6 +1639,7 @@
 				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
+				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
 				EC950EF82790A88D00A34027 /* AddTimeCollectionViewCell.swift in Sources */,
