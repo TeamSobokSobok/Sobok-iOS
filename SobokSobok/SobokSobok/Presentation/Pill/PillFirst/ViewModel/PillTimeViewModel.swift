@@ -9,6 +9,9 @@ import RxCocoa
 import RxSwift
 
 struct PillTimeViewModel {
-    // 추후 추가 예정 !!!!
+    
+    let disposeBag = DisposeBag()
     let pillTimeList = Observable.of(["오전 8:00", "오후 1:00", "오후 7:00"])
+    lazy var exampleString = BehaviorRelay<String>(value: "ㅎㅇㅎㅇ")
 }
+

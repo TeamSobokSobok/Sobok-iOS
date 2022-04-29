@@ -18,11 +18,12 @@ final class AddPillFirstViewController: BaseViewController {
         didSpecificPeriodButtonTap: addPillFirstView.specificPeriodButton.rx.tap.asSignal(),
         selectPeriodButtonTap: addPillFirstView.specificView.backgroundButton.rx.tap.asSignal()
     )
+   
     var specific: Specific?
     private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
     private let addPillFirstView = AddPillFirstView()
-    private let pillTimeViewModel = PillTimeViewModel()
+    private var pillTimeViewModel = PillTimeViewModel()
     private var viewModel = PillPeriodViewModel()
     
     override func loadView() {
@@ -35,9 +36,23 @@ final class AddPillFirstViewController: BaseViewController {
     }
 
     override func style() {
+        super.style()
         view.backgroundColor = .white
         tabBarController?.tabBar.isHidden = true
-        navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func presentView() {
+        let medicineSpecificDayViewController = PillDayViewController.instanceFromNib()
+        medicineSpecificDayViewController.modalPresentationStyle = .overCurrentContext
+        medicineSpecificDayViewController.modalTransitionStyle = .crossDissolve
+        self.present(medicineSpecificDayViewController, animated: true)
+    }
+    
+    private func presentPeriodView() {
+        let medicineSpecificDayViewController = PillPeriodViewController.instanceFromNib()
+        medicineSpecificDayViewController.modalPresentationStyle = .overCurrentContext
+        medicineSpecificDayViewController.modalTransitionStyle = .crossDissolve
+        self.present(medicineSpecificDayViewController, animated: true)
     }
     
     private func bind() {
@@ -58,6 +73,9 @@ final class AddPillFirstViewController: BaseViewController {
                 print(text)
             })
             .disposed(by: disposeBag)
+//
+//        addPillFirstView.collectionView.rx.setDelegate(self)
+//            .disposed(by: disposeBag)
         
         // 하나의 버튼을 공유해서 사용하는데 enum으로 분기처리를 해줌
         // 여기서 문제가 drive를 하면 코드가 돌아가질 않음
@@ -69,9 +87,9 @@ final class AddPillFirstViewController: BaseViewController {
                 case .everyday:
                     print("everyday")
                 case .day:
-                    print("day")
+                    self.presentView()
                 case .period:
-                  print("period")
+                    self.presentPeriodView()
                 default:
                 break
                 }
@@ -90,7 +108,12 @@ final class AddPillFirstViewController: BaseViewController {
         output.isSpecificDaySelected
             .drive(onNext: {
                 self.addPillFirstView.specificDayButton.isSelected = $0
-                self.addPillFirstView.specificView.specificLabel.text = "무슨 요일에 먹나요?"
+//                self.addPillFirstView.specificView.specificLabel.text = "무슨 요일에 먹나요?"
+                self.pillTimeViewModel.exampleString.subscribe {
+                    self.addPillFirstView.specificView.specificLabel.text = $0
+                }
+                .disposed(by: self.disposeBag)
+                
                 self.addPillFirstView.specificView.isHidden = !$0
                 self.addPillFirstView.specific = .day
             })

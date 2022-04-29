@@ -16,7 +16,7 @@ enum Specific {
     case period
 }
 
-final class AddPillFirstView: UIView {
+final class AddPillFirstView: BaseView {
     
     let navigationView = NavigationView()
     
@@ -64,6 +64,8 @@ final class AddPillFirstView: UIView {
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.register(PillTimeCollectionViewCell.self)
+        $0.register(AddMyMedicineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier)
+        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
         layout.scrollDirection = .vertical
@@ -72,10 +74,15 @@ final class AddPillFirstView: UIView {
         $0.collectionViewLayout = layout
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setConfiguration()
+        hideBottomView()
+    }
+    
     convenience init(specific: Specific) {
            self.init()
            self.specific = specific
-      
        }
     
     func setConfiguration() {
@@ -101,25 +108,13 @@ final class AddPillFirstView: UIView {
         specificView.specificLabel.text = "며칠 간격으로 먹나요?"
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        setConstraints()
-        hideBottomView()
-        self.setConfiguration()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     func hideBottomView() {
         [navigationView.bottomSecondView, navigationView.bottomThirdView].forEach {
             $0.isHidden = true
         }
     }
     
-    func setupView() {
+    override func setupView() {
         [navigationView, scrollView].forEach {
             addSubview($0)
         }
@@ -137,7 +132,7 @@ final class AddPillFirstView: UIView {
         }
     }
     
-    func setConstraints() {
+    override func setupConstraints() {
         navigationView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
@@ -203,7 +198,7 @@ final class AddPillFirstView: UIView {
         
         nextButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(22)
             $0.height.equalTo(54)
         }
     }

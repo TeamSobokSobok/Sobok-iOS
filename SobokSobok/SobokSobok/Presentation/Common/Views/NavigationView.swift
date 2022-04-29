@@ -18,8 +18,13 @@ final class NavigationView: UIView {
     }
     
     private let xButton = UIButton().then {
-        $0.setImage(Image.icClose48, for: .normal)
+        $0.setImage(Image.icBack48, for: .normal)
         $0.tintColor = Color.black
+    }
+    
+    private let cancelButton = UIButton().then {
+        $0.setTitle("취소", for: .normal)
+        $0.setTitleColor(Color.gray900, for: .normal)
     }
     
     lazy var bottomFirstView = UIView().then {
@@ -45,7 +50,7 @@ final class NavigationView: UIView {
     }
     
     private func setupView() {
-        [navigationTitleLabel, xButton, bottomFirstView, bottomSecondView, bottomThirdView].forEach {
+        [navigationTitleLabel, xButton, cancelButton,bottomFirstView, bottomSecondView, bottomThirdView].forEach {
             addSubview($0)
         }
     }
@@ -63,6 +68,13 @@ final class NavigationView: UIView {
             $0.centerY.equalTo(navigationTitleLabel)
             $0.height.equalTo(48)
             $0.width.equalTo(48)
+        }
+        
+        cancelButton.snp.makeConstraints {
+            $0.centerY.equalTo(xButton)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(48)
+            $0.height.equalTo(24)
         }
         
         bottomFirstView.snp.makeConstraints {

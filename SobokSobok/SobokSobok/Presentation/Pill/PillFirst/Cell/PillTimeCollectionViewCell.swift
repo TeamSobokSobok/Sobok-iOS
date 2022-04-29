@@ -29,6 +29,7 @@ final class PillTimeCollectionViewCell: UICollectionViewCell {
         contentView.makeRoundedWithBorder(radius: 8, color: Color.darkMint.cgColor)
        }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
