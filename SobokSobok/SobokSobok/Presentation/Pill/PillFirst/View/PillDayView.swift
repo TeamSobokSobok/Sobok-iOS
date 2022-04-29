@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class PillDayView: UIView {
+final class PillDayView: UIView, ViewPresentable {
     
     let backgroundView = UIView().then {
         $0.makeRounded(radius: 15)
@@ -31,7 +31,7 @@ final class PillDayView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setConstraints()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -44,7 +44,7 @@ final class PillDayView: UIView {
         }
     }
     
-    private func setConstraints() {
+    private func setupConstraints() {
         backgroundView.snp.makeConstraints {
             $0.height.equalTo(UIScreen.main.bounds.height * 0.5)
             $0.leading.trailing.equalToSuperview()

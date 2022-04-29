@@ -19,7 +19,6 @@ final class AddPillFirstViewController: BaseViewController {
         selectPeriodButtonTap: addPillFirstView.specificView.backgroundButton.rx.tap.asSignal()
     )
    
-    
     var specific: Specific?
     private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
@@ -120,8 +119,6 @@ final class AddPillFirstViewController: BaseViewController {
                 self.addPillFirstView.specific = .day
             })
             .disposed(by: disposeBag)
-        
-     
         
         output.isSpecificPeriodSelected
             .drive(onNext: {

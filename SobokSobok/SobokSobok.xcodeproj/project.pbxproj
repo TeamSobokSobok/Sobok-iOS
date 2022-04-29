@@ -143,6 +143,9 @@
 		EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95727982E40002FC0E6 /* AddPillAPI.swift */; };
 		EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95927982E49002FC0E6 /* AddPillService.swift */; };
 		EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95B27982FD8002FC0E6 /* AddPill.swift */; };
+		EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596A9281C023800850E84 /* AddPillSecondView.swift */; };
+		EC8596AC281C02EC00850E84 /* ViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AB281C02EB00850E84 /* ViewPresentable.swift */; };
+		EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */; };
 		EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */; };
 		EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */; };
 		EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */; };
@@ -334,6 +337,9 @@
 		EC68A95727982E40002FC0E6 /* AddPillAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillAPI.swift; sourceTree = "<group>"; };
 		EC68A95927982E49002FC0E6 /* AddPillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillService.swift; sourceTree = "<group>"; };
 		EC68A95B27982FD8002FC0E6 /* AddPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPill.swift; sourceTree = "<group>"; };
+		EC8596A9281C023800850E84 /* AddPillSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondView.swift; sourceTree = "<group>"; };
+		EC8596AB281C02EB00850E84 /* ViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentable.swift; sourceTree = "<group>"; };
+		EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondViewController.swift; sourceTree = "<group>"; };
 		EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSecondViewController.swift; sourceTree = "<group>"; };
 		EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineSecondViewController.xib; sourceTree = "<group>"; };
 		EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCalendarViewController.swift; sourceTree = "<group>"; };
@@ -627,6 +633,7 @@
 		BD515E562787760F003BD5A4 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				EC8596AB281C02EB00850E84 /* ViewPresentable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -786,6 +793,7 @@
 			isa = PBXGroup;
 			children = (
 				EC0213F927CFAE0B00CF3569 /* PillFirst */,
+				EC8596A4281C00F500850E84 /* PillSecond */,
 				ECF96BEA2799585A00B5A32C /* FillLimit */,
 				EC037614278B372500CA4B54 /* AddMedicineSheet */,
 				EC950ED5278EFD4700A34027 /* AddMedicineFirst */,
@@ -1024,6 +1032,47 @@
 				EC02140C27D1F66900CF3569 /* SpecificButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		EC8596A4281C00F500850E84 /* PillSecond */ = {
+			isa = PBXGroup;
+			children = (
+				EC8596A5281C010100850E84 /* View */,
+				EC8596A6281C010500850E84 /* ViewModel */,
+				EC8596A7281C010A00850E84 /* ViewController */,
+				EC8596A8281C011200850E84 /* Cell */,
+			);
+			path = PillSecond;
+			sourceTree = "<group>";
+		};
+		EC8596A5281C010100850E84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC8596A9281C023800850E84 /* AddPillSecondView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC8596A6281C010500850E84 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC8596A7281C010A00850E84 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EC8596A8281C011200850E84 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EC950ED5278EFD4700A34027 /* AddMedicineFirst */ = {
@@ -1640,6 +1689,7 @@
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
 				EC02140B27D1E7D200CF3569 /* PillPeriodViewModel.swift in Sources */,
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
+				EC8596AC281C02EC00850E84 /* ViewPresentable.swift in Sources */,
 				F6FC97FE279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift in Sources */,
 				EC02140427D0F85000CF3569 /* PillTimeViewModel.swift in Sources */,
 				EC02141627D27CD900CF3569 /* PillDayViewController.swift in Sources */,
@@ -1650,8 +1700,10 @@
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
+				EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */,
 				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
+				EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */,
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,

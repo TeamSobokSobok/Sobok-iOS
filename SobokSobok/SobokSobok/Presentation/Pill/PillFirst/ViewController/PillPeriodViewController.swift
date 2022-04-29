@@ -27,12 +27,8 @@ final class PillPeriodViewController: BaseViewController {
         }
     }
     
-    
     override func style() {
         super.style()
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
-    
-
- 
 }

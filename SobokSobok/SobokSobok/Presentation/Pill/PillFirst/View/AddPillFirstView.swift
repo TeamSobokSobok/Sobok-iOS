@@ -16,7 +16,7 @@ enum Specific {
     case period
 }
 
-final class AddPillFirstView: UIView {
+final class AddPillFirstView: UIView, ViewPresentable {
     
     let navigationView = NavigationView()
     
@@ -106,7 +106,7 @@ final class AddPillFirstView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setConstraints()
+        setupConstraints()
         hideBottomView()
         self.setConfiguration()
     }
@@ -139,7 +139,7 @@ final class AddPillFirstView: UIView {
         }
     }
     
-    func setConstraints() {
+    func setupConstraints() {
         navigationView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
@@ -205,7 +205,7 @@ final class AddPillFirstView: UIView {
         
         nextButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(22)
             $0.height.equalTo(54)
         }
     }

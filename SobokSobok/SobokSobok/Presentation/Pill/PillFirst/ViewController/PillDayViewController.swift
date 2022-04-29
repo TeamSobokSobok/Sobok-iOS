@@ -54,10 +54,6 @@ final class PillDayViewController: BaseViewController {
           })
           .disposed(by: disposeBag)
         
-
-        
-
-        
         Observable.zip(pillDayView.tableView.rx.modelSelected(String.self),
                        pillDayView.tableView.rx.itemSelected)
             .bind { [weak self] (text, indexPath) in
