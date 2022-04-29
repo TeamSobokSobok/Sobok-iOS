@@ -16,7 +16,7 @@ enum Specific {
     case period
 }
 
-final class AddPillFirstView: UIView, ViewPresentable {
+final class AddPillFirstView: BaseView {
     
     let navigationView = NavigationView()
     
@@ -74,10 +74,15 @@ final class AddPillFirstView: UIView, ViewPresentable {
         $0.collectionViewLayout = layout
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setConfiguration()
+        hideBottomView()
+    }
+    
     convenience init(specific: Specific) {
            self.init()
            self.specific = specific
-      
        }
     
     func setConfiguration() {
@@ -103,26 +108,13 @@ final class AddPillFirstView: UIView, ViewPresentable {
         specificView.specificLabel.text = "며칠 간격으로 먹나요?"
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        setupConstraints()
-        hideBottomView()
-        self.setConfiguration()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     func hideBottomView() {
         [navigationView.bottomSecondView, navigationView.bottomThirdView].forEach {
             $0.isHidden = true
         }
     }
     
-    func setupView() {
+    override func setupView() {
         [navigationView, scrollView].forEach {
             addSubview($0)
         }
@@ -140,7 +132,7 @@ final class AddPillFirstView: UIView, ViewPresentable {
         }
     }
     
-    func setupConstraints() {
+    override func setupConstraints() {
         navigationView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()

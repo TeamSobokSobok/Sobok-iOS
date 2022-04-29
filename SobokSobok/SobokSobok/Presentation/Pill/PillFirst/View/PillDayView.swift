@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class PillDayView: UIView, ViewPresentable {
+class PillDayView: BaseView {
     
     let backgroundView = UIView().then {
         $0.makeRounded(radius: 15)
@@ -28,26 +28,15 @@ final class PillDayView: UIView, ViewPresentable {
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 18)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        setupConstraints()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    func setupView() {
+    override func setupView() {
         [backgroundView, tableView, confirmButton].forEach {
             addSubview($0)
         }
     }
     
-    func setupConstraints() {
+    override func setupConstraints() {
         backgroundView.snp.makeConstraints {
-            $0.height.equalTo(UIScreen.main.bounds.height * 0.5)
+            $0.height.equalTo(395)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(safeAreaLayoutGuide)
         }
