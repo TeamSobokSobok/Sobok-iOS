@@ -31,17 +31,18 @@ final class PillPeriodView: UIView, ViewPresentable {
         setupConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    private func setupView() {
+    func setupView() {
         [backgroundView, pickerView, confirmButton].forEach {
             addSubview($0)
         }
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         backgroundView.snp.makeConstraints {
             $0.height.equalTo(UIScreen.main.bounds.height * 0.3)
             $0.leading.trailing.equalToSuperview()

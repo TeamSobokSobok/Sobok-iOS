@@ -111,6 +111,7 @@ final class AddPillFirstView: UIView, ViewPresentable {
         self.setConfiguration()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }

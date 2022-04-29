@@ -21,9 +21,9 @@ final class AddPillSecondViewController: BaseViewController {
     }
     
     override func style() {
+        super.style()
         view.backgroundColor = .white
         tabBarController?.tabBar.isHidden = true
-        navigationController?.isNavigationBarHidden = true
     }
 }
 

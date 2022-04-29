@@ -13,12 +13,12 @@ import RxSwift
 
 final class PillDayViewController: BaseViewController {
 
-    let pillDayView = PillDayView()
-    let disposeBag = DisposeBag()
-    let weekObservable = Observable.of(["월", "화", "수", "목", "금", "토", "일"])
-    let dataObservable = Observable.of("")
+    private let pillDayView = PillDayView()
+    private let disposeBag = DisposeBag()
+    private let weekObservable = Observable.of(["월", "화", "수", "목", "금", "토", "일"])
+    private let dataObservable = Observable.of("")
     private var pillTimeViewModel = PillTimeViewModel()
-    var delegate: PopUpDelegate?
+    weak var delegate: PopUpDelegate?
   
     override func loadView() {
         self.view = pillDayView
@@ -32,7 +32,10 @@ final class PillDayViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        bind()
+    }
+    
+    private func bind() {
         weekObservable.bind(to: pillDayView.tableView.rx.items(cellIdentifier: "PillDayTableViewCell", cellType: PillDayTableViewCell.self)) {[weak self] row, element, cell in
             cell.dayLabel.text = element
             cell.checkImage.isHidden = true
@@ -42,15 +45,10 @@ final class PillDayViewController: BaseViewController {
         pillDayView.tableView.rx.itemSelected
           .subscribe(onNext: { [weak self] indexPath in
               guard let cell = self?.pillDayView.tableView.cellForRow(at: indexPath) as? PillDayTableViewCell else { return }
-              
-              
-              
+            
               cell.checkImage.isHidden.toggle()
               cell.isSelected.toggle()
-              
               cell.dayLabel.text = self?.pillTimeViewModel.exampleString.value
-
-
           })
           .disposed(by: disposeBag)
         
@@ -58,28 +56,17 @@ final class PillDayViewController: BaseViewController {
                        pillDayView.tableView.rx.itemSelected)
             .bind { [weak self] (text, indexPath) in
                 self?.pillDayView.tableView.deselectRow(at: indexPath, animated: true)
-        
-                    print(indexPath)
-                
             }
             .disposed(by: disposeBag)
         
-        
         pillDayView.tableView.rx.setDelegate(self)
         .disposed(by: disposeBag)
-
-      
     }
     
     override func style() {
         super.style()
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
-    
-    
-
-    
-
 }
 
 extension PillDayViewController: UITableViewDelegate {

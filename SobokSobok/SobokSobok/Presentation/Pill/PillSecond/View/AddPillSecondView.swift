@@ -10,7 +10,6 @@ import UIKit
 import FSCalendar
 import SnapKit
 import Then
-import SwiftUI
 
 final class AddPillSecondView: UIView, ViewPresentable {
     
@@ -53,9 +52,9 @@ final class AddPillSecondView: UIView, ViewPresentable {
         hideBottomView()
         setupView()
         setupConstraints()
-        setCalendarStyle()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -64,13 +63,13 @@ final class AddPillSecondView: UIView, ViewPresentable {
         navigationView.bottomThirdView.isHidden = true
     }
     
-    private func setupView() {
+    func setupView() {
         [navigationView, pillQuestionLabel, pillPeriodLabel, calendar, checkBoxButton, startThreeMonthLabel, periodInformationLabel, nextButton].forEach {
             addSubview($0)
         }
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         navigationView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()

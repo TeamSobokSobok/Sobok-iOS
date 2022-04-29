@@ -33,13 +33,12 @@ final class AddPillFirstViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-
     }
 
     override func style() {
+        super.style()
         view.backgroundColor = .white
         tabBarController?.tabBar.isHidden = true
-        navigationController?.isNavigationBarHidden = true
     }
     
     private func presentView() {
@@ -130,28 +129,3 @@ final class AddPillFirstViewController: BaseViewController {
             .disposed(by: disposeBag)
     }
 }
-
-//extension AddPillFirstViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = addPillFirstView.collectionView.dequeueReusableCell(for: indexPath, cellType: PillTimeCollectionViewCell.self)
-//
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        guard let cell = addPillFirstView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddMyMedicineFooterView.reuseIdentifier, for: indexPath) as? AddMyMedicineFooterView else { return UICollectionReusableView()}
-//
-//        return cell
-//    }
-//}
-//
-//extension AddPillFirstViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-//        return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
-//    }
-//}

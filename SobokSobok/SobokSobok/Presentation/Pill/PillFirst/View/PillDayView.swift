@@ -34,17 +34,18 @@ final class PillDayView: UIView, ViewPresentable {
         setupConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    private func setupView() {
+    func setupView() {
         [backgroundView, tableView, confirmButton].forEach {
             addSubview($0)
         }
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         backgroundView.snp.makeConstraints {
             $0.height.equalTo(UIScreen.main.bounds.height * 0.5)
             $0.leading.trailing.equalToSuperview()
