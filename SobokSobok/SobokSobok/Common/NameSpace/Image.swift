@@ -79,4 +79,7 @@ public enum Image {
 	public static let icArrowDropDown16 = UIImage(named: "ic_arrow_drop_down_16")!
 	public static let illustOops = UIImage(named: "illustOops")!
 	public static let isVImage = UIImage(named: "isVImage")!
+	public static let icNext16 = UIImage(named: "ic_more_16_black")!
+	public static let icPillAlarm = UIImage(named: "ic_pill_alarm_22_darkmint")!
+    public static let icShareAlarm = UIImage(named: "ic_share_alarm_22_darkmint")!
 }
