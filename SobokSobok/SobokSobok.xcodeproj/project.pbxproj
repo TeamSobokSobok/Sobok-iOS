@@ -196,17 +196,6 @@
 		F6538FB0278DBBC100B20B5E /* PillInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FAE278DBBC100B20B5E /* PillInfoCollectionViewCell.swift */; };
 		F6538FB3278DCF8600B20B5E /* SendInfoListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
-		F6FC97FC279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97EF279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift */; };
-		F6FC97FD279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FC97F0279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.xib */; };
-		F6FC97FE279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97F1279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift */; };
-		F6FC97FF279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FC97F2279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib */; };
-		F6FC9800279A9A0A007B5AF2 /* WeekSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97F4279A9A0A007B5AF2 /* WeekSelectViewController.swift */; };
-		F6FC9801279A9A0A007B5AF2 /* PillInfoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97F5279A9A0A007B5AF2 /* PillInfoEditViewController.swift */; };
-		F6FC9802279A9A0A007B5AF2 /* WeekSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FC97F6279A9A0A007B5AF2 /* WeekSelectViewController.xib */; };
-		F6FC9803279A9A0A007B5AF2 /* TermSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FC97F7279A9A0A007B5AF2 /* TermSelectViewController.xib */; };
-		F6FC9804279A9A0A007B5AF2 /* TermSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97F8279A9A0A007B5AF2 /* TermSelectViewController.swift */; };
-		F6FC9805279A9A0A007B5AF2 /* PillInfoEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FC97F9279A9A0A007B5AF2 /* PillInfoEditViewController.xib */; };
-		F6FC9806279A9A0A007B5AF2 /* PillTimeInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC97FB279A9A0A007B5AF2 /* PillTimeInfoFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -392,17 +381,6 @@
 		F6538FAE278DBBC100B20B5E /* PillInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6538FB2278DCF8600B20B5E /* SendInfoListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoListDataModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
-		F6FC97EF279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillTimeInfoCollectionViewCell.swift; sourceTree = "<group>"; };
-		F6FC97F0279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PillTimeInfoCollectionViewCell.xib; sourceTree = "<group>"; };
-		F6FC97F1279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekSelectTableViewCell.swift; sourceTree = "<group>"; };
-		F6FC97F2279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekSelectTableViewCell.xib; sourceTree = "<group>"; };
-		F6FC97F4279A9A0A007B5AF2 /* WeekSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekSelectViewController.swift; sourceTree = "<group>"; };
-		F6FC97F5279A9A0A007B5AF2 /* PillInfoEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillInfoEditViewController.swift; sourceTree = "<group>"; };
-		F6FC97F6279A9A0A007B5AF2 /* WeekSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekSelectViewController.xib; sourceTree = "<group>"; };
-		F6FC97F7279A9A0A007B5AF2 /* TermSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermSelectViewController.xib; sourceTree = "<group>"; };
-		F6FC97F8279A9A0A007B5AF2 /* TermSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermSelectViewController.swift; sourceTree = "<group>"; };
-		F6FC97F9279A9A0A007B5AF2 /* PillInfoEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PillInfoEditViewController.xib; sourceTree = "<group>"; };
-		F6FC97FB279A9A0A007B5AF2 /* PillTimeInfoFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillTimeInfoFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -791,7 +769,6 @@
 			children = (
 				F605025527BBFBB30010DEC8 /* NoticeFirst */,
 				F605025927BBFC2F0010DEC8 /* NoticeSecond */,
-				F6FC97ED279A9A0A007B5AF2 /* NoticeThird */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1375,48 +1352,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F6FC97ED279A9A0A007B5AF2 /* NoticeThird */ = {
-			isa = PBXGroup;
-			children = (
-				F6FC97EE279A9A0A007B5AF2 /* Cells */,
-				F6FC97F3279A9A0A007B5AF2 /* ViewControllers */,
-				F6FC97FA279A9A0A007B5AF2 /* Views */,
-			);
-			path = NoticeThird;
-			sourceTree = "<group>";
-		};
-		F6FC97EE279A9A0A007B5AF2 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				F6FC97EF279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift */,
-				F6FC97F0279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.xib */,
-				F6FC97F1279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift */,
-				F6FC97F2279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		F6FC97F3279A9A0A007B5AF2 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				F6FC97F4279A9A0A007B5AF2 /* WeekSelectViewController.swift */,
-				F6FC97F5279A9A0A007B5AF2 /* PillInfoEditViewController.swift */,
-				F6FC97F6279A9A0A007B5AF2 /* WeekSelectViewController.xib */,
-				F6FC97F7279A9A0A007B5AF2 /* TermSelectViewController.xib */,
-				F6FC97F8279A9A0A007B5AF2 /* TermSelectViewController.swift */,
-				F6FC97F9279A9A0A007B5AF2 /* PillInfoEditViewController.xib */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		F6FC97FA279A9A0A007B5AF2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F6FC97FB279A9A0A007B5AF2 /* PillTimeInfoFooterView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1508,7 +1443,6 @@
 				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
 				BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
-				F6FC9803279A9A0A007B5AF2 /* TermSelectViewController.xib in Resources */,
 				F60BAEBA279B4AB40012707C /* splash.json in Resources */,
 				9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
@@ -1517,7 +1451,6 @@
 				BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */,
 				BD51AE272790641100314A94 /* Pretendard-ExtraBold.otf in Resources */,
 				EC950EE1278FEB7800A34027 /* MedicineCalendarViewController.xib in Resources */,
-				F6FC97FF279A9A0A007B5AF2 /* WeekSelectTableViewCell.xib in Resources */,
 				BD515E45278770C7003BD5A4 /* LaunchScreen.storyboard in Resources */,
 				9A3DF0C72798CE4300D07A8C /* EditFriendNameViewController.xib in Resources */,
 				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
@@ -1532,11 +1465,8 @@
 				EC1C31142792F12E00972404 /* MedicineTimeViewController.xib in Resources */,
 				EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */,
 				BD51AE382790A97400314A94 /* StickerBottomSheet.xib in Resources */,
-				F6FC97FD279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.xib in Resources */,
-				F6FC9805279A9A0A007B5AF2 /* PillInfoEditViewController.xib in Resources */,
 				EC1C311927941CDF00972404 /* AddMedicineFourthViewController.xib in Resources */,
 				9A3DF0B0279742C400D07A8C /* SaveNicknameViewController.xib in Resources */,
-				F6FC9802279A9A0A007B5AF2 /* WeekSelectViewController.xib in Resources */,
 				ECAE92F2278D7EC90026D59A /* AddPeopleViewController.xib in Resources */,
 				EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */,
 				9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */,
@@ -1616,7 +1546,6 @@
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
-				F6FC9806279A9A0A007B5AF2 /* PillTimeInfoFooterView.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
@@ -1654,14 +1583,12 @@
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
-				F6FC9801279A9A0A007B5AF2 /* PillInfoEditViewController.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
 				F635EEB327CDDF52009B9246 /* PillInfoHeaderView.swift in Sources */,
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
-				F6FC97FC279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift in Sources */,
 				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
@@ -1684,7 +1611,6 @@
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
-				F6FC9800279A9A0A007B5AF2 /* WeekSelectViewController.swift in Sources */,
 				BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */,
 				EC51A41C27D4AE7600BB01AF /* PopUp.swift in Sources */,
 				ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */,
@@ -1698,7 +1624,6 @@
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
 				EC02140B27D1E7D200CF3569 /* PillPeriodViewModel.swift in Sources */,
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
-				F6FC97FE279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift in Sources */,
 				EC02140427D0F85000CF3569 /* PillTimeViewModel.swift in Sources */,
 				EC02141627D27CD900CF3569 /* PillDayViewController.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
@@ -1719,7 +1644,6 @@
 				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
 				EC950EF82790A88D00A34027 /* AddTimeCollectionViewCell.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
-				F6FC9804279A9A0A007B5AF2 /* TermSelectViewController.swift in Sources */,
 				BD9857A22791CA97009883FC /* CalendarViewController.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
