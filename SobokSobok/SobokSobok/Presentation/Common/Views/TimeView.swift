@@ -44,6 +44,7 @@ final class TimeView: BaseView {
         timeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(6)
             make.leading.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
         }
     }
 }

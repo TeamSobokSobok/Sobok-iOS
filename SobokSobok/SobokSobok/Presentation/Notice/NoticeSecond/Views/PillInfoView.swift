@@ -49,13 +49,13 @@ final class PillInfoView: BaseView {
         $0.textColor = Color.black
     }
     let timeFirstLine = UIStackView().then {
-        $0.alignment = .fill
         $0.axis = .horizontal
+        $0.distribution = .fill
         $0.spacing = 10
     }
     let timeSecondLine = UIStackView().then {
-        $0.alignment = .fill
         $0.axis = .horizontal
+        $0.distribution = .fill
         $0.spacing = 10
     }
     private let periodTitleLabel = UILabel().then {
@@ -87,6 +87,8 @@ final class PillInfoView: BaseView {
     override func setupView() {
         super.setupView()
         
+        backgroundColor = Color.white
+        
         addSubviews(navigationView, titleLabel, lineView, termTitleLabel, termStack, timeTitleLabel, timeFirstLine, timeSecondLine, periodStack)
         termStack.addArrangedSubviews(weekButton, weekLabel)
         periodStack.addArrangedSubviews(periodTitleLabel, periodLabel)
@@ -105,7 +107,7 @@ final class PillInfoView: BaseView {
         lineView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(13)
             make.leading.equalToSuperview().offset(20)
-            make.width.equalTo(UIScreen.main.bounds.width - 20)
+            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(1)
         }
         termTitleLabel.snp.makeConstraints { make in
@@ -127,13 +129,13 @@ final class PillInfoView: BaseView {
         timeFirstLine.snp.makeConstraints { make in
             make.top.equalTo(timeTitleLabel.snp.bottom).offset(9)
             make.leading.equalToSuperview().offset(20)
-            make.width.equalTo(UIScreen.main.bounds.width - 20)
+            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(38)
         }
         timeSecondLine.snp.makeConstraints { make in
             make.top.equalTo(timeFirstLine.snp.bottom).offset(9)
             make.leading.equalToSuperview().offset(20)
-            make.width.equalTo(UIScreen.main.bounds.width - 20)
+            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(38)
         }
         periodStack.snp.makeConstraints { make in
