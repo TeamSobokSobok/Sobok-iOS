@@ -1,5 +1,5 @@
 //
-//  NavigationHeaderView.swift
+//  NavigationBarView.swift
 //  SobokSobok
 //
 //  Created by 정은희 on 2022/05/01.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class NavigationHeaderView: BaseView {
+final class NavigationBarView: BaseView {
     
     enum NavigationMode: Int, CaseIterable {
         case back

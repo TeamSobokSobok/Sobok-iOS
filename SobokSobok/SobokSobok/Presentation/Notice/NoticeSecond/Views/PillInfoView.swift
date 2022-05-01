@@ -13,7 +13,7 @@ import Then
 final class PillInfoView: BaseView {
     
     // MARK: - Properties
-    private let navigationView = NavigationHeaderView.init(frame: CGRect(), mode: .back, title: "약 일정")
+    private let navigationView = NavigationBarView.init(frame: CGRect(), mode: .back, title: "약 일정")
     let titleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardBold, ofSize: 24)
         $0.textColor = Color.gray900
