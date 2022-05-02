@@ -108,4 +108,3 @@ final class AddPillSecondView: BaseView {
         }
     }
 }
-
