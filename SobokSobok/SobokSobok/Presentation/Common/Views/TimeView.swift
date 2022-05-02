@@ -19,6 +19,13 @@ final class TimeView: BaseView {
     }
     
     // MARK: - Initialization
+    convenience init(time: String) {
+        self.init(frame: .zero)
+        
+        self.timeLabel.text = time
+        updateUI()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -46,5 +53,14 @@ final class TimeView: BaseView {
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(-10)
         }
+    }
+    
+    private func updateUI() {
+        let viewSize = timeLabel.intrinsicContentSize
+        let width = viewSize.width + 10
+        let height = viewSize.height + 6
+        
+        frame.size = CGSize(width: width, height: height)
+        timeLabel.center = CGPoint(x: width / 2, y: height / 2)
     }
 }

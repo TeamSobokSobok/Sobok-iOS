@@ -129,13 +129,11 @@ final class PillInfoView: BaseView {
         timeFirstLine.snp.makeConstraints { make in
             make.top.equalTo(timeTitleLabel.snp.bottom).offset(9)
             make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(38)
         }
         timeSecondLine.snp.makeConstraints { make in
             make.top.equalTo(timeFirstLine.snp.bottom).offset(9)
             make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
             make.height.equalTo(38)
         }
         periodStack.snp.makeConstraints { make in
