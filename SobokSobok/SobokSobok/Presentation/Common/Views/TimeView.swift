@@ -30,15 +30,8 @@ final class TimeView: BaseView {
         super.init(frame: frame)
     }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
     // MARK: - Functions
     override func setupView() {
-        super.setupView()
-
         backgroundColor = Color.white
         makeRoundedWithBorder(radius: 6, color: Color.darkMint.cgColor)
         
@@ -46,8 +39,6 @@ final class TimeView: BaseView {
     }
     
     override func setupConstraints() {
-        super.setupConstraints()
-        
         timeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(6)
             make.leading.equalToSuperview().offset(10)

@@ -85,8 +85,6 @@ final class PillInfoView: BaseView {
     
     // MARK: - Functions
     override func setupView() {
-        super.setupView()
-        
         backgroundColor = Color.white
         
         addSubviews(navigationView, titleLabel, lineView, termTitleLabel, termStack, timeTitleLabel, timeFirstLine, timeSecondLine, periodStack)
@@ -95,8 +93,6 @@ final class PillInfoView: BaseView {
     }
     
     override func setupConstraints() {
-        super.setupConstraints()
-        
         navigationView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview()
         }
