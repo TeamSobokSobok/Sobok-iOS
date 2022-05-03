@@ -173,6 +173,8 @@
 		ECB845E82795774B00433522 /* PillCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845E72795774B00433522 /* PillCountService.swift */; };
 		ECB845EB2795776F00433522 /* PillCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EA2795776F00433522 /* PillCount.swift */; };
 		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
+		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
+		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
 		ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */; };
 		ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */; };
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
@@ -371,6 +373,8 @@
 		ECB845E72795774B00433522 /* PillCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountService.swift; sourceTree = "<group>"; };
 		ECB845EA2795776F00433522 /* PillCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCount.swift; sourceTree = "<group>"; };
 		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
 		ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineFooterView.swift; sourceTree = "<group>"; };
 		ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineView.swift; sourceTree = "<group>"; };
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
@@ -1160,6 +1164,7 @@
 			isa = PBXGroup;
 			children = (
 				ECA6379D281D1AF800CA2291 /* AddPillThirdView.swift */,
+				ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1182,6 +1187,7 @@
 		ECA6379A281D1A9400CA2291 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1625,7 +1631,7 @@
 		};
 		BDDAA5962789B3F4000C0AF8 /* Python Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1637,7 +1643,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "python $TARGET_NAME/Support/Script/generate.py $TARGET_NAME\n";
 		};
@@ -1720,6 +1726,7 @@
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */,
+				ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */,
 				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
@@ -1754,6 +1761,7 @@
 				EC0213F227CF44D500CF3569 /* SpecificView.swift in Sources */,
 				BD7120F4279717530068B981 /* ShareService.swift in Sources */,
 				BDDAA5AA2789BCD3000C0AF8 /* Notification.swift in Sources */,
+				ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */,
 				9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */,

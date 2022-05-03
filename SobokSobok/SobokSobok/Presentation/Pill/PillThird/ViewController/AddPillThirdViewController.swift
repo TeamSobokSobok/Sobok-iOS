@@ -9,6 +9,7 @@ import UIKit
 
 final class AddPillThirdViewController: BaseViewController {
 
+    let timeArray: [String] = []
     let addPillThirdView = AddPillThirdView()
     
     override func loadView() {
@@ -17,7 +18,7 @@ final class AddPillThirdViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setDelegation()
        
     }
     
@@ -27,6 +28,37 @@ final class AddPillThirdViewController: BaseViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    private func setDelegation() {
+        addPillThirdView.collectionView.delegate = self
+        addPillThirdView.collectionView.dataSource = self
+    }
+}
 
+extension AddPillThirdViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AddPillCollectionViewCell.self)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let cell = addPillThirdView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier, for: indexPath) as? AddPillFooterView else { return UICollectionReusableView()}
+        
+        return cell
+    }
+}
+
+extension AddPillThirdViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
+    }
 }
