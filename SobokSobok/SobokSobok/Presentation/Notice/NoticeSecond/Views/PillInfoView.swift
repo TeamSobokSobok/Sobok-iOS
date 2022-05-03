@@ -7,56 +7,75 @@
 
 import UIKit
 
-final class PillInfoView: UIView {
+import SnapKit
+import Then
 
-    // MARK: - Properties
-    lazy var closed: (() -> ()) = {}
-    lazy var sendedPillAccept: (() -> ()) = {}
-    lazy var sendedPillRefuse: (() -> ()) = {}
+final class PillInfoView: BaseView {
     
-    private let navigationView = UIView().then {
-        $0.backgroundColor = .white
+    // MARK: - Properties
+    private let navigationView = NavigationBarView.init(frame: CGRect(), mode: .back, title: "약 일정")
+    let titleLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardBold, ofSize: 24)
+        $0.textColor = Color.gray900
     }
-    private let navigationTitleLabel = UILabel().then {
-        $0.text = "전송 받은 약"
-        $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
+    private let lineView = UIView().then {
+        $0.backgroundColor = Color.gray200
     }
-    private let xButton = UIButton().then {
-        $0.setImage(Image.icClose48, for: .normal)
-        $0.tintColor = Color.black
+    private let termTitleLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
+        $0.text = "약 먹는 주기"
+        $0.textColor = Color.black
     }
-    private let refuseButton = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절할래요", fontSize: 18)
-    private let acceptButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "받을래요", fontSize: 18)
-    private let buttonStack = UIStackView().then {
+    private let weekButton = UIButton().then {
+        $0.backgroundColor = Color.lightMint
+        $0.isEnabled = false
+        $0.makeRoundedWithBorder(radius: 6, color: Color.darkMint.cgColor)
+        $0.setTitle("특정 요일", for: .normal)
+        $0.setTitleColor(Color.darkMint, for: .normal)
+        $0.titleLabel?.font = UIFont.font(.pretendardMedium, ofSize: 18)
+    }
+    let weekLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
+        $0.textColor = Color.gray800
+    }
+    private let termStack = UIStackView().then {
+        $0.alignment = .fill
         $0.axis = .horizontal
-        $0.distribution = .fillEqually
-        $0.spacing = 11
+        $0.spacing = 12
     }
-    let pillInfoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 166)
-        layout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 132)
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 48)
-        layout.minimumInteritemSpacing = 11
-        layout.sectionInset = UIEdgeInsets(top: 11, left: 0, bottom: 16, right: 0)
-        layout.scrollDirection = .vertical
-        $0.backgroundColor = .clear
-        $0.collectionViewLayout = layout
-        $0.register(PillInfoCollectionViewCell.self)
-        $0.register(PillInfoHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PillInfoHeaderView.reuseIdentifier)
-        $0.register(PillInfoFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PillInfoFooterView.reuseIdentifier)
-        $0.showsVerticalScrollIndicator = false
+    private let timeTitleLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
+        $0.text = "약 먹는 시간"
+        $0.textColor = Color.black
+    }
+    let timeFirstLine = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.spacing = 10
+    }
+    let timeSecondLine = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.spacing = 10
+    }
+    private let periodTitleLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
+        $0.text = "약 먹는 기간"
+        $0.textColor = Color.black
+    }
+    let periodLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
+        $0.textColor = Color.darkMint
+    }
+    private let periodStack = UIStackView().then {
+        $0.alignment = .fill
+        $0.axis = .vertical
+        $0.spacing = 7
     }
     
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        addAcceptButton()
-        addCloseButton()
-        addRefuseButton()
-        setUI()
-        setConstraints()
     }
     
     @available(*, unavailable)
@@ -65,68 +84,57 @@ final class PillInfoView: UIView {
     }
     
     // MARK: - Functions
-    private func addCloseButton() {
-        xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
-    }
-    
-    private func addAcceptButton() {
-        acceptButton.addTarget(self, action: #selector(acceptButtonClicked), for: .touchUpInside)
-    }
-    
-    private func addRefuseButton() {
-        refuseButton.addTarget(self, action: #selector(refuseButtonClicked), for: .touchUpInside)
-    }
-    
-    @objc
-    func xButtonClicked() {
-        closed()
-    }
-    
-    @objc
-    func acceptButtonClicked() {
-        sendedPillAccept()
-    }
-    
-    @objc
-    func refuseButtonClicked() {
-        sendedPillRefuse()
-    }
-    
-    private func setUI() {
-        [navigationView, navigationTitleLabel, xButton, pillInfoCollectionView, buttonStack].forEach {
-            addSubview($0)
-        }
-        buttonStack.addArrangedSubviews(refuseButton, acceptButton)
-        self.backgroundColor = Color.white
-    }
-    
-    private func setConstraints() {
-        navigationView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(102)
-        }
+    override func setupView() {
+        backgroundColor = Color.white
         
-        navigationTitleLabel.snp.makeConstraints {
-            $0.centerX.equalTo(navigationView)
-            $0.bottom.equalTo(navigationView).inset(20)
+        addSubviews(navigationView, titleLabel, lineView, termTitleLabel, termStack, timeTitleLabel, timeFirstLine, timeSecondLine, periodStack)
+        termStack.addArrangedSubviews(weekButton, weekLabel)
+        periodStack.addArrangedSubviews(periodTitleLabel, periodLabel)
+    }
+    
+    override func setupConstraints() {
+        navigationView.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview()
         }
-        
-        xButton.snp.makeConstraints {
-            $0.leading.equalTo(navigationView).inset(1)
-            $0.centerY.equalTo(navigationTitleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(navigationView.snp.bottom).offset(19)
+            make.leading.equalToSuperview().offset(20)
         }
-        pillInfoCollectionView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(102)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+        lineView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(13)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(1)
         }
-        buttonStack.snp.makeConstraints {
-            $0.width.equalTo(335)
-            $0.height.equalTo(52)
-            $0.top.equalTo(pillInfoCollectionView.snp.bottom).offset(14)
-            $0.leading.equalToSuperview().offset(20)
-            $0.bottom.equalTo(safeAreaLayoutGuide).offset(-22)
+        termTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(lineView.snp.bottom).offset(32)
+            make.leading.equalToSuperview().offset(20)
+        }
+        weekButton.snp.makeConstraints { make in
+            make.width.equalTo(95)
+            make.height.equalTo(38)
+        }
+        termStack.snp.makeConstraints { make in
+            make.top.equalTo(termTitleLabel.snp.bottom).offset(9)
+            make.leading.equalToSuperview().offset(20)
+        }
+        timeTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(termStack.snp.bottom).offset(39)
+            make.leading.equalToSuperview().offset(20)
+        }
+        timeFirstLine.snp.makeConstraints { make in
+            make.top.equalTo(timeTitleLabel.snp.bottom).offset(9)
+            make.leading.equalToSuperview().offset(20)
+            make.height.equalTo(38)
+        }
+        timeSecondLine.snp.makeConstraints { make in
+            make.top.equalTo(timeFirstLine.snp.bottom).offset(9)
+            make.leading.equalToSuperview().offset(20)
+            make.height.equalTo(38)
+        }
+        periodStack.snp.makeConstraints { make in
+            make.top.equalTo(timeTitleLabel.snp.bottom).offset(143)
+            make.leading.equalTo(20)
         }
     }
-
 }
