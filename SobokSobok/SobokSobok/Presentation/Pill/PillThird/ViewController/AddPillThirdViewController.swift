@@ -7,10 +7,13 @@
 
 import UIKit
 
+import SnapKit
+
 final class AddPillThirdViewController: BaseViewController {
 
     let timeArray: [String] = []
     let addPillThirdView = AddPillThirdView()
+    let addPillInfoView = AddPillInfoView()
     
     override func loadView() {
         self.view = addPillThirdView
@@ -19,6 +22,7 @@ final class AddPillThirdViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegation()
+        addPillThirdView.nextButton.addTarget(self, action: #selector(presentNextVC), for: .touchUpInside)
        
     }
     
@@ -28,9 +32,19 @@ final class AddPillThirdViewController: BaseViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    private func presentView() {
+        let bottomSheetVC = AddPillInfoViewController()
+        bottomSheetVC.modalPresentationStyle = .overFullScreen
+        self.present(bottomSheetVC, animated: false, completion: nil)
+    }
+    
     private func setDelegation() {
         addPillThirdView.collectionView.delegate = self
         addPillThirdView.collectionView.dataSource = self
+    }
+    
+    @objc func presentNextVC() {
+        presentView()
     }
 }
 

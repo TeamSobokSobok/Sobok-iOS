@@ -148,6 +148,10 @@
 		EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596A9281C023800850E84 /* AddPillSecondView.swift */; };
 		EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */; };
 		EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AF281C1FAB00850E84 /* BaseView.swift */; };
+		EC91946428224BBF0047893F /* AddPillInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC91946328224BBF0047893F /* AddPillInfoViewController.swift */; };
+		EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC91946528224C1A0047893F /* AddPillInfoView.swift */; };
+		EC919468282252230047893F /* PillPeriodTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC919467282252230047893F /* PillPeriodTimeView.swift */; };
+		EC91946A282252530047893F /* PillNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC919469282252530047893F /* PillNameView.swift */; };
 		EC950EDC278EFDC100A34027 /* AddMedicineSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */; };
 		EC950EDD278EFDC100A34027 /* AddMedicineSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */; };
 		EC950EE0278FEB7800A34027 /* MedicineCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */; };
@@ -175,6 +179,8 @@
 		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
 		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
 		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
+		ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */; };
+		ECD77F39282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F38282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */; };
 		ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */; };
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
@@ -349,6 +355,10 @@
 		EC8596A9281C023800850E84 /* AddPillSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondView.swift; sourceTree = "<group>"; };
 		EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondViewController.swift; sourceTree = "<group>"; };
 		EC8596AF281C1FAB00850E84 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		EC91946328224BBF0047893F /* AddPillInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillInfoViewController.swift; sourceTree = "<group>"; };
+		EC91946528224C1A0047893F /* AddPillInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillInfoView.swift; sourceTree = "<group>"; };
+		EC919467282252230047893F /* PillPeriodTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillPeriodTimeView.swift; sourceTree = "<group>"; };
+		EC919469282252530047893F /* PillNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillNameView.swift; sourceTree = "<group>"; };
 		EC950EDA278EFDC100A34027 /* AddMedicineSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineSecondViewController.swift; sourceTree = "<group>"; };
 		EC950EDB278EFDC100A34027 /* AddMedicineSecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineSecondViewController.xib; sourceTree = "<group>"; };
 		EC950EDE278FEB7800A34027 /* MedicineCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCalendarViewController.swift; sourceTree = "<group>"; };
@@ -375,6 +385,8 @@
 		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
+		ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePillTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECD77F38282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineFooterView.swift; sourceTree = "<group>"; };
 		ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineView.swift; sourceTree = "<group>"; };
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
@@ -1165,6 +1177,10 @@
 			children = (
 				ECA6379D281D1AF800CA2291 /* AddPillThirdView.swift */,
 				ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */,
+				EC91946528224C1A0047893F /* AddPillInfoView.swift */,
+				EC919467282252230047893F /* PillPeriodTimeView.swift */,
+				EC919469282252530047893F /* PillNameView.swift */,
+				ECD77F38282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1180,6 +1196,7 @@
 			isa = PBXGroup;
 			children = (
 				ECA6379B281D1AB100CA2291 /* AddPillThirdViewController.swift */,
+				EC91946328224BBF0047893F /* AddPillInfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1188,6 +1205,7 @@
 			isa = PBXGroup;
 			children = (
 				ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */,
+				ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1701,8 +1719,10 @@
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				EC0213EC27CE665B00CF3569 /* AddPillFirstView.swift in Sources */,
+				ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */,
 				EC02140927D1E60100CF3569 /* ViewModelType.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
+				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
 				EC950EEC2790012700A34027 /* MedicineDayTableViewCell.swift in Sources */,
 				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
 				EC950EE8278FFADA00A34027 /* MedicineSpecificPeriodViewController.swift in Sources */,
@@ -1747,6 +1767,7 @@
 				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
 				EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */,
 				EC0213F427CF51F700CF3569 /* PillTimeCollectionViewCell.swift in Sources */,
+				EC91946A282252530047893F /* PillNameView.swift in Sources */,
 				F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */,
 				BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */,
 				EC950EF427909B5800A34027 /* AddMedicineThirdViewController.swift in Sources */,
@@ -1755,6 +1776,7 @@
 				EC1C311C279428A500972404 /* MedicineInfoCollectionViewCell.swift in Sources */,
 				F6FC97FE279A9A0A007B5AF2 /* WeekSelectTableViewCell.swift in Sources */,
 				EC02140427D0F85000CF3569 /* PillTimeViewModel.swift in Sources */,
+				EC91946428224BBF0047893F /* AddPillInfoViewController.swift in Sources */,
 				EC02141627D27CD900CF3569 /* PillDayViewController.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */,
@@ -1767,6 +1789,7 @@
 				EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */,
 				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC1C31132792F12E00972404 /* MedicineTimeViewController.swift in Sources */,
+				EC919468282252230047893F /* PillPeriodTimeView.swift in Sources */,
 				EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */,
 				EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */,
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
@@ -1785,6 +1808,7 @@
 				BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */,
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
+				ECD77F39282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
