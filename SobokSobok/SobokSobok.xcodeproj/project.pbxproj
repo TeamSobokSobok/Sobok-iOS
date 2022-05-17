@@ -87,6 +87,7 @@
 		BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9857A12791CA97009883FC /* CalendarViewController.xib */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
+		BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA400182833F16D0046627A /* ScheduleViewController.swift */; };
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
@@ -275,6 +276,7 @@
 		BD9857A02791CA97009883FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		BDA400182833F16D0046627A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 		BD515E4F27877579003BD5A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BDA400172833F14E0046627A /* Schedule */,
 				9A3DF0C32798CE2F00D07A8C /* EditFriendName */,
 				BD515E5A27877635003BD5A4 /* Common */,
 				BD515E64278776B0003BD5A4 /* Splash */,
@@ -885,6 +888,14 @@
 				F6EA7456281D919000163B2E /* NavigationBarView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BDA400172833F14E0046627A /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				BDA400182833F16D0046627A /* ScheduleViewController.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		BDC83B3A2798C978009C52A1 /* Sticker */ = {
@@ -1596,6 +1607,7 @@
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */,
 				F605027627BE18790010DEC8 /* EmptyView.swift in Sources */,
+				BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */,
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
