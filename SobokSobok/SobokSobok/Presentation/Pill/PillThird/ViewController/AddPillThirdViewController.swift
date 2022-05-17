@@ -23,7 +23,6 @@ final class AddPillThirdViewController: BaseViewController {
         super.viewDidLoad()
         setDelegation()
         addPillThirdView.nextButton.addTarget(self, action: #selector(presentNextVC), for: .touchUpInside)
-       
     }
     
     override func style() {
@@ -35,6 +34,7 @@ final class AddPillThirdViewController: BaseViewController {
     private func presentView() {
         let bottomSheetVC = AddPillInfoViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
+        bottomSheetVC.modalTransitionStyle = .crossDissolve
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
     
@@ -54,6 +54,7 @@ extension AddPillThirdViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AddPillCollectionViewCell.self)
         
         return cell

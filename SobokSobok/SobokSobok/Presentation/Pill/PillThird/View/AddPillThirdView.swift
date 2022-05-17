@@ -12,26 +12,26 @@ import Then
 
 final class AddPillThirdView: BaseView {
     
-    let navigationView = NavigationView()
+    lazy var navigationView = NavigationView()
     
-    let pillNameInfoLabel = UILabel().then {
+    lazy var pillNameInfoLabel = UILabel().then {
         $0.text = "약 이름을 입력해 주세요"
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 15)
         $0.textColor = Color.gray800
     }
     
-    let pillPeriodInfoLabel = UILabel().then {
+    lazy var pillPeriodInfoLabel = UILabel().then {
         $0.text = "같은 주기에 먹는 약을 함께 추가할 수 있어요."
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
         $0.textColor = Color.gray500
     }
     
-    let countInfoButton = UIButton().then {
+    lazy var countInfoButton = UIButton().then {
         $0.setImage(Image.icInfo, for: .normal)
         $0.tintColor = Color.gray500
     }
     
-    let pillCountLabel = UILabel().then {
+    lazy var pillCountLabel = UILabel().then {
         $0.text = "3개"
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
         $0.textColor = Color.darkMint
@@ -56,7 +56,7 @@ final class AddPillThirdView: BaseView {
         $0.collectionViewLayout = layout
     }
     
-    let nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "추가하기", fontSize: 18)
+    lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "추가하기", fontSize: 18)
     
     override func setupView() {
         addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton)

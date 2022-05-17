@@ -167,6 +167,7 @@
 		EC950EF527909B5800A34027 /* AddMedicineThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EF327909B5800A34027 /* AddMedicineThirdViewController.xib */; };
 		EC950EF82790A88D00A34027 /* AddTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC950EF62790A88D00A34027 /* AddTimeCollectionViewCell.swift */; };
 		EC950EF92790A88D00A34027 /* AddTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC950EF72790A88D00A34027 /* AddTimeCollectionViewCell.xib */; };
+		EC99153F2833BE5A00542115 /* UICollectionView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC99153E2833BE5A00542115 /* UICollectionView + Extension.swift */; };
 		ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA6379B281D1AB100CA2291 /* AddPillThirdViewController.swift */; };
 		ECA6379E281D1AF800CA2291 /* AddPillThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA6379D281D1AF800CA2291 /* AddPillThirdView.swift */; };
 		ECAE92F1278D7EC90026D59A /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */; };
@@ -180,7 +181,7 @@
 		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
 		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
 		ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */; };
-		ECD77F39282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F38282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		ECD77F3B282A64CD00710157 /* PillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F3A282A64CD00710157 /* PillTableViewCell.swift */; };
 		ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */; };
 		ECECEF96278C6C8A003D1454 /* AddMyMedicineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */; };
 		ECECEF98278C6CB1003D1454 /* AddMyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */; };
@@ -373,6 +374,7 @@
 		EC950EF327909B5800A34027 /* AddMedicineThirdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineThirdViewController.xib; sourceTree = "<group>"; };
 		EC950EF62790A88D00A34027 /* AddTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC950EF72790A88D00A34027 /* AddTimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC99153E2833BE5A00542115 /* UICollectionView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + Extension.swift"; sourceTree = "<group>"; };
 		ECA6379B281D1AB100CA2291 /* AddPillThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillThirdViewController.swift; sourceTree = "<group>"; };
 		ECA6379D281D1AF800CA2291 /* AddPillThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillThirdView.swift; sourceTree = "<group>"; };
 		ECAE92EF278D7EC90026D59A /* AddPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleViewController.swift; sourceTree = "<group>"; };
@@ -386,7 +388,7 @@
 		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
 		ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePillTimeCollectionViewCell.swift; sourceTree = "<group>"; };
-		ECD77F38282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		ECD77F3A282A64CD00710157 /* PillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTableViewCell.swift; sourceTree = "<group>"; };
 		ECECEF93278C6C5A003D1454 /* AddMyMedicineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineFooterView.swift; sourceTree = "<group>"; };
 		ECECEF95278C6C8A003D1454 /* AddMyMedicineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineView.swift; sourceTree = "<group>"; };
 		ECECEF97278C6CB1003D1454 /* AddMyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyMedicineViewController.swift; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 				BD2C8B56279612BC00B1F59D /* Date+Extension.swift */,
 				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
 				F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */,
+				EC99153E2833BE5A00542115 /* UICollectionView + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1180,7 +1183,6 @@
 				EC91946528224C1A0047893F /* AddPillInfoView.swift */,
 				EC919467282252230047893F /* PillPeriodTimeView.swift */,
 				EC919469282252530047893F /* PillNameView.swift */,
-				ECD77F38282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1204,6 +1206,7 @@
 		ECA6379A281D1A9400CA2291 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ECD77F3A282A64CD00710157 /* PillTableViewCell.swift */,
 				ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */,
 				ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */,
 			);
@@ -1672,6 +1675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC99153F2833BE5A00542115 /* UICollectionView + Extension.swift in Sources */,
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				ECECEF9C278C7079003D1454 /* AddMyMedicineCollectionViewCell.swift in Sources */,
@@ -1733,6 +1737,7 @@
 				EC1C311827941CDF00972404 /* AddMedicineFourthViewController.swift in Sources */,
 				ECA6379E281D1AF800CA2291 /* AddPillThirdView.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
+				ECD77F3B282A64CD00710157 /* PillTableViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				F6FC97FC279A9A0A007B5AF2 /* PillTimeInfoCollectionViewCell.swift in Sources */,
 				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
@@ -1808,7 +1813,6 @@
 				BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */,
 				EC1C310F2792CA5200972404 /* AddMedicineTimeFooterView.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
-				ECD77F39282A5D3B00710157 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */,
 				EC950EE4278FFACB00A34027 /* MedicineSpecificDayViewController.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
@@ -1961,8 +1965,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SobokSobok/SobokSobok.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1981,7 +1985,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sobok.corp.SobokSobok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "provisioning file";
+				PROVISIONING_PROFILE_SPECIFIER = SobokSobokCertification;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1994,8 +1998,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SobokSobok/SobokSobok.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -2014,7 +2018,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sobok.corp.SobokSobok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "provisioning file";
+				PROVISIONING_PROFILE_SPECIFIER = SobokSobokCertification;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

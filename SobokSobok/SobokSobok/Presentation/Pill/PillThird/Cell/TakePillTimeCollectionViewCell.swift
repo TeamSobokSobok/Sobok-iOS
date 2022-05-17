@@ -28,16 +28,7 @@ final class TakePillTimeCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        super.preferredLayoutAttributesFitting(layoutAttributes)
-        layoutIfNeeded()
-        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-        var frame = layoutAttributes.frame
-        frame.size.width = ceil(size.width)
-        layoutAttributes.frame = frame
-        return layoutAttributes
-    }
+
     
     private func setupView() {
         addSubview(timeLabel)
@@ -48,5 +39,4 @@ final class TakePillTimeCollectionViewCell: UICollectionViewCell {
             $0.centerX.centerY.equalToSuperview()
         }
     }
-    
 }

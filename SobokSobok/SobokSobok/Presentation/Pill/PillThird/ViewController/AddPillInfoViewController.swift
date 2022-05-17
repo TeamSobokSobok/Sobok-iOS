@@ -7,11 +7,23 @@
 
 import UIKit
 
+import SnapKit
+
 final class AddPillInfoViewController: BaseViewController {
     
     let addPillInfoView = AddPillInfoView()
     
     let timeArray: [String] = ["오전 10:00", "오후 12:30", "오후 3:00", "오후 5:20", "오후 7:30", "오후 10:50"]
+    
+    let pillArray: [String] = ["김승찬", "김선영", "김태현", "정은희", "아요짱"]
+    
+    enum Height {
+        case minHeight
+        case normalHeight
+        case expandedHeight
+    }
+    
+    var height: Height?
     
     var minHeight: CGFloat = UIScreen.main.bounds.height * 0.3
     var normalHeight: CGFloat = UIScreen.main.bounds.height * 0.5
@@ -20,7 +32,7 @@ final class AddPillInfoViewController: BaseViewController {
     override func loadView() {
         self.view = addPillInfoView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewPanGesture()
@@ -29,20 +41,22 @@ final class AddPillInfoViewController: BaseViewController {
     
     override func style() {
         super.style()
-        addPillInfoView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showBottomSheet()
+    
     }
     
     private func assignDelegation() {
         addPillInfoView.pillPeriodTimeView.timeCollectionView.delegate = self
         addPillInfoView.pillPeriodTimeView.timeCollectionView.dataSource = self
+        
+        addPillInfoView.pillNameView.pillTableView.delegate = self
+        addPillInfoView.pillNameView.pillTableView.dataSource = self
     }
-    
- 
     
     private func setViewPanGesture() {
         let backgroundViewTap = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTapped(_:)))
@@ -60,20 +74,21 @@ final class AddPillInfoViewController: BaseViewController {
         
         switch panGestureRecognizer.state {
         case .began:
-            setHeight(height: expandedHeight)
+            setHeight(height: expandedHeight, Bool: false)
         case .changed:
-            if normalHeight + translation.y > normalHeight {
-                setHeight(height: expandedHeight)
+            if normalHeight + translation.y ~= normalHeight {
+                setHeight(height: expandedHeight, Bool: false)
             }
             
             if expandedHeight - translation.y < expandedHeight {
-                setHeight(height: normalHeight)
+                setHeight(height: normalHeight, Bool: true)
             }
             
             if normalHeight - translation.y < minHeight {
-                setHeight(height: 0)
+                setHeight(height: 0, Bool: false)
                 self.dismiss(animated: true, completion: nil)
             }
+        
         default:
             break
         }
@@ -84,29 +99,44 @@ final class AddPillInfoViewController: BaseViewController {
         hideBottomSheet()
     }
     
-    private func setHeight(height: CGFloat) {
+    private func setHeight(height: CGFloat, Bool: Bool) {
         addPillInfoView.bottomSheetView.snp.remakeConstraints {
             $0.height.equalTo(height)
             $0.leading.trailing.bottom.equalToSuperview()
         }
+        
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
+            self.addPillInfoView.pillNameView.isHidden = Bool
         }, completion: nil)
     }
     
     private func showBottomSheet() {
-        setHeight(height: normalHeight)
+        setHeight(height: normalHeight, Bool: true)
     }
     
     private func hideBottomSheet() {
-        setHeight(height: expandedHeight)
+        setHeight(height: expandedHeight, Bool: false)
         self.dismiss(animated: true, completion: nil)
     }
-  
-
 }
 
-extension AddPillInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AddPillInfoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pillArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = addPillInfoView.pillNameView.pillTableView.dequeueReusableCell(for: indexPath, cellType: PillTableViewCell.self)
+        
+        cell.pillLabel.text = pillArray[indexPath.row]
+        
+        return cell
+    }
+}
+
+extension AddPillInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return timeArray.count
     }
@@ -120,14 +150,8 @@ extension AddPillInfoViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    
-}
-
-extension AddPillInfoViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
- 
-            return CGSize(width: timeArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.font(.pretendardRegular, ofSize: 17)]).width + 20, height: 32)
-        
+        return CGSize(width: timeArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.font(.pretendardRegular, ofSize: 17)]).width + 20, height: 32)
     }
 }
+

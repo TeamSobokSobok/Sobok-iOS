@@ -9,7 +9,6 @@ import UIKit
 
 import SnapKit
 import Then
-import SwiftUI
 
 final class PillPeriodTimeView: BaseView {
     
@@ -57,15 +56,13 @@ final class PillPeriodTimeView: BaseView {
         $0.isScrollEnabled = false
         $0.collectionViewLayout = layout
         $0.register(TakePillTimeCollectionViewCell.self)
-   
     }
   
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = Color.white
     }
     
-
     override func setupView() {
         addSubviews(pillPeopleLabel, pillPeriodLabel, pillBackgroundView, pillSpecificLabel, periodLabel, pillTimeLabel, timeCollectionView)
     }
@@ -107,9 +104,5 @@ final class PillPeriodTimeView: BaseView {
             $0.top.equalTo(pillTimeLabel.snp.bottom).offset(8)
             $0.height.equalTo(80)
         }
-        
-        
     }
 }
-
-

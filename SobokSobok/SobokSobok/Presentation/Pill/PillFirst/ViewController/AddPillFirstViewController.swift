@@ -43,7 +43,7 @@ final class AddPillFirstViewController: BaseViewController {
     
     private func presentView() {
         let medicineSpecificDayViewController = PillDayViewController.instanceFromNib()
-        medicineSpecificDayViewController.modalPresentationStyle = .overCurrentContext
+        medicineSpecificDayViewController.modalPresentationStyle = .fullScreen
         medicineSpecificDayViewController.modalTransitionStyle = .crossDissolve
         self.present(medicineSpecificDayViewController, animated: true)
     }

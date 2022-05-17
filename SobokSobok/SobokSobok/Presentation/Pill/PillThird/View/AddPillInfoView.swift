@@ -12,28 +12,32 @@ import Then
 
 final class AddPillInfoView: BaseView {
     
-    let height: CGFloat = UIScreen.main.bounds.height
+    lazy var height: CGFloat = UIScreen.main.bounds.height
     
-    let backgroundView = UIView().then {
-        $0.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
-    }
-    let bottomSheetView = UIView().then {
-        $0.backgroundColor = Color.white
+    lazy var backgroundView = UIView().then {
+        $0.backgroundColor = UIColor.white
     }
     
-    let pillPeriodTimeView = PillPeriodTimeView().then {
+    lazy var bottomSheetView = UIView().then {
+        $0.backgroundColor = UIColor.white
         $0.makeRoundedSpecificCorner([.layerMinXMinYCorner, .layerMaxXMinYCorner], cornerRadius: 24)
     }
     
-    let pillNameView = PillNameView()
+    lazy var pillPeriodTimeView = PillPeriodTimeView().then {
+        $0.makeRoundedSpecificCorner([.layerMinXMinYCorner, .layerMaxXMinYCorner], cornerRadius: 24)
+    }
     
-    let sendButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "전송하기", fontSize: 18)
+    lazy var pillNameView = PillNameView().then {
+        $0.backgroundColor = .white
+    }
     
-
+    lazy var sendButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "전송하기", fontSize: 18)
+    
     override func setupView() {
-       addSubviews(backgroundView)
+        addSubviews(backgroundView)
         backgroundView.addSubviews(bottomSheetView, pillNameView, pillPeriodTimeView)
         pillPeriodTimeView.addSubview(sendButton)
+        backgroundColor = .white
     }
 
     override func setupConstraints() {
@@ -68,6 +72,3 @@ final class AddPillInfoView: BaseView {
         }
     }
 }
-
-
-
