@@ -13,20 +13,20 @@ import Then
 final class PillInfoView: BaseView {
     
     // MARK: - Properties
-    private let navigationView = NavigationBarView.init(frame: CGRect(), mode: .back, title: "약 일정")
+    private lazy var navigationView = NavigationBarView.init(frame: CGRect(), mode: .back, title: "약 일정")
     let titleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardBold, ofSize: 24)
         $0.textColor = Color.gray900
     }
-    private let lineView = UIView().then {
+    private lazy var lineView = UIView().then {
         $0.backgroundColor = Color.gray200
     }
-    private let termTitleLabel = UILabel().then {
+    private lazy var termTitleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
         $0.text = "약 먹는 주기"
         $0.textColor = Color.black
     }
-    private let weekButton = UIButton().then {
+    private lazy var weekButton = UIButton().then {
         $0.backgroundColor = Color.lightMint
         $0.isEnabled = false
         $0.makeRoundedWithBorder(radius: 6, color: Color.darkMint.cgColor)
@@ -38,12 +38,12 @@ final class PillInfoView: BaseView {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
         $0.textColor = Color.gray800
     }
-    private let termStack = UIStackView().then {
+    private lazy var termStack = UIStackView().then {
         $0.alignment = .fill
         $0.axis = .horizontal
         $0.spacing = 12
     }
-    private let timeTitleLabel = UILabel().then {
+    private lazy var timeTitleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
         $0.text = "약 먹는 시간"
         $0.textColor = Color.black
@@ -58,7 +58,7 @@ final class PillInfoView: BaseView {
         $0.distribution = .fill
         $0.spacing = 10
     }
-    private let periodTitleLabel = UILabel().then {
+    private lazy var periodTitleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
         $0.text = "약 먹는 기간"
         $0.textColor = Color.black
@@ -67,20 +67,10 @@ final class PillInfoView: BaseView {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
         $0.textColor = Color.darkMint
     }
-    private let periodStack = UIStackView().then {
+    private lazy var periodStack = UIStackView().then {
         $0.alignment = .fill
         $0.axis = .vertical
         $0.spacing = 7
-    }
-    
-    // MARK: - Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError()
     }
     
     // MARK: - Functions

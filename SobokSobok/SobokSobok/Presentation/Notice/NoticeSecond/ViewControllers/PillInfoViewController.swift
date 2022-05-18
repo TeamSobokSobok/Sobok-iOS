@@ -53,7 +53,6 @@ extension PillInfoViewController {
         else {
             for index in 0..<3 { pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index])) }
             for index in 3..<timeCount { pillInfoView.timeSecondLine.addArrangedSubviews(TimeView(time: timeData[index])) }
-            
         }
     }
 }
