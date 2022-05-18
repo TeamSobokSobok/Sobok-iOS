@@ -16,10 +16,10 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     lazy var accept: (() -> ()) = {}
     lazy var refuse: (() -> ()) = {}
     
-    private let noticeIcon = UIImageView().then {
+    private lazy var noticeIcon = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
-    private let noticeTitle = UILabel().then {
+    private lazy var noticeTitle = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
         $0.lineBreakMode = .byCharWrapping
         $0.numberOfLines = 0
@@ -27,7 +27,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.textColor = Color.gray900
         $0.textAlignment = .left
     }
-    private let noticeTime = UILabel().then {
+    private lazy var noticeTime = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 12)
         $0.lineBreakMode = .byCharWrapping
         $0.numberOfLines = 0
@@ -35,21 +35,21 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.textAlignment = .left
         $0.textColor = Color.gray500
     }
-    private let labelStack = UIStackView().then {
+    private lazy var labelStack = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .fill
         $0.distribution = .fill
         $0.spacing = 4
     }
-    private let refuseButton = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절", fontSize: 13)
-    private let acceptButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "확인", fontSize: 13)
-    private let buttonStack = UIStackView().then {
+    private lazy var refuseButton = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절", fontSize: 13)
+    private lazy var acceptButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "확인", fontSize: 13)
+    private lazy var buttonStack = UIStackView().then {
         $0.alignment = .center
         $0.axis = .horizontal
         $0.distribution = .fillEqually
         $0.spacing = 9
     }
-    private let contentStack = UIStackView().then {
+    private lazy var contentStack = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fillProportionally
         $0.spacing = 16
@@ -84,9 +84,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         labelStack.addArrangedSubviews(noticeTitle, noticeTime)
         buttonStack.addArrangedSubviews(refuseButton, acceptButton)
         contentStack.addArrangedSubviews(noticeIcon, labelStack, buttonStack)
-        [noticeIcon, labelStack, buttonStack].forEach {
-            contentView.addSubview($0)
-        }
+        [noticeIcon, labelStack, buttonStack].forEach { contentView.addSubview($0) }
         self.backgroundColor = Color.white
         self.makeRounded(radius: 12)
     }
@@ -133,20 +131,13 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         refuseButton.addTarget(self, action: #selector(refuseButtonClicked), for: .touchUpInside)
     }
     
-    @objc
-    func acceptButtonClicked() {
-        accept()
-    }
+    @objc func acceptButtonClicked() { accept() }
     
-    @objc
-    func refuseButtonClicked() {
-        refuse()
-    }
+    @objc func refuseButtonClicked() { refuse() }
     
     func setData(noticeListData: NoticeListData) {
         noticeIcon.image = noticeListData.makeNoticeImage()
         noticeTitle.text = noticeListData.noticeTitle
         noticeTime.text = noticeListData.noticeTime
     }
-    
 }
