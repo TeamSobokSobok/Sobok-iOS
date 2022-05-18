@@ -28,10 +28,17 @@ final class PillInfoViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: - Functions
+    override func target() {
+        pillInfoView.navigationView.navigationButton.addTarget(self, action: #selector(addDismiss), for: .touchUpInside)
+    }
 }
 
 // MARK: - Extensions
 extension PillInfoViewController {
+    @objc private func addDismiss() { self.dismiss(animated: true) }
+    
     private func setInfoData() { // TODO: - 서버통신 할 때는 setInfoData(data: pillInfoList[pillNumber]) 로 바꾸기
         guard let pillInfo = pillInfoList.first else { return }
         let timeCount = pillInfo.makeTimeCount()
