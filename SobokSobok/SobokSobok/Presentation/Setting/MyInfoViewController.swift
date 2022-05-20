@@ -7,23 +7,38 @@
 
 import UIKit
 
-class MyInfoViewController: UIViewController {
+final class MyInfoViewController: BaseViewController {
 
+    @IBOutlet weak var pillTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        assignDelegation()
+        registerXib()
+    }
+    
+    private func assignDelegation() {
+        pillTableView.delegate = self
+        pillTableView.dataSource = self
+    }
+    
+    private func registerXib() {
+        pillTableView.register(MyInfoTableViewCell.self)
     }
 
+}
 
-    /*
-    // MARK: - Navigation
+extension MyInfoViewController: UITableViewDelegate {
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MyInfoViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = pillTableView.dequeueReusableCell(for: indexPath, cellType: MyInfoTableViewCell.self)
+        return cell
+    }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A06C99728377E6B00606D28 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C99528377E6B00606D28 /* MyInfoViewController.swift */; };
 		9A06C99828377E6B00606D28 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06C99628377E6B00606D28 /* MyInfoViewController.xib */; };
+		9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */; };
+		9A06C99C28378D4500606D28 /* MyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */; };
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
 		9A3DF08C279660A400D07A8C /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* Sign.swift */; };
@@ -214,6 +216,8 @@
 /* Begin PBXFileReference section */
 		9A06C99528377E6B00606D28 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		9A06C99628377E6B00606D28 /* MyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
+		9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		9A3DF08B279660A400D07A8C /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -435,6 +439,8 @@
 			children = (
 				9A06C99528377E6B00606D28 /* MyInfoViewController.swift */,
 				9A06C99628377E6B00606D28 /* MyInfoViewController.xib */,
+				9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */,
+				9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1531,6 +1537,7 @@
 				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
 				BDD21AA8278DA85B007D10F6 /* TimeHeaderView.xib in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
+				9A06C99C28378D4500606D28 /* MyInfoTableViewCell.xib in Resources */,
 				F60BAEBA279B4AB40012707C /* splash.json in Resources */,
 				9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
@@ -1654,6 +1661,7 @@
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				EC02140D27D1F66900CF3569 /* SpecificButton.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
+				9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,

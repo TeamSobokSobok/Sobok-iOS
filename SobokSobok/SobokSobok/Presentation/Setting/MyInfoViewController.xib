@@ -23,6 +23,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="pillTableView" destination="7ng-5w-0EY" id="POB-p7-jbI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -102,19 +103,27 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="icInfo"/>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7ng-5w-0EY">
+                    <rect key="frame" x="20" y="228" width="374" height="358"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="3ao-SM-VeW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="2fE-ry-piB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7ng-5w-0EY" secondAttribute="bottom" constant="276" id="8SK-GP-YdN"/>
                 <constraint firstItem="3ao-SM-VeW" firstAttribute="top" secondItem="TQs-Op-FBd" secondAttribute="bottom" constant="38" id="Ami-OG-PDK"/>
                 <constraint firstItem="oAC-ln-bFj" firstAttribute="centerY" secondItem="3ao-SM-VeW" secondAttribute="centerY" id="Enc-b2-UjK"/>
                 <constraint firstItem="TQs-Op-FBd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="FYh-sm-FBZ"/>
                 <constraint firstItem="TQs-Op-FBd" firstAttribute="top" secondItem="RvS-Lt-PQd" secondAttribute="bottom" constant="20" id="NUk-TH-kZy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7ng-5w-0EY" secondAttribute="trailing" constant="20" id="OeM-xe-ygS"/>
                 <constraint firstItem="oAC-ln-bFj" firstAttribute="leading" secondItem="3ao-SM-VeW" secondAttribute="trailing" constant="1" id="Sw6-bh-Sp0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RvS-Lt-PQd" secondAttribute="trailing" id="nW0-YZ-zI3"/>
+                <constraint firstItem="7ng-5w-0EY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rgU-r1-xce"/>
                 <constraint firstItem="RvS-Lt-PQd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uFf-WG-gDz"/>
                 <constraint firstItem="RvS-Lt-PQd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vlH-zo-awN"/>
+                <constraint firstItem="7ng-5w-0EY" firstAttribute="top" secondItem="3ao-SM-VeW" secondAttribute="bottom" constant="14" id="yhz-tl-jPa"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="72.991071428571431"/>
         </view>
