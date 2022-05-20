@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A06C99728377E6B00606D28 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C99528377E6B00606D28 /* MyInfoViewController.swift */; };
+		9A06C99828377E6B00606D28 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06C99628377E6B00606D28 /* MyInfoViewController.xib */; };
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
 		9A3DF08C279660A400D07A8C /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* Sign.swift */; };
@@ -210,6 +212,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A06C99528377E6B00606D28 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		9A06C99628377E6B00606D28 /* MyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		9A3DF08B279660A400D07A8C /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -426,6 +430,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A06C99028377DF100606D28 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9A06C99528377E6B00606D28 /* MyInfoViewController.swift */,
+				9A06C99628377E6B00606D28 /* MyInfoViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		9A3DF08D279660B000D07A8C /* Sign */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +569,7 @@
 		BD515E4F27877579003BD5A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9A06C99028377DF100606D28 /* Setting */,
 				BDA400172833F14E0046627A /* Schedule */,
 				9A3DF0C32798CE2F00D07A8C /* EditFriendName */,
 				BD515E5A27877635003BD5A4 /* Common */,
@@ -1511,6 +1525,7 @@
 				EC950EED2790012700A34027 /* MedicineDayTableViewCell.xib in Resources */,
 				BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */,
 				EC950EE5278FFACB00A34027 /* MedicineSpecificDayViewController.xib in Resources */,
+				9A06C99828377E6B00606D28 /* MyInfoViewController.xib in Resources */,
 				BD14F365278EB4B000F316AF /* ShareViewController.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
 				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
@@ -1675,6 +1690,7 @@
 				ECECEF94278C6C5A003D1454 /* AddMyMedicineFooterView.swift in Sources */,
 				ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */,
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
+				9A06C99728377E6B00606D28 /* MyInfoViewController.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */,
 				ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */,
@@ -1690,7 +1706,6 @@
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
-				F6FC9800279A9A0A007B5AF2 /* WeekSelectViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
 				BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */,

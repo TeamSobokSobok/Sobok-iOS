@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvS-Lt-PQd" userLabel="Navigation">
+                    <rect key="frame" x="0.0" y="44" width="414" height="58"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akD-tb-UA7">
+                            <rect key="frame" x="77" y="21" width="260" height="16"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="17"/>
+                            <color key="textColor" name="gray900_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-y5-d1F">
+                            <rect key="frame" x="0.0" y="-2" width="72" height="62"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="icBack48"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-Oh-3qa">
+                            <rect key="frame" x="353" y="9.5" width="49" height="39"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="settings"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="GQL-y5-d1F" firstAttribute="centerY" secondItem="akD-tb-UA7" secondAttribute="centerY" id="2H5-kJ-OrL"/>
+                        <constraint firstAttribute="bottom" secondItem="akD-tb-UA7" secondAttribute="bottom" constant="21" id="5FP-ME-oy5"/>
+                        <constraint firstItem="akD-tb-UA7" firstAttribute="top" secondItem="RvS-Lt-PQd" secondAttribute="top" constant="21" id="7bO-td-USR"/>
+                        <constraint firstAttribute="trailing" secondItem="AgW-Oh-3qa" secondAttribute="trailing" constant="12" id="Phz-iQ-bc3"/>
+                        <constraint firstAttribute="height" constant="58" id="Qce-2o-hrr"/>
+                        <constraint firstItem="AgW-Oh-3qa" firstAttribute="centerY" secondItem="akD-tb-UA7" secondAttribute="centerY" id="bSb-ra-rdp"/>
+                        <constraint firstItem="GQL-y5-d1F" firstAttribute="leading" secondItem="RvS-Lt-PQd" secondAttribute="leading" id="l5k-zU-hc6"/>
+                        <constraint firstItem="akD-tb-UA7" firstAttribute="leading" secondItem="RvS-Lt-PQd" secondAttribute="leading" constant="77" id="rMR-Sx-Pvf"/>
+                        <constraint firstAttribute="trailing" secondItem="akD-tb-UA7" secondAttribute="trailing" constant="77" id="ud7-lk-4FN"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQs-Op-FBd">
+                    <rect key="frame" x="22" y="122" width="94.5" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수현이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ob-br-I10">
+                            <rect key="frame" x="0.0" y="0.0" width="62.5" height="32"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="24"/>
+                            <color key="textColor" name="black_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNE-vd-A0l">
+                            <rect key="frame" x="62.5" y="0.0" width="32" height="32"/>
+                            <color key="tintColor" red="0.20000000000000001" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="icPencil32"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="cNE-vd-A0l" firstAttribute="top" secondItem="TQs-Op-FBd" secondAttribute="top" id="2zv-G1-j9T"/>
+                        <constraint firstItem="cNE-vd-A0l" firstAttribute="leading" secondItem="1ob-br-I10" secondAttribute="trailing" id="6CP-Zk-QU0"/>
+                        <constraint firstAttribute="trailing" secondItem="cNE-vd-A0l" secondAttribute="trailing" id="Zhl-lN-5C1"/>
+                        <constraint firstAttribute="bottom" secondItem="1ob-br-I10" secondAttribute="bottom" id="ao9-Lx-2gG"/>
+                        <constraint firstItem="1ob-br-I10" firstAttribute="leading" secondItem="TQs-Op-FBd" secondAttribute="leading" id="haZ-gt-Kd6"/>
+                        <constraint firstItem="1ob-br-I10" firstAttribute="top" secondItem="TQs-Op-FBd" secondAttribute="top" id="yMa-bA-Lhs"/>
+                        <constraint firstAttribute="bottom" secondItem="cNE-vd-A0l" secondAttribute="bottom" id="zJs-oL-yP3"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 약 관리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ao-SM-VeW">
+                    <rect key="frame" x="21" y="192" width="71.5" height="22"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
+                    <color key="textColor" name="gray600_sub"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAC-ln-bFj">
+                    <rect key="frame" x="93.5" y="192" width="22" height="22"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="icInfo"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3ao-SM-VeW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="2fE-ry-piB"/>
+                <constraint firstItem="3ao-SM-VeW" firstAttribute="top" secondItem="TQs-Op-FBd" secondAttribute="bottom" constant="38" id="Ami-OG-PDK"/>
+                <constraint firstItem="oAC-ln-bFj" firstAttribute="centerY" secondItem="3ao-SM-VeW" secondAttribute="centerY" id="Enc-b2-UjK"/>
+                <constraint firstItem="TQs-Op-FBd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="FYh-sm-FBZ"/>
+                <constraint firstItem="TQs-Op-FBd" firstAttribute="top" secondItem="RvS-Lt-PQd" secondAttribute="bottom" constant="20" id="NUk-TH-kZy"/>
+                <constraint firstItem="oAC-ln-bFj" firstAttribute="leading" secondItem="3ao-SM-VeW" secondAttribute="trailing" constant="1" id="Sw6-bh-Sp0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RvS-Lt-PQd" secondAttribute="trailing" id="nW0-YZ-zI3"/>
+                <constraint firstItem="RvS-Lt-PQd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uFf-WG-gDz"/>
+                <constraint firstItem="RvS-Lt-PQd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vlH-zo-awN"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="72.991071428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icBack48" width="48" height="48"/>
+        <image name="icInfo" width="22" height="22"/>
+        <image name="icPencil32" width="32" height="32"/>
+        <image name="settings" width="25" height="25"/>
+        <namedColor name="black_sub">
+            <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray600_sub">
+            <color red="0.51764705882352946" green="0.5490196078431373" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray900_sub">
+            <color red="0.20000000000000001" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
