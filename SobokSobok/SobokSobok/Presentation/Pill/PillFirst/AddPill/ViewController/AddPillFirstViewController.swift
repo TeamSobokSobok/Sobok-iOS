@@ -141,7 +141,7 @@ final class AddPillFirstViewController: BaseViewController {
             }
         }
         
-        pillPeriodViewModel.example.bind { [weak self] (text) in
+        pillPeriodViewModel.dayString.bind { [weak self] (text) in
             guard let self = self else { return }
             self.addPillFirstView.specificView.specificLabel.text = text
             if text == "" {
@@ -250,6 +250,6 @@ extension AddPillFirstViewController: SendPillTimeDelegate, SendPillDaysDelegate
     }
     
     func sendPillPeriod(pillPeriod: String) {
-        pillPeriodViewModel.example.value = pillPeriod
+        pillPeriodViewModel.dayString.value = pillPeriod
     }
 }

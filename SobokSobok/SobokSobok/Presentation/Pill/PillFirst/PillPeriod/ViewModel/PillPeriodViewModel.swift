@@ -16,7 +16,7 @@ class PillPeriodViewModel {
     var period: Helper<String> = Helper("일에 한 번")
     var dayPeriod: Helper<String> = Helper("1일에 한 번")
     
-    var example: Helper<String> = Helper("")
+    var dayString: Helper<String> = Helper("")
     
     var numberOfRowsInComponent: Int {
         return component == 0 ? numberList.value.count : periodList.value.count
@@ -34,6 +34,6 @@ class PillPeriodViewModel {
             period.value = periodList.value[row]
         }
         dayPeriod.value = day.value + period.value
-        example.value = dayPeriod.value
+        dayString.value = dayPeriod.value
     }
 }
