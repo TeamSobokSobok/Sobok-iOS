@@ -56,4 +56,18 @@ final class PillDayTableViewCell: UITableViewCell {
         }
     }
     
+    func updateCell(_ dayViewModel: PillDayViewModel, indexPath: IndexPath) {
+        
+        let value = dayViewModel.weekArray
+        
+        dayLabel.text = value[indexPath.row]
+
+        checkImage.isHidden = true
+    }
+    
+    func checkImageIsHidden(_ dayViewModel: PillDayViewModel, indexPath: IndexPath) {
+        checkImage.isHidden.toggle()
+        isSelected.toggle()
+        dayViewModel.selectDay(index: indexPath.row, isSelected: checkImage.isHidden)
+    }
 }
