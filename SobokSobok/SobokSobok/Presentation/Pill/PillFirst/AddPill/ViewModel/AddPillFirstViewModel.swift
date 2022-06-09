@@ -1,8 +1,8 @@
 //
-//  PillPeriodViewModel.swift
+//  PillFirstViewModel.swift
 //  SobokSobok
 //
-//  Created by 김승찬 on 2022/03/04.
+//  Created by 김승찬 on 2022/06/07.
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class PillPeriodViewModel: ViewModelType {
+final class AddPillFirstViewModel: ViewModelType {
     
     struct Input {
         let didEverydayButtonTap: Signal<Void>

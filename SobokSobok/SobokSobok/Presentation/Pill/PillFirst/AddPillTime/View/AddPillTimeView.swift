@@ -1,8 +1,8 @@
 //
-//  PillDayView.swift
+//  AddTimeView.swift
 //  SobokSobok
 //
-//  Created by 김승찬 on 2022/03/05.
+//  Created by 김승찬 on 2022/06/09.
 //
 
 import UIKit
@@ -10,17 +10,14 @@ import UIKit
 import SnapKit
 import Then
 
-class PillDayView: BaseView {
+final class AddPillTimeView: BaseView {
     
     let backgroundView = UIView().then {
         $0.makeRounded(radius: 15)
         $0.backgroundColor = Color.white
     }
     
-    lazy var tableView = UITableView().then {
-        $0.register(PillDayTableViewCell.self)
-        $0.isScrollEnabled = false
-    }
+    lazy var pickerView = UIPickerView()
     
     let confirmButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
@@ -29,16 +26,14 @@ class PillDayView: BaseView {
     }
     
     override func setupView() {
-        [backgroundView, tableView, confirmButton].forEach {
-            addSubview($0)
-        }
+        addSubviews(backgroundView, pickerView, confirmButton)
     }
     
     override func setupConstraints() {
         backgroundView.snp.makeConstraints {
-            $0.height.equalTo(395)
+            $0.height.equalTo(UIScreen.main.bounds.height * 0.3)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.bottom.equalTo(safeAreaInsets)
         }
         
         confirmButton.snp.makeConstraints {
@@ -48,7 +43,7 @@ class PillDayView: BaseView {
             $0.width.equalTo(41)
         }
         
-        tableView.snp.makeConstraints {
+        pickerView.snp.makeConstraints {
             $0.top.equalTo(confirmButton.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()

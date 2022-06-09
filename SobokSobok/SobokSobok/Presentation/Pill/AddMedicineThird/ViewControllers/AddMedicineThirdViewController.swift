@@ -144,7 +144,7 @@ extension AddMedicineThirdViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: Delegate
 extension AddMedicineThirdViewController: SendPillTimeDelegate {
-    func sendTimeData(pillTime: String) {
+    func snedPillTime(pillTime: String) {
         medicineTimeData.append(pillTime)
     }
 }

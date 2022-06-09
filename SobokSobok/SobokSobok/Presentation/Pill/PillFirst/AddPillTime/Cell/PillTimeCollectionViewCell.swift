@@ -12,6 +12,8 @@ import Then
 
 final class PillTimeCollectionViewCell: UICollectionViewCell {
     
+    let viewModel = PillTimeViewModel()
+    
     lazy var timeLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 18)
         $0.textColor = Color.black
@@ -20,6 +22,7 @@ final class PillTimeCollectionViewCell: UICollectionViewCell {
     
     lazy var deleteButton = UIButton().then {
         $0.setImage(Image.icPlusActive, for: .normal)
+        $0.addTarget(self, action: #selector(deleteCellButtonTapped), for: .touchUpInside)
     }
     
     override init(frame: CGRect) {
@@ -36,7 +39,7 @@ final class PillTimeCollectionViewCell: UICollectionViewCell {
     
     private func setUI() {
         [timeLabel, deleteButton].forEach {
-            addSubview($0)
+            contentView.addSubviews($0)
         }
     }
     
@@ -51,5 +54,14 @@ final class PillTimeCollectionViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().inset(3)
             $0.width.height.equalTo(48)
         }
+    }
+    
+    func updateCell(_ timeViewModel: PillTimeViewModel, indexPath: IndexPath) {
+        let value = timeViewModel.timeList.value
+        timeLabel.text = value[indexPath.row]
+    }
+    
+    @objc func deleteCellButtonTapped() {
+        viewModel.deleteCellClosure?()
     }
 }

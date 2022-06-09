@@ -7,15 +7,6 @@
 
 import UIKit
 
-// MARK: Protocol
-protocol TimePickerDismiss: AnyObject {
-    func timePickerdismiss()
-}
-
-protocol SendPillTimeDelegate: AnyObject {
-    func sendTimeData(pillTime: String)
-}
-
 final class MedicineTimeViewController: BaseViewController {
     
     // MARK: Properties
@@ -27,7 +18,7 @@ final class MedicineTimeViewController: BaseViewController {
     var hourList: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
     var minuteList: [String] = []
     var morningList: [String] = ["오전", "오후"]
-    weak var delegate: TimePickerDismiss?
+    weak var delegate: ModalPresentationDismiss?
     weak var sendTimeDelegate: SendPillTimeDelegate?
     
     // MARK: @IBOutlets
@@ -56,7 +47,7 @@ final class MedicineTimeViewController: BaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.dismiss(animated: true) {
-            self.delegate?.timePickerdismiss()
+            self.delegate?.modalDismiss()
         }
     }
     
@@ -66,7 +57,7 @@ final class MedicineTimeViewController: BaseViewController {
             var minute: String
             minute = tmp < 10 ? "0" + "\(tmp)" : "\(tmp)"
             minuteList.append(minute)
-    }
+        }
     }
     
     private func assiginDelegate() {
@@ -87,9 +78,9 @@ final class MedicineTimeViewController: BaseViewController {
     @IBAction func confirmButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true) { [weak self] in
             if let pillTime = self?.pillTime {
-                self?.sendTimeDelegate?.sendTimeData(pillTime: pillTime)
+                self?.sendTimeDelegate?.snedPillTime(pillTime: pillTime)
             }
-            self?.delegate?.timePickerdismiss()
+            self?.delegate?.modalDismiss()
         }
     }
 }
