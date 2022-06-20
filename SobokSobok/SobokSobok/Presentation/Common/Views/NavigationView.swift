@@ -17,12 +17,12 @@ final class NavigationView: UIView {
         $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
     
-    private let xButton = UIButton().then {
+    let xButton = UIButton().then {
         $0.setImage(Image.icBack48, for: .normal)
         $0.tintColor = Color.black
     }
     
-    private let cancelButton = UIButton().then {
+    let cancelButton = UIButton().then {
         $0.setTitle("취소", for: .normal)
         $0.setTitleColor(Color.gray900, for: .normal)
     }

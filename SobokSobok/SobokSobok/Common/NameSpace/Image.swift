@@ -83,4 +83,5 @@ public enum Image {
 	public static let icPillAlarm = UIImage(named: "ic_pill_alarm_22_darkmint")!
   public static let icInfo = UIImage(named: "icInfo")!
   public static let icShareAlarm = UIImage(named: "ic_share_alarm_22_darkmint")!
+    public static let icNoFriend = UIImage(named: "icNoFriend")!
 }
