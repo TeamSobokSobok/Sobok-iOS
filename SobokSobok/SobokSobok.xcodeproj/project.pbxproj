@@ -44,6 +44,7 @@
 		BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B56279612BC00B1F59D /* Date+Extension.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
+		BD4611C52860868C007BEE87 /* MainMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* MainMessageView.swift */; };
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
@@ -231,6 +232,7 @@
 		BD2C8B56279612BC00B1F59D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
+		BD4611C42860868C007BEE87 /* MainMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessageView.swift; sourceTree = "<group>"; };
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			children = (
 				BD4611C028608260007BEE87 /* FriendNameView.swift */,
 				BD4611C228608389007BEE87 /* CalendarTopView.swift */,
+				BD4611C42860868C007BEE87 /* MainMessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1646,6 +1649,7 @@
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
+				BD4611C52860868C007BEE87 /* MainMessageView.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
