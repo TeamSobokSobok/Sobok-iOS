@@ -42,6 +42,7 @@
 		BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B4E2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift */; };
 		BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */; };
 		BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B56279612BC00B1F59D /* Date+Extension.swift */; };
+		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
@@ -227,6 +228,7 @@
 		BD2C8B4E2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+FSCalendar.swift"; sourceTree = "<group>"; };
 		BD2C8B56279612BC00B1F59D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -453,6 +455,14 @@
 				BD7120FA279738860068B981 /* CalendarViewController+Network.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		BD4611BF2860822E007BEE87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD4611C028608260007BEE87 /* FriendNameView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BD515E2C278770C5003BD5A4 = {
@@ -878,6 +888,7 @@
 		BDA400172833F14E0046627A /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				BD4611BF2860822E007BEE87 /* Views */,
 				BDA400182833F16D0046627A /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
@@ -1712,6 +1723,7 @@
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				EC8EC12F2851001300A744FE /* AddPillTimeView.swift in Sources */,
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
+				BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
 				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
