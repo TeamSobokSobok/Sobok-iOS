@@ -10,7 +10,6 @@ import UIKit
 final class ScheduleEmptyView: BaseView {
     
     lazy var emptyImageView = UIImageView().then {
-        $0.image = Image.illustNoPill
         $0.contentMode = .scaleAspectFit
     }
     
@@ -24,5 +23,10 @@ final class ScheduleEmptyView: BaseView {
             $0.width.equalTo(254)
             $0.height.equalTo(215)
         }
+    }
+    
+    convenience init(for tabCategory: TabBarItem) {
+        self.init(frame: .zero)
+        emptyImageView.image = tabCategory == .home ? Image.illustNoPill : Image.illustNoShare
     }
 }
