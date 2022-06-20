@@ -132,6 +132,8 @@
 		EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */; };
 		EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042866286022A0001DD1EC /* NoFriendView.swift */; };
 		EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042868286022BF001DD1EC /* NoFriendViewController.swift */; };
+		EC04286C28603098001DD1EC /* SendPillFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04286B28603098001DD1EC /* SendPillFirstView.swift */; };
+		EC04286E286030A0001DD1EC /* SendPillFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04286D286030A0001DD1EC /* SendPillFirstViewController.swift */; };
 		EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */; };
 		EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */; };
 		EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */; };
@@ -311,6 +313,8 @@
 		EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineTableViewCell.xib; sourceTree = "<group>"; };
 		EC042866286022A0001DD1EC /* NoFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendView.swift; sourceTree = "<group>"; };
 		EC042868286022BF001DD1EC /* NoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendViewController.swift; sourceTree = "<group>"; };
+		EC04286B28603098001DD1EC /* SendPillFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillFirstView.swift; sourceTree = "<group>"; };
+		EC04286D286030A0001DD1EC /* SendPillFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillFirstViewController.swift; sourceTree = "<group>"; };
 		EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobokButton.swift; sourceTree = "<group>"; };
 		EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -978,6 +982,7 @@
 		EC04286228602231001DD1EC /* PillFirst */ = {
 			isa = PBXGroup;
 			children = (
+				EC04286A2860304B001DD1EC /* Share */,
 				EC04286328602266001DD1EC /* NoFriend */,
 			);
 			path = PillFirst;
@@ -1006,6 +1011,15 @@
 				EC042868286022BF001DD1EC /* NoFriendViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EC04286A2860304B001DD1EC /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				EC04286B28603098001DD1EC /* SendPillFirstView.swift */,
+				EC04286D286030A0001DD1EC /* SendPillFirstViewController.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		EC4BF2EB27C0BA8400B28F90 /* Button */ = {
@@ -1643,6 +1657,7 @@
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				EC0213EC27CE665B00CF3569 /* AddPillFirstView.swift in Sources */,
+				EC04286C28603098001DD1EC /* SendPillFirstView.swift in Sources */,
 				ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */,
 				EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */,
 				EC02140927D1E60100CF3569 /* ViewModelType.swift in Sources */,
@@ -1679,6 +1694,7 @@
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
+				EC04286E286030A0001DD1EC /* SendPillFirstViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
 				EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */,
