@@ -43,6 +43,7 @@
 		BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */; };
 		BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B56279612BC00B1F59D /* Date+Extension.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
+		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E38278770C5003BD5A4 /* AppDelegate.swift */; };
 		BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */; };
 		BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD515E41278770C7003BD5A4 /* Assets.xcassets */; };
@@ -229,6 +230,7 @@
 		BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+FSCalendar.swift"; sourceTree = "<group>"; };
 		BD2C8B56279612BC00B1F59D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
+		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD515E35278770C5003BD5A4 /* SobokSobok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SobokSobok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD515E38278770C5003BD5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD515E3A278770C5003BD5A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4611C028608260007BEE87 /* FriendNameView.swift */,
+				BD4611C228608389007BEE87 /* CalendarTopView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1679,6 +1682,7 @@
 				ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */,
 				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
+				BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */,
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
