@@ -36,12 +36,12 @@ final class ScheduleHeaderView: UICollectionReusableView {
     private func configureConstraints() {
         timeLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(36)
-            $0.leading.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview()
             $0.bottom.equalToSuperview().inset(6)
         }
         editButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(19)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview()
             $0.height.equalTo(23)
         }
     }
