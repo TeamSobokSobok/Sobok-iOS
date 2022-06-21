@@ -34,6 +34,7 @@
 		9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */; };
 		9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */; };
 		9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AF64AD127917951004D4D64 /* SetNickNameVIewController.xib */; };
+		BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */; };
 		BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCA278B31DC009AA416 /* TabBarItem.swift */; };
 		BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCC278B3369009AA416 /* TabBarController.swift */; };
 		BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14F362278EB4B000F316AF /* ShareViewController.swift */; };
@@ -225,6 +226,7 @@
 		9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteSignUpViewController.xib; sourceTree = "<group>"; };
 		9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNickNameVIewController.swift; sourceTree = "<group>"; };
 		9AF64AD127917951004D4D64 /* SetNickNameVIewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetNickNameVIewController.xib; sourceTree = "<group>"; };
+		BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHeaderView.swift; sourceTree = "<group>"; };
 		BD149DCA278B31DC009AA416 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BD149DCC278B3369009AA416 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BD14F362278EB4B000F316AF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 				BD4611C228608389007BEE87 /* CalendarTopView.swift */,
 				BD4611C42860868C007BEE87 /* MainMessageView.swift */,
 				BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */,
+				BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1641,6 +1644,7 @@
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				BD7120F9279723A00068B981 /* Member.swift in Sources */,
+				BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				BDC83B45279AE737009C52A1 /* AcceptCalendarModel.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
