@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainMessageView: BaseView {
+final class HomeTopView: BaseView {
     
     let mainMessageLabel = UILabel().then {
 //        $0.setTypoStyle(typoStyle: .header1)

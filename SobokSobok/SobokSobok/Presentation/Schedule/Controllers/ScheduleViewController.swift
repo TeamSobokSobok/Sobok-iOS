@@ -31,8 +31,8 @@ final class ScheduleViewController: BaseViewController {
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
-    private var collectionViewHeight: CGFloat = 500.0
-    private var collectionViewBottomInset: CGFloat = 32.0
+    var collectionViewHeight: CGFloat = 500.0
+    var collectionViewBottomInset: CGFloat = 32.0
     
     // MARK: - Properties
     
@@ -131,6 +131,7 @@ extension ScheduleViewController {
         let newCollectionViewHeight = collectionView.contentSize.height
         if newCollectionViewHeight > 0 && (collectionViewHeight != newCollectionViewHeight) {
             collectionViewHeight = newCollectionViewHeight
+            print(collectionViewHeight)
             collectionView.snp.updateConstraints {
                 $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
             }

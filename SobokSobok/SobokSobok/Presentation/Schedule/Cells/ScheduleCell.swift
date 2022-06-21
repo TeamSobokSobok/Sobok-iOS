@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PillScheduleCell: UICollectionViewCell {
+final class ScheduleCell: UICollectionViewCell {
     private lazy var containerVStackView = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill

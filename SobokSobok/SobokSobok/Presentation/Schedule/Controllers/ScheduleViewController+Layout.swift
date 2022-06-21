@@ -12,8 +12,8 @@ import UIKit
 extension ScheduleViewController {
     func registerCell() {
         collectionView.register(
-            PillScheduleCell.self,
-            forCellWithReuseIdentifier: PillScheduleCell.reuseIdentifier
+            ScheduleCell.self,
+            forCellWithReuseIdentifier: ScheduleCell.reuseIdentifier
         )
         
         collectionView.register(
@@ -40,7 +40,7 @@ extension ScheduleViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PillScheduleCell.reuseIdentifier, for: indexPath) as? PillScheduleCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScheduleCell.reuseIdentifier, for: indexPath) as? ScheduleCell else { return UICollectionViewCell() }
         return cell
     }
     
