@@ -14,8 +14,10 @@ final class ScheduleViewController: BaseViewController {
     
     private lazy var scrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
+        $0.backgroundColor = Color.gray150
     }
     private lazy var stackView = UIStackView().then {
+        $0.backgroundColor = .systemBackground
         $0.axis = .vertical
         $0.distribution = .fill
     }
@@ -58,7 +60,6 @@ final class ScheduleViewController: BaseViewController {
     }
     
     override func style() {
-        view.backgroundColor = .systemBackground
         emptyView.isHidden = true
         updateUI()
     }
@@ -123,6 +124,7 @@ extension ScheduleViewController {
     }
     
     private func setDelegation() {
+        scrollView.delegate = self
         calendarView.delegate = self
         calendarTopView.delegate = self
     }
@@ -154,5 +156,12 @@ extension ScheduleViewController: CalendarTopViewDelegate {
         calendarView.setScope(scope == .week ? .week : .month, animated: true)
         calendarTopView.scopeButton.setTitle(scope == .week ? "주" : "월", for: .normal)
         calendarTopView.scopeButton.setImage(scope == .week ? Image.icArrowDropDown16 : Image.icArrowUp16, for: .normal)
+    }
+}
+
+extension ScheduleViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.bounces = scrollView.contentOffset.y > 0
+//        scrollView.backgroundColor = scrollView.contentOffset.y > 0 ? Color.gray150 : Color.white
     }
 }
