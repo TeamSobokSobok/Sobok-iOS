@@ -907,7 +907,6 @@
 				BDCDB5C82861B09800C419CC /* Cells */,
 				BD4611BF2860822E007BEE87 /* Views */,
 				BDCDB5CB2861B22400C419CC /* Controllers */,
-				BDA400182833F16D0046627A /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -961,6 +960,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCDB5CC2861B23800C419CC /* ScheduleViewController+CollectionView.swift */,
+				BDA400182833F16D0046627A /* ScheduleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

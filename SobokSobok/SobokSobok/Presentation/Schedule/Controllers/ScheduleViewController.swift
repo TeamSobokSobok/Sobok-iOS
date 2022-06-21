@@ -17,6 +17,7 @@ final class ScheduleViewController: BaseViewController {
     }
     private lazy var stackView = UIStackView().then {
         $0.axis = .vertical
+        $0.distribution = .fill
     }
     private let friendNameView = FriendNameView().then {
         $0.friendNameLabel.text = "수현이"
@@ -25,14 +26,18 @@ final class ScheduleViewController: BaseViewController {
         $0.dateLabel.text = "12월 19일 금요일"
     }
     private let calendarView = FSCalendar()
+    private lazy var emptyView = ScheduleEmptyView(for: tabCategory)
+    var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewLayout()
+    )
+    private var collectionViewHeight: CGFloat = 500.0
+    private var collectionViewBottomInset: CGFloat = 32.0
     
     // MARK: - Properties
     
     private var calendarHeight: CGFloat = 308.0
-    enum TabCategory {
-        case home, share
-    }
-    var tabCategory: TabCategory = .share {
+    var tabCategory: TabBarItem = .home {
         didSet {
             updateUI()
         }
@@ -43,17 +48,25 @@ final class ScheduleViewController: BaseViewController {
         setCalendar()
         setCalendarStyle()
         setDelegation()
+        registerCell()
+        setCollectionView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setCollectionViewHeight()
     }
     
     override func style() {
         view.backgroundColor = .systemBackground
+        emptyView.isHidden = true
         updateUI()
     }
     
     override func hierarchy() {
         view.addSubviews(scrollView)
         scrollView.addSubview(stackView)
-        stackView.addArrangedSubviews(friendNameView, calendarTopView, calendarView)
+        stackView.addArrangedSubviews(friendNameView, calendarTopView, calendarView, emptyView, collectionView)
     }
     
     override func layout() {
@@ -68,6 +81,19 @@ final class ScheduleViewController: BaseViewController {
         
         calendarView.snp.makeConstraints {
             $0.height.equalTo(calendarHeight)
+        }
+        
+        emptyView.snp.makeConstraints {
+            $0.height.equalTo(calendarHeight)
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(emptyView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.height.equalTo(collectionViewHeight)
         }
     }
     
@@ -99,6 +125,16 @@ extension ScheduleViewController {
     private func setDelegation() {
         calendarView.delegate = self
         calendarTopView.delegate = self
+    }
+    
+    private func setCollectionViewHeight() {
+        let newCollectionViewHeight = collectionView.contentSize.height
+        if newCollectionViewHeight > 0 && (collectionViewHeight != newCollectionViewHeight) {
+            collectionViewHeight = newCollectionViewHeight
+            collectionView.snp.updateConstraints {
+                $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
+            }
+        }
     }
 }
 
