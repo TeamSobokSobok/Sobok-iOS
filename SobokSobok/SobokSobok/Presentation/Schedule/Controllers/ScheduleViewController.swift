@@ -12,7 +12,7 @@ final class ScheduleViewController: BaseViewController {
 
     // MARK: - UI Properties
     
-    private lazy var scrollView = UIScrollView().then {
+    lazy var scrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
         $0.backgroundColor = Color.gray150
     }
@@ -27,7 +27,7 @@ final class ScheduleViewController: BaseViewController {
     private let calendarTopView = CalendarTopView().then {
         $0.dateLabel.text = "12월 19일 금요일"
     }
-    private let calendarView = FSCalendar()
+    let calendarView = FSCalendar()
     private lazy var emptyView = ScheduleEmptyView(for: tabCategory)
     var collectionView = UICollectionView(
         frame: .zero,
@@ -38,7 +38,7 @@ final class ScheduleViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private var calendarHeight: CGFloat = 308.0
+    var calendarHeight: CGFloat = 308.0
     var tabCategory: TabBarItem = .home {
         didSet {
             updateUI()
@@ -106,23 +106,6 @@ final class ScheduleViewController: BaseViewController {
 // MARK: - Setup
 
 extension ScheduleViewController {
-    private func setCalendar() {
-        calendarView.locale = Locale(identifier: "ko_KR")
-        calendarView.headerHeight = 0
-        calendarView.firstWeekday = 2
-        calendarView.setScope(.week, animated: false)
-    }
-    
-    private func setCalendarStyle() {
-        calendarView.appearance.weekdayFont = TypoStyle.body7.font
-        calendarView.appearance.weekdayTextColor = Color.gray600
-        calendarView.appearance.titleFont = UIFont.font(.pretendardRegular, ofSize: 16)
-        calendarView.appearance.titleDefaultColor = Color.black
-        calendarView.appearance.titleTodayColor = Color.black
-        calendarView.appearance.todayColor = .clear
-        calendarView.placeholderType = .none
-    }
-    
     private func setDelegation() {
         scrollView.delegate = self
         calendarView.delegate = self
@@ -138,16 +121,6 @@ extension ScheduleViewController {
                 $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
             }
         }
-    }
-}
-
-extension ScheduleViewController: FSCalendarDelegate {
-    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        calendarHeight = bounds.height
-        calendarView.snp.remakeConstraints {
-            $0.height.equalTo(calendarHeight)
-        }
-        self.scrollView.layoutIfNeeded()
     }
 }
 
