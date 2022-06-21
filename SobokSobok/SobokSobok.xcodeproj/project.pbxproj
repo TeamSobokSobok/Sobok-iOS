@@ -102,6 +102,7 @@
 		BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */; };
 		BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */; };
 		BDCDB5CA2861B0A300C419CC /* PillScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5C92861B0A300C419CC /* PillScheduleCell.swift */; };
+		BDCDB5CD2861B23800C419CC /* ScheduleViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5CC2861B23800C419CC /* ScheduleViewController+CollectionView.swift */; };
 		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
 		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
@@ -289,6 +290,7 @@
 		BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
 		BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
 		BDCDB5C92861B0A300C419CC /* PillScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillScheduleCell.swift; sourceTree = "<group>"; };
+		BDCDB5CC2861B23800C419CC /* ScheduleViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Calendar/Views/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -901,6 +903,7 @@
 			children = (
 				BDCDB5C82861B09800C419CC /* Cells */,
 				BD4611BF2860822E007BEE87 /* Views */,
+				BDCDB5CB2861B22400C419CC /* Controllers */,
 				BDA400182833F16D0046627A /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
@@ -949,6 +952,14 @@
 				BDCDB5C92861B0A300C419CC /* PillScheduleCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BDCDB5CB2861B22400C419CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDCDB5CC2861B23800C419CC /* ScheduleViewController+CollectionView.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BDDAA5932789B271000C0AF8 /* Script */ = {
@@ -1674,6 +1685,7 @@
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
+				BDCDB5CD2861B23800C419CC /* ScheduleViewController+CollectionView.swift in Sources */,
 				EC0213EC27CE665B00CF3569 /* AddPillFirstView.swift in Sources */,
 				ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */,
 				EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */,
