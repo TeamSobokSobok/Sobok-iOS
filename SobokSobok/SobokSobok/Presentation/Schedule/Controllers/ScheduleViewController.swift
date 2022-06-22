@@ -16,41 +16,52 @@ final class ScheduleViewController: BaseViewController {
         $0.showsVerticalScrollIndicator = false
         $0.backgroundColor = Color.gray150
     }
+    
     private lazy var stackView = UIStackView().then {
         $0.backgroundColor = .systemBackground
         $0.axis = .vertical
         $0.distribution = .fill
+        $0.alignment = .center
     }
-    private let friendNameView = FriendNameView().then {
-        $0.friendNameLabel.text = "수현이"
-    }
-    private let calendarTopView = CalendarTopView().then {
-        $0.dateLabel.text = "12월 19일 금요일"
-    }
-    let calendarView = FSCalendar()
-    private lazy var emptyView = ScheduleEmptyView(for: tabCategory)
-    var collectionView = UICollectionView(
+    
+    private lazy var friendNameView = FriendNameView()
+    private let  calendarTopView = CalendarTopView()
+    lazy var  calendarView = FSCalendar()
+    
+    lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
-    var collectionViewHeight: CGFloat = 500.0
-    var collectionViewBottomInset: CGFloat = 32.0
-    
+
     // MARK: - Properties
     
-    var calendarHeight: CGFloat = 308.0
-    var tabCategory: TabBarItem = .home {
+    var currentDate: Date = Date() {
         didSet {
             updateUI()
         }
     }
-
+    
+    var calendarHeight: CGFloat = 308.0
+    var collectionViewHeight: CGFloat = 500.0
+    private var collectionViewBottomInset: CGFloat = 32.0
+    var friendName: String? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    let gregorian = Calendar(identifier: .gregorian)
+    var doingDates = ["2022-06-01", "2022-06-10", "2022-06-23"]
+    var doneDates = ["2022-06-12", "2022-06-24"]
+    var selectedDate: String = Date().toString(of: .day)
+    var pillItems: [PillList] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCalendar()
         setCalendarStyle()
         setDelegation()
-        registerCell()
+        registerCells()
         setCollectionView()
     }
     
@@ -60,14 +71,13 @@ final class ScheduleViewController: BaseViewController {
     }
     
     override func style() {
-        emptyView.isHidden = true
         updateUI()
     }
     
     override func hierarchy() {
         view.addSubviews(scrollView)
         scrollView.addSubview(stackView)
-        stackView.addArrangedSubviews(friendNameView, calendarTopView, calendarView, emptyView, collectionView)
+        stackView.addArrangedSubviews(friendNameView, calendarTopView, calendarView, collectionView)
     }
     
     override func layout() {
@@ -80,16 +90,17 @@ final class ScheduleViewController: BaseViewController {
             $0.width.equalToSuperview()
         }
         
+        calendarTopView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+        }
+        
         calendarView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(calendarHeight)
         }
-        
-        emptyView.snp.makeConstraints {
-            $0.height.equalTo(calendarHeight)
-        }
-        
+
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(emptyView.snp.bottom)
+            $0.top.equalTo(calendarView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -97,30 +108,56 @@ final class ScheduleViewController: BaseViewController {
             $0.height.equalTo(collectionViewHeight)
         }
     }
-    
-    private func updateUI() {
-        friendNameView.isHidden = tabCategory == .home
-    }
 }
 
-// MARK: - Setup
+// MARK: - Private Function
 
 extension ScheduleViewController {
+    private func updateUI() {
+        friendNameView.isHidden = false
+        friendNameView.friendNameLabel.text = friendName
+        calendarTopView.dateLabel.text = currentDate.toString(of: .day)
+    }
+    
     private func setDelegation() {
         scrollView.delegate = self
         calendarView.delegate = self
+        calendarView.dataSource = self
         calendarTopView.delegate = self
+        collectionView.dataSource = self
     }
     
     private func setCollectionViewHeight() {
         let newCollectionViewHeight = collectionView.contentSize.height
         if newCollectionViewHeight > 0 && (collectionViewHeight != newCollectionViewHeight) {
             collectionViewHeight = newCollectionViewHeight
-            print(collectionViewHeight)
             collectionView.snp.updateConstraints {
                 $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
             }
         }
+    }
+    
+    func registerCells() {
+        calendarView.register(
+            CalendarDayCell.self,
+            forCellReuseIdentifier: CalendarDayCell.reuseIdentifier
+        )
+        
+        collectionView.register(
+            ScheduleCell.self,
+            forCellWithReuseIdentifier: ScheduleCell.reuseIdentifier
+        )
+        
+        collectionView.register(
+            ScheduleHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: ScheduleHeaderView.reuseIdentifier
+        )
+    }
+    
+    func setCollectionView() {
+        collectionView.backgroundColor = Color.gray150
+        collectionView.collectionViewLayout = generateLayout()
     }
 }
 
@@ -135,6 +172,6 @@ extension ScheduleViewController: CalendarTopViewDelegate {
 extension ScheduleViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.bounces = scrollView.contentOffset.y > 0
-//        scrollView.backgroundColor = scrollView.contentOffset.y > 0 ? Color.gray150 : Color.white
+        scrollView.backgroundColor = scrollView.contentOffset.y > 0 ? Color.gray150 : Color.white
     }
 }
