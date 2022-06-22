@@ -90,6 +90,10 @@ final class ScheduleViewController: BaseViewController {
             $0.width.equalToSuperview()
         }
         
+        friendNameView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+        }
+        
         calendarTopView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
         }
