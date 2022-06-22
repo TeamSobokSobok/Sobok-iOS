@@ -897,7 +897,6 @@
 		BD9857A82791EB3E009883FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BD9857A92791EB5C009883FC /* CalendarDayCell.swift */,
 				EC0213ED27CE669B00CF3569 /* NavigationView.swift */,
 				EC0213F127CF44D500CF3569 /* SpecificView.swift */,
 				EC8596AF281C1FAB00850E84 /* BaseView.swift */,
@@ -957,6 +956,7 @@
 		BDCDB5C82861B09800C419CC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				BD9857A92791EB5C009883FC /* CalendarDayCell.swift */,
 				BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */,
 			);
 			path = Cells;
