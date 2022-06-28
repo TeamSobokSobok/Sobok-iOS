@@ -20,6 +20,7 @@ class BaseViewController: UIViewController {
     func target() { }
     func style() {
         navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = .white
     }
     func hierarchy() {}
     func layout() {}
