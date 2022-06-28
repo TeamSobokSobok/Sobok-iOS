@@ -96,6 +96,7 @@
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
 		BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA400182833F16D0046627A /* ScheduleViewController.swift */; };
+		BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */; };
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
@@ -184,7 +185,6 @@
 		ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */; };
 		ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF96BF7279B24FA00B5A32C /* APIConstants.swift */; };
 		F605027627BE18790010DEC8 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027527BE18790010DEC8 /* EmptyView.swift */; };
-		F605027827BE24330010DEC8 /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */; };
 		F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */; };
 		F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */; };
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
@@ -291,6 +291,7 @@
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		BDA400182833F16D0046627A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
@@ -520,6 +521,7 @@
 				BD515E5027877582003BD5A4 /* Resource */,
 				BD515E512787758B003BD5A4 /* Service */,
 				BD515E52278775A0003BD5A4 /* Support */,
+				BDC3A466286AD08D00A5A8A2 /* Network */,
 			);
 			path = SobokSobok;
 			sourceTree = "<group>";
@@ -920,6 +922,22 @@
 				BDCDB5CB2861B22400C419CC /* Controllers */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		BDC3A466286AD08D00A5A8A2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BDC3A467286AD0A200A5A8A2 /* Foundation */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BDC3A467286AD0A200A5A8A2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		BDC83B3A2798C978009C52A1 /* Sticker */ = {
@@ -1678,6 +1696,7 @@
 				F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */,
 				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
+				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,
