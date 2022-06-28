@@ -192,11 +192,14 @@
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
 		F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */; };
 		F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEAA27C78B72009B9246 /* PillInfoView.swift */; };
+		F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */; };
+		F638460428648EB800F60A9F /* FriendRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
 		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
 		F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* PillInfoViewController.swift */; };
 		F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
+		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -372,7 +375,6 @@
 		ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLimitViewController.swift; sourceTree = "<group>"; };
 		ECF96BF7279B24FA00B5A32C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		F605027527BE18790010DEC8 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
 		F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListView.swift; sourceTree = "<group>"; };
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -380,11 +382,14 @@
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		F635EEAA27C78B72009B9246 /* PillInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoView.swift; sourceTree = "<group>"; };
+		F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillRequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
 		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* PillInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoDataModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
+		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -631,6 +636,7 @@
 				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
 				F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */,
 				EC99153E2833BE5A00542115 /* UICollectionView + Extension.swift */,
+				F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */,
 				ECAF4D28284F8D0000B12DA7 /* String+Extension.swift */,
 			);
 			path = Extension;
@@ -1442,7 +1448,8 @@
 		F605025827BBFBF70010DEC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F605027727BE24320010DEC8 /* NoticeListCollectionViewCell.swift */,
+				F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */,
+				F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1668,6 +1675,7 @@
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
+				F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */,
 				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
@@ -1679,7 +1687,6 @@
 				F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				F60BAEB7279B3E690012707C /* SplashView.swift in Sources */,
-				F605027827BE24330010DEC8 /* NoticeListCollectionViewCell.swift in Sources */,
 				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				EC02140D27D1F66900CF3569 /* SpecificButton.swift in Sources */,
@@ -1714,6 +1721,7 @@
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
+				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
 				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
@@ -1722,6 +1730,7 @@
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */,
+				F638460428648EB800F60A9F /* FriendRequestCollectionViewCell.swift in Sources */,
 				ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */,
 				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,

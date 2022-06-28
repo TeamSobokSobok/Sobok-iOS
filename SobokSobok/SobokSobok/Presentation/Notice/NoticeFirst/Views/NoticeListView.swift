@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class NoticeListView: UIView {
+final class NoticeListView: BaseView {
     
     // MARK: - Properties
     private let titleLabel = UILabel().then {
@@ -32,28 +32,13 @@ final class NoticeListView: UIView {
         $0.showsVerticalScrollIndicator = false
     }
     
-    // MARK: - Initialization
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setUI()
-        setConstraints()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
-    
     // MARK: - Functions
-    private func setUI() {
-        [titleLabel, noticeListCollectionView].forEach {
-            addSubview($0)
-        }
+    override func setupView() {
+        [titleLabel, noticeListCollectionView].forEach { addSubview($0) }
         self.backgroundColor = Color.gray150
     }
     
-    private func setConstraints() {
+    override func setupConstraints() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(84)
             $0.leading.equalToSuperview().offset(20)
