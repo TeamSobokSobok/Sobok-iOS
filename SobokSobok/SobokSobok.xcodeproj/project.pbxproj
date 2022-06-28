@@ -99,6 +99,7 @@
 		BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */; };
 		BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */; };
 		BDC3A46D286ADA2B00A5A8A2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46C286ADA2B00A5A8A2 /* APIClient.swift */; };
+		BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46E286ADB6800A5A8A2 /* APIError.swift */; };
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
@@ -296,6 +297,7 @@
 		BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		BDC3A46C286ADA2B00A5A8A2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BDC3A46E286ADB6800A5A8A2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
@@ -942,6 +944,7 @@
 				BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */,
 				BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */,
 				BDC3A46C286ADA2B00A5A8A2 /* APIClient.swift */,
+				BDC3A46E286ADB6800A5A8A2 /* APIError.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1751,6 +1754,7 @@
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
 				BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */,
+				BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */,
 				ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */,
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
