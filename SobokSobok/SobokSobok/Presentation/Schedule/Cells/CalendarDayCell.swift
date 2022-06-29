@@ -89,11 +89,18 @@ final class CalendarDayCell: FSCalendarCell {
             self.circleImageView.image = Image.calenderBackgroundSome
         case .today:
             self.titleLabel.textColor = Color.black
-            self.titleLabel.font = UIFont.font(.pretendardBold, ofSize: 22)
-            self.circleImageView.image = Image.calendarBackgroundToday
+            self.circleImageView.image = selectedType == .not ?
+            Image.calendarBackgroundTodayDefault : Image.calendarBackgroundToday
         case .none:
             self.titleLabel.textColor = Color.black
             self.circleImageView.image = nil
         }
+    }
+    
+    func configureUI(isSelected: Bool, with type: FilledType) {
+        width = isSelected ? 44 : 32
+        yPosition = isSelected ? -4 : 2
+        selectedType = isSelected ? .single : .not
+        filledType = type
     }
 }

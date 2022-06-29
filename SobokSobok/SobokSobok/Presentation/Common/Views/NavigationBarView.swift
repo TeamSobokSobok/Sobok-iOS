@@ -20,7 +20,7 @@ final class NavigationBarView: BaseView {
     // MARK: - Properties
     private var mode: NavigationMode
     private var title: String
-    private let navigationButton = UIButton().then {
+    let navigationButton = UIButton().then {
         $0.contentMode = .scaleAspectFit
         $0.setImage(Image.icBack48, for: .normal)
     }

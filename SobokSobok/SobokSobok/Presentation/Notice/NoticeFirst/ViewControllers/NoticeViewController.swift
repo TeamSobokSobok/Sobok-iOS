@@ -14,6 +14,10 @@ final class NoticeViewController: BaseViewController {
     private let noticeListView = NoticeListView()
     
     // MARK: - View Life Cycle
+    override func loadView() {
+        view = noticeListView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,29 +28,24 @@ final class NoticeViewController: BaseViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
     }
-    
-    override func loadView() {
-        view = noticeListView
-    }
-    
-    // MARK: - Functions
+}
+
+// MARK: - Extensions
+extension NoticeViewController {
     private func assignDelegation() {
         noticeListView.noticeListCollectionView.delegate = self
         noticeListView.noticeListCollectionView.dataSource = self
     }
 }
 
-
-// MARK: - Extensions
 extension NoticeViewController: UICollectionViewDelegate { }
 
 extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if noticeList.count == 0 {
             collectionView.setEmptyView(title: "소중한 지안님의 알림", image: Image.illustOops, message: "아직 도착한 알림이 없어요!")
-        } else {
-            collectionView.restore()
-        }
+        } else { collectionView.restore() }
+        
         return noticeList.count
     }
     
