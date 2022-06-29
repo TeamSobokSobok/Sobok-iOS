@@ -1,5 +1,5 @@
 //
-//  APIClient.swift
+//  APIManager.swift
 //  SobokSobok
 //
 //  Created by taehy.k on 2022/06/28.
@@ -11,7 +11,7 @@ protocol Requestable: AnyObject {
     func request<T: Decodable>(_ request: NetworkRequest) async throws -> T?
 }
 
-final class APIClient: Requestable {
+final class APIManager: Requestable {
     func request<T: Decodable>(_ request: NetworkRequest) async throws -> T? {
         guard let encodedURL = request.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL) else {

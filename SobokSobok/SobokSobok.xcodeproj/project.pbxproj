@@ -99,7 +99,7 @@
 		BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA400182833F16D0046627A /* ScheduleViewController.swift */; };
 		BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */; };
 		BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */; };
-		BDC3A46D286ADA2B00A5A8A2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46C286ADA2B00A5A8A2 /* APIClient.swift */; };
+		BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */; };
 		BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46E286ADB6800A5A8A2 /* APIError.swift */; };
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
@@ -298,7 +298,7 @@
 		BDA400182833F16D0046627A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		BDC3A46C286ADA2B00A5A8A2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BDC3A46E286ADB6800A5A8A2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
@@ -945,7 +945,7 @@
 			children = (
 				BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */,
 				BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */,
-				BDC3A46C286ADA2B00A5A8A2 /* APIClient.swift */,
+				BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */,
 				BDC3A46E286ADB6800A5A8A2 /* APIError.swift */,
 				BD382F64286B6A19002E91F0 /* BaseModel.swift */,
 			);
@@ -1827,7 +1827,7 @@
 				BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
 				EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */,
-				BDC3A46D286ADA2B00A5A8A2 /* APIClient.swift in Sources */,
+				BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */,
 				BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */,
 				BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
