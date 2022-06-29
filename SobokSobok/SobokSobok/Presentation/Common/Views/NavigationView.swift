@@ -12,7 +12,7 @@ import Then
 
 final class NavigationView: UIView {
 
-    private let navigationTitleLabel = UILabel().then {
+    let navigationTitleLabel = UILabel().then {
         $0.text = "내 약 추가하기"
         $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
@@ -39,6 +39,22 @@ final class NavigationView: UIView {
         $0.backgroundColor = Color.mint
     }
     
+    lazy var sendBottomFirstView = UIView().then {
+        $0.backgroundColor = Color.mint
+    }
+    
+    lazy var sendBottomSecondView = UIView().then {
+        $0.backgroundColor = Color.mint
+    }
+    
+    lazy var sendBottomThirdView = UIView().then {
+        $0.backgroundColor = Color.mint
+    }
+    
+    lazy var sendBottomFourthView = UIView().then {
+        $0.backgroundColor = Color.mint
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -50,7 +66,7 @@ final class NavigationView: UIView {
     }
     
     private func setupView() {
-        [navigationTitleLabel, xButton, cancelButton,bottomFirstView, bottomSecondView, bottomThirdView].forEach {
+        [navigationTitleLabel, xButton, cancelButton, bottomFirstView, bottomSecondView, bottomThirdView, sendBottomFirstView, sendBottomSecondView, sendBottomThirdView, sendBottomFourthView].forEach {
             addSubview($0)
         }
     }
@@ -95,6 +111,34 @@ final class NavigationView: UIView {
             $0.top.equalTo(xButton.snp.bottom).inset(-9)
             $0.trailing.equalToSuperview()
             $0.width.equalTo(UIScreen.main.bounds.width / 3)
+            $0.height.equalTo(2)
+        }
+        
+        sendBottomFirstView.snp.makeConstraints {
+            $0.top.equalTo(xButton.snp.bottom).inset(-9)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width / 4)
+            $0.height.equalTo(2)
+        }
+        
+        sendBottomSecondView.snp.makeConstraints {
+            $0.top.equalTo(xButton.snp.bottom).inset(-9)
+            $0.leading.equalTo(sendBottomFirstView.snp.trailing)
+            $0.width.equalTo(UIScreen.main.bounds.width / 4)
+            $0.height.equalTo(2)
+        }
+        
+        sendBottomThirdView.snp.makeConstraints {
+            $0.top.equalTo(xButton.snp.bottom).inset(-9)
+            $0.leading.equalTo(sendBottomSecondView.snp.trailing)
+            $0.width.equalTo(UIScreen.main.bounds.width / 4)
+            $0.height.equalTo(2)
+        }
+        
+        sendBottomFourthView.snp.makeConstraints {
+            $0.top.equalTo(xButton.snp.bottom).inset(-9)
+            $0.trailing.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width / 4)
             $0.height.equalTo(2)
         }
     }
