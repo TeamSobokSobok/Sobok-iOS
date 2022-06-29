@@ -168,6 +168,8 @@
 		ECB845E82795774B00433522 /* PillCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845E72795774B00433522 /* PillCountService.swift */; };
 		ECB845EB2795776F00433522 /* PillCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EA2795776F00433522 /* PillCount.swift */; };
 		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
+		ECB8A5C5286BD86E00B1D363 /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C4286BD86E00B1D363 /* AddUserView.swift */; };
+		ECB8A5C7286BD87600B1D363 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C6286BD87600B1D363 /* AddUserViewController.swift */; };
 		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
 		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
 		ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */; };
@@ -348,6 +350,8 @@
 		ECB845E72795774B00433522 /* PillCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountService.swift; sourceTree = "<group>"; };
 		ECB845EA2795776F00433522 /* PillCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCount.swift; sourceTree = "<group>"; };
 		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		ECB8A5C4286BD86E00B1D363 /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
+		ECB8A5C6286BD87600B1D363 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
 		ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePillTimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -982,6 +986,7 @@
 		EC04286228602231001DD1EC /* PillFirst */ = {
 			isa = PBXGroup;
 			children = (
+				ECB8A5C3286BD83D00B1D363 /* AddUser */,
 				EC04286A2860304B001DD1EC /* Share */,
 				EC04286328602266001DD1EC /* NoFriend */,
 			);
@@ -1356,6 +1361,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		ECB8A5C3286BD83D00B1D363 /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				ECB8A5C4286BD86E00B1D363 /* AddUserView.swift */,
+				ECB8A5C6286BD87600B1D363 /* AddUserViewController.swift */,
+			);
+			path = AddUser;
+			sourceTree = "<group>";
+		};
 		ECF96BEA2799585A00B5A32C /* FillLimit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1676,6 +1690,7 @@
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
 				BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */,
+				ECB8A5C7286BD87600B1D363 /* AddUserViewController.swift in Sources */,
 				ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */,
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
@@ -1736,6 +1751,7 @@
 				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */,
+				ECB8A5C5286BD86E00B1D363 /* AddUserView.swift in Sources */,
 				BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
 				EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */,
