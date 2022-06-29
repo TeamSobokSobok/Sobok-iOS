@@ -18,10 +18,19 @@ final class SendPillFirstViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
     
     }
     
-
+    private func setupView() {
+        sendPillFirstView.backgroundButton.addTarget(self, action: #selector(presentToUser), for: .touchUpInside)
+    }
+    
+    @objc func presentToUser() {
+        let viewController = AddUserViewController()
+        viewController.modalPresentationStyle = .overFullScreen
+        viewController.modalTransitionStyle = .crossDissolve
+        self.present(viewController, animated: true)
+    }
 
 }
