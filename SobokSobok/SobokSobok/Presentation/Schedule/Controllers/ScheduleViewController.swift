@@ -51,8 +51,18 @@ final class ScheduleViewController: BaseViewController {
     }
     
     let gregorian = Calendar(identifier: .gregorian)
-    var doingDates = ["2022-06-01", "2022-06-10", "2022-06-23"]
-    var doneDates = ["2022-06-12", "2022-06-24"]
+    var doingDates: [String] = [] {
+        didSet {
+            print("change")
+            calendarView.reloadData()
+        }
+    }
+    var doneDates: [String] = [] {
+        didSet {
+            print("change")
+            calendarView.reloadData()
+        }
+    }
     var selectedDate: String = Date().toString(of: .day)
     var pillItems: [PillList] = []
     
@@ -99,7 +109,8 @@ final class ScheduleViewController: BaseViewController {
         }
         
         calendarView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(10)
+            // calendar left, right padding 10씩 조정하기
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(calendarHeight)
         }
 
