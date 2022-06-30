@@ -50,7 +50,8 @@
 		BD382F69286D9984002E91F0 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F68286D9984002E91F0 /* APIEnvironment.swift */; };
 		BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */; };
 		BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */; };
-		BD382F71286DA350002E91F0 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F70286DA350002E91F0 /* ScheduleService.swift */; };
+		BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F70286DA350002E91F0 /* ScheduleManager.swift */; };
+		BD382F73286DA52D002E91F0 /* MainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F72286DA52D002E91F0 /* MainViewController+Network.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -259,7 +260,8 @@
 		BD382F68286D9984002E91F0 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEndPoint.swift; sourceTree = "<group>"; };
 		BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
-		BD382F70286DA350002E91F0 /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
+		BD382F70286DA350002E91F0 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		BD382F72286DA52D002E91F0 /* MainViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Network.swift"; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				BDD21A98278D8705007D10F6 /* MainViewController.swift */,
+				BD382F72286DA52D002E91F0 /* MainViewController+Network.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -522,7 +525,7 @@
 		BD382F6A286D9A3D002E91F0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				BD382F70286DA350002E91F0 /* ScheduleService.swift */,
+				BD382F70286DA350002E91F0 /* ScheduleManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1802,7 +1805,7 @@
 				BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
-				BD382F71286DA350002E91F0 /* ScheduleService.swift in Sources */,
+				BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
@@ -1825,6 +1828,7 @@
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
+				BD382F73286DA52D002E91F0 /* MainViewController+Network.swift in Sources */,
 				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
 				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,

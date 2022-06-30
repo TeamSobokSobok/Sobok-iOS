@@ -15,8 +15,16 @@ final class MainViewController: BaseViewController {
     private let scheduleViewController = ScheduleViewController()
     private let containerView = UIView()
     
+    let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
+                                                               environment: .mock)
+    var schedules: [Schedule] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getMySchedules(date: "2022-06-22")
     }
 
     override func style() {

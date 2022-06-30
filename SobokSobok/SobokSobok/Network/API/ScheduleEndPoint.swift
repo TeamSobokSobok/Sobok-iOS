@@ -21,17 +21,16 @@ extension ScheduleEndPoint {
     
     var requestBody: Data? {
         switch self {
-        case .getMySchedule(let date):
-            let parameters = ["date": date]
-            return parameters.encode()
+        case .getMySchedule:
+            return nil
         }
     }
     
     func getURL(from environment: APIEnvironment) -> String {
         let baseURL = environment.baseURL
         switch self {
-        case .getMySchedule:
-            return "\(baseURL)/schedule/calendar"
+        case .getMySchedule(let date):
+            return "\(baseURL)/schedule/calendar?date=\(date)"
         }
     }
     
