@@ -46,6 +46,7 @@
 		BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B4E2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift */; };
 		BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */; };
 		BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B56279612BC00B1F59D /* Date+Extension.swift */; };
+		BD382F65286B6A19002E91F0 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F64286B6A19002E91F0 /* BaseModel.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -96,6 +97,10 @@
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
 		BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA400182833F16D0046627A /* ScheduleViewController.swift */; };
+		BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */; };
+		BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */; };
+		BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */; };
+		BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46E286ADB6800A5A8A2 /* APIError.swift */; };
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
@@ -247,6 +252,7 @@
 		BD2C8B4E2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		BD2C8B502795FFF500B1F59D /* CalendarViewController+FSCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarViewController+FSCalendar.swift"; sourceTree = "<group>"; };
 		BD2C8B56279612BC00B1F59D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		BD382F64286B6A19002E91F0 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -294,6 +300,10 @@
 		BD9857A12791CA97009883FC /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		BDA400182833F16D0046627A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BDC3A46E286ADB6800A5A8A2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
@@ -527,6 +537,7 @@
 				BD515E5027877582003BD5A4 /* Resource */,
 				BD515E512787758B003BD5A4 /* Service */,
 				BD515E52278775A0003BD5A4 /* Support */,
+				BDC3A466286AD08D00A5A8A2 /* Network */,
 			);
 			path = SobokSobok;
 			sourceTree = "<group>";
@@ -927,6 +938,26 @@
 				BDCDB5CB2861B22400C419CC /* Controllers */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		BDC3A466286AD08D00A5A8A2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BDC3A467286AD0A200A5A8A2 /* Foundation */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BDC3A467286AD0A200A5A8A2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */,
+				BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */,
+				BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */,
+				BDC3A46E286ADB6800A5A8A2 /* APIError.swift */,
+				BD382F64286B6A19002E91F0 /* BaseModel.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		BDC83B3A2798C978009C52A1 /* Sticker */ = {
@@ -1685,6 +1716,7 @@
 			files = (
 				EC99153F2833BE5A00542115 /* UICollectionView + Extension.swift in Sources */,
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
+				BD382F65286B6A19002E91F0 /* BaseModel.swift in Sources */,
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
 				BD7120F9279723A00068B981 /* Member.swift in Sources */,
 				BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */,
@@ -1705,6 +1737,7 @@
 				F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */,
 				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
+				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,
@@ -1754,6 +1787,7 @@
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
 				BD2C8B4F2795FD4F00B1F59D /* CalendarViewController+CollectionView.swift in Sources */,
+				BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */,
 				ECB8A5C7286BD87600B1D363 /* AddUserViewController.swift in Sources */,
 				ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */,
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
@@ -1825,7 +1859,9 @@
 				BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */,
 				BD2C8B512795FFF500B1F59D /* CalendarViewController+FSCalendar.swift in Sources */,
 				EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */,
+				BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */,
 				BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */,
+				BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
