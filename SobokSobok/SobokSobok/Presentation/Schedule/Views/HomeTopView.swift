@@ -27,7 +27,7 @@ final class HomeTopView: BaseView {
         mainMessageLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(12)
             $0.leading.equalToSuperview().offset(20)
-            $0.bottom.equalToSuperview().inset(40)
+            $0.bottom.equalToSuperview().inset(22)
         }
         settingButton.snp.makeConstraints {
             $0.top.equalToSuperview()
