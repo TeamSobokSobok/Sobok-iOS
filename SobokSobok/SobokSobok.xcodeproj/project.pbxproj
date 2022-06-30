@@ -50,6 +50,7 @@
 		BD382F69286D9984002E91F0 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F68286D9984002E91F0 /* APIEnvironment.swift */; };
 		BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */; };
 		BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */; };
+		BD382F71286DA350002E91F0 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F70286DA350002E91F0 /* ScheduleService.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -258,6 +259,7 @@
 		BD382F68286D9984002E91F0 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEndPoint.swift; sourceTree = "<group>"; };
 		BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		BD382F70286DA350002E91F0 /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 		BD382F6A286D9A3D002E91F0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BD382F70286DA350002E91F0 /* ScheduleService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1799,6 +1802,7 @@
 				BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
+				BD382F71286DA350002E91F0 /* ScheduleService.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
