@@ -9,6 +9,7 @@ import Foundation
 
 protocol ScheduleServiceable {
     func getMySchedule(for date: String) async throws -> [Schedule]?
+    func getPillList(for date: String) async throws -> [PillList]?
 }
 
 struct ScheduleManager: ScheduleServiceable {
@@ -23,6 +24,13 @@ struct ScheduleManager: ScheduleServiceable {
     func getMySchedule(for date: String) async throws -> [Schedule]? {
         let request = ScheduleEndPoint
             .getMySchedule(date: date)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func getPillList(for date: String) async throws -> [PillList]? {
+        let request = ScheduleEndPoint
+            .getPillList(date: date)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }

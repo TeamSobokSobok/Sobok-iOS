@@ -9,6 +9,7 @@ import Foundation
 
 enum ScheduleEndPoint {
     case getMySchedule(date: String)
+    case getPillList(date: String)
 }
 
 extension ScheduleEndPoint {
@@ -16,12 +17,16 @@ extension ScheduleEndPoint {
         switch self {
         case .getMySchedule:
             return .GET
+        case .getPillList:
+            return .GET
         }
     }
     
     var requestBody: Data? {
         switch self {
         case .getMySchedule:
+            return nil
+        case .getPillList:
             return nil
         }
     }
@@ -31,6 +36,8 @@ extension ScheduleEndPoint {
         switch self {
         case .getMySchedule(let date):
             return "\(baseURL)/schedule/calendar?date=\(date)"
+        case .getPillList(let date):
+            return "\(baseURL)/schedule/detail?date=\(date)"
         }
     }
     
