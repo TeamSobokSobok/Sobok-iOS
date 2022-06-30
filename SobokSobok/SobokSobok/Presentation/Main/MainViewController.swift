@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MainViewController.swift
 //  SobokSobok
 //
 //  Created by taehy.k on 2022/01/11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController {
+final class MainViewController: BaseViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
@@ -42,7 +42,7 @@ final class HomeViewController: BaseViewController {
 }
 
 // MARK: - PageComponentProtocol
-extension HomeViewController: PageComponentProtocol {
+extension MainViewController: PageComponentProtocol {
     func addFriendDeleagte() {
         return
     }

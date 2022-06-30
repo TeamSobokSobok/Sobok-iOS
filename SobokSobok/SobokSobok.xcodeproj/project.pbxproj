@@ -112,7 +112,7 @@
 		BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */; };
 		BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */; };
 		BDCDB5CD2861B23800C419CC /* ScheduleViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */; };
-		BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* HomeViewController.swift */; };
+		BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* MainViewController.swift */; };
 		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
 		BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */; };
@@ -315,7 +315,7 @@
 		BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
 		BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+Layout.swift"; sourceTree = "<group>"; };
-		BDD21A98278D8705007D10F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BDD21A98278D8705007D10F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Calendar/Views/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MedicineCollectionViewCell.xib; path = SobokSobok/Presentation/Calendar/Views/MedicineCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -582,7 +582,7 @@
 				BD515E64278776B0003BD5A4 /* Splash */,
 				BD515E65278776B5003BD5A4 /* SignIn */,
 				BD515E66278776BD003BD5A4 /* SignUp */,
-				BD515E67278776D5003BD5A4 /* Home */,
+				BD515E67278776D5003BD5A4 /* Main */,
 				BD515E68278776E0003BD5A4 /* Share */,
 				BD515E69278776E6003BD5A4 /* Notice */,
 				BD515E6A27877773003BD5A4 /* Pill */,
@@ -791,13 +791,13 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		BD515E67278776D5003BD5A4 /* Home */ = {
+		BD515E67278776D5003BD5A4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				BDD21A98278D8705007D10F6 /* HomeViewController.swift */,
+				BDD21A98278D8705007D10F6 /* MainViewController.swift */,
 				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		BD515E68278776E0003BD5A4 /* Share */ = {
@@ -1846,7 +1846,7 @@
 				EC8EC12F2851001300A744FE /* AddPillTimeView.swift in Sources */,
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
 				BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */,
-				BDD21A9A278D8705007D10F6 /* HomeViewController.swift in Sources */,
+				BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */,
 				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
 				BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */,
