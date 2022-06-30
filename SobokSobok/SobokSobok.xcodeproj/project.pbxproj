@@ -503,6 +503,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BD382F67286D870A002E91F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDD21A98278D8705007D10F6 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		BD4611BF2860822E007BEE87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,7 +808,7 @@
 			isa = PBXGroup;
 			children = (
 				BD382F66286D86D1002E91F0 /* Views */,
-				BDD21A98278D8705007D10F6 /* MainViewController.swift */,
+				BD382F67286D870A002E91F0 /* ViewControllers */,
 			);
 			path = Main;
 			sourceTree = "<group>";
