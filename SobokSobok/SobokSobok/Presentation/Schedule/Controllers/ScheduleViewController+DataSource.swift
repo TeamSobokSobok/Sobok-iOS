@@ -11,11 +11,11 @@ import UIKit
 
 extension ScheduleViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return pillItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return pillItems[section].scheduleList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -23,6 +23,10 @@ extension ScheduleViewController: UICollectionViewDataSource {
             withReuseIdentifier: ScheduleCell.reuseIdentifier,
             for: indexPath
         ) as? ScheduleCell else { return UICollectionViewCell() }
+        
+        if let pill = pillItems[indexPath.section].scheduleList?[indexPath.row] {
+            cell.configureCell(with: pill)
+        }
         
         return cell
     }
