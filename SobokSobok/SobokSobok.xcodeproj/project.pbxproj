@@ -48,6 +48,8 @@
 		BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C8B56279612BC00B1F59D /* Date+Extension.swift */; };
 		BD382F65286B6A19002E91F0 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F64286B6A19002E91F0 /* BaseModel.swift */; };
 		BD382F69286D9984002E91F0 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F68286D9984002E91F0 /* APIEnvironment.swift */; };
+		BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */; };
+		BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -254,6 +256,8 @@
 		BD2C8B56279612BC00B1F59D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		BD382F64286B6A19002E91F0 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BD382F68286D9984002E91F0 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEndPoint.swift; sourceTree = "<group>"; };
+		BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -513,6 +517,21 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		BD382F6A286D9A3D002E91F0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD382F6B286D9A61002E91F0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		BD4611BF2860822E007BEE87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				BD51AE2E27906D6F00314A94 /* UIFont+Extension.swift */,
+				BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */,
 				BD2C8B56279612BC00B1F59D /* Date+Extension.swift */,
 				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
 				F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */,
@@ -958,6 +978,8 @@
 		BDC3A466286AD08D00A5A8A2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BD382F6B286D9A61002E91F0 /* API */,
+				BD382F6A286D9A3D002E91F0 /* Service */,
 				BDC3A467286AD0A200A5A8A2 /* Foundation */,
 			);
 			path = Network;
@@ -1753,6 +1775,7 @@
 				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
 				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
+				BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */,
 				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,
@@ -1888,6 +1911,7 @@
 				BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */,
 				ECAF4D29284F8D0000B12DA7 /* String+Extension.swift in Sources */,
 				BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */,
+				BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
