@@ -28,13 +28,12 @@ final class MainViewController: BaseViewController {
     
     override func hierarchy() {
         view.addSubviews(homeTopView, containerView)
-        addChild(scheduleViewController)
-        containerView.addSubview(scheduleViewController.view)
+        embed(scheduleViewController, inView: containerView)
     }
     
     override func layout() {
         homeTopView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40.adjustedHeight)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(28.adjustedHeight)
             $0.leading.trailing.equalToSuperview()
         }
         
@@ -42,8 +41,5 @@ final class MainViewController: BaseViewController {
             $0.top.equalTo(homeTopView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
-        
-        scheduleViewController.view.frame = containerView.bounds
-        scheduleViewController.didMove(toParent: self)
     }
 }
