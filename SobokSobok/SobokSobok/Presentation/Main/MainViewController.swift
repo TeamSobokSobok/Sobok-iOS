@@ -7,45 +7,43 @@
 
 import UIKit
 
+import SnapKit
+
 final class MainViewController: BaseViewController {
 
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var contentView: UIView!
-    
-    let calendarViewController = CalendarViewController.instanceFromNib()
+    private let homeTopView = HomeTopView()
+    private let scheduleViewController = ScheduleViewController()
+    private let containerView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        calendarViewController.getSchedules(date: Date().toString(of: .year))
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        calendarViewController.getSchedules(date: Date().toString(of: .year))
     }
 
     override func style() {
         super.style()
         
-        messageLabel.setTypoStyle(typoStyle: .header1)
+        homeTopView.mainMessageLabel.text = "소중한 태끼님\n오늘도 약 꼭 챙겨 드세요"
+        containerView.backgroundColor = .red
+    }
+    
+    override func hierarchy() {
+        view.addSubviews(homeTopView, containerView)
+        addChild(scheduleViewController)
+        containerView.addSubview(scheduleViewController.view)
     }
     
     override func layout() {
-        super.layout()
+        homeTopView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40.adjustedHeight)
+            $0.leading.trailing.equalToSuperview()
+        }
         
-        calendarViewController.tabType = .home
-        embed(calendarViewController, inView: contentView)
+        containerView.snp.makeConstraints {
+            $0.top.equalTo(homeTopView.snp.bottom)
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
+        
+        scheduleViewController.view.frame = containerView.bounds
+        scheduleViewController.didMove(toParent: self)
     }
-}
-
-// MARK: - PageComponentProtocol
-extension MainViewController: PageComponentProtocol {
-    func addFriendDeleagte() {
-        return
-    }
-    
-    var pageTitle: String { "" }
 }
