@@ -113,7 +113,6 @@
 		BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */; };
 		BDCDB5CD2861B23800C419CC /* ScheduleViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */; };
 		BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* MainViewController.swift */; };
-		BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21A99278D8705007D10F6 /* HomeViewController.xib */; };
 		BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */; };
 		BDD21AA4278D92B2007D10F6 /* MedicineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */; };
 		BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */; };
@@ -316,7 +315,6 @@
 		BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+Layout.swift"; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BDD21A99278D8705007D10F6 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		BDD21AA1278D92B2007D10F6 /* MedicineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MedicineCollectionViewCell.swift; path = SobokSobok/Presentation/Calendar/Views/MedicineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BDD21AA2278D92B2007D10F6 /* MedicineCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MedicineCollectionViewCell.xib; path = SobokSobok/Presentation/Calendar/Views/MedicineCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		BDD21AA5278DA85B007D10F6 /* TimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeHeaderView.swift; path = SobokSobok/Presentation/Calendar/Views/TimeHeaderView.swift; sourceTree = SOURCE_ROOT; };
@@ -795,7 +793,6 @@
 			isa = PBXGroup;
 			children = (
 				BDD21A98278D8705007D10F6 /* MainViewController.swift */,
-				BDD21A99278D8705007D10F6 /* HomeViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1664,7 +1661,6 @@
 				BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */,
 				BD51AE252790640300314A94 /* Pretendard-Black.otf in Resources */,
 				BD51AE3D2790BF1500314A94 /* StickerCollectionViewCell.xib in Resources */,
-				BDD21A9B278D8705007D10F6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
