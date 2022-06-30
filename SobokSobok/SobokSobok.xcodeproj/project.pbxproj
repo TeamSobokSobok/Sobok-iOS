@@ -495,12 +495,19 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		BD382F66286D86D1002E91F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD4611C42860868C007BEE87 /* HomeTopView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BD4611BF2860822E007BEE87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BD4611C028608260007BEE87 /* FriendNameView.swift */,
 				BD4611C228608389007BEE87 /* CalendarTopView.swift */,
-				BD4611C42860868C007BEE87 /* HomeTopView.swift */,
 				BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */,
 				BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */,
 			);
@@ -792,6 +799,7 @@
 		BD515E67278776D5003BD5A4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BD382F66286D86D1002E91F0 /* Views */,
 				BDD21A98278D8705007D10F6 /* MainViewController.swift */,
 			);
 			path = Main;
