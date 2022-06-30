@@ -19,4 +19,16 @@ extension MainViewController {
             }
         }
     }
+    
+    func getMyPillLists(date: String) {
+        Task {
+            do {
+                let pillLists = try await scheduleManager.getPillList(for: date)
+                if let pillLists = pillLists,
+                   !schedules.isEmpty {
+                    self.pillLists = pillLists
+                }
+            }
+        }
+    }
 }

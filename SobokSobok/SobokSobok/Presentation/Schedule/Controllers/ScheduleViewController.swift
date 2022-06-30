@@ -64,7 +64,13 @@ final class ScheduleViewController: BaseViewController {
         }
     }
     var selectedDate: String = Date().toString(of: .day)
-    var pillItems: [PillList] = []
+    var pillItems: [PillList] = [] {
+        didSet {
+            print("약 채워졌다~")
+            collectionView.reloadData()
+            setCollectionViewHeight()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

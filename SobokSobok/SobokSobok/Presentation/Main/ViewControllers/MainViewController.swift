@@ -23,12 +23,19 @@ final class MainViewController: BaseViewController {
         }
     }
     
+    var pillLists: [PillList] = [] {
+        didSet {
+            scheduleViewController.pillItems = pillLists
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         getMySchedules(date: "2022-06-30")
+        getMyPillLists(date: "2022-06-22")
     }
 
     override func style() {
