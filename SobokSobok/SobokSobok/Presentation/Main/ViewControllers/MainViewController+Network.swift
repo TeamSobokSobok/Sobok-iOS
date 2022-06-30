@@ -8,17 +8,14 @@
 import Foundation
 
 extension MainViewController {
-    public func getMySchedules(date: String) {
+    func getMySchedules(date: String) {
         Task {
             do {
                 let schedules = try await scheduleManager.getMySchedule(for: date)
-                
                 if let schedules = schedules,
                    !schedules.isEmpty {
                     self.schedules = schedules
                 }
-                
-                print(self.schedules)
             }
         }
     }

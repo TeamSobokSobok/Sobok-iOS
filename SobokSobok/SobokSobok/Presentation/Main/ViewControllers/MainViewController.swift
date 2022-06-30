@@ -17,14 +17,18 @@ final class MainViewController: BaseViewController {
     
     let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
                                                                environment: .mock)
-    var schedules: [Schedule] = []
+    var schedules: [Schedule] = [] {
+        didSet {
+            parseSchedules()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getMySchedules(date: "2022-06-22")
+        getMySchedules(date: "2022-06-30")
     }
 
     override func style() {
@@ -49,5 +53,22 @@ final class MainViewController: BaseViewController {
             $0.top.equalTo(homeTopView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
+    }
+}
+
+extension MainViewController {
+    func parseSchedules() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Date.FormatType.full.description
+
+        let doneItems = schedules
+            .filter { $0.isComplete == "done" }
+            .map { dateFormatter.date(from: $0.scheduleDate)!.toString(of: .year) }
+        let doingItems = schedules
+            .filter { $0.isComplete == "doing" }
+            .map { dateFormatter.date(from: $0.scheduleDate)!.toString(of: .year) }
+        
+        scheduleViewController.doneDates = doneItems
+        scheduleViewController.doingDates = doingItems
     }
 }
