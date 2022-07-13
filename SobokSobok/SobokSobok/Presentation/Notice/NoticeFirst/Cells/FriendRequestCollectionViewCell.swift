@@ -139,8 +139,8 @@ final class FriendRequestCollectionViewCell: UICollectionViewCell {
     @objc func refuseButtonClicked() { refuse() }
     
     func setData(noticeListData: NoticeListData) {
-        noticeIcon.image = noticeListData.makeNoticeImage()
-        noticeTitle.text = noticeListData.noticeTitle
-        noticeTime.text = noticeListData.noticeTime
+//        noticeIcon.image = noticeListData.makeNoticeImage()
+//        noticeTitle.text = noticeListData.noticeTitle
+//        noticeTime.text = noticeListData.noticeTime
     }
 }
