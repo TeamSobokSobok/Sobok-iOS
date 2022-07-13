@@ -28,7 +28,7 @@ final class NoticeListView: BaseView {
         layout.scrollDirection = .vertical
         $0.backgroundColor = .clear
         $0.collectionViewLayout = layout
-        $0.register(NoticeListCollectionViewCell.self)
+//      $0.register(NoticeListCollectionViewCell.self)
         $0.showsVerticalScrollIndicator = false
     }
     
