@@ -19,7 +19,4 @@ final class NoFriendViewController: BaseViewController {
         super.viewDidLoad()
 
     }
-    
-
-
 }

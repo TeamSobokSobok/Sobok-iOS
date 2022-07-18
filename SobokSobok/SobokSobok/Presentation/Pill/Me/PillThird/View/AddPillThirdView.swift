@@ -51,7 +51,8 @@ final class AddPillThirdView: BaseView {
 
         layout.scrollDirection = .vertical
         $0.backgroundColor = .white
-        $0.contentInset = UIEdgeInsets.init(top: 8, left: 20, bottom: 0, right: 20)
+//        $0.contentInset = UIEdgeInsets.init(top: 8, left: 20, bottom: 0, right: 20)
+    
         $0.showsVerticalScrollIndicator = false
         $0.collectionViewLayout = layout
     }

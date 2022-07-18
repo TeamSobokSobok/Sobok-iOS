@@ -9,7 +9,6 @@ import UIKit
 
 import Moya
 
-
 final class AddMedicineFourthViewController: BaseViewController {
     
     enum TossPill: Int {
@@ -30,7 +29,6 @@ final class AddMedicineFourthViewController: BaseViewController {
     var day = String()
     var specific = String()
     
-
     private var medicineList: [String] = [] {
         didSet {
             medicineInfoCollectionView.reloadData()

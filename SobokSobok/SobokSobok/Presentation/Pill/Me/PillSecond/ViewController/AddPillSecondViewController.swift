@@ -26,4 +26,3 @@ final class AddPillSecondViewController: BaseViewController {
         tabBarController?.tabBar.isHidden = true
     }
 }
-

@@ -23,11 +23,13 @@ extension UICollectionView {
             $0.textColor = Color.black
             $0.font = UIFont.font(.pretendardBold, ofSize: 24)
         }
+        
         let sobokImage = UIImageView().then {
             $0.image = image
             $0.contentMode = .scaleAspectFit
         }
-        let descriptionLabel = UILabel().then() {
+        
+        let descriptionLabel = UILabel().then {
             $0.textAlignment = .center
             $0.text = message
             $0.textColor = Color.gray500

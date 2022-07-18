@@ -29,7 +29,6 @@ final class TakePillTimeCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
     private func setupView() {
         addSubview(timeLabel)
     }

@@ -5,9 +5,9 @@
 //  Created by 김승찬 on 2022/05/10.
 //
 
-//import UIKit
+// import UIKit
 //
-//class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
+// class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
 //    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
 //    
 //        let attributes = super.layoutAttributesForElements(in: rect)
@@ -29,4 +29,4 @@
 //        }
 //        return attributes
 //    }
-//}
+// }

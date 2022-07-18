@@ -12,8 +12,8 @@ import Then
 final class FriendRequestCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    lazy var accept: (() -> ()) = {}
-    lazy var refuse: (() -> ()) = {}
+    lazy var accept: (() -> Void) = {}
+    lazy var refuse: (() -> Void) = {}
     
     private lazy var pillIcon = UIImageView().then {
         $0.contentMode = .scaleAspectFit

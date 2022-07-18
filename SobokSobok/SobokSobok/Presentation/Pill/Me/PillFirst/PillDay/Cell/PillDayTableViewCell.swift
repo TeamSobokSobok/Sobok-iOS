@@ -33,7 +33,6 @@ final class PillDayTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func setupView() {
         [dayLabel, checkImage].forEach {
             addSubview($0)

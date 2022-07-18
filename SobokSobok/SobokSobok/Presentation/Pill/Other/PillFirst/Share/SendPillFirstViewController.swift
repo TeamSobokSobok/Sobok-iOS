@@ -15,7 +15,6 @@ final class SendPillFirstViewController: BaseViewController {
         self.view = sendPillFirstView
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

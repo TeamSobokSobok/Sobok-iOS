@@ -74,18 +74,18 @@ final class AddPillInfoViewController: BaseViewController {
         
         switch panGestureRecognizer.state {
         case .began:
-            setHeight(height: expandedHeight, Bool: false)
+            setHeight(height: expandedHeight, bool: false)
         case .changed:
             if normalHeight + translation.y ~= normalHeight {
-                setHeight(height: expandedHeight, Bool: false)
+                setHeight(height: expandedHeight, bool: false)
             }
             
             if expandedHeight - translation.y < expandedHeight {
-                setHeight(height: normalHeight, Bool: true)
+                setHeight(height: normalHeight, bool: true)
             }
             
             if normalHeight - translation.y < minHeight {
-                setHeight(height: 0, Bool: false)
+                setHeight(height: 0, bool: false)
                 self.dismiss(animated: true, completion: nil)
             }
         
@@ -94,12 +94,11 @@ final class AddPillInfoViewController: BaseViewController {
         }
     }
     
-    
     @objc private func backgroundViewTapped(_ tapRecognizer: UITapGestureRecognizer) {
         hideBottomSheet()
     }
     
-    private func setHeight(height: CGFloat, Bool: Bool) {
+    private func setHeight(height: CGFloat, bool: Bool) {
         addPillInfoView.bottomSheetView.snp.remakeConstraints {
             $0.height.equalTo(height)
             $0.leading.trailing.bottom.equalToSuperview()
@@ -107,16 +106,16 @@ final class AddPillInfoViewController: BaseViewController {
         
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
-            self.addPillInfoView.pillNameView.isHidden = Bool
+            self.addPillInfoView.pillNameView.isHidden = bool
         }, completion: nil)
     }
     
     private func showBottomSheet() {
-        setHeight(height: normalHeight, Bool: true)
+        setHeight(height: normalHeight, bool: true)
     }
     
     private func hideBottomSheet() {
-        setHeight(height: expandedHeight, Bool: false)
+        setHeight(height: expandedHeight, bool: false)
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -151,7 +150,6 @@ extension AddPillInfoViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: timeArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.font(.pretendardRegular, ofSize: 17)]).width + 20, height: 32)
+        return CGSize(width: timeArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font: UIFont.font(.pretendardRegular, ofSize: 17)]).width + 20, height: 32)
     }
 }
-

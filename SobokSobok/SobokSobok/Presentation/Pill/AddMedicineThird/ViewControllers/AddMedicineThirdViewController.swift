@@ -10,7 +10,8 @@ import UIKit
 final class AddMedicineThirdViewController: BaseViewController {
  
     enum TossPill: Int {
-        case me, friend
+        case me
+        case friend
     }
     
     // MARK: - Properties
