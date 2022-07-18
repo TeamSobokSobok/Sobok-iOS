@@ -7,8 +7,6 @@
 
 import UIKit
 
-import EasyKit
-
 protocol MedicineViewDelegate: AnyObject {
     func popupDismissed()
 }

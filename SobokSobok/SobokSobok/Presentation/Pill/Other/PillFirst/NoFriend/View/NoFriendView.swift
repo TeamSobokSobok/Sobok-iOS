@@ -32,7 +32,6 @@ class NoFriendView: BaseView {
     
     lazy var addButton = SobokButton(frame: CGRect(), mode: .mainMint, text: "추가하기", fontSize: 18)
     
-    
     override func setupView() {
         [navigationView.cancelButton, navigationView.bottomFirstView, navigationView.bottomSecondView, navigationView.bottomThirdView].forEach {
             $0.isHidden = true

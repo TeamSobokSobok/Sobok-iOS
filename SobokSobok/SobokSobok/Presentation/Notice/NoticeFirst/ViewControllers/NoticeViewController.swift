@@ -31,16 +31,16 @@ final class NoticeViewController: BaseViewController {
 }
 
 // MARK: - Extensions
-//extension NoticeViewController {
+// extension NoticeViewController {
 //    private func assignDelegation() {
 //        noticeListView.noticeListCollectionView.delegate = self
 //        noticeListView.noticeListCollectionView.dataSource = self
 //    }
-//}
+// }
 //
-//extension NoticeViewController: UICollectionViewDelegate { }
+// extension NoticeViewController: UICollectionViewDelegate { }
 //
-//extension NoticeViewController: UICollectionViewDataSource {
+// extension NoticeViewController: UICollectionViewDataSource {
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        if noticeList.count == 0 {
 //            collectionView.setEmptyView(title: "소중한 지안님의 알림", image: Image.illustOops, message: "아직 도착한 알림이 없어요!")
@@ -57,9 +57,10 @@ final class NoticeViewController: BaseViewController {
 //        }
 //        cell.refuse = { [unowned self] in
 //            makeAlert(title: "지민지민님의 캘린더 공유를 거절할까요?", message: "거절하면 상대방이 지안님의 캘린더를\n볼 수 없어요", accept: "확인", vc: self) {
-//                // TODO: - 서버통신 후 처리 (NoticdListView의 Cell 바뀌도록)
+//
+// TODO: - 서버통신 후 처리 (NoticdListView의 Cell 바뀌도록)
 //            }
 //        }
 //        return cell
 //    }
-//}
+// }

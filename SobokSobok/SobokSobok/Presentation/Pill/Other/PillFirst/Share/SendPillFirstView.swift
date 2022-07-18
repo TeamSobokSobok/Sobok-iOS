@@ -39,9 +39,7 @@ final class SendPillFirstView: BaseView {
             $0.isHidden = true
         }
         
-    
         addSubviews(navigationView, sendFriendLabel, userLabel, iconImageView, backgroundButton, nextButton)
-
     }
     
     override func setupConstraints() {
@@ -80,4 +78,3 @@ final class SendPillFirstView: BaseView {
         }
     }
 }
-

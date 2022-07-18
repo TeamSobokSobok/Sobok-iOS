@@ -45,7 +45,6 @@ final class PillNameView: BaseView {
         backgroundColor = Color.white
     }
     
-    
     override func setupView() {
         addSubviews(pillNameLabel, pillPeriodLabel, pillPeriodInfoLabel, underLineView, pillNameLabel, pillTableView)
     }
@@ -79,5 +78,3 @@ final class PillNameView: BaseView {
         }
     }
 }
-
-
