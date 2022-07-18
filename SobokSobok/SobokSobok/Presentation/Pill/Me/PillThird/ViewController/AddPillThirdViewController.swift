@@ -9,8 +9,8 @@ import UIKit
 
 import SnapKit
 
-final class AddPillThirdViewController: BaseViewController {
-
+final class AddPillThirdViewController: UIViewController {
+    
     let timeArray: [String] = []
     let addPillThirdView = AddPillThirdView()
     let addPillInfoView = AddPillInfoView()
@@ -23,12 +23,6 @@ final class AddPillThirdViewController: BaseViewController {
         super.viewDidLoad()
         setDelegation()
         addPillThirdView.nextButton.addTarget(self, action: #selector(presentNextVC), for: .touchUpInside)
-    }
-    
-    override func style() {
-        super.style()
-        view.backgroundColor = .white
-        tabBarController?.tabBar.isHidden = true
     }
     
     private func presentView() {
