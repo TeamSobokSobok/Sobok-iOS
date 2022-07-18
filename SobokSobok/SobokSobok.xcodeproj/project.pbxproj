@@ -159,6 +159,7 @@
 		EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */; };
 		EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51A41927D4AC9E00BB01AF /* PillPeriodViewController.swift */; };
 		EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC63A21227D37FDA006EBED7 /* PillDayTableViewCell.swift */; };
+		EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666A8C28855C630089A4CA /* BaseProtocol.swift */; };
 		EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95727982E40002FC0E6 /* AddPillAPI.swift */; };
 		EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95927982E49002FC0E6 /* AddPillService.swift */; };
 		EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95B27982FD8002FC0E6 /* AddPill.swift */; };
@@ -364,6 +365,7 @@
 		EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		EC51A41927D4AC9E00BB01AF /* PillPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillPeriodViewController.swift; sourceTree = "<group>"; };
 		EC63A21227D37FDA006EBED7 /* PillDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDayTableViewCell.swift; sourceTree = "<group>"; };
+		EC666A8C28855C630089A4CA /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
 		EC68A95727982E40002FC0E6 /* AddPillAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillAPI.swift; sourceTree = "<group>"; };
 		EC68A95927982E49002FC0E6 /* AddPillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillService.swift; sourceTree = "<group>"; };
 		EC68A95B27982FD8002FC0E6 /* AddPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPill.swift; sourceTree = "<group>"; };
@@ -707,6 +709,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8EC1492851BDBA00A744FE /* Protocol ++ .swift */,
+				EC666A8C28855C630089A4CA /* BaseProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1922,6 +1925,7 @@
 				BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */,
 				ECAF4D29284F8D0000B12DA7 /* String+Extension.swift in Sources */,
 				BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */,
+				EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */,
 				BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
