@@ -17,19 +17,18 @@ final class MyInfoViewController: BaseViewController {
         registerXib()
     }
     
-    private func assignDelegation() {
+    private func assignDelegation() {        pillTableView.dataSource = self
         pillTableView.delegate = self
-        pillTableView.dataSource = self
     }
     
     private func registerXib() {
         pillTableView.register(MyInfoTableViewCell.self)
+        pillTableView.alwaysBounceVertical = false
     }
 
 }
 
 extension MyInfoViewController: UITableViewDelegate {
-    
 }
 
 extension MyInfoViewController: UITableViewDataSource {

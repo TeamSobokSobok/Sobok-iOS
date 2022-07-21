@@ -23,5 +23,6 @@ class MyInfoTableViewCell: UITableViewCell {
     
     func style() {
         cellOutline.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
 }
