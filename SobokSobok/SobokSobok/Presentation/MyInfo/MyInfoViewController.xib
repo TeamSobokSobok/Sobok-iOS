@@ -23,7 +23,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
-                <outlet property="pillTableView" destination="7ng-5w-0EY" id="POB-p7-jbI"/>
+                <outlet property="pillTableView" destination="7ng-5w-0EY" id="YDA-mB-sat"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,11 +45,17 @@
                             <rect key="frame" x="0.0" y="5" width="48" height="48"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icBack48"/>
+                            <connections>
+                                <action selector="popToMain:" destination="-1" eventType="touchUpInside" id="9KY-nu-ATZ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huu-wf-0Hn" userLabel="settingBtn">
                             <rect key="frame" x="377" y="17" width="24" height="24"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="ic_setting_48_black"/>
+                            <connections>
+                                <action selector="pushSettingVC:" destination="-1" eventType="touchUpInside" id="YPV-jq-1OE"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,6 +85,9 @@
                             <color key="tintColor" red="0.20000000000000001" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icPencil32"/>
+                            <connections>
+                                <action selector="presentEditNicknameVC:" destination="-1" eventType="touchUpInside" id="bg4-4S-kC0"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,6 +111,9 @@
                     <rect key="frame" x="93.5" y="192" width="22" height="22"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="icInfo"/>
+                    <connections>
+                        <action selector="showToolTip:" destination="-1" eventType="touchUpInside" id="sTa-cs-P19"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7ng-5w-0EY">
                     <rect key="frame" x="20" y="228" width="374" height="634"/>

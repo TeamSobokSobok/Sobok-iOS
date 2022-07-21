@@ -27,6 +27,25 @@ final class MyInfoViewController: BaseViewController {
         pillTableView.alwaysBounceVertical = false
     }
 
+    // MARK: - @IBAction func
+    
+    @IBAction func showToolTip(_ sender: Any) {
+    }
+    
+    @IBAction func popToMain(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func presentEditNicknameVC(_ sender: Any) {
+        let editNicknameVC = UINavigationController(rootViewController: EditNicknameViewController.instanceFromNib())
+        editNicknameVC.modalPresentationStyle = .fullScreen
+        present(editNicknameVC, animated: true)
+    }
+    
+    @IBAction func pushSettingVC(_ sender: Any) {
+        navigationController?.pushViewController(SettingViewController.instanceFromNib(), animated: true)
+    }
+    
 }
 
 extension MyInfoViewController: UITableViewDelegate {
