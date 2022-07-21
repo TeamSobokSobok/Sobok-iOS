@@ -17,7 +17,8 @@ final class MyInfoViewController: BaseViewController {
         registerXib()
     }
     
-    private func assignDelegation() {        pillTableView.dataSource = self
+    private func assignDelegation() {
+        pillTableView.dataSource = self
         pillTableView.delegate = self
     }
     

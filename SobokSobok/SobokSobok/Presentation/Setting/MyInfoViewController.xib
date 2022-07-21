@@ -41,15 +41,15 @@
                             <color key="textColor" name="gray900_sub"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-y5-d1F">
-                            <rect key="frame" x="0.0" y="-2" width="72" height="62"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="icBack48"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-y5-d1F" userLabel="backBtn">
+                            <rect key="frame" x="0.0" y="5" width="48" height="48"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="icBack48"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-Oh-3qa">
-                            <rect key="frame" x="353" y="9.5" width="49" height="39"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="settings"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huu-wf-0Hn" userLabel="settingBtn">
+                            <rect key="frame" x="377" y="17" width="24" height="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="ic_setting_48_black"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,12 +57,12 @@
                         <constraint firstItem="GQL-y5-d1F" firstAttribute="centerY" secondItem="akD-tb-UA7" secondAttribute="centerY" id="2H5-kJ-OrL"/>
                         <constraint firstAttribute="bottom" secondItem="akD-tb-UA7" secondAttribute="bottom" constant="21" id="5FP-ME-oy5"/>
                         <constraint firstItem="akD-tb-UA7" firstAttribute="top" secondItem="RvS-Lt-PQd" secondAttribute="top" constant="21" id="7bO-td-USR"/>
-                        <constraint firstAttribute="trailing" secondItem="AgW-Oh-3qa" secondAttribute="trailing" constant="12" id="Phz-iQ-bc3"/>
+                        <constraint firstItem="huu-wf-0Hn" firstAttribute="centerY" secondItem="RvS-Lt-PQd" secondAttribute="centerY" id="Fj4-iT-SAB"/>
                         <constraint firstAttribute="height" constant="58" id="Qce-2o-hrr"/>
-                        <constraint firstItem="AgW-Oh-3qa" firstAttribute="centerY" secondItem="akD-tb-UA7" secondAttribute="centerY" id="bSb-ra-rdp"/>
                         <constraint firstItem="GQL-y5-d1F" firstAttribute="leading" secondItem="RvS-Lt-PQd" secondAttribute="leading" id="l5k-zU-hc6"/>
                         <constraint firstItem="akD-tb-UA7" firstAttribute="leading" secondItem="RvS-Lt-PQd" secondAttribute="leading" constant="77" id="rMR-Sx-Pvf"/>
                         <constraint firstAttribute="trailing" secondItem="akD-tb-UA7" secondAttribute="trailing" constant="77" id="ud7-lk-4FN"/>
+                        <constraint firstAttribute="trailing" secondItem="huu-wf-0Hn" secondAttribute="trailing" constant="12.960000000000001" id="z9c-mS-GWl"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQs-Op-FBd">
@@ -132,7 +132,7 @@
         <image name="icBack48" width="48" height="48"/>
         <image name="icInfo" width="22" height="22"/>
         <image name="icPencil32" width="32" height="32"/>
-        <image name="settings" width="25" height="25"/>
+        <image name="ic_setting_48_black" width="24" height="24"/>
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
