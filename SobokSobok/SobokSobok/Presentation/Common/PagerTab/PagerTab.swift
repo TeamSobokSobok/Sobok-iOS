@@ -52,7 +52,7 @@ class PagerTab: UIView {
     private let addButton = UIButton().then {
         $0.setImage(Image.icPlus48, for: .normal)
         $0.tintColor = Color.white
-        $0.addTarget(self, action: #selector(addFriendButtonTapped(_:)), for: .touchUpInside)
+        $0.addTarget(PagerTab.self, action: #selector(addFriendButtonTapped(_:)), for: .touchUpInside)
     }
 
     private lazy var barBackgroundView: UIView = {

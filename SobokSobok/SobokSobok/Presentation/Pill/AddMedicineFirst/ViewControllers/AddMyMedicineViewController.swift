@@ -7,8 +7,6 @@
 
 import UIKit
 
-import EasyKit
-
 final class AddMyMedicineViewController: BaseViewController {
     
     enum TossPill: Int {

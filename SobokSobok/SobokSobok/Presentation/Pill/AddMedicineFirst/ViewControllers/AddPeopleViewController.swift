@@ -24,8 +24,8 @@ final class AddPeopleViewController: BaseViewController {
     weak var delegate: AddPeopleViewDelegate?
     weak var sendDelegate: SendPeopleNameDelegate?
     // 임시 더미데이터
-    var peopleNameList : [String] = []
-    var nameList : [String] = [] {
+    var peopleNameList: [String] = []
+    var nameList: [String] = [] {
         didSet {
             peopleNamePickerView.reloadAllComponents()
         }
