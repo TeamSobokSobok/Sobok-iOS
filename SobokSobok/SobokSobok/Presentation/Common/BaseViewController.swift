@@ -12,14 +12,17 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
+        target()
         hierarchy()
         layout()
     }
     
-    public func style() {
+    func target() { }
+    func style() {
         navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = .white
     }
-    public func hierarchy() {}
-    public func layout() {}
+    func hierarchy() {}
+    func layout() {}
     
 }

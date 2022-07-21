@@ -30,4 +30,3 @@ final class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
 }
-
