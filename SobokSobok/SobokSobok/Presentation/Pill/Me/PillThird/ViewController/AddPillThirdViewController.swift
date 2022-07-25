@@ -7,10 +7,9 @@
 
 import UIKit
 
-import SnapKit
-
-final class AddPillThirdViewController: UIViewController {
-    
+final class AddPillThirdViewController: UIViewController, TossPillProtocol {
+ 
+    var type: TossPill = .myPill
     let timeArray: [String] = []
     let addPillThirdView = AddPillThirdView()
     let addPillInfoView = AddPillInfoView()
@@ -39,6 +38,24 @@ final class AddPillThirdViewController: UIViewController {
     
     @objc func presentNextVC() {
         presentView()
+    }
+    
+    func divide(style: PillStyle) {
+        
+        let navigationView = addPillThirdView.navigationView
+        
+        type = style.type
+        
+        [navigationView.bottomFirstView,
+         navigationView.bottomSecondView].forEach {
+            $0.isHidden = style.bottomNavigationBarIsHidden
+        }
+        
+        [navigationView.sendBottomFirstView,
+         navigationView.sendBottomSecondView,
+         navigationView.sendBottomThirdView].forEach {
+            $0.isHidden = style.sendBottomNavigationBarIsHidden
+        }
     }
 }
 

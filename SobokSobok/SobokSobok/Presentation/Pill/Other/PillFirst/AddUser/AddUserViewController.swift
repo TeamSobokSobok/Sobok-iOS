@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class AddUserViewController: BaseViewController {
+protocol AddUserProtocol: StyleProtocol, TargetProtocol {}
+
+final class AddUserViewController: UIViewController, AddUserProtocol {
     
     private let addUserView = AddUserView()
     
@@ -17,6 +19,19 @@ final class AddUserViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
+        target()
+    }
+    
+    @objc func pushAddPillFirstView() {
+    }
+    
+    func style() {
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
+    
+    func target() {
+        addUserView.confirmButton.addTarget(self, action: #selector(pushAddPillFirstView), for: .touchUpInside)
+    }
+    
 }

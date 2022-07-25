@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class NoFriendViewController: BaseViewController {
+protocol NoFriendProtocol: TargetProtocol {}
+
+final class NoFriendViewController: UIViewController, NoFriendProtocol {
 
     let noFriendView = NoFriendView()
     
@@ -19,4 +21,9 @@ final class NoFriendViewController: BaseViewController {
         super.viewDidLoad()
 
     }
+    
+    func target() {
+
+    }
+    
 }
