@@ -29,20 +29,20 @@ final class MyInfoViewController: BaseViewController {
 
     // MARK: - @IBAction func
     
-    @IBAction func showToolTip(_ sender: Any) {
+    @IBAction func showToolTip(_ sender: UIButton) {
     }
     
-    @IBAction func popToMain(_ sender: Any) {
+    @IBAction func popToMain(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func presentEditNicknameVC(_ sender: Any) {
+    @IBAction func presentEditNicknameVC(_ sender: UIButton) {
         let editNicknameVC = UINavigationController(rootViewController: EditNicknameViewController.instanceFromNib())
         editNicknameVC.modalPresentationStyle = .fullScreen
         present(editNicknameVC, animated: true)
     }
     
-    @IBAction func pushSettingVC(_ sender: Any) {
+    @IBAction func pushSettingVC(_ sender: UIButton) {
         navigationController?.pushViewController(SettingViewController.instanceFromNib(), animated: true)
     }
     
