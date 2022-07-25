@@ -154,6 +154,7 @@
 		EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042868286022BF001DD1EC /* NoFriendViewController.swift */; };
 		EC04286C28603098001DD1EC /* SendPillFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04286B28603098001DD1EC /* SendPillFirstView.swift */; };
 		EC04286E286030A0001DD1EC /* SendPillFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04286D286030A0001DD1EC /* SendPillFirstViewController.swift */; };
+		EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4AD0AC288E6D9A005452BD /* PillStyle.swift */; };
 		EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */; };
 		EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */; };
 		EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */; };
@@ -360,6 +361,7 @@
 		EC042868286022BF001DD1EC /* NoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendViewController.swift; sourceTree = "<group>"; };
 		EC04286B28603098001DD1EC /* SendPillFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillFirstView.swift; sourceTree = "<group>"; };
 		EC04286D286030A0001DD1EC /* SendPillFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillFirstViewController.swift; sourceTree = "<group>"; };
+		EC4AD0AC288E6D9A005452BD /* PillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillStyle.swift; sourceTree = "<group>"; };
 		EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobokButton.swift; sourceTree = "<group>"; };
 		EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		EC4BF2F027C0BEAC00B28F90 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -869,6 +871,7 @@
 		BD515E6A27877773003BD5A4 /* Pill */ = {
 			isa = PBXGroup;
 			children = (
+				EC4AD0AC288E6D9A005452BD /* PillStyle.swift */,
 				EC042861286021D2001DD1EC /* Me */,
 				EC042860286021CD001DD1EC /* Other */,
 				EC037614278B372500CA4B54 /* AddMedicineSheet */,
@@ -1513,18 +1516,18 @@
 		ECF96BEA2799585A00B5A32C /* FillLimit */ = {
 			isa = PBXGroup;
 			children = (
-				ECF96BEB2799586400B5A32C /* ViewControllers */,
+				ECF96BEB2799586400B5A32C /* ViewController */,
 				ECF96BEC2799586D00B5A32C /* Views */,
 			);
 			path = FillLimit;
 			sourceTree = "<group>";
 		};
-		ECF96BEB2799586400B5A32C /* ViewControllers */ = {
+		ECF96BEB2799586400B5A32C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				ECF96BE72798F0D700B5A32C /* PillLimitViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		ECF96BEC2799586D00B5A32C /* Views */ = {
@@ -1870,6 +1873,7 @@
 				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
 				BD0C70812862274A00CF452F /* ScheduleViewController+FSCalendar.swift in Sources */,
 				EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */,
+				EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */,
 				EC0213F427CF51F700CF3569 /* PillTimeCollectionViewCell.swift in Sources */,
 				EC91946A282252530047893F /* PillNameView.swift in Sources */,
 				F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */,
