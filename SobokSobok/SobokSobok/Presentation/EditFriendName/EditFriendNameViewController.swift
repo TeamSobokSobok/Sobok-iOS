@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EditFriendNameViewController: BaseViewController {
+final class EditFriendNameViewController: UIViewController {
 
     // MARK: - Properties
     var name: String?
@@ -24,9 +24,10 @@ final class EditFriendNameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSelector()
+        layout()
     }
     
-    override func layout() {
+    private func layout() {
         nameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
         warningTextLabel.isHidden = true
         counterTextLabel.isHidden = true

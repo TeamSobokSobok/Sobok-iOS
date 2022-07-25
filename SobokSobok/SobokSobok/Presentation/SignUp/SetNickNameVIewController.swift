@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class SetNickNameVIewController: BaseViewController {
+final class SetNickNameVIewController: UIViewController {
 
     // MARK: - Properties
     private var user = SignUpUserData.shared
@@ -45,9 +45,10 @@ final class SetNickNameVIewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTargetToTextField()
+        style()
     }
     
-    override func style() {
+    private func style() {
         navigationController?.navigationBar.isHidden = true
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         warningTextLabel.isHidden = true

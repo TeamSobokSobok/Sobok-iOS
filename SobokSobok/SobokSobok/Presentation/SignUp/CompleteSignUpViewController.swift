@@ -7,15 +7,14 @@
 
 import UIKit
 
-final class CompleteSignUpViewController: BaseViewController {
-
-    // MARK: - Properties
+final class CompleteSignUpViewController: UIViewController {
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
     }
-    override func style() {
+    private func style() {
         navigationController?.navigationBar.isHidden = true
     }
     

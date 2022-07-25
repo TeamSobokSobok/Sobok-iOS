@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MyInfoViewController: BaseViewController {
+final class MyInfoViewController: UIViewController {
 
     @IBOutlet weak var pillTableView: UITableView!
     

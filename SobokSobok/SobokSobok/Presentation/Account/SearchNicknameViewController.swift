@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchNicknameViewController: BaseViewController {
+final class SearchNicknameViewController: UIViewController {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var searchNicknameTextField: UITextField!
@@ -20,9 +20,10 @@ final class SearchNicknameViewController: BaseViewController {
         super.viewDidLoad()
         assignDelgation()
         checkTextField()
+        style()
     }
 
-    override func style() {
+    private func style() {
         navigationController?.navigationBar.isHidden = true
         resultTextLabel.isHidden = true
         noResultImageView.isHidden = true
