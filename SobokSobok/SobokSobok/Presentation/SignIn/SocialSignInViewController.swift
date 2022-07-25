@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol SocialSignInProtocol: StyleProtocol {}
+
 final class SocialSignInViewController: UIViewController {
 
     @IBOutlet weak var kakaoLoginButton: UIView!

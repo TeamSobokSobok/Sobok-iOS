@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
 import SnapKit
+
+protocol SetNicknameProtocol: StyleProtocol {}
 
 final class SetNickNameVIewController: UIViewController {
 

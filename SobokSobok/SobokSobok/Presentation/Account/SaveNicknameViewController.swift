@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol SaveNicknameProtocol: StyleProtocol {}
+
 final class SaveNicknameViewController: UIViewController {
 
     // MARK: - Properties

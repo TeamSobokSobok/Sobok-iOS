@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol CompleteSingUpProtocol: StyleProtocol {}
+
 final class CompleteSignUpViewController: UIViewController {
 
     // MARK: - View Life Cycle

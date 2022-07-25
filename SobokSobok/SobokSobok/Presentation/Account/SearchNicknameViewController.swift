@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol SearchNicknameProtocol: StyleProtocol {}
+
 final class SearchNicknameViewController: UIViewController {
 
     // MARK: - @IBOutlet Properties
