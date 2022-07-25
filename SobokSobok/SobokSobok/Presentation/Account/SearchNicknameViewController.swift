@@ -9,7 +9,7 @@ import UIKit
 
 protocol SearchNicknameProtocol: StyleProtocol {}
 
-final class SearchNicknameViewController: UIViewController {
+final class SearchNicknameViewController: UIViewController, SearchNicknameProtocol {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var searchNicknameTextField: UITextField!
@@ -25,7 +25,7 @@ final class SearchNicknameViewController: UIViewController {
         style()
     }
 
-    private func style() {
+    func style() {
         navigationController?.navigationBar.isHidden = true
         resultTextLabel.isHidden = true
         noResultImageView.isHidden = true

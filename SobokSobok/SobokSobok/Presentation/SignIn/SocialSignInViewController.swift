@@ -9,7 +9,7 @@ import UIKit
 
 protocol SocialSignInProtocol: StyleProtocol {}
 
-final class SocialSignInViewController: UIViewController {
+final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
 
     @IBOutlet weak var kakaoLoginButton: UIView!
     @IBOutlet weak var appleLoginButton: UIView!
@@ -19,7 +19,7 @@ final class SocialSignInViewController: UIViewController {
         style()
     }
     
-    private func style() {
+    func style() {
         kakaoLoginButton.makeRounded(radius: 6)
         appleLoginButton.makeRounded(radius: 6)
     }

@@ -9,7 +9,7 @@ import UIKit
 
 protocol SaveNicknameProtocol: StyleProtocol {}
 
-final class SaveNicknameViewController: UIViewController {
+final class SaveNicknameViewController: UIViewController, SaveNicknameProtocol {
 
     // MARK: - Properties
     private var nameCount: Int = 0
@@ -30,7 +30,7 @@ final class SaveNicknameViewController: UIViewController {
         setNickname()
     }
     
-    private func style() {
+    func style() {
         setWithNoneText()
         searchTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
         searchTextField.addTarget(self, action: #selector(self.completeTyping), for: .editingDidEnd)
