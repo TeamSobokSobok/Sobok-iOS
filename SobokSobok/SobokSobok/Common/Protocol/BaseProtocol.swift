@@ -26,3 +26,7 @@ protocol LayoutProtocol {
 protocol TargetProtocol {
     func target()
 }
+
+protocol DelegationProtocol {
+    func assignDelegation()
+}
