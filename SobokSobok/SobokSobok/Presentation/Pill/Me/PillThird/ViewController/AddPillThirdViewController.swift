@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class AddPillThirdViewController: UIViewController, TossPillProtocol {
+protocol AddPillThirdProtocol: TargetProtocol, DelegationProtocol, TossPillProtocol {}
+
+final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
  
     var type: TossPill = .myPill
     let timeArray: [String] = []
@@ -20,8 +22,19 @@ final class AddPillThirdViewController: UIViewController, TossPillProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegation()
+        assignDelegation()
+        target()
+    }
+    
+    func target() {
         addPillThirdView.nextButton.addTarget(self, action: #selector(presentNextVC), for: .touchUpInside)
+        
+        addPillThirdView.countInfoButton.addTarget(self, action: #selector(hideToolTipImage), for: .touchUpInside)
+    }
+    
+    func assignDelegation() {
+        addPillThirdView.collectionView.delegate = self
+        addPillThirdView.collectionView.dataSource = self
     }
     
     private func presentView() {
@@ -31,13 +44,12 @@ final class AddPillThirdViewController: UIViewController, TossPillProtocol {
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
     
-    private func setDelegation() {
-        addPillThirdView.collectionView.delegate = self
-        addPillThirdView.collectionView.dataSource = self
-    }
-    
     @objc func presentNextVC() {
         presentView()
+    }
+    
+    @objc func hideToolTipImage() {
+        addPillThirdView.tooltipImage.isHidden.toggle()
     }
     
     func divide(style: PillStyle) {
