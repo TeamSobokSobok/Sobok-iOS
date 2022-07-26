@@ -7,9 +7,9 @@
 
 import UIKit
 
-import SnapKit
+protocol AddPillInfoProtocol: StyleProtocol {}
 
-final class AddPillInfoViewController: BaseViewController {
+final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     
     let addPillInfoView = AddPillInfoView()
     
@@ -39,8 +39,7 @@ final class AddPillInfoViewController: BaseViewController {
         assignDelegation()
     }
     
-    override func style() {
-        super.style()
+    func style() {
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
     

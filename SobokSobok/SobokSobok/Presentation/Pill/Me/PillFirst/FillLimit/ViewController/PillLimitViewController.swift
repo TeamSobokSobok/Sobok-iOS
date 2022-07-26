@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class PillLimitViewController: BaseViewController {
+protocol PillLimitProtocol: StyleProtocol, TargetProtocol {}
+
+final class PillLimitViewController: UIViewController, PillLimitProtocol {
 
     let pillLimitView = PillLimitView()
     
@@ -17,13 +19,16 @@ final class PillLimitViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pillLimitView.xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
+        style()
+        target()
     }
 
-    override func style() {
-        super.style()
-        view.backgroundColor = .white
+    func style() {
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    func target() {
+        pillLimitView.xButton.addTarget(self, action: #selector(xButtonClicked), for: .touchUpInside)
     }
     
     @objc func xButtonClicked() {
