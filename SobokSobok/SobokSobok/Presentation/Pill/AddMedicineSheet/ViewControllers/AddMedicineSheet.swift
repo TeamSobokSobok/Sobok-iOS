@@ -87,9 +87,9 @@ final class AddMedicineSheet: UIViewController, AddMedicineProtocol {
         self.dismiss(animated: true)
         guard let viewController = self.presentingViewController as? UITabBarController else { return }
         guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-        let nicknameViewController = SendPillFirstViewController.instanceFromNib()
-        nicknameViewController.type = tossPill
-        selectedViewController.pushViewController(nicknameViewController, animated: true)
+        let sendPillFirstViewController = SendPillFirstViewController.instanceFromNib()
+        sendPillFirstViewController.type = tossPill
+        selectedViewController.pushViewController(sendPillFirstViewController, animated: true)
     }
     
     @IBAction func closeButtonClicked(_ sender: UIButton) {
@@ -127,8 +127,8 @@ extension AddMedicineSheet: UITableViewDataSource {
                 self.dismiss(animated: true)
                 guard let viewController = self.presentingViewController as? UITabBarController else { return }
                 guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-                let addMyMedicineViewController = PillLimitViewController.instanceFromNib()
-                selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
+                let pillLimitViewController = PillLimitViewController.instanceFromNib()
+                selectedViewController.pushViewController(pillLimitViewController, animated: true)
             } else if pillNumber == 0 {
                 pushMedicineFirstViewController(style: .myPill)
             } else {
