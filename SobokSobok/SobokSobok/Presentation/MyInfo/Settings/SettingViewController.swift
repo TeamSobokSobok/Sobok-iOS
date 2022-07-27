@@ -22,7 +22,7 @@ final class SettingViewController: UIViewController {
     }
     
     @IBAction func termsAndPolicies(_ sender: Any) {
-        print("termsAndPolicies")
+        navigationController?.pushViewController(TermsAndPolicesViewController.instanceFromNib(), animated: true)
     }
     
     @IBAction func openSourceLicense(_ sender: Any) {
