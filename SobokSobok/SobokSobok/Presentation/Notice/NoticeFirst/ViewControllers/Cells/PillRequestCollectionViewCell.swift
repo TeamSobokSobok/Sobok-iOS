@@ -104,8 +104,8 @@ final class PillRequestCollectionViewCell: UICollectionViewCell {
     private func setConstraints() {
         topStack.snp.makeConstraints { make in
             make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(33.5.adjustedHeight)
-            make.top.equalToSuperview().offset(50)
+            make.height.equalTo(60.adjustedHeight)
+            make.top.equalToSuperview().offset(18)
             make.leading.equalToSuperview().offset(18)
         }
         pillIcon.snp.makeConstraints { make in
@@ -131,8 +131,8 @@ final class PillRequestCollectionViewCell: UICollectionViewCell {
             make.leading.bottom.trailing.equalToSuperview()
         }
         middleStack.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.leading.equalToSuperview()
+            make.top.equalTo(topStack.snp.bottom)
+            make.leading.equalToSuperview().offset(18)
         }
         refuseButton.snp.makeConstraints {
             $0.width.equalTo(145.adjustedWidth)

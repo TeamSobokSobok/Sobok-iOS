@@ -14,11 +14,11 @@ final class FriendRequestCollectionViewCell: UICollectionViewCell {
     lazy var accept: (() -> Void) = {}
     lazy var refuse: (() -> Void) = {}
     
-    private lazy var pillIcon = UIImageView().then {
+    private lazy var calenderIcon = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = Image.icPillAlarm
+        $0.image = Image.icCalender
     }
-    private lazy var pillName = UILabel().then {
+    private lazy var friendName = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 18)
         $0.textColor = Color.gray900
         $0.textAlignment = .left
@@ -78,7 +78,7 @@ final class FriendRequestCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     private func setUI() {
         [topStack, middleStack, bottomStack].forEach { contentView.addSubview($0) }
-        topStack.addArrangedSubviews(pillIcon, pillName, lineView)
+        topStack.addArrangedSubviews(calenderIcon, friendName, lineView)
         middleStack.addArrangedSubviews(descriptionLabel, timeLabel)
         bottomStack.addArrangedSubviews(refuseButton, acceptButton)
         self.backgroundColor = Color.white
@@ -88,27 +88,27 @@ final class FriendRequestCollectionViewCell: UICollectionViewCell {
     private func setConstraints() {
         topStack.snp.makeConstraints { make in
             make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(33.5.adjustedHeight)
-            make.top.equalToSuperview().offset(50)
+            make.height.equalTo(60.adjustedHeight)
+            make.top.equalToSuperview().offset(18)
             make.leading.equalToSuperview().offset(18)
         }
-        pillIcon.snp.makeConstraints { make in
+        calenderIcon.snp.makeConstraints { make in
             make.width.equalTo(22.adjustedWidth)
             make.top.leading.equalToSuperview()
         }
-        pillName.snp.makeConstraints { make in
+        friendName.snp.makeConstraints { make in
             make.width.equalTo(156.adjustedWidth)
             make.height.equalTo(25.adjustedHeight)
             make.top.equalToSuperview()
-            make.leading.equalTo(pillIcon).inset(10)
+            make.leading.equalTo(calenderIcon).inset(10)
         }
         lineView.snp.makeConstraints { make in
-            make.top.equalTo(pillName).inset(17)
+            make.top.equalTo(friendName).inset(17)
             make.leading.bottom.trailing.equalToSuperview()
         }
         middleStack.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.leading.equalToSuperview()
+            make.top.equalTo(topStack.snp.bottom)
+            make.leading.equalToSuperview().offset(18)
         }
         refuseButton.snp.makeConstraints {
             $0.width.equalTo(145.adjustedWidth)
