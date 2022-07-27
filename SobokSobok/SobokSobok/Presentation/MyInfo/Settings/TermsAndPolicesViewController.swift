@@ -19,14 +19,14 @@ final class TermsAndPolicesViewController: UIViewController {
         UIApplication.shared.open(url)
     }
     
-    @IBAction func popToSettingVC(_ sender: Any) {
+    @IBAction func popToSettingVC(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func personalInfo(_ sender: Any) {
+    @IBAction func personalInfo(_ sender: UIButton) {
         openSafari(link: "https://suave-lilac-075.notion.site/6629bc1cbcb74d94a9d5d7563fe189ef")
     }
     
-    @IBAction func serviceTerms(_ sender: Any) {
+    @IBAction func serviceTerms(_ sender: UIButton) {
         openSafari(link: "https://suave-lilac-075.notion.site/33840908911044fe8651c1649706d7a1")
     }
 }

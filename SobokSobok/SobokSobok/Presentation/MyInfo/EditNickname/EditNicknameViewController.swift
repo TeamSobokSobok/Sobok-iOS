@@ -142,7 +142,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
         checkUsername()
     }
 
-    @IBAction func touchUpToConfirm(_ sender: Any) {
+    @IBAction func touchUpToConfirm(_ sender: UIButton) {
         if isDuplicationChecked {
             print(nickNameTextField.text ?? "")
         } else {
@@ -150,7 +150,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
         }
     }
 
-    @IBAction func touchUpToDIsmiss(_ sender: Any) {
+    @IBAction func touchUpToDIsmiss(_ sender: UIButton) {
         dismiss(animated: true)
     }
 
