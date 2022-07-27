@@ -11,7 +11,6 @@ import SnapKit
 import Then
 
 final class NoticeListView: BaseView {
-    
     // MARK: - Properties
     private let titleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardBold, ofSize: 24)
@@ -19,7 +18,6 @@ final class NoticeListView: BaseView {
         $0.text = "소중한 지안님의 알림"
         $0.textColor = Color.black
     }
-    
     let noticeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 167)
@@ -37,13 +35,11 @@ final class NoticeListView: BaseView {
         [titleLabel, noticeListCollectionView].forEach { addSubview($0) }
         self.backgroundColor = Color.gray150
     }
-    
     override func setupConstraints() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(84)
             $0.leading.equalToSuperview().offset(20)
         }
-        
         noticeListCollectionView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(141)
             $0.leading.equalToSuperview().offset(20)

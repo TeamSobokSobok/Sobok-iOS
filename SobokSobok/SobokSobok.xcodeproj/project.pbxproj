@@ -225,6 +225,8 @@
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
 		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
 		F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */; };
+		F69516782890FF36000F88D7 /* PillRequest+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69516772890FF36000F88D7 /* PillRequest+CompositionalLayout.swift */; };
+		F695167A2890FF46000F88D7 /* FriendRequest+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69516792890FF46000F88D7 /* FriendRequest+CompositionalLayout.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -441,6 +443,8 @@
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
 		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
 		F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSecondControl.swift; sourceTree = "<group>"; };
+		F69516772890FF36000F88D7 /* PillRequest+CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PillRequest+CompositionalLayout.swift"; sourceTree = "<group>"; };
+		F69516792890FF46000F88D7 /* FriendRequest+CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendRequest+CompositionalLayout.swift"; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1610,7 +1614,6 @@
 		F605025627BBFBCC0010DEC8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F605025827BBFBF70010DEC8 /* Cells */,
 				F605027427BE186B0010DEC8 /* Views */,
 				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
 			);
@@ -1620,10 +1623,11 @@
 		F605025827BBFBF70010DEC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */,
 				F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */,
+				F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */,
 			);
-			path = Cells;
+			name = Cells;
+			path = ../Cells;
 			sourceTree = "<group>";
 		};
 		F605025927BBFC2F0010DEC8 /* NoticeSecond */ = {
@@ -1647,7 +1651,8 @@
 		F605027427BE186B0010DEC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F605027527BE18790010DEC8 /* EmptyView.swift */,
+				F605025827BBFBF70010DEC8 /* Cells */,
+				F69516762890FF05000F88D7 /* Layout */,
 				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
 			);
 			path = Views;
@@ -1659,6 +1664,16 @@
 				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F69516762890FF05000F88D7 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				F605027527BE18790010DEC8 /* EmptyView.swift */,
+				F69516772890FF36000F88D7 /* PillRequest+CompositionalLayout.swift */,
+				F69516792890FF46000F88D7 /* FriendRequest+CompositionalLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1863,6 +1878,7 @@
 				9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				BDD21AA3278D92B2007D10F6 /* MedicineCollectionViewCell.swift in Sources */,
+				F695167A2890FF46000F88D7 /* FriendRequest+CompositionalLayout.swift in Sources */,
 				F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				F60BAEB7279B3E690012707C /* SplashView.swift in Sources */,
@@ -1932,6 +1948,7 @@
 				EC8EC14A2851BDBA00A744FE /* Protocol ++ .swift in Sources */,
 				BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */,
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
+				F69516782890FF36000F88D7 /* PillRequest+CompositionalLayout.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
