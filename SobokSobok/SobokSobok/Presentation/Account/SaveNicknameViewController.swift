@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class SaveNicknameViewController: BaseViewController {
+protocol SaveNicknameProtocol: StyleProtocol {}
+
+final class SaveNicknameViewController: UIViewController, SaveNicknameProtocol {
 
     // MARK: - Properties
     private var nameCount: Int = 0
@@ -24,10 +26,11 @@ final class SaveNicknameViewController: BaseViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
         setNickname()
     }
     
-    override func style() {
+    func style() {
         setWithNoneText()
         searchTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
         searchTextField.addTarget(self, action: #selector(self.completeTyping), for: .editingDidEnd)
