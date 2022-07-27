@@ -31,6 +31,9 @@
                             <rect key="frame" x="0.0" y="5" width="48" height="48"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icBack48"/>
+                            <connections>
+                                <action selector="backToMyInfoVC:" destination="-1" eventType="touchUpInside" id="iuV-h1-Qq9"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-ba-xg3">
                             <rect key="frame" x="192.5" y="19" width="29.5" height="20.5"/>
@@ -58,6 +61,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="askEmail:" destination="-1" eventType="touchUpInside" id="kAD-67-6jL"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일로 문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fk-Vp-ptf">
                                     <rect key="frame" x="0.0" y="14" width="122" height="20.5"/>
@@ -87,9 +93,12 @@
                             <rect key="frame" x="0.0" y="56" width="386" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GQ-9W-OAI" userLabel="약관 및 정책">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="termsAndPolicies:" destination="-1" eventType="touchUpInside" id="l4y-tl-h4A"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약관 및 정책" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1O-rz-xgr">
                                     <rect key="frame" x="0.0" y="14" width="82.5" height="20.5"/>
@@ -104,7 +113,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="4GQ-9W-OAI" secondAttribute="trailing" constant="216" id="1Uk-hp-hFp"/>
+                                <constraint firstAttribute="trailing" secondItem="4GQ-9W-OAI" secondAttribute="trailing" id="1Uk-hp-hFp"/>
                                 <constraint firstItem="a1O-rz-xgr" firstAttribute="leading" secondItem="YNi-Vj-v9L" secondAttribute="leading" id="9Yv-Im-7Vh"/>
                                 <constraint firstItem="a1O-rz-xgr" firstAttribute="centerY" secondItem="YNi-Vj-v9L" secondAttribute="centerY" id="HYt-hW-grT"/>
                                 <constraint firstAttribute="bottom" secondItem="4GQ-9W-OAI" secondAttribute="bottom" id="XkU-qr-l1Y"/>
@@ -119,9 +128,12 @@
                             <rect key="frame" x="0.0" y="112" width="386" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z43-a9-aCS" userLabel="오픈소스 라이선스">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="386" height="48"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="openSourceLicense:" destination="-1" eventType="touchUpInside" id="2a2-T8-fk6"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈소스 라이선스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3g-LD-POW">
                                     <rect key="frame" x="0.0" y="14" width="122" height="20.5"/>
@@ -144,7 +156,7 @@
                                 <constraint firstItem="sSx-g7-Kzg" firstAttribute="centerY" secondItem="sI8-dH-bis" secondAttribute="centerY" id="dbc-LS-quY"/>
                                 <constraint firstItem="z43-a9-aCS" firstAttribute="top" secondItem="sI8-dH-bis" secondAttribute="top" id="hZu-s1-miT"/>
                                 <constraint firstItem="z43-a9-aCS" firstAttribute="leading" secondItem="sI8-dH-bis" secondAttribute="leading" id="pYA-Zz-PVD"/>
-                                <constraint firstAttribute="trailing" secondItem="z43-a9-aCS" secondAttribute="trailing" constant="216" id="y3Y-42-ooO"/>
+                                <constraint firstAttribute="trailing" secondItem="z43-a9-aCS" secondAttribute="trailing" id="y3Y-42-ooO"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -157,6 +169,9 @@
                     <state key="normal" title="로그아웃">
                         <color key="titleColor" name="gray500_sub"/>
                     </state>
+                    <connections>
+                        <action selector="logOut:" destination="-1" eventType="touchUpInside" id="GFd-NP-lr8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-yu-mXo">
                     <rect key="frame" x="21" y="328" width="98" height="34"/>
@@ -166,6 +181,9 @@
                     <state key="normal" title="회원 탈퇴하기">
                         <color key="titleColor" name="gray500_sub"/>
                     </state>
+                    <connections>
+                        <action selector="withdraw:" destination="-1" eventType="touchUpInside" id="Yie-0e-n8m"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

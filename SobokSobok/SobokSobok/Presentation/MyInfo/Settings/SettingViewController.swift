@@ -7,22 +7,34 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+final class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backToMyInfoVC(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    @IBAction func askEmail(_ sender: Any) {
+        print("askEmail")
+    }
+    
+    @IBAction func termsAndPolicies(_ sender: Any) {
+        print("termsAndPolicies")
+    }
+    
+    @IBAction func openSourceLicense(_ sender: Any) {
+        print("openSourceLicense")
+    }
+    
+    @IBAction func logOut(_ sender: Any) {
+        print("logout")
+    }
+    
+    @IBAction func withdraw(_ sender: Any) {
+        print("withdraw")
+    }
+    
 }
