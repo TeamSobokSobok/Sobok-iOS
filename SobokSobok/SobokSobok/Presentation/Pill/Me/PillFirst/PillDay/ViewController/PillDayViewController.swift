@@ -66,7 +66,10 @@ extension PillDayViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: PillDayTableViewCell.self)
+    
+        cell.selectionStyle = .none
         cell.updateCell(viewModel, indexPath: indexPath)
+    
         return cell
     }
     
