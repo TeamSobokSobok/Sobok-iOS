@@ -12,6 +12,12 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    private func openSafari(link: String) {
+        guard let url = URL(string: link)
+        else { return }
+        UIApplication.shared.open(url)
+    }
 
     @IBAction func backToMyInfoVC(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -26,7 +32,7 @@ final class SettingViewController: UIViewController {
     }
     
     @IBAction func openSourceLicense(_ sender: Any) {
-        print("openSourceLicense")
+        openSafari(link: "https://suave-lilac-075.notion.site/24cf548eac844195b6761770be57b3f1")
     }
     
     @IBAction func logOut(_ sender: Any) {

@@ -13,14 +13,20 @@ final class TermsAndPolicesViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    private func openSafari(link: String) {
+        guard let url = URL(string: link)
+        else { return }
+        UIApplication.shared.open(url)
+    }
+    
     @IBAction func popToSettingVC(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func personalInfo(_ sender: Any) {
-        print("personalInfo")
+        openSafari(link: "https://suave-lilac-075.notion.site/6629bc1cbcb74d94a9d5d7563fe189ef")
     }
     
     @IBAction func serviceTerms(_ sender: Any) {
-        print("serviceTerms")
+        openSafari(link: "https://suave-lilac-075.notion.site/33840908911044fe8651c1649706d7a1")
     }
 }
