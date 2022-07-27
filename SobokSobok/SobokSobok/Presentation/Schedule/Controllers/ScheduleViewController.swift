@@ -135,7 +135,7 @@ final class ScheduleViewController: BaseViewController {
 
 extension ScheduleViewController {
     private func updateUI() {
-        friendNameView.isHidden = false
+        friendNameView.isHidden = friendName == nil ? true : false
         friendNameView.friendNameLabel.text = friendName
         calendarTopView.dateLabel.text = currentDate.toString(of: .day)
     }
