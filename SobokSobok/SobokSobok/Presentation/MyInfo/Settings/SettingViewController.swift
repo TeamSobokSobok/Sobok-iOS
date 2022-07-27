@@ -9,6 +9,8 @@ import UIKit
 
 final class SettingViewController: UIViewController {
 
+    let email: String = "soboksobok.official@gmail.com"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,8 +26,12 @@ final class SettingViewController: UIViewController {
     }
     
     @IBAction func askEmail(_ sender: Any) {
-        print("askEmail")
-    }
+        print("mailto:\(email)")
+        let mailtoString = "mailto:sobok.official@gmail.com".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let mailtoUrl = URL(string: mailtoString!)!
+        if UIApplication.shared.canOpenURL(mailtoUrl) {
+                UIApplication.shared.open(mailtoUrl, options: [:])
+        }    }
     
     @IBAction func termsAndPolicies(_ sender: Any) {
         navigationController?.pushViewController(TermsAndPolicesViewController.instanceFromNib(), animated: true)
