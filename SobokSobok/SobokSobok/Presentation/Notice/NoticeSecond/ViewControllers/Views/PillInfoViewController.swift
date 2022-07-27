@@ -5,8 +5,6 @@
 //  Created by 정은희 on 2022/01/11.
 //
 
-import UIKit
-
 final class PillInfoViewController: UIViewController {
     // MARK: - Properties
     private var pillInfoList: [SendInfoData] = SendInfoData.dummy
@@ -26,21 +24,21 @@ final class PillInfoViewController: UIViewController {
 
 // MARK: - Extensions
 extension PillInfoViewController: NoticeSecondControl {
-    func target() {
+    internal func target() {
         pillInfoView.navigationView.navigationButton.addTarget(self, action: #selector(addDismiss), for: .touchUpInside)
     }
-    
+
     @objc private func addDismiss() { self.dismiss(animated: true) }
-    
+
     private func setInfoData() {
         // TODO: - 서버통신 할 때는 setInfoData(data: pillInfoList[pillNumber]) 로 바꾸기
         guard let pillInfo = pillInfoList.first else { return }
         let timeCount = pillInfo.makeTimeCount()
-        
+
         pillInfoView.titleLabel.text = pillInfo.pillInfo
         pillInfoView.weekLabel.text = pillInfo.termInfo
         pillInfoView.periodLabel.text = pillInfo.periodInfo
-        
+
         setTimeViews(timeCount: timeCount, timeData: pillInfo.timeInfo)
     }
 

@@ -10,7 +10,6 @@ import SnapKit
 import Then
 
 final class FriendRequestCollectionViewCell: UICollectionViewCell {
-    
     // MARK: - Properties
     lazy var accept: (() -> Void) = {}
     lazy var refuse: (() -> Void) = {}

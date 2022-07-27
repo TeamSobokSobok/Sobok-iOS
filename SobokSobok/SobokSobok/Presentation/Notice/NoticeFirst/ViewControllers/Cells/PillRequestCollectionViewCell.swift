@@ -11,7 +11,6 @@ import SnapKit
 import Then
 
 final class PillRequestCollectionViewCell: UICollectionViewCell {
-    
     // MARK: - Properties
     lazy var info: (() -> Void) = {}
     lazy var accept: (() -> Void) = {}

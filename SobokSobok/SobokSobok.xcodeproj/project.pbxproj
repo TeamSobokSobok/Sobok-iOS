@@ -223,6 +223,8 @@
 		F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
+		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
+		F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -437,6 +439,8 @@
 		F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoDataModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
+		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
+		F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSecondControl.swift; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1597,9 +1601,8 @@
 		F605025527BBFBB30010DEC8 /* NoticeFirst */ = {
 			isa = PBXGroup;
 			children = (
-				F605027427BE186B0010DEC8 /* Views */,
-				F605025827BBFBF70010DEC8 /* Cells */,
 				F605025627BBFBCC0010DEC8 /* ViewControllers */,
+				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
 			);
 			path = NoticeFirst;
 			sourceTree = "<group>";
@@ -1607,6 +1610,8 @@
 		F605025627BBFBCC0010DEC8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F605025827BBFBF70010DEC8 /* Cells */,
+				F605027427BE186B0010DEC8 /* Views */,
 				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -1624,8 +1629,8 @@
 		F605025927BBFC2F0010DEC8 /* NoticeSecond */ = {
 			isa = PBXGroup;
 			children = (
-				F635EEA527C7896A009B9246 /* Views */,
 				F605025A27BBFC360010DEC8 /* ViewControllers */,
+				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
 			);
 			path = NoticeSecond;
 			sourceTree = "<group>";
@@ -1633,6 +1638,7 @@
 		F605025A27BBFC360010DEC8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F635EEA527C7896A009B9246 /* Views */,
 				F6538FA6278D814900B20B5E /* PillInfoViewController.swift */,
 			);
 			path = ViewControllers;
@@ -1868,6 +1874,7 @@
 				9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
+				F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */,
 				BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */,
 				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
@@ -1963,6 +1970,7 @@
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				EC8EC12F2851001300A744FE /* AddPillTimeView.swift in Sources */,
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
+				F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */,
 				BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */,
 				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
