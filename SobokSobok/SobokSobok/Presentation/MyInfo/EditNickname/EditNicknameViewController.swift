@@ -9,7 +9,7 @@ import UIKit
 
 protocol EditNicknameProtocol: StyleProtocol {}
 
-class EditNicknameViewController: UIViewController, EditNicknameProtocol {
+final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
 
     // MARK: - Properties
     var nickname: String?
