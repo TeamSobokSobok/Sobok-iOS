@@ -10,7 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class AddPillFirstViewController: BaseViewController {
+protocol AddPillFirstProtocol: StyleProtocol, BindProtocol, TossPillProtocol {}
+
+final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
     
     private lazy var input = AddPillFirstViewModel.Input(
         didEverydayButtonTap: addPillFirstView.everydayButton.rx.tap.asSignal(),
@@ -18,7 +20,7 @@ final class AddPillFirstViewController: BaseViewController {
         didSpecificPeriodButtonTap: addPillFirstView.specificPeriodButton.rx.tap.asSignal(),
         selectPeriodButtonTap: addPillFirstView.specificView.backgroundButton.rx.tap.asSignal()
     )
-    
+    var type: TossPill = .myPill
     var specific: Specific?
     private lazy var output = viewModel.transform(input: input)
     private let disposeBag = DisposeBag()
@@ -36,26 +38,26 @@ final class AddPillFirstViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
+        style()
         bind()
     }
     
-    override func style() {
-        super.style()
-        view.backgroundColor = .white
+    func divide(style: PillStyle) {
+        let navigationView = addPillFirstView.navigationView
+        
+        navigationView.bottomFirstView.isHidden = style.bottomNavigationBarIsHidden
+        
+        [navigationView.sendBottomFirstView,
+         navigationView.sendBottomSecondView].forEach {
+            $0.isHidden = style.sendBottomNavigationBarIsHidden
+        }
+    }
+    
+    func style() {
         tabBarController?.tabBar.isHidden = true
     }
     
-    private func bind() {
-        // bind -> MainThread에서 실행되는 것을 보장
-        // subscribe를 통해 CollectionView를 만들 수 있지만 구현에 따라 Background에서 실행될 수 있으므로 MainThread를 보장하지 않음
-        // 위와 같은 방법을 해결하는 방법이 DispatchQueue.main.async와 .observeOn(MainScheduler.instance)가 있음
-        // 하지만 자주 사용하지 않음 -> RxCocoa의 장점인 bind가 MainThread를 보장하기 때문에
-        // 결론 bind를 사용한다면 Thread에 대한 고민 X
-        
-        // 하나의 버튼을 공유해서 사용하는데 enum으로 분기처리를 해줌
-        // 여기서 문제가 drive를 하면 코드가 돌아가질 않음
-        // input, output 상관없이 bind를 쓴다면 먹힘
-        // bind -> 값, 데이터 / drive -> UI
+    func bind() {
         addPillFirstView.everydayButton.rx.tap.bind {
             self.addPillFirstView.everydayButton.isSelected.toggle()
             if self.addPillFirstView.everydayButton.isSelected {
@@ -94,9 +96,18 @@ final class AddPillFirstViewController: BaseViewController {
                 }
             }
             .disposed(by: disposeBag)
+        
+        addPillFirstView.nextButton.rx.tap
+            .bind {
+                switch self.type {
+                case .myPill:
+                    self.pushSecondView(style: .myPill)
+                case .friendPill:
+                    self.pushSecondView(style: .friendPill)
+                }
+            }
+            .disposed(by: disposeBag)
     
-        // drive에서 UI업데이트를 하는데 이 방식이 맞는지 모르겠음
-        // specificLabel의 Text -> Observable로 바꿀 예정
         output.isEverydaySelected
             .drive(onNext: {
                 self.addPillFirstView.everydayButton.isSelected = $0
@@ -122,8 +133,6 @@ final class AddPillFirstViewController: BaseViewController {
                 })
             .disposed(by: disposeBag)
         
-        // 보통 프로퍼티의 속성 감시자 didSet을 사용해서 UI를 업데이트 해주는데 MVVM, 따로 만든 Helper에서는 프로퍼티마다 didSet이 동작을 함
-        // 따라서 UI업데이트 시 bind를 통해 UI업데이트를 하면 됨 
         pillTimeViewModel.timeList.bind { [weak self] _ in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -151,7 +160,7 @@ final class AddPillFirstViewController: BaseViewController {
             }
         }
     }
-    
+        
     private func assignDelegation() {
         addPillFirstView.collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
@@ -196,6 +205,14 @@ extension AddPillFirstViewController {
         viewController.modalTransitionStyle = .crossDissolve
         self.present(viewController, animated: true)
     }
+    
+    private func pushSecondView(style: PillStyle) {
+        let addPillSecondViewController = AddPillSecondViewController()
+        addPillSecondViewController.divide(style: style)
+        addPillSecondViewController.type = style.type
+        
+        self.navigationController?.pushViewController(addPillSecondViewController, animated: true)
+    }
 }
 
 extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -207,10 +224,8 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
   
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillTimeCollectionViewCell.self)
         
-        // cell의 UI업데이트
         cell.updateCell(pillTimeViewModel, indexPath: indexPath)
         
-        // XButton 클릭 시 지움
         cell.viewModel.deleteCellClosure = { [weak self] in
             guard let self = self else { return }
             self.pillTimeViewModel.deleteCell(index: indexPath.row)

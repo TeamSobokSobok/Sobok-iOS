@@ -109,7 +109,14 @@ final class AddPillFirstView: BaseView {
     }
     
     func hideBottomView() {
-        [navigationView.bottomSecondView, navigationView.bottomThirdView].forEach {
+        [navigationView.bottomFirstView,
+         navigationView.bottomSecondView,
+         navigationView.bottomThirdView,
+         navigationView.sendBottomFirstView,
+         navigationView.sendBottomSecondView,
+         navigationView.sendBottomThirdView,
+         navigationView.sendBottomFourthView
+        ].forEach {
             $0.isHidden = true
         }
     }

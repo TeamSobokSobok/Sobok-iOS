@@ -33,6 +33,11 @@ final class MainViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         getMySchedules(date: "2022-06-30")
         getMyPillLists(date: "2022-06-22")

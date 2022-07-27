@@ -7,17 +7,17 @@
 
 import UIKit
 
-import EasyKit
-
 protocol AddMedicineSheetDismiss: AnyObject {
     func addMedicineSheetDismiss()
     func pushAddFirstViewController()
 }
 
-final class AddMedicineSheet: BaseViewController {
+protocol AddMedicineProtocol: StyleProtocol {}
+
+final class AddMedicineSheet: UIViewController, AddMedicineProtocol {
 
     // MARK: Properties
-    var pillNumber = Int()
+    var pillNumber: Int = 10
     weak var delegate: AddMedicineSheetDismiss?
     private let targetListForMedicine = [
         (image: Image.icMyFillPlus, text: "내 약 추가"),
@@ -38,8 +38,7 @@ final class AddMedicineSheet: BaseViewController {
         getMyPillCount()
     }
     
-    override func style() {
-        super.style()
+    func style() {
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         sheetHeight.constant = 0
@@ -54,7 +53,6 @@ final class AddMedicineSheet: BaseViewController {
     
     private func updateData(data: PillCount) {
         pillNumber = data.pillCount
-        print(pillNumber)
     }
     
     func assignDelegation() {
@@ -70,17 +68,29 @@ final class AddMedicineSheet: BaseViewController {
         }
     }
     
-//    func pushMedicineFirstViewController(tossPill: ㅁㅇㅇ.TossPill) {
-//        // 바텀시트 dismiss 후에 push를 해줘야 함.
-//        // presentingViewController가 탭바
-//        // 탭바의 selectedViewController를 사용하기 위해 타입 캐스팅
-//        self.dismiss(animated: true)
-//        guard let viewController = self.presentingViewController as? UITabBarController else { return }
-//        guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-//        let addMyMedicineViewController = AddMyMedicineViewController.instanceFromNib()
-//        addMyMedicineViewController.tossPill = tossPill
-//        selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
-//    }
+    private func pushMedicineFirstViewController(style: PillStyle) {
+        // 바텀시트 dismiss 후에 push를 해줘야 함.
+        // presentingViewController가 탭바
+        // 탭바의 selectedViewController를 사용하기 위해 타입 캐스팅
+        self.dismiss(animated: true)
+        guard let viewController = self.presentingViewController as? UITabBarController else { return }
+        guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
+        let addMyMedicineViewController = AddPillFirstViewController.instanceFromNib()
+        addMyMedicineViewController.divide(style: .myPill)
+        selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
+    }
+    
+    private func pushNicknameViewController(tossPill: TossPill) {
+        // 바텀시트 dismiss 후에 push를 해줘야 함.
+        // presentingViewController가 탭바
+        // 탭바의 selectedViewController를 사용하기 위해 타입 캐스팅
+        self.dismiss(animated: true)
+        guard let viewController = self.presentingViewController as? UITabBarController else { return }
+        guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
+        let sendPillFirstViewController = SendPillFirstViewController.instanceFromNib()
+        sendPillFirstViewController.type = tossPill
+        selectedViewController.pushViewController(sendPillFirstViewController, animated: true)
+    }
     
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true) {
@@ -112,22 +122,21 @@ extension AddMedicineSheet: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            if pillNumber < 0 {
-//                self.dismiss(animated: true)
-//                guard let viewController = self.presentingViewController as? UITabBarController else { return }
-//                guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-//                let addMyMedicineViewController = PillLimitViewController.instanceFromNib()
-//                selectedViewController.pushViewController(addMyMedicineViewController, animated: true)
-//            } else if pillNumber == 0 {
-//                pushMedicineFirstViewController(tossPill: .me)
-//            } else {
-//                pushMedicineFirstViewController(tossPill: .me)
-//            }
-//           
-//        } else {
-//            pushMedicineFirstViewController(tossPill: .friend)
-//        }
+        if indexPath.row == 0 {
+            if pillNumber < 0 {
+                self.dismiss(animated: true)
+                guard let viewController = self.presentingViewController as? UITabBarController else { return }
+                guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
+                let pillLimitViewController = PillLimitViewController.instanceFromNib()
+                selectedViewController.pushViewController(pillLimitViewController, animated: true)
+            } else if pillNumber == 0 {
+                pushMedicineFirstViewController(style: .myPill)
+            } else {
+                pushMedicineFirstViewController(style: .myPill)
+            }
+        } else {
+            pushNicknameViewController(tossPill: .friendPill)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
