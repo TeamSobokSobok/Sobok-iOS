@@ -38,6 +38,8 @@
 		9AB833F5288972440040FC2A /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB833F3288972440040FC2A /* SettingViewController.xib */; };
 		9AB833F8288972A80040FC2A /* EditNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB833F6288972A80040FC2A /* EditNicknameViewController.swift */; };
 		9AB833F9288972A80040FC2A /* EditNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB833F7288972A80040FC2A /* EditNicknameViewController.xib */; };
+		9AB833FC28912F0E0040FC2A /* TermsAndPolicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */; };
+		9AB833FD28912F0E0040FC2A /* TermsAndPolicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */; };
 		9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */; };
 		9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */; };
 		9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */; };
@@ -160,6 +162,7 @@
 		EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */; };
 		EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042866286022A0001DD1EC /* NoFriendView.swift */; };
 		EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042868286022BF001DD1EC /* NoFriendViewController.swift */; };
+		EC04286C28603098001DD1EC /* SendPillFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04286B28603098001DD1EC /* SendPillFirstView.swift */; };
 		EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4AD0AC288E6D9A005452BD /* PillStyle.swift */; };
 		EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */; };
 		EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */; };
@@ -259,6 +262,8 @@
 		9AB833F3288972440040FC2A /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		9AB833F6288972A80040FC2A /* EditNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNicknameViewController.swift; sourceTree = "<group>"; };
 		9AB833F7288972A80040FC2A /* EditNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNicknameViewController.xib; sourceTree = "<group>"; };
+		9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPolicesViewController.swift; sourceTree = "<group>"; };
+		9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndPolicesViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
 		9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteSignUpViewController.xib; sourceTree = "<group>"; };
 		9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNickNameVIewController.swift; sourceTree = "<group>"; };
@@ -541,6 +546,8 @@
 			children = (
 				9AB833F2288972430040FC2A /* SettingViewController.swift */,
 				9AB833F3288972440040FC2A /* SettingViewController.xib */,
+				9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */,
+				9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1763,6 +1770,7 @@
 				9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */,
 				EC03760F278B2E4000CA4B54 /* AddMedicineSheet.xib in Resources */,
 				BDDAA5952789B2A2000C0AF8 /* generate.py in Resources */,
+				9AB833FD28912F0E0040FC2A /* TermsAndPolicesViewController.xib in Resources */,
 				F60BAEB8279B3E690012707C /* SplashView.xib in Resources */,
 				BD515E42278770C7003BD5A4 /* Assets.xcassets in Resources */,
 				BD9857A32791CA97009883FC /* CalendarViewController.xib in Resources */,
@@ -1947,6 +1955,7 @@
 				F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */,
 				BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */,
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
+				9AB833FC28912F0E0040FC2A /* TermsAndPolicesViewController.swift in Sources */,
 				ECAF4D2B284F979200B12DA7 /* AddPillFirstViewModel.swift in Sources */,
 				EC02140B27D1E7D200CF3569 /* PillPeriodViewModel.swift in Sources */,
 				EC02140427D0F85000CF3569 /* PillDayViewModel.swift in Sources */,

@@ -7,22 +7,45 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+final class SettingViewController: UIViewController {
 
+    private let email: String = "soboksobok.official@gmail.com"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    private func openSafari(link: String) {
+        guard let url = URL(string: link) else { return }
+        UIApplication.shared.open(url)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backToMyInfoVC(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    @IBAction func askEmail(_ sender: UIButton) {
+        print("mailto:\(email)")
+        let mailtoString = "mailto:sobok.official@gmail.com".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let mailtoUrl = URL(string: mailtoString!)!
+        if UIApplication.shared.canOpenURL(mailtoUrl) {
+                UIApplication.shared.open(mailtoUrl, options: [:])
+        }    }
+    
+    @IBAction func termsAndPolicies(_ sender: UIButton) {
+        navigationController?.pushViewController(TermsAndPolicesViewController.instanceFromNib(), animated: true)
+    }
+    
+    @IBAction func openSourceLicense(_ sender: UIButton) {
+        openSafari(link: "https://suave-lilac-075.notion.site/24cf548eac844195b6761770be57b3f1")
+    }
+    
+    @IBAction func logOut(_ sender: UIButton) {
+        print("logout")
+    }
+    
+    @IBAction func withdraw(_ sender: UIButton) {
+        print("withdraw")
+    }
+    
 }
