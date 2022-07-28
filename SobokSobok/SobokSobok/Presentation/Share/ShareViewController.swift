@@ -8,27 +8,40 @@
 import UIKit
 
 final class ShareViewController: BaseViewController {
-    @IBOutlet weak var pagerTab: PagerTab!
+    var members: [Member] = [
+        Member(groupId: 12, memberId: 12, memberName: "TAB"),
+        Member(groupId: 12, memberId: 12, memberName: "TAB"),
+        Member(groupId: 12, memberId: 12, memberName: "TAB"),
+    ]
     
-    let calendarViewController = CalendarViewController.instanceFromNib()
-    var viewControllers: [PageComponentProtocol] = []
-    var groupItems = [Member]() {
-        didSet {
-            
-        }
-    }
+    private lazy var shareTopView = ShareTopView()
+    private let scheduleViewController = ScheduleViewController()
+    private lazy var containerView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getGroupInfo()
-        pagerTab.delegate = self
+        
+        view.addSubviews(shareTopView, containerView)
+        embed(scheduleViewController, inView: containerView)
+        
+        shareTopView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(123.adjustedHeight)
+        }
+        
+        containerView.snp.makeConstraints {
+            $0.top.equalTo(shareTopView.snp.bottom)
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
+        
+        scheduleViewController.friendName = "태현"
     }
   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)      
-      
-        tabBarController?.tabBar.isHidden = false
 
+        tabBarController?.tabBar.isHidden = false
     }
 }
 
@@ -45,24 +58,11 @@ extension ShareViewController {
             switch response {
             case .success(let data):
                 if let data = data as? [Member] {
-                    self.groupItems = data
+                    self.members = data
                 }
-                self.setContainerViewController(groupItems: self.groupItems)
             default:
                 return
             }
         }
-    }
-    
-    private func setContainerViewController(groupItems: [Member]) {
-        for index in 0 ..< groupItems.count {
-            let calendarViewController = CalendarViewController.instanceFromNib()
-            calendarViewController.tabName = groupItems[index].memberName
-            calendarViewController.memberId = groupItems[index].memberId
-            viewControllers.append(calendarViewController)
-        }
-        
-        let style = PagerTab.Style.default
-        pagerTab.setup(self, viewControllers: viewControllers, style: style)
     }
 }
