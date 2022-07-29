@@ -47,7 +47,6 @@
 		BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */; };
 		BD0C707F2862273C00CF452F /* ScheduleViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C707E2862273C00CF452F /* ScheduleViewController+DataSource.swift */; };
 		BD0C70812862274A00CF452F /* ScheduleViewController+FSCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C70802862274A00CF452F /* ScheduleViewController+FSCalendar.swift */; };
-		BD0C70832862275700CF452F /* ScheduleViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C70822862275700CF452F /* ScheduleViewController+Network.swift */; };
 		BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCA278B31DC009AA416 /* TabBarItem.swift */; };
 		BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCC278B3369009AA416 /* TabBarController.swift */; };
 		BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14F362278EB4B000F316AF /* ShareViewController.swift */; };
@@ -162,7 +161,6 @@
 		EC037613278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddMedicineTableViewCell.xib */; };
 		EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042866286022A0001DD1EC /* NoFriendView.swift */; };
 		EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042868286022BF001DD1EC /* NoFriendViewController.swift */; };
-		EC04286C28603098001DD1EC /* SendPillFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04286B28603098001DD1EC /* SendPillFirstView.swift */; };
 		EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4AD0AC288E6D9A005452BD /* PillStyle.swift */; };
 		EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EC27C0BA9000B28F90 /* SobokButton.swift */; };
 		EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4BF2EE27C0BD5700B28F90 /* ButtonViewController.swift */; };
@@ -271,7 +269,6 @@
 		BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHeaderView.swift; sourceTree = "<group>"; };
 		BD0C707E2862273C00CF452F /* ScheduleViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+DataSource.swift"; sourceTree = "<group>"; };
 		BD0C70802862274A00CF452F /* ScheduleViewController+FSCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+FSCalendar.swift"; sourceTree = "<group>"; };
-		BD0C70822862275700CF452F /* ScheduleViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+Network.swift"; sourceTree = "<group>"; };
 		BD149DCA278B31DC009AA416 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BD149DCC278B3369009AA416 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BD14F362278EB4B000F316AF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -1129,7 +1126,6 @@
 				BDA400182833F16D0046627A /* ScheduleViewController.swift */,
 				BD0C707E2862273C00CF452F /* ScheduleViewController+DataSource.swift */,
 				BD0C70802862274A00CF452F /* ScheduleViewController+FSCalendar.swift */,
-				BD0C70822862275700CF452F /* ScheduleViewController+Network.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2003,7 +1999,6 @@
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				9AB833F8288972A80040FC2A /* EditNicknameViewController.swift in Sources */,
 				BD515E6D27877837003BD5A4 /* SplashViewController.swift in Sources */,
-				BD0C70832862275700CF452F /* ScheduleViewController+Network.swift in Sources */,
 				BD7120F12796CFA50068B981 /* Pill.swift in Sources */,
 				BD7120FB279738860068B981 /* CalendarViewController+Network.swift in Sources */,
 				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
