@@ -20,14 +20,17 @@ extension ScheduleViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ScheduleCell.reuseIdentifier,
+            withReuseIdentifier: MainScheduleCell.reuseIdentifier,
             for: indexPath
-        ) as? ScheduleCell else { return UICollectionViewCell() }
+        ) as? MainScheduleCell else { return UICollectionViewCell() }
+        
+        cell.delegate = self
         
         if let pill = pillLists[indexPath.section].scheduleList?[indexPath.row] {
             cell.configureCell(with: pill)
+            cell.isChecked = pill.isCheck
         }
-        
+
         return cell
     }
     
@@ -41,5 +44,19 @@ extension ScheduleViewController: UICollectionViewDataSource {
         if indexPath.section != 0 { headerView.hideEditButton() }
         
         return headerView
+    }
+}
+
+extension ScheduleViewController: MainScheduleCellDelegate {
+    func checkButtonTapped(_ cell: MainScheduleCell) {
+        guard let scheduleId = cell.pill?.scheduleId else { return }
+        
+        if cell.isChecked {
+            uncheckPillSchedule(scheduleId: scheduleId)
+        } else {
+            checkPillSchedule(scheduleId: scheduleId)
+        }
+        
+        cell.isChecked.toggle()
     }
 }

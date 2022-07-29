@@ -53,20 +53,17 @@ final class ScheduleViewController: BaseViewController {
     let gregorian = Calendar(identifier: .gregorian)
     var doingDates: [String] = [] {
         didSet {
-            print("change")
             calendarView.reloadData()
         }
     }
     var doneDates: [String] = [] {
         didSet {
-            print("change")
             calendarView.reloadData()
         }
     }
     var selectedDate: String = Date().toString(of: .day)
     var pillLists: [PillList] = [] {
         didSet {
-            print("약 채워졌다~")
             collectionView.reloadData()
             setCollectionViewHeight()
         }
@@ -99,8 +96,6 @@ final class ScheduleViewController: BaseViewController {
         super.viewWillAppear(animated)
         getMySchedules(date: "2022-06-04")
         getMyPillLists(date: "2022-06-22")
-//        checkPillSchedule(scheduleId: 13195)
-        checkPillSchedule(scheduleId: 13195)
     }
     
     override func style() {
@@ -182,8 +177,8 @@ extension ScheduleViewController {
         )
         
         collectionView.register(
-            ScheduleCell.self,
-            forCellWithReuseIdentifier: ScheduleCell.reuseIdentifier
+            MainScheduleCell.self,
+            forCellWithReuseIdentifier: MainScheduleCell.reuseIdentifier
         )
         
         collectionView.register(

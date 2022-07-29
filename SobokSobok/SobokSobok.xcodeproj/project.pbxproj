@@ -86,6 +86,7 @@
 		BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD51AE3A2790BF1500314A94 /* StickerCollectionViewCell.swift */; };
 		BD51AE3D2790BF1500314A94 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */; };
 		BD58ACF62893CBD600832F01 /* ScheduleViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58ACF52893CBD600832F01 /* ScheduleViewController+Network.swift */; };
+		BD58ACF82893D67300832F01 /* MainScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD58ACF72893D67300832F01 /* MainScheduleCell.swift */; };
 		BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8E92788A01C009249D0 /* .swiftlint.yml */; };
 		BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */; };
 		BD64F8F12788B488009249D0 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */; };
@@ -297,6 +298,7 @@
 		BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StickerCollectionViewCell.xib; path = SobokSobok/Presentation/Common/Sheet/StickerCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		BD52481927D509E800B3F5D5 /* SobokSobok.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SobokSobok.entitlements; sourceTree = "<group>"; };
 		BD58ACF52893CBD600832F01 /* ScheduleViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+Network.swift"; sourceTree = "<group>"; };
+		BD58ACF72893D67300832F01 /* MainScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleCell.swift; sourceTree = "<group>"; };
 		BD64F8E92788A01C009249D0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BD64F8EB2788B487009249D0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		BD64F8EC2788B487009249D0 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -871,6 +873,7 @@
 			children = (
 				BD382F66286D86D1002E91F0 /* Views */,
 				BD382F67286D870A002E91F0 /* ViewControllers */,
+				BD58ACF72893D67300832F01 /* MainScheduleCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1879,6 +1882,7 @@
 				BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */,
 				BD51AE3C2790BF1500314A94 /* StickerCollectionViewCell.swift in Sources */,
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
+				BD58ACF82893D67300832F01 /* MainScheduleCell.swift in Sources */,
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */,
