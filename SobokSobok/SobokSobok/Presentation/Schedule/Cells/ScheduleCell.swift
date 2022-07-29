@@ -8,7 +8,13 @@
 import UIKit
 
 class ScheduleCell: UICollectionViewCell {
-    let pillColors: [String: UIColor] = [
+    
+    // MARK: - Properties
+    var pill: Pill?
+    
+    // MARK: - UI Components
+    
+    private let pillColors: [String: UIColor] = [
         "1": Color.pillColorRed,
         "2": Color.pillColorOrange,
         "3": Color.pillColorPurple,
@@ -16,7 +22,7 @@ class ScheduleCell: UICollectionViewCell {
         "5": Color.pillColorPink
     ]
     
-    let stickers: [Int: UIImage] = [
+    private let stickers: [Int: UIImage] = [
         1: Image.sticker1,
         2: Image.sticker2,
         3: Image.sticker3,
@@ -25,7 +31,7 @@ class ScheduleCell: UICollectionViewCell {
         6: Image.sticker6
     ]
     
-    lazy var containerVStackView = UIStackView().then {
+    private lazy var containerVStackView = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill
         $0.alignment = .leading
@@ -41,16 +47,16 @@ class ScheduleCell: UICollectionViewCell {
         $0.addArrangedSubviews(pillColorView, pillNameLabel)
     }
     
-    let pillColorView = UIView().then {
+    private let pillColorView = UIView().then {
         $0.backgroundColor = .red
     }
     
-    let pillNameLabel = UILabel().then {
+    private let pillNameLabel = UILabel().then {
         $0.text = "약 명이 10글자일 땐 이렇게"
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
     }
     
-    lazy var stickerHStackView = UIStackView().then {
+    private lazy var stickerHStackView = UIStackView().then {
         for index in 0..<4 {
             let stickerButton = UIButton()
             stickerButton.setImage(Image.bigSticker1, for: .normal)
@@ -62,13 +68,11 @@ class ScheduleCell: UICollectionViewCell {
         $0.spacing = 5
     }
     
-    let countLabel = UILabel().then {
+    private let countLabel = UILabel().then {
         $0.text = "+ 15"
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
         $0.textColor = Color.gray600
     }
-    
-    var pill: Pill?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -81,7 +85,9 @@ class ScheduleCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+}
+
+extension ScheduleCell {
     private func setupUI() {
         backgroundColor = Color.gray100
         makeRounded(radius: 12)
@@ -112,25 +118,25 @@ class ScheduleCell: UICollectionViewCell {
             $0.bottom.equalToSuperview().inset(13)
         }
     }
-}
-
-extension ScheduleCell {
+    
     func configureCell(with pill: Pill) {
         self.pill = pill
-        pillColorView.backgroundColor = pillColors[pill.color]
-        pillNameLabel.text = pill.pillName
-        countLabel.text = pill.stickerTotalCount > 0 ? "+ \(pill.stickerTotalCount)" : ""
-//        configureStickers(with: pill.stickerId)
+        self.pillColorView.backgroundColor = pillColors[pill.color]
+        self.pillNameLabel.text = pill.pillName
+        
+        let stickers: [Int] = [2, 3, 4, 2, 2, 3]
+        countLabel.text = stickers.count > 4 ? "+ \(stickers.count - 4)" : ""
+        configureStickers(with: stickers)
     }
     
-    private func configureStickers(with stickerId: [StickerId]?) {
+    private func configureStickers(with stickerId: [Int]?) {
         if let stickerId = stickerId,
            !stickerId.isEmpty {
             stickerHStackView.isHidden = false
-            for item in 0..<stickerId.count {
-                let stickerView = stickerHStackView.arrangedSubviews[item] as? UIButton
+            for index in 0..<4 {
+                let stickerView = stickerHStackView.arrangedSubviews[index] as? UIButton
                 stickerView?.isHidden = false
-                stickerView?.setImage(stickers[stickerId[item].stickerId], for: .normal)
+                stickerView?.setImage(stickers[stickerId[index]], for: .normal)
             }
         } else {
             stickerHStackView.isHidden = true

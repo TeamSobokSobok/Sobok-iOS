@@ -871,9 +871,9 @@
 		BD515E67278776D5003BD5A4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BD58ACF92893F6BB00832F01 /* Cells */,
 				BD382F66286D86D1002E91F0 /* Views */,
 				BD382F67286D870A002E91F0 /* ViewControllers */,
-				BD58ACF72893D67300832F01 /* MainScheduleCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -946,6 +946,14 @@
 				BD51AE3B2790BF1500314A94 /* StickerCollectionViewCell.xib */,
 			);
 			path = StickerBottomSheet;
+			sourceTree = "<group>";
+		};
+		BD58ACF92893F6BB00832F01 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD58ACF72893D67300832F01 /* MainScheduleCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		BD7120E62796A5FB0068B981 /* Home */ = {
