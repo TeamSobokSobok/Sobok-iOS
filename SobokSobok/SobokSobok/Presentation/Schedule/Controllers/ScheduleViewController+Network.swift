@@ -33,8 +33,17 @@ extension ScheduleViewController {
     func checkPillSchedule(scheduleId: Int) {
         Task {
             do {
-                let pillDetail = try await scheduleManager.checkPillSchedule(for: scheduleId)
-                print(22222, pillDetail)
+                let result = try await scheduleManager.checkPillSchedule(for: scheduleId)
+                print("check", result)
+            }
+        }
+    }
+    
+    func uncheckPillSchedule(scheduleId: Int) {
+        Task {
+            do {
+                let result = try await scheduleManager.uncheckPillSchedule(for: scheduleId)
+                print("uncheck", result)
             }
         }
     }
