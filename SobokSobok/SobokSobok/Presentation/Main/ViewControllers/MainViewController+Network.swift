@@ -25,7 +25,7 @@ extension MainViewController {
             do {
                 let pillLists = try await scheduleManager.getPillList(for: date)
                 if let pillLists = pillLists,
-                   !schedules.isEmpty {
+                   !pillLists.isEmpty {
                     self.pillLists = pillLists
                 }
             }
