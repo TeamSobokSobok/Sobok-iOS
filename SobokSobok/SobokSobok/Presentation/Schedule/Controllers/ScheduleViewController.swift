@@ -99,6 +99,7 @@ final class ScheduleViewController: BaseViewController {
         super.viewWillAppear(animated)
         getMySchedules(date: "2022-06-04")
         getMyPillLists(date: "2022-06-22")
+        checkPillSchedule(scheduleId: 13195)
     }
     
     override func style() {

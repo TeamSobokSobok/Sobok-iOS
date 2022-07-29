@@ -10,6 +10,7 @@ import Foundation
 enum ScheduleEndPoint {
     case getMySchedule(date: String)
     case getPillList(date: String)
+    case checkPillSchedule(scheduleId: Int)
 }
 
 extension ScheduleEndPoint: EndPoint {
@@ -19,6 +20,8 @@ extension ScheduleEndPoint: EndPoint {
             return .GET
         case .getPillList:
             return .GET
+        case .checkPillSchedule:
+            return .PUT
         }
     }
     
@@ -27,6 +30,8 @@ extension ScheduleEndPoint: EndPoint {
         case .getMySchedule:
             return nil
         case .getPillList:
+            return nil
+        case .checkPillSchedule:
             return nil
         }
     }
@@ -38,6 +43,8 @@ extension ScheduleEndPoint: EndPoint {
             return "\(baseURL)/schedule/calendar?date=\(date)"
         case .getPillList(let date):
             return "\(baseURL)/schedule/detail?date=\(date)"
+        case .checkPillSchedule(let scheduleId):
+            return "\(baseURL)/schedule/check/\(scheduleId)"
         }
     }
 }

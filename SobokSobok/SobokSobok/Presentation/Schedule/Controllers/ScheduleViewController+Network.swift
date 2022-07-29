@@ -29,4 +29,13 @@ extension ScheduleViewController {
             }
         }
     }
+    
+    func checkPillSchedule(scheduleId: Int) {
+        Task {
+            do {
+                let pillDetail = try await scheduleManager.checkPillSchedule(for: scheduleId)
+                print(22222, pillDetail)
+            }
+        }
+    }
 }
