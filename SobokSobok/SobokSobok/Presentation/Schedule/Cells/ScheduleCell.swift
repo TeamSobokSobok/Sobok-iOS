@@ -141,7 +141,7 @@ extension ScheduleCell {
         pillColorView.backgroundColor = pillColors[pill.color]
         pillNameLabel.text = pill.pillName
         countLabel.text = pill.stickerTotalCount > 0 ? "+ \(pill.stickerTotalCount)" : ""
-        configureStickers(with: pill.stickerId)
+//        configureStickers(with: pill.stickerId)
     }
     
     private func configureStickers(with stickerId: [StickerId]?) {

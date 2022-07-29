@@ -1,13 +1,11 @@
 //
-//  MainViewController+Network.swift
+//  ScheduleViewController+Network.swift
 //  SobokSobok
 //
-//  Created by taehy.k on 2022/06/30.
+//  Created by taekki on 2022/07/29.
 //
 
-import Foundation
-
-extension MainViewController {
+extension ScheduleViewController {
     func getMySchedules(date: String) {
         Task {
             do {

@@ -64,7 +64,7 @@ final class ScheduleViewController: BaseViewController {
         }
     }
     var selectedDate: String = Date().toString(of: .day)
-    var pillItems: [PillList] = [] {
+    var pillLists: [PillList] = [] {
         didSet {
             print("약 채워졌다~")
             collectionView.reloadData()
@@ -72,6 +72,15 @@ final class ScheduleViewController: BaseViewController {
         }
     }
     
+    var schedules: [Schedule] = [] {
+        didSet {
+            parseSchedules()
+        }
+    }
+    
+    let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
+                                                               environment: .development)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setCalendar()
@@ -84,6 +93,12 @@ final class ScheduleViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setCollectionViewHeight()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getMySchedules(date: "2022-06-04")
+        getMyPillLists(date: "2022-06-22")
     }
     
     override func style() {
@@ -179,6 +194,21 @@ extension ScheduleViewController {
     func setCollectionView() {
         collectionView.backgroundColor = Color.gray150
         collectionView.collectionViewLayout = generateLayout()
+    }
+    
+    func parseSchedules() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Date.FormatType.full.description
+
+        let doneItems = schedules
+            .filter { $0.isComplete == "done" }
+            .map { dateFormatter.date(from: $0.scheduleDate)!.toString(of: .year) }
+        let doingItems = schedules
+            .filter { $0.isComplete == "doing" }
+            .map { dateFormatter.date(from: $0.scheduleDate)!.toString(of: .year) }
+        
+        self.doneDates = doneItems
+        self.doingDates = doingItems
     }
 }
 
