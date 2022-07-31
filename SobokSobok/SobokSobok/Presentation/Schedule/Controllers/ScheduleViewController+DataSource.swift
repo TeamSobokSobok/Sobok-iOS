@@ -11,23 +11,26 @@ import UIKit
 
 extension ScheduleViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return pillItems.count
+        return pillLists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pillItems[section].scheduleList?.count ?? 0
+        return pillLists[section].scheduleList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ScheduleCell.reuseIdentifier,
+            withReuseIdentifier: MainScheduleCell.reuseIdentifier,
             for: indexPath
-        ) as? ScheduleCell else { return UICollectionViewCell() }
+        ) as? MainScheduleCell else { return UICollectionViewCell() }
         
-        if let pill = pillItems[indexPath.section].scheduleList?[indexPath.row] {
+        cell.delegate = self
+        
+        if let pill = pillLists[indexPath.section].scheduleList?[indexPath.row] {
             cell.configureCell(with: pill)
+            cell.isChecked = pill.isCheck
         }
-        
+
         return cell
     }
     
@@ -41,5 +44,19 @@ extension ScheduleViewController: UICollectionViewDataSource {
         if indexPath.section != 0 { headerView.hideEditButton() }
         
         return headerView
+    }
+}
+
+extension ScheduleViewController: MainScheduleCellDelegate {
+    func checkButtonTapped(_ cell: MainScheduleCell) {
+        guard let scheduleId = cell.pill?.scheduleId else { return }
+        
+        if cell.isChecked {
+            uncheckPillSchedule(scheduleId: scheduleId)
+        } else {
+            checkPillSchedule(scheduleId: scheduleId)
+        }
+        
+        cell.isChecked.toggle()
     }
 }
