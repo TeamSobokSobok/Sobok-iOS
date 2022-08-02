@@ -52,7 +52,15 @@ extension ScheduleViewController {
         Task {
             do {
                 let result = try await scheduleManager.getMemberSchedule(memberId: memberId, date: date)
-                print(11111, result)
+            }
+        }
+    }
+    
+    func getMemberPillLists(memberId: Int, date: String) {
+        Task {
+            do {
+                let result = try await scheduleManager.getMemberPillList(memberId: memberId, date: date)
+                print(22222, result)
             }
         }
     }
