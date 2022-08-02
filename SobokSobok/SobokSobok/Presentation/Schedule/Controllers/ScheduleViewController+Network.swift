@@ -47,4 +47,21 @@ extension ScheduleViewController {
             }
         }
     }
+    
+    func getMemberSchedules(memberId: Int, date: String) {
+        Task {
+            do {
+                let result = try await scheduleManager.getMemberSchedule(memberId: memberId, date: date)
+            }
+        }
+    }
+    
+    func getMemberPillLists(memberId: Int, date: String) {
+        Task {
+            do {
+                let result = try await scheduleManager.getMemberPillList(memberId: memberId, date: date)
+                print(22222, result)
+            }
+        }
+    }
 }

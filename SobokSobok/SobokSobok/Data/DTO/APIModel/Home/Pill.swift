@@ -12,13 +12,18 @@ struct PillList: Codable {
     let scheduleList: [Pill]?
 }
 
+/*
+ TODO: [수정 요청 하기]
+ - 멤버 stickerId는 배열
+ - 내 stickerId는 딕셔너리
+ */
 struct Pill: Codable {
     let scheduleId: Int
     let pillId: Int
     let pillName: String
     let isCheck: Bool
     let color: String
-    let stickerId: [String: Int]
+//    let stickerId: [String: Int]?
     let stickerTotalCount: Int
     let isLikedSchedule: Bool?
 }

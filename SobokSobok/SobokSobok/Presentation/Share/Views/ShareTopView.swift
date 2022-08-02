@@ -9,7 +9,18 @@ import UIKit
 
 final class ShareTopView: BaseView {
     
-    var friends: [String] = ["태현", "태현", "태현", "태현", "태현"]
+    var friends: [Member] = [] {
+        didSet {
+            updateUI()
+            updateButton()
+        }
+    }
+    
+    var currentIndex: Int = 0 {
+        didSet {
+            updateButton()
+        }
+    }
     
     lazy var friendHStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -23,6 +34,7 @@ final class ShareTopView: BaseView {
         $0.setImage(Image.icPlus48, for: .normal)
         $0.tintColor = Color.white
         $0.addTarget(self, action: #selector(addFriendButtonTapped), for: .touchUpInside)
+        $0.isHidden = friends.isEmpty
     }
     
     override func setupView() {
@@ -43,7 +55,7 @@ final class ShareTopView: BaseView {
         
         addFriendButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(7.adjustedHeight)
-            $0.centerY.equalTo(friendHStackView.snp.centerY)
+            $0.bottom.equalToSuperview().inset(3.adjustedHeight)
         }
     }
 }
@@ -51,17 +63,42 @@ final class ShareTopView: BaseView {
 extension ShareTopView {
     
     private func configureHStackView() {
-        for friend in friends {
+        for index in 0..<5 {
             let button = UIButton()
-            button.setTitle(friend, for: .normal)
-            button.setTitleColor(Color.white, for: .normal)
+            button.tag = index
+            button.setTitleColor(Color.middleMint, for: .normal)
+            button.titleLabel?.font = UIFont.font(.pretendardMedium, ofSize: 17)
             button.addTarget(self, action: #selector(friendNameButtonTapped), for: .touchUpInside)
+            button.isHidden = true
             friendHStackView.addArrangedSubviews(button)
         }
     }
     
-    @objc func friendNameButtonTapped() {
-        print("친구 이름")
+    private func updateUI() {
+        for index in friends.indices {
+            let button = friendHStackView.arrangedSubviews[index] as! UIButton
+            button.isHidden = false
+            button.setTitle(friends[index].memberName, for: .normal)
+        }
+        addFriendButton.isHidden = friends.isEmpty
+    }
+    
+    private func updateButton() {
+        for index in friends.indices {
+            let button = friendHStackView.arrangedSubviews[index] as! UIButton
+            
+            if index == currentIndex {
+                button.setTitleColor(Color.white, for: .normal)
+                button.titleLabel?.font = UIFont.font(.pretendardExtraBold, ofSize: 17)
+            } else {
+                button.setTitleColor(Color.middleMint, for: .normal)
+                button.titleLabel?.font = UIFont.font(.pretendardMedium, ofSize: 17)
+            }
+        }
+    }
+    
+    @objc func friendNameButtonTapped(_ sender: UIButton) {
+        currentIndex = sender.tag
     }
     
     @objc func addFriendButtonTapped() {
