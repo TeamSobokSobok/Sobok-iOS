@@ -14,6 +14,7 @@ protocol ScheduleServiceable {
     func uncheckPillSchedule(for scheduleId: Int) async throws -> PillDetail?
     func getGroupInformation() async throws -> [Member]?
     func getMemberSchedule(memberId: Int, date: String) async throws -> [Schedule]?
+    func getMemberPillList(memberId: Int, date: String) async throws -> [PillList]?
 }
 
 struct ScheduleManager: ScheduleServiceable {
@@ -63,6 +64,13 @@ struct ScheduleManager: ScheduleServiceable {
     func getMemberSchedule(memberId: Int, date: String) async throws -> [Schedule]? {
         let request = ScheduleEndPoint
             .getMemberSchedule(memberId: memberId, date: date)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func getMemberPillList(memberId: Int, date: String) async throws -> [PillList]? {
+        let request = ScheduleEndPoint
+            .getMemberPillList(memberId: memberId, date: date)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
