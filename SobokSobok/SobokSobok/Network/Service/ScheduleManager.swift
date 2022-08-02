@@ -13,6 +13,7 @@ protocol ScheduleServiceable {
     func checkPillSchedule(for scheduleId: Int) async throws -> PillDetail?
     func uncheckPillSchedule(for scheduleId: Int) async throws -> PillDetail?
     func getGroupInformation() async throws -> [Member]?
+    func getMemberSchedule(memberId: Int, date: String) async throws -> [Schedule]?
 }
 
 struct ScheduleManager: ScheduleServiceable {
@@ -55,6 +56,13 @@ struct ScheduleManager: ScheduleServiceable {
     func getGroupInformation() async throws -> [Member]? {
         let request = ScheduleEndPoint
             .getGroupInformation
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func getMemberSchedule(memberId: Int, date: String) async throws -> [Schedule]? {
+        let request = ScheduleEndPoint
+            .getMemberSchedule(memberId: memberId, date: date)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
