@@ -7,12 +7,22 @@
 
 import UIKit
 
-class WithdrawalViewController: UIViewController {
+protocol WitrhdrawalProtocol: StyleProtocol {}
 
+final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
+
+    @IBOutlet weak var reasonView: UIView!
+    @IBOutlet weak var reasonTextView: UITextView!
+    @IBOutlet weak var reasonTextCounter: UILabel!
+    @IBOutlet weak var witrhdrawButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        style()
     }
-
+    
+    func style () {
+        reasonView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        witrhdrawButton.makeRounded(radius: 12)
+    }
 }

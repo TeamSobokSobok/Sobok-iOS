@@ -19,7 +19,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WithdrawalViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="reasonTextCounter" destination="kxu-mc-H2w" id="AeQ-3W-WDm"/>
+                <outlet property="reasonTextView" destination="xPA-5g-0pS" id="iIL-nX-Lie"/>
+                <outlet property="reasonView" destination="K07-88-GBF" id="Alc-kH-Nfy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="witrhdrawButton" destination="Xmm-of-TIK" id="C75-Od-Qts"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
