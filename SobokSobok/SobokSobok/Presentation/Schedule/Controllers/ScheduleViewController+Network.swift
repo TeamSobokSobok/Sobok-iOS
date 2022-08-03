@@ -73,4 +73,13 @@ extension ScheduleViewController {
             }
         }
     }
+    
+    func postSticker(for scheduleId: Int, withSticker stickerId: Int) {
+        Task {
+            do {
+                let result = try await stickerManageer.postStickers(for: scheduleId, withSticker: stickerId)
+                print(44444, result)
+            }
+        }
+    }
 }
