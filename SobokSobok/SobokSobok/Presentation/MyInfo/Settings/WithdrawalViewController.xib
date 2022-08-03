@@ -73,7 +73,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K07-88-GBF" userLabel="input">
                     <rect key="frame" x="20" y="245.5" width="374" height="160"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="적어주시는 여러분의 소중한 의견은 서비스 개선에 큰 도움이 되요:)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xPA-5g-0pS">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="적어주시는 여러분의 소중한 의견은 서비스 개선에 큰 도움이 되어요:)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xPA-5g-0pS">
                             <rect key="frame" x="16" y="12" width="342" height="108"/>
                             <color key="textColor" name="gray500_sub"/>
                             <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
