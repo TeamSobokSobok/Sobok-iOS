@@ -77,6 +77,8 @@ final class ScheduleViewController: BaseViewController {
     
     let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
                                                                environment: .development)
+    let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(),
+                                                             environment: .development)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +99,10 @@ final class ScheduleViewController: BaseViewController {
         getMySchedules(date: "2022-06-04")
         getMyPillLists(date: "2022-06-22")
 //        getMemberSchedules(memberId: 187, date: "2022-06-22")
-        getMemberPillLists(memberId: 187, date: "2022-06-22")
+//        getMemberPillLists(memberId: 187, date: "2022-06-22")
+//        getStickers(for: 13161)
+//        postSticker(for: 13530, withSticker: 3)
+        changeSticker(for: 151, withSticker: 1)
     }
     
     override func style() {

@@ -64,4 +64,31 @@ extension ScheduleViewController {
             }
         }
     }
+    
+    func getStickers(for scheduleId: Int) {
+        Task {
+            do {
+                let stickers = try await stickerManageer.getStickers(for: scheduleId)
+                print(33333, stickers)
+            }
+        }
+    }
+    
+    func postSticker(for scheduleId: Int, withSticker stickerId: Int) {
+        Task {
+            do {
+                let result = try await stickerManageer.postStickers(for: scheduleId, withSticker: stickerId)
+                print(44444, result)
+            }
+        }
+    }
+    
+    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) {
+        Task {
+            do {
+                let result = try await stickerManageer.changeSticker(for: likeScheduleId, withSticker: stickerId)
+                print(55555, result)
+            }
+        }
+    }
 }
