@@ -10,7 +10,7 @@ import Foundation
 protocol StickerServiceable {
     func getStickers(for scheduleId: Int) async throws -> [Stickers]?
     func postStickers(for scheduleId: Int, withSticker stickerId: Int) async throws -> Sticker?
-    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) async throws -> Sticker?
+    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) async throws -> [Sticker]?
 }
 
 struct StickerManager: StickerServiceable {
@@ -36,7 +36,7 @@ struct StickerManager: StickerServiceable {
         return try await self.apiService.request(request)
     }
     
-    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) async throws -> Sticker? {
+    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) async throws -> [Sticker]? {
         let request = StickerEndPoint
             .changeSticker(likeScheduleId: likeScheduleId, stickerId: stickerId)
             .createRequest(environment: environment)

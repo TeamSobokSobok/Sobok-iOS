@@ -82,4 +82,13 @@ extension ScheduleViewController {
             }
         }
     }
+    
+    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) {
+        Task {
+            do {
+                let result = try await stickerManageer.changeSticker(for: likeScheduleId, withSticker: stickerId)
+                print(55555, result)
+            }
+        }
+    }
 }

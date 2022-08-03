@@ -101,7 +101,8 @@ final class ScheduleViewController: BaseViewController {
 //        getMemberSchedules(memberId: 187, date: "2022-06-22")
 //        getMemberPillLists(memberId: 187, date: "2022-06-22")
 //        getStickers(for: 13161)
-        postSticker(for: 13530, withSticker: 3)
+//        postSticker(for: 13530, withSticker: 3)
+        changeSticker(for: 151, withSticker: 1)
     }
     
     override func style() {
