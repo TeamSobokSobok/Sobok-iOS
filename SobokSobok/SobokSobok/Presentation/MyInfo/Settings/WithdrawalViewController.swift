@@ -25,4 +25,12 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
         reasonView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         witrhdrawButton.makeRounded(radius: 12)
     }
+    
+    @IBAction func backToSettingVC(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func confirmWitrhdrawal(_ sender: UIButton) {
+        print("회원탈퇴")
+    }
 }
