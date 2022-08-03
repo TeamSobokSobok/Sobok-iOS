@@ -132,6 +132,8 @@
 		BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A72789BCD3000C0AF8 /* Color.swift */; };
 		BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDAA5A82789BCD3000C0AF8 /* Text.swift */; };
 		BDDF7691289951C20096196B /* ShareViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF7690289951C20096196B /* ShareViewController+Network.swift */; };
+		BDDF7721289A952B0096196B /* StickerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF7720289A952B0096196B /* StickerEndPoint.swift */; };
+		BDDF7723289A95340096196B /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF7722289A95340096196B /* StickerManager.swift */; };
 		BDE2ADE42891266200A42559 /* ShareTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2ADE32891266200A42559 /* ShareTopView.swift */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
 		EC0213EC27CE665B00CF3569 /* AddPillFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0213EB27CE665B00CF3569 /* AddPillFirstView.swift */; };
@@ -344,6 +346,8 @@
 		BDDAA5A72789BCD3000C0AF8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BDDAA5A82789BCD3000C0AF8 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		BDDF7690289951C20096196B /* ShareViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareViewController+Network.swift"; sourceTree = "<group>"; };
+		BDDF7720289A952B0096196B /* StickerEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerEndPoint.swift; sourceTree = "<group>"; };
+		BDDF7722289A95340096196B /* StickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerManager.swift; sourceTree = "<group>"; };
 		BDE2ADE32891266200A42559 /* ShareTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTopView.swift; sourceTree = "<group>"; };
 		EC0213EB27CE665B00CF3569 /* AddPillFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFirstView.swift; sourceTree = "<group>"; };
 		EC0213ED27CE669B00CF3569 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
@@ -563,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				BD382F70286DA350002E91F0 /* ScheduleManager.swift */,
+				BDDF7722289A95340096196B /* StickerManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */,
+				BDDF7720289A952B0096196B /* StickerEndPoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1837,6 +1843,7 @@
 				9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */,
 				EC037612278B2EAF00CA4B54 /* AddMedicineTableViewCell.swift in Sources */,
 				F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */,
+				BDDF7721289A952B0096196B /* StickerEndPoint.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				F60BAEB7279B3E690012707C /* SplashView.swift in Sources */,
 				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
@@ -1867,6 +1874,7 @@
 				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
 				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
+				BDDF7723289A95340096196B /* StickerManager.swift in Sources */,
 				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
 				ECA6379E281D1AF800CA2291 /* AddPillThirdView.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
