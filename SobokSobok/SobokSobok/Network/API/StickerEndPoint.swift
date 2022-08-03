@@ -10,6 +10,7 @@ import Foundation
 enum StickerEndPoint {
     case getStickers(scheduleId: Int)
     case postStickers(scheduleId: Int, stickerId: Int)
+    case changeSticker(likeScheduleId: Int, stickerId: Int)
 }
 
 extension StickerEndPoint: EndPoint {
@@ -19,6 +20,8 @@ extension StickerEndPoint: EndPoint {
             return .GET
         case .postStickers:
             return .POST
+        case .changeSticker:
+            return .PUT
         }
     }
     
@@ -27,6 +30,8 @@ extension StickerEndPoint: EndPoint {
         case .getStickers:
             return nil
         case .postStickers:
+            return nil
+        case .changeSticker:
             return nil
         }
     }
@@ -38,6 +43,8 @@ extension StickerEndPoint: EndPoint {
             return "\(baseURL)/sticker/\(scheduleId)"
         case .postStickers(let scheduleId, let stickerId):
             return "\(baseURL)/sticker/\(scheduleId)?stickerId=\(stickerId)"
+        case .changeSticker(let likeScheduleId, let stickerId):
+            return "\(baseURL)/sticker/my/\(likeScheduleId)?stickerId=\(stickerId)"
         }
     }
 }
