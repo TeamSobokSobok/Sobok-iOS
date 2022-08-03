@@ -48,7 +48,7 @@ final class SettingViewController: UIViewController {
     }
     
     @IBAction func withdraw(_ sender: UIButton) {
-        navigationController?.pushViewController(WithdrawViewController.instanceFromNib(), animated: true)
+        navigationController?.pushViewController(WithdrawalViewController.instanceFromNib(), animated: true)
     }
     
 }

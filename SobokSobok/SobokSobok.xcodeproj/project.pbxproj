@@ -40,8 +40,8 @@
 		9AB833F9288972A80040FC2A /* EditNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB833F7288972A80040FC2A /* EditNicknameViewController.xib */; };
 		9AB833FC28912F0E0040FC2A /* TermsAndPolicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */; };
 		9AB833FD28912F0E0040FC2A /* TermsAndPolicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */; };
-		9AB83404289A59420040FC2A /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB83402289A59420040FC2A /* WithdrawViewController.swift */; };
-		9AB83405289A59420040FC2A /* WithdrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB83403289A59420040FC2A /* WithdrawViewController.xib */; };
+		9AB83408289A66FE0040FC2A /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB83406289A66FD0040FC2A /* WithdrawalViewController.swift */; };
+		9AB83409289A66FE0040FC2A /* WithdrawalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB83407289A66FD0040FC2A /* WithdrawalViewController.xib */; };
 		9ADEBC502794213000B13417 /* CompleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */; };
 		9ADEBC512794213000B13417 /* CompleteSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */; };
 		9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */; };
@@ -265,8 +265,8 @@
 		9AB833F7288972A80040FC2A /* EditNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditNicknameViewController.xib; sourceTree = "<group>"; };
 		9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPolicesViewController.swift; sourceTree = "<group>"; };
 		9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndPolicesViewController.xib; sourceTree = "<group>"; };
-		9AB83402289A59420040FC2A /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
-		9AB83403289A59420040FC2A /* WithdrawViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawViewController.xib; sourceTree = "<group>"; };
+		9AB83406289A66FD0040FC2A /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
+		9AB83407289A66FD0040FC2A /* WithdrawalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawalViewController.xib; sourceTree = "<group>"; };
 		9ADEBC4E2794213000B13417 /* CompleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewController.swift; sourceTree = "<group>"; };
 		9ADEBC4F2794213000B13417 /* CompleteSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteSignUpViewController.xib; sourceTree = "<group>"; };
 		9AF64AD027917951004D4D64 /* SetNickNameVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNickNameVIewController.swift; sourceTree = "<group>"; };
@@ -548,11 +548,11 @@
 			isa = PBXGroup;
 			children = (
 				9AB833F2288972430040FC2A /* SettingViewController.swift */,
-				9AB83402289A59420040FC2A /* WithdrawViewController.swift */,
-				9AB83403289A59420040FC2A /* WithdrawViewController.xib */,
 				9AB833F3288972440040FC2A /* SettingViewController.xib */,
 				9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */,
 				9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */,
+				9AB83406289A66FD0040FC2A /* WithdrawalViewController.swift */,
+				9AB83407289A66FD0040FC2A /* WithdrawalViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1781,8 +1781,8 @@
 				9AB833F5288972440040FC2A /* SettingViewController.xib in Resources */,
 				BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */,
 				BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */,
-				9AB83405289A59420040FC2A /* WithdrawViewController.xib in Resources */,
 				9AF64AD327917952004D4D64 /* SetNickNameVIewController.xib in Resources */,
+				9AB83409289A66FE0040FC2A /* WithdrawalViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				9AB833F9288972A80040FC2A /* EditNicknameViewController.xib in Resources */,
 				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
@@ -1856,7 +1856,6 @@
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
-				9AB83404289A59420040FC2A /* WithdrawViewController.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddMedicineSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
@@ -1879,6 +1878,7 @@
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				EC02140D27D1F66900CF3569 /* SpecificButton.swift in Sources */,
 				EC8EC1462851090200A744FE /* PillTimeViewModel.swift in Sources */,
+				9AB83408289A66FE0040FC2A /* WithdrawalViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
