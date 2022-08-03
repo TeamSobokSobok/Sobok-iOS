@@ -9,6 +9,7 @@ import Foundation
 
 enum StickerEndPoint {
     case getStickers(scheduleId: Int)
+    case postStickers(scheduleId: Int, stickerId: Int)
 }
 
 extension StickerEndPoint: EndPoint {
@@ -16,12 +17,16 @@ extension StickerEndPoint: EndPoint {
         switch self {
         case .getStickers:
             return .GET
+        case .postStickers:
+            return .POST
         }
     }
     
     var body: Data? {
         switch self {
         case .getStickers:
+            return nil
+        case .postStickers:
             return nil
         }
     }
@@ -31,6 +36,8 @@ extension StickerEndPoint: EndPoint {
         switch self {
         case .getStickers(let scheduleId):
             return "\(baseURL)/sticker/\(scheduleId)"
+        case .postStickers(let scheduleId, let stickerId):
+            return "\(baseURL)/sticker/\(scheduleId)?stickerId=\(stickerId)"
         }
     }
 }

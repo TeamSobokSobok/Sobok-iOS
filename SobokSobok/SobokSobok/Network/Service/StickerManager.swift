@@ -9,6 +9,7 @@ import Foundation
 
 protocol StickerServiceable {
     func getStickers(for scheduleId: Int) async throws -> [Stickers]?
+    func postStickers(for scheduleId: Int, withSticker stickerId: Int) async throws -> Sticker?
 }
 
 struct StickerManager: StickerServiceable {
@@ -23,6 +24,13 @@ struct StickerManager: StickerServiceable {
     func getStickers(for scheduleId: Int) async throws -> [Stickers]? {
         let request = StickerEndPoint
             .getStickers(scheduleId: scheduleId)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func postStickers(for scheduleId: Int, withSticker stickerId: Int) async throws -> Sticker? {
+        let request = StickerEndPoint
+            .postStickers(scheduleId: scheduleId, stickerId: stickerId)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
