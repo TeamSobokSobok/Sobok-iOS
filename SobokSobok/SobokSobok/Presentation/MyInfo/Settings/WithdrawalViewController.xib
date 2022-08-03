@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WithdrawalViewController" customModule="SobokSobok" customModuleProvider="target">
+            <connections>
+                <outlet property="reasonTextCounter" destination="kxu-mc-H2w" id="AeQ-3W-WDm"/>
+                <outlet property="reasonTextView" destination="xPA-5g-0pS" id="iIL-nX-Lie"/>
+                <outlet property="reasonView" destination="K07-88-GBF" id="Alc-kH-Nfy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="witrhdrawButton" destination="Xmm-of-TIK" id="C75-Od-Qts"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAq-Vp-3xa" userLabel="네비게이션">
+                    <rect key="frame" x="0.0" y="44" width="414" height="58"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPo-Vn-MBf">
+                            <rect key="frame" x="0.0" y="5" width="48" height="48"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="icBack48"/>
+                            <connections>
+                                <action selector="backToSettingVC:" destination="-1" eventType="touchUpInside" id="Ams-3A-pAm"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 탈퇴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUU-KC-RmX">
+                            <rect key="frame" x="175.5" y="19" width="63.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="wUU-KC-RmX" firstAttribute="centerX" secondItem="PAq-Vp-3xa" secondAttribute="centerX" id="GQK-ka-j9B"/>
+                        <constraint firstItem="WPo-Vn-MBf" firstAttribute="leading" secondItem="PAq-Vp-3xa" secondAttribute="leading" id="SfU-di-bvH"/>
+                        <constraint firstAttribute="height" constant="58" id="YTu-Ik-jBF"/>
+                        <constraint firstItem="wUU-KC-RmX" firstAttribute="centerY" secondItem="PAq-Vp-3xa" secondAttribute="centerY" id="eFt-wL-mHE"/>
+                        <constraint firstItem="WPo-Vn-MBf" firstAttribute="centerY" secondItem="PAq-Vp-3xa" secondAttribute="centerY" id="pPz-ST-JD5"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소복소복을 떠나시나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEl-GF-Wlu">
+                    <rect key="frame" x="20" y="118" width="169" height="22"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
+                    <color key="textColor" name="black_sub"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 그 동안의 복약기록와  받은 스티커를 포함한 모든 정보가 사라져요 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwO-Pg-q1O">
+                    <rect key="frame" x="20" y="144" width="252" height="36.5"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
+                    <color key="textColor" name="gray500_sub"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K07-88-GBF" userLabel="input">
+                    <rect key="frame" x="20" y="245.5" width="374" height="160"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="적어주시는 여러분의 소중한 의견은 서비스 개선에 큰 도움이 되어요:)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xPA-5g-0pS">
+                            <rect key="frame" x="16" y="12" width="342" height="108"/>
+                            <color key="textColor" name="gray500_sub"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxu-mc-H2w">
+                            <rect key="frame" x="313.5" y="132" width="44.5" height="16"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="13"/>
+                            <color key="textColor" name="gray600_sub"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="gray100_sub"/>
+                    <constraints>
+                        <constraint firstItem="kxu-mc-H2w" firstAttribute="top" secondItem="xPA-5g-0pS" secondAttribute="bottom" constant="12" id="3CS-14-Oqi"/>
+                        <constraint firstAttribute="bottom" secondItem="kxu-mc-H2w" secondAttribute="bottom" constant="12" id="HvY-6v-h2W"/>
+                        <constraint firstAttribute="height" constant="160" id="RIS-bD-Nfp"/>
+                        <constraint firstAttribute="trailing" secondItem="xPA-5g-0pS" secondAttribute="trailing" constant="16" id="fYX-iI-Eje"/>
+                        <constraint firstAttribute="trailing" secondItem="kxu-mc-H2w" secondAttribute="trailing" constant="16" id="k0u-oT-skr"/>
+                        <constraint firstItem="xPA-5g-0pS" firstAttribute="top" secondItem="K07-88-GBF" secondAttribute="top" constant="12" id="oqt-B9-RG1"/>
+                        <constraint firstItem="xPA-5g-0pS" firstAttribute="leading" secondItem="K07-88-GBF" secondAttribute="leading" constant="16" id="pDz-V8-Edo"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmm-of-TIK">
+                    <rect key="frame" x="20" y="788" width="374" height="52"/>
+                    <color key="backgroundColor" name="mint_main"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="wZW-xq-f66"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="회원 탈퇴">
+                        <color key="titleColor" name="white_sub"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmWitrhdrawal:" destination="-1" eventType="touchUpInside" id="pFT-TP-aff"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하려는 이유가 궁금해요 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-3f-k71">
+                    <rect key="frame" x="20" y="216.5" width="204" height="19"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
+                    <color key="textColor" name="gray800_sub"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="K07-88-GBF" firstAttribute="top" secondItem="1hj-3f-k71" secondAttribute="bottom" constant="10" id="4Ed-Dy-bIS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xmm-of-TIK" secondAttribute="bottom" constant="22" id="82J-RJ-d9G"/>
+                <constraint firstItem="YEl-GF-Wlu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FcX-fB-p5Z"/>
+                <constraint firstItem="1hj-3f-k71" firstAttribute="top" secondItem="LwO-Pg-q1O" secondAttribute="bottom" constant="36" id="GlU-qn-Cn6"/>
+                <constraint firstItem="1hj-3f-k71" firstAttribute="leading" secondItem="LwO-Pg-q1O" secondAttribute="leading" id="HVg-Lp-Xzb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xmm-of-TIK" secondAttribute="trailing" constant="20" id="Ji4-Da-6qX"/>
+                <constraint firstItem="PAq-Vp-3xa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LaJ-K8-jzR"/>
+                <constraint firstItem="LwO-Pg-q1O" firstAttribute="top" secondItem="YEl-GF-Wlu" secondAttribute="bottom" constant="4" id="Mfr-61-vjw"/>
+                <constraint firstItem="Xmm-of-TIK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="g24-fL-tN8"/>
+                <constraint firstItem="K07-88-GBF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hhX-3p-dlF"/>
+                <constraint firstItem="1hj-3f-k71" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="q74-kD-3iT"/>
+                <constraint firstItem="LwO-Pg-q1O" firstAttribute="leading" secondItem="YEl-GF-Wlu" secondAttribute="leading" id="qbr-Kb-evi"/>
+                <constraint firstItem="PAq-Vp-3xa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rp2-L6-kPI"/>
+                <constraint firstItem="PAq-Vp-3xa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="shp-kF-1GS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K07-88-GBF" secondAttribute="trailing" constant="20" id="xpv-3Z-WRk"/>
+                <constraint firstItem="YEl-GF-Wlu" firstAttribute="top" secondItem="PAq-Vp-3xa" secondAttribute="bottom" constant="16" id="y5A-rf-TpY"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="92"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icBack48" width="48" height="48"/>
+        <namedColor name="black_sub">
+            <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray100_sub">
+            <color red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray500_sub">
+            <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray600_sub">
+            <color red="0.51764705882352946" green="0.5490196078431373" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray800_sub">
+            <color red="0.28627450980392155" green="0.30980392156862746" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mint_main">
+            <color red="0.094117647058823528" green="0.80784313725490198" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white_sub">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
