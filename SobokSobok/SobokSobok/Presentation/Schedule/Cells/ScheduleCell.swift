@@ -7,7 +7,13 @@
 
 import UIKit
 
-final class ScheduleCell: UICollectionViewCell {
+class ScheduleCell: UICollectionViewCell {
+    
+    // MARK: - Properties
+    var pill: Pill?
+    
+    // MARK: - UI Components
+    
     private let pillColors: [String: UIColor] = [
         "1": Color.pillColorRed,
         "2": Color.pillColorOrange,
@@ -33,7 +39,7 @@ final class ScheduleCell: UICollectionViewCell {
         $0.addArrangedSubviews(topHStackView, stickerHStackView)
     }
     
-    private lazy var topHStackView = UIStackView().then {
+    lazy var topHStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fill
         $0.alignment = .center
@@ -50,24 +56,7 @@ final class ScheduleCell: UICollectionViewCell {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
     }
     
-    private lazy var homeButtonHStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.distribution = .fill
-        $0.spacing = 0
-        $0.addArrangedSubviews(checkButton, moreButton)
-    }
-    
-    private lazy var checkButton = UIButton().then {
-        $0.contentMode = .scaleAspectFill
-        $0.setImage(Image.icCheckUnselect56, for: .normal)
-    }
-    
-    private lazy var moreButton = UIButton().then {
-        $0.setImage(Image.icEdit40, for: .normal)
-        $0.isHidden = true
-    }
-    
-    lazy var stickerHStackView = UIStackView().then {
+    private lazy var stickerHStackView = UIStackView().then {
         for index in 0..<4 {
             let stickerButton = UIButton()
             stickerButton.setImage(Image.bigSticker1, for: .normal)
@@ -96,17 +85,18 @@ final class ScheduleCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+}
+
+extension ScheduleCell {
     private func setupUI() {
         backgroundColor = Color.gray100
-        moreButton.isHidden = true
         makeRounded(radius: 12)
         pillColorView.makeRounded(radius: 4)
         stickerHStackView.arrangedSubviews.forEach { $0.isHidden = true }
     }
     
     private func setupConstraints() {
-        addSubviews(containerVStackView, homeButtonHStackView, countLabel)
+        addSubviews(containerVStackView, countLabel)
         
         containerVStackView.snp.makeConstraints {
             $0.leading.bottom.equalToSuperview().inset(20)
@@ -115,12 +105,6 @@ final class ScheduleCell: UICollectionViewCell {
         
         pillColorView.snp.makeConstraints {
             $0.width.height.equalTo(8)
-        }
-        
-        homeButtonHStackView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(4)
-            $0.width.height.equalTo(56)
-            $0.centerY.equalTo(topHStackView)
         }
         
         stickerHStackView.arrangedSubviews.forEach {
@@ -134,24 +118,25 @@ final class ScheduleCell: UICollectionViewCell {
             $0.bottom.equalToSuperview().inset(13)
         }
     }
-}
-
-extension ScheduleCell {
+    
     func configureCell(with pill: Pill) {
-        pillColorView.backgroundColor = pillColors[pill.color]
-        pillNameLabel.text = pill.pillName
-        countLabel.text = pill.stickerTotalCount > 0 ? "+ \(pill.stickerTotalCount)" : ""
-        configureStickers(with: pill.stickerId)
+        self.pill = pill
+        self.pillColorView.backgroundColor = pillColors[pill.color]
+        self.pillNameLabel.text = pill.pillName
+        
+        let stickers: [Int] = [2, 3, 4, 2, 2, 3]
+        countLabel.text = stickers.count > 4 ? "+ \(stickers.count - 4)" : ""
+        configureStickers(with: stickers)
     }
     
-    private func configureStickers(with stickerId: [StickerId]?) {
+    private func configureStickers(with stickerId: [Int]?) {
         if let stickerId = stickerId,
            !stickerId.isEmpty {
             stickerHStackView.isHidden = false
-            for item in 0..<stickerId.count {
-                let stickerView = stickerHStackView.arrangedSubviews[item] as? UIButton
+            for index in 0..<4 {
+                let stickerView = stickerHStackView.arrangedSubviews[index] as? UIButton
                 stickerView?.isHidden = false
-                stickerView?.setImage(stickers[stickerId[item].stickerId], for: .normal)
+                stickerView?.setImage(stickers[stickerId[index]], for: .normal)
             }
         } else {
             stickerHStackView.isHidden = true

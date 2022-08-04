@@ -19,6 +19,7 @@ struct Stickers: Codable {
 struct Sticker: Codable {
     let id: Int?
     let likeScheduleId: Int?
+    let likescheduleId: Int?
     let scheduleId: Int
     let senderId: Int?
     let stickerId: Int
