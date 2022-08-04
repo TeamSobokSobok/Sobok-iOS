@@ -43,8 +43,19 @@ final class MainScheduleCell: ScheduleCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupUI()
         setupConstraints()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(editStarted),
+                                               name: NSNotification.Name("edit"),
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name("edit"),
+                                                  object: nil)
     }
 }
 
@@ -64,5 +75,10 @@ extension MainScheduleCell {
     
     @objc func checkButtonTapped() {
         delegate?.checkButtonTapped(self)
+    }
+    
+    @objc func editStarted(notification: NSNotification) {
+        checkButton.isHidden.toggle()
+        moreButton.isHidden.toggle()
     }
 }

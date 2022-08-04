@@ -14,6 +14,7 @@ final class ScheduleHeaderView: UICollectionReusableView {
         $0.setTitle("수정", for: .normal)
         $0.setTitleColor(Color.gray700, for: .normal)
         $0.titleLabel?.setTypoStyle(typoStyle: .body5)
+        $0.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
     }
     
     override init(frame: CGRect) {
@@ -56,5 +57,9 @@ final class ScheduleHeaderView: UICollectionReusableView {
         let time = date?.toString(of: .time)
         timeLabel.text = time
         timeLabel.setTypoStyle(typoStyle: .title1)
+    }
+    
+    @objc func editButtonTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: Notification.Name("edit"), object: self)
     }
 }
