@@ -13,6 +13,7 @@ extension ScheduleViewController {
                 if let schedules = schedules,
                    !schedules.isEmpty {
                     self.schedules = schedules
+                    self.calendarView.reloadData()
                 }
             }
         }
@@ -22,9 +23,9 @@ extension ScheduleViewController {
         Task {
             do {
                 let pillLists = try await scheduleManager.getPillList(for: date)
-                if let pillLists = pillLists,
-                   !pillLists.isEmpty {
+                if let pillLists = pillLists {
                     self.pillLists = pillLists
+                    self.collectionView.reloadData()
                 }
             }
         }

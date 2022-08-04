@@ -11,6 +11,7 @@ import UIKit
 
 extension ScheduleViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        collectionView.backgroundView = pillLists.isEmpty ? emptyView : nil
         return pillLists.count
     }
     

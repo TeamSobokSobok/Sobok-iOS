@@ -9,6 +9,34 @@ import UIKit
 import FSCalendar
 
 final class ScheduleViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
+    let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(), environment: .development)
+    
+    let gregorian = Calendar(identifier: .gregorian)
+    
+    var friendName: String? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var schedules: [Schedule] = []
+    var pillLists: [PillList] = []
+
+    var currentDate: Date = Date()
+    var selectedDate = Date().toString(of: .day)
+    var doingDates: [String] = []
+    var doneDates: [String] = []
+    
+    var calendarHeight: CGFloat = 308.0
+    var collectionViewHeight: CGFloat = 409.0
+    private var collectionViewBottomInset: CGFloat = 32.0
+    
+    var type: TabBarItem = .share
+    
 
     // MARK: - UI Properties
     
@@ -32,61 +60,17 @@ final class ScheduleViewController: BaseViewController {
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
-
-    // MARK: - Properties
     
-    var currentDate: Date = Date() {
-        didSet {
-            updateUI()
-        }
-    }
+    lazy var emptyView = ScheduleEmptyView(for: type)
     
-    var calendarHeight: CGFloat = 308.0
-    var collectionViewHeight: CGFloat = 500.0
-    private var collectionViewBottomInset: CGFloat = 32.0
-    var friendName: String? {
-        didSet {
-            updateUI()
-        }
-    }
+    // MARK: - Life Cycles
     
-    let gregorian = Calendar(identifier: .gregorian)
-    var doingDates: [String] = [] {
-        didSet {
-            calendarView.reloadData()
-        }
-    }
-    var doneDates: [String] = [] {
-        didSet {
-            calendarView.reloadData()
-        }
-    }
-    var selectedDate: String = Date().toString(of: .day)
-    var pillLists: [PillList] = [] {
-        didSet {
-            collectionView.reloadData()
-            setCollectionViewHeight()
-        }
-    }
-    
-    var schedules: [Schedule] = [] {
-        didSet {
-            parseSchedules()
-        }
-    }
-    
-    let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
-                                                               environment: .development)
-    let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(),
-                                                             environment: .development)
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCalendar()
-        setCalendarStyle()
+
         setDelegation()
-        registerCells()
-        setCollectionView()
+        getMySchedules(date: currentDate.toString(of: .year))
+        getMyPillLists(date: currentDate.toString(of: .year))
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,17 +80,17 @@ final class ScheduleViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getMySchedules(date: "2022-06-04")
-        getMyPillLists(date: "2022-06-22")
-//        getMemberSchedules(memberId: 187, date: "2022-06-22")
-//        getMemberPillLists(memberId: 187, date: "2022-06-22")
-//        getStickers(for: 13161)
-//        postSticker(for: 13530, withSticker: 3)
-        changeSticker(for: 151, withSticker: 1)
     }
+    
+    
+    // MARK: - Override Functions
     
     override func style() {
         updateUI()
+        setCalendar()
+        setCalendarStyle()
+        setCollectionView()
+        registerCells()
     }
     
     override func hierarchy() {
@@ -153,6 +137,16 @@ final class ScheduleViewController: BaseViewController {
 // MARK: - Private Function
 
 extension ScheduleViewController {
+    private func callRequestSchedules() {
+        if type == .home {
+            getMySchedules(date: currentDate.toString(of: .year))
+            getMyPillLists(date: currentDate.toString(of: .year))
+        } else {
+            getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
+            getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
+        }
+    }
+    
     private func updateUI() {
         friendNameView.isHidden = friendName == nil ? true : false
         friendNameView.friendNameLabel.text = friendName

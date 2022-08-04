@@ -32,6 +32,7 @@ final class ShareViewController: BaseViewController {
             $0.leading.bottom.trailing.equalToSuperview()
         }
         
+        scheduleViewController.type = .share
         scheduleViewController.friendName = "태현"
     }
   

@@ -27,6 +27,7 @@ final class MainViewController: BaseViewController {
     override func style() {
         super.style()
         
+        scheduleViewController.type = .home
         homeTopView.mainMessageLabel.text = "소중한 태끼님\n오늘도 약 꼭 챙겨 드세요"
         containerView.backgroundColor = .red
     }
