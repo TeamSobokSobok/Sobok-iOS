@@ -8,6 +8,19 @@
 import UIKit
 import FSCalendar
 
+class DynamicHeightCollectionView: UICollectionView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
+            self.invalidateIntrinsicContentSize()
+        }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return contentSize
+    }
+}
+
 final class ScheduleViewController: BaseViewController {
     
     // MARK: - Properties
@@ -26,7 +39,12 @@ final class ScheduleViewController: BaseViewController {
     var schedules: [Schedule] = []
     var pillLists: [PillList] = []
 
-    var currentDate: Date = Date()
+    var currentDate: Date = Date() {
+        didSet {
+            callRequestSchedules()
+            updateUI()
+        }
+    }
     var selectedDate = Date().toString(of: .day)
     var doingDates: [String] = []
     var doneDates: [String] = []
@@ -56,7 +74,7 @@ final class ScheduleViewController: BaseViewController {
     private let  calendarTopView = CalendarTopView()
     lazy var  calendarView = FSCalendar()
     
-    lazy var collectionView = UICollectionView(
+    lazy var collectionView = DynamicHeightCollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
@@ -73,9 +91,15 @@ final class ScheduleViewController: BaseViewController {
         getMyPillLists(date: currentDate.toString(of: .year))
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        setCollectionViewHeight()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setCollectionViewHeight()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -161,8 +185,8 @@ extension ScheduleViewController {
         collectionView.dataSource = self
     }
     
-    private func setCollectionViewHeight() {
-        let newCollectionViewHeight = collectionView.contentSize.height
+    func setCollectionViewHeight() {
+        let newCollectionViewHeight = pillLists.isEmpty ? 409.0 : collectionView.contentSize.height
         if newCollectionViewHeight > 0 && (collectionViewHeight != newCollectionViewHeight) {
             collectionViewHeight = newCollectionViewHeight
             collectionView.snp.updateConstraints {
