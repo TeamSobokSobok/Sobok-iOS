@@ -54,11 +54,14 @@ extension ScheduleViewController: MainScheduleCellDelegate {
         guard let scheduleId = cell.pill?.scheduleId else { return }
         
         if cell.isChecked {
-            uncheckPillSchedule(scheduleId: scheduleId)
+            showAlert(title: "복약하지 않은 약인가요?", message: "복약을 취소하면 소중한 사람들의 응원도 같이 삭제되어요", completionTitle: "복약 취소", cancelTitle: "취소") { _ in
+                cell.isChecked.toggle()
+                self.uncheckPillSchedule(scheduleId: scheduleId)
+            }
+
         } else {
             checkPillSchedule(scheduleId: scheduleId)
+            cell.isChecked.toggle()
         }
-        
-        cell.isChecked.toggle()
     }
 }

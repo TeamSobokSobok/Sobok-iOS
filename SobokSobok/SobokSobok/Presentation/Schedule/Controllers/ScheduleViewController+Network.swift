@@ -34,17 +34,15 @@ extension ScheduleViewController {
     func checkPillSchedule(scheduleId: Int) {
         Task {
             do {
-                let result = try await scheduleManager.checkPillSchedule(for: scheduleId)
-                print("check", result)
+                let _ = try await scheduleManager.checkPillSchedule(for: scheduleId)
             }
         }
     }
     
-    func uncheckPillSchedule(scheduleId: Int) {
+    func uncheckPillSchedule(scheduleId: Int, completion: (() -> ())? = nil) {
         Task {
             do {
-                let result = try await scheduleManager.uncheckPillSchedule(for: scheduleId)
-                print("uncheck", result)
+                let _ = try await scheduleManager.uncheckPillSchedule(for: scheduleId)
             }
         }
     }
@@ -52,7 +50,7 @@ extension ScheduleViewController {
     func getMemberSchedules(memberId: Int, date: String) {
         Task {
             do {
-                let result = try await scheduleManager.getMemberSchedule(memberId: memberId, date: date)
+                let _ = try await scheduleManager.getMemberSchedule(memberId: memberId, date: date)
             }
         }
     }
@@ -60,8 +58,7 @@ extension ScheduleViewController {
     func getMemberPillLists(memberId: Int, date: String) {
         Task {
             do {
-                let result = try await scheduleManager.getMemberPillList(memberId: memberId, date: date)
-                print(22222, result)
+                let _ = try await scheduleManager.getMemberPillList(memberId: memberId, date: date)
             }
         }
     }
@@ -78,8 +75,7 @@ extension ScheduleViewController {
     func postSticker(for scheduleId: Int, withSticker stickerId: Int) {
         Task {
             do {
-                let result = try await stickerManageer.postStickers(for: scheduleId, withSticker: stickerId)
-                print(44444, result)
+                let _ = try await stickerManageer.postStickers(for: scheduleId, withSticker: stickerId)
             }
         }
     }
@@ -87,8 +83,7 @@ extension ScheduleViewController {
     func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) {
         Task {
             do {
-                let result = try await stickerManageer.changeSticker(for: likeScheduleId, withSticker: stickerId)
-                print(55555, result)
+                let _ = try await stickerManageer.changeSticker(for: likeScheduleId, withSticker: stickerId)
             }
         }
     }
