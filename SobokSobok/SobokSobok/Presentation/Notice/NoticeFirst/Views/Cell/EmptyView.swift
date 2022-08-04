@@ -11,9 +11,7 @@ import SnapKit
 import Then
 
 extension UICollectionView {
-    // MARK: - Set
     func setEmptyView(title: String, image: UIImage, message: String) {
-        // MARK: - Properties
         let emptyView = UIView().then {
             $0.frame = CGRect(x: self.center.x, y: self.center.y, width: self.bounds.width, height: self.bounds.height)
         }
