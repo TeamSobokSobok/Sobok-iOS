@@ -18,6 +18,10 @@ final class AddMedicineSheet: UIViewController, AddMedicineProtocol {
 
     // MARK: Properties
     var pillNumber: Int = 10
+    
+    let addPillManager: PillCountServiceable = PillCountManager(apiService: APIManager(),
+                                                            environment: .development)
+
     weak var delegate: AddMedicineSheetDismiss?
     private let targetListForMedicine = [
         (image: Image.icMyFillPlus, text: "내 약 추가"),
@@ -36,6 +40,7 @@ final class AddMedicineSheet: UIViewController, AddMedicineProtocol {
         super.viewDidLoad()
         assignDelegation()
         getMyPillCount()
+        getFriendPillCount()
     }
     
     func style() {
@@ -50,11 +55,7 @@ final class AddMedicineSheet: UIViewController, AddMedicineProtocol {
             self.delegate?.addMedicineSheetDismiss()
         }
     }
-    
-    private func updateData(data: PillCount) {
-        pillNumber = data.pillCount
-    }
-    
+
     func assignDelegation() {
         medicineTableView.dataSource = self
         medicineTableView.delegate = self
@@ -145,24 +146,21 @@ extension AddMedicineSheet: UITableViewDataSource {
 }
 
 extension AddMedicineSheet {
-    
     func getMyPillCount() {
-        PillCountAPI.shared.getMyPillCount(completion: { (result) in
-            switch result {
-            case .success(let pill):
-                if let data = pill as? PillCount {
-                    print(data)
-                    self.updateData(data: data)
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
+        Task {
+            do {
+                let result = try await addPillManager.getMyPillCount()
+                print("getMyPill", result?.pillCount)
             }
-        })
+        }
+    }
+    
+    func getFriendPillCount() {
+        Task {
+            do {
+                let result = try await addPillManager.getFriendPillCount(for: 24)
+                print("getFriendPill", result?.pillCount)
+            }
+        }
     }
 }

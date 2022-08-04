@@ -9,5 +9,5 @@ import Foundation
 
 // MARK: - PillCount
 struct PillCount: Codable {
-    let pillCount: Int
+    let pillCount: String
 }
