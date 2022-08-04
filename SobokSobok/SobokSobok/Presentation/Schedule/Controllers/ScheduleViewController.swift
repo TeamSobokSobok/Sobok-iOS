@@ -36,7 +36,11 @@ final class ScheduleViewController: BaseViewController {
         }
     }
     
-    var schedules: [Schedule] = []
+    var schedules: [Schedule] = [] {
+        didSet {
+            parseSchedules()
+        }
+    }
     var pillLists: [PillList] = []
 
     var currentDate: Date = Date() {
@@ -231,6 +235,8 @@ extension ScheduleViewController {
         
         self.doneDates = doneItems
         self.doingDates = doingItems
+        
+        calendarView.reloadData()
     }
 }
 

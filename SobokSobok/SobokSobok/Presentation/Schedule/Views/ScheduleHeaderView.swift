@@ -8,18 +8,17 @@
 import UIKit
 
 final class ScheduleHeaderView: UICollectionReusableView {
-    private let timeLabel = UILabel().then {
-        $0.text = "오후 1:00"
-    }
-    
+    private lazy var timeLabel = UILabel()
     private lazy var editButton = UIButton().then {
+        $0.isHidden = true
         $0.setTitle("수정", for: .normal)
         $0.setTitleColor(Color.gray700, for: .normal)
+        $0.titleLabel?.setTypoStyle(typoStyle: .body5)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureUI()
+        
         configureView()
         configureConstraints()
     }
@@ -45,13 +44,17 @@ final class ScheduleHeaderView: UICollectionReusableView {
             $0.height.equalTo(23)
         }
     }
-    
-    private func configureUI() {
-        timeLabel.setTypoStyle(typoStyle: .title1)
-        editButton.titleLabel?.setTypoStyle(typoStyle: .body5)
+
+    func showEditButton(isHidden: Bool) {
+        editButton.isHidden = isHidden
     }
     
-    func hideEditButton() {
-        editButton.isHidden = true
+    func configure(withTime time: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Date.FormatType.second.description
+        let date = dateFormatter.date(from: time)
+        let time = date?.toString(of: .time)
+        timeLabel.text = time
+        timeLabel.setTypoStyle(typoStyle: .title1)
     }
 }
