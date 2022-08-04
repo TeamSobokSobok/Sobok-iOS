@@ -85,6 +85,12 @@ final class ScheduleViewController: BaseViewController {
     
     lazy var emptyView = ScheduleEmptyView(for: type)
     
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name("sticker"),
+                                                  object: nil)
+    }
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -93,6 +99,11 @@ final class ScheduleViewController: BaseViewController {
         setDelegation()
         getMySchedules(date: currentDate.toString(of: .year))
         getMyPillLists(date: currentDate.toString(of: .year))
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(stickerTapped),
+                                               name: NSNotification.Name("sticker"),
+                                               object: nil)
     }
     
     override func viewWillLayoutSubviews() {
@@ -165,6 +176,13 @@ final class ScheduleViewController: BaseViewController {
 // MARK: - Private Function
 
 extension ScheduleViewController {
+    @objc func stickerTapped(notification: NSNotification) {
+        if let notification = notification.userInfo,
+           let scheduleId = notification["scheduleId"] as? Int {
+            getStickers(for: scheduleId)
+        }
+    }
+    
     private func callRequestSchedules() {
         if type == .home {
             getMySchedules(date: currentDate.toString(of: .year))
@@ -237,6 +255,16 @@ extension ScheduleViewController {
         self.doingDates = doingItems
         
         calendarView.reloadData()
+    }
+    
+    func showStickerBottomSheet(stickers: [Stickers]?) {
+        let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
+        stickerBottomSheet.modalPresentationStyle = .overCurrentContext
+        stickerBottomSheet.modalTransitionStyle = .crossDissolve
+        stickerBottomSheet.stickers = stickers
+        self.tabBarController?.present(stickerBottomSheet, animated: false) {
+            stickerBottomSheet.showSheetWithAnimation()
+        }
     }
 }
 

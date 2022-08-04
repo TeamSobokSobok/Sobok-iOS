@@ -70,7 +70,7 @@ extension ScheduleViewController {
         Task {
             do {
                 let stickers = try await stickerManageer.getStickers(for: scheduleId)
-                print(33333, stickers)
+                self.showStickerBottomSheet(stickers: stickers)
             }
         }
     }

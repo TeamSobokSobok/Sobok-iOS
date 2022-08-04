@@ -60,6 +60,7 @@ class ScheduleCell: UICollectionViewCell {
         for index in 0..<4 {
             let stickerButton = UIButton()
             stickerButton.setImage(Image.bigSticker1, for: .normal)
+            stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
             $0.addArrangedSubview(stickerButton)
         }
         $0.isHidden = true
@@ -141,5 +142,10 @@ extension ScheduleCell {
         } else {
             stickerHStackView.isHidden = true
         }
+    }
+    
+    @objc func stickerButtonTapped(_ sender: UIButton) {
+        guard let scheduleId = pill?.scheduleId else { return }
+        NotificationCenter.default.post(name: Notification.Name("sticker"), object: nil, userInfo: ["scheduleId" : scheduleId])
     }
 }
