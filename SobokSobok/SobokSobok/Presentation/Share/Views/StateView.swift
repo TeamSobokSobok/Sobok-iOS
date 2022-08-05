@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class ShareStateView: BaseView {
+final class StateView: BaseView {
+    
+    // MARK: - Properties
     
     private var isLiked = true {
         didSet {
@@ -20,6 +22,9 @@ final class ShareStateView: BaseView {
             updateUI()
         }
     }
+    
+    
+    // MARK: - UI Components
     
     lazy var hStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -42,6 +47,9 @@ final class ShareStateView: BaseView {
     lazy var eatStateLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 13)
     }
+    
+    
+    // MARK: - Override Functions
     
     override func setupView() {
         super.setupView()
@@ -71,6 +79,13 @@ final class ShareStateView: BaseView {
             $0.left.right.equalToSuperview().inset(10.adjustedWidth)
         }
     }
+
+}
+
+
+// MARK: - Private Functions
+
+extension StateView {
     
     private func updateUI() {
         let emotionStateImage = isLiked ? Image.icEmotionEnd36 : Image.icEmotion36
