@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class AddUserView: BaseView {
+final class SelectFriendView: BaseView {
     
     let backgroundView = UIView().then {
         $0.makeRounded(radius: 15)
