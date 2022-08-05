@@ -11,13 +11,13 @@ final class StateView: BaseView {
     
     // MARK: - Properties
     
-    private var isLiked = true {
+    var isLiked = true {
         didSet {
             updateUI()
         }
     }
     
-    private var isEat = true {
+    var isEat = true {
         didSet {
             updateUI()
         }
@@ -95,6 +95,7 @@ extension StateView {
         let eatStateBackgroundColor = isEat ? Color.lightMint : Color.gray150
         
         emotionStateBackgroundView.backgroundColor = emotionStateBackgroundColor
+        emotionStateBackgroundView.isHidden = !isEat
         emotionStateButton.isHidden = !isEat
         emotionStateButton.setImage(emotionStateImage, for: .normal)
         eatStateBackgroundView.backgroundColor = eatStateBackgroundColor

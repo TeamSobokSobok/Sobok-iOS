@@ -50,7 +50,12 @@ extension ScheduleViewController {
     func getMemberSchedules(memberId: Int, date: String) {
         Task {
             do {
-                let _ = try await scheduleManager.getMemberSchedule(memberId: memberId, date: date)
+                let schedules = try await scheduleManager.getMemberSchedule(memberId: memberId, date: date)
+                if let schedules = schedules,
+                   !schedules.isEmpty {
+                    self.schedules = schedules
+                    self.calendarView.reloadData()
+                }
             }
         }
     }
@@ -58,7 +63,11 @@ extension ScheduleViewController {
     func getMemberPillLists(memberId: Int, date: String) {
         Task {
             do {
-                let _ = try await scheduleManager.getMemberPillList(memberId: memberId, date: date)
+                let pillLists = try await scheduleManager.getMemberPillList(memberId: memberId, date: date)
+                if let pillLists = pillLists {
+                    self.pillLists = pillLists
+                    self.collectionView.reloadData()
+                }
             }
         }
     }

@@ -32,6 +32,7 @@ extension ScheduleViewController: UICollectionViewDataSource {
         else {
             let shareCell = collectionView.dequeueReusableCell(for: indexPath, cellType: ShareScheduleCell.self)
             shareCell.configure(with: pill)
+            shareCell.configure(with: (isLiked: pill.isLikedSchedule ?? false, isEat: pill.isCheck))
             return shareCell
         }
     }

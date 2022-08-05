@@ -36,3 +36,14 @@ extension ShareScheduleCell {
         }
     }
 }
+
+
+// MARK: - Public Functions
+
+extension ShareScheduleCell {
+
+    func configure(with state: (isLiked: Bool, isEat: Bool)) {
+        stateView.isLiked = state.isLiked
+        stateView.isEat = state.isEat
+    }
+}

@@ -54,10 +54,10 @@ final class ScheduleViewController: BaseViewController {
     var doneDates: [String] = []
     
     var calendarHeight: CGFloat = 308.0
-    var collectionViewHeight: CGFloat = 409.0
-    private var collectionViewBottomInset: CGFloat = 32.0
+    var collectionViewHeight: CGFloat = 409.0.adjustedHeight
+    private var collectionViewBottomInset: CGFloat = 32.0.adjustedHeight
     
-    var type: TabBarItem = .share
+    var type: TabBarItem
     
     init(type: TabBarItem) {
         self.type = type
@@ -105,8 +105,7 @@ final class ScheduleViewController: BaseViewController {
         super.viewDidLoad()
 
         setDelegation()
-        getMySchedules(date: currentDate.toString(of: .year))
-        getMyPillLists(date: currentDate.toString(of: .year))
+        callRequestSchedules()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(stickerTapped),
@@ -114,8 +113,8 @@ final class ScheduleViewController: BaseViewController {
                                                object: nil)
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         setCollectionViewHeight()
     }
@@ -191,6 +190,7 @@ extension ScheduleViewController {
             getMySchedules(date: currentDate.toString(of: .year))
             getMyPillLists(date: currentDate.toString(of: .year))
         } else {
+            print("call")
             getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
             getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
         }
@@ -210,9 +210,12 @@ extension ScheduleViewController {
         collectionView.dataSource = self
     }
     
+    // TODO: - 높이 문제 해결 필요
+    
     func setCollectionViewHeight() {
-        let newCollectionViewHeight = pillLists.isEmpty ? 409.0 : collectionView.contentSize.height
-        if newCollectionViewHeight > 0 && (collectionViewHeight != newCollectionViewHeight) {
+        var newCollectionViewHeight = pillLists.isEmpty ? 409.0 : collectionView.contentSize.height
+        newCollectionViewHeight = newCollectionViewHeight < 409.0 ? 409.0 : newCollectionViewHeight
+        if newCollectionViewHeight > 0 {
             collectionViewHeight = newCollectionViewHeight
             collectionView.snp.updateConstraints {
                 $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
