@@ -28,7 +28,7 @@ extension ScheduleViewController: UICollectionViewDataSource {
         cell.delegate = self
         
         if let pill = pillLists[indexPath.section].scheduleList?[indexPath.row] {
-            cell.configureCell(with: pill)
+            cell.configure(with: pill)
             cell.isChecked = pill.isCheck
         }
 
