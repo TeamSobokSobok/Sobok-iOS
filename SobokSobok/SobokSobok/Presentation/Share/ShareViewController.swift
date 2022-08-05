@@ -10,10 +10,10 @@ import UIKit
 final class ShareViewController: BaseViewController {
     var members: [Member] = []
     lazy var scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
-                                                               environment: .development)
+                                                                    environment: .development)
     
     lazy var shareTopView = ShareTopView()
-    private let scheduleViewController = ScheduleViewController()
+    private let scheduleViewController = ScheduleViewController(type: .share)
     private lazy var containerView = UIView()
     
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ final class ShareViewController: BaseViewController {
             $0.leading.bottom.trailing.equalToSuperview()
         }
         
-        scheduleViewController.type = .share
         scheduleViewController.friendName = "태현"
     }
   

@@ -20,19 +20,20 @@ extension ScheduleViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: MainScheduleCell.reuseIdentifier,
-            for: indexPath
-        ) as? MainScheduleCell else { return UICollectionViewCell() }
+        guard let pill = pillLists[indexPath.section].scheduleList?[indexPath.row] else { return UICollectionViewCell() }
         
-        cell.delegate = self
-        
-        if let pill = pillLists[indexPath.section].scheduleList?[indexPath.row] {
-            cell.configure(with: pill)
-            cell.isChecked = pill.isCheck
+        if type == .home {
+            let mainCell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainScheduleCell.self)
+            mainCell.delegate = self
+            mainCell.isChecked = pill.isCheck
+            mainCell.configure(with: pill)
+            return mainCell
         }
-
-        return cell
+        else {
+            let shareCell = collectionView.dequeueReusableCell(for: indexPath, cellType: ShareScheduleCell.self)
+            shareCell.configure(with: pill)
+            return shareCell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

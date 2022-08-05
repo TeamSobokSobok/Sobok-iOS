@@ -56,7 +56,7 @@ extension TabBarController {
         tabs = [
             UINavigationController(rootViewController: MainViewController()),
             UINavigationController(rootViewController: ShareViewController()),
-            UINavigationController(rootViewController: NoticeViewController.instanceFromNib()),
+            UINavigationController(rootViewController: NoticeViewController()),
             UINavigationController(rootViewController: UIViewController())
         ]
 

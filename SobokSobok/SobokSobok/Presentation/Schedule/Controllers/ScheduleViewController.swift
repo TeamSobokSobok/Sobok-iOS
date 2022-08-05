@@ -59,7 +59,15 @@ final class ScheduleViewController: BaseViewController {
     
     var type: TabBarItem = .share
     
-
+    init(type: TabBarItem) {
+        self.type = type
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - UI Properties
     
     lazy var scrollView = UIScrollView().then {
@@ -111,12 +119,7 @@ final class ScheduleViewController: BaseViewController {
         
         setCollectionViewHeight()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
 
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -226,6 +229,11 @@ extension ScheduleViewController {
         collectionView.register(
             MainScheduleCell.self,
             forCellWithReuseIdentifier: MainScheduleCell.reuseIdentifier
+        )
+        
+        collectionView.register(
+            ShareScheduleCell.self,
+            forCellWithReuseIdentifier: ShareScheduleCell.reuseIdentifier
         )
         
         collectionView.register(
