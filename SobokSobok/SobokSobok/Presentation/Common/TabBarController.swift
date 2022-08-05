@@ -100,7 +100,7 @@ extension TabBarController: UITabBarControllerDelegate {
         let tabBarItemIndex = viewController.tabBarItem.tag
         
         if tabBarItemIndex == 3 {
-            let addMedicineSheet = AddMedicineSheet.instanceFromNib()
+            let addMedicineSheet = AddPillSheet(with: AddPillSheetViewModel())
             addMedicineSheet.modalPresentationStyle = .overCurrentContext
             addMedicineSheet.modalTransitionStyle = .crossDissolve
             self.present(addMedicineSheet, animated: false
