@@ -39,7 +39,7 @@ extension ScheduleViewController {
         }
     }
     
-    func uncheckPillSchedule(scheduleId: Int, completion: (() -> ())? = nil) {
+    func uncheckPillSchedule(scheduleId: Int) {
         Task {
             do {
                 let _ = try await scheduleManager.uncheckPillSchedule(for: scheduleId)
