@@ -14,23 +14,6 @@ class ScheduleCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
-    private let pillColors: [String: UIColor] = [
-        "1": Color.pillColorRed,
-        "2": Color.pillColorOrange,
-        "3": Color.pillColorPurple,
-        "4": Color.pillColorBlue,
-        "5": Color.pillColorPink
-    ]
-    
-    private let stickers: [Int: UIImage] = [
-        1: Image.sticker1,
-        2: Image.sticker2,
-        3: Image.sticker3,
-        4: Image.sticker4,
-        5: Image.sticker5,
-        6: Image.sticker6
-    ]
-    
     private lazy var containerVStackView = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill
@@ -137,7 +120,7 @@ extension ScheduleCell {
             for index in 0..<4 {
                 let stickerView = stickerHStackView.arrangedSubviews[index] as? UIButton
                 stickerView?.isHidden = false
-                stickerView?.setImage(stickers[stickerId[index]], for: .normal)
+//                stickerView?.setImage(stickers[stickerId[index]], for: .normal)
             }
         } else {
             stickerHStackView.isHidden = true
