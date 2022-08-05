@@ -118,10 +118,6 @@
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
-		BDC83B45279AE737009C52A1 /* AcceptCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B44279AE737009C52A1 /* AcceptCalendarModel.swift */; };
-		BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */; };
-		BDC83B49279AE791009C52A1 /* NoticeListCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */; };
-		BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */; };
 		BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */; };
 		BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */; };
 		BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */; };
@@ -225,6 +221,7 @@
 		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
 		F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */; };
 		F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69516772890FF36000F88D7 /* NoticeListSection.swift */; };
+		F6951688289CF46D000F88D7 /* NoticeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951687289CF46C000F88D7 /* NoticeListModel.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -338,10 +335,6 @@
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
-		BDC83B44279AE737009C52A1 /* AcceptCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCalendarModel.swift; sourceTree = "<group>"; };
-		BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
-		BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCountModel.swift; sourceTree = "<group>"; };
-		BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillMoreInfoModel.swift; sourceTree = "<group>"; };
 		BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
 		BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
 		BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
@@ -441,6 +434,7 @@
 		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
 		F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSecondControl.swift; sourceTree = "<group>"; };
 		F69516772890FF36000F88D7 /* NoticeListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListSection.swift; sourceTree = "<group>"; };
+		F6951687289CF46C000F88D7 /* NoticeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListModel.swift; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1102,10 +1096,7 @@
 		BDC83B43279AE721009C52A1 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				BDC83B44279AE737009C52A1 /* AcceptCalendarModel.swift */,
-				BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */,
-				BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */,
-				BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */,
+				F6951687289CF46C000F88D7 /* NoticeListModel.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1815,11 +1806,9 @@
 				BD7120F9279723A00068B981 /* Member.swift in Sources */,
 				BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
-				BDC83B45279AE737009C52A1 /* AcceptCalendarModel.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */,
-				BDC83B49279AE791009C52A1 /* NoticeListCountModel.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
@@ -1859,6 +1848,7 @@
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
+				F6951688289CF46D000F88D7 /* NoticeListModel.swift in Sources */,
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD382F69286D9984002E91F0 /* APIEnvironment.swift in Sources */,
@@ -1908,7 +1898,6 @@
 				BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */,
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */,
-				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
@@ -1976,7 +1965,6 @@
 				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
 				BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */,
 				ECAF4D29284F8D0000B12DA7 /* String+Extension.swift in Sources */,
-				BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */,
 				EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */,
 				BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */,
 			);
