@@ -222,6 +222,9 @@
 		F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */; };
 		F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69516772890FF36000F88D7 /* NoticeListSection.swift */; };
 		F6951688289CF46D000F88D7 /* NoticeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951687289CF46C000F88D7 /* NoticeListModel.swift */; };
+		F695168A289D05E7000F88D7 /* NoticeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */; };
+		F695168C289D0915000F88D7 /* NoticeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168B289D0915000F88D7 /* NoticeManager.swift */; };
+		F695168E289D11FC000F88D7 /* NoticeViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -435,6 +438,9 @@
 		F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSecondControl.swift; sourceTree = "<group>"; };
 		F69516772890FF36000F88D7 /* NoticeListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListSection.swift; sourceTree = "<group>"; };
 		F6951687289CF46C000F88D7 /* NoticeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListModel.swift; sourceTree = "<group>"; };
+		F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeEndPoint.swift; sourceTree = "<group>"; };
+		F695168B289D0915000F88D7 /* NoticeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManager.swift; sourceTree = "<group>"; };
+		F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoticeViewController+Network.swift"; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -585,6 +591,7 @@
 			isa = PBXGroup;
 			children = (
 				BD382F70286DA350002E91F0 /* ScheduleManager.swift */,
+				F695168B289D0915000F88D7 /* NoticeManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -593,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */,
+				F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1595,6 +1603,7 @@
 				F605027427BE186B0010DEC8 /* Views */,
 				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
 				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
+				F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */,
 			);
 			path = NoticeFirst;
 			sourceTree = "<group>";
@@ -1837,6 +1846,7 @@
 				EC8EC1462851090200A744FE /* PillTimeViewModel.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */,
+				F695168A289D05E7000F88D7 /* NoticeEndPoint.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
 				F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */,
@@ -1850,6 +1860,7 @@
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
 				F6951688289CF46D000F88D7 /* NoticeListModel.swift in Sources */,
 				EC68A95C27982FD8002FC0E6 /* AddPill.swift in Sources */,
+				F695168E289D11FC000F88D7 /* NoticeViewController+Network.swift in Sources */,
 				BDD21AA7278DA85B007D10F6 /* TimeHeaderView.swift in Sources */,
 				BD382F69286D9984002E91F0 /* APIEnvironment.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
@@ -1945,6 +1956,7 @@
 				ECFE3F80288FCC2200150699 /* SendFillFirstView.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
+				F695168C289D0915000F88D7 /* NoticeManager.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */,
 				ECB8A5C5286BD86E00B1D363 /* AddUserView.swift in Sources */,

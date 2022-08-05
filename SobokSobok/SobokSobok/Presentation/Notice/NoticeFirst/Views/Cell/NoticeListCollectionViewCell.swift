@@ -16,8 +16,7 @@ enum SectionType: Int {
 }
 enum StatusType: Int {
     case waite
-    case accept
-    case refuse
+    case done
 }
 
 final class NoticeListCollectionViewCell: UICollectionViewCell {
@@ -94,7 +93,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setUI(section: <#SectionType#>, status: <#StatusType#>)
+        setUI(section: .pill, status: .waite)   // MARK: - (서버통신하면 바뀜)
         setConstraints()
         
         presentDetailView()
@@ -120,7 +119,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         case .waite:
             descriptionLabel.font = UIFont.font(.pretendardMedium, ofSize: 14)
             descriptionLabel.textColor = Color.gray700
-        case .accept, .refuse:
+        case .done:
             descriptionLabel.font = UIFont.font(.pretendardMedium, ofSize: 15)
             descriptionLabel.textColor = Color.gray600
             [topStack, bottomStack].forEach { $0.isHidden = true }

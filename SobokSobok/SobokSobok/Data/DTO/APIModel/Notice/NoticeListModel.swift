@@ -8,7 +8,7 @@
 import Foundation
 
 struct NoticeList: Codable {
-    let infoList: [InfoList]?
+    let infoList: [InfoList]
 }
 
 struct InfoList: Codable {
