@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 
 final class SelectFriendViewModel: ViewModelType {
+    
+    private let didLoadMemberList = BehaviorRelay<[String]>(value: [])
+    private var memberName: [String] = []
+    private let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
     var disposeBag = DisposeBag()
     
     struct Input {
@@ -32,11 +36,6 @@ final class SelectFriendViewModel: ViewModelType {
         return Output(didLoadMemberList: didLoadMemberList.asDriver())
         
     }
-    
-    private let didLoadMemberList = BehaviorRelay<[String]>(value: [])
-    var memberName: [String] = []
-    private let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
-    
 }
 
 extension SelectFriendViewModel {
@@ -53,19 +52,7 @@ extension SelectFriendViewModel {
                     memberName.append($0.memberName)
                     didLoadMemberList.accept(memberName)
                 }
-                
-                }
-                
-
-//                if let members = members,
-//                   !members.isEmpty {
-//                    self.members = members
-//                    shareTopView.friends = members
-//                }
             }
         }
     }
-
-
-
-
+}
