@@ -13,7 +13,7 @@ final class ShareViewController: BaseViewController {
                                                                     environment: .development)
     
     lazy var shareTopView = ShareTopView()
-    private let scheduleViewController = ScheduleViewController(type: .share)
+    let scheduleViewController = ScheduleViewController(type: .share)
     private lazy var containerView = UIView()
     
     override func viewDidLoad() {
@@ -31,8 +31,6 @@ final class ShareViewController: BaseViewController {
             $0.top.equalTo(shareTopView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
-
-        scheduleViewController.friendName = "태현"
     }
   
     override func viewWillAppear(_ animated: Bool) {
