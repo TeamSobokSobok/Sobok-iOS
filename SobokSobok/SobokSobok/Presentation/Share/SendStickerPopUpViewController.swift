@@ -47,6 +47,17 @@ final class SendStickerPopUpViewController: UIViewController {
     }
     
     public func postSticker(stickerId: Int) {
-        delegate?.sendStickerDidEnd(isLikedState: isLikedState, scheduleId: scheduleId, likeScheduleId: likeScheduleId ,stickerId: stickerId)
+        let userInfo: [AnyHashable : Any] = [
+            "isLikedState": isLikedState,
+            "scheduleId": scheduleId,
+            "likeScheduleId": likeScheduleId,
+            "stickerId": stickerId
+        ]
+        
+        NotificationCenter.default.post(
+            name: Notification.Name("PostSticker"),
+            object: self,
+            userInfo: userInfo
+        )
     }
 }

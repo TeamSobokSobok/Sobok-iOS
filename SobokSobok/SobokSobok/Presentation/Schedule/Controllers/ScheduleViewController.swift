@@ -63,7 +63,11 @@ final class ScheduleViewController: BaseViewController {
     private var collectionViewBottomInset: CGFloat = 32.0.adjustedHeight
     
     private var scheduleType: ScheduleType
-    private lazy var dataSource = ScheduleDataSource(pillSchedules: pillLists, scheduleType: scheduleType)
+    private lazy var dataSource = ScheduleDataSource(
+        pillSchedules: pillLists,
+        scheduleType: scheduleType,
+        viewController: self
+    )
 
     
     init(scheduleType: ScheduleType) {
@@ -101,12 +105,7 @@ final class ScheduleViewController: BaseViewController {
     lazy var emptyView = ScheduleEmptyView(for: scheduleType)
     
     deinit {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name("sticker"),
-                                                  object: nil)
-        NotificationCenter.default.removeObserver(self,
-                                               name: NSNotification.Name("emotion"),
-                                               object: nil)
+        removeObservers()
     }
     
     // MARK: - Life Cycles
@@ -116,15 +115,7 @@ final class ScheduleViewController: BaseViewController {
 
         setDelegation()
         callRequestSchedules()
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(stickerTapped),
-                                               name: NSNotification.Name("sticker"),
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(emotionTapped),
-                                               name: NSNotification.Name("emotion"),
-                                               object: nil)
+        addObservers()
     }
     
     override func viewDidLayoutSubviews() {
@@ -189,20 +180,89 @@ final class ScheduleViewController: BaseViewController {
     }
 }
 
+// MARK: - Observers
+
+extension ScheduleViewController {
+    private func addObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(stickerTapped),
+            name: NSNotification.Name("sticker"),
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(sendSticker),
+            name: NSNotification.Name("PostSticker"),
+            object: nil
+        )
+    }
+    
+    private func removeObservers() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: NSNotification.Name("sticker"),
+            object: nil
+        )
+        
+        NotificationCenter.default.removeObserver(
+            self,
+            name: NSNotification.Name("PostSticker"),
+            object: nil
+        )
+    }
+}
+
+extension ScheduleViewController: MainScheduleCellDelegate {
+    func checkButtonTapped(_ cell: MainScheduleCell) {
+        guard let scheduleId = cell.pill?.scheduleId else { return }
+        
+        if cell.isChecked {
+            showAlert(
+                title: "복약하지 않은 약인가요?",
+                message: "복약을 취소하면 소중한 사람들의 응원도 같이 삭제되어요",
+                completionTitle: "복약 취소",
+                cancelTitle: "취소"
+            ) { [weak self] _ in
+                cell.isChecked.toggle()
+                self?.uncheckPillSchedule(scheduleId: scheduleId)
+            }
+        }
+        else {
+            cell.isChecked.toggle()
+            self.checkPillSchedule(scheduleId: scheduleId)
+        }
+    }
+}
+
 // MARK: - Private Function
 
 extension ScheduleViewController {
+    
+    @objc func sendSticker(notification: NSNotification) {
+        if let notification = notification.userInfo,
+           let isLikedState = notification["isLikedState"] as? Bool,
+           let scheduleId = notification["scheduleId"] as? Int,
+           let likeScheduleId = notification["likeScheduleId"] as? Int,
+           let stickerId = notification["stickerId"] as? Int
+        {
+            if isLikedState {
+                changeSticker(for: likeScheduleId, withSticker: stickerId)
+            }
+            else {
+                postSticker(for: scheduleId, withSticker: stickerId)
+            }
+        }
+    }
+
     @objc func stickerTapped(notification: NSNotification) {
         if let notification = notification.userInfo,
            let scheduleId = notification["scheduleId"] as? Int {
             getStickers(for: scheduleId)
         }
     }
-    
-    @objc func emotionTapped(notification: NSNotification) {
-        
-    }
-    
+
     private func callRequestSchedules() {
         switch scheduleType {
         case .main:
@@ -294,6 +354,15 @@ extension ScheduleViewController {
         self.tabBarController?.present(stickerBottomSheet, animated: false) {
             stickerBottomSheet.showSheetWithAnimation()
         }
+    }
+    
+    func showStickerPopUp(scheduleId: Int, isLikedSchedule: Bool) {
+        let stickerPopUpView = SendStickerPopUpViewController.instanceFromNib()
+        stickerPopUpView.modalPresentationStyle = .overCurrentContext
+        stickerPopUpView.modalTransitionStyle = .crossDissolve
+        stickerPopUpView.scheduleId = scheduleId
+        stickerPopUpView.isLikedState = isLikedSchedule
+        self.present(stickerPopUpView, animated: false, completion: nil)
     }
 }
 
