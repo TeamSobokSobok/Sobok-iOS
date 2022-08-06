@@ -44,7 +44,12 @@ extension ScheduleViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? ScheduleHeaderView else { return UICollectionReusableView() }
 
-        headerView.showEditButton(isHidden: indexPath.section == 0 ? false : true)
+        if type == .home {
+            headerView.showEditButton(isHidden: indexPath.section == 0 ? false : true)
+        }
+        else {
+            headerView.showEditButton(isHidden: true)
+        }
         headerView.configure(withTime: pillLists[indexPath.section].scheduleTime)
         
         return headerView
