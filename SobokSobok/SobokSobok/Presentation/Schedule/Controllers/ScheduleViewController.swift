@@ -97,6 +97,9 @@ final class ScheduleViewController: BaseViewController {
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.Name("sticker"),
                                                   object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                               name: NSNotification.Name("emotion"),
+                                               object: nil)
     }
     
     // MARK: - Life Cycles
@@ -110,6 +113,10 @@ final class ScheduleViewController: BaseViewController {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(stickerTapped),
                                                name: NSNotification.Name("sticker"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(emotionTapped),
+                                               name: NSNotification.Name("emotion"),
                                                object: nil)
     }
     
@@ -185,12 +192,15 @@ extension ScheduleViewController {
         }
     }
     
+    @objc func emotionTapped(notification: NSNotification) {
+        
+    }
+    
     private func callRequestSchedules() {
         if type == .home {
             getMySchedules(date: currentDate.toString(of: .year))
             getMyPillLists(date: currentDate.toString(of: .year))
         } else {
-            print("call")
             getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
             getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
         }

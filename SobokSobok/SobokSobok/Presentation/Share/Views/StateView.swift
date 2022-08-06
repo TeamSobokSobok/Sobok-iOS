@@ -22,7 +22,8 @@ final class StateView: BaseView {
             updateUI()
         }
     }
-    
+
+    var emotionClosure: (() -> ())?
     
     // MARK: - UI Components
     
@@ -38,7 +39,10 @@ final class StateView: BaseView {
         $0.addSubview(emotionStateButton)
     }
     
-    lazy var emotionStateButton = UIButton()
+    lazy var emotionStateButton = UIButton().then {
+        $0.addTarget(self, action: #selector(emotionButtonTapped), for: .touchUpInside)
+    }
+    
     lazy var eatStateBackgroundView = UIView().then {
         $0.makeRounded(radius: 6)
         $0.addSubview(eatStateLabel)
@@ -101,5 +105,12 @@ extension StateView {
         eatStateBackgroundView.backgroundColor = eatStateBackgroundColor
         eatStateLabel.text = eatStateTitle
         eatStateLabel.textColor = eatStateTitleColor
+    }
+}
+
+extension StateView {
+    
+    @objc private func emotionButtonTapped(_ sender: UIButton) {
+        emotionClosure?()
     }
 }

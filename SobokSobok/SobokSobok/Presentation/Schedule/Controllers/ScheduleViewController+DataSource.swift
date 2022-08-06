@@ -33,6 +33,15 @@ extension ScheduleViewController: UICollectionViewDataSource {
             let shareCell = collectionView.dequeueReusableCell(for: indexPath, cellType: ShareScheduleCell.self)
             shareCell.configure(with: pill)
             shareCell.configure(with: (isLiked: pill.isLikedSchedule ?? false, isEat: pill.isCheck))
+            shareCell.stateView.emotionClosure = {
+                let stickerPopUpView = SendStickerPopUpViewController.instanceFromNib()
+                stickerPopUpView.modalPresentationStyle = .overCurrentContext
+                stickerPopUpView.modalTransitionStyle = .crossDissolve
+                stickerPopUpView.scheduleId = pill.scheduleId
+                stickerPopUpView.isLikedState = pill.isLikedSchedule ?? false
+                stickerPopUpView.delegate = self
+                self.present(stickerPopUpView, animated: false, completion: nil)
+            }
             return shareCell
         }
     }
@@ -70,5 +79,15 @@ extension ScheduleViewController: MainScheduleCellDelegate {
             checkPillSchedule(scheduleId: scheduleId)
             cell.isChecked.toggle()
         }
+    }
+}
+
+extension ScheduleViewController: StickerPopUpDelegate {
+    func sendStickerDidEnd(isLikedState: Bool, scheduleId: Int, likeScheduleId: Int ,stickerId: Int) {
+        print(isLikedState, scheduleId, likeScheduleId, stickerId)
+        
+        isLikedState ?
+        changeSticker(for: 153, withSticker: stickerId) :
+        postSticker(for: scheduleId, withSticker: stickerId)
     }
 }
