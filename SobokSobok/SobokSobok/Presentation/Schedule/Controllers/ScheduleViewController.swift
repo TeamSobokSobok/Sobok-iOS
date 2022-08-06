@@ -41,7 +41,12 @@ final class ScheduleViewController: BaseViewController {
             parseSchedules()
         }
     }
-    var pillLists: [PillList] = []
+    var pillLists: [PillList] = [] {
+        didSet {
+            dataSource.update(with: pillLists)
+            collectionView.reloadData()
+        }
+    }
 
     var currentDate: Date = Date() {
         didSet {
@@ -57,10 +62,12 @@ final class ScheduleViewController: BaseViewController {
     var collectionViewHeight: CGFloat = 409.0.adjustedHeight
     private var collectionViewBottomInset: CGFloat = 32.0.adjustedHeight
     
-    var type: TabBarItem
+    private var scheduleType: ScheduleType
+    private lazy var dataSource = ScheduleDataSource(pillSchedules: pillLists, scheduleType: scheduleType)
+
     
-    init(type: TabBarItem) {
-        self.type = type
+    init(scheduleType: ScheduleType) {
+        self.scheduleType = scheduleType
         super.init()
     }
     
@@ -91,7 +98,7 @@ final class ScheduleViewController: BaseViewController {
         collectionViewLayout: UICollectionViewLayout()
     )
     
-    lazy var emptyView = ScheduleEmptyView(for: type)
+    lazy var emptyView = ScheduleEmptyView(for: scheduleType)
     
     deinit {
         NotificationCenter.default.removeObserver(self,
@@ -197,10 +204,11 @@ extension ScheduleViewController {
     }
     
     private func callRequestSchedules() {
-        if type == .home {
+        switch scheduleType {
+        case .main:
             getMySchedules(date: currentDate.toString(of: .year))
             getMyPillLists(date: currentDate.toString(of: .year))
-        } else {
+        case .share:
             getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
             getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
         }
@@ -217,7 +225,7 @@ extension ScheduleViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarTopView.delegate = self
-        collectionView.dataSource = self
+        collectionView.dataSource = dataSource
     }
     
     // TODO: - 높이 문제 해결 필요
