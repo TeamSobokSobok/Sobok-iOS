@@ -12,7 +12,7 @@ import SnapKit
 final class MainViewController: BaseViewController {
 
     private let homeTopView = HomeTopView()
-    private let scheduleViewController = ScheduleViewController()
+    private let scheduleViewController = ScheduleViewController(type: .home)
     private let containerView = UIView()
     
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ final class MainViewController: BaseViewController {
     override func style() {
         super.style()
         
+        scheduleViewController.type = .home
         homeTopView.mainMessageLabel.text = "소중한 태끼님\n오늘도 약 꼭 챙겨 드세요"
         containerView.backgroundColor = .red
     }

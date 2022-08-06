@@ -8,8 +8,66 @@
 import UIKit
 import FSCalendar
 
-final class ScheduleViewController: BaseViewController {
+class DynamicHeightCollectionView: UICollectionView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
+            self.invalidateIntrinsicContentSize()
+        }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return contentSize
+    }
+}
 
+final class ScheduleViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
+    let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
+    let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(), environment: .development)
+    
+    let gregorian = Calendar(identifier: .gregorian)
+    
+    var friendName: String? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var schedules: [Schedule] = [] {
+        didSet {
+            parseSchedules()
+        }
+    }
+    var pillLists: [PillList] = []
+
+    var currentDate: Date = Date() {
+        didSet {
+            callRequestSchedules()
+            updateUI()
+        }
+    }
+    var selectedDate = Date().toString(of: .day)
+    var doingDates: [String] = []
+    var doneDates: [String] = []
+    
+    var calendarHeight: CGFloat = 308.0
+    var collectionViewHeight: CGFloat = 409.0.adjustedHeight
+    private var collectionViewBottomInset: CGFloat = 32.0.adjustedHeight
+    
+    var type: TabBarItem
+    
+    init(type: TabBarItem) {
+        self.type = type
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - UI Properties
     
     lazy var scrollView = UIScrollView().then {
@@ -28,85 +86,59 @@ final class ScheduleViewController: BaseViewController {
     private let  calendarTopView = CalendarTopView()
     lazy var  calendarView = FSCalendar()
     
-    lazy var collectionView = UICollectionView(
+    lazy var collectionView = DynamicHeightCollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
-
-    // MARK: - Properties
     
-    var currentDate: Date = Date() {
-        didSet {
-            updateUI()
-        }
-    }
+    lazy var emptyView = ScheduleEmptyView(for: type)
     
-    var calendarHeight: CGFloat = 308.0
-    var collectionViewHeight: CGFloat = 500.0
-    private var collectionViewBottomInset: CGFloat = 32.0
-    var friendName: String? {
-        didSet {
-            updateUI()
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name("sticker"),
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                               name: NSNotification.Name("emotion"),
+                                               object: nil)
     }
     
-    let gregorian = Calendar(identifier: .gregorian)
-    var doingDates: [String] = [] {
-        didSet {
-            calendarView.reloadData()
-        }
-    }
-    var doneDates: [String] = [] {
-        didSet {
-            calendarView.reloadData()
-        }
-    }
-    var selectedDate: String = Date().toString(of: .day)
-    var pillLists: [PillList] = [] {
-        didSet {
-            collectionView.reloadData()
-            setCollectionViewHeight()
-        }
-    }
+    // MARK: - Life Cycles
     
-    var schedules: [Schedule] = [] {
-        didSet {
-            parseSchedules()
-        }
-    }
-    
-    let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
-                                                               environment: .development)
-    let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(),
-                                                             environment: .development)
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCalendar()
-        setCalendarStyle()
+
         setDelegation()
-        registerCells()
-        setCollectionView()
+        callRequestSchedules()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(stickerTapped),
+                                               name: NSNotification.Name("sticker"),
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(emotionTapped),
+                                               name: NSNotification.Name("emotion"),
+                                               object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         setCollectionViewHeight()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getMySchedules(date: "2022-06-04")
-        getMyPillLists(date: "2022-06-22")
-//        getMemberSchedules(memberId: 187, date: "2022-06-22")
-//        getMemberPillLists(memberId: 187, date: "2022-06-22")
-//        getStickers(for: 13161)
-//        postSticker(for: 13530, withSticker: 3)
-        changeSticker(for: 151, withSticker: 1)
     }
+    
+    
+    // MARK: - Override Functions
     
     override func style() {
         updateUI()
+        setCalendar()
+        setCalendarStyle()
+        setCollectionView()
+        registerCells()
     }
     
     override func hierarchy() {
@@ -153,6 +185,27 @@ final class ScheduleViewController: BaseViewController {
 // MARK: - Private Function
 
 extension ScheduleViewController {
+    @objc func stickerTapped(notification: NSNotification) {
+        if let notification = notification.userInfo,
+           let scheduleId = notification["scheduleId"] as? Int {
+            getStickers(for: scheduleId)
+        }
+    }
+    
+    @objc func emotionTapped(notification: NSNotification) {
+        
+    }
+    
+    private func callRequestSchedules() {
+        if type == .home {
+            getMySchedules(date: currentDate.toString(of: .year))
+            getMyPillLists(date: currentDate.toString(of: .year))
+        } else {
+            getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
+            getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
+        }
+    }
+    
     private func updateUI() {
         friendNameView.isHidden = friendName == nil ? true : false
         friendNameView.friendNameLabel.text = friendName
@@ -167,9 +220,12 @@ extension ScheduleViewController {
         collectionView.dataSource = self
     }
     
-    private func setCollectionViewHeight() {
-        let newCollectionViewHeight = collectionView.contentSize.height
-        if newCollectionViewHeight > 0 && (collectionViewHeight != newCollectionViewHeight) {
+    // TODO: - 높이 문제 해결 필요
+    
+    func setCollectionViewHeight() {
+        var newCollectionViewHeight = pillLists.isEmpty ? 409.0 : collectionView.contentSize.height
+        newCollectionViewHeight = newCollectionViewHeight < 409.0 ? 409.0 : newCollectionViewHeight
+        if newCollectionViewHeight > 0 {
             collectionViewHeight = newCollectionViewHeight
             collectionView.snp.updateConstraints {
                 $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
@@ -186,6 +242,11 @@ extension ScheduleViewController {
         collectionView.register(
             MainScheduleCell.self,
             forCellWithReuseIdentifier: MainScheduleCell.reuseIdentifier
+        )
+        
+        collectionView.register(
+            ShareScheduleCell.self,
+            forCellWithReuseIdentifier: ShareScheduleCell.reuseIdentifier
         )
         
         collectionView.register(
@@ -213,6 +274,18 @@ extension ScheduleViewController {
         
         self.doneDates = doneItems
         self.doingDates = doingItems
+        
+        calendarView.reloadData()
+    }
+    
+    func showStickerBottomSheet(stickers: [Stickers]?) {
+        let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
+        stickerBottomSheet.modalPresentationStyle = .overCurrentContext
+        stickerBottomSheet.modalTransitionStyle = .crossDissolve
+        stickerBottomSheet.stickers = stickers
+        self.tabBarController?.present(stickerBottomSheet, animated: false) {
+            stickerBottomSheet.showSheetWithAnimation()
+        }
     }
 }
 
