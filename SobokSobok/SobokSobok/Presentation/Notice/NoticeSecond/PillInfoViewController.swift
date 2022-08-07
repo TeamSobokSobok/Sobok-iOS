@@ -13,7 +13,7 @@ final class PillInfoViewController: UIViewController {
     let pillInfoManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let pillInfoView = PillInfoView()
     private let timeView = TimeView()
-    
+
     // MARK: - View Life Cycle
     override func loadView() {
         view = pillInfoView
@@ -31,17 +31,17 @@ extension PillInfoViewController: NoticeSecondControl {
     func target() {
         pillInfoView.navigationView.navigationButton.addTarget(self, action: #selector(addDismiss), for: .touchUpInside)
     }
-    
+
     @objc private func addDismiss() { self.dismiss(animated: true) }
-    
+
     private func setInfoData() {
         guard let pillInfo = pillInfoList.first else { return }
         let timeCount = pillInfo.makeTimeCount()
-        
+
         pillInfoView.titleLabel.text = pillInfo.pillName
         pillInfoView.weekLabel.text = "\(pillInfo.takeInterval)주에 한 번"
         pillInfoView.periodLabel.text = "\(pillInfo.startDate) ~ \(pillInfo.endDate)" // TODO: - 날짜 변환
-        
+
         setTimeViews(timeCount: timeCount, timeData: pillInfo.scheduleTime) // TODO: - 시간 변환
     }
 

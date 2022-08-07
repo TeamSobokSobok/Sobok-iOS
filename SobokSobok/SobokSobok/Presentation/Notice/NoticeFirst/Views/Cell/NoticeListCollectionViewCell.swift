@@ -187,10 +187,4 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
             $0.bottom.equalToSuperview().inset(18)
         }
     }
-    
-    func setData(noticeListData: NoticeListData) {
-//        noticeIcon.image = noticeListData.makeNoticeImage()
-//        noticeTitle.text = noticeListData.noticeTitle
-//        noticeTime.text = noticeListData.noticeTime
-    }
 }
