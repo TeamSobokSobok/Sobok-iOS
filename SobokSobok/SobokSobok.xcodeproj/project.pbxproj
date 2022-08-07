@@ -106,7 +106,6 @@
 		BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210427977DCC0068B981 /* PillManagementAPI.swift */; };
 		BD917E45289D48C700A60BBE /* StickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E44289D48C700A60BBE /* StickerType.swift */; };
 		BD917E47289D493800A60BBE /* PillColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E46289D493800A60BBE /* PillColorType.swift */; };
-		BD917E4A289D593800A60BBE /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
 		BD917E4C289D594600A60BBE /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E4B289D594600A60BBE /* StateView.swift */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
@@ -220,6 +219,7 @@
 		F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */; };
 		F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */; };
 		F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */; };
+		F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
 		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
@@ -1839,6 +1839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */,
 				EC99153F2833BE5A00542115 /* UICollectionView + Extension.swift in Sources */,
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				BD58ACF62893CBD600832F01 /* ScheduleViewController+Network.swift in Sources */,
@@ -1860,7 +1861,7 @@
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
-				F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */,
+				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
 				ECCF5E4D289CF1B700BC6862 /* SelectFriendViewModel.swift in Sources */,
 				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
