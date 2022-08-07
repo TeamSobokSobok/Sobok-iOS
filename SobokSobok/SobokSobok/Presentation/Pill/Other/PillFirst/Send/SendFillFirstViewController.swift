@@ -52,7 +52,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     }
     
     @objc func pushAddPillFirstView() {
-        let addPillFirstView = AddPillFirstViewController()
+        let addPillFirstView = AddPillFirstViewController(sendPillViewModel: SendPillViewModel())
         addPillFirstView.divide(style: .friendPill)
         self.navigationController?.pushViewController(addPillFirstView, animated: true)
     }
