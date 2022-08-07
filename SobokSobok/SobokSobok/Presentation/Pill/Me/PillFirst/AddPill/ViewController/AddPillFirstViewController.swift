@@ -30,6 +30,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
     private var addPillTimeViewModel = AddTimeViewModel()
     private var pillTimeViewModel = PillTimeViewModel()
     private var pillPeriodViewModel = PillPeriodViewModel()
+    private var sendPillViewModel: SendPillViewModel
     
     override func loadView() {
         self.view = addPillFirstView
@@ -40,6 +41,15 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         assignDelegation()
         style()
         bind()
+    }
+    
+    init(sendPillViewModel: SendPillViewModel) {
+        self.sendPillViewModel = sendPillViewModel
+        super.init(nibName: nil, bundle: Bundle.main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func divide(style: PillStyle) {
@@ -62,6 +72,8 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
             self.addPillFirstView.everydayButton.isSelected.toggle()
             if self.addPillFirstView.everydayButton.isSelected {
                 self.enableNextButton()
+                self.sendPillViewModel.takeInterval = 0
+                self.sendPillViewModel.day = ""
             } else {
                 self.unableNextButton()
             }
@@ -71,6 +83,8 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         addPillFirstView.specificDayButton.rx.tap
             .bind {
                 self.pillPeriodViewModel.dayPeriod.value = "며칠 간격으로 먹나요?"
+                self.sendPillViewModel.takeInterval = 1
+                self.sendPillViewModel.day = self.pillDayViewModel.days.value
                 self.unableNextButton()
             }
             .disposed(by: disposeBag)
@@ -78,6 +92,8 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         addPillFirstView.specificPeriodButton.rx.tap
             .bind {
                 self.pillDayViewModel.days.value = "무슨 요일에 먹나요?"
+                self.sendPillViewModel.takeInterval = 2
+                self.sendPillViewModel.specific = self.pillPeriodViewModel.dayString.value.changeKrToEn()
                 self.unableNextButton()
             }
             .disposed(by: disposeBag)
@@ -207,7 +223,7 @@ extension AddPillFirstViewController {
     }
     
     private func pushSecondView(style: PillStyle) {
-        let addPillSecondViewController = AddPillSecondViewController()
+        let addPillSecondViewController = AddPillSecondViewController(sendPillViewModel: sendPillViewModel)
         addPillSecondViewController.divide(style: style)
         addPillSecondViewController.type = style.type
         
@@ -225,6 +241,8 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillTimeCollectionViewCell.self)
         
         cell.updateCell(pillTimeViewModel, indexPath: indexPath)
+        
+        sendPillViewModel.time = pillTimeViewModel.timeList.value
         
         cell.viewModel.deleteCellClosure = { [weak self] in
             guard let self = self else { return }
@@ -262,9 +280,11 @@ extension AddPillFirstViewController: SendPillTimeDelegate, SendPillDaysDelegate
     
     func sendPillDays(pillDays: String) {
         pillDayViewModel.days.value = pillDays.addSeparator()
+        sendPillViewModel.day = pillDays.addSeparator()
     }
     
     func sendPillPeriod(pillPeriod: String) {
         pillPeriodViewModel.dayString.value = pillPeriod
+        sendPillViewModel.specific = pillPeriod
     }
 }
