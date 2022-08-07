@@ -108,7 +108,7 @@ extension AddPillSheet {
         self.dismiss(animated: true)
         guard let viewController = self.presentingViewController as? UITabBarController else { return }
         guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-        let pillLimitViewController = PillLimitViewController.instanceFromNib()
+        let pillLimitViewController = PillLimitViewController()
         selectedViewController.pushViewController(pillLimitViewController, animated: true)
     }
     
@@ -116,7 +116,7 @@ extension AddPillSheet {
         self.dismiss(animated: true)
         guard let viewController = self.presentingViewController as? UITabBarController else { return }
         guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-        let addPillFirstViewController = AddPillFirstViewController.instanceFromNib()
+        let addPillFirstViewController = AddPillFirstViewController(sendPillViewModel: SendPillViewModel())
         addPillFirstViewController.divide(style: .myPill)
         selectedViewController.pushViewController(addPillFirstViewController, animated: true)
     }

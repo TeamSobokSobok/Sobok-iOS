@@ -1,5 +1,5 @@
 //
-//  PillRequestCollectionViewCell.swift
+//  NoticeListCollectionViewCell.swift
 //  SobokSobok
 //
 //  Created by 정은희 on 2022/06/23.
@@ -10,18 +10,35 @@ import UIKit
 import SnapKit
 import Then
 
-final class PillRequestCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - Properties
+enum SectionType: Int {
+    case pill
+    case calender
+}
+enum StatusType: Int {
+    case waite
+    case done
+}
+
+final class NoticeListCollectionViewCell: UICollectionViewCell {
     lazy var info: (() -> Void) = {}
     lazy var accept: (() -> Void) = {}
     lazy var refuse: (() -> Void) = {}
     
-    private lazy var pillIcon = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.image = Image.icPillAlarm
+    var sectionType: SectionType = .pill {
+        didSet {
+            setNeedsLayout()
+        }
     }
-    private lazy var pillName = UILabel().then {
+    var statusType: StatusType = .waite {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    private lazy var iconImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+    }
+    let nameLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 18)
         $0.textColor = Color.gray900
         $0.textAlignment = .left
@@ -47,14 +64,12 @@ final class PillRequestCollectionViewCell: UICollectionViewCell {
         $0.distribution = .fill
     }
     private lazy var descriptionLabel = UILabel().then {
-        $0.font = UIFont.font(.pretendardMedium, ofSize: 14)
         $0.lineBreakMode = .byCharWrapping
         $0.numberOfLines = 0
         $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical)
-        $0.textColor = Color.gray700
         $0.textAlignment = .left
     }
-    private lazy var timeLabel = UILabel().then {
+    let timeLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 12)
         $0.textAlignment = .left
         $0.textColor = Color.gray500
@@ -65,9 +80,9 @@ final class PillRequestCollectionViewCell: UICollectionViewCell {
         $0.distribution = .fill
         $0.spacing = 4
     }
-    private lazy var refuseButton = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절", fontSize: 13)
-    private lazy var acceptButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "확인", fontSize: 13)
-    private lazy var bottomStack = UIStackView().then {
+    let refuseButton = SobokButton.init(frame: CGRect(), mode: .lightMint, text: "거절", fontSize: 13)
+    let acceptButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "확인", fontSize: 13)
+    let bottomStack = UIStackView().then {
         $0.alignment = .center
         $0.axis = .horizontal
         $0.distribution = .fillEqually
@@ -78,62 +93,85 @@ final class PillRequestCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setUI()
+        setUI(section: .pill, status: .waite)   // MARK: - (서버통신하면 바뀜)
         setConstraints()
         
         presentDetailView()
         addAcceptAlert()
         addRefuseAlert()
     }
-    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError()
     }
     
     // MARK: - Functions
-    private func setUI() {
+    override func layoutSubviews() {
+        switch sectionType {
+        case .pill:
+            iconImageView.image = Image.icPillAlarm
+        case .calender:
+            iconImageView.image = Image.icCalender
+            infoButton.isHidden = true
+        }
+        
+        switch statusType {
+        case .waite:
+            descriptionLabel.font = UIFont.font(.pretendardMedium, ofSize: 14)
+            descriptionLabel.textColor = Color.gray700
+        case .done:
+            descriptionLabel.font = UIFont.font(.pretendardMedium, ofSize: 15)
+            descriptionLabel.textColor = Color.gray600
+            [topStack, bottomStack].forEach { $0.isHidden = true }
+        }
+    }
+    
+    func setUI(section: SectionType, status: StatusType) {
+        sectionType = section
+        statusType = status
+        
         [topStack, middleStack, bottomStack].forEach { contentView.addSubview($0) }
-        topStack.addArrangedSubviews(pillIcon, pillName, infoButton, lineView)
+        topStack.addArrangedSubviews(iconImageView, nameLabel, infoButton, lineView)
         infoButton.addSubviews(infoLabel, infoImage)
         middleStack.addArrangedSubviews(descriptionLabel, timeLabel)
         bottomStack.addArrangedSubviews(refuseButton, acceptButton)
-        self.backgroundColor = Color.white
-        self.makeRounded(radius: 12)
+        
+        contentView.backgroundColor  = Color.white
+        contentView.makeRounded(radius: 12)
     }
     
     private func setConstraints() {
         topStack.snp.makeConstraints { make in
             make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(33.5.adjustedHeight)
-            make.top.equalToSuperview().offset(50)
+            make.height.equalTo(60.adjustedHeight)
+            make.top.equalToSuperview().offset(18)
             make.leading.equalToSuperview().offset(18)
         }
-        pillIcon.snp.makeConstraints { make in
+        iconImageView.snp.makeConstraints { make in
             make.width.equalTo(22.adjustedWidth)
             make.top.leading.equalToSuperview()
         }
-        pillName.snp.makeConstraints { make in
+        nameLabel.snp.makeConstraints { make in
             make.width.equalTo(156.adjustedWidth)
             make.height.equalTo(25.adjustedHeight)
             make.top.equalToSuperview()
-            make.leading.equalTo(pillIcon).inset(10)
+            make.leading.equalTo(iconImageView).inset(10)
         }
         infoButton.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalTo(pillName).inset(39)
+            make.leading.equalTo(nameLabel).inset(39)
         }
         infoImage.snp.makeConstraints { make in
             make.width.equalTo(16.adjustedWidth)
             make.height.equalTo(16.adjustedHeight)
         }
         lineView.snp.makeConstraints { make in
-            make.top.equalTo(pillName).inset(17)
+            make.top.equalTo(nameLabel).inset(17)
             make.leading.bottom.trailing.equalToSuperview()
         }
         middleStack.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.leading.equalToSuperview()
+            make.top.equalTo(topStack.snp.bottom)
+            make.leading.equalToSuperview().offset(18)
         }
         refuseButton.snp.makeConstraints {
             $0.width.equalTo(145.adjustedWidth)
@@ -148,29 +186,5 @@ final class PillRequestCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().offset(18)
             $0.bottom.equalToSuperview().inset(18)
         }
-    }
-    
-    private func presentDetailView() {
-        infoButton.addTarget(self, action: #selector(detailButtonClicked), for: .touchUpInside)
-    }
-    
-    private func addAcceptAlert() {
-        acceptButton.addTarget(self, action: #selector(acceptButtonClicked), for: .touchUpInside)
-    }
-    
-    private func addRefuseAlert() {
-        refuseButton.addTarget(self, action: #selector(refuseButtonClicked), for: .touchUpInside)
-    }
-    
-    @objc func detailButtonClicked() { info() }
-    
-    @objc func acceptButtonClicked() { accept() }
-    
-    @objc func refuseButtonClicked() { refuse() }
-    
-    func setData(noticeListData: NoticeListData) {
-//        noticeIcon.image = noticeListData.makeNoticeImage()
-//        noticeTitle.text = noticeListData.noticeTitle
-//        noticeTime.text = noticeListData.noticeTime
     }
 }

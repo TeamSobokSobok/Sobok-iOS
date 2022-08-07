@@ -106,7 +106,6 @@
 		BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210427977DCC0068B981 /* PillManagementAPI.swift */; };
 		BD917E45289D48C700A60BBE /* StickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E44289D48C700A60BBE /* StickerType.swift */; };
 		BD917E47289D493800A60BBE /* PillColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E46289D493800A60BBE /* PillColorType.swift */; };
-		BD917E4A289D593800A60BBE /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
 		BD917E4C289D594600A60BBE /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E4B289D594600A60BBE /* StateView.swift */; };
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
@@ -118,12 +117,6 @@
 		BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3B2798CAAD009C52A1 /* StickerService.swift */; };
 		BDC83B3E2798CC8D009C52A1 /* StickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */; };
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
-		BDC83B45279AE737009C52A1 /* AcceptCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B44279AE737009C52A1 /* AcceptCalendarModel.swift */; };
-		BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */; };
-		BDC83B49279AE791009C52A1 /* NoticeListCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */; };
-		BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */; };
-		BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */; };
-		BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */; };
 		BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */; };
 		BDCDB5CD2861B23800C419CC /* ScheduleViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */; };
 		BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* MainViewController.swift */; };
@@ -171,8 +164,6 @@
 		EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51A41927D4AC9E00BB01AF /* PillPeriodViewController.swift */; };
 		EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC63A21227D37FDA006EBED7 /* PillDayTableViewCell.swift */; };
 		EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666A8C28855C630089A4CA /* BaseProtocol.swift */; };
-		EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95727982E40002FC0E6 /* AddPillAPI.swift */; };
-		EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A95927982E49002FC0E6 /* AddPillService.swift */; };
 		EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596A9281C023800850E84 /* AddPillSecondView.swift */; };
 		EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */; };
 		EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AF281C1FAB00850E84 /* BaseView.swift */; };
@@ -196,12 +187,13 @@
 		ECAF4D2B284F979200B12DA7 /* AddPillFirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAF4D2A284F979200B12DA7 /* AddPillFirstViewModel.swift */; };
 		ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845DD2795681E00433522 /* NetworkResult.swift */; };
 		ECB845E02795684E00433522 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845DF2795684E00433522 /* GenericResponse.swift */; };
-		ECB845E62795773800433522 /* PillCountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845E52795773800433522 /* PillCountAPI.swift */; };
-		ECB845E82795774B00433522 /* PillCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845E72795774B00433522 /* PillCountService.swift */; };
 		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
 		ECB8A5C5286BD86E00B1D363 /* SelectFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C4286BD86E00B1D363 /* SelectFriendView.swift */; };
 		ECB8A5C7286BD87600B1D363 /* SelectFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C6286BD87600B1D363 /* SelectFriendViewController.swift */; };
 		ECCF5E4D289CF1B700BC6862 /* SelectFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */; };
+		ECCF5E51289F8BF500BC6862 /* SendPillEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */; };
+		ECCF5E53289F8C0000BC6862 /* SendPillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */; };
+		ECCF5E57289F94D800BC6862 /* SendPillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */; };
 		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
 		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
 		ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */; };
@@ -219,14 +211,25 @@
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
 		F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */; };
 		F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEAA27C78B72009B9246 /* PillInfoView.swift */; };
-		F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */; };
-		F638460428648EB800F60A9F /* FriendRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */; };
+		F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
 		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
 		F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* PillInfoViewController.swift */; };
 		F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */; };
+		F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */; };
+		F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */; };
+		F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
+		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
+		F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */; };
+		F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69516772890FF36000F88D7 /* NoticeListSection.swift */; };
+		F6951688289CF46D000F88D7 /* NoticeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951687289CF46C000F88D7 /* NoticeListModel.swift */; };
+		F695168A289D05E7000F88D7 /* NoticeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */; };
+		F695168C289D0915000F88D7 /* NoticeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168B289D0915000F88D7 /* NoticeManager.swift */; };
+		F695168E289D11FC000F88D7 /* NoticeViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */; };
+		F6951690289D7CCD000F88D7 /* PillDetailInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168F289D7CCD000F88D7 /* PillDetailInfoModel.swift */; };
+		F6951692289D7EE7000F88D7 /* PillInfoViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -340,12 +343,6 @@
 		BDC83B3B2798CAAD009C52A1 /* StickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerService.swift; sourceTree = "<group>"; };
 		BDC83B3D2798CC8D009C52A1 /* StickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAPI.swift; sourceTree = "<group>"; };
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
-		BDC83B44279AE737009C52A1 /* AcceptCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCalendarModel.swift; sourceTree = "<group>"; };
-		BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
-		BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCountModel.swift; sourceTree = "<group>"; };
-		BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillMoreInfoModel.swift; sourceTree = "<group>"; };
-		BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
-		BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAPI.swift; sourceTree = "<group>"; };
 		BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+Layout.swift"; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -390,8 +387,6 @@
 		EC51A41927D4AC9E00BB01AF /* PillPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillPeriodViewController.swift; sourceTree = "<group>"; };
 		EC63A21227D37FDA006EBED7 /* PillDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDayTableViewCell.swift; sourceTree = "<group>"; };
 		EC666A8C28855C630089A4CA /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
-		EC68A95727982E40002FC0E6 /* AddPillAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillAPI.swift; sourceTree = "<group>"; };
-		EC68A95927982E49002FC0E6 /* AddPillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillService.swift; sourceTree = "<group>"; };
 		EC8596A9281C023800850E84 /* AddPillSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondView.swift; sourceTree = "<group>"; };
 		EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondViewController.swift; sourceTree = "<group>"; };
 		EC8596AF281C1FAB00850E84 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -414,12 +409,13 @@
 		ECAF4D2A284F979200B12DA7 /* AddPillFirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFirstViewModel.swift; sourceTree = "<group>"; };
 		ECB845DD2795681E00433522 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		ECB845DF2795684E00433522 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
-		ECB845E52795773800433522 /* PillCountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountAPI.swift; sourceTree = "<group>"; };
-		ECB845E72795774B00433522 /* PillCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountService.swift; sourceTree = "<group>"; };
 		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		ECB8A5C4286BD86E00B1D363 /* SelectFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendView.swift; sourceTree = "<group>"; };
 		ECB8A5C6286BD87600B1D363 /* SelectFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewController.swift; sourceTree = "<group>"; };
 		ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewModel.swift; sourceTree = "<group>"; };
+		ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillEndPoint.swift; sourceTree = "<group>"; };
+		ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillManager.swift; sourceTree = "<group>"; };
+		ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillViewModel.swift; sourceTree = "<group>"; };
 		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
 		ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePillTimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -437,14 +433,24 @@
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		F635EEAA27C78B72009B9246 /* PillInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoView.swift; sourceTree = "<group>"; };
-		F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillRequestCollectionViewCell.swift; sourceTree = "<group>"; };
-		F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
 		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* PillInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoDataModel.swift; sourceTree = "<group>"; };
+		F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFriendModel.swift; sourceTree = "<group>"; };
+		F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
+		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
+		F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSecondControl.swift; sourceTree = "<group>"; };
+		F69516772890FF36000F88D7 /* NoticeListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListSection.swift; sourceTree = "<group>"; };
+		F6951687289CF46C000F88D7 /* NoticeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListModel.swift; sourceTree = "<group>"; };
+		F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeEndPoint.swift; sourceTree = "<group>"; };
+		F695168B289D0915000F88D7 /* NoticeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManager.swift; sourceTree = "<group>"; };
+		F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoticeViewController+Network.swift"; sourceTree = "<group>"; };
+		F695168F289D7CCD000F88D7 /* PillDetailInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDetailInfoModel.swift; sourceTree = "<group>"; };
+		F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PillInfoViewController+Network.swift"; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -583,8 +589,10 @@
 			isa = PBXGroup;
 			children = (
 				BD382F70286DA350002E91F0 /* ScheduleManager.swift */,
+				F695168B289D0915000F88D7 /* NoticeManager.swift */,
 				EC4A3819289A68BF00974D7E /* PillCountlManager.swift */,
 				BDDF7722289A95340096196B /* StickerManager.swift */,
+				ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -593,8 +601,10 @@
 			isa = PBXGroup;
 			children = (
 				BD382F6C286D9A6B002E91F0 /* ScheduleEndPoint.swift */,
+				F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */,
 				EC9EDE41289A51FB00855ED7 /* PillCountEndPoint.swift */,
 				BDDF7720289A952B0096196B /* StickerEndPoint.swift */,
+				ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -933,6 +943,7 @@
 				EC042861286021D2001DD1EC /* Me */,
 				EC042860286021CD001DD1EC /* Other */,
 				EC037614278B372500CA4B54 /* AddPillSheet */,
+				ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */,
 			);
 			path = Pill;
 			sourceTree = "<group>";
@@ -1103,22 +1114,13 @@
 			path = Sticker;
 			sourceTree = "<group>";
 		};
-		BDC83B42279AE556009C52A1 /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				BDC83B4C279AE8F5009C52A1 /* NoticeService.swift */,
-				BDC83B4E279AE8FD009C52A1 /* NoticeAPI.swift */,
-			);
-			path = Notice;
-			sourceTree = "<group>";
-		};
 		BDC83B43279AE721009C52A1 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				BDC83B44279AE737009C52A1 /* AcceptCalendarModel.swift */,
-				BDC83B46279AE752009C52A1 /* AcceptPillModel.swift */,
-				BDC83B48279AE791009C52A1 /* NoticeListCountModel.swift */,
-				BDC83B4A279AE7CF009C52A1 /* PillMoreInfoModel.swift */,
+				F6951687289CF46C000F88D7 /* NoticeListModel.swift */,
+				F695168F289D7CCD000F88D7 /* PillDetailInfoModel.swift */,
+				F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */,
+				F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1173,7 +1175,7 @@
 		EC0213F927CFAE0B00CF3569 /* PillFirst */ = {
 			isa = PBXGroup;
 			children = (
-				ECF96BEA2799585A00B5A32C /* FillLimit */,
+				ECF96BEA2799585A00B5A32C /* PillLimit */,
 				EC8EC1322851067E00A744FE /* AddPill */,
 				EC8EC13E2851074600A744FE /* AddPillTime */,
 				EC8EC13A2851071B00A744FE /* PillPeriod */,
@@ -1542,12 +1544,10 @@
 				ECB845DF2795684E00433522 /* GenericResponse.swift */,
 				ECF96BF7279B24FA00B5A32C /* APIConstants.swift */,
 				9A3DF09027966A1900D07A8C /* Sign */,
-				ECB845E22795771B00433522 /* Medicine */,
 				BD7120E62796A5FB0068B981 /* Home */,
 				BD7120F2279717370068B981 /* Share */,
 				9A3DF0B127981C1500D07A8C /* Account */,
 				BDC83B3A2798C978009C52A1 /* Sticker */,
-				BDC83B42279AE556009C52A1 /* Notice */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -1564,17 +1564,6 @@
 				9A3DF0B227981C4D00D07A8C /* Account */,
 			);
 			path = APIModel;
-			sourceTree = "<group>";
-		};
-		ECB845E22795771B00433522 /* Medicine */ = {
-			isa = PBXGroup;
-			children = (
-				ECB845E52795773800433522 /* PillCountAPI.swift */,
-				ECB845E72795774B00433522 /* PillCountService.swift */,
-				EC68A95727982E40002FC0E6 /* AddPillAPI.swift */,
-				EC68A95927982E49002FC0E6 /* AddPillService.swift */,
-			);
-			path = Medicine;
 			sourceTree = "<group>";
 		};
 		ECB845F62795C49E00433522 /* ViewController */ = {
@@ -1605,13 +1594,13 @@
 			path = SelectFriend;
 			sourceTree = "<group>";
 		};
-		ECF96BEA2799585A00B5A32C /* FillLimit */ = {
+		ECF96BEA2799585A00B5A32C /* PillLimit */ = {
 			isa = PBXGroup;
 			children = (
 				ECF96BEB2799586400B5A32C /* ViewController */,
-				ECF96BEC2799586D00B5A32C /* Views */,
+				ECF96BEC2799586D00B5A32C /* View */,
 			);
-			path = FillLimit;
+			path = PillLimit;
 			sourceTree = "<group>";
 		};
 		ECF96BEB2799586400B5A32C /* ViewController */ = {
@@ -1622,73 +1611,53 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		ECF96BEC2799586D00B5A32C /* Views */ = {
+		ECF96BEC2799586D00B5A32C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				ECF96BE52798EFB400B5A32C /* PillLimitView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		F605025527BBFBB30010DEC8 /* NoticeFirst */ = {
 			isa = PBXGroup;
 			children = (
 				F605027427BE186B0010DEC8 /* Views */,
-				F605025827BBFBF70010DEC8 /* Cells */,
-				F605025627BBFBCC0010DEC8 /* ViewControllers */,
+				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
+				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
+				F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */,
 			);
 			path = NoticeFirst;
-			sourceTree = "<group>";
-		};
-		F605025627BBFBCC0010DEC8 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		F605025827BBFBF70010DEC8 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				F638460128648EB000F60A9F /* PillRequestCollectionViewCell.swift */,
-				F638460328648EB800F60A9F /* FriendRequestCollectionViewCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		F605025927BBFC2F0010DEC8 /* NoticeSecond */ = {
 			isa = PBXGroup;
 			children = (
-				F635EEA527C7896A009B9246 /* Views */,
-				F605025A27BBFC360010DEC8 /* ViewControllers */,
+				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
+				F6538FA6278D814900B20B5E /* PillInfoViewController.swift */,
+				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
+				F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */,
 			);
 			path = NoticeSecond;
-			sourceTree = "<group>";
-		};
-		F605025A27BBFC360010DEC8 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				F6538FA6278D814900B20B5E /* PillInfoViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F605027427BE186B0010DEC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F605027527BE18790010DEC8 /* EmptyView.swift */,
+				F6951685289A6287000F88D7 /* Cell */,
 				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F635EEA527C7896A009B9246 /* Views */ = {
+		F6951685289A6287000F88D7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
+				F605027527BE18790010DEC8 /* EmptyView.swift */,
+				F69516772890FF36000F88D7 /* NoticeListSection.swift */,
+				F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */,
 			);
-			path = Views;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1859,20 +1828,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */,
 				EC99153F2833BE5A00542115 /* UICollectionView + Extension.swift in Sources */,
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				BD58ACF62893CBD600832F01 /* ScheduleViewController+Network.swift in Sources */,
 				BD382F65286B6A19002E91F0 /* BaseModel.swift in Sources */,
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
+				ECCF5E51289F8BF500BC6862 /* SendPillEndPoint.swift in Sources */,
+				F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */,
 				BD7120F9279723A00068B981 /* Member.swift in Sources */,
 				BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
-				BDC83B45279AE737009C52A1 /* AcceptCalendarModel.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */,
-				BDC83B49279AE791009C52A1 /* NoticeListCountModel.swift in Sources */,
-				BD917E4A289D593800A60BBE /* ShareScheduleCell.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
@@ -1881,14 +1850,14 @@
 				EC03760E278B2E4000CA4B54 /* AddPillSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
-				F638460228648EB000F60A9F /* PillRequestCollectionViewCell.swift in Sources */,
+				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
+				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
 				ECCF5E4D289CF1B700BC6862 /* SelectFriendViewModel.swift in Sources */,
 				BD7120F6279722A50068B981 /* ShareAPI.swift in Sources */,
 				BDF4D54128A018340043FA8D /* PillCount.swift in Sources */,
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
 				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
 				BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */,
-				ECB845E82795774B00433522 /* PillCountService.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,
 				9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */,
@@ -1897,14 +1866,15 @@
 				BDDF7721289A952B0096196B /* StickerEndPoint.swift in Sources */,
 				9A3DF09227966A3A00D07A8C /* SignAPI.swift in Sources */,
 				F60BAEB7279B3E690012707C /* SplashView.swift in Sources */,
-				EC68A95827982E40002FC0E6 /* AddPillAPI.swift in Sources */,
 				ECF96BE82798F0D700B5A32C /* PillLimitViewController.swift in Sources */,
 				EC02140D27D1F66900CF3569 /* SpecificButton.swift in Sources */,
 				EC8EC1462851090200A744FE /* PillTimeViewModel.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */,
+				F695168A289D05E7000F88D7 /* NoticeEndPoint.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
+				F6951673288FCFE1000F88D7 /* NoticeSecondControl.swift in Sources */,
 				BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */,
 				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
@@ -1913,6 +1883,8 @@
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
+				F6951688289CF46D000F88D7 /* NoticeListModel.swift in Sources */,
+				F695168E289D11FC000F88D7 /* NoticeViewController+Network.swift in Sources */,
 				BD382F69286D9984002E91F0 /* APIEnvironment.swift in Sources */,
 				BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */,
 				BDCDB5CD2861B23800C419CC /* ScheduleViewController+Layout.swift in Sources */,
@@ -1931,12 +1903,10 @@
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
 				ECD77F3B282A64CD00710157 /* PillTableViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
-				ECB845E62795773800433522 /* PillCountAPI.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
 				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
-				EC68A95A27982E49002FC0E6 /* AddPillService.swift in Sources */,
 				BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */,
 				ECB8A5C7286BD87600B1D363 /* SelectFriendViewController.swift in Sources */,
 				ECF96BF8279B24FA00B5A32C /* APIConstants.swift in Sources */,
@@ -1944,7 +1914,6 @@
 				9A06C99728377E6B00606D28 /* MyInfoViewController.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
 				ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */,
-				F638460428648EB800F60A9F /* FriendRequestCollectionViewCell.swift in Sources */,
 				ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */,
 				9AB833F4288972440040FC2A /* SettingViewController.swift in Sources */,
 				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
@@ -1964,13 +1933,18 @@
 				EC8EC14A2851BDBA00A744FE /* Protocol ++ .swift in Sources */,
 				EC9EDE42289A51FB00855ED7 /* PillCountEndPoint.swift in Sources */,
 				BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */,
+				F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */,
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
+				ECCF5E57289F94D800BC6862 /* SendPillViewModel.swift in Sources */,
+				F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
 				EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */,
 				BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */,
+				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
+				F6951692289D7EE7000F88D7 /* PillInfoViewController+Network.swift in Sources */,
 				BD0C70812862274A00CF452F /* ScheduleViewController+FSCalendar.swift in Sources */,
 				EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */,
 				EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */,
@@ -2005,15 +1979,17 @@
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				EC8EC12F2851001300A744FE /* AddPillTimeView.swift in Sources */,
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
+				F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */,
 				BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */,
-				BDC83B4D279AE8F5009C52A1 /* NoticeService.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
 				BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */,
 				ECFE3F80288FCC2200150699 /* SendFillFirstView.swift in Sources */,
 				EC4A381A289A68BF00974D7E /* PillCountlManager.swift in Sources */,
+				ECCF5E53289F8C0000BC6862 /* SendPillManager.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
+				F695168C289D0915000F88D7 /* NoticeManager.swift in Sources */,
 				BDDAA5AE2789BCD3000C0AF8 /* Text.swift in Sources */,
 				9A3DF0962796B24D00D07A8C /* SignUpDataModel.swift in Sources */,
 				ECB8A5C5286BD86E00B1D363 /* SelectFriendView.swift in Sources */,
@@ -2024,6 +2000,7 @@
 				BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */,
 				EC4A384D289BBA0100974D7E /* AddPillSheetViewModel.swift in Sources */,
 				BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */,
+				F6951690289D7CCD000F88D7 /* PillDetailInfoModel.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				9AB833F8288972A80040FC2A /* EditNicknameViewController.swift in Sources */,
@@ -2032,7 +2009,6 @@
 				ECB845DE2795681E00433522 /* NetworkResult.swift in Sources */,
 				BDC83B3C2798CAAD009C52A1 /* StickerService.swift in Sources */,
 				ECAF4D29284F8D0000B12DA7 /* String+Extension.swift in Sources */,
-				BDC83B4B279AE7CF009C52A1 /* PillMoreInfoModel.swift in Sources */,
 				EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */,
 				BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */,
 			);

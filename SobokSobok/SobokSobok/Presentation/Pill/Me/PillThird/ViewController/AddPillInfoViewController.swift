@@ -7,7 +7,10 @@
 
 import UIKit
 
-protocol AddPillInfoProtocol: StyleProtocol {}
+import RxCocoa
+import RxSwift
+
+protocol AddPillInfoProtocol: StyleProtocol, BindProtocol {}
 
 final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     
@@ -16,6 +19,19 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     let timeArray: [String] = ["오전 10:00", "오후 12:30", "오후 3:00", "오후 5:20", "오후 7:30", "오후 10:50"]
     
     let pillArray: [String] = ["김승찬", "김선영", "김태현", "정은희", "아요짱"]
+    
+    private let sendPillViewModel: SendPillViewModel
+    
+    private let disposeBag = DisposeBag()
+    
+    init(sendPillViewModel: SendPillViewModel) {
+        self.sendPillViewModel = sendPillViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     enum Height {
         case minHeight
@@ -37,10 +53,18 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
         super.viewDidLoad()
         setViewPanGesture()
         assignDelegation()
+        bind()
     }
     
     func style() {
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+    }
+    
+    func bind() {
+        addPillInfoView.sendButton.rx.tap.bind {
+            self.sendPillViewModel.postFriendPill()
+        }
+        .disposed(by: disposeBag)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -36,6 +36,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     
     func style() {
         tabBarController?.tabBar.isHidden = true
+        view.backgroundColor = .systemBackground
     }
     
     func target() {
@@ -52,7 +53,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     }
     
     @objc func pushAddPillFirstView() {
-        let addPillFirstView = AddPillFirstViewController()
+        let addPillFirstView = AddPillFirstViewController(sendPillViewModel: SendPillViewModel())
         addPillFirstView.divide(style: .friendPill)
         self.navigationController?.pushViewController(addPillFirstView, animated: true)
     }
