@@ -75,7 +75,7 @@ extension ScheduleHeaderView {
 
     func configure(withTime time: String) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Date.FormatType.second.description
+        dateFormatter.dateFormat = FormatType.second.description
         let date = dateFormatter.date(from: time)
         let time = date?.toString(of: .time)
         timeLabel.text = time

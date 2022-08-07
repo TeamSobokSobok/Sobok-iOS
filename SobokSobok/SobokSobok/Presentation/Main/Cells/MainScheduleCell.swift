@@ -22,11 +22,14 @@ final class MainScheduleCell: ScheduleCell {
             updateUI()
         }
     }
+    
     var currentDate = Date() {
         didSet {
             updateUI()
         }
     }
+    
+    lazy var dateFormatter = DateFormatter()
     
     
     // MARK: - UI Components
@@ -67,8 +70,6 @@ final class MainScheduleCell: ScheduleCell {
     
     override func configureUI() {
         super.configureUI()
-        
-        moreButton.isHidden = true
     }
     
     override func configureLayout() {
@@ -77,7 +78,7 @@ final class MainScheduleCell: ScheduleCell {
         addSubview(homeButtonHStackView)
         homeButtonHStackView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(4)
-            $0.width.height.equalTo(56)
+            $0.height.equalTo(56)
             $0.centerY.equalTo(topHStackView)
         }
     }
@@ -94,6 +95,14 @@ extension MainScheduleCell {
         }
         else {
             checkButton.setImage(Image.icCheckUnselect56, for: .normal)
+        }
+        
+        let day = days()
+        
+        if day > 0 {
+            checkButton.isHidden = true
+        } else {
+            checkButton.isHidden = false
         }
     }
     
@@ -121,7 +130,23 @@ extension MainScheduleCell {
     }
     
     @objc func editStarted(notification: NSNotification) {
-        checkButton.isHidden.toggle()
-        moreButton.isHidden.toggle()
+        let day = days()
+        
+        if day > 0 {
+            checkButton.isHidden = true
+            moreButton.isHidden.toggle()
+        } else {
+            checkButton.isHidden.toggle()
+            moreButton.isHidden.toggle()
+        }
+    }
+}
+
+extension MainScheduleCell {
+    
+    func days() -> Int {
+        let newDate = Calendar.current.dateComponents([.day], from: Date(), to: currentDate)
+        guard let day = newDate.day else { return 0 }
+        return day
     }
 }

@@ -332,7 +332,7 @@ extension ScheduleViewController {
     
     func parseSchedules() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Date.FormatType.full.description
+        dateFormatter.dateFormat = FormatType.full.description
 
         let doneItems = schedules
             .filter { $0.isComplete == "done" }
