@@ -2,14 +2,13 @@
 //  AcceptPillModel.swift
 //  SobokSobok
 //
-//  Created by taehy.k on 2022/01/21.
+//  Created by 정은희 on 2022/08/07.
 //
 
 import Foundation
 
-// MARK: - AcceptPillInfo
-struct AcceptPillInfo: Codable {
-    let status: Int
-    let success: Bool
-    let message: String
+struct AcceptPill: Decodable {
+    var status: Int
+    var success: Bool
+    var message: String?
 }

@@ -11,7 +11,6 @@ import SnapKit
 import Then
 
 final class PillInfoView: BaseView {
-    
     // MARK: - Properties
     let navigationView = NavigationBarView.init(frame: CGRect(), mode: .back, title: "약 일정")
     let titleLabel = UILabel().then {
