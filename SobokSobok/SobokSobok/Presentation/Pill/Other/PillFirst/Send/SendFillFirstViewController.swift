@@ -7,14 +7,17 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 protocol SendPillFirstProtocol: StyleProtocol, TargetProtocol, TossPillProtocol {}
 
 final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol {
     
     var type: TossPill = .myPill
 
-    let sendPillFirstView = SendPillFirstView()
-    
+    private let sendPillFirstView = SendPillFirstView()
+
     override func loadView() {
         self.view = sendPillFirstView
     }
@@ -24,7 +27,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
         style()
         target()
     }
-    
+
     private func divide(style: PillStyle) {
         let navigationView = sendPillFirstView.navigationView
         
@@ -33,6 +36,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     
     func style() {
         tabBarController?.tabBar.isHidden = true
+        view.backgroundColor = .systemBackground
     }
     
     func target() {
@@ -40,19 +44,17 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
         
         sendPillFirstView.backgroundButton.addTarget(self, action: #selector(presentToUser), for: .touchUpInside)
     }
-    
+
     @objc func presentToUser() {
-        let viewController = AddUserViewController()
+        let viewController = SelectFriendViewController(selectFriendViewModel: SelectFriendViewModel())
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .crossDissolve
         self.present(viewController, animated: true)
     }
     
     @objc func pushAddPillFirstView() {
-        let addPillFirstView = AddPillFirstViewController()
+        let addPillFirstView = AddPillFirstViewController(sendPillViewModel: SendPillViewModel())
         addPillFirstView.divide(style: .friendPill)
         self.navigationController?.pushViewController(addPillFirstView, animated: true)
     }
-
 }
-

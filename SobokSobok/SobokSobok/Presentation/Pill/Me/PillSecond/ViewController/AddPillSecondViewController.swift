@@ -10,8 +10,19 @@ import UIKit
 protocol AddPillSecondProtocol: StyleProtocol, TargetProtocol, TossPillProtocol {}
 
 final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol {
+   
     var type: TossPill = .myPill
-    let addPillSecondView = AddPillSecondView()
+    private let addPillSecondView = AddPillSecondView()
+    private let sendPillViewModel: SendPillViewModel
+    
+    init(sendPillViewModel: SendPillViewModel) {
+        self.sendPillViewModel = sendPillViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         self.view = addPillSecondView
@@ -20,6 +31,12 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         target()
+        print(sendPillViewModel.takeInterval)
+        print(sendPillViewModel.time)
+        print(sendPillViewModel.day)
+        
+        print(sendPillViewModel.specific)
+        print(sendPillViewModel.specific.changeKrToEn())
     }
 
     func target() {
@@ -36,7 +53,7 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
     }
     
     private func pushViewController(style: PillStyle) {
-        let addPillThirdView = AddPillThirdViewController()
+        let addPillThirdView = AddPillThirdViewController(sendPillViewModel: SendPillViewModel())
         addPillThirdView.divide(style: style)
         self.navigationController?.pushViewController(addPillThirdView, animated: true)
     }

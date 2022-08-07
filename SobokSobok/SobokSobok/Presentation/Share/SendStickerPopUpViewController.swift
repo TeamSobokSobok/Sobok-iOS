@@ -8,10 +8,10 @@
 import UIKit
 
 protocol StickerPopUpDelegate: AnyObject {
-    func sendStickerDidEnd()
+    func sendStickerDidEnd(isLikedState: Bool, scheduleId: Int, likeScheduleId: Int, stickerId: Int)
 }
 
-final class SendStickerPopUpViewController: BaseViewController {
+final class SendStickerPopUpViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var sendStickerPopUpView: UIView!
@@ -24,6 +24,7 @@ final class SendStickerPopUpViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -32,7 +33,7 @@ final class SendStickerPopUpViewController: BaseViewController {
     }
     
     // MARK: - Functions
-    override func style() {
+    func style() {
         sendStickerPopUpView.makeRounded(radius: 20)
     }
     
@@ -41,32 +42,22 @@ final class SendStickerPopUpViewController: BaseViewController {
     }
     
     @IBAction func sendStickerButtonTapped(_ sender: UIButton) {
-        isLikedState ?
-        editSticker(stickerId: sender.tag) :
         postSticker(stickerId: sender.tag)
         self.dismiss(animated: true, completion: nil)
     }
     
     public func postSticker(stickerId: Int) {
-        StickerAPI.shared.postSticker(scheduleId: self.scheduleId, stickerId: stickerId) { response in
-            switch response {
-            case .success(_):
-                self.delegate?.sendStickerDidEnd()
-            default:
-                return
-            }
-        }
-    }
-    
-    public func editSticker(stickerId: Int) {
-        StickerAPI.shared.editSticker(likeScheduleId: likeScheduleId, stickerId: stickerId) { response in
-            switch response {
-            case .success(_):
-                return
-//                self.delegate?.sendStickerDidEnd()
-            default:
-                return
-            }
-        }
+        let userInfo: [AnyHashable : Any] = [
+            "isLikedState": isLikedState,
+            "scheduleId": scheduleId,
+            "likeScheduleId": likeScheduleId,
+            "stickerId": stickerId
+        ]
+        
+        NotificationCenter.default.post(
+            name: Notification.Name("PostSticker"),
+            object: self,
+            userInfo: userInfo
+        )
     }
 }

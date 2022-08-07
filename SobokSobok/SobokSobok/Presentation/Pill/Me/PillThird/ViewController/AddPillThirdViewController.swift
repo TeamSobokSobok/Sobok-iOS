@@ -16,6 +16,17 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     let addPillThirdView = AddPillThirdView()
     let addPillInfoView = AddPillInfoView()
     
+    private let sendPillViewModel: SendPillViewModel
+    
+    init(sendPillViewModel: SendPillViewModel) {
+        self.sendPillViewModel = sendPillViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         self.view = addPillThirdView
     }
@@ -27,7 +38,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     func target() {
-        addPillThirdView.nextButton.addTarget(self, action: #selector(presentNextVC), for: .touchUpInside)
+        addPillThirdView.nextButton.addTarget(self, action: #selector(divideType), for: .touchUpInside)
         
         addPillThirdView.countInfoButton.addTarget(self, action: #selector(hideToolTipImage), for: .touchUpInside)
     }
@@ -38,14 +49,24 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     private func presentView() {
-        let bottomSheetVC = AddPillInfoViewController()
+        let bottomSheetVC = AddPillInfoViewController(sendPillViewModel: SendPillViewModel())
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.modalTransitionStyle = .crossDissolve
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
     
-    @objc func presentNextVC() {
-        presentView()
+    private func postMyPill() {
+        sendPillViewModel.postFriendPill()
+    }
+    
+    @objc func divideType() {
+        switch type {
+        case .myPill:
+            postMyPill()
+        case .friendPill:
+            presentView()
+        }
+
     }
     
     @objc func hideToolTipImage() {
