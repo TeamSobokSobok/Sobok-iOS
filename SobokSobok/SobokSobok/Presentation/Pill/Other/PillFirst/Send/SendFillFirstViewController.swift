@@ -36,6 +36,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     
     func style() {
         tabBarController?.tabBar.isHidden = true
+        view.backgroundColor = .systemBackground
     }
     
     func target() {

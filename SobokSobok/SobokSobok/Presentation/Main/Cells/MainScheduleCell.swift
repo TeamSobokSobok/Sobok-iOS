@@ -17,13 +17,19 @@ final class MainScheduleCell: ScheduleCell {
     // MARK: - Properties
     
     weak var delegate: MainScheduleCellDelegate?
-    var isChecked: Bool = false {
+    var isChecked = false {
         didSet {
-            isChecked ?
-            checkButton.setImage(Image.icCheckSelect56, for: .normal) :
-            checkButton.setImage(Image.icCheckUnselect56, for: .normal)
+            updateUI()
         }
     }
+    
+    var currentDate = Date() {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    lazy var dateFormatter = DateFormatter()
     
     
     // MARK: - UI Components
@@ -47,18 +53,34 @@ final class MainScheduleCell: ScheduleCell {
     }
     
     
-    // MARK: - Initialize
+    // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        configureUI()
-        configureLayout()
+
         addObservers()
     }
     
     deinit {
         removeObservers()
+    }
+    
+    
+    // MARK: - Override Functions
+    
+    override func configureUI() {
+        super.configureUI()
+    }
+    
+    override func configureLayout() {
+        super.configureLayout()
+        
+        addSubview(homeButtonHStackView)
+        homeButtonHStackView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(4)
+            $0.height.equalTo(56)
+            $0.centerY.equalTo(topHStackView)
+        }
     }
 }
 
@@ -67,16 +89,20 @@ final class MainScheduleCell: ScheduleCell {
 
 extension MainScheduleCell {
     
-    private func configureUI() {
-        moreButton.isHidden = true
-    }
-    
-    private func configureLayout() {
-        addSubview(homeButtonHStackView)
-        homeButtonHStackView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(4)
-            $0.width.height.equalTo(56)
-            $0.centerY.equalTo(topHStackView)
+    private func updateUI() {
+        if isChecked {
+            checkButton.setImage(Image.icCheckSelect56, for: .normal)
+        }
+        else {
+            checkButton.setImage(Image.icCheckUnselect56, for: .normal)
+        }
+        
+        let day = days()
+        
+        if day > 0 {
+            checkButton.isHidden = true
+        } else {
+            checkButton.isHidden = false
         }
     }
     
@@ -104,7 +130,23 @@ extension MainScheduleCell {
     }
     
     @objc func editStarted(notification: NSNotification) {
-        checkButton.isHidden.toggle()
-        moreButton.isHidden.toggle()
+        let day = days()
+        
+        if day > 0 {
+            checkButton.isHidden = true
+            moreButton.isHidden.toggle()
+        } else {
+            checkButton.isHidden.toggle()
+            moreButton.isHidden.toggle()
+        }
+    }
+}
+
+extension MainScheduleCell {
+    
+    func days() -> Int {
+        let newDate = Calendar.current.dateComponents([.day], from: Date(), to: currentDate)
+        guard let day = newDate.day else { return 0 }
+        return day
     }
 }

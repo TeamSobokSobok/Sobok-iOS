@@ -25,6 +25,7 @@ final class PillLimitViewController: UIViewController, PillLimitProtocol {
 
     func style() {
         tabBarController?.tabBar.isHidden = true
+        view.backgroundColor = .systemBackground
     }
     
     func target() {

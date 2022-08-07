@@ -65,6 +65,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
     
     func style() {
         tabBarController?.tabBar.isHidden = true
+        view.backgroundColor = .systemBackground
     }
     
     func bind() {

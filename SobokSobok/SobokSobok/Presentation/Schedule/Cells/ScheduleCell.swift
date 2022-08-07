@@ -38,15 +38,16 @@ class ScheduleCell: UICollectionViewCell {
     }
     
     private lazy var stickerHStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.spacing = 5.adjustedWidth
+        $0.isHidden = true
+        
         for index in 0..<4 {
             let stickerButton = UIButton()
             stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
             $0.addArrangedSubview(stickerButton)
         }
-        $0.isHidden = true
-        $0.axis = .horizontal
-        $0.distribution = .fillEqually
-        $0.spacing = 5.adjustedWidth
     }
     
     private lazy var countLabel = UILabel().then {
@@ -68,21 +69,18 @@ class ScheduleCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-}
-
-
-// MARK: - Private Functions
-
-extension ScheduleCell {
     
-    private func configureUI() {
+    
+    // MARK: - Configure Functions
+    
+    func configureUI() {
         self.backgroundColor = Color.gray100
         self.makeRounded(radius: 12)
         self.pillColorView.makeRounded(radius: 4)
         self.stickerHStackView.arrangedSubviews.forEach { $0.isHidden = true }
     }
     
-    private func configureLayout() {
+    func configureLayout() {
         self.addSubviews(containerVStackView, countLabel)
         
         containerVStackView.snp.makeConstraints {
@@ -112,13 +110,13 @@ extension ScheduleCell {
 
 extension ScheduleCell {
     
-    func configure(with pill: Pill) {
+    func configure(withPill pill: Pill) {
         self.pill = pill
         self.pillColorView.backgroundColor = PillColorType.pillColors[pill.color]
         self.pillNameLabel.text = pill.pillName
     }
     
-    func configure(with stickerId: [Int]?) {
+    func configure(withSticker stickerId: [Int]?) {
         if let stickerId = stickerId, !stickerId.isEmpty {
             self.countLabel.text = stickerId.count > 4 ? "+ \(stickerId.count - 4)" : ""
             self.stickerHStackView.isHidden = false
@@ -139,8 +137,14 @@ extension ScheduleCell {
 // MARK: - Objc Functions
 
 extension ScheduleCell {
+    
     @objc func stickerButtonTapped(_ sender: UIButton) {
         guard let scheduleId = pill?.scheduleId else { return }
-        NotificationCenter.default.post(name: Notification.Name("sticker"), object: nil, userInfo: ["scheduleId" : scheduleId])
+        
+        NotificationCenter.default.post(
+            name: Notification.Name("sticker"),
+            object: nil,
+            userInfo: ["scheduleId" : scheduleId]
+        )
     }
 }
