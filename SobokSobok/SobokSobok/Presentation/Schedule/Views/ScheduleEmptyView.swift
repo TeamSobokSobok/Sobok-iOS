@@ -25,8 +25,8 @@ final class ScheduleEmptyView: BaseView {
         }
     }
     
-    convenience init(for tabCategory: TabBarItem) {
+    convenience init(for scheduleType: ScheduleType) {
         self.init(frame: .zero)
-        emptyImageView.image = tabCategory == .home ? Image.illustNoPill : Image.illustNoShare
+        emptyImageView.image = scheduleType == .main ? Image.illustNoPill : Image.illustNoShare
     }
 }

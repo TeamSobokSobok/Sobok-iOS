@@ -13,7 +13,7 @@ final class ShareViewController: BaseViewController {
                                                                     environment: .development)
     
     lazy var shareTopView = ShareTopView()
-    let scheduleViewController = ScheduleViewController(type: .share)
+    let scheduleViewController = ScheduleViewController(scheduleType: .share)
     private lazy var containerView = UIView()
     
     override func viewDidLoad() {
