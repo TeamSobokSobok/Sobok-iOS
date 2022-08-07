@@ -39,7 +39,7 @@ extension NoticeViewController: NoticeFistControl {
  extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if noticeList.count == 0 {
-            collectionView.setEmptyView(title: "소중한 지안님의 알림", image: Image.illustOops, message: "아직 도착한 알림이 없어요!")
+            collectionView.setEmptyView(image: Image.illustOops, message: "아직 도착한 알림이 없어요!")
         } else { collectionView.restore() }
 
         return noticeList.count
