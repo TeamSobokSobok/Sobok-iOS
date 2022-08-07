@@ -10,6 +10,12 @@ import UIKit
 final class NoticeViewController: UIViewController {
     // MARK: - Properties
     private var noticeList: [NoticeListData] = NoticeListData.dummy
+//    var noticeList = NoticeList() {
+//        didSet {
+//            noticeListView.noticeListCollectionView.reloadData()
+//        }
+//    }
+    let noticeListManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let noticeListView = NoticeListView()
     
     // MARK: - View Life Cycle
@@ -19,6 +25,7 @@ final class NoticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
+        getNoticeList()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -47,9 +54,18 @@ extension NoticeViewController: NoticeFistControl {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = noticeListView.noticeListCollectionView.dequeueReusableCell(for: indexPath, cellType: NoticeListCollectionViewCell.self)
-        // 섹션에 따라 분기 처리 필요 (친구 요청, 약 전송)
+        // TODO: - 섹션에 따라 분기 처리 필요 (친구 요청, 약 전송)
         // 데이터 넣기 & 경고창
         // 버튼 클릭되면 클로저로 셀 위아래 뷰 숨겨주기
+        
+        /*
+         서버통신 section별로 (enum 만들어놓은것)
+         
+         (switch 안쓰고 하는거)
+         푸시할때 타입도 같이 넘겨줄수있음(필요없음)
+         데이터 받으면 쎅션에 따라 타입 매칭해주고 -> 나누기
+         */
+        
 //        cell.setData(noticeListData: noticeList[indexPath.row])
         cell.accept = { [weak self] in
             makeAlert(title: "지민지민님이 캘린더 공유를 요청했어요", message: "수락하면 상대방이 지안님의 캘린더를\n볼 수 있어요!", accept: "확인", viewController: self, nextViewController: PillInfoViewController.instanceFromNib())

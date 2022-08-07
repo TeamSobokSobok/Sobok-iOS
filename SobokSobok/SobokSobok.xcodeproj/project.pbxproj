@@ -214,6 +214,8 @@
 		F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */; };
 		F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FA6278D814900B20B5E /* PillInfoViewController.swift */; };
 		F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */; };
+		F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */; };
+		F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
 		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
@@ -223,6 +225,8 @@
 		F695168A289D05E7000F88D7 /* NoticeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */; };
 		F695168C289D0915000F88D7 /* NoticeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168B289D0915000F88D7 /* NoticeManager.swift */; };
 		F695168E289D11FC000F88D7 /* NoticeViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */; };
+		F6951690289D7CCD000F88D7 /* PillDetailInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695168F289D7CCD000F88D7 /* PillDetailInfoModel.swift */; };
+		F6951692289D7EE7000F88D7 /* PillInfoViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */; };
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -428,6 +432,8 @@
 		F6494F302795AECC00F43A94 /* SendStickerPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendStickerPopUpViewController.xib; sourceTree = "<group>"; };
 		F6538FA6278D814900B20B5E /* PillInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoViewController.swift; sourceTree = "<group>"; };
 		F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoDataModel.swift; sourceTree = "<group>"; };
+		F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFriendModel.swift; sourceTree = "<group>"; };
+		F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
 		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
@@ -437,6 +443,8 @@
 		F6951689289D05E6000F88D7 /* NoticeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeEndPoint.swift; sourceTree = "<group>"; };
 		F695168B289D0915000F88D7 /* NoticeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManager.swift; sourceTree = "<group>"; };
 		F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoticeViewController+Network.swift"; sourceTree = "<group>"; };
+		F695168F289D7CCD000F88D7 /* PillDetailInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDetailInfoModel.swift; sourceTree = "<group>"; };
+		F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PillInfoViewController+Network.swift"; sourceTree = "<group>"; };
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1092,6 +1100,9 @@
 			isa = PBXGroup;
 			children = (
 				F6951687289CF46C000F88D7 /* NoticeListModel.swift */,
+				F695168F289D7CCD000F88D7 /* PillDetailInfoModel.swift */,
+				F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */,
+				F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */,
 			);
 			path = Notice;
 			sourceTree = "<group>";
@@ -1600,6 +1611,7 @@
 				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
 				F6538FA6278D814900B20B5E /* PillInfoViewController.swift */,
 				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
+				F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */,
 			);
 			path = NoticeSecond;
 			sourceTree = "<group>";
@@ -1798,6 +1810,7 @@
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				BD382F65286B6A19002E91F0 /* BaseModel.swift in Sources */,
 				9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */,
+				F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */,
 				BD7120F9279723A00068B981 /* Member.swift in Sources */,
 				BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */,
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
@@ -1893,6 +1906,7 @@
 				BD0C707F2862273C00CF452F /* ScheduleViewController+DataSource.swift in Sources */,
 				EC8EC14A2851BDBA00A744FE /* Protocol ++ .swift in Sources */,
 				BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */,
+				F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */,
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
@@ -1900,6 +1914,7 @@
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
 				EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */,
 				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
+				F6951692289D7EE7000F88D7 /* PillInfoViewController+Network.swift in Sources */,
 				BD0C70812862274A00CF452F /* ScheduleViewController+FSCalendar.swift in Sources */,
 				EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */,
 				EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */,
@@ -1951,6 +1966,7 @@
 				BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */,
 				BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */,
 				BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */,
+				F6951690289D7CCD000F88D7 /* PillDetailInfoModel.swift in Sources */,
 				9A3DF08C279660A400D07A8C /* Sign.swift in Sources */,
 				9AF64AD227917952004D4D64 /* SetNickNameVIewController.swift in Sources */,
 				9AB833F8288972A80040FC2A /* EditNicknameViewController.swift in Sources */,

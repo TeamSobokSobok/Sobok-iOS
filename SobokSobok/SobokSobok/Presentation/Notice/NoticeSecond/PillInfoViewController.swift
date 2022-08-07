@@ -9,7 +9,8 @@ import UIKit
 
 final class PillInfoViewController: UIViewController {
     // MARK: - Properties
-    private var pillInfoList: [SendInfoData] = SendInfoData.dummy
+    var pillInfoList: [PillDetailInfo] = []
+    let pillInfoManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let pillInfoView = PillInfoView()
     private let timeView = TimeView()
     
@@ -21,6 +22,7 @@ final class PillInfoViewController: UIViewController {
         super.viewDidLoad()
         target()
         setInfoData()
+        getPillDetailInfo(pillId: 453)
     }
 }
 
@@ -33,15 +35,14 @@ extension PillInfoViewController: NoticeSecondControl {
     @objc private func addDismiss() { self.dismiss(animated: true) }
     
     private func setInfoData() {
-        // TODO: - 서버통신 할 때는 setInfoData(data: pillInfoList[pillNumber]) 로 바꾸기
         guard let pillInfo = pillInfoList.first else { return }
         let timeCount = pillInfo.makeTimeCount()
         
-        pillInfoView.titleLabel.text = pillInfo.pillInfo
-        pillInfoView.weekLabel.text = pillInfo.termInfo
-        pillInfoView.periodLabel.text = pillInfo.periodInfo
+        pillInfoView.titleLabel.text = pillInfo.pillName
+        pillInfoView.weekLabel.text = "\(pillInfo.takeInterval)주에 한 번"
+        pillInfoView.periodLabel.text = "\(pillInfo.startDate) ~ \(pillInfo.endDate)" // TODO: - 날짜 변환
         
-        setTimeViews(timeCount: timeCount, timeData: pillInfo.timeInfo)
+        setTimeViews(timeCount: timeCount, timeData: pillInfo.scheduleTime) // TODO: - 시간 변환
     }
 
     private func setTimeViews(timeCount: Int, timeData: [String]) {
