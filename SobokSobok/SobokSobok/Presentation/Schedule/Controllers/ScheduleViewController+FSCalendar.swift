@@ -101,8 +101,5 @@ extension ScheduleViewController: FSCalendarDelegateAppearance {
         currentDate = calendar.currentPage
         calendar.select(calendar.currentPage)
         calendar.reloadData() // UI 업데이트 안 되는 이슈 있어서 reload
-        
-        print("현재 월 파악:", currentDate.toString(of: .month))
-        print("월이 바뀌었을 때 새롭게 서버 통신")
     }
 }

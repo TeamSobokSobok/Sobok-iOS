@@ -14,6 +14,7 @@ extension ShareViewController {
                    !members.isEmpty {
                     self.members = members
                     shareTopView.friends = members
+                    scheduleViewController.friendName = members.first?.memberName
                 }
             }
         }

@@ -7,18 +7,18 @@
 
 import UIKit
 
-public func makeAlert(title: String, message: String, accept: String, viewController: UIViewController, nextVC: UIViewController? = nil, completion: (() -> Void)? = nil) {
+public func makeAlert(title: String, message: String, accept: String, viewController: UIViewController? = nil, nextViewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let acceptAction = UIAlertAction(title: accept, style: .default) { _ in
-        guard let nextViewController = nextVC else { return }
+        guard let nextViewController = nextViewController else { return }
         nextViewController.modalPresentationStyle = .fullScreen
-        viewController.present(nextViewController, animated: true)
+        viewController?.present(nextViewController, animated: true)
     }
     let refuseAction = UIAlertAction(title: "취소", style: .default, handler: nil)
     [refuseAction, acceptAction].forEach {
         alert.addAction($0)
     }
-    viewController.present(alert, animated: true, completion: completion)
+    viewController?.present(alert, animated: true, completion: completion)
 }
 
 public func makeAcceptAlert(title: String, viewController: UIViewController, completion: @escaping () -> Void) {

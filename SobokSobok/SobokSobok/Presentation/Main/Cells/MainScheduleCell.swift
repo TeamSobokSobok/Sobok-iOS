@@ -14,6 +14,8 @@ protocol MainScheduleCellDelegate: AnyObject {
 
 final class MainScheduleCell: ScheduleCell {
     
+    // MARK: - Properties
+    
     weak var delegate: MainScheduleCellDelegate?
     var isChecked: Bool = false {
         didSet {
@@ -22,6 +24,9 @@ final class MainScheduleCell: ScheduleCell {
             checkButton.setImage(Image.icCheckUnselect56, for: .normal)
         }
     }
+    
+    
+    // MARK: - UI Components
 
     lazy var homeButtonHStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -41,19 +46,32 @@ final class MainScheduleCell: ScheduleCell {
         $0.isHidden = true
     }
     
+    
+    // MARK: - Initialize
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
-        setupConstraints()
+        
+        configureUI()
+        configureLayout()
+        addObservers()
+    }
+    
+    deinit {
+        removeObservers()
     }
 }
 
+
+// MARK: - Private Functions
+
 extension MainScheduleCell {
-    private func setupUI() {
+    
+    private func configureUI() {
         moreButton.isHidden = true
     }
     
-    private func setupConstraints() {
+    private func configureLayout() {
         addSubview(homeButtonHStackView)
         homeButtonHStackView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(4)
@@ -62,7 +80,31 @@ extension MainScheduleCell {
         }
     }
     
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(editStarted),
+                                               name: NSNotification.Name("edit"),
+                                               object: nil)
+    }
+    
+    private func removeObservers() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name("edit"),
+                                                  object: nil)
+    }
+}
+
+
+// MARK: - Objc Functions
+
+extension MainScheduleCell {
+    
     @objc func checkButtonTapped() {
         delegate?.checkButtonTapped(self)
+    }
+    
+    @objc func editStarted(notification: NSNotification) {
+        checkButton.isHidden.toggle()
+        moreButton.isHidden.toggle()
     }
 }
