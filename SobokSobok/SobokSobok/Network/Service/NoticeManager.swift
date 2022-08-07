@@ -9,7 +9,7 @@ import Foundation
 
 protocol NoticeServiceable {
     func getNoticeList() async throws -> NoticeList?
-    func getPillDetailInfo(for pillId: Int) async throws -> [PillDetailInfo]?
+    func getPillDetailInfo(noticeId: Int, pillId: Int) async throws -> [PillDetailInfo]?
     func putAcceptFriend(for senderGroupId: Int) async throws -> [AcceptFriend]?
     func putAcceptPill(for pillId: Int) async throws -> [AcceptPill]?
 }
@@ -30,9 +30,9 @@ struct NoticeManager: NoticeServiceable {
         return try await self.apiService.request(request)
     }
     
-    func getPillDetailInfo(for pillId: Int) async throws -> [PillDetailInfo]? {
+    func getPillDetailInfo(noticeId: Int, pillId: Int) async throws -> [PillDetailInfo]? {
         let request = NoticeEndPoint
-            .getPillDetailInfo(pillId: pillId)
+            .getPillDetailInfo(noticeId: noticeId, pillId: pillId)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
@@ -46,7 +46,7 @@ struct NoticeManager: NoticeServiceable {
     
     func putAcceptPill(for pillId: Int) async throws -> [AcceptPill]? {
         let request = NoticeEndPoint
-            .getPillDetailInfo(pillId: pillId)
+            .putAcceptPill(pillId: pillId)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
