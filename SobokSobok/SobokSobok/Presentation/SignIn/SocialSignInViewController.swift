@@ -7,16 +7,19 @@
 
 import UIKit
 
-final class SocialSignInViewController: BaseViewController {
+protocol SocialSignInProtocol: StyleProtocol {}
+
+final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
 
     @IBOutlet weak var kakaoLoginButton: UIView!
     @IBOutlet weak var appleLoginButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
     }
     
-    override func layout() {
+    func style() {
         kakaoLoginButton.makeRounded(radius: 6)
         appleLoginButton.makeRounded(radius: 6)
     }

@@ -54,9 +54,9 @@ extension TabBarController {
 
     private func setTabBarItems() {
         tabs = [
-            UINavigationController(rootViewController: MainViewController.instanceFromNib()),
-            UINavigationController(rootViewController: ShareViewController.instanceFromNib()),
-            UINavigationController(rootViewController: NoticeViewController.instanceFromNib()),
+            UINavigationController(rootViewController: MainViewController()),
+            UINavigationController(rootViewController: ShareViewController()),
+            UINavigationController(rootViewController: NoticeViewController()),
             UINavigationController(rootViewController: UIViewController())
         ]
 
@@ -100,7 +100,7 @@ extension TabBarController: UITabBarControllerDelegate {
         let tabBarItemIndex = viewController.tabBarItem.tag
         
         if tabBarItemIndex == 3 {
-            let addMedicineSheet = AddMedicineSheet.instanceFromNib()
+            let addMedicineSheet = AddPillSheet(with: AddPillSheetViewModel())
             addMedicineSheet.modalPresentationStyle = .overCurrentContext
             addMedicineSheet.modalTransitionStyle = .crossDissolve
             self.present(addMedicineSheet, animated: false

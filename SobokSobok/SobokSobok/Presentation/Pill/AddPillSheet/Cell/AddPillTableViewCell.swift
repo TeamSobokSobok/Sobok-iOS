@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AddMedicineTableViewCell: UITableViewCell {
+final class AddPillTableViewCell: UITableViewCell {
 
     @IBOutlet var medicineImageView: UIImageView!
     @IBOutlet var medicineTextLabel: UILabel!

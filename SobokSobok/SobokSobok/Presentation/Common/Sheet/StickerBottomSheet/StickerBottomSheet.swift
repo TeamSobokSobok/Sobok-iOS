@@ -20,7 +20,7 @@ final class StickerBottomSheet: BaseViewController {
     
     // MARK: - Properties
     
-    var stickers: [Stickers] = []
+    var stickers: [Stickers]?
     
     // MARK: - Life Cycles
     
@@ -87,13 +87,14 @@ final class StickerBottomSheet: BaseViewController {
 extension StickerBottomSheet: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: StickerCollectionViewCell.self)
-        let sticker = stickers[indexPath.row]
-        cell.configure(stickers: sticker)
+        if let sticker = stickers?[indexPath.row] {
+            cell.configure(stickers: sticker)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stickers.count
+        return stickers?.count ?? 0
     }
 }
 

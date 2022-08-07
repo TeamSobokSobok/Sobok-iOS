@@ -31,6 +31,10 @@ final class AddPillThirdView: BaseView {
         $0.tintColor = Color.gray500
     }
     
+    lazy var tooltipImage = UIImageView().then {
+        $0.image = Image.tooltipImage
+    }
+    
     lazy var pillCountLabel = UILabel().then {
         $0.text = "3개"
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
@@ -60,7 +64,7 @@ final class AddPillThirdView: BaseView {
     lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "추가하기", fontSize: 18)
     
     override func setupView() {
-        addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton)
+        addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton, tooltipImage)
     }
     
     override func setupConstraints() {
@@ -89,6 +93,11 @@ final class AddPillThirdView: BaseView {
             $0.centerY.equalTo(pillCountLabel)
             $0.leading.equalTo(pillCountInfoLabel.snp.trailing).offset(1)
             $0.width.height.equalTo(22)
+        }
+        
+        tooltipImage.snp.makeConstraints {
+            $0.top.equalTo(countInfoButton.snp.bottom)
+            $0.centerX.equalTo(countInfoButton.snp.centerX)
         }
         
         collectionView.snp.makeConstraints {
