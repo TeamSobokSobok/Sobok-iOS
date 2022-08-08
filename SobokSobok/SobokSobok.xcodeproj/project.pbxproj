@@ -134,6 +134,7 @@
 		BDE2ADE42891266200A42559 /* ShareTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2ADE32891266200A42559 /* ShareTopView.swift */; };
 		BDF4D54128A018340043FA8D /* PillCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4D54028A018340043FA8D /* PillCount.swift */; };
 		BDF4D54328A018590043FA8D /* SendPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4D54228A018590043FA8D /* SendPill.swift */; };
+		BDF4D54528A0295A0043FA8D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4D54428A0295A0043FA8D /* CalendarView.swift */; };
 		BDFE75DE278786AE00014BE1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BDFE75DD278786AE00014BE1 /* Then */; };
 		EC0213EC27CE665B00CF3569 /* AddPillFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0213EB27CE665B00CF3569 /* AddPillFirstView.swift */; };
 		EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0213ED27CE669B00CF3569 /* NavigationView.swift */; };
@@ -360,6 +361,7 @@
 		BDE2ADE32891266200A42559 /* ShareTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTopView.swift; sourceTree = "<group>"; };
 		BDF4D54028A018340043FA8D /* PillCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCount.swift; sourceTree = "<group>"; };
 		BDF4D54228A018590043FA8D /* SendPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPill.swift; sourceTree = "<group>"; };
+		BDF4D54428A0295A0043FA8D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		EC0213EB27CE665B00CF3569 /* AddPillFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFirstView.swift; sourceTree = "<group>"; };
 		EC0213ED27CE669B00CF3569 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		EC0213EF27CE69E900CF3569 /* AddPillFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFirstViewController.swift; sourceTree = "<group>"; };
@@ -1058,6 +1060,7 @@
 				EC8596AF281C1FAB00850E84 /* BaseView.swift */,
 				F6EA7454281D1DAD00163B2E /* TimeView.swift */,
 				F6EA7456281D919000163B2E /* NavigationBarView.swift */,
+				BDF4D54428A0295A0043FA8D /* CalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1934,16 +1937,14 @@
 				EC9EDE42289A51FB00855ED7 /* PillCountEndPoint.swift in Sources */,
 				BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */,
 				F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */,
+				BDF4D54528A0295A0043FA8D /* CalendarView.swift in Sources */,
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
-				BDC83B47279AE752009C52A1 /* AcceptPillModel.swift in Sources */,
 				ECCF5E57289F94D800BC6862 /* SendPillViewModel.swift in Sources */,
 				F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
 				EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */,
-				BDC83B4F279AE8FD009C52A1 /* NoticeAPI.swift in Sources */,
-				ECB845EB2795776F00433522 /* PillCount.swift in Sources */,
 				F6951692289D7EE7000F88D7 /* PillInfoViewController+Network.swift in Sources */,
 				BD0C70812862274A00CF452F /* ScheduleViewController+FSCalendar.swift in Sources */,
 				EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */,

@@ -87,5 +87,6 @@ public enum Image {
     public static let icMoreBlack48 = UIImage(named: "icMoreBlack48")!
     public static let calendarBackgroundTodayDefault = UIImage(named: "calendarBackgroundTodayDefault")!
     public static let tooltipImage = UIImage(named: "tooltipImage")!
-
+    public static let icChecked = UIImage(named: "icChecked")!
+    public static let icCheckedNot = UIImage(named: "icCheckedNot")!
 }

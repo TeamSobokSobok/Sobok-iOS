@@ -16,6 +16,7 @@ enum FormatType {
     case time
     case calendar
     case calendarTime
+    case calendarWithMonth
     
     var description: String {
         switch self {
@@ -35,6 +36,8 @@ enum FormatType {
             return "yyyy년 MM월 dd일"
         case .calendarTime:
             return "a HH:mm"
+        case .calendarWithMonth:
+            return "yyyy년 M월"
         }
     }
 }
