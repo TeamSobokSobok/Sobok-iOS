@@ -65,14 +65,15 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
         switch scheduleType {
         case .main:
             let mainCell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainScheduleCell.self)
-            mainCell.configure(with: pill)
+            mainCell.configure(withPill: pill)
             mainCell.isChecked = pill.isCheck
+            mainCell.currentDate = viewController.currentDate
             mainCell.delegate = viewController
             return mainCell
             
         case .share:
             let shareCell = collectionView.dequeueReusableCell(for: indexPath, cellType: ShareScheduleCell.self)
-            shareCell.configure(with: pill)
+            shareCell.configure(withPill: pill)
             shareCell.configure(with: (isLiked: pill.isLikedSchedule ?? false, isEat: pill.isCheck))
             shareCell.stateView.emotionClosure = { [weak self] in
                 self?.viewController.showStickerPopUp(scheduleId: pill.scheduleId, isLikedSchedule: pill.isLikedSchedule ?? false)
@@ -95,6 +96,7 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
         case .main:
             let isHidden = indexPath.section != 0
             headerView.showEditButton(isHidden: isHidden)
+            
         case .share:
             headerView.showEditButton(isHidden: true)
         }

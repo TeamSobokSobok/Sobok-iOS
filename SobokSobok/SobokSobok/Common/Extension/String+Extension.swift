@@ -13,4 +13,10 @@ extension String {
         let separator = string.joined(separator: ", ")
         return separator
     }
+    
+    func changeKrToEn() -> String {
+        return self.replacingOccurrences(of: "달에 한 번", with: "month")
+                    .replacingOccurrences(of: "주에 한 번", with: "week")
+                    .replacingOccurrences(of: "일에 한 번", with: "day")
+    }
 }

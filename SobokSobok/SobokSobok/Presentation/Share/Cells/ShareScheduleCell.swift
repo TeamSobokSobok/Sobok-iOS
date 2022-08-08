@@ -14,21 +14,18 @@ final class ShareScheduleCell: ScheduleCell {
     lazy var stateView = StateView()
     
     
-    // MARK: - Initialize
+    // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        setupConstraints()
     }
-}
-
-
-// MARK: - Private Functions
-
-extension ShareScheduleCell {
-
-    private func setupConstraints() {
+    
+    
+    // MARK: - Override Functions
+    
+    override func configureLayout() {
+        super.configureLayout()
+        
         addSubview(stateView)
         stateView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(18.adjustedWidth)

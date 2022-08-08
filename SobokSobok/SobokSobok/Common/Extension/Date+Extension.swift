@@ -17,6 +17,7 @@ extension Date {
         case time
         case calendar
         case calendarTime
+        case calendarWithMonth
         case noticeDay
         
         var description: String {
@@ -37,16 +38,31 @@ extension Date {
                 return "yyyy년 MM월 dd일"
             case .calendarTime:
                 return "a HH:mm"
+            case .calendarWithMonth:
+                return "yyyy년 M월"
             case .noticeDay:
                 return "yyyy.MM.dd"
             }
         }
     }
+}
+
+extension Date {
     
     func toString(of type: FormatType) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
         dateFormatter.dateFormat = type.description
         return dateFormatter.string(from: self)
+    }
+}
+
+extension String {
+    
+    func toDate(to type: FormatType) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = type.description
+        return dateFormatter.date(from: self)
     }
 }

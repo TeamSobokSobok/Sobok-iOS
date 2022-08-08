@@ -52,6 +52,7 @@ final class ScheduleViewController: BaseViewController {
         didSet {
             callRequestSchedules()
             updateUI()
+            collectionView.reloadData()
         }
     }
     var selectedDate = Date().toString(of: .day)
@@ -68,6 +69,9 @@ final class ScheduleViewController: BaseViewController {
         scheduleType: scheduleType,
         viewController: self
     )
+    
+    
+    // MARK: - Initializer
 
     
     init(scheduleType: ScheduleType) {
@@ -79,7 +83,11 @@ final class ScheduleViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UI Properties
+    deinit {
+        removeObservers()
+    }
+    
+    // MARK: - UI Components
     
     lazy var scrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
@@ -104,9 +112,6 @@ final class ScheduleViewController: BaseViewController {
     
     lazy var emptyView = ScheduleEmptyView(for: scheduleType)
     
-    deinit {
-        removeObservers()
-    }
     
     // MARK: - Life Cycles
     
@@ -124,10 +129,6 @@ final class ScheduleViewController: BaseViewController {
         setCollectionViewHeight()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     
     // MARK: - Override Functions
     
@@ -331,7 +332,7 @@ extension ScheduleViewController {
     
     func parseSchedules() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Date.FormatType.full.description
+        dateFormatter.dateFormat = FormatType.full.description
 
         let doneItems = schedules
             .filter { $0.isComplete == "done" }

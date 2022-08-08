@@ -44,7 +44,7 @@ extension AddPillSheetViewModel {
             do {
                 let result = try await addPillManager.getMyPillCount()
                 guard let pillCount = result?.pillCount else { return }
-                didLoadPillCount.accept(Int(pillCount)!)
+                didLoadPillCount.accept(pillCount)
             }
         }
     }
