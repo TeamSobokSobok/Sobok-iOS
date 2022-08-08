@@ -40,10 +40,10 @@ extension PillInfoViewController: NoticeSecondControl {
     private func setInfoData() {
         guard let pillInfo = pillInfoList.first else { return }
         let timeCount = pillInfo.makeTimeCount()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Date.FormatType.full.description
-        dateFormatter.date(from: pillInfo.startDate)?.toString(of: .noticeDay)
-        dateFormatter.date(from: pillInfo.endDate)?.toString(of: .noticeDay)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = Date.FormatType.full.description
+//        dateFormatter.date(from: pillInfo.startDate)?.toString(of: .noticeDay)
+//        dateFormatter.date(from: pillInfo.endDate)?.toString(of: .noticeDay)
 //        let timeArray = pillInfo.scheduleTime.map(<#T##transform: (String) throws -> T##(String) throws -> T#>)
 //        dateFormatter.date(from: pillInfo.scheduleTime)?.toString(of: .calendarTime)
 
