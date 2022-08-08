@@ -337,6 +337,6 @@ extension CalendarView {
         datesRange = range
         self.configureVisibleCells()
         
-        calendar.setCurrentPage(Date(), animated: true)
+        calendar.setCurrentPage(firstDate!, animated: true)
     }
 }
