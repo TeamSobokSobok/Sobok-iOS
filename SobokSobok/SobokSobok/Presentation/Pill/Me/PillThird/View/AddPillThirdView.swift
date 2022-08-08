@@ -79,14 +79,19 @@ final class AddPillThirdView: BaseView {
             $0.leading.equalToSuperview().offset(20)
         }
         
-        pillCountLabel.snp.makeConstraints {
+        pillPeriodInfoLabel.snp.makeConstraints {
             $0.top.equalTo(pillNameInfoLabel.snp.bottom).offset(4)
+            $0.leading.equalToSuperview().offset(20)
+        }
+        
+        pillCountLabel.snp.makeConstraints {
+            $0.top.equalTo(pillPeriodInfoLabel.snp.bottom).offset(34)
             $0.leading.equalTo(pillNameInfoLabel.snp.leading)
         }
         
         pillCountInfoLabel.snp.makeConstraints {
             $0.leading.equalTo(pillCountLabel.snp.trailing).offset(3)
-            $0.top.equalTo(pillNameInfoLabel.snp.bottom).offset(4)
+            $0.top.equalTo(pillPeriodInfoLabel.snp.bottom).offset(34)
         }
         
         countInfoButton.snp.makeConstraints {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AddPillThirdProtocol: TargetProtocol, DelegationProtocol, TossPillProtocol {}
+protocol AddPillThirdProtocol: TargetProtocol, DelegationProtocol, BindProtocol, TossPillProtocol {}
 
 final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
  
@@ -17,9 +17,11 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     let addPillInfoView = AddPillInfoView()
     
     private let sendPillViewModel: SendPillViewModel
+    private let pillThirdViewModel: PillThirdViewModel
     
-    init(sendPillViewModel: SendPillViewModel) {
+    init(sendPillViewModel: SendPillViewModel, pillThirdViewModel: PillThirdViewModel) {
         self.sendPillViewModel = sendPillViewModel
+        self.pillThirdViewModel = pillThirdViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,6 +37,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         super.viewDidLoad()
         assignDelegation()
         target()
+        bind()
     }
     
     func target() {
@@ -46,6 +49,18 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     func assignDelegation() {
         addPillThirdView.collectionView.delegate = self
         addPillThirdView.collectionView.dataSource = self
+    }
+    
+    func bind() {
+        pillThirdViewModel.pillCount.bind { count in
+            self.addPillThirdView.pillCountLabel.text = "\(count)개"
+        }
+        
+        pillThirdViewModel.pillList.bind { _ in
+            DispatchQueue.main.async {
+                self.addPillThirdView.collectionView.reloadData()
+            }
+        }
     }
     
     private func presentView() {
@@ -66,7 +81,6 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         case .friendPill:
             presentView()
         }
-
     }
     
     @objc func hideToolTipImage() {
@@ -94,19 +108,31 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
 
 extension AddPillThirdViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return pillThirdViewModel.pillList.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AddPillCollectionViewCell.self)
+    
+        cell.pillThirdViewModel.deleteCellClosure = { [weak self] in
+            guard let self = self else { return }
+            self.pillThirdViewModel.deleteCell(index: indexPath.row)
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        guard let cell = addPillThirdView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier, for: indexPath) as? AddPillFooterView else { return UICollectionReusableView()}
+        guard let cell = addPillThirdView.collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier, for: indexPath) as? AddPillFooterView else { return UICollectionReusableView() }
+        
+            cell.viewModel.addCellClosure = { [weak self] in
+                guard let self = self else { return }
+                self.pillThirdViewModel.addCell()
+            }
+        
+        self.pillThirdViewModel.hideFooterView(button: &cell.addPillButton.isHidden)
       
         return cell
     }
