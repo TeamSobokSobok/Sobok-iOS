@@ -11,6 +11,8 @@ import FSCalendar
 
 final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
     
+    // MARK: - UIComponents
+    
     lazy var dateLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 18)
     }
@@ -34,18 +36,23 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
         $0.textColor = Color.gray500
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
     }
-
-    var isStateThreeMonth: Bool = true
-    lazy var calendar = FSCalendar()
     
+    
+    // MARK: - Properties
+
+    private var isCheckedThreeMonthState: Bool = true
+    
+    
+    // MARK: - Date Properties
+    
+    private lazy var calendar = FSCalendar()
     fileprivate let gregorian = Calendar(identifier: .gregorian)
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
-    var currentDate = Date()
+    private var currentDate = Date()
     private var firstDate: Date?
     private var lastDate: Date?
     private var datesRange: [Date]?
@@ -95,78 +102,38 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         let rectShape = CAShapeLayer()
         rectShape.bounds = calendar.frame
         rectShape.position = calendar.center
         rectShape.path = UIBezierPath(roundedRect: calendar.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 30, height: 30)).cgPath
         calendar.layer.mask = rectShape
     }
+}
 
-    private func setCalendar() {
-        dateLabel.text = currentDate.toString(of: .calendarWithMonth)
-        
-        calendar.delegate = self
-        calendar.dataSource = self
-        calendar.headerHeight = 0
-        calendar.allowsMultipleSelection = true
-        calendar.locale = Locale(identifier: "ko_KR")
-        calendar.placeholderType = .none
-        calendar.firstWeekday = 2
-        
-        // header - 3월 2022 이 부분 의미
-        calendar.appearance.weekdayFont = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        calendar.appearance.weekdayTextColor = UIColor(red: 132/255, green: 140/255, blue: 146/255, alpha: 1.0)
-        calendar.appearance.titleFont = UIFont.systemFont(ofSize: 18)
-        
-        calendar.weekdayHeight = 22
-        calendar.rowHeight = 58
-        
-        calendar.today = nil
-        calendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
-        
-        makeStateThreeMonth()
-    }
-    
-    func makeStateThreeMonth() {
-        if firstDate == nil {
-            firstDate = Date()
-        }
-        let lastDate = Calendar.current.date(byAdding: .month, value: 3, to: firstDate!)
-        let range = datesRange(from: firstDate!, to: lastDate!)
-        self.lastDate = range.last
-        
-        for d in range {
-            calendar.select(d)
-        }
-        datesRange = range
-        self.configureVisibleCells()
-        
-        calendar.setCurrentPage(Date(), animated: true)
-    }
+// MARK: - Objc Functions
+
+extension CalendarView {
     
     @objc func checkButtonTapped(_ sender: UIButton) {
-        if isStateThreeMonth {
+        if isCheckedThreeMonthState {
             // uncheck
             checkButton.setImage(Image.icCheckedNot, for: .normal)
-            for d in calendar.selectedDates {
-                calendar.deselect(d)
-            }
-            lastDate = nil
-            firstDate = nil
-            datesRange = []
-            configureVisibleCells()
+            self.clearSelectedDates()
             
         } else {
             // check
             checkButton.setImage(Image.icChecked, for: .normal)
-            
-            makeStateThreeMonth()
+            self.makeRangesToThreeMonth()
         }
         
-        isStateThreeMonth.toggle()
+        isCheckedThreeMonthState.toggle()
     }
-    
-    // MARK:- FSCalendarDataSource
+}
+
+// MARK:- FSCalendarDataSource
+
+extension CalendarView {
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
@@ -176,8 +143,13 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         self.configure(cell: cell, for: date, at: position)
     }
+}
+
+
+// MARK:- FSCalendarDelegate
+
+extension CalendarView {
     
-    // MARK:- FSCalendarDelegate
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition)   -> Bool {
         return monthPosition == .current
     }
@@ -218,41 +190,24 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
 
         // both are selected:
         if firstDate != nil && lastDate != nil {
-            for d in calendar.selectedDates {
-                calendar.deselect(d)
-            }
-            lastDate = nil
-            firstDate = nil
-            datesRange = []
-            self.configureVisibleCells()
+            self.clearSelectedDates()
         }
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        for d in calendar.selectedDates {
-            calendar.deselect(d)
-        }
-        lastDate = nil
-        firstDate = nil
-        datesRange = []
-        configureVisibleCells()
+        self.clearSelectedDates()
     }
     
-    func datesRange(from: Date, to: Date) -> [Date] {
-        if from > to { return [Date]() }
-        var tempDate = from
-        var array = [tempDate]
-        while tempDate < to {
-            if let date = Calendar.current.date(byAdding: .day, value: 1, to: tempDate) {
-                tempDate = date
-                array.append(tempDate)
-            }
-        }
-        return array
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        currentDate = calendar.currentPage
+        dateLabel.text = currentDate.toString(of: .calendarWithMonth)
     }
+}
 
-    
-    // MARK: - Private functions
+
+// MARK: - Configure functions
+
+extension CalendarView {
     
     private func configureVisibleCells() {
         calendar.visibleCells().forEach { (cell) in
@@ -302,6 +257,37 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
             diyCell.selectionType = .none
         }
     }
+}
+
+
+// MARK: - Private Functions
+
+extension CalendarView {
+    
+    private func setCalendar() {
+        dateLabel.text = currentDate.toString(of: .calendarWithMonth)
+        
+        calendar.delegate = self
+        calendar.dataSource = self
+        calendar.headerHeight = 0
+        calendar.allowsMultipleSelection = true
+        calendar.locale = Locale(identifier: "ko_KR")
+        calendar.placeholderType = .none
+        calendar.firstWeekday = 2
+        
+        // header - 3월 2022 이 부분 의미
+        calendar.appearance.weekdayFont = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        calendar.appearance.weekdayTextColor = UIColor(red: 132/255, green: 140/255, blue: 146/255, alpha: 1.0)
+        calendar.appearance.titleFont = UIFont.systemFont(ofSize: 18)
+        
+        calendar.weekdayHeight = 22
+        calendar.rowHeight = 58
+        
+        calendar.today = nil
+        calendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "cell")
+        
+        self.makeRangesToThreeMonth()
+    }
     
     // 양 사이드에 날짜가 있을시 둥글게 표현해주기 위함.
     private func getWeekday(date: Date) -> String {
@@ -312,8 +298,45 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
         return date_string
     }
     
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        currentDate = calendar.currentPage
-        dateLabel.text = currentDate.toString(of: .calendarWithMonth)
+    func datesRange(from: Date, to: Date) -> [Date] {
+        if from > to { return [Date]() }
+        var tempDate = from
+        var array = [tempDate]
+        while tempDate < to {
+            if let date = Calendar.current.date(byAdding: .day, value: 1, to: tempDate) {
+                tempDate = date
+                array.append(tempDate)
+            }
+        }
+        return array
+    }
+    
+    // 선택된 날짜 클리어
+    private func clearSelectedDates() {
+        for d in calendar.selectedDates {
+            calendar.deselect(d)
+        }
+        lastDate = nil
+        firstDate = nil
+        datesRange = []
+        configureVisibleCells()
+    }
+    
+    // 날짜 3개월치 선택하기
+    private func makeRangesToThreeMonth() {
+        if firstDate == nil {
+            firstDate = Date()
+        }
+        let lastDate = Calendar.current.date(byAdding: .month, value: 3, to: firstDate!)
+        let range = datesRange(from: firstDate!, to: lastDate!)
+        self.lastDate = range.last
+        
+        for d in range {
+            calendar.select(d)
+        }
+        datesRange = range
+        self.configureVisibleCells()
+        
+        calendar.setCurrentPage(Date(), animated: true)
     }
 }
