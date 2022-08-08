@@ -11,8 +11,8 @@ extension NoticeViewController {
             do {
                 let noticeList = try await noticeListManager.getNoticeList()
                 if let noticeList = noticeList,
-                   !(noticeList.infoList.isEmpty) {
-//                    self.noticeList = noticeList
+                   !(noticeList.isEmpty) {
+                    self.noticeList = noticeList
                 }
             }
         }

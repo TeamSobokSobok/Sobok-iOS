@@ -8,7 +8,13 @@
 import Foundation
 
 struct NoticeList: Codable {
+    let userName: String
     let infoList: [InfoList]
+    
+    enum CodingKeys: String, CodingKey {
+        case userName = "username"
+        case infoList
+    }
 }
 
 struct InfoList: Codable {

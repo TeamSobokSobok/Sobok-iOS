@@ -9,12 +9,11 @@ import UIKit
 
 final class NoticeViewController: UIViewController {
     // MARK: - Properties
-    private var noticeList: [NoticeListData] = NoticeListData.dummy
-//    var noticeList = NoticeList() {
-//        didSet {
-//            noticeListView.noticeListCollectionView.reloadData()
-//        }
-//    }
+    var noticeList: [NoticeList] = [] {
+        didSet {
+            noticeListView.noticeListCollectionView.reloadData()
+        }
+    }
     let noticeListManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let noticeListView = NoticeListView()
     
@@ -36,6 +35,7 @@ final class NoticeViewController: UIViewController {
 // MARK: - Extensions
 extension NoticeViewController: NoticeFistControl {
     func assignDelegation() {
+       noticeListView.noticeListCollectionView.collectionViewLayout = createSection()
         noticeListView.noticeListCollectionView.delegate = self
         noticeListView.noticeListCollectionView.dataSource = self
     }
@@ -45,7 +45,7 @@ extension NoticeViewController: NoticeFistControl {
 
  extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if noticeList.count == 0 {
+        if noticeList.isEmpty {
             collectionView.setEmptyView(image: Image.illustOops, message: "아직 도착한 알림이 없어요!")
         } else { collectionView.restore() }
 
@@ -53,27 +53,30 @@ extension NoticeViewController: NoticeFistControl {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        noticeListView.titleLabel.text = "소중한 \(noticeList[indexPath.section].userName)님의 알림"
         let cell = noticeListView.noticeListCollectionView.dequeueReusableCell(for: indexPath, cellType: NoticeListCollectionViewCell.self)
-        // TODO: - 섹션에 따라 분기 처리 필요 (친구 요청, 약 전송)
-        // 데이터 넣기 & 경고창
-        // 버튼 클릭되면 클로저로 셀 위아래 뷰 숨겨주기
-        
-        /*
-         서버통신 section별로 (enum 만들어놓은것)
-         
-         (switch 안쓰고 하는거)
-         푸시할때 타입도 같이 넘겨줄수있음(필요없음)
-         데이터 받으면 쎅션에 따라 타입 매칭해주고 -> 나누기
-         */
-        
-//        cell.setData(noticeListData: noticeList[indexPath.row])
+        cell.nameLabel.text = noticeList[indexPath.section].infoList[indexPath.row].pillName
+        cell.infoLabel.text = "\(noticeList[indexPath.section].infoList[indexPath.row].senderName)님이 약 일정을 보냈어요"
+        cell.timeLabel.text = noticeList[indexPath.section].infoList[indexPath.row].createdAt // TODO: - 시간 가공
+        cell.info = { [weak self] in
+            let nextViewController = PillInfoViewController.instanceFromNib()
+            self?.navigationController?.pushViewController(nextViewController, animated: true)
+        }
         cell.accept = { [weak self] in
-            makeAlert(title: "지민지민님이 캘린더 공유를 요청했어요", message: "수락하면 상대방이 지안님의 캘린더를\n볼 수 있어요!", accept: "확인", viewController: self, nextViewController: PillInfoViewController.instanceFromNib())
+            makeAlert(
+                title: "이 약을 수락할까요?",
+                message: "수락하면 홈 캘린더에 약이 추가되고,\n정해진 시간에 알림을 받을 수 있어요 ",
+                accept: "확인",
+                viewController: self)
+            cell.statusType = .done
         }
         cell.refuse = { [weak self] in
-            makeAlert(title: "지민지민님의 캘린더 공유를 거절할까요?", message: "거절하면 상대방이 지안님의 캘린더를\n볼 수 없어요", accept: "확인", viewController: self) {
-                // 서버통신 후 처리 (NoticdListView의 Cell 바뀌도록)
-            }
+            makeAlert(
+                title: "이 약을 거절할까요?",
+                message: "거절하면 해당 약 알림을 받을 수 없어요",
+                accept: "확인",
+                viewController: self)
+            cell.statusType = .done
         }
         return cell
     }
