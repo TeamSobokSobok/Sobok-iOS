@@ -7,42 +7,40 @@
 
 import Foundation
 
-extension Date {
-    enum FormatType {
-        case full
-        case year
-        case day
-        case month
-        case second
-        case time
-        case calendar
-        case calendarTime
-        case calendarWithMonth
-        case noticeDay
-        
-        var description: String {
-            switch self {
-            case .full:
-                return "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
-            case .year:
-                return "yyyy-MM-dd"
-            case .day:
-                return "M월 d일 EEEE"
-            case .month:
-                return "M월"
-            case .second:
-                return "HH:mm:ss"
-            case .time:
-                return "a h:mm"
-            case .calendar:
-                return "yyyy년 MM월 dd일"
-            case .calendarTime:
-                return "a HH:mm"
-            case .calendarWithMonth:
-                return "yyyy년 M월"
-            case .noticeDay:
-                return "yyyy.MM.dd"
-            }
+enum FormatType {
+    case full
+    case year
+    case day
+    case month
+    case second
+    case time
+    case calendar
+    case calendarTime
+    case calendarWithMonth
+    case noticeDay
+    
+    var description: String {
+        switch self {
+        case .full:
+            return "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+        case .year:
+            return "yyyy-MM-dd"
+        case .day:
+            return "M월 d일 EEEE"
+        case .month:
+            return "M월"
+        case .second:
+            return "HH:mm:ss"
+        case .time:
+            return "a h:mm"
+        case .calendar:
+            return "yyyy년 MM월 dd일"
+        case .calendarTime:
+            return "a HH:mm"
+        case .calendarWithMonth:
+            return "yyyy년 M월"
+        case .noticeDay:
+            return "yyyy.MM.dd"
         }
     }
 }
