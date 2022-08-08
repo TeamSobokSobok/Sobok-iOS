@@ -6,10 +6,10 @@
 //
 
 extension PillInfoViewController {
-    func getPillDetailInfo(pillId: Int) {
+    func getPillDetailInfo(noticeId: Int, pillId: Int) {
         Task {
             do {
-                let pillDetailInfo = try await pillInfoManager.getPillDetailInfo(for: pillId)
+                let pillDetailInfo = try await pillInfoManager.getPillDetailInfo(noticeId: noticeId, pillId: pillId)
                 if let pillDetailInfo = pillDetailInfo {
                     self.pillInfoList = pillDetailInfo
                 }
@@ -20,7 +20,7 @@ extension PillInfoViewController {
     func putAcceptPill(pillId: Int) {
         Task {
             do {
-                let _ = try await pillInfoManager.putAcceptPill(for: pillId)
+                _ = try await pillInfoManager.putAcceptPill(for: pillId)
             }
         }
     }

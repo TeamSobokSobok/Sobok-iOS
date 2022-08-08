@@ -10,5 +10,5 @@ import Foundation
 struct AcceptPill: Decodable {
     var status: Int
     var success: Bool
-    var message: String?
+    var message: String
 }

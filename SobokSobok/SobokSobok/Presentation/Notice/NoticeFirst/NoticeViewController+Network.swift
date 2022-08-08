@@ -11,8 +11,8 @@ extension NoticeViewController {
             do {
                 let noticeList = try await noticeListManager.getNoticeList()
                 if let noticeList = noticeList,
-                   !(noticeList.infoList.isEmpty) {
-//                    self.noticeList = noticeList
+                   !(noticeList.isEmpty) {
+                    self.noticeList = noticeList
                 }
             }
         }
@@ -21,7 +21,7 @@ extension NoticeViewController {
     func putAcceptFriend(senderGoupId: Int) {
         Task {
             do {
-                let _ = try await noticeListManager.putAcceptFriend(for: senderGoupId)
+                _ = try await noticeListManager.putAcceptFriend(for: senderGoupId)
             }
         }
     }

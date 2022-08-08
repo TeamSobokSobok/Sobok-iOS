@@ -30,21 +30,22 @@ extension UICollectionView {
         [sobokImage, descriptionLabel].forEach { emptyView.addSubview($0) }
 
         sobokImage.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(297)
+            $0.top.equalToSuperview().offset(178)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
-            $0.height.equalTo(165)
+            $0.height.equalTo(165.adjustedHeight)
         }
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(491)
-            $0.leading.equalToSuperview().offset(28)
-            $0.width.equalTo(318)
+            $0.width.equalTo(318.adjustedWidth)
+            $0.top.equalTo(sobokImage.snp.bottom).offset(29)
+            $0.centerX.equalToSuperview()
         }
         self.backgroundView = emptyView
     }
     
     // MARK: - Empty
     func restore() {
-        self.backgroundView = nil
+        let noticeListView = NoticeListView()
+        self.backgroundView = noticeListView
     }
 }

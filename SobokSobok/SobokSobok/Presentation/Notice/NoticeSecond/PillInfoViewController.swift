@@ -22,7 +22,6 @@ final class PillInfoViewController: UIViewController {
         super.viewDidLoad()
         target()
         setInfoData()
-        getPillDetailInfo(pillId: 453)
     }
 }
 
@@ -32,15 +31,25 @@ extension PillInfoViewController: NoticeSecondControl {
         pillInfoView.navigationView.navigationButton.addTarget(self, action: #selector(addDismiss), for: .touchUpInside)
     }
 
-    @objc private func addDismiss() { self.dismiss(animated: true) }
+    @objc private func addDismiss() {
+        self.dismiss(animated: true) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
 
     private func setInfoData() {
         guard let pillInfo = pillInfoList.first else { return }
         let timeCount = pillInfo.makeTimeCount()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Date.FormatType.full.description
+        dateFormatter.date(from: pillInfo.startDate)?.toString(of: .noticeDay)
+        dateFormatter.date(from: pillInfo.endDate)?.toString(of: .noticeDay)
+//        let timeArray = pillInfo.scheduleTime.map(<#T##transform: (String) throws -> T##(String) throws -> T#>)
+//        dateFormatter.date(from: pillInfo.scheduleTime)?.toString(of: .calendarTime)
 
         pillInfoView.titleLabel.text = pillInfo.pillName
         pillInfoView.weekLabel.text = "\(pillInfo.takeInterval)주에 한 번"
-        pillInfoView.periodLabel.text = "\(pillInfo.startDate) ~ \(pillInfo.endDate)" // TODO: - 날짜 변환
+        pillInfoView.periodLabel.text = "\(pillInfo.startDate) ~ \(pillInfo.endDate)"
 
         setTimeViews(timeCount: timeCount, timeData: pillInfo.scheduleTime) // TODO: - 시간 변환
     }

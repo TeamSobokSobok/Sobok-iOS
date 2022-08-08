@@ -12,20 +12,20 @@ import Then
 
 final class NoticeListView: BaseView {
     // MARK: - Properties
-    private let titleLabel = UILabel().then {
+    let titleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardBold, ofSize: 24)
         $0.textAlignment = .left
         $0.text = "소중한 지안님의 알림"
         $0.textColor = Color.black
     }
     let noticeListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 167)
-        layout.minimumInteritemSpacing = 8
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
-        layout.scrollDirection = .vertical
+//        let layout = UICollectionViewFlowLayout()
+//        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width - 40, height: 167)
+//        layout.minimumInteritemSpacing = 8
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
+//        layout.scrollDirection = .vertical
         $0.backgroundColor = .clear
-        $0.collectionViewLayout = layout
+//        $0.collectionViewLayout = layout
         $0.register(NoticeListCollectionViewCell.self)
         $0.showsVerticalScrollIndicator = false
     }

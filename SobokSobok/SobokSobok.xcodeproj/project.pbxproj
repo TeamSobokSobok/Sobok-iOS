@@ -220,6 +220,7 @@
 		F6779892289FBC6300AAD2EF /* AcceptFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */; };
 		F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */; };
 		F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
+		F67798AA28A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
 		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
@@ -442,6 +443,7 @@
 		F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInfoDataModel.swift; sourceTree = "<group>"; };
 		F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFriendModel.swift; sourceTree = "<group>"; };
 		F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
+		F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoticeListCollectionViewCell+Interaction.swift"; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
 		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
@@ -1659,6 +1661,7 @@
 				F605027527BE18790010DEC8 /* EmptyView.swift */,
 				F69516772890FF36000F88D7 /* NoticeListSection.swift */,
 				F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */,
+				F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1902,6 +1905,7 @@
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				BDDF7723289A95340096196B /* StickerManager.swift in Sources */,
 				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
+				F67798AA28A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift in Sources */,
 				ECA6379E281D1AF800CA2291 /* AddPillThirdView.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
 				ECD77F3B282A64CD00710157 /* PillTableViewCell.swift in Sources */,

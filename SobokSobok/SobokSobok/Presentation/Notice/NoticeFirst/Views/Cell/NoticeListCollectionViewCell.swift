@@ -46,7 +46,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     let infoButton = UIButton().then {
         $0.contentMode = .scaleAspectFit
     }
-    private lazy var infoLabel = UILabel().then {
+    let infoLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 14)
         $0.textColor = Color.gray900
         $0.textAlignment = .left
@@ -63,7 +63,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.axis = .horizontal
         $0.distribution = .fill
     }
-    private lazy var descriptionLabel = UILabel().then {
+    let descriptionLabel = UILabel().then {
         $0.lineBreakMode = .byCharWrapping
         $0.numberOfLines = 0
         $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .vertical)

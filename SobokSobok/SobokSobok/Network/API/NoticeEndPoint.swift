@@ -9,7 +9,7 @@ import Foundation
 
 enum NoticeEndPoint {
     case getNoticeList
-    case getPillDetailInfo(pillId: Int)
+    case getPillDetailInfo(noticeId: Int, pillId: Int)
     case putAcceptFriend(senderGroupId: Int)
     case putAcceptPill(pillId: Int)
 }
@@ -46,8 +46,8 @@ extension NoticeEndPoint: EndPoint {
         switch self {
         case .getNoticeList:
             return "\(baseURL)/notice/list"
-        case .getPillDetailInfo(let pillId):
-            return "\(baseURL)/notice/list/:\(pillId)"
+        case .getPillDetailInfo(let noticeId, let pillId):
+            return "\(baseURL)/notice/list/:\(noticeId)/:\(pillId)"
         case .putAcceptFriend(let senderGroupId):
             return "\(baseURL)/group/{\(senderGroupId)}"
         case .putAcceptPill(let pillId):
