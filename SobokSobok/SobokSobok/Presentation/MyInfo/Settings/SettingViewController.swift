@@ -41,11 +41,14 @@ final class SettingViewController: UIViewController {
     }
     
     @IBAction func logOut(_ sender: UIButton) {
-        print("logout")
+        let logoutAlert = UIAlertController(title:"정말 로그아웃 하시나요?", message:"", preferredStyle: .alert)
+        logoutAlert.addAction(UIAlertAction(title: "취소", style: .default, handler: {_ in print("취소")}))
+        logoutAlert.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: {_ in print("로그아웃")}))
+        present(logoutAlert, animated: true)
     }
     
     @IBAction func withdraw(_ sender: UIButton) {
-        print("withdraw")
+        navigationController?.pushViewController(WithdrawalViewController.instanceFromNib(), animated: true)
     }
     
 }
