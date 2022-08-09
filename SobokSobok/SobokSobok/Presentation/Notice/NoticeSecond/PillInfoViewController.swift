@@ -9,7 +9,7 @@ import UIKit
 
 final class PillInfoViewController: UIViewController {
     // MARK: - Properties
-    var pillInfoList: [PillDetailInfo] = []
+    var pillInfoList: PillDetailInfo?
     let pillInfoManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let pillInfoView = PillInfoView()
     private let timeView = TimeView()

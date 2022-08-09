@@ -9,7 +9,7 @@ import UIKit
 
 final class NoticeViewController: UIViewController {
     // MARK: - Properties
-    var noticeList: [NoticeList] = [] {
+    var noticeList: NoticeList? {
         didSet {
             noticeListView.noticeListCollectionView.reloadData()
         }
@@ -45,19 +45,19 @@ extension NoticeViewController: NoticeFistControl {
 
  extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if noticeList.isEmpty {
+        if noticeList?.infoList.isEmpty == true {
             collectionView.setEmptyView(image: Image.illustOops, message: "아직 도착한 알림이 없어요!")
         } else { collectionView.restore() }
 
-        return noticeList.count
+        return noticeList?.infoList.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        noticeListView.titleLabel.text = "소중한 \(noticeList[indexPath.section].userName)님의 알림"
+        noticeListView.titleLabel.text = "소중한 \(String(describing: noticeList?.userName))님의 알림"
         let cell = noticeListView.noticeListCollectionView.dequeueReusableCell(for: indexPath, cellType: NoticeListCollectionViewCell.self)
-        cell.nameLabel.text = noticeList[indexPath.section].infoList[indexPath.row].pillName
-        cell.infoLabel.text = "\(noticeList[indexPath.section].infoList[indexPath.row].senderName)님이 약 일정을 보냈어요"
-        cell.timeLabel.text = noticeList[indexPath.section].infoList[indexPath.row].createdAt // TODO: - 시간 가공
+        cell.nameLabel.text = noticeList?.infoList[indexPath.row].pillName
+        cell.infoLabel.text = "\(String(describing: noticeList?.infoList[indexPath.row].senderName))님이 약 일정을 보냈어요"
+        cell.timeLabel.text = noticeList?.infoList[indexPath.row].createdAt // TODO: - 시간 가공
         cell.info = { [weak self] in
             let nextViewController = PillInfoViewController.instanceFromNib()
             self?.navigationController?.pushViewController(nextViewController, animated: true)

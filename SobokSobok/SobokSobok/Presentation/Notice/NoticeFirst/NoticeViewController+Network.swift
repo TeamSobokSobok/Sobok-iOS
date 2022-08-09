@@ -10,8 +10,7 @@ extension NoticeViewController {
         Task {
             do {
                 let noticeList = try await noticeListManager.getNoticeList()
-                if let noticeList = noticeList,
-                   !(noticeList.isEmpty) {
+                if let noticeList = noticeList {
                     self.noticeList = noticeList
                 }
             }
