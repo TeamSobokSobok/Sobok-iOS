@@ -10,8 +10,8 @@ import Foundation
 protocol NoticeServiceable {
     func getNoticeList() async throws -> NoticeList?
     func getPillDetailInfo(noticeId: Int, pillId: Int) async throws -> PillDetailInfo?
-    func putAcceptFriend(for senderGroupId: Int) async throws -> AcceptFriend?
-    func putAcceptPill(for pillId: Int) async throws -> AcceptPill?
+    func putAcceptFriend(status body: AcceptFriendBody, for senderGroupId: Int) async throws -> AcceptFriend?
+    func putAcceptPill(status body: AcceptPillBody, for pillId: Int) async throws -> AcceptPill?
 }
 
 struct NoticeManager: NoticeServiceable {
@@ -37,16 +37,16 @@ struct NoticeManager: NoticeServiceable {
         return try await self.apiService.request(request)
     }
     
-    func putAcceptFriend(for senderGroupId: Int) async throws -> AcceptFriend? {
+    func putAcceptFriend(status body: AcceptFriendBody, for senderGroupId: Int) async throws -> AcceptFriend? {
         let request = NoticeEndPoint
-            .putAcceptFriend(senderGroupId: senderGroupId)
+            .putAcceptFriend(body: body, senderGroupId: senderGroupId)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
     
-    func putAcceptPill(for pillId: Int) async throws -> AcceptPill? {
+    func putAcceptPill(status body: AcceptPillBody, for pillId: Int) async throws -> AcceptPill? {
         let request = NoticeEndPoint
-            .putAcceptPill(pillId: pillId)
+            .putAcceptPill(body: body, pillId: pillId)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }

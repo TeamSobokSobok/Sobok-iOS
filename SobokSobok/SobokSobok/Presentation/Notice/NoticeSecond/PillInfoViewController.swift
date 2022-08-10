@@ -13,6 +13,16 @@ final class PillInfoViewController: UIViewController {
     let pillInfoManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let pillInfoView = PillInfoView()
     private let timeView = TimeView()
+    var noticeId: Int = 0 {
+        didSet {
+            setInfoData()
+        }
+    }
+    var pillId: Int = 0 {
+        didSet {
+            setInfoData()
+        }
+    }
 
     // MARK: - View Life Cycle
     override func loadView() {
@@ -38,20 +48,25 @@ extension PillInfoViewController: NoticeSecondControl {
     }
 
     private func setInfoData() {
-        guard let pillInfo = pillInfoList.first else { return }
-        let timeCount = pillInfo.makeTimeCount()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = Date.FormatType.full.description
-//        dateFormatter.date(from: pillInfo.startDate)?.toString(of: .noticeDay)
-//        dateFormatter.date(from: pillInfo.endDate)?.toString(of: .noticeDay)
-//        let timeArray = pillInfo.scheduleTime.map(<#T##transform: (String) throws -> T##(String) throws -> T#>)
-//        dateFormatter.date(from: pillInfo.scheduleTime)?.toString(of: .calendarTime)
+        getPillDetailInfo(noticeId: noticeId, pillId: pillId)
+        
+        guard let pillInfo = pillInfoList?.scheduleTime.first else { return }
+        let timeCount = pillInfoList?.makeTimeCount() ?? 0
+        var startDate = (pillInfoList?.startDate) ?? ""
+        var endDate = (pillInfoList?.endDate) ?? ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = FormatType.full.description
+        startDate = dateFormatter.date(from: startDate)?.toString(of: .noticeDay) ?? ""
+        endDate = dateFormatter.date(from: endDate)?.toString(of: .noticeDay) ?? ""
+        let timeArray = pillInfo.map { dateFormatter.date(from: $0.description)!.toString(of: .calendarTime) } // 강제 언래핑...
+        let pillName = (pillInfoList?.pillName) ?? ""
+        let takeInterval = (pillInfoList?.takeInterval) ?? 0
+        
+        pillInfoView.titleLabel.text = pillName
+        pillInfoView.weekLabel.text = "\(takeInterval)주에 한 번"
+        pillInfoView.periodLabel.text = "\(startDate) ~ \(endDate)"
 
-        pillInfoView.titleLabel.text = pillInfo.pillName
-        pillInfoView.weekLabel.text = "\(pillInfo.takeInterval)주에 한 번"
-        pillInfoView.periodLabel.text = "\(pillInfo.startDate) ~ \(pillInfo.endDate)"
-
-        setTimeViews(timeCount: timeCount, timeData: pillInfo.scheduleTime) // TODO: - 시간 변환
+        setTimeViews(timeCount: timeCount, timeData: timeArray)
     }
 
     private func setTimeViews(timeCount: Int, timeData: [String]) {

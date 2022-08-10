@@ -225,7 +225,7 @@
 		F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */; };
 		F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
 		F67798AA28A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */; };
-		F67798AD28A3A2F200AAD2EF /* UserDefaults+Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798AC28A3A2F200AAD2EF /* UserDefaults+Notice.swift */; };
+		F67798AD28A3A2F200AAD2EF /* NoticeSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798AC28A3A2F200AAD2EF /* NoticeSingleton.swift */; };
 		F67798AF28A3BCC800AAD2EF /* NoticeToolTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798AE28A3BCC800AAD2EF /* NoticeToolTipView.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
@@ -454,7 +454,7 @@
 		F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFriendModel.swift; sourceTree = "<group>"; };
 		F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
 		F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoticeListCollectionViewCell+Interaction.swift"; sourceTree = "<group>"; };
-		F67798AC28A3A2F200AAD2EF /* UserDefaults+Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Notice.swift"; sourceTree = "<group>"; };
+		F67798AC28A3A2F200AAD2EF /* NoticeSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSingleton.swift; sourceTree = "<group>"; };
 		F67798AE28A3BCC800AAD2EF /* NoticeToolTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeToolTipView.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
@@ -1676,7 +1676,7 @@
 		F67798AB28A3A2B100AAD2EF /* UserData */ = {
 			isa = PBXGroup;
 			children = (
-				F67798AC28A3A2F200AAD2EF /* UserDefaults+Notice.swift */,
+				F67798AC28A3A2F200AAD2EF /* NoticeSingleton.swift */,
 			);
 			path = UserData;
 			sourceTree = "<group>";
@@ -1881,7 +1881,7 @@
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
-				F67798AD28A3A2F200AAD2EF /* UserDefaults+Notice.swift in Sources */,
+				F67798AD28A3A2F200AAD2EF /* NoticeSingleton.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddPillSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,

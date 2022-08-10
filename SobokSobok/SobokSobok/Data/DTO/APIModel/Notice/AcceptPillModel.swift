@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct AcceptPill: Decodable {
-    var status: Int
-    var success: Bool
-    var message: String
+struct AcceptPill: Codable {
+    let status: Int
+    let success: Bool
+    let message: String
+}
+
+struct AcceptPillBody: Codable {
+    let isOkay: String
 }

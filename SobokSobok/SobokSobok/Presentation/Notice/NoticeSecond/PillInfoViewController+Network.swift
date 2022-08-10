@@ -16,12 +16,4 @@ extension PillInfoViewController {
             }
         }
     }
-    
-    func putAcceptPill(pillId: Int) {
-        Task {
-            do {
-                _ = try await pillInfoManager.putAcceptPill(for: pillId)
-            }
-        }
-    }
 }
