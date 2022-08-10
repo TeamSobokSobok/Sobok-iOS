@@ -8,7 +8,7 @@
 import Foundation
 
 struct NoticeList: Codable {
-    let userName: String
+    let userName: String?
     let infoList: [InfoList]
     
     enum CodingKeys: String, CodingKey {
