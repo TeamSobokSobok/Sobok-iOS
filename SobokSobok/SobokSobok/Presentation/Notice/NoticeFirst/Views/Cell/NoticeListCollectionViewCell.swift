@@ -63,6 +63,9 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         $0.axis = .horizontal
         $0.distribution = .fill
     }
+    let toolTipView = NoticeToolTipView(
+        tipStartX: 184.0, tipWidth: 10.0, tipHeight: 6.2
+    )
     let descriptionLabel = UILabel().then {
         $0.lineBreakMode = .byCharWrapping
         $0.numberOfLines = 0
@@ -110,9 +113,11 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         switch sectionType {
         case .pill:
             iconImageView.image = Image.icPillAlarm
+            toolTipView.isHidden = true
         case .calender:
             iconImageView.image = Image.icCalender
             infoButton.isHidden = true
+            toolTipView.isHidden = true
         }
         
         switch statusType {
@@ -130,7 +135,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         sectionType = section
         statusType = status
         
-        [topStack, middleStack, bottomStack].forEach { contentView.addSubview($0) }
+        [topStack, toolTipView, middleStack, bottomStack].forEach { contentView.addSubview($0) }
         topStack.addArrangedSubviews(iconImageView, nameLabel, infoButton, lineView)
         infoButton.addSubviews(infoLabel, infoImage)
         middleStack.addArrangedSubviews(descriptionLabel, timeLabel)
@@ -144,8 +149,14 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
         topStack.snp.makeConstraints { make in
             make.width.equalTo(299.adjustedWidth)
             make.height.equalTo(60.adjustedHeight)
-            make.top.equalToSuperview().offset(18)
             make.leading.equalToSuperview().offset(18)
+            make.bottom.equalToSuperview().offset(92)
+        }
+        toolTipView.snp.makeConstraints { make in
+            make.width.equalTo(247.adjustedWidth)
+            make.height.equalTo(46.adjustedHeight)
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(92)
         }
         iconImageView.snp.makeConstraints { make in
             make.width.equalTo(22.adjustedWidth)

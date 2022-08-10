@@ -104,6 +104,11 @@ extension NoticeViewController: NoticeFistControl {
                 let nextViewController = PillInfoViewController.instanceFromNib()
                 self?.navigationController?.pushViewController(nextViewController, animated: true)
             }
+            if acceptedPillCount == 0 {
+                cell.toolTipView.isHidden = false
+                cell.toolTipView.layer.duration = 5.0
+                cell.toolTipView.isHidden.toggle()
+            }
             cell.accept = { [weak self] in
                 makeAlert(
                     title: "이 약을 수락할까요?",
