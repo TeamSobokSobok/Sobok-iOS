@@ -43,11 +43,11 @@ class ScheduleCell: UICollectionViewCell {
         $0.spacing = 5.adjustedWidth
         $0.isHidden = true
         
-        for index in 0..<4 {
-            let stickerButton = UIButton()
-            stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
-            $0.addArrangedSubview(stickerButton)
-        }
+//        for index in 0..<4 {
+//            let stickerButton = UIButton()
+//            stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
+//            $0.addArrangedSubview(stickerButton)
+//        }
     }
     
     private lazy var countLabel = UILabel().then {
@@ -117,15 +117,18 @@ extension ScheduleCell {
     }
     
     func configure(withSticker stickerId: [Int]?) {
+        stickerHStackView.removeAllArrangedSubviews()
+        
         if let stickerId = stickerId, !stickerId.isEmpty {
             self.countLabel.text = stickerId.count > 4 ? "+ \(stickerId.count - 4)" : ""
-            self.stickerHStackView.isHidden = false
-            
-            for index in 0..<4 {
-                let stickerView = self.stickerHStackView.arrangedSubviews[index] as? UIButton
-                stickerView?.setImage(StickerType.stickers[stickerId[index]], for: .normal)
-                stickerView?.isHidden = false
+            for value in stickerId {
+                let stickerButton = UIButton()
+                stickerButton.setImage(StickerType.stickers[value], for: .normal)
+                stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
+                stickerHStackView.addArrangedSubview(stickerButton)
             }
+            
+            self.stickerHStackView.isHidden = false
         }
         else {
             self.stickerHStackView.isHidden = true
