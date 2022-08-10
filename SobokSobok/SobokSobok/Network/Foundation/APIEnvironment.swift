@@ -26,6 +26,6 @@ extension APIEnvironment {
     }
     
     var token: String {
-        return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTg0LCJuYW1lIjoicXdlcjEyMzQiLCJpYXQiOjE2NTg5MzM4ODYsImV4cCI6MTY2MTUyNTg4NiwiaXNzIjoic29ib2sifQ.o0itoUpl0MLAbaV7NHFqXZWvnPnbprJS6qkZR7-R9bU"
+        return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE5LCJuYW1lIjoi7LmY7KaI6rCQ7J6Q7YqA6rmAIiwiaWF0IjoxNjU5ODk0MDU3LCJleHAiOjE2NjI0ODYwNTcsImlzcyI6InNvYm9rIn0.Mqmzg3RJuDZiGjAdBGgOgLA7pijxfRTyNKh-bi1YHOw"
     }
 }

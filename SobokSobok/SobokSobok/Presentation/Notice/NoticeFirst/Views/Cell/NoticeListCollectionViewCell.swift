@@ -27,11 +27,13 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     var sectionType: SectionType = .pill {
         didSet {
             setNeedsLayout()
+//            layoutIfNeeded()
         }
     }
     var statusType: StatusType = .waite {
         didSet {
             setNeedsLayout()
+//            layoutIfNeeded()
         }
     }
     
@@ -96,7 +98,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setUI(section: .pill, status: .waite)   // MARK: - (서버통신하면 바뀜)
+        setUI(section: .pill, status: .waite)
         setConstraints()
         
         presentDetailView()
