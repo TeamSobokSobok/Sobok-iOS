@@ -58,7 +58,7 @@ extension PillInfoViewController: NoticeSecondControl {
         dateFormatter.dateFormat = FormatType.full.description
         startDate = dateFormatter.date(from: startDate)?.toString(of: .noticeDay) ?? ""
         endDate = dateFormatter.date(from: endDate)?.toString(of: .noticeDay) ?? ""
-        let timeArray = pillInfo.map { dateFormatter.date(from: $0.description)!.toString(of: .calendarTime) } // 강제 언래핑...
+        let timeArray = pillInfo.map { dateFormatter.date(from: $0.description)!.toString(of: .calendarTime) }
         let pillName = (pillInfoList?.pillName) ?? ""
         let takeInterval = (pillInfoList?.takeInterval) ?? 0
         
