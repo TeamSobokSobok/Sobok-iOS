@@ -41,6 +41,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         assignDelegation()
         style()
         bind()
+        print(type)
     }
     
     init(sendPillViewModel: SendPillViewModel) {
@@ -61,6 +62,8 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
          navigationView.sendBottomSecondView].forEach {
             $0.isHidden = style.sendBottomNavigationBarIsHidden
         }
+        
+        navigationView.navigationTitleLabel.text = style.navigationTitle
     }
     
     func style() {
@@ -95,6 +98,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
                 self.pillDayViewModel.days.value = "무슨 요일에 먹나요?"
                 self.sendPillViewModel.takeInterval = 2
                 self.sendPillViewModel.specific = self.pillPeriodViewModel.dayString.value.changeKrToEn()
+                
                 self.unableNextButton()
             }
             .disposed(by: disposeBag)
@@ -189,12 +193,14 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         addPillFirstView.nextButton.backgroundColor = Color.mint
         addPillFirstView.nextButton.setTitleColor(Color.white, for: .normal)
         addPillFirstView.nextButton.isEnabled = true
+        addPillFirstView.specificView.specificLabel.textColor = Color.black
     }
     
     private func unableNextButton() {
         addPillFirstView.nextButton.backgroundColor = Color.gray200
         addPillFirstView.nextButton.setTitleColor(Color.gray500, for: .normal)
         addPillFirstView.nextButton.isEnabled = false
+        addPillFirstView.specificView.specificLabel.textColor = Color.gray500
     }
 }
 
@@ -257,12 +263,14 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
         
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFirstFooterView.reuseIdentifier, for: indexPath) as? AddPillFirstFooterView else { return UICollectionReusableView()}
        
+        cell.addTimeButton.currentImage?.withTintColor(.red)
+        
         cell.viewModel.addCellClosure = { [weak self] in
             guard let self = self else { return }
             self.presentTimeView()
         }
         
-        self.pillTimeViewModel.hideFooterView(button: &cell.addTimeButton.isHidden, stackView: &cell.horizontalStackView.isHidden)
+        self.pillTimeViewModel.hideFooterView(button: &cell.addTimeButton.isHidden)
         
         return cell
     }
@@ -270,7 +278,7 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
 
 extension AddPillFirstViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 40, height: 54)
+        return CGSize(width: UIScreen.main.bounds.width - 40, height: 40)
     }
 }
 
