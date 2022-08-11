@@ -159,7 +159,7 @@ final class AddPillFirstView: BaseView {
         }
         
         verticalStackView.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.top)
+            $0.top.equalTo(scrollView.snp.top).offset(17)
             $0.leading.equalTo(scrollView.snp.leading).inset(20)
             $0.trailing.equalTo(scrollView.snp.trailing).inset(20)
             $0.width.equalTo(UIScreen.main.bounds.width - 40)
