@@ -27,7 +27,7 @@ final class AddPillSecondView: BaseView {
         $0.text = "2022.1.9 ~ 2022.4.9"
     }
     
-    let calendar = FSCalendar()
+    let calendar = CalendarView()
     
     let checkBoxButton = UIButton().then {
         $0.setImage(Image.icCheckButton48, for: .normal)
