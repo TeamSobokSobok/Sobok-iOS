@@ -21,7 +21,7 @@ final class SendPillFirstView: BaseView {
     
     lazy var userLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
-        $0.text = "엄마"
+        $0.text = ""
     }
     
     lazy var iconImageView = UIImageView().then {
@@ -50,7 +50,7 @@ final class SendPillFirstView: BaseView {
         }
      
         sendFriendLabel.snp.makeConstraints {
-            $0.top.equalTo(navigationView.snp.bottom).offset(27)
+            $0.top.equalTo(navigationView.snp.bottom).offset(35)
             $0.leading.equalToSuperview().inset(20)
         }
         

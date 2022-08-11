@@ -14,7 +14,7 @@ protocol SendPillFirstProtocol: StyleProtocol, TargetProtocol, TossPillProtocol 
 
 final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol {
     
-    var type: TossPill = .myPill
+    var type: TossPill = .friendPill
 
     private let sendPillFirstView = SendPillFirstView()
 
@@ -26,27 +26,31 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
         super.viewDidLoad()
         style()
         target()
+        print(type)
     }
 
-    private func divide(style: PillStyle) {
+    func divide(style: PillStyle) {
         let navigationView = sendPillFirstView.navigationView
         
         navigationView.sendBottomFirstView.isHidden = style.bottomNavigationBarIsHidden
+        
+        navigationView.navigationTitleLabel.text = style.navigationTitle
     }
     
     func style() {
         tabBarController?.tabBar.isHidden = true
         view.backgroundColor = .systemBackground
+        sendPillFirstView.navigationView.xButton.setImage(Image.icClose48, for: .normal)
     }
     
     func target() {
         sendPillFirstView.nextButton.addTarget(self, action: #selector(pushAddPillFirstView), for: .touchUpInside)
-        
         sendPillFirstView.backgroundButton.addTarget(self, action: #selector(presentToUser), for: .touchUpInside)
     }
 
     @objc func presentToUser() {
         let viewController = SelectFriendViewController(selectFriendViewModel: SelectFriendViewModel())
+        viewController.sendNameDelegate = self
         viewController.modalPresentationStyle = .overFullScreen
         viewController.modalTransitionStyle = .crossDissolve
         self.present(viewController, animated: true)
@@ -55,6 +59,13 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     @objc func pushAddPillFirstView() {
         let addPillFirstView = AddPillFirstViewController(sendPillViewModel: SendPillViewModel())
         addPillFirstView.divide(style: .friendPill)
+        addPillFirstView.type = .friendPill
         self.navigationController?.pushViewController(addPillFirstView, animated: true)
+    }
+}
+
+extension SendPillFirstViewController: SendMemberNameDelegate {
+    func sendMemberName(name: String) {
+        sendPillFirstView.userLabel.text = name
     }
 }
