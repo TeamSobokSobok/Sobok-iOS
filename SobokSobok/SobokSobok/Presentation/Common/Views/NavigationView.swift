@@ -12,17 +12,17 @@ import Then
 
 final class NavigationView: UIView {
 
-    let navigationTitleLabel = UILabel().then {
+    lazy var navigationTitleLabel = UILabel().then {
         $0.text = "내 약 추가하기"
         $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
     }
     
-    let xButton = UIButton().then {
+    lazy var xButton = UIButton().then {
         $0.setImage(Image.icBack48, for: .normal)
         $0.tintColor = Color.black
     }
     
-    let cancelButton = UIButton().then {
+    lazy var cancelButton = UIButton().then {
         $0.setTitle("취소", for: .normal)
         $0.setTitleColor(Color.gray900, for: .normal)
     }

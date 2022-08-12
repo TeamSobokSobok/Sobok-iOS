@@ -25,7 +25,7 @@ class PillDayView: BaseView {
     
     let confirmButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
-        $0.setTitleColor(Color.mint, for: .normal)
+        $0.setTitleColor(Color.darkMint, for: .normal)
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 18)
     }
     

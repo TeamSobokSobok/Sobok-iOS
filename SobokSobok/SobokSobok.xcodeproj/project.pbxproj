@@ -200,6 +200,7 @@
 		ECCF5E57289F94D800BC6862 /* SendPillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */; };
 		ECCF5E5F28A0288E00BC6862 /* PillThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E5E28A0288E00BC6862 /* PillThirdViewModel.swift */; };
 		ECCF5E6128A03F1A00BC6862 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */; };
+		ECCF5E6528A50CD400BC6862 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */; };
 		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
 		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
 		ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */; };
@@ -429,6 +430,7 @@
 		ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillViewModel.swift; sourceTree = "<group>"; };
 		ECCF5E5E28A0288E00BC6862 /* PillThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillThirdViewModel.swift; sourceTree = "<group>"; };
 		ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
 		ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePillTimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -785,6 +787,7 @@
 				F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */,
 				ECAF4D28284F8D0000B12DA7 /* String+Extension.swift */,
 				ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */,
+				ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */,
 				BDAD2D3C28A428EE004ED9A2 /* UIStackView+Extension.swift */,
 			);
 			path = Extension;
@@ -1904,6 +1907,7 @@
 				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
 				BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */,
+				ECCF5E6528A50CD400BC6862 /* UIImage+Extension.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */,

@@ -21,7 +21,7 @@ final class SpecificView: UIView {
     let backgroundButton = UIButton()
 
     let moreButton = UIButton().then {
-        $0.setImage(Image.icMore48, for: .normal)
+        $0.setImage(Image.icMoreBlack48, for: .normal)
         $0.tintColor = Color.black
     }
     

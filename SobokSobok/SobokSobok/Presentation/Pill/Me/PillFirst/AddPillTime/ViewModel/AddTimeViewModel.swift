@@ -12,7 +12,7 @@ class AddTimeViewModel {
     var addCellClosure: (() -> Void)?
     
     var morningList: Helper<[String]> = Helper(["오전", "오후"])
-    var hourList: Helper<[String]> = Helper(["1", "2", "3", "4", "5", "6", "7", "8", "9"])
+    var hourList: Helper<[String]> = Helper(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"])
     var minuteList: Helper<[String]> = Helper([])
     var morning: Helper<String> = Helper("오전")
     var hour: Helper<String> = Helper("1")

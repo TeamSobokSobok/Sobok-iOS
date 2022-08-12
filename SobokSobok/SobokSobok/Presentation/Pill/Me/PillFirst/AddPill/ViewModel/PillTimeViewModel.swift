@@ -24,13 +24,13 @@ class PillTimeViewModel {
         timeList.value += [pillTime]
     }
     
-    func hideFooterView(button: inout Bool, stackView: inout Bool) {
-        if timeList.value.count == 5 {
+    func hideFooterView(button: inout Bool) {
+        if timeList.value.count == 4 {
             button = true
-            stackView = true
+            
         } else {
             button = false
-            stackView = false
+
         }
     }
 }

@@ -5,36 +5,18 @@
 //  Created by 김승찬 on 2022/08/05.
 //
 
-import Foundation
+import UIKit
 
-import RxSwift
-import RxCocoa
-
-final class SelectFriendViewModel: ViewModelType {
+final class SelectFriendViewModel {
     
-    private let didLoadMemberList = BehaviorRelay<[String]>(value: [])
-    private var memberName: [String] = []
+    var memberNameList: Helper<[String]> = Helper([])
+    var memberName: Helper<String> = Helper("")
+    
     private let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
-    var disposeBag = DisposeBag()
     
-    struct Input {
-        let requestMemberList: Signal<Void>
-    }
-    
-    struct Output {
-        let didLoadMemberList: Driver<[String]>
-    }
-    
-    func transform(input: Input) -> Output {
-        input.requestMemberList
-            .emit { [weak self] _ in
-                guard let self = self else { return }
-                self.getGroupInformation()
-            }
-            .disposed(by: disposeBag)
-    
-        return Output(didLoadMemberList: didLoadMemberList.asDriver())
-        
+    func didSelectRowAt(_ pickerView: UIPickerView, row: Int, component: Int) {
+        pickerView.reloadAllComponents()
+        memberName.value = memberNameList.value[row]
     }
 }
 
@@ -49,8 +31,7 @@ extension SelectFriendViewModel {
                 }
                 
                 members.forEach {
-                    memberName.append($0.memberName)
-                    didLoadMemberList.accept(memberName)
+                    memberNameList.value.append($0.memberName)
                 }
             }
         }

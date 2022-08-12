@@ -74,6 +74,8 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
          navigationView.sendBottomThirdView].forEach {
             $0.isHidden = style.sendBottomNavigationBarIsHidden
         }
+        
+        navigationView.navigationTitleLabel.text = style.navigationTitle
     }
     
     func style() {
