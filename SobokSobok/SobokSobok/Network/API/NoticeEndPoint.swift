@@ -47,11 +47,11 @@ extension NoticeEndPoint: EndPoint {
         case .getNoticeList:
             return "\(baseURL)/notice/list"
         case .getPillDetailInfo(let noticeId, let pillId):
-            return "\(baseURL)/notice/list/:\(noticeId)/:\(pillId)"
+            return "\(baseURL)/notice/list/\(noticeId)/\(pillId)"
         case .putAcceptFriend(let senderGroupId):
-            return "\(baseURL)/group/{\(senderGroupId)}"
+            return "\(baseURL)/group/\(senderGroupId)"
         case .putAcceptPill(let pillId):
-            return "\(baseURL)/notice/list/:\(pillId)"
+            return "\(baseURL)/notice/list/\(pillId)"
         }
     }
 }
