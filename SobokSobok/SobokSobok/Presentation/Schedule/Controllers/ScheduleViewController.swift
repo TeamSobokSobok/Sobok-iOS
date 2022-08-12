@@ -348,7 +348,7 @@ extension ScheduleViewController {
     }
     
     func showStickerBottomSheet(stickers: [Stickers]?) {
-        let stickerBottomSheet = StickerBottomSheet.instanceFromNib()
+        let stickerBottomSheet = StickerBottomSheet()
         stickerBottomSheet.modalPresentationStyle = .overCurrentContext
         stickerBottomSheet.modalTransitionStyle = .crossDissolve
         stickerBottomSheet.stickers = stickers
