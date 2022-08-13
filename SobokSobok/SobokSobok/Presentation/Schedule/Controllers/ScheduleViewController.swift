@@ -166,7 +166,7 @@ final class ScheduleViewController: BaseViewController {
         
         calendarView.snp.makeConstraints {
             // calendar left, right padding 10씩 조정하기
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(8)
             $0.height.equalTo(calendarHeight)
         }
 
