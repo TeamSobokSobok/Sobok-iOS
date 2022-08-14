@@ -17,6 +17,8 @@ final class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        showMyInformation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +47,15 @@ final class MainViewController: BaseViewController {
         containerView.snp.makeConstraints {
             $0.top.equalTo(homeTopView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
+        }
+    }
+}
+
+extension MainViewController {
+    func showMyInformation() {
+        homeTopView.completion = {
+            let myInfoViewController = MyInfoViewController.instanceFromNib()
+            self.navigationController?.pushViewController(myInfoViewController, animated: true)
         }
     }
 }
