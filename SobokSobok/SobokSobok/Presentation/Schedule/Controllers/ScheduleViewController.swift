@@ -121,6 +121,7 @@ final class ScheduleViewController: BaseViewController {
         setDelegation()
         callRequestSchedules()
         addObservers()
+        editFriendName()
     }
     
     override func viewDidLayoutSubviews() {
@@ -364,6 +365,16 @@ extension ScheduleViewController {
         stickerPopUpView.scheduleId = scheduleId
         stickerPopUpView.isLikedState = isLikedSchedule
         self.present(stickerPopUpView, animated: false, completion: nil)
+    }
+}
+
+extension ScheduleViewController {
+    func editFriendName() {
+        friendNameView.completion = {
+            let editFriendNameViewController = EditFriendNameViewController.instanceFromNib()
+            editFriendNameViewController.modalPresentationStyle = .fullScreen
+            self.present(editFriendNameViewController, animated: true)
+        }
     }
 }
 
