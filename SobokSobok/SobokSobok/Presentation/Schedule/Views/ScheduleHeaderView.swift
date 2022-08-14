@@ -55,7 +55,9 @@ extension ScheduleHeaderView {
             $0.top.equalToSuperview().offset(36)
             $0.leading.equalToSuperview()
             $0.bottom.equalToSuperview().inset(6)
+            $0.height.equalTo(35.adjustedHeight)
         }
+        
         editButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(19)
             $0.trailing.equalToSuperview()

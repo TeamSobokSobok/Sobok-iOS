@@ -16,6 +16,7 @@ extension ScheduleViewController {
         calendarView.headerHeight = 0
         calendarView.firstWeekday = 2
         calendarView.setScope(.week, animated: false)
+        calendarView.select(Date())
     }
     
     func setCalendarStyle() {

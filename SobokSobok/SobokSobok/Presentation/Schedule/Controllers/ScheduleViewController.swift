@@ -166,7 +166,7 @@ final class ScheduleViewController: BaseViewController {
         
         calendarView.snp.makeConstraints {
             // calendar left, right padding 10씩 조정하기
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(8)
             $0.height.equalTo(calendarHeight)
         }
 
@@ -278,7 +278,7 @@ extension ScheduleViewController {
     private func updateUI() {
         friendNameView.isHidden = friendName == nil ? true : false
         friendNameView.friendNameLabel.text = friendName
-        calendarTopView.dateLabel.text = currentDate.toString(of: .day)
+        calendarTopView.dateLabel.text = calendarTopView.scopeState == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
     }
     
     private func setDelegation() {
@@ -372,6 +372,7 @@ extension ScheduleViewController: CalendarTopViewDelegate {
         calendarView.setScope(scope == .week ? .week : .month, animated: true)
         calendarTopView.scopeButton.setTitle(scope == .week ? "주" : "월", for: .normal)
         calendarTopView.scopeButton.setImage(scope == .week ? Image.icArrowDropDown16 : Image.icArrowUp16, for: .normal)
+        calendarTopView.dateLabel.text = scope == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
     }
 }
 
