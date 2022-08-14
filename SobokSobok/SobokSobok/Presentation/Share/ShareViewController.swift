@@ -46,7 +46,7 @@ final class ShareViewController: BaseViewController {
 extension ShareViewController {
     func addFriend() {
         shareTopView.completion = {
-            let searchNicknameViewController = SearchNicknameViewController.instanceFromNib()
+            let searchNicknameViewController = UINavigationController(rootViewController: SearchNicknameViewController.instanceFromNib())
             searchNicknameViewController.modalPresentationStyle = .fullScreen
             self.present(searchNicknameViewController, animated: true)
         }
