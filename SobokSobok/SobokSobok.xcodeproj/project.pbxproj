@@ -194,6 +194,8 @@
 		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
 		ECB8A5C5286BD86E00B1D363 /* SelectFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C4286BD86E00B1D363 /* SelectFriendView.swift */; };
 		ECB8A5C7286BD87600B1D363 /* SelectFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C6286BD87600B1D363 /* SelectFriendViewController.swift */; };
+		ECB97F3428AA36AC009C8637 /* StopPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB97F3328AA36AC009C8637 /* StopPillView.swift */; };
+		ECB97F3628AA36B1009C8637 /* StopPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB97F3528AA36B1009C8637 /* StopPillViewController.swift */; };
 		ECCF5E4D289CF1B700BC6862 /* SelectFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */; };
 		ECCF5E51289F8BF500BC6862 /* SendPillEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */; };
 		ECCF5E53289F8C0000BC6862 /* SendPillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */; };
@@ -432,6 +434,8 @@
 		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		ECB8A5C4286BD86E00B1D363 /* SelectFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendView.swift; sourceTree = "<group>"; };
 		ECB8A5C6286BD87600B1D363 /* SelectFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewController.swift; sourceTree = "<group>"; };
+		ECB97F3328AA36AC009C8637 /* StopPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPillView.swift; sourceTree = "<group>"; };
+		ECB97F3528AA36B1009C8637 /* StopPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPillViewController.swift; sourceTree = "<group>"; };
 		ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewModel.swift; sourceTree = "<group>"; };
 		ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillEndPoint.swift; sourceTree = "<group>"; };
 		ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillManager.swift; sourceTree = "<group>"; };
@@ -1255,6 +1259,8 @@
 				EC0213F927CFAE0B00CF3569 /* PillFirst */,
 				EC8596A4281C00F500850E84 /* PillSecond */,
 				ECA63796281D1A7300CA2291 /* PillThird */,
+				ECB97F3328AA36AC009C8637 /* StopPillView.swift */,
+				ECB97F3528AA36B1009C8637 /* StopPillViewController.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1932,6 +1938,7 @@
 				EC03760E278B2E4000CA4B54 /* AddPillSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
+				ECB97F3428AA36AC009C8637 /* StopPillView.swift in Sources */,
 				ECCF5E6128A03F1A00BC6862 /* UITextField+Extension.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
@@ -1941,6 +1948,7 @@
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
 				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
 				BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */,
+				ECB97F3628AA36B1009C8637 /* StopPillViewController.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,
 				9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */,
