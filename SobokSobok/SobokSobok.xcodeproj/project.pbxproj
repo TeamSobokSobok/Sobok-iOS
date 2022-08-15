@@ -97,6 +97,7 @@
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
 		BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD65721428AA6C6F00A0623A /* FirebaseAnalytics */; };
 		BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BD65721628AA6C6F00A0623A /* FirebaseMessaging */; };
+		BD65721928AA708300A0623A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD65721828AA708300A0623A /* GoogleService-Info.plist */; };
 		BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */; };
 		BD7120E92796A61A0068B981 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120E82796A61A0068B981 /* Schedule.swift */; };
 		BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120EA2796A7150068B981 /* ScheduleService.swift */; };
@@ -339,6 +340,7 @@
 		BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BD65721828AA708300A0623A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEmptyView.swift; sourceTree = "<group>"; };
 		BD7120E82796A61A0068B981 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		BD7120EA2796A7150068B981 /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 			children = (
 				BDDAA5932789B271000C0AF8 /* Script */,
 				BD515E46278770C7003BD5A4 /* Info.plist */,
+				BD65721828AA708300A0623A /* GoogleService-Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1830,6 +1833,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD65721928AA708300A0623A /* GoogleService-Info.plist in Resources */,
 				9A06C99828377E6B00606D28 /* MyInfoViewController.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
 				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
