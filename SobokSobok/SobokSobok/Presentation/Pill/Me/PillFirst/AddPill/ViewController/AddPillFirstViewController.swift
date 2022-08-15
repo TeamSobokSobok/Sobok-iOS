@@ -72,6 +72,22 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
     }
     
     func bind() {
+        addPillFirstView.navigationView.xButton.rx.tap.bind {
+            self.navigationController?.popViewController(animated: true)
+        }
+        .disposed(by: disposeBag)
+        
+        addPillFirstView.navigationView.cancelButton.rx.tap.bind {
+            
+            let viewController = StopPillViewController()
+            
+            viewController.modalTransitionStyle = .crossDissolve
+            viewController.modalPresentationStyle = .overFullScreen
+            
+            self.present(viewController, animated: true)
+        }
+        .disposed(by: disposeBag)
+        
         addPillFirstView.everydayButton.rx.tap.bind {
             self.addPillFirstView.everydayButton.isSelected.toggle()
             if self.addPillFirstView.everydayButton.isSelected {
