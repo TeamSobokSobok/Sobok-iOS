@@ -95,6 +95,8 @@
 		BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */; };
 		BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */; };
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
+		BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD65721428AA6C6F00A0623A /* FirebaseAnalytics */; };
+		BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BD65721628AA6C6F00A0623A /* FirebaseMessaging */; };
 		BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */; };
 		BD7120E92796A61A0068B981 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120E82796A61A0068B981 /* Schedule.swift */; };
 		BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120EA2796A7150068B981 /* ScheduleService.swift */; };
@@ -492,12 +494,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */,
 				EC02140027CFAFC700CF3569 /* RxCocoa in Frameworks */,
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
 				EC02140227CFAFC700CF3569 /* RxSwift in Frameworks */,
 				BDFE75DE278786AE00014BE1 /* Then in Frameworks */,
 				EC950EF027906F0C00A34027 /* Lottie in Frameworks */,
 				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
+				BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
 				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
@@ -1769,6 +1773,8 @@
 				BD9857A52791CE27009883FC /* FSCalendar */,
 				EC0213FF27CFAFC700CF3569 /* RxCocoa */,
 				EC02140127CFAFC700CF3569 /* RxSwift */,
+				BD65721428AA6C6F00A0623A /* FirebaseAnalytics */,
+				BD65721628AA6C6F00A0623A /* FirebaseMessaging */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -1808,6 +1814,7 @@
 				EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				EC0213FE27CFAFC700CF3569 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -2369,6 +2376,14 @@
 				kind = branch;
 			};
 		};
+		BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -2428,6 +2443,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */;
 			productName = EasyKit;
+		};
+		BD65721428AA6C6F00A0623A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BD65721628AA6C6F00A0623A /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		BD9857A52791CE27009883FC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
