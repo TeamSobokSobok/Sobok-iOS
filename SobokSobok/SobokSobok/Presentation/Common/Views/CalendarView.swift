@@ -16,33 +16,18 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
     lazy var dateLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 18)
     }
+    
     lazy var previousButton = UIButton().then {
         $0.setImage(Image.icNextSmall48, for: .normal)
         $0.imageView?.transform = ($0.imageView?.transform.rotated(by: .pi))!
+        $0.addTarget(self, action: #selector(moveToPrev), for: .touchUpInside)
     }
-    lazy var nextButton = UIButton().then {
+    
+    lazy private var nextButton = UIButton().then {
         $0.setImage(Image.icNextSmall48, for: .normal)
+        $0.addTarget(self, action: #selector(moveToNext), for: .touchUpInside)
     }
-    lazy var checkButton = UIButton().then {
-        $0.setImage(Image.icChecked, for: .normal)
-        $0.addTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
-    }
-    lazy var threeMonthLabel = UILabel().then {
-        $0.text = "시작일로부터 3개월"
-        $0.font = UIFont.font(.pretendardRegular, ofSize: 16)
-    }
-    lazy var messageLabel = UILabel().then {
-        $0.text = "최대 3개월까지 복약 기간을 설정할 수 있어요"
-        $0.textColor = Color.gray500
-        $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
-    }
-    
-    
-    // MARK: - Properties
 
-    private var isCheckedThreeMonthState: Bool = true
-    
-    
     // MARK: - Date Properties
     
     private lazy var calendar = FSCalendar()
@@ -52,51 +37,41 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    
+    private var components = DateComponents()
+    private var currentPage: Date?
     private var currentDate = Date()
     private var firstDate: Date?
     private var lastDate: Date?
     private var datesRange: [Date]?
 
     override func setupView() {
-        addSubviews(previousButton, nextButton, dateLabel, calendar, checkButton, threeMonthLabel, messageLabel)
+        addSubviews(calendar, dateLabel, previousButton, nextButton)
         setCalendar()
     }
     
     override func setupConstraints() {
-        calendar.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(253)
+        dateLabel.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
         
-        dateLabel.snp.makeConstraints {
-            $0.bottom.equalTo(calendar.snp.top).offset(-17)
-            $0.centerX.equalToSuperview()
+        calendar.snp.makeConstraints {
+            $0.top.equalTo(dateLabel.snp.bottom).offset(17)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
         
         previousButton.snp.makeConstraints {
             $0.leading.equalTo(calendar.snp.leading)
             $0.centerY.equalTo(dateLabel)
+            $0.width.height.equalTo(48.adjustedWidth)
         }
         
         nextButton.snp.makeConstraints {
             $0.trailing.equalTo(calendar.snp.trailing)
             $0.centerY.equalTo(dateLabel)
-        }
-        
-        checkButton.snp.makeConstraints {
-            $0.top.equalTo(calendar.snp.bottom)
-            $0.leading.equalTo(calendar.snp.leading)
-            $0.width.height.equalTo(40)
-        }
-        
-        threeMonthLabel.snp.makeConstraints {
-            $0.leading.equalTo(checkButton.snp.trailing)
-            $0.centerY.equalTo(checkButton.snp.centerY)
-        }
-        
-        messageLabel.snp.makeConstraints {
-            $0.top.equalTo(checkButton.snp.bottom)
-            $0.leading.equalToSuperview().inset(14)
+            $0.width.height.equalTo(48.adjustedWidth)
         }
     }
     
@@ -115,19 +90,16 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
 
 extension CalendarView {
     
-    @objc func checkButtonTapped(_ sender: UIButton) {
+    func calculateThreeMonthRange(isCheckedThreeMonthState: Bool) {
+        
         if isCheckedThreeMonthState {
             // uncheck
-            checkButton.setImage(Image.icCheckedNot, for: .normal)
             self.clearSelectedDates()
             
         } else {
             // check
-            checkButton.setImage(Image.icChecked, for: .normal)
             self.makeRangesToThreeMonth()
         }
-        
-        isCheckedThreeMonthState.toggle()
     }
 }
 
@@ -219,6 +191,7 @@ extension CalendarView {
     
     private func configure(cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         let diyCell = (cell as! DIYCalendarCell)
+        
         if position == .current {
             var selectionType = SelectionType.none
             if calendar.selectedDates.contains(date) {
@@ -238,11 +211,13 @@ extension CalendarView {
                     }
                     else if calendar.selectedDates.contains(previousDate) && calendar.selectedDates.contains(date) {
                         selectionType = .rightBorder
-                        diyCell.titleLabel.textColor = UIColor(red: 0 / 255, green: 171 / 255, blue: 182 / 255, alpha: 1.0)
+                        diyCell.titleLabel.textColor = Color.darkMint
+                        diyCell.titleLabel.font = UIFont.font(.pretendardSemibold, ofSize: 18)
                     }
                     else if calendar.selectedDates.contains(nextDate) {
                         selectionType = .leftBorder
-                        diyCell.titleLabel.textColor = UIColor(red: 0 / 255, green: 171 / 255, blue: 182 / 255, alpha: 1.0)
+                        diyCell.titleLabel.textColor = Color.darkMint
+                        diyCell.titleLabel.font = UIFont.font(.pretendardSemibold, ofSize: 18)
                     }
                     else {
                         selectionType = .single
@@ -269,6 +244,7 @@ extension CalendarView {
         
         calendar.delegate = self
         calendar.dataSource = self
+        calendar.calendarHeaderView.isHidden = true
         calendar.headerHeight = 0
         calendar.allowsMultipleSelection = true
         calendar.locale = Locale(identifier: "ko_KR")
@@ -338,5 +314,24 @@ extension CalendarView {
         self.configureVisibleCells()
         
         calendar.setCurrentPage(firstDate!, animated: true)
+    }
+
+    
+    //MARK: - 달력 < > 버튼 Action
+    @objc func moveToNext(_ sender: UIButton) {
+        scrollCurrentPage(isPrev: false)
+    }
+
+    @objc func moveToPrev(_ sender: UIButton) {
+        scrollCurrentPage(isPrev: true)
+    }
+
+    private func scrollCurrentPage(isPrev: Bool) {
+        let cal = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.month = isPrev ? -1 : 1
+
+        self.currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.currentDate)
+        self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
 }
