@@ -9,6 +9,11 @@ import UIKit
 
 import FSCalendar
 
+protocol CalendarViewDelegate: AnyObject {
+    func didSelectFirstDate(_ calendar: CalendarView)
+    func didSelectLastDate(_ calendar: CalendarView)
+}
+
 final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
     
     // MARK: - UIComponents
@@ -27,6 +32,8 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
         $0.setImage(Image.icNextSmall48, for: .normal)
         $0.addTarget(self, action: #selector(moveToNext), for: .touchUpInside)
     }
+    
+    weak var delegate: CalendarViewDelegate?
 
     // MARK: - Date Properties
     
@@ -41,8 +48,16 @@ final class CalendarView: BaseView, FSCalendarDataSource, FSCalendarDelegate, FS
     private var components = DateComponents()
     private var currentPage: Date?
     private var currentDate = Date()
-    private var firstDate: Date?
-    private var lastDate: Date?
+    var firstDate: Date? {
+        didSet {
+            delegate?.didSelectFirstDate(self)
+        }
+    }
+    var lastDate: Date? {
+        didSet {
+            delegate?.didSelectLastDate(self)
+        }
+    }
     private var datesRange: [Date]?
 
     override func setupView() {

@@ -28,5 +28,18 @@ final class SampleViewController: BaseViewController {
             $0.width.height.equalTo(350)
             $0.center.equalToSuperview()
         }
+        
+        calendar.delegate = self
+        print("시작일로부터 3개월 선택 상황", calendar.firstDate, calendar.lastDate)
+    }
+}
+
+extension SampleViewController: CalendarViewDelegate {
+    func didSelectFirstDate(_ calendar: CalendarView) {
+        print("처음 날짜", calendar.firstDate)
+    }
+    
+    func didSelectLastDate(_ calendar: CalendarView) {
+        print("마지막 날짜", calendar.lastDate)
     }
 }
