@@ -10,11 +10,13 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-protocol SendPillFirstProtocol: StyleProtocol, TargetProtocol, TossPillProtocol {}
+protocol SendPillFirstProtocol: StyleProtocol, TargetProtocol, BindProtocol, TossPillProtocol {}
 
 final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol {
     
     var type: TossPill = .friendPill
+    
+    private let disposeBag = DisposeBag()
 
     private let sendPillFirstView = SendPillFirstView()
 
@@ -26,7 +28,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
         super.viewDidLoad()
         style()
         target()
-        print(type)
+        bind()
     }
 
     func divide(style: PillStyle) {
@@ -46,6 +48,14 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     func target() {
         sendPillFirstView.nextButton.addTarget(self, action: #selector(pushAddPillFirstView), for: .touchUpInside)
         sendPillFirstView.backgroundButton.addTarget(self, action: #selector(presentToUser), for: .touchUpInside)
+    }
+    
+    func bind() {
+        sendPillFirstView.navigationView.xButton.rx.tap
+            .bind {
+                self.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
     }
 
     @objc func presentToUser() {

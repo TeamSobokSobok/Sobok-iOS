@@ -50,7 +50,6 @@ final class SpecificButton: UIButton {
         makeRounded(radius: 8)
         setTitle(text, for: .normal)
         titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 16)
-        
     }
     
     private func unselectConfiguration() {
