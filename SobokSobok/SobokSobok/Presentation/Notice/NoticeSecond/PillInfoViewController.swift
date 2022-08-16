@@ -14,12 +14,12 @@ final class PillInfoViewController: UIViewController {
     private let pillInfoView = PillInfoView()
     private let timeView = TimeView()
     var noticeId: Int = 0 {
-        didSet {
+        willSet {
             setInfoData()
         }
     }
     var pillId: Int = 0 {
-        didSet {
+        willSet {
             setInfoData()
         }
     }
@@ -31,7 +31,7 @@ final class PillInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         target()
-        getPillDetailInfo(noticeId: 43, pillId: 505) // TODO: - noticeFirst로부터 넘어온 데이터 넣기
+        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
     }
 }
 
