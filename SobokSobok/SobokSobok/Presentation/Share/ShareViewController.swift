@@ -18,6 +18,8 @@ final class ShareViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addFriend()
 
         view.addSubviews(shareTopView, containerView)
         embed(scheduleViewController, inView: containerView)
@@ -38,5 +40,15 @@ final class ShareViewController: BaseViewController {
 
         tabBarController?.tabBar.isHidden = false
         getGroupInformation()
+    }
+}
+
+extension ShareViewController {
+    func addFriend() {
+        shareTopView.completion = {
+            let searchNicknameViewController = UINavigationController(rootViewController: SearchNicknameViewController.instanceFromNib())
+            searchNicknameViewController.modalPresentationStyle = .fullScreen
+            self.present(searchNicknameViewController, animated: true)
+        }
     }
 }

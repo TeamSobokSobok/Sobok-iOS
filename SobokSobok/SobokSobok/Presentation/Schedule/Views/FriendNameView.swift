@@ -9,6 +9,8 @@ import UIKit
 
 final class FriendNameView: BaseView {
     
+    var completion: (() -> ())?
+    
     lazy var friendNameLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardBold, ofSize: 24)
     }
@@ -16,6 +18,7 @@ final class FriendNameView: BaseView {
     lazy var friendNameEditButton = UIButton().then {
         $0.setImage(Image.icPencil32, for: .normal)
         $0.tintColor = Color.gray400
+        $0.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
     }
     
     override func setupView() {
@@ -33,5 +36,11 @@ final class FriendNameView: BaseView {
             $0.leading.equalTo(friendNameLabel.snp.trailing)
             $0.bottom.equalTo(friendNameLabel.snp.bottom)
         }
+    }
+}
+
+extension FriendNameView {
+    @objc func editButtonTapped(_ sender: UIButton) {
+        completion?()
     }
 }

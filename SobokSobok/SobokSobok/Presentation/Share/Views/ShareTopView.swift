@@ -9,6 +9,8 @@ import UIKit
 
 final class ShareTopView: BaseView {
     
+    var completion: (() -> ())?
+    
     var friends: [Member] = [] {
         didSet {
             updateUI()
@@ -102,6 +104,6 @@ extension ShareTopView {
     }
     
     @objc func addFriendButtonTapped() {
-        print("친구 추가")
+        completion?()
     }
 }

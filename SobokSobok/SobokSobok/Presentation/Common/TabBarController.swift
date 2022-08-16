@@ -43,7 +43,7 @@ extension TabBarController {
     private func setTabBarAppearance() {
         UITabBar.clearShadow()
         UITabBar.appearance().tintColor = Color.black
-        UITabBar.appearance().unselectedItemTintColor = Color.gray500
+        UITabBar.appearance().unselectedItemTintColor = Color.gray800
 
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)

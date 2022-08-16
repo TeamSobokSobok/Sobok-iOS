@@ -63,6 +63,7 @@ final class AddPillSheet: UIViewController, AddPillProtocol {
         super.viewDidLoad()
         assignDelegation()
         bind()
+        style()
     }
     
     func bind() {
@@ -127,6 +128,7 @@ extension AddPillSheet {
         guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
         let sendPillFirstViewController = SendPillFirstViewController.instanceFromNib()
         sendPillFirstViewController.type = tossPill
+        sendPillFirstViewController.divide(style: .friendPill)
         selectedViewController.pushViewController(sendPillFirstViewController, animated: true)
     }
 }

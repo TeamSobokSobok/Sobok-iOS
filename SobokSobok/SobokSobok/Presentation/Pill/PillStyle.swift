@@ -25,12 +25,14 @@ struct PillStyle: TossPillProtocol, NavigationIsHiddenProtocol {
     var type: TossPill
     let bottomNavigationBarIsHidden: Bool
     let sendBottomNavigationBarIsHidden: Bool
+    let navigationTitle: String
     
     static var myPill: PillStyle {
         
         return PillStyle(
             type: .myPill, bottomNavigationBarIsHidden: false,
-            sendBottomNavigationBarIsHidden: true
+            sendBottomNavigationBarIsHidden: true,
+            navigationTitle: "내 약 추가하기"
         )
     }
     
@@ -38,7 +40,8 @@ struct PillStyle: TossPillProtocol, NavigationIsHiddenProtocol {
         
         return PillStyle(
             type: .friendPill, bottomNavigationBarIsHidden: true,
-            sendBottomNavigationBarIsHidden: false
+            sendBottomNavigationBarIsHidden: false,
+            navigationTitle: "약 전송하기"
         )
     }
 }

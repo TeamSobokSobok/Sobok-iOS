@@ -163,11 +163,13 @@ class DIYCalendarCell: FSCalendarCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.selectionLayer?.frame = self.contentView.bounds//.insetBy(dx: 0, dy: 3)
-        self.connectionLayer?.frame = self.contentView.bounds//.insetBy(dx: 0, dy: 3)
+        
+        self.selectionLayer?.frame = self.contentView.bounds.insetBy(dx: 0, dy: -3)
+        self.connectionLayer?.frame = self.contentView.bounds.insetBy(dx: 0, dy: -3)
         guard var connectionRect = connectionLayer?.bounds else {
             return
         }
+        
         connectionRect.size.height = connectionRect.height * 5 / 6
         if selectionType == .middle {
             self.connectionLayer?.isHidden = false

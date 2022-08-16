@@ -60,6 +60,7 @@
 		BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */; };
 		BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F70286DA350002E91F0 /* ScheduleManager.swift */; };
 		BD382F75286DEE83002E91F0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F74286DEE83002E91F0 /* EndPoint.swift */; };
+		BD38CB4028AB2546006CB0FB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -95,6 +96,9 @@
 		BD64F8F22788B488009249D0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */; };
 		BD64F8F32788B488009249D0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */; };
 		BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */; };
+		BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD65721428AA6C6F00A0623A /* FirebaseAnalytics */; };
+		BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BD65721628AA6C6F00A0623A /* FirebaseMessaging */; };
+		BD65721928AA708300A0623A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD65721828AA708300A0623A /* GoogleService-Info.plist */; };
 		BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */; };
 		BD7120E92796A61A0068B981 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120E82796A61A0068B981 /* Schedule.swift */; };
 		BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120EA2796A7150068B981 /* ScheduleService.swift */; };
@@ -112,6 +116,7 @@
 		BD9857A62791CE27009883FC /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = BD9857A52791CE27009883FC /* FSCalendar */; };
 		BD9857AA2791EB5C009883FC /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9857A92791EB5C009883FC /* CalendarDayCell.swift */; };
 		BDA400192833F16D0046627A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA400182833F16D0046627A /* ScheduleViewController.swift */; };
+		BDAD2D3D28A428EE004ED9A2 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD2D3C28A428EE004ED9A2 /* UIStackView+Extension.swift */; };
 		BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */; };
 		BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */; };
 		BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */; };
@@ -193,12 +198,23 @@
 		ECB845ED279594E400433522 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB845EC279594E300433522 /* URLs.swift */; };
 		ECB8A5C5286BD86E00B1D363 /* SelectFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C4286BD86E00B1D363 /* SelectFriendView.swift */; };
 		ECB8A5C7286BD87600B1D363 /* SelectFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8A5C6286BD87600B1D363 /* SelectFriendViewController.swift */; };
+		ECB97F3428AA36AC009C8637 /* StopPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB97F3328AA36AC009C8637 /* StopPillView.swift */; };
+		ECB97F3628AA36B1009C8637 /* StopPillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB97F3528AA36B1009C8637 /* StopPillViewController.swift */; };
 		ECCF5E4D289CF1B700BC6862 /* SelectFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */; };
 		ECCF5E51289F8BF500BC6862 /* SendPillEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */; };
 		ECCF5E53289F8C0000BC6862 /* SendPillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */; };
 		ECCF5E57289F94D800BC6862 /* SendPillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */; };
 		ECCF5E5F28A0288E00BC6862 /* PillThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E5E28A0288E00BC6862 /* PillThirdViewModel.swift */; };
 		ECCF5E6128A03F1A00BC6862 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */; };
+		ECCF5E6528A50CD400BC6862 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */; };
+		ECCF5E6C28A6280D00BC6862 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6B28A6280D00BC6862 /* EditViewController.swift */; };
+		ECCF5E6E28A6281E00BC6862 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6D28A6281E00BC6862 /* EditView.swift */; };
+		ECCF5E7028A6282B00BC6862 /* EditPeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E6F28A6282B00BC6862 /* EditPeriodViewModel.swift */; };
+		ECCF5E7228A62BC900BC6862 /* EditPillNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E7128A62BC900BC6862 /* EditPillNameView.swift */; };
+		ECCF5E7428A62BD900BC6862 /* EditPillPeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E7328A62BD900BC6862 /* EditPillPeriodView.swift */; };
+		ECCF5E7628A62BE500BC6862 /* EditPillTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E7528A62BE500BC6862 /* EditPillTimeView.swift */; };
+		ECCF5E7A28A643FF00BC6862 /* EditCommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E7928A643FF00BC6862 /* EditCommonViewModel.swift */; };
+		ECCF5E7C28A6442900BC6862 /* EditTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E7B28A6442900BC6862 /* EditTimeViewModel.swift */; };
 		ECCF6EDE282009F900D6138A /* AddPillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */; };
 		ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */; };
 		ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */; };
@@ -296,6 +312,7 @@
 		BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		BD382F70286DA350002E91F0 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		BD382F74286DEE83002E91F0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -329,6 +346,7 @@
 		BD64F8ED2788B487009249D0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		BD64F8EE2788B487009249D0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		BD64F8EF2788B488009249D0 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BD65721828AA708300A0623A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEmptyView.swift; sourceTree = "<group>"; };
 		BD7120E82796A61A0068B981 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		BD7120EA2796A7150068B981 /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
@@ -346,6 +364,7 @@
 		BD917E4B289D594600A60BBE /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		BD9857A92791EB5C009883FC /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		BDA400182833F16D0046627A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		BDAD2D3C28A428EE004ED9A2 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		BDC3A468286AD0BD00A5A8A2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		BDC3A46A286AD44900A5A8A2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		BDC3A46C286ADA2B00A5A8A2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -423,12 +442,23 @@
 		ECB845EC279594E300433522 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		ECB8A5C4286BD86E00B1D363 /* SelectFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendView.swift; sourceTree = "<group>"; };
 		ECB8A5C6286BD87600B1D363 /* SelectFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewController.swift; sourceTree = "<group>"; };
+		ECB97F3328AA36AC009C8637 /* StopPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPillView.swift; sourceTree = "<group>"; };
+		ECB97F3528AA36B1009C8637 /* StopPillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPillViewController.swift; sourceTree = "<group>"; };
 		ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFriendViewModel.swift; sourceTree = "<group>"; };
 		ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillEndPoint.swift; sourceTree = "<group>"; };
 		ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillManager.swift; sourceTree = "<group>"; };
 		ECCF5E56289F94D800BC6862 /* SendPillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPillViewModel.swift; sourceTree = "<group>"; };
 		ECCF5E5E28A0288E00BC6862 /* PillThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillThirdViewModel.swift; sourceTree = "<group>"; };
 		ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		ECCF5E6B28A6280D00BC6862 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		ECCF5E6D28A6281E00BC6862 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		ECCF5E6F28A6282B00BC6862 /* EditPeriodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPeriodViewModel.swift; sourceTree = "<group>"; };
+		ECCF5E7128A62BC900BC6862 /* EditPillNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPillNameView.swift; sourceTree = "<group>"; };
+		ECCF5E7328A62BD900BC6862 /* EditPillPeriodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPillPeriodView.swift; sourceTree = "<group>"; };
+		ECCF5E7528A62BE500BC6862 /* EditPillTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPillTimeView.swift; sourceTree = "<group>"; };
+		ECCF5E7928A643FF00BC6862 /* EditCommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommonViewModel.swift; sourceTree = "<group>"; };
+		ECCF5E7B28A6442900BC6862 /* EditTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeViewModel.swift; sourceTree = "<group>"; };
 		ECCF6EDD282009F900D6138A /* AddPillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECCF6EDF28200AA200D6138A /* AddPillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillFooterView.swift; sourceTree = "<group>"; };
 		ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePillTimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -476,12 +506,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */,
 				EC02140027CFAFC700CF3569 /* RxCocoa in Frameworks */,
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
 				EC02140227CFAFC700CF3569 /* RxSwift in Frameworks */,
 				BDFE75DE278786AE00014BE1 /* Then in Frameworks */,
 				EC950EF027906F0C00A34027 /* Lottie in Frameworks */,
 				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
+				BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
 				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
@@ -705,6 +737,7 @@
 		BD515E4F27877579003BD5A4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				ECCF5E6628A627E600BC6862 /* Edit */,
 				9A06C99028377DF100606D28 /* MyInfo */,
 				BDA400172833F14E0046627A /* Schedule */,
 				9A3DF0C32798CE2F00D07A8C /* EditFriendName */,
@@ -749,6 +782,7 @@
 			children = (
 				BDDAA5932789B271000C0AF8 /* Script */,
 				BD515E46278770C7003BD5A4 /* Info.plist */,
+				BD65721828AA708300A0623A /* GoogleService-Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -787,6 +821,8 @@
 				F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */,
 				ECAF4D28284F8D0000B12DA7 /* String+Extension.swift */,
 				ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */,
+				ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */,
+				BDAD2D3C28A428EE004ED9A2 /* UIStackView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1237,6 +1273,8 @@
 				EC0213F927CFAE0B00CF3569 /* PillFirst */,
 				EC8596A4281C00F500850E84 /* PillSecond */,
 				ECA63796281D1A7300CA2291 /* PillThird */,
+				ECB97F3328AA36AC009C8637 /* StopPillView.swift */,
+				ECB97F3528AA36B1009C8637 /* StopPillViewController.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1555,6 +1593,7 @@
 			isa = PBXGroup;
 			children = (
 				ECAF4D26284F3B1C00B12DA7 /* Helper.swift */,
+				BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1614,6 +1653,45 @@
 				ECCF5E4C289CF1B700BC6862 /* SelectFriendViewModel.swift */,
 			);
 			path = SelectFriend;
+			sourceTree = "<group>";
+		};
+		ECCF5E6628A627E600BC6862 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5E6A28A627FF00BC6862 /* ViewController */,
+				ECCF5E6928A627F800BC6862 /* ViewModel */,
+				ECCF5E6828A627F400BC6862 /* View */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		ECCF5E6828A627F400BC6862 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5E6D28A6281E00BC6862 /* EditView.swift */,
+				ECCF5E7128A62BC900BC6862 /* EditPillNameView.swift */,
+				ECCF5E7328A62BD900BC6862 /* EditPillPeriodView.swift */,
+				ECCF5E7528A62BE500BC6862 /* EditPillTimeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECCF5E6928A627F800BC6862 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5E6F28A6282B00BC6862 /* EditPeriodViewModel.swift */,
+				ECCF5E7928A643FF00BC6862 /* EditCommonViewModel.swift */,
+				ECCF5E7B28A6442900BC6862 /* EditTimeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ECCF5E6A28A627FF00BC6862 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5E6B28A6280D00BC6862 /* EditViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		ECF96BEA2799585A00B5A32C /* PillLimit */ = {
@@ -1721,6 +1799,8 @@
 				BD9857A52791CE27009883FC /* FSCalendar */,
 				EC0213FF27CFAFC700CF3569 /* RxCocoa */,
 				EC02140127CFAFC700CF3569 /* RxSwift */,
+				BD65721428AA6C6F00A0623A /* FirebaseAnalytics */,
+				BD65721628AA6C6F00A0623A /* FirebaseMessaging */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -1760,6 +1840,7 @@
 				EC950EEE27906F0B00A34027 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				EC0213FE27CFAFC700CF3569 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -1775,6 +1856,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD65721928AA708300A0623A /* GoogleService-Info.plist in Resources */,
 				9A06C99828377E6B00606D28 /* MyInfoViewController.xib in Resources */,
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
 				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
@@ -1885,6 +1967,7 @@
 				EC03760E278B2E4000CA4B54 /* AddPillSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
+				ECB97F3428AA36AC009C8637 /* StopPillView.swift in Sources */,
 				ECCF5E6128A03F1A00BC6862 /* UITextField+Extension.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
@@ -1895,6 +1978,7 @@
 				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
 				BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */,
 				F67798AF28A3BCC800AAD2EF /* NoticeToolTipView.swift in Sources */,
+				ECB97F3628AA36B1009C8637 /* StopPillViewController.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,
 				9A3DF0B92798250A00D07A8C /* AddAccontAPI.swift in Sources */,
@@ -1917,7 +2001,10 @@
 				BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */,
 				F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */,
 				BD2C8B57279612BC00B1F59D /* Date+Extension.swift in Sources */,
+				ECCF5E6528A50CD400BC6862 /* UIImage+Extension.swift in Sources */,
+				ECCF5E7628A62BE500BC6862 /* EditPillTimeView.swift in Sources */,
 				BDDAA5AB2789BCD3000C0AF8 /* Image.swift in Sources */,
+				ECCF5E6C28A6280D00BC6862 /* EditViewController.swift in Sources */,
 				ECB845E02795684E00433522 /* GenericResponse.swift in Sources */,
 				BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */,
 				BD51AE2D27906CC000314A94 /* Font.swift in Sources */,
@@ -1933,16 +2020,19 @@
 				EC02140927D1E60100CF3569 /* ViewModelType.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
 				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
+				ECCF5E7428A62BD900BC6862 /* EditPillPeriodView.swift in Sources */,
 				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				BDDF7723289A95340096196B /* StickerManager.swift in Sources */,
 				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
 				F67798AA28A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift in Sources */,
 				ECA6379E281D1AF800CA2291 /* AddPillThirdView.swift in Sources */,
+				ECCF5E7228A62BC900BC6862 /* EditPillNameView.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
 				ECD77F3B282A64CD00710157 /* PillTableViewCell.swift in Sources */,
 				F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */,
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
+				ECCF5E7A28A643FF00BC6862 /* EditCommonViewModel.swift in Sources */,
 				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
 				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
@@ -1964,6 +2054,7 @@
 				BD515E39278770C5003BD5A4 /* AppDelegate.swift in Sources */,
 				BD58ACF82893D67300832F01 /* MainScheduleCell.swift in Sources */,
 				BD51AE2F27906D6F00314A94 /* UIFont+Extension.swift in Sources */,
+				ECCF5E7C28A6442900BC6862 /* EditTimeViewModel.swift in Sources */,
 				BD917E4C289D594600A60BBE /* StateView.swift in Sources */,
 				9A9E620A278D575800D900A6 /* SignUpViewController.swift in Sources */,
 				9A3DF0AF279742C400D07A8C /* SaveNicknameViewController.swift in Sources */,
@@ -1977,6 +2068,7 @@
 				EC02141027D27A3D00CF3569 /* PillDayView.swift in Sources */,
 				ECCF5E57289F94D800BC6862 /* SendPillViewModel.swift in Sources */,
 				F69516782890FF36000F88D7 /* NoticeListSection.swift in Sources */,
+				BDAD2D3D28A428EE004ED9A2 /* UIStackView+Extension.swift in Sources */,
 				9A3DF0AA2797252300D07A8C /* SearchNicknameViewController.swift in Sources */,
 				ECA6379C281D1AB100CA2291 /* AddPillThirdViewController.swift in Sources */,
 				F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */,
@@ -1990,6 +2082,7 @@
 				F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */,
 				BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */,
 				BD51AE312790701800314A94 /* TypoStyle.swift in Sources */,
+				ECCF5E7028A6282B00BC6862 /* EditPeriodViewModel.swift in Sources */,
 				9AB833FC28912F0E0040FC2A /* TermsAndPolicesViewController.swift in Sources */,
 				ECAF4D2B284F979200B12DA7 /* AddPillFirstViewModel.swift in Sources */,
 				EC02140B27D1E7D200CF3569 /* PillPeriodViewModel.swift in Sources */,
@@ -2010,6 +2103,7 @@
 				EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */,
 				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC919468282252230047893F /* PillPeriodTimeView.swift in Sources */,
+				BD38CB4028AB2546006CB0FB /* UserDefaultsManager.swift in Sources */,
 				BDE2ADE42891266200A42559 /* ShareTopView.swift in Sources */,
 				EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */,
 				EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */,
@@ -2018,6 +2112,7 @@
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
 				F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */,
 				BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */,
+				ECCF5E6E28A6281E00BC6862 /* EditView.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
 				BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */,
@@ -2313,6 +2408,14 @@
 				kind = branch;
 			};
 		};
+		BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -2372,6 +2475,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD515E9327878114003BD5A4 /* XCRemoteSwiftPackageReference "EasyKit" */;
 			productName = EasyKit;
+		};
+		BD65721428AA6C6F00A0623A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BD65721628AA6C6F00A0623A /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		BD9857A52791CE27009883FC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;

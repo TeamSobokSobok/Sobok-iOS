@@ -25,9 +25,6 @@ struct SendPillManager: SendPillServiceable {
         let request = SendPillEndPoint
             .postMyPill(body: body)
             .createRequest(environment: environment)
-        print(request.headers)
-        print(request.httpMethod)
-        print(request.url)
         return try await self.apiService.request(request)
     }
     
@@ -35,10 +32,6 @@ struct SendPillManager: SendPillServiceable {
         let request = SendPillEndPoint
             .postFriendPill(body: body, memberId: memberId)
             .createRequest(environment: environment)
-        print(request.headers)
-        print(request.httpMethod)
-        print(request.url)
-            
         return try await self.apiService.request(request)
     }
 }

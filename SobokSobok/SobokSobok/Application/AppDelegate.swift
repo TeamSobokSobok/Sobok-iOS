@@ -6,7 +6,12 @@
 //
 
 import UIKit
+
+import FirebaseCore
+import FirebaseMessaging
 import IQKeyboardManagerSwift
+import UserNotifications
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -18,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         // 키보드 Done 뜨는 이슈 해결
         IQKeyboardManager.shared.enableAutoToolbar = false
+        
+        FirebaseApp.configure()
+        setUserNotification()
+        application.registerForRemoteNotifications()
+        
         return true
     }
 
@@ -38,3 +48,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    private func setUserNotification() {
+        UNUserNotificationCenter.current().delegate = self
+        Messaging.messaging().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,completionHandler: { (_, _) in }
+        )
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .banner, .badge, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,didReceive response: UNNotificationResponse,withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}
+
+extension AppDelegate: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        guard let fcmToken = fcmToken else { return }
+        UserDefaultsManager.fcmToken = fcmToken
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+}

@@ -38,12 +38,23 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         assignDelegation()
         target()
         bind()
+        didTappedView()
+    }
+    
+    func didTappedView() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                           action: #selector(hideToolTipImage))
+         view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideToolTipImage() {
+        addPillThirdView.tooltipImage.isHidden = true
     }
     
     func target() {
         addPillThirdView.nextButton.addTarget(self, action: #selector(divideType), for: .touchUpInside)
         
-        addPillThirdView.countInfoButton.addTarget(self, action: #selector(hideToolTipImage), for: .touchUpInside)
+        addPillThirdView.countInfoButton.addTarget(self, action: #selector(openToolTipImage), for: .touchUpInside)
     }
     
     func assignDelegation() {
@@ -63,6 +74,10 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         }
     }
     
+    @objc func openToolTipImage() {
+        addPillThirdView.tooltipImage.isHidden = false
+    }
+    
     private func presentView() {
         let bottomSheetVC = AddPillInfoViewController(sendPillViewModel: SendPillViewModel())
         bottomSheetVC.modalPresentationStyle = .overFullScreen
@@ -77,14 +92,10 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     @objc func divideType() {
         switch type {
         case .myPill:
-            postMyPill()
+            presentView()
         case .friendPill:
             presentView()
         }
-    }
-    
-    @objc func hideToolTipImage() {
-        addPillThirdView.tooltipImage.isHidden.toggle()
     }
     
     func divide(style: PillStyle) {
@@ -103,6 +114,8 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
          navigationView.sendBottomThirdView].forEach {
             $0.isHidden = style.sendBottomNavigationBarIsHidden
         }
+        
+        navigationView.navigationTitleLabel.text = style.navigationTitle
     }
 }
 
