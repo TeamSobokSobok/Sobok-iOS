@@ -75,7 +75,6 @@ extension NoticeViewController: NoticeFistControl {
         let cell = noticeListView.noticeListCollectionView.dequeueReusableCell(
             for: indexPath, cellType: NoticeListCollectionViewCell.self
         )
-        cell.setupView(section: .pill, status: .waite)
         
         if noticeList?.infoList[indexPath.row].section == "calendar" {
             if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
@@ -224,14 +223,14 @@ extension NoticeViewController: NoticeFistControl {
                 cell.setupView(section: .pill, status: .done)
                 
                 createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                cell.descriptionLabel.text = groupName + "이 보낸 약 알림 일정을 수락했어요"
+                cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 수락했어요"
                 cell.timeLabel.text = createdAt
             }
             else if noticeList?.infoList[indexPath.row].isOkay == "refuse" {
                 cell.setupView(section: .pill, status: .done)
                 
                 createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                cell.descriptionLabel.text = groupName + "이 보낸 약 알림 일정을 거절했어요"
+                cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 거절했어요"
                 cell.timeLabel.text = createdAt
             }
             else { fatalError("존재하지 않는 case") }
