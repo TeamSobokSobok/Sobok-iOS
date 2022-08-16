@@ -59,7 +59,8 @@ extension SocialSignInViewController {
 
 extension SocialSignInViewController: AppleLoginManagerDelegate {
     func appleLoginDidComplete(userID: String) {
-        signIn(socialID: userID)
+        let appleSocialId = "Apple@" + userID
+        signIn(socialID: appleSocialId)
     }
     
     func appleLoginDidFail() {
@@ -76,20 +77,22 @@ extension SocialSignInViewController {
             guard let isNewUser = result?.isNew else { return }
             
             if isNewUser {
-                transitionToSetNickNameViewController()
+                transitionToSetNickNameViewController(socialId: socialID)
+                
             } else {
                 transitionToMainViewController()
             }
         }
     }
     
-    func transitionToSetNickNameViewController() {
+    func transitionToSetNickNameViewController(socialId: String) {
         let setNickNameViewController = SetNickNameVIewController()
+        setNickNameViewController.socialId = socialId
         navigationController?.pushViewController(setNickNameViewController, animated: true)
     }
     
     func transitionToMainViewController() {
-        let mainViewController = MainViewController()
+        let mainViewController = TabBarController()
         navigationController?.pushViewController(mainViewController, animated: true)
     }
 }

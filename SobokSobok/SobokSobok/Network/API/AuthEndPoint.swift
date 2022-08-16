@@ -8,7 +8,7 @@
 import Foundation
 
 enum AuthEndPoint {
-    case signUp(body: SocialUserRequest)
+    case signUp(socialId: String, username: String, deviceToken: String)
     case signIn(socialId: String, deviceToken: String)
 }
 
@@ -24,8 +24,13 @@ extension AuthEndPoint: EndPoint {
     
     var body: Data? {
         switch self {
-        case .signUp(let body):
-            return body.encode()
+        case .signUp(let socialId, let username, let deviceToken):
+            let parameter = [
+                "socialId": socialId,
+                "username": username,
+                "deviceToken": deviceToken
+            ]
+            return parameter.encode()
         case .signIn:
             return nil
         }
@@ -42,9 +47,27 @@ extension AuthEndPoint: EndPoint {
     }
     
     func createRequest(environment: APIEnvironment) -> NetworkRequest {
-        return NetworkRequest(url: getURL(from: environment),
-                              httpMethod: method,
-                              requestBody: body,
-                              headers: nil)
+        
+        switch self {
+        case .signUp:
+            var headers: [String: String] = [:]
+            headers["Content-Type"] = "application/json"
+            return NetworkRequest(url: getURL(from: environment),
+                                  httpMethod: method,
+                                  requestBody: body,
+                                  headers: headers)
+            
+        case .signIn(let socialId, let deviceToken):
+            var headers: [String: String] = [:]
+            headers["Content-Type"] = "application/json"
+            headers["socialId"] = socialId
+            headers["deviceToken"] = deviceToken
+            return NetworkRequest(url: getURL(from: environment),
+                                  httpMethod: method,
+                                  requestBody: body,
+                                  headers: headers)
+        }
+        
+
     }
 }

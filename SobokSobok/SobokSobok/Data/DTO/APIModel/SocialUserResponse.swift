@@ -8,12 +8,12 @@
 import Foundation
 
 struct SignUpResponse: Codable {
-    let id: Int
-    let username: String
-    let email: String
-    let socialId: String
-    let accesstoken: String
-    let isNew: Bool
+    let id: Int?
+    let username: String?
+    let socialId: String?
+    let deviceToken: String?
+    let accesstoken: String?
+    let isNew: Bool?
 }
 
 struct SignInResponse: Codable {

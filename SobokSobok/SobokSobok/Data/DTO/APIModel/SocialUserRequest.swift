@@ -9,7 +9,6 @@ import Foundation
 
 struct SocialUserRequest: Codable {
     let socialId: String
-    let email: String?
-    let username: String?
+    let username: String
     let deviceToken: String
 }

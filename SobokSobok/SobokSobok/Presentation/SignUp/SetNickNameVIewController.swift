@@ -26,6 +26,9 @@ final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
     private var isKeyboardOn: Bool = false
     private var keyboardHeight: CGFloat = 0
     
+    var socialId: String?
+    lazy var authManager = AuthManager(apiService: APIManager(), environment: .development)
+    
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var nickNameTextFieldView: UIView!
     @IBOutlet weak var nickNameTextField: UITextField!
@@ -231,31 +234,33 @@ extension SetNickNameVIewController {
     
     // 회원가입 서버 통신 함수
     func signUp() {
-        guard let email = user.email else { return }
-        guard let password = user.password else { return }
-        guard let name = user.name else { return }
-        
-        SignAPI.shared.signUp(email: email,
-                              password: password,
-                              name: name,
-                              completion: {(result) in
-            switch result {
-            case .success(let data):
-                guard let data = data as? SignUpResult else { return }
-                // 데이터 전달
-                self.userDefaults.set(data.user?.username, forKey: "username")
-                self.userDefaults.set(data.accesstoken, forKey: "accessToken")
-                // 화면 전환 -> 회원가입 완료
-                self.navigationController?.pushViewController(CompleteSignUpViewController.instanceFromNib(), animated: true)
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
+        Task {
+            guard let socialId = socialId else { return }
+            guard let nickname = nickname else { return }
+            let deviceToken = UserDefaultsManager.fcmToken
+            
+            let result = try await authManager.signUp(
+                socialId: socialId,
+                username: nickname,
+                deviceToken: deviceToken
+            )
+
+            if result?.isNew != nil {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                    self?.transitionToCompleteSignUpViewController()
+                }
+
+            } else {
+                print("회원가입 실패 또는 이미 있는 유저")
             }
-        })
+        }
+    }
+    
+    func transitionToCompleteSignUpViewController() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        let completeSignUpViewController = CompleteSignUpViewController.instanceFromNib()
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: completeSignUpViewController)
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }

@@ -18,6 +18,8 @@ final class APIManager: Requestable {
             throw APIError.urlEncodingError
         }
         
+        print(11111, encodedURL)
+        
         let (data, response) = try await URLSession.shared.data(for: request.createURLRequest(with: url))
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<500) ~= httpResponse.statusCode else {
@@ -25,6 +27,8 @@ final class APIManager: Requestable {
         }
         
         let decodedData = try JSONDecoder().decode(BaseModel<T>.self, from: data)
+        dump(decodedData)
+        
         if decodedData.success {
             return decodedData.data
         } else {
