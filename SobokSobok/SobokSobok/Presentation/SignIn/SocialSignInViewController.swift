@@ -16,6 +16,7 @@ final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
     @IBOutlet weak var appleLoginButton: UIView!
     
     lazy var appleLoginManager = AppleLoginManager()
+    lazy var authManager = AuthManager(apiService: APIManager(), environment: .development)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +59,37 @@ extension SocialSignInViewController {
 
 extension SocialSignInViewController: AppleLoginManagerDelegate {
     func appleLoginDidComplete(userID: String) {
-
+        signIn(socialID: userID)
     }
     
     func appleLoginDidFail() {
         
+    }
+}
+
+extension SocialSignInViewController {
+    
+    func signIn(socialID: String) {
+        Task {
+            let result = try await authManager.signIn(socialId: socialID, deviceToken: UserDefaultsManager.fcmToken)
+            
+            guard let isNewUser = result?.isNew else { return }
+            
+            if isNewUser {
+                transitionToSetNickNameViewController()
+            } else {
+                transitionToMainViewController()
+            }
+        }
+    }
+    
+    func transitionToSetNickNameViewController() {
+        let setNickNameViewController = SetNickNameVIewController()
+        navigationController?.pushViewController(setNickNameViewController, animated: true)
+    }
+    
+    func transitionToMainViewController() {
+        let mainViewController = MainViewController()
+        navigationController?.pushViewController(mainViewController, animated: true)
     }
 }

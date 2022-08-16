@@ -17,6 +17,6 @@ struct SignUpResponse: Codable {
 }
 
 struct SignInResponse: Codable {
-    let accesstoken: String
+    let accesstoken: String?
     let isNew: Bool
 }
