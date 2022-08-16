@@ -50,7 +50,7 @@ extension SignService: TargetType {
                 "name": name
             ], encoding: JSONEncoding.default)
         case .checkUsername(let nickname):
-            return .requestParameters(parameters: ["nickname": nickname], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["username": nickname], encoding: JSONEncoding.default)
         }
     }
     

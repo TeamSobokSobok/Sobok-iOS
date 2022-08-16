@@ -23,7 +23,16 @@ final class CompleteSignUpViewController: UIViewController, CompleteSingUpProtoc
     
     // MARK: - @IBAction Properties
     @IBAction func touchUpToStart(_ sender: UIButton) {
-        // 메인뷰로 화면 이동
-        navigationController?.pushViewController(TabBarController.instanceFromNib(), animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.transitionToMainViewController()
+        }
+    }
+    
+    func transitionToMainViewController() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        let completeSignUpViewController = TabBarController.instanceFromNib()
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: completeSignUpViewController)
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }
