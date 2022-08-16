@@ -11,12 +11,12 @@ final class NoticeViewController: UIViewController {
     // MARK: - Properties
     var noticeList: NoticeList? {
         didSet {
-            noticeListView.noticeListCollectionView.reloadData()
+            self.noticeListView.noticeListCollectionView.reloadData()
         }
     }
     var friendInfo: AcceptFriend? {
         didSet {
-            noticeListView.noticeListCollectionView.reloadData()
+            self.noticeListView.noticeListCollectionView.reloadData()
         }
     }
     let noticeListManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
@@ -49,13 +49,9 @@ final class NoticeViewController: UIViewController {
 extension NoticeViewController: NoticeFistControl {
     func assignDelegation() {
         noticeListView.noticeListCollectionView.collectionViewLayout = createSection()
-        noticeListView.noticeListCollectionView.delegate = self
         noticeListView.noticeListCollectionView.dataSource = self
     }
  }
-
- extension NoticeViewController: UICollectionViewDelegate { }
-
  extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if noticeList?.infoList.isEmpty == true {
@@ -81,8 +77,8 @@ extension NoticeViewController: NoticeFistControl {
         )
         cell.setupView(section: .pill, status: .waite)
         
-        if noticeList?.infoList[indexPath.row].section == "calender" {
-            if noticeList?.infoList[indexPath.row].isOkay == "wait" {
+        if noticeList?.infoList[indexPath.row].section == "calendar" {
+            if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
                 cell.setupView(section: .calender, status: .waite)
                 
                 createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
@@ -144,7 +140,7 @@ extension NoticeViewController: NoticeFistControl {
             else { fatalError("존재하지 않는 case") }
         }
         else if noticeList?.infoList[indexPath.row].section == "pill" {
-            if noticeList?.infoList[indexPath.row].isOkay == "wait" {
+            if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
                 cell.setupView(section: .pill, status: .waite)
                 
                 createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
@@ -168,7 +164,7 @@ extension NoticeViewController: NoticeFistControl {
                         message: "수락하면 홈 캘린더에 약이 추가되고,\n정해진 시간에 알림을 받을 수 있어요 ",
                         accept: "확인",
                         viewController: self) {
-                            if acceptedPillCount <= 5 {
+                            if acceptedPillCount < 5 {
                                 cell.setupView(section: .pill, status: .done)
                                 
                                 createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
