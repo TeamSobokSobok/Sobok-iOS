@@ -31,7 +31,7 @@ final class PillInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         target()
-        setInfoData()
+        getPillDetailInfo(noticeId: 43, pillId: 505) // TODO: - noticeFirst로부터 넘어온 데이터 넣기
     }
 }
 
@@ -47,23 +47,34 @@ extension PillInfoViewController: NoticeSecondControl {
         }
     }
 
-    private func setInfoData() {
-        getPillDetailInfo(noticeId: noticeId, pillId: pillId)
-        
-        guard let pillInfo = pillInfoList?.scheduleTime.first else { return }
-        let timeCount = pillInfoList?.makeTimeCount() ?? 0
-        var startDate = (pillInfoList?.startDate) ?? ""
-        var endDate = (pillInfoList?.endDate) ?? ""
+    func setInfoData() {
+        let timeCount: Int = pillInfoList?.makeTimeCount() ?? 0
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = FormatType.full.description
+        var startDate = pillInfoList?.startDate ?? ""
+        var endDate = pillInfoList?.endDate ?? ""
         startDate = dateFormatter.date(from: startDate)?.toString(of: .noticeDay) ?? ""
         endDate = dateFormatter.date(from: endDate)?.toString(of: .noticeDay) ?? ""
-        let timeArray = pillInfo.map { dateFormatter.date(from: $0.description)!.toString(of: .calendarTime) }
-        let pillName = (pillInfoList?.pillName) ?? ""
-        let takeInterval = (pillInfoList?.takeInterval) ?? 0
+        let interval = pillInfoList?.scheduleSpecific?.changeEnToKr()
+        let timeArray: [String] = pillInfoList?.scheduleTime ?? []
         
-        pillInfoView.titleLabel.text = pillName
-        pillInfoView.weekLabel.text = "\(takeInterval)주에 한 번"
+        if pillInfoList?.takeInterval == 1 {
+            pillInfoView.intervalButton.setTitle("매일", for: .normal)
+            pillInfoView.intervalLabel.text = pillInfoList?.scheduleDay
+        }
+        else if pillInfoList?.takeInterval == 2 {
+            pillInfoView.intervalButton.setTitle("특정 요일", for: .normal)
+            pillInfoView.intervalLabel.text = pillInfoList?.scheduleDay
+        }
+        else if pillInfoList?.takeInterval == 3 {
+            pillInfoView.intervalButton.setTitle("특정 간격", for: .normal)
+            pillInfoView.intervalLabel.text = "\(interval ?? "")"
+        }
+        else {
+            fatalError("존재하지 않는 case")
+        }
+
+        pillInfoView.titleLabel.text = pillInfoList?.pillName
         pillInfoView.periodLabel.text = "\(startDate) ~ \(endDate)"
 
         setTimeViews(timeCount: timeCount, timeData: timeArray)

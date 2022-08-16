@@ -25,15 +25,14 @@ final class PillInfoView: BaseView {
         $0.text = "약 먹는 주기"
         $0.textColor = Color.black
     }
-    private lazy var weekButton = UIButton().then {
+    let intervalButton = UIButton().then {
         $0.backgroundColor = Color.lightMint
         $0.isEnabled = false
         $0.makeRoundedWithBorder(radius: 6, color: Color.darkMint.cgColor)
-        $0.setTitle("특정 요일", for: .normal)
         $0.setTitleColor(Color.darkMint, for: .normal)
         $0.titleLabel?.font = UIFont.font(.pretendardMedium, ofSize: 18)
     }
-    let weekLabel = UILabel().then {
+    let intervalLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
         $0.textColor = Color.gray800
     }
@@ -77,7 +76,7 @@ final class PillInfoView: BaseView {
         backgroundColor = Color.white
         
         addSubviews(navigationView, titleLabel, lineView, termTitleLabel, termStack, timeTitleLabel, timeFirstLine, timeSecondLine, periodStack)
-        termStack.addArrangedSubviews(weekButton, weekLabel)
+        termStack.addArrangedSubviews(intervalButton, intervalLabel)
         periodStack.addArrangedSubviews(periodTitleLabel, periodLabel)
     }
     
@@ -99,7 +98,7 @@ final class PillInfoView: BaseView {
             make.top.equalTo(lineView.snp.bottom).offset(32)
             make.leading.equalToSuperview().offset(20)
         }
-        weekButton.snp.makeConstraints { make in
+        intervalButton.snp.makeConstraints { make in
             make.width.equalTo(95)
             make.height.equalTo(38)
         }

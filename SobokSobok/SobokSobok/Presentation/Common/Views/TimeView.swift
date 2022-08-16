@@ -15,6 +15,7 @@ final class TimeView: BaseView {
     // MARK: - Properties
     let timeLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
+        $0.sizeToFit()
         $0.textColor = Color.gray800
     }
     

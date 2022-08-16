@@ -19,4 +19,10 @@ extension String {
                     .replacingOccurrences(of: "주에 한 번", with: "week")
                     .replacingOccurrences(of: "일에 한 번", with: "day")
     }
+    
+    func changeEnToKr() -> String {
+        return self.replacingOccurrences(of: "month", with: "달에 한 번")
+            .replacingOccurrences(of: "week", with: "주에 한 번")
+            .replacingOccurrences(of: "day", with: "일에 한 번")
+    }
 }
