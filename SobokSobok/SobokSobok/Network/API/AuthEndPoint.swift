@@ -40,4 +40,11 @@ extension AuthEndPoint: EndPoint {
             return "\(baseURL)/auth/signin?socialId=\(socialId)&deviceToken=\(deviceToken)"
         }
     }
+    
+    func createRequest(environment: APIEnvironment) -> NetworkRequest {
+        return NetworkRequest(url: getURL(from: environment),
+                              httpMethod: method,
+                              requestBody: body,
+                              headers: nil)
+    }
 }
