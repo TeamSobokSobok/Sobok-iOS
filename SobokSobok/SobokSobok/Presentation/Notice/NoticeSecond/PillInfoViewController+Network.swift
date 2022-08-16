@@ -12,15 +12,9 @@ extension PillInfoViewController {
                 let pillDetailInfo = try await pillInfoManager.getPillDetailInfo(noticeId: noticeId, pillId: pillId)
                 if let pillDetailInfo = pillDetailInfo {
                     self.pillInfoList = pillDetailInfo
+                    setInfoData()
                 }
-            }
-        }
-    }
-    
-    func putAcceptPill(pillId: Int) {
-        Task {
-            do {
-                _ = try await pillInfoManager.putAcceptPill(for: pillId)
+                
             }
         }
     }

@@ -9,7 +9,7 @@ import UIKit
 
 extension NoticeListCollectionViewCell {
     func presentDetailView() {
-        infoButton.addTarget(self, action: #selector(detailButtonClicked), for: .touchUpInside)
+        detailButton.addTarget(self, action: #selector(detailButtonClicked), for: .touchUpInside)
     }
     
     func addAcceptAlert() {

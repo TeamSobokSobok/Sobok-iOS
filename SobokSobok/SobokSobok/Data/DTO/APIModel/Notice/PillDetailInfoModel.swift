@@ -13,6 +13,8 @@ struct PillDetailInfo: Codable {
     let scheduleTime: [String]
     let startDate: String
     let endDate: String
+    let scheduleDay: String?
+    let scheduleSpecific: String?
     
     func makeTimeCount() -> Int {
         let counts = scheduleTime.count

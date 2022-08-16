@@ -21,11 +21,11 @@ public func makeAlert(title: String, message: String, accept: String, viewContro
     viewController?.present(alert, animated: true, completion: completion)
 }
 
-public func makeAcceptAlert(title: String, viewController: UIViewController, completion: @escaping () -> Void) {
-    let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+public func makeAcceptAlert(title: String, message: String, viewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
-        viewController.dismiss(animated: true, completion: completion)
+        viewController?.dismiss(animated: true, completion: completion)
     }
     alert.addAction(acceptAction)
-    viewController.present(alert, animated: true)
+    viewController?.present(alert, animated: true)
 }

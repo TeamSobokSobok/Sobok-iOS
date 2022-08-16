@@ -241,6 +241,8 @@
 		F6779894289FBC6D00AAD2EF /* AcceptPillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */; };
 		F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E49289D593800A60BBE /* ShareScheduleCell.swift */; };
 		F67798AA28A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */; };
+		F67798AD28A3A2F200AAD2EF /* NoticeSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798AC28A3A2F200AAD2EF /* NoticeSingleton.swift */; };
+		F67798AF28A3BCC800AAD2EF /* NoticeToolTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67798AE28A3BCC800AAD2EF /* NoticeToolTipView.swift */; };
 		F67CDBF2278B4B8D00F70974 /* NoticeListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */; };
 		F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */; };
 		F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */; };
@@ -482,6 +484,8 @@
 		F6779891289FBC6300AAD2EF /* AcceptFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFriendModel.swift; sourceTree = "<group>"; };
 		F6779893289FBC6D00AAD2EF /* AcceptPillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPillModel.swift; sourceTree = "<group>"; };
 		F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoticeListCollectionViewCell+Interaction.swift"; sourceTree = "<group>"; };
+		F67798AC28A3A2F200AAD2EF /* NoticeSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeSingleton.swift; sourceTree = "<group>"; };
+		F67798AE28A3BCC800AAD2EF /* NoticeToolTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeToolTipView.swift; sourceTree = "<group>"; };
 		F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListDataModel.swift; sourceTree = "<group>"; };
 		F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+Extension.swift"; sourceTree = "<group>"; };
 		F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeFirstControl.swift; sourceTree = "<group>"; };
@@ -981,6 +985,7 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				F67798AB28A3A2B100AAD2EF /* UserData */,
 				F605025527BBFBB30010DEC8 /* NoticeFirst */,
 				F605025927BBFC2F0010DEC8 /* NoticeSecond */,
 			);
@@ -1741,8 +1746,17 @@
 			children = (
 				F6951685289A6287000F88D7 /* Cell */,
 				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
+				F67798AE28A3BCC800AAD2EF /* NoticeToolTipView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F67798AB28A3A2B100AAD2EF /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				F67798AC28A3A2F200AAD2EF /* NoticeSingleton.swift */,
+			);
+			path = UserData;
 			sourceTree = "<group>";
 		};
 		F6951685289A6287000F88D7 /* Cell */ = {
@@ -1949,6 +1963,7 @@
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
+				F67798AD28A3A2F200AAD2EF /* NoticeSingleton.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddPillSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
@@ -1962,6 +1977,7 @@
 				EC0213EE27CE669B00CF3569 /* NavigationView.swift in Sources */,
 				BDC3A469286AD0BD00A5A8A2 /* HttpMethod.swift in Sources */,
 				BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */,
+				F67798AF28A3BCC800AAD2EF /* NoticeToolTipView.swift in Sources */,
 				ECB97F3628AA36B1009C8637 /* StopPillViewController.swift in Sources */,
 				EC8EC14828510A0300A744FE /* AddPillFirstFooterView.swift in Sources */,
 				ECAF4D27284F3B1C00B12DA7 /* Helper.swift in Sources */,

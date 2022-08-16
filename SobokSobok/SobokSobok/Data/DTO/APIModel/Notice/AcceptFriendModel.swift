@@ -17,3 +17,7 @@ struct AcceptFriend: Codable {
     let isOkay: Bool?
     let updatedAt: String
 }
+
+struct AcceptFriendBody: Codable {
+    let isOkay: String
+}
