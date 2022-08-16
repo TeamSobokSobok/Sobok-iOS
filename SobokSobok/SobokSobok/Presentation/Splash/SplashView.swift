@@ -9,7 +9,7 @@ import UIKit
 
 import Lottie
 
-final class SplashView: BaseViewController {
+final class SplashView: UIViewController {
     
     // MARK: - Properties
     lazy var lottiView: AnimationView = {
@@ -34,7 +34,7 @@ final class SplashView: BaseViewController {
         view.addSubview(lottiView)
         lottiView.isHidden = false
         lottiView.play { _ in
-            let nextVC = SignInViewController.instanceFromNib()
+            let nextVC = SocialSignInViewController.instanceFromNib()
             nextVC.modalTransitionStyle = .crossDissolve
             self.navigationController?.pushViewController(nextVC, animated: true)
         }

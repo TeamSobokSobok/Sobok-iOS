@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 protocol SocialSignInProtocol: StyleProtocol {}
 
@@ -14,9 +15,13 @@ final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
     @IBOutlet weak var kakaoLoginButton: UIView!
     @IBOutlet weak var appleLoginButton: UIView!
     
+    lazy var appleLoginManager = AppleLoginManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         style()
+        configureAppleLoginManager()
     }
     
     func style() {
@@ -27,8 +32,36 @@ final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
     @IBAction func signInWithKakao(_ sender: UIView) {
         print("kakao")
     }
+    
     @IBAction func signInWIthApple(_ sender: UIView) {
-        print("apple")
+        handleAppleAuthentication()
+    }
+}
+
+extension SocialSignInViewController {
+    
+    private func configureAppleLoginManager() {
+        appleLoginManager.delegate = self
     }
     
+    private func handleAppleAuthentication() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.presentationContextProvider = appleLoginManager
+        controller.delegate = appleLoginManager
+        controller.performRequests()
+    }
+}
+
+extension SocialSignInViewController: AppleLoginManagerDelegate {
+    func appleLoginDidComplete(userID: String) {
+
+    }
+    
+    func appleLoginDidFail() {
+        
+    }
 }
