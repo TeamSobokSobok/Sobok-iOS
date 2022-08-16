@@ -62,6 +62,10 @@
 		BD382F75286DEE83002E91F0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F74286DEE83002E91F0 /* EndPoint.swift */; };
 		BD38CB4028AB2546006CB0FB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */; };
 		BD38CB6C28AB9082006CB0FB /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB6B28AB9082006CB0FB /* AppleLoginManager.swift */; };
+		BD38CB6E28AB94BF006CB0FB /* AuthEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB6D28AB94BF006CB0FB /* AuthEndPoint.swift */; };
+		BD38CB7028AB94C9006CB0FB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */; };
+		BD38CB7228AB9764006CB0FB /* SocialUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */; };
+		BD38CB7428AB976C006CB0FB /* SocialUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -313,6 +317,10 @@
 		BD382F74286DEE83002E91F0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BD38CB6B28AB9082006CB0FB /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
+		BD38CB6D28AB94BF006CB0FB /* AuthEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndPoint.swift; sourceTree = "<group>"; };
+		BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserRequest.swift; sourceTree = "<group>"; };
+		BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserResponse.swift; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -540,6 +548,8 @@
 			isa = PBXGroup;
 			children = (
 				9A3DF08B279660A400D07A8C /* Sign.swift */,
+				BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */,
+				BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */,
 			);
 			name = Sign;
 			sourceTree = "<group>";
@@ -641,6 +651,7 @@
 				EC4A3819289A68BF00974D7E /* PillCountlManager.swift */,
 				BDDF7722289A95340096196B /* StickerManager.swift */,
 				ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */,
+				BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -653,6 +664,7 @@
 				EC9EDE41289A51FB00855ED7 /* PillCountEndPoint.swift */,
 				BDDF7720289A952B0096196B /* StickerEndPoint.swift */,
 				ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */,
+				BD38CB6D28AB94BF006CB0FB /* AuthEndPoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1951,6 +1963,7 @@
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
+				BD38CB7428AB976C006CB0FB /* SocialUserResponse.swift in Sources */,
 				BD7120EF2796B3850068B981 /* ScheduleAPI.swift in Sources */,
 				EC03760E278B2E4000CA4B54 /* AddPillSheet.swift in Sources */,
 				BD2C8B3C27953B8100B1F59D /* PagerTab.swift in Sources */,
@@ -2076,6 +2089,8 @@
 				EC02140427D0F85000CF3569 /* PillDayViewModel.swift in Sources */,
 				EC91946428224BBF0047893F /* AddPillInfoViewController.swift in Sources */,
 				EC02141627D27CD900CF3569 /* PillDayViewController.swift in Sources */,
+				BD38CB6E28AB94BF006CB0FB /* AuthEndPoint.swift in Sources */,
+				BD38CB7028AB94C9006CB0FB /* AuthManager.swift in Sources */,
 				BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */,
 				F605028027BE6CAD0010DEC8 /* NoticeListView.swift in Sources */,
 				EC0213F227CF44D500CF3569 /* SpecificView.swift in Sources */,
@@ -2107,6 +2122,7 @@
 				ECFE3F80288FCC2200150699 /* SendFillFirstView.swift in Sources */,
 				EC4A381A289A68BF00974D7E /* PillCountlManager.swift in Sources */,
 				ECCF5E53289F8C0000BC6862 /* SendPillManager.swift in Sources */,
+				BD38CB7228AB9764006CB0FB /* SocialUserRequest.swift in Sources */,
 				BDDAA5A92789BCD3000C0AF8 /* UserDefaultKey.swift in Sources */,
 				9A3DF0B727981D8600D07A8C /* AddAccountService.swift in Sources */,
 				F695168C289D0915000F88D7 /* NoticeManager.swift in Sources */,
