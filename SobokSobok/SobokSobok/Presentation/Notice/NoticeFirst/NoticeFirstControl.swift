@@ -7,4 +7,19 @@
 
 import UIKit
 
-protocol NoticeFistControl: DelegationProtocol {}
+protocol NoticeFistControl: DelegationProtocol { }
+
+protocol NoticeListPresentable {
+    func setupView(section: SectionType, status: StatusType)
+    func setupConstraint()
+    func divideSection()
+}
+
+enum SectionType: Int {
+    case pill
+    case calender
+}
+enum StatusType: Int {
+    case waite
+    case done
+}

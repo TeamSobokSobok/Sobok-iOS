@@ -9,11 +9,10 @@ import UIKit
 
 import SnapKit
 import Then
-import SwiftUI
 
 final class NoticeToolTipView: UIView {
     init(
-        tipStartX: CGFloat, // 툴팁 시작점
+        tipStartX: CGFloat,
         tipWidth: CGFloat,
         tipHeight: CGFloat
     ) {
