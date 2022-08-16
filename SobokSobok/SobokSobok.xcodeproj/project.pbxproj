@@ -60,6 +60,7 @@
 		BD382F6F286DA188002E91F0 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */; };
 		BD382F71286DA350002E91F0 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F70286DA350002E91F0 /* ScheduleManager.swift */; };
 		BD382F75286DEE83002E91F0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD382F74286DEE83002E91F0 /* EndPoint.swift */; };
+		BD38CB4028AB2546006CB0FB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -309,6 +310,7 @@
 		BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		BD382F70286DA350002E91F0 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		BD382F74286DEE83002E91F0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -1586,6 +1588,7 @@
 			isa = PBXGroup;
 			children = (
 				ECAF4D26284F3B1C00B12DA7 /* Helper.swift */,
+				BD38CB3F28AB2546006CB0FB /* UserDefaultsManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2084,6 +2087,7 @@
 				EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */,
 				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC919468282252230047893F /* PillPeriodTimeView.swift in Sources */,
+				BD38CB4028AB2546006CB0FB /* UserDefaultsManager.swift in Sources */,
 				BDE2ADE42891266200A42559 /* ShareTopView.swift in Sources */,
 				EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */,
 				EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */,
