@@ -92,7 +92,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
             self.addPillFirstView.everydayButton.isSelected.toggle()
             if self.addPillFirstView.everydayButton.isSelected {
                 self.enableNextButton()
-                self.sendPillViewModel.takeInterval = 0
+                self.sendPillViewModel.takeInterval = 1
                 self.sendPillViewModel.day = ""
             } else {
                 self.unableNextButton()
@@ -103,7 +103,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         addPillFirstView.specificDayButton.rx.tap
             .bind {
                 self.pillPeriodViewModel.dayPeriod.value = "며칠 간격으로 먹나요?"
-                self.sendPillViewModel.takeInterval = 1
+                self.sendPillViewModel.takeInterval = 2
                 self.sendPillViewModel.day = self.pillDayViewModel.days.value
                 self.unableNextButton()
             }
@@ -112,7 +112,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         addPillFirstView.specificPeriodButton.rx.tap
             .bind {
                 self.pillDayViewModel.days.value = "무슨 요일에 먹나요?"
-                self.sendPillViewModel.takeInterval = 2
+                self.sendPillViewModel.takeInterval = 3
                 self.sendPillViewModel.specific = self.pillPeriodViewModel.dayString.value.changeKrToEn()
                 
                 self.unableNextButton()
