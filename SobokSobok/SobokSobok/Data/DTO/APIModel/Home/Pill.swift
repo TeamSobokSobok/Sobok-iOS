@@ -24,6 +24,7 @@ struct Pill: Codable {
     let isCheck: Bool
     let color: String
     let stickerId: [StickerId]?
+    let stickerList: [StickerId]?
     let stickerTotalCount: Int
     let isLikedSchedule: Bool?
 }

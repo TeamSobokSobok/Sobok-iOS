@@ -118,7 +118,6 @@ extension ScheduleCell {
     
     func configure(withSticker stickerId: [Int]?) {
         stickerHStackView.removeAllArrangedSubviews()
-        
         if let stickerId = stickerId, !stickerId.isEmpty {
             self.countLabel.text = stickerId.count > 4 ? "+ \(stickerId.count - 4)" : ""
             for value in stickerId {

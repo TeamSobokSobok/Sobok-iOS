@@ -72,11 +72,12 @@ extension ScheduleViewController {
         }
     }
     
-    func getStickers(for scheduleId: Int) {
+    func getStickers(for scheduleId: Int, completion: (() -> ())? = nil) {
         Task {
             do {
-                let stickers = try await stickerManageer.getStickers(for: scheduleId)
-                self.showStickerBottomSheet(stickers: stickers)
+                guard let stickers = try await stickerManageer.getStickers(for: scheduleId) else { return }
+                self.stickers = stickers
+                completion?()
             }
         }
     }
