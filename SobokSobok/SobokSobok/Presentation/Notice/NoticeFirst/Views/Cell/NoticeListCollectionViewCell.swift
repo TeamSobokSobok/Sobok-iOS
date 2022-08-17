@@ -28,6 +28,10 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
     }
     
     // MARK: - UI Components
+    lazy var containerStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.distribution = .fill
+    }
     private lazy var topStackView =  UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fill
@@ -108,72 +112,46 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         topStackView.bringSubviewToFront(toolTipView)
         middleStackView.addArrangedSubviews(lineView, descriptionLabel, timeLabel)
         bottomStackView.addArrangedSubviews(refuseButton, acceptButton)
+        containerStackView.addArrangedSubviews(topStackView, middleStackView, bottomStackView)
         
-        contentView.addSubviews(topStackView, toolTipView, middleStackView, bottomStackView)
+        contentView.addSubview(containerStackView)
         contentView.backgroundColor = Color.white
         contentView.makeRounded(radius: 12)
+
     }
     
     func setupConstraint() {
-        topStackView.snp.makeConstraints { make in
-            make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(42.adjustedHeight)
-            make.top.equalToSuperview().offset(18)
-            make.centerX.equalToSuperview()
+        containerStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(18)
         }
+
+        // MARK: - top
         iconImageView.snp.makeConstraints { make in
             make.width.height.equalTo(22)
-            make.top.equalTo(topStackView.snp.bottom).offset(1.5)
-            make.leading.equalTo(topStackView.snp.leading)
         }
         nameLabel.snp.makeConstraints { make in
-            make.width.equalTo(156.adjustedWidth)
             make.height.equalTo(25.adjustedHeight)
-            make.top.equalTo(topStackView.snp.bottom)
-            make.leading.equalTo(iconImageView.snp.trailing)
         }
         detailLabel.snp.makeConstraints { make in
-            make.top.equalTo(topStackView.snp.bottom).offset(2)
-            make.centerX.equalTo(detailButton)
+            make.height.equalTo(25.adjustedHeight)
         }
-        detailImageView.snp.makeConstraints { make in
-            make.width.equalTo(48.adjustedWidth)
-            make.top.equalTo(topStackView.snp.bottom).offset(4.5)
-            make.leading.equalTo(detailLabel.snp.trailing).inset(1)
+        detailImageView.snp.makeConstraints {
+            $0.width.height.equalTo(32.adjustedWidth)
         }
-        detailButton.snp.makeConstraints { make in
-            make.width.equalTo(72.adjustedWidth)
-            make.height.equalTo(21.adjustedHeight)
-            make.leading.equalTo(nameLabel.snp.trailing).offset(39)
-        }
-        toolTipView.snp.makeConstraints { make in
-            make.width.equalTo(247.adjustedWidth)
-            make.height.equalTo(39.adjustedHeight)
-            make.top.equalToSuperview().offset(42)
-            make.trailing.equalToSuperview()
-        }
-        middleStackView.snp.makeConstraints { make in
-            make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(62.adjustedHeight)
-            make.top.equalTo(topStackView.snp.bottom)
-            make.leading.equalToSuperview().offset(18)
-        }
+
+        // MARK: - middle
         lineView.snp.makeConstraints { make in
             make.height.equalTo(2.adjustedHeight)
-            make.top.centerX.equalTo(middleStackView)
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(lineView.snp.bottom).offset(8)
+            make.height.equalTo(21)
         }
         timeLabel.snp.makeConstraints { make in
-            make.top.equalTo(descriptionLabel.snp.bottom)
+            make.height.equalTo(17)
         }
-        bottomStackView.snp.makeConstraints { make in
-            make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(40.adjustedHeight)
-            make.top.equalTo(middleStackView.snp.bottom).offset(8)
-            make.centerX.equalTo(middleStackView)
-            make.bottom.equalToSuperview().offset(18)
+        
+        bottomStackView.snp.makeConstraints {
+            $0.height.equalTo(40.adjustedHeight)
         }
         refuseButton.snp.makeConstraints { make in
             make.width.equalTo(146.adjustedWidth)
