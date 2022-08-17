@@ -31,7 +31,8 @@ final class PillInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         target()
-        getPillDetailInfo(noticeId: 43, pillId: 505) // TODO: - noticeFirst로부터 넘어온 데이터 넣기
+        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: self.setInfoData)
     }
 }
 
@@ -48,6 +49,9 @@ extension PillInfoViewController: NoticeSecondControl {
     }
 
     func setInfoData() {
+//        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
+        print("setInfoData에서 찍힌거", pillInfoList)
+        
         let timeCount: Int = pillInfoList?.makeTimeCount() ?? 0
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = FormatType.full.description
@@ -70,9 +74,7 @@ extension PillInfoViewController: NoticeSecondControl {
             pillInfoView.intervalButton.setTitle("특정 간격", for: .normal)
             pillInfoView.intervalLabel.text = "\(interval ?? "")"
         }
-        else {
-            fatalError("존재하지 않는 case")
-        }
+        else { print("존재하지 않는 case") }
 
         pillInfoView.titleLabel.text = pillInfoList?.pillName
         pillInfoView.periodLabel.text = "\(startDate) ~ \(endDate)"

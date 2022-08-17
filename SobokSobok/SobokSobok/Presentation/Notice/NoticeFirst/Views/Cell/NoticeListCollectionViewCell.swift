@@ -28,30 +28,35 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
     }
     
     // MARK: - UI Components
+    lazy var containerStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.distribution = .fill
+    }
     private lazy var topStackView =  UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fill
-        $0.spacing = 0
     }
     private lazy var iconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
     let nameLabel = UILabel().then {
-        $0.font = UIFont.font(FontType.pretendardSemibold, ofSize: 18)
+        $0.font = UIFont.font(.pretendardSemibold, ofSize: 18)
         $0.textAlignment = .left
         $0.textColor = Color.gray900
     }
-    let detailButton = UIButton()
-    let detailLabel = UILabel().then {
-        $0.font = UIFont.font(FontType.pretendardMedium, ofSize: 14)
+    private lazy var detailLabel = UILabel().then {
+        $0.font = UIFont.font(.pretendardMedium, ofSize: 14)
         $0.text = "상세보기"
         $0.textColor = Color.gray900
     }
     private lazy var detailImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = Image.icMore16
+        $0.image = Image.icMoreBlack48
     }
-    let toolTipView = NoticeToolTipView(tipStartX: 184, tipWidth: 10, tipHeight: 6.2)
+    let detailButton = UIButton()
+    let toolTipView = NoticeToolTipView(tipStartX: 184, tipWidth: 10, tipHeight: 6.2).then {
+        $0.isHidden = true
+    }
     private lazy var middleStackView = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill
@@ -102,70 +107,57 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         statusType = status
         divideSection()
         
-        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton, detailLabel, detailImageView)
+        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailLabel, detailImageView)
         [detailLabel, detailImageView].forEach { $0.bringSubviewToFront(detailButton) }
         topStackView.bringSubviewToFront(toolTipView)
         middleStackView.addArrangedSubviews(lineView, descriptionLabel, timeLabel)
         bottomStackView.addArrangedSubviews(refuseButton, acceptButton)
+        containerStackView.addArrangedSubviews(topStackView, middleStackView, bottomStackView)
         
-        contentView.addSubviews(topStackView, toolTipView, middleStackView, bottomStackView)
+        contentView.addSubviews(detailButton, containerStackView)
         contentView.backgroundColor = Color.white
         contentView.makeRounded(radius: 12)
+
     }
     
     func setupConstraint() {
-        topStackView.snp.makeConstraints { make in
-            make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(42.adjustedHeight)
-            make.top.leading.equalToSuperview()
+        containerStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(18)
         }
+
+        // MARK: - top
         iconImageView.snp.makeConstraints { make in
-            make.width.equalTo(22.adjustedWidth)
-            make.top.equalToSuperview().offset(1.5)
-            make.leading.equalToSuperview()
+            make.width.height.equalTo(22)
         }
         nameLabel.snp.makeConstraints { make in
-            make.width.equalTo(156.adjustedWidth)
             make.height.equalTo(25.adjustedHeight)
-            make.top.equalToSuperview()
-            make.leading.equalTo(iconImageView.snp.trailing).offset(10)
         }
         detailLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(2)
-            make.leading.equalTo(nameLabel.snp.trailing).offset(39)
+            make.height.equalTo(25.adjustedHeight)
         }
         detailImageView.snp.makeConstraints { make in
-            make.width.equalTo(16.adjustedWidth)
-            make.top.equalToSuperview().offset(4.5)
-            make.leading.equalTo(detailLabel.snp.trailing).offset(4)
+            make.width.height.equalTo(48.adjustedWidth)
         }
         detailButton.snp.makeConstraints { make in
             make.width.equalTo(72.adjustedWidth)
             make.height.equalTo(21.adjustedHeight)
-            make.centerX.equalTo(detailLabel)
+            make.centerX.equalTo(topStackView.snp.trailing)
+            make.top.equalToSuperview().offset(18)
         }
-        toolTipView.snp.makeConstraints { make in
-            make.width.equalTo(247.adjustedWidth)
-            make.height.equalTo(39.adjustedHeight)
-            make.top.equalToSuperview().offset(42)
-            make.trailing.equalToSuperview()
-        }
-        middleStackView.snp.makeConstraints { make in
-            make.width.equalTo(299.adjustedWidth)
-            make.height.equalTo(62.adjustedHeight)
-            make.top.leading.equalTo(topStackView)
-        }
+
+        // MARK: - middle
         lineView.snp.makeConstraints { make in
             make.height.equalTo(2.adjustedHeight)
-            make.top.leading.trailing.equalToSuperview()
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(lineView.snp.bottom).offset(8)
-            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(21)
         }
-        bottomStackView.snp.makeConstraints { make in
-            make.top.equalTo(middleStackView).offset(12)
-            make.leading.trailing.bottom.equalToSuperview()
+        timeLabel.snp.makeConstraints { make in
+            make.height.equalTo(17)
+        }
+        
+        bottomStackView.snp.makeConstraints {
+            $0.height.equalTo(40.adjustedHeight)
         }
         refuseButton.snp.makeConstraints { make in
             make.width.equalTo(146.adjustedWidth)
@@ -177,17 +169,25 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         switch sectionType {
         case .pill:
             iconImageView.image = Image.icPillAlarm
+            [detailLabel, detailImageView, detailButton].forEach { $0.isHidden = false }
         case .calender:
             iconImageView.image = Image.icShareAlarm
             [detailLabel, detailImageView, detailButton].forEach { $0.isHidden = true }
-            toolTipView.isHidden = true
         }
-        
         switch statusType {
         case .waite:
             descriptionLabel.textColor = Color.gray700
+            [topStackView, lineView, bottomStackView].forEach {
+                contentView.addSubview($0)
+                $0.isHidden = false
+                middleStackView.sendSubviewToBack($0)
+            }
         case .done:
-            [topStackView, bottomStackView].forEach { $0.isHidden = true }
+            descriptionLabel.textColor = Color.gray600
+            [topStackView, lineView, bottomStackView].forEach {
+                $0.isHidden = true
+                $0.removeFromSuperview()
+            }
         }
     }
 }
