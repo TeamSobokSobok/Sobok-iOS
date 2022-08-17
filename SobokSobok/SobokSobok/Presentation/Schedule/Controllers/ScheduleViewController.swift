@@ -259,14 +259,16 @@ extension ScheduleViewController {
             }
         }
     }
-
+    
     @objc func stickerTapped(notification: NSNotification) {
         if let notification = notification.userInfo,
            let scheduleId = notification["scheduleId"] as? Int {
-            getStickers(for: scheduleId)
+            getStickers(for: scheduleId) { [weak self] in
+                self?.showStickerBottomSheet(stickers: self?.stickers)
+            }
         }
     }
-
+    
     private func callRequestSchedules() {
         switch scheduleType {
         case .main:
