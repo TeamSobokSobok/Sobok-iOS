@@ -193,10 +193,17 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         switch statusType {
         case .waite:
             descriptionLabel.textColor = Color.gray700
-            [topStackView, lineView, bottomStackView].forEach { $0.isHidden = false }
+            [topStackView, lineView, bottomStackView].forEach {
+                contentView.addSubview($0)
+                $0.isHidden = false
+                middleStackView.sendSubviewToBack($0)
+            }
         case .done:
             descriptionLabel.textColor = Color.gray600
-            [topStackView, lineView, bottomStackView].forEach { $0.isHidden = true }
+            [topStackView, lineView, bottomStackView].forEach {
+                $0.isHidden = true
+                $0.removeFromSuperview()
+            }
         }
     }
 }
