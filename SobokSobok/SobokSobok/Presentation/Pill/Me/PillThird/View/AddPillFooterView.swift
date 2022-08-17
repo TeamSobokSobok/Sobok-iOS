@@ -6,7 +6,7 @@
 //
 import UIKit
 
-final class AddPillFooterView: UICollectionReusableView {
+final class AddPillFooterView: BaseView {
     
     let viewModel = PillThirdViewModel()
     
@@ -19,7 +19,6 @@ final class AddPillFooterView: UICollectionReusableView {
     lazy var addPillButton = UIButton().then {
         $0.makeRoundedWithBorder(radius: 10, color: Color.gray150.cgColor, borderWith: 1)
         $0.backgroundColor = Color.gray100
-        $0.addTarget(self, action: #selector(addPillCellButtonClicked), for: .touchUpInside)
     }
     
     lazy var plusImageView = UIImageView().then {
@@ -56,9 +55,5 @@ final class AddPillFooterView: UICollectionReusableView {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(14)
         }
-    }
-    
-    @objc func addPillCellButtonClicked() {
-        viewModel.addCellClosure?()
     }
 }

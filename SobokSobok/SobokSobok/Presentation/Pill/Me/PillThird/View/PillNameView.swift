@@ -51,24 +51,24 @@ final class PillNameView: BaseView {
     
     override func setupConstraints() {
         pillPeriodLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(26)
+            $0.leading.equalToSuperview().inset(30)
             $0.centerY.equalToSuperview().multipliedBy(0.3)
         }
         
         pillPeriodInfoLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(26)
+            $0.leading.equalToSuperview().inset(30)
             $0.top.equalTo(pillPeriodLabel.snp.bottom).offset(6)
         }
         
         underLineView.snp.makeConstraints {
             $0.centerY.equalToSuperview().multipliedBy(0.68)
-            $0.leading.trailing.equalToSuperview().inset(26)
+            $0.leading.trailing.equalToSuperview().inset(30)
             $0.height.equalTo(1)
         }
         
         pillNameLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview().multipliedBy(0.83)
-            $0.leading.equalToSuperview().inset(26)
+            $0.leading.equalToSuperview().inset(30)
         }
         
         pillTableView.snp.makeConstraints {

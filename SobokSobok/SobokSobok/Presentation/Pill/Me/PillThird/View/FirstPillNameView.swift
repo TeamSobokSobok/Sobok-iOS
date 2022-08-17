@@ -1,8 +1,8 @@
 //
-//  AddPillCollectionViewCell.swift
+//  AddPillCommonView.swift
 //  SobokSobok
 //
-//  Created by 김승찬 on 2022/05/02.
+//  Created by 김승찬 on 2022/08/16.
 //
 
 import UIKit
@@ -10,9 +10,12 @@ import UIKit
 import SnapKit
 import Then
 
-final class AddPillCollectionViewCell: UICollectionViewCell {
+final class FirstPillNameView: BaseView {
     
-    let pillThirdViewModel = PillThirdViewModel()
+    var timeArray: [String] = []
+    
+    let sendPillViewModel: SendPillViewModel
+    lazy var addPillThird = AddPillThirdView()
     
     lazy var pillNameTextField = UITextField().then {
         $0.makeRoundedWithBorder(radius: 8, color: Color.gray300.cgColor)
@@ -22,7 +25,6 @@ final class AddPillCollectionViewCell: UICollectionViewCell {
     lazy var deleteCellButton = UIButton().then {
         $0.setImage(Image.icClose48, for: .normal)
         $0.tintColor = Color.gray500
-        $0.addTarget(self, action: #selector(deleteCellButtonTapped), for: .touchUpInside)
     }
     
     lazy var deleteTextButton = UIButton().then {
@@ -43,26 +45,50 @@ final class AddPillCollectionViewCell: UICollectionViewCell {
         $0.spacing = 10
     }
     
-    override init(frame: CGRect) {
-           super.init(frame: frame)
+    init(frame: CGRect, sendPillViewModel: SendPillViewModel) {
+        self.sendPillViewModel = sendPillViewModel
+        super.init(frame: frame)
         setupView()
         setupConstraints()
-        pillTextCountLabel.isHidden = true
-        deleteCellButton.isHidden = true
+        setupTextField()
+        assignDelegation()
+    }
+
+    private func assignDelegation() {
         pillNameTextField.delegate = self
-        setTextField()
     }
     
-    private func setTextField() {
-            pillNameTextField.addTarget(self, action: #selector(pillTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
-        }
+    private func setupTextField() {
+        pillNameTextField.addTarget(self, action: #selector(pillTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
+    }
+    
+    @objc func deleteTextButtonTapped() {
+        self.pillNameTextField.text = ""
+        self.sendPillViewModel.pillName[sendPillViewModel.tag] = ""
+    }
     
     @objc func pillTextFieldDidChange(_ textField: UITextField) {
-        pillNameTextField.attributedText = setAttributedText(text: pillNameTextField.text!)
+        guard let text = pillNameTextField.text else { return }
+        if text.count == 0 {
+            sendPillViewModel.isTrue.value = false
+        } else {
+            sendPillViewModel.isTrue.value = true
+        }
         
-        print(pillNameTextField.text!)
+        pillNameTextField.attributedText = setAttributedText(text: text)
+        pillTextCountLabel.attributedText = setAttributedText(text: "\(String(text.count)) / 10")
         
-        pillTextCountLabel.attributedText = setAttributedText(text: "\(String(pillNameTextField.text?.count ?? 0)) / 10")
+        if text.count == 0 {
+            pillTextCountLabel.isHidden = true
+            addPillThird.footerView.isHidden = true
+            
+            deleteTextButton.isHidden = true
+        } else {
+            pillTextCountLabel.isHidden = false
+            pillNameTextField.layer.borderColor = Color.gray600.cgColor
+            addPillThird.footerView.isHidden = false
+            deleteTextButton.isHidden = false
+        }
     }
     
     func setAttributedText(text: String) -> NSAttributedString {
@@ -72,20 +98,15 @@ final class AddPillCollectionViewCell: UICollectionViewCell {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            let medicineText = pillNameTextField.text ?? ""
-            guard let stringRange = Range(range, in: medicineText) else { return false }
-            let updatedText = medicineText.replacingCharacters(in: stringRange, with: string)
-            return updatedText.count <= 10
-        }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        let pillText = pillNameTextField.text ?? ""
+        guard let stringRange = Range(range, in: pillText) else { return false }
+        let updatedText = pillText.replacingCharacters(in: stringRange, with: string)
+        return updatedText.count <= 10
     }
     
-    private func setupView() {
+    override func setupView() {
         [verticalStackView, deleteCellButton, deleteTextButton].forEach {
-            contentView.addSubviews($0)
+            addSubview($0)
         }
         
         [pillNameTextField, pillTextCountLabel].forEach {
@@ -93,16 +114,16 @@ final class AddPillCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func setupConstraints() {
+    override func setupConstraints() {
         verticalStackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.width.equalTo(200)
+            $0.width.equalTo(UIScreen.main.bounds.width - 40)
         }
         
         pillNameTextField.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(54)
-            $0.width.equalTo(200)
+            $0.width.equalTo(UIScreen.main.bounds.width - 40)
         }
         
         pillTextCountLabel.snp.makeConstraints {
@@ -122,27 +143,23 @@ final class AddPillCollectionViewCell: UICollectionViewCell {
             $0.centerY.equalTo(pillNameTextField.snp.centerY)
         }
     }
-    
-    @objc func deleteCellButtonTapped() {
-        pillThirdViewModel.deleteCellClosure?()
-    }
-    
-    @objc func deleteTextButtonTapped() {
-        pillThirdViewModel.deleteCellClosure?()
-    }
 }
 
-extension AddPillCollectionViewCell: UITextFieldDelegate {
+extension FirstPillNameView: UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        pillTextCountLabel.isHidden = false
-        deleteCellButton.isHidden = true
-        deleteTextButton.isHidden = false
+        if pillNameTextField.isEditing {
+            pillTextCountLabel.isHidden = false
+            pillNameTextField.layer.borderColor = Color.gray600.cgColor
+        } else {
+            pillNameTextField.layer.borderColor = Color.gray300.cgColor
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        guard let text = pillNameTextField.text else { return }
+        sendPillViewModel.pillName[sendPillViewModel.tag] = text
         pillTextCountLabel.isHidden = true
-        deleteCellButton.isHidden = false
         deleteTextButton.isHidden = true
     }
 }

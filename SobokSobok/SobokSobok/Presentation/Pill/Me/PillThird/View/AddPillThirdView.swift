@@ -10,10 +10,12 @@ import UIKit
 import SnapKit
 import Then
 
+
 final class AddPillThirdView: BaseView {
     
     lazy var navigationView = NavigationView()
     
+    let firstNameView = FirstPillNameView(frame: CGRect(), sendPillViewModel: SendPillViewModel())
     lazy var pillNameInfoLabel = UILabel().then {
         $0.text = "약 이름을 입력해 주세요"
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 15)
@@ -36,7 +38,7 @@ final class AddPillThirdView: BaseView {
     }
     
     lazy var pillCountLabel = UILabel().then {
-        $0.text = "3개"
+        $0.text = "4개"
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
         $0.textColor = Color.darkMint
     }
@@ -47,24 +49,37 @@ final class AddPillThirdView: BaseView {
         $0.textColor = Color.gray500
     }
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
-        
-        $0.register(AddPillCollectionViewCell.self)
-        $0.register(AddPillFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier)
-        let layout = UICollectionViewFlowLayout()
-
-        layout.scrollDirection = .vertical
-        $0.backgroundColor = .white
-//        $0.contentInset = UIEdgeInsets.init(top: 8, left: 20, bottom: 0, right: 20)
-    
+    let scrollView = UIScrollView().then {
         $0.showsVerticalScrollIndicator = false
-        $0.collectionViewLayout = layout
+        $0.backgroundColor = .white
     }
+    
+    let wholeStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 10
+    }
+    
+    lazy var firstStackView = UIStackView().then {
+        $0.backgroundColor = .red
+        $0.axis = .vertical
+        $0.distribution = .fill
+        $0.alignment = .center
+        
+      
+        $0.addArrangedSubview(firstNameView)
+    }
+  
+    let footerView = AddPillFooterView()
     
     lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "추가하기", fontSize: 18)
     
+
     override func setupView() {
-        addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton, tooltipImage)
+        addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, scrollView, nextButton, tooltipImage)
+        
+        scrollView.addSubviews(wholeStackView, footerView)
+        
+        footerView.isHidden = true
     }
     
     override func setupConstraints() {
@@ -105,12 +120,25 @@ final class AddPillThirdView: BaseView {
             $0.centerX.equalTo(countInfoButton.snp.centerX)
         }
         
-        collectionView.snp.makeConstraints {
+        scrollView.snp.makeConstraints {
             $0.top.equalTo(pillCountLabel.snp.bottom).offset(6)
-            $0.leading.trailing.equalTo(safeAreaLayoutGuide)
+            $0.leading.trailing.equalTo(safeAreaInsets)
             $0.bottom.equalTo(nextButton.snp.top).inset(1)
         }
         
+        wholeStackView.snp.makeConstraints {
+            $0.top.equalTo(scrollView.snp.top)
+            $0.width.equalTo(UIScreen.main.bounds.width - 40)
+            $0.leading.equalTo(scrollView.snp.leading).inset(20)
+            $0.trailing.equalTo(scrollView.snp.trailing).inset(20)
+        }
+        
+        footerView.snp.makeConstraints {
+            $0.top.equalTo(wholeStackView.snp.bottom)
+            $0.height.equalTo(54)
+            $0.leading.trailing.equalToSuperview()
+        }
+ 
         nextButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(22)
@@ -118,3 +146,4 @@ final class AddPillThirdView: BaseView {
         }
     }
 }
+
