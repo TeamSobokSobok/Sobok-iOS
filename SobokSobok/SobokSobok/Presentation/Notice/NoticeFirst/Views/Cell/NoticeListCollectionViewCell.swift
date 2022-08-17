@@ -107,14 +107,14 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         statusType = status
         divideSection()
         
-        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton, detailLabel, detailImageView)
+        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailLabel, detailImageView)
         [detailLabel, detailImageView].forEach { $0.bringSubviewToFront(detailButton) }
         topStackView.bringSubviewToFront(toolTipView)
         middleStackView.addArrangedSubviews(lineView, descriptionLabel, timeLabel)
         bottomStackView.addArrangedSubviews(refuseButton, acceptButton)
         containerStackView.addArrangedSubviews(topStackView, middleStackView, bottomStackView)
         
-        contentView.addSubview(containerStackView)
+        contentView.addSubviews(detailButton, containerStackView)
         contentView.backgroundColor = Color.white
         contentView.makeRounded(radius: 12)
 
@@ -135,8 +135,14 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         detailLabel.snp.makeConstraints { make in
             make.height.equalTo(25.adjustedHeight)
         }
-        detailImageView.snp.makeConstraints {
-            $0.width.height.equalTo(32.adjustedWidth)
+        detailImageView.snp.makeConstraints { make in
+            make.width.height.equalTo(48.adjustedWidth)
+        }
+        detailButton.snp.makeConstraints { make in
+            make.width.equalTo(72.adjustedWidth)
+            make.height.equalTo(21.adjustedHeight)
+            make.centerX.equalTo(topStackView.snp.trailing)
+            make.top.equalToSuperview().offset(18)
         }
 
         // MARK: - middle

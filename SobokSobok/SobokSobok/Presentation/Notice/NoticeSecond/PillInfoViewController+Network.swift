@@ -12,9 +12,8 @@ extension PillInfoViewController {
                 let pillDetailInfo = try await pillInfoManager.getPillDetailInfo(noticeId: noticeId, pillId: pillId)
                 if let pillDetailInfo = pillDetailInfo {
                     self.pillInfoList = pillDetailInfo
-                    setInfoData()
                 }
-                
+                print("getPillDetailInfo에서 찍힌거", pillInfoList)
             }
         }
     }
