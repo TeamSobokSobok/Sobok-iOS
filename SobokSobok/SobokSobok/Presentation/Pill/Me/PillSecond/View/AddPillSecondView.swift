@@ -30,7 +30,7 @@ final class AddPillSecondView: BaseView {
     let calendar = CalendarView()
     
     let checkBoxButton = UIButton().then {
-        $0.setImage(Image.icCheckButton48, for: .normal)
+        $0.setImage(Image.icChecked, for: .normal)
     }
     
     let startThreeMonthLabel = UILabel().then {
@@ -45,7 +45,7 @@ final class AddPillSecondView: BaseView {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
     }
     
-    let nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "다음", fontSize: 18)
+    lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .mainMint, text: "다음", fontSize: 18)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,7 +53,9 @@ final class AddPillSecondView: BaseView {
     }
     
     private func hideBottomView() {
-        [navigationView.bottomFirstView, navigationView.bottomSecondView, navigationView.bottomThirdView,
+        [navigationView.bottomFirstView,
+         navigationView.bottomSecondView,
+         navigationView.bottomThirdView,
          navigationView.sendBottomFirstView,
          navigationView.sendBottomSecondView,
          navigationView.sendBottomThirdView,
