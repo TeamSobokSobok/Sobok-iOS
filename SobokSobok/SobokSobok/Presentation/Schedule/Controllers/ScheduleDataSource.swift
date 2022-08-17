@@ -79,7 +79,10 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
             shareCell.configure(with: (isLiked: pill.isLikedSchedule ?? false, isEat: pill.isCheck))
             shareCell.configure(withSticker: stickerId)
             shareCell.stateView.emotionClosure = { [weak self] in
-                self?.viewController.showStickerPopUp(scheduleId: pill.scheduleId, isLikedSchedule: pill.isLikedSchedule ?? false)
+                self?.viewController.getStickers(for: pill.scheduleId) {
+                    let stickers = self?.viewController.stickers.filter { $0.isMySticker == true }.map { $0.likeScheduleId }
+                    self?.viewController.showStickerPopUp(scheduleId: pill.scheduleId, isLikedSchedule: pill.isLikedSchedule ?? false, likeScheduleId: stickers?.first ?? 0)
+                }
             }
             return shareCell
         }

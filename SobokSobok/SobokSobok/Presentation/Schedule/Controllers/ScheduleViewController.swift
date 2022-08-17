@@ -70,6 +70,8 @@ final class ScheduleViewController: BaseViewController {
         viewController: self
     )
     
+    var stickers: [Stickers] = []
+    
     
     // MARK: - Initializer
 
@@ -358,11 +360,12 @@ extension ScheduleViewController {
         }
     }
     
-    func showStickerPopUp(scheduleId: Int, isLikedSchedule: Bool) {
+    func showStickerPopUp(scheduleId: Int, isLikedSchedule: Bool, likeScheduleId: Int) {
         let stickerPopUpView = SendStickerPopUpViewController.instanceFromNib()
         stickerPopUpView.modalPresentationStyle = .overCurrentContext
         stickerPopUpView.modalTransitionStyle = .crossDissolve
         stickerPopUpView.scheduleId = scheduleId
+        stickerPopUpView.likeScheduleId = likeScheduleId
         stickerPopUpView.isLikedState = isLikedSchedule
         self.present(stickerPopUpView, animated: false, completion: nil)
     }
