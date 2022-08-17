@@ -62,7 +62,8 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let stickerId = pill.stickerId?.map { $0.stickerId }
-        
+        let stickerList = pill.stickerList?.map { $0.stickerId }
+
         switch scheduleType {
         case .main:
             let mainCell = collectionView.dequeueReusableCell(for: indexPath, cellType: MainScheduleCell.self)
@@ -77,7 +78,7 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
             let shareCell = collectionView.dequeueReusableCell(for: indexPath, cellType: ShareScheduleCell.self)
             shareCell.configure(withPill: pill)
             shareCell.configure(with: (isLiked: pill.isLikedSchedule ?? false, isEat: pill.isCheck))
-            shareCell.configure(withSticker: stickerId)
+            shareCell.configure(withSticker: stickerList)
             shareCell.stateView.emotionClosure = { [weak self] in
                 self?.viewController.getStickers(for: pill.scheduleId) {
                     let stickers = self?.viewController.stickers.filter { $0.isMySticker == true }.map { $0.likeScheduleId }
