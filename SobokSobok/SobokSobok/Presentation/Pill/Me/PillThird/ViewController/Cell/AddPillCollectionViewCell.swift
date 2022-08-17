@@ -102,6 +102,7 @@ final class AddPillCollectionViewCell: UICollectionViewCell {
         pillNameTextField.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(54)
+            $0.width.equalTo(200)
         }
         
         pillTextCountLabel.snp.makeConstraints {

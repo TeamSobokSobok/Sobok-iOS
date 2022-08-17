@@ -32,7 +32,11 @@ final class SendPillViewModel: ViewModelType {
     private let requestSendPill = PublishRelay<SendPill>()
     
     let sendPillManager: SendPillServiceable = SendPillManager(apiService: APIManager(), environment: .development)
+     
     
+    var count: Helper<Int> = Helper(0)
+    var tag = 0
+    var isTrue: Helper<Bool> = Helper(false)
     var pillName: [String] = []
     var start = ""
     var end = ""
@@ -48,6 +52,8 @@ extension SendPillViewModel {
         Task {
             do {
                 let sendPill = SendPill(pillName: pillName, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: time)
+                
+                print(sendPill)
                 _ = try await sendPillManager.postMyPill(body: sendPill)
             }
         }

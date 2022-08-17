@@ -14,9 +14,7 @@ protocol AddPillInfoProtocol: StyleProtocol, BindProtocol {}
 
 final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     
-    let addPillInfoView = AddPillInfoView()
-    
-    let timeArray: [String] = ["오전 10:00", "오후 12:30", "오후 3:00", "오후 5:20", "오후 7:30", "오후 10:50"]
+    private let addPillInfoView = AddPillInfoView()
     
     let pillArray: [String] = ["김승찬", "김선영", "김태현", "정은희", "아요짱"]
     
@@ -54,6 +52,7 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
         setViewPanGesture()
         assignDelegation()
         bind()
+        style()
     }
     
     func style() {
@@ -65,6 +64,35 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
             self.sendPillViewModel.postFriendPill()
         }
         .disposed(by: disposeBag)
+        
+        switch sendPillViewModel.takeInterval {
+        case 1:
+            self.addPillInfoView.pillPeriodTimeView.pillSpecificLabel.text = "매일"
+            self.addPillInfoView.pillPeriodTimeView.periodLabel.text = "월, 화, 수, 목, 금, 토, 일"
+        case 2:
+            self.addPillInfoView.pillPeriodTimeView.pillSpecificLabel.text = "특정 요일"
+            self.addPillInfoView.pillPeriodTimeView.periodLabel.text = sendPillViewModel.day
+        case 3:
+            self.addPillInfoView.pillPeriodTimeView.pillSpecificLabel.text = "특정 간격"
+            self.addPillInfoView.pillPeriodTimeView.periodLabel.text = sendPillViewModel.specific
+        default:
+            break
+        }
+        
+        self.addPillInfoView.pillNameView.pillPeriodInfoLabel.text = "\(sendPillViewModel.start) ∼ \(sendPillViewModel.end)"
+     
+        
+//        lazy var pillSpecificLabel = UILabel().then {
+//            $0.text = "특정 주기"
+//            $0.font = UIFont.font(.pretendardMedium, ofSize: 17)
+//            $0.textColor = Color.darkMint
+//        }
+//
+//        lazy var periodLabel = UILabel().then {
+//            $0.text = "월, 화, 수, 목, 금, 토, 일"
+//            $0.textColor = Color.gray800
+//            $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -160,19 +188,19 @@ extension AddPillInfoViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension AddPillInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return timeArray.count
+        return sendPillViewModel.time.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  addPillInfoView.pillPeriodTimeView.timeCollectionView.dequeueReusableCell(for: indexPath, cellType: TakePillTimeCollectionViewCell.self)
         
         cell.makeRoundedWithBorder(radius: 8, color: Color.darkMint.cgColor)
-        cell.timeLabel.text = timeArray[indexPath.item]
+        cell.timeLabel.text = sendPillViewModel.time[indexPath.item]
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: timeArray[indexPath.item].size(withAttributes: [NSAttributedString.Key.font: UIFont.font(.pretendardRegular, ofSize: 17)]).width + 20, height: 32)
+        return CGSize(width: sendPillViewModel.time[indexPath.item].size(withAttributes: [NSAttributedString.Key.font: UIFont.font(.pretendardRegular, ofSize: 17)]).width + 20, height: 32)
     }
 }
