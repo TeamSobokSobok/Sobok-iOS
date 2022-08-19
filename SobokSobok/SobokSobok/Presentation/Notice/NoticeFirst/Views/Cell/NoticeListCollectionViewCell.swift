@@ -54,7 +54,9 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         $0.image = Image.icMoreBlack48
     }
     let detailButton = UIButton()
-    let toolTipView = NoticeToolTipView(tipStartX: 184, tipWidth: 10, tipHeight: 6.2).then {
+    let toolTipView = SobokToolTipView(
+        tipContent: "친구가 보낸 약 알림 일정을 확인해보세요",
+        tipStartX: 184, tipWidth: 10, tipHeight: 6.2).then {
         $0.isHidden = true
     }
     private lazy var middleStackView = UIStackView().then {

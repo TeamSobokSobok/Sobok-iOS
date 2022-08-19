@@ -1,5 +1,5 @@
 //
-//  NoticeToolTipView.swift
+//  SobokToolTipView.swift
 //  SobokSobok
 //
 //  Created by 정은희 on 2022/08/10.
@@ -10,8 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class NoticeToolTipView: UIView {
+final class SobokToolTipView: UIView {
     init(
+        tipContent: String,
         tipStartX: CGFloat,
         tipWidth: CGFloat,
         tipHeight: CGFloat
@@ -37,13 +38,13 @@ final class NoticeToolTipView: UIView {
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 6
         
-        self.addLabel()
+        self.addLabel(of: tipContent)
     }
     
-    private func addLabel() {
+    private func addLabel(of tipContent: String) {
         let titleLabel = UILabel()
         titleLabel.textColor = Color.white
-        titleLabel.text = "친구가 보낸 약 알림 일정을 확인해보세요"
+        titleLabel.text = tipContent
         titleLabel.numberOfLines = 1
         titleLabel.font = UIFont.font(.pretendardMedium, ofSize: 14)
         
