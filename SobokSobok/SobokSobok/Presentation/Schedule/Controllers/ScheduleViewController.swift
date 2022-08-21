@@ -187,34 +187,15 @@ final class ScheduleViewController: BaseViewController {
 // MARK: - Observers
 
 extension ScheduleViewController {
+    
     private func addObservers() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(stickerTapped),
-            name: NSNotification.Name("sticker"),
-            object: nil
-        )
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(sendSticker),
-            name: NSNotification.Name("PostSticker"),
-            object: nil
-        )
+        showAllStickerObserver()
+        sendStickerObserver()
     }
     
     private func removeObservers() {
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name("sticker"),
-            object: nil
-        )
-        
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name("PostSticker"),
-            object: nil
-        )
+        Notification.Name.showAllSticker.removeObserver(observer: self)
+        Notification.Name.sendSticker.removeObserver(observer: self)
     }
 }
 
@@ -244,31 +225,37 @@ extension ScheduleViewController: MainScheduleCellDelegate {
 
 extension ScheduleViewController {
     
-    @objc func sendSticker(notification: NSNotification) {
-        if let notification = notification.userInfo,
-           let isLikedState = notification["isLikedState"] as? Bool,
-           let scheduleId = notification["scheduleId"] as? Int,
-           let likeScheduleId = notification["likeScheduleId"] as? Int,
-           let stickerId = notification["stickerId"] as? Int
-        {
-            if isLikedState {
-                changeSticker(for: likeScheduleId, withSticker: stickerId)
-            }
-            else {
-                postSticker(for: scheduleId, withSticker: stickerId)
+    func showAllStickerObserver() {
+        Notification.Name.showAllSticker.addObserver { notification in
+            if let notification = notification.userInfo,
+               let scheduleId = notification["scheduleId"] as? Int {
+                self.getStickers(for: scheduleId) { [weak self] in
+                    self?.showStickerBottomSheet(stickers: self?.stickers)
+                }
             }
         }
     }
     
-    @objc func stickerTapped(notification: NSNotification) {
-        if let notification = notification.userInfo,
-           let scheduleId = notification["scheduleId"] as? Int {
-            getStickers(for: scheduleId) { [weak self] in
-                self?.showStickerBottomSheet(stickers: self?.stickers)
+    func sendStickerObserver() {
+        Notification.Name.sendSticker.addObserver { [weak self] notification in
+            guard let self = self else { return }
+            
+            if let notification = notification.userInfo,
+               let isLikedState = notification["isLikedState"] as? Bool,
+               let scheduleId = notification["scheduleId"] as? Int,
+               let likeScheduleId = notification["likeScheduleId"] as? Int,
+               let stickerId = notification["stickerId"] as? Int
+            {
+                if isLikedState {
+                    self.changeSticker(for: likeScheduleId, withSticker: stickerId)
+                }
+                else {
+                    self.postSticker(for: scheduleId, withSticker: stickerId)
+                }
             }
         }
     }
-    
+
     private func callRequestSchedules() {
         switch scheduleType {
         case .main:

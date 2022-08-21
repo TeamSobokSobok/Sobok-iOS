@@ -54,10 +54,6 @@ final class SendStickerPopUpViewController: UIViewController {
             "stickerId": stickerId
         ]
         
-        NotificationCenter.default.post(
-            name: Notification.Name("PostSticker"),
-            object: self,
-            userInfo: userInfo
-        )
+        Notification.Name.sendSticker.post(object: nil, userInfo: userInfo)
     }
 }

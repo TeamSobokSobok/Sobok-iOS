@@ -131,6 +131,7 @@
 		BDC83B412798CD2C009C52A1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC83B402798CD2C009C52A1 /* Sticker.swift */; };
 		BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */; };
 		BDCDB5CD2861B23800C419CC /* ScheduleViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */; };
+		BDCEFBF828B20FC600EE0439 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCEFBF728B20FC600EE0439 /* Notification+Extension.swift */; };
 		BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD21A98278D8705007D10F6 /* MainViewController.swift */; };
 		BDDAA581278997E1000C0AF8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA580278997E1000C0AF8 /* Color.xcassets */; };
 		BDDAA58327899C25000C0AF8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDAA58227899C25000C0AF8 /* Image.xcassets */; };
@@ -384,6 +385,7 @@
 		BDC83B402798CD2C009C52A1 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		BDCDB5C92861B0A300C419CC /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		BDCDB5CC2861B23800C419CC /* ScheduleViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+Layout.swift"; sourceTree = "<group>"; };
+		BDCEFBF728B20FC600EE0439 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		BDD21A98278D8705007D10F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BDDAA580278997E1000C0AF8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BDDAA58227899C25000C0AF8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 				ECCF5E6028A03F1A00BC6862 /* UITextField+Extension.swift */,
 				ECCF5E6428A50CD400BC6862 /* UIImage+Extension.swift */,
 				BDAD2D3C28A428EE004ED9A2 /* UIStackView+Extension.swift */,
+				BDCEFBF728B20FC600EE0439 /* Notification+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -2038,6 +2041,7 @@
 				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
 				ECCF5E7428A62BD900BC6862 /* EditPillPeriodView.swift in Sources */,
 				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
+				BDCEFBF828B20FC600EE0439 /* Notification+Extension.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				BDDF7723289A95340096196B /* StickerManager.swift in Sources */,
 				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
