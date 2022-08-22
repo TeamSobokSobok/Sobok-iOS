@@ -172,12 +172,11 @@ extension AddPillSheet: UITableViewDataSource {
             })
             .disposed(by: disposeBag)
         } else {
-            if UserDefaults.standard.member.count == 0 {
+            if UserDefaults.standard.member.isEmpty {
                 self.pushNoFriendViewController()
             } else {
                 self.pushSendPillViewController(tossPill: .friendPill)
             }
-         
         }
     }
     
