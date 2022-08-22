@@ -14,6 +14,7 @@ final class TimeView: BaseView {
 
     // MARK: - Properties
     let timeLabel = UILabel().then {
+        $0.textAlignment = .center
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
         $0.sizeToFit()
         $0.textColor = Color.gray800
@@ -41,18 +42,18 @@ final class TimeView: BaseView {
     
     override func setupConstraints() {
         timeLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(6)
+            make.centerY.equalToSuperview().inset(6)
             make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.trailing.equalToSuperview().inset(10)
         }
     }
     
     private func updateUI() {
         let viewSize = timeLabel.intrinsicContentSize
-        let width = viewSize.width + 10
-        let height = viewSize.height + 6
+        let width = viewSize.width + 10.adjustedWidth
+        let height = viewSize.height + 6.adjustedHeight
         
         frame.size = CGSize(width: width, height: height)
-        timeLabel.center = CGPoint(x: width / 2, y: height / 2)
+        timeLabel.center = CGPoint(x: width / 2.adjustedWidth, y: height / 2.adjustedHeight)
     }
 }
