@@ -14,7 +14,7 @@ final class SelectFriendViewController: UIViewController, SelectFriendProtocol {
     private let selectFriendViewModel: SelectFriendViewModel
     
     weak var popUpDelegate: PopUpDelegate?
-    weak var sendNameDelegate: SendMemberNameDelegate?
+    weak var sendNameDelegate: SendMemberDelegate?
     
     init(selectFriendViewModel: SelectFriendViewModel) {
         self.selectFriendViewModel = selectFriendViewModel
@@ -44,10 +44,9 @@ final class SelectFriendViewController: UIViewController, SelectFriendProtocol {
     }
     
     func bind() {
-        selectFriendViewModel.getGroupInformation()
-        
         selectFriendViewModel.memberName.bind { _ in
             DispatchQueue.main.async {
+                self.selectFriendViewModel.getMember()
                 self.selectFriendView.pickerView.reloadAllComponents()
             }
         }
@@ -59,8 +58,9 @@ final class SelectFriendViewController: UIViewController, SelectFriendProtocol {
     
     @objc func confirmButtonTapped() {
         self.dismiss(animated: true) { [weak self] in
-            if let memberName = self?.selectFriendViewModel.memberName.value {
-                self?.sendNameDelegate?.sendMemberName(name: memberName)
+            if let memberName = self?.selectFriendViewModel.memberName.value,
+                let memberId = self?.selectFriendViewModel.memberId.value {
+                self?.sendNameDelegate?.sendMember(name: memberName, id: memberId)
             }
             self?.popUpDelegate?.popupDismissed()
         }
@@ -86,7 +86,7 @@ extension SelectFriendViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        selectFriendViewModel.memberNameList.value.count
+        UserDefaults.standard.member.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

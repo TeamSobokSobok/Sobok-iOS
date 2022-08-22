@@ -168,12 +168,12 @@ extension ScheduleViewController {
     }
     
     private func configureAttributes() {
-        
+
         scrollView.do {
             $0.showsVerticalScrollIndicator = false
             $0.backgroundColor = Color.gray150
         }
-        
+
         stackView.do {
             $0.backgroundColor = .systemBackground
             $0.axis = .vertical
@@ -479,5 +479,14 @@ extension ScheduleViewController: MainScheduleCellDelegate {
                 self.calendarView.reloadData()
             }
         }
+    }
+    
+    func moreButtonTapped(_ cell: MainScheduleCell) {
+        let vc = EditViewController(viewModel: EditCommonViewModel(
+            addPillFirstViewModel: AddPillFirstViewModel(),
+            timeViewModel: PillTimeViewModel(),
+            dayViewModel: PillDayViewModel(),
+            periodViewModel: PillPeriodViewModel()))
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

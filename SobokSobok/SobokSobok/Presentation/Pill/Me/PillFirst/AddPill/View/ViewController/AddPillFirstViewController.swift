@@ -41,7 +41,6 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         assignDelegation()
         style()
         bind()
-        print(type)
     }
     
     init(sendPillViewModel: SendPillViewModel) {
@@ -62,6 +61,9 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
          navigationView.sendBottomSecondView].forEach {
             $0.isHidden = style.sendBottomNavigationBarIsHidden
         }
+        navigationView.xButton.setImage(style.backButtonImage, for: .normal)
+        
+        navigationView.cancelButton.isHidden = style.cancelButton
         
         navigationView.navigationTitleLabel.text = style.navigationTitle
     }
@@ -78,12 +80,9 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         .disposed(by: disposeBag)
         
         addPillFirstView.navigationView.cancelButton.rx.tap.bind {
-            
             let viewController = StopPillViewController()
-            
             viewController.modalTransitionStyle = .crossDissolve
             viewController.modalPresentationStyle = .overFullScreen
-            
             self.present(viewController, animated: true)
         }
         .disposed(by: disposeBag)

@@ -105,6 +105,14 @@ final class AddPillSheet: UIViewController, AddPillProtocol {
 }
 
 extension AddPillSheet {
+    private func pushNoFriendViewController() {
+        self.dismiss(animated: true)
+        guard let viewController = self.presentingViewController as? UITabBarController else { return }
+        guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
+        let noFriendViewController = NoFriendViewController()
+        selectedViewController.pushViewController(noFriendViewController, animated: true)
+    }
+    
     private func pushPillLimitViewController() {
         self.dismiss(animated: true)
         guard let viewController = self.presentingViewController as? UITabBarController else { return }
@@ -122,11 +130,11 @@ extension AddPillSheet {
         selectedViewController.pushViewController(addPillFirstViewController, animated: true)
     }
     
-    private func pushNicknameViewController(tossPill: TossPill) {
+    private func pushSendPillViewController(tossPill: TossPill) {
         self.dismiss(animated: true)
         guard let viewController = self.presentingViewController as? UITabBarController else { return }
         guard let selectedViewController = viewController.selectedViewController as? UINavigationController else { return }
-        let sendPillFirstViewController = SendPillFirstViewController.instanceFromNib()
+        let sendPillFirstViewController = SendPillFirstViewController(viewModel: SendPillViewModel())
         sendPillFirstViewController.type = tossPill
         sendPillFirstViewController.divide(style: .friendPill)
         selectedViewController.pushViewController(sendPillFirstViewController, animated: true)
@@ -156,15 +164,19 @@ extension AddPillSheet: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             output.didLoadPillCount.drive(onNext: { pillCount in
-                if pillCount < 0 || pillCount == 0 {
-                    self.pushPillFirstViewController(style: .myPill)
-                } else {
+                if pillCount < 5 || pillCount == 0 {
                     self.pushPillLimitViewController()
+                } else {
+                    self.pushPillFirstViewController(style: .myPill)
                 }
             })
             .disposed(by: disposeBag)
         } else {
-            pushNicknameViewController(tossPill: .friendPill)
+            if UserDefaults.standard.member.isEmpty {
+                self.pushNoFriendViewController()
+            } else {
+                self.pushSendPillViewController(tossPill: .friendPill)
+            }
         }
     }
     

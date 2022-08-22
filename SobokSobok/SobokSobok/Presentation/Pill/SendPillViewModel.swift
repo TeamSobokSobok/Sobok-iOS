@@ -33,7 +33,6 @@ final class SendPillViewModel: ViewModelType {
     
     let sendPillManager: SendPillServiceable = SendPillManager(apiService: APIManager(), environment: .development)
      
-    
     var count: Helper<Int> = Helper(0)
     var tag = 0
     var isTrue: Helper<Bool> = Helper(false)
@@ -44,7 +43,7 @@ final class SendPillViewModel: ViewModelType {
     var day = ""
     var specific = ""
     var time: [String] = []
-    var memberID = 0
+    var memberId = 0
 }
 
 extension SendPillViewModel {

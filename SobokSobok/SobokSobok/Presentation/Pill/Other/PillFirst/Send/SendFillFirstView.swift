@@ -21,7 +21,6 @@ final class SendPillFirstView: BaseView {
     
     lazy var userLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
-        $0.text = ""
     }
     
     lazy var iconImageView = UIImageView().then {

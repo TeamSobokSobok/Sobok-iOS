@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TossPillProtocol {
     var type: TossPill { get }
@@ -23,6 +24,8 @@ protocol NavigationIsHiddenProtocol {
 
 struct PillStyle: TossPillProtocol, NavigationIsHiddenProtocol {
     var type: TossPill
+    let cancelButton: Bool
+    let backButtonImage: UIImage
     let bottomNavigationBarIsHidden: Bool
     let sendBottomNavigationBarIsHidden: Bool
     let navigationTitle: String
@@ -30,7 +33,8 @@ struct PillStyle: TossPillProtocol, NavigationIsHiddenProtocol {
     static var myPill: PillStyle {
         
         return PillStyle(
-            type: .myPill, bottomNavigationBarIsHidden: false,
+            type: .myPill, cancelButton: true, backButtonImage: Image.icClose48,
+            bottomNavigationBarIsHidden: false,
             sendBottomNavigationBarIsHidden: true,
             navigationTitle: "내 약 추가하기"
         )
@@ -39,7 +43,8 @@ struct PillStyle: TossPillProtocol, NavigationIsHiddenProtocol {
     static var friendPill: PillStyle {
         
         return PillStyle(
-            type: .friendPill, bottomNavigationBarIsHidden: true,
+            type: .friendPill, cancelButton: false,
+            backButtonImage: Image.icBack48, bottomNavigationBarIsHidden: false,
             sendBottomNavigationBarIsHidden: false,
             navigationTitle: "약 전송하기"
         )

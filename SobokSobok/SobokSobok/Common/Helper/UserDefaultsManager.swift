@@ -34,7 +34,7 @@ enum UserDefaultKeys: String, CaseIterable {
 struct UserDefaultsManager {
     @UserDefaultWrapper(key: UserDefaultKeys.fcmToken.rawValue, defaultValue: "")
     static var fcmToken: String
-
+    
 }
 
 extension UserDefaultsManager {
@@ -42,6 +42,26 @@ extension UserDefaultsManager {
     static func reset() {
         UserDefaultKeys.allCases.forEach { key in
             UserDefaults.standard.removeObject(forKey: key.rawValue)
+        }
+    }
+}
+
+extension UserDefaults {
+    enum Key: String {
+        case member
+    }
+    
+    var member: [Member] {
+        get {
+            guard let data = UserDefaults.standard.data(forKey: Key.member.rawValue) else { return [] }
+            
+            return (try? PropertyListDecoder().decode([Member].self, from: data)) ?? []
+        }
+        set {
+            UserDefaults.standard.setValue(
+                try? PropertyListEncoder().encode(newValue),
+                forKey: Key.member.rawValue
+            )
         }
     }
 }
