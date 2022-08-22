@@ -10,30 +10,20 @@ import UIKit
 final class SelectFriendViewModel {
     
     var memberNameList: Helper<[String]> = Helper([])
+    var memberIdList: Helper<[Int]> = Helper([])
     var memberName: Helper<String> = Helper("")
-    
-    private let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
-    
+    var memberId: Helper<Int> = Helper(0)
+   
     func didSelectRowAt(_ pickerView: UIPickerView, row: Int, component: Int) {
         pickerView.reloadAllComponents()
         memberName.value = memberNameList.value[row]
+        memberId.value = memberIdList.value[row]
     }
-}
-
-extension SelectFriendViewModel {
-    func getGroupInformation() {
-        Task {
-            do {
-                let members = try await scheduleManager.getGroupInformation()
-                
-                guard let members = members else {
-                    return
-                }
-                
-                members.forEach {
-                    memberNameList.value.append($0.memberName)
-                }
-            }
+    
+    func getMember() {
+        UserDefaults.standard.member.forEach {
+            memberNameList.value.append($0.memberName)
+            memberIdList.value.append($0.memberId)
         }
     }
 }

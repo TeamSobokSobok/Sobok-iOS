@@ -42,7 +42,7 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     var minHeight: CGFloat = UIScreen.main.bounds.height * 0.3
     var normalHeight: CGFloat = UIScreen.main.bounds.height * 0.5
     var expandedHeight: CGFloat = UIScreen.main.bounds.height * 0.9
-    
+  
     override func loadView() {
         self.view = addPillInfoView
     }
@@ -80,19 +80,6 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
         }
         
         self.addPillInfoView.pillNameView.pillPeriodInfoLabel.text = "\(sendPillViewModel.start) ∼ \(sendPillViewModel.end)"
-     
-        
-//        lazy var pillSpecificLabel = UILabel().then {
-//            $0.text = "특정 주기"
-//            $0.font = UIFont.font(.pretendardMedium, ofSize: 17)
-//            $0.textColor = Color.darkMint
-//        }
-//
-//        lazy var periodLabel = UILabel().then {
-//            $0.text = "월, 화, 수, 목, 금, 토, 일"
-//            $0.textColor = Color.gray800
-//            $0.font = UIFont.font(.pretendardRegular, ofSize: 17)
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -139,7 +126,6 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
                 setHeight(height: 0, bool: false)
                 self.dismiss(animated: true, completion: nil)
             }
-        
         default:
             break
         }

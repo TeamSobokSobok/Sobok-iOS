@@ -10,8 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-
-protocol AddPillThirdProtocol: TargetProtocol, BindProtocol, TossPillProtocol {}
+protocol AddPillThirdProtocol: TargetProtocol, BindProtocol, TossPillProtocol, StyleProtocol {}
 
 final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     
@@ -38,14 +37,15 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     override func viewDidLoad() {
-          super.viewDidLoad()
-          target()
-          bind()
-          didTappedView()
-          addPill()
-      }
+        super.viewDidLoad()
+        target()
+        bind()
+        style()
+        didTappedView()
+        addPill()
+    }
     
-    func addPill() {
+    private func addPill() {
         addPillThirdView.footerView.addPillButton.rx.tap.bind {
             self.bind()
             if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 5 {
@@ -56,66 +56,86 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         }
         .disposed(by: disposeBag)
     }
-      
-      func bind() {
-          if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
-              self.addPillThirdView.footerView.isHidden = true
-          } else {
-              self.addPillThirdView.footerView.isHidden = false
-          }
-          
-          let pillNameView = FirstPillNameView(frame: CGRect(), sendPillViewModel: sendPillViewModel)
-          let count = self.addPillThirdView.wholeStackView.arrangedSubviews.count
-          pillNameView.deleteCellButton.tag = count == 0 ? 0 : count
-          pillNameView.pillNameTextField.tag = count == 0 ? 0 : count
-          pillNameView.tag = pillNameView.deleteCellButton.tag
-          pillNameView.tag = pillNameView.pillNameTextField.tag
-          
-          sendPillViewModel.tag = pillNameView.tag
+
+    func style() {
+        self.view.backgroundColor = Color.white
+    }
     
-          self.sendPillViewModel.pillName.insert("", at: sendPillViewModel.tag)
-          self.addPillThirdView.wholeStackView.addArrangedSubview(pillNameView)
-
-          self.sendPillViewModel.count.value = count
-          sendPillViewModel.isTrue.bind { _ in
-              if self.sendPillViewModel.isTrue.value {
-                  self.enableNextButton()
-              } else {
-                  self.unableNextButton()
-              }
-          }
-
-          pillNameView.deleteCellButton.rx.tap.bind {
-              let tag = pillNameView.deleteCellButton.tag
-              let textFieldTag = pillNameView.pillNameTextField.tag
-              
-              self.sendPillViewModel.tag = textFieldTag
-              
-              self.sendPillViewModel.pillName.remove(at: self.sendPillViewModel.tag)
-              
-              if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
-                  self.addPillThirdView.footerView.isHidden = true
-              } else {
-                  self.addPillThirdView.footerView.isHidden = false
-              }
-          
-              guard let firstPillNameView = self.addPillThirdView.wholeStackView.subviews.first(where: { $0.tag == tag })?.removeFromSuperview() as? FirstPillNameView else { return }
+    func bind() {
+        addPillThirdView.navigationView.xButton.rx.tap.bind {
+            self.navigationController?.popViewController(animated: true)
+        }
+        .disposed(by: disposeBag)
         
-              self.addPillThirdView.wholeStackView.removeArrangedSubview(firstPillNameView)
-          }
-          .disposed(by: self.disposeBag)
-          
-          if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
-              self.addPillThirdView.footerView.isHidden = true
-          } else {
-              self.addPillThirdView.footerView.isHidden = false
-          }
+        addPillThirdView.navigationView.cancelButton.rx.tap.bind {
+            
+            let viewController = StopPillViewController()
+            
+            viewController.modalTransitionStyle = .crossDissolve
+            viewController.modalPresentationStyle = .overFullScreen
+            
+            self.present(viewController, animated: true)
+        }
+        .disposed(by: disposeBag)
+        
+        if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
+            self.addPillThirdView.footerView.isHidden = true
+        } else {
+            self.addPillThirdView.footerView.isHidden = false
+        }
+        
+        let pillNameView = FirstPillNameView(frame: CGRect(), sendPillViewModel: sendPillViewModel)
+        let count = self.addPillThirdView.wholeStackView.arrangedSubviews.count
+        pillNameView.deleteCellButton.tag = count == 0 ? 0 : count
+        pillNameView.pillNameTextField.tag = count == 0 ? 0 : count
+        pillNameView.tag = pillNameView.deleteCellButton.tag
+        pillNameView.tag = pillNameView.pillNameTextField.tag
+        
+        sendPillViewModel.tag = pillNameView.tag
+        
+        self.sendPillViewModel.pillName.insert("", at: sendPillViewModel.tag)
+        self.addPillThirdView.wholeStackView.addArrangedSubview(pillNameView)
+        
+        self.sendPillViewModel.count.value = count
+        sendPillViewModel.isTrue.bind { _ in
+            if self.sendPillViewModel.isTrue.value {
+                self.enableNextButton()
+            } else {
+                self.unableNextButton()
+            }
+        }
+        
+        pillNameView.deleteCellButton.rx.tap.bind {
+            let tag = pillNameView.deleteCellButton.tag
+            let textFieldTag = pillNameView.pillNameTextField.tag
+            
+            self.sendPillViewModel.tag = textFieldTag
+            
+            self.sendPillViewModel.pillName.remove(at: self.sendPillViewModel.tag)
+            
+            if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
+                self.addPillThirdView.footerView.isHidden = true
+            } else {
+                self.addPillThirdView.footerView.isHidden = false
+            }
+            
+            guard let firstPillNameView = self.addPillThirdView.wholeStackView.subviews.first(where: { $0.tag == tag })?.removeFromSuperview() as? FirstPillNameView else { return }
+            
+            self.addPillThirdView.wholeStackView.removeArrangedSubview(firstPillNameView)
+        }
+        .disposed(by: self.disposeBag)
+        
+        if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
+            self.addPillThirdView.footerView.isHidden = true
+        } else {
+            self.addPillThirdView.footerView.isHidden = false
+        }
     }
     
     func didTappedView() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                                  action: #selector(hideToolTipImage))
-         view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
     
     @objc func hideToolTipImage() {
@@ -141,12 +161,13 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     
     private func postMyPill() {
         sendPillViewModel.postFriendPill()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func divideType() {
         switch type {
         case .myPill:
-            sendPillViewModel.postMyPill()
+            postMyPill()
         case .friendPill:
             presentView()
         }
