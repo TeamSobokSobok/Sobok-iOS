@@ -8,19 +8,6 @@
 import UIKit
 import FSCalendar
 
-class DynamicHeightCollectionView: UICollectionView {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
-            self.invalidateIntrinsicContentSize()
-        }
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        return contentSize
-    }
-}
-
 final class ScheduleViewController: BaseViewController {
     
     // MARK: - Properties
@@ -29,18 +16,17 @@ final class ScheduleViewController: BaseViewController {
     let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(), environment: .development)
     
     let gregorian = Calendar(identifier: .gregorian)
-    
-    var friendName: String? {
-        didSet {
-            updateUI()
-        }
-    }
-    
+    var friendName: String? { didSet { updateUI() } }
+
     var schedules: [Schedule] = [] {
         didSet {
             parseSchedules()
         }
     }
+    
+    var doingDates: [String] = []
+    var doneDates: [String] = []
+    
     var pillLists: [PillList] = [] {
         didSet {
             dataSource.update(with: pillLists)
@@ -50,18 +36,14 @@ final class ScheduleViewController: BaseViewController {
 
     var currentDate: Date = Date() {
         didSet {
-            callRequestSchedules()
-            updateUI()
-            collectionView.reloadData()
+            fetchSchedules(for: scheduleType)
+            fetchPillLists(for: scheduleType)
         }
     }
-    var selectedDate = Date().toString(of: .day)
-    var doingDates: [String] = []
-    var doneDates: [String] = []
-    
-    var calendarHeight: CGFloat = 308.0
+
+    var calendarHeight: CGFloat = 308.0.adjustedHeight
     var collectionViewHeight: CGFloat = 409.0.adjustedHeight
-    private var collectionViewBottomInset: CGFloat = 32.0.adjustedHeight
+    var collectionViewBottomInset: CGFloat = 32.0.adjustedHeight
     
     private var scheduleType: ScheduleType
     private lazy var dataSource = ScheduleDataSource(
@@ -91,39 +73,24 @@ final class ScheduleViewController: BaseViewController {
     
     // MARK: - UI Components
     
-    lazy var scrollView = UIScrollView().then {
-        $0.showsVerticalScrollIndicator = false
-        $0.backgroundColor = Color.gray150
-    }
-    
-    private lazy var stackView = UIStackView().then {
-        $0.backgroundColor = .systemBackground
-        $0.axis = .vertical
-        $0.distribution = .fill
-        $0.alignment = .center
-    }
-    
-    private lazy var friendNameView = FriendNameView()
-    private let  calendarTopView = CalendarTopView()
-    lazy var  calendarView = FSCalendar()
-    
+    lazy var scrollView = UIScrollView()
+    lazy var stackView = UIStackView()
+    lazy var friendNameView = FriendNameView()
+    lazy var calendarTopView = CalendarTopView()
+    lazy var calendarView = FSCalendar()
     lazy var collectionView = DynamicHeightCollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
-    
-    lazy var emptyView = ScheduleEmptyView(for: scheduleType)
-    
+
     
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setDelegation()
-        callRequestSchedules()
-        addObservers()
-        editFriendName()
+        fetchSchedules(for: scheduleType)
+        fetchPillLists(for: scheduleType)
     }
     
     override func viewDidLayoutSubviews() {
@@ -133,23 +100,22 @@ final class ScheduleViewController: BaseViewController {
     }
 
     
-    // MARK: - Override Functions
+    // MARK: - Overriding Functions
     
     override func style() {
-        updateUI()
-        setCalendar()
-        setCalendarStyle()
-        setCollectionView()
-        registerCells()
+        configureInitialSetup()
     }
     
     override func hierarchy() {
         view.addSubviews(scrollView)
         scrollView.addSubview(stackView)
-        stackView.addArrangedSubviews(friendNameView, calendarTopView, calendarView, collectionView)
+        stackView.addArrangedSubviews(
+            friendNameView, calendarTopView, calendarView, collectionView
+        )
     }
     
     override func layout() {
+        
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -184,139 +150,57 @@ final class ScheduleViewController: BaseViewController {
     }
 }
 
-// MARK: - Observers
 
-extension ScheduleViewController {
-    private func addObservers() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(stickerTapped),
-            name: NSNotification.Name("sticker"),
-            object: nil
-        )
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(sendSticker),
-            name: NSNotification.Name("PostSticker"),
-            object: nil
-        )
-    }
-    
-    private func removeObservers() {
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name("sticker"),
-            object: nil
-        )
-        
-        NotificationCenter.default.removeObserver(
-            self,
-            name: NSNotification.Name("PostSticker"),
-            object: nil
-        )
-    }
-}
-
-extension ScheduleViewController: MainScheduleCellDelegate {
-    func moreButtonTapped(_ cell: MainScheduleCell) {
-        let vc = EditViewController(viewModel: EditCommonViewModel(
-            addPillFirstViewModel: AddPillFirstViewModel(),
-            timeViewModel: PillTimeViewModel(),
-            dayViewModel: PillDayViewModel(),
-            periodViewModel: PillPeriodViewModel()))
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func checkButtonTapped(_ cell: MainScheduleCell) {
-        guard let scheduleId = cell.pill?.scheduleId else { return }
-        
-        if cell.isChecked {
-            showAlert(
-                title: "복약하지 않은 약인가요?",
-                message: "복약을 취소하면 소중한 사람들의 응원도 같이 삭제되어요",
-                completionTitle: "복약 취소",
-                cancelTitle: "취소"
-            ) { [weak self] _ in
-                cell.isChecked.toggle()
-                self?.uncheckPillSchedule(scheduleId: scheduleId)
-            }
-        }
-        else {
-            cell.isChecked.toggle()
-            self.checkPillSchedule(scheduleId: scheduleId)
-        }
-    }
-}
-
-// MARK: - Private Function
+// =============================================
+// MARK: - Initial Setup
+// =============================================
 
 extension ScheduleViewController {
     
-    @objc func sendSticker(notification: NSNotification) {
-        if let notification = notification.userInfo,
-           let isLikedState = notification["isLikedState"] as? Bool,
-           let scheduleId = notification["scheduleId"] as? Int,
-           let likeScheduleId = notification["likeScheduleId"] as? Int,
-           let stickerId = notification["stickerId"] as? Int
-        {
-            if isLikedState {
-                changeSticker(for: likeScheduleId, withSticker: stickerId)
-            }
-            else {
-                postSticker(for: scheduleId, withSticker: stickerId)
-            }
+    private func configureInitialSetup() {
+        
+        configureAttributes()
+        registerCells()
+        setCalendar()
+        setCalendarStyle()
+        setDelegation()
+        addObservers()
+    }
+    
+    private func configureAttributes() {
+
+        scrollView.do {
+            $0.showsVerticalScrollIndicator = false
+            $0.backgroundColor = Color.gray150
+        }
+
+        stackView.do {
+            $0.backgroundColor = .systemBackground
+            $0.axis = .vertical
+            $0.distribution = .fill
+            $0.alignment = .center
+        }
+        
+        friendNameView.do {
+            $0.isHidden = scheduleType == .main
+            $0.friendNameLabel.text = friendName
+            
+        }
+        
+        calendarTopView.do {
+            $0.dateLabel.text = calendarTopView.scopeState == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
+        }
+        
+        collectionView.do {
+            $0.backgroundColor = Color.gray150
+            $0.collectionViewLayout = self.generateLayout()
         }
     }
     
-    @objc func stickerTapped(notification: NSNotification) {
-        if let notification = notification.userInfo,
-           let scheduleId = notification["scheduleId"] as? Int {
-            getStickers(for: scheduleId) { [weak self] in
-                self?.showStickerBottomSheet(stickers: self?.stickers)
-            }
-        }
-    }
+    // MARK: - CollectionView
     
-    private func callRequestSchedules() {
-        switch scheduleType {
-        case .main:
-            getMySchedules(date: currentDate.toString(of: .year))
-            getMyPillLists(date: currentDate.toString(of: .year))
-        case .share:
-            getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
-            getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
-        }
-    }
-    
-    private func updateUI() {
-        friendNameView.isHidden = friendName == nil ? true : false
-        friendNameView.friendNameLabel.text = friendName
-        calendarTopView.dateLabel.text = calendarTopView.scopeState == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
-    }
-    
-    private func setDelegation() {
-        scrollView.delegate = self
-        calendarView.delegate = self
-        calendarView.dataSource = self
-        calendarTopView.delegate = self
-        collectionView.dataSource = dataSource
-    }
-    
-    // TODO: - 높이 문제 해결 필요
-    
-    func setCollectionViewHeight() {
-        var newCollectionViewHeight = pillLists.isEmpty ? 409.0 : collectionView.contentSize.height
-        newCollectionViewHeight = newCollectionViewHeight < 409.0 ? 409.0 : newCollectionViewHeight
-        if newCollectionViewHeight > 0 {
-            collectionViewHeight = newCollectionViewHeight
-            collectionView.snp.updateConstraints {
-                $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
-            }
-        }
-    }
-    
-    func registerCells() {
+    private func registerCells() {
+        
         calendarView.register(
             CalendarDayCell.self,
             forCellReuseIdentifier: CalendarDayCell.reuseIdentifier
@@ -339,11 +223,150 @@ extension ScheduleViewController {
         )
     }
     
-    func setCollectionView() {
-        collectionView.backgroundColor = Color.gray150
-        collectionView.collectionViewLayout = generateLayout()
+    // MARK: - Calendar
+    
+    func setCalendar() {
+        calendarView.locale = Locale(identifier: "ko_KR")
+        calendarView.headerHeight = 0
+        calendarView.firstWeekday = 2
+        calendarView.setScope(.week, animated: false)
+        calendarView.select(Date())
     }
     
+    func setCalendarStyle() {
+        calendarView.appearance.weekdayFont = TypoStyle.body7.font
+        calendarView.appearance.weekdayTextColor = Color.gray600
+        calendarView.appearance.titleFont = UIFont.font(.pretendardRegular, ofSize: 16)
+        calendarView.appearance.titleDefaultColor = Color.black
+        calendarView.appearance.titleTodayColor = Color.black
+        calendarView.appearance.todayColor = .clear
+        calendarView.placeholderType = .none
+    }
+    
+    // MARK: - Delegation
+    
+    private func setDelegation() {
+        scrollView.delegate = self
+        calendarView.delegate = self
+        calendarView.dataSource = self
+        calendarTopView.delegate = self
+        collectionView.dataSource = dataSource
+    }
+}
+
+
+// =============================================
+// MARK: - UI
+// =============================================
+
+extension ScheduleViewController {
+    
+    private func updateUI() {
+        friendNameView.isHidden = friendName == nil ? true : false
+        friendNameView.friendNameLabel.text = friendName
+        calendarTopView.dateLabel.text = calendarTopView.scopeState == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
+    }
+    
+    // TODO: - 높이 문제 해결 필요
+    
+    func setCollectionViewHeight() {
+        var newCollectionViewHeight = pillLists.isEmpty ? 409.0 : collectionView.contentSize.height
+        newCollectionViewHeight = newCollectionViewHeight < 409.0 ? 409.0 : newCollectionViewHeight
+        if newCollectionViewHeight > 0 {
+            collectionViewHeight = newCollectionViewHeight
+            collectionView.snp.updateConstraints {
+                $0.height.equalTo(collectionViewHeight + collectionViewBottomInset)
+            }
+        }
+    }
+}
+
+
+// =============================================
+// MARK: - Observing
+// =============================================
+
+extension ScheduleViewController {
+    
+    private func addObservers() {
+        showAllStickerObserver()
+        sendStickerObserver()
+    }
+    
+    private func removeObservers() {
+        Notification.Name.showAllSticker.removeObserver(observer: self)
+        Notification.Name.sendSticker.removeObserver(observer: self)
+    }
+    
+    func showAllStickerObserver() {
+        Notification.Name.showAllSticker.addObserver { notification in
+            if let notification = notification.userInfo,
+               let scheduleId = notification["scheduleId"] as? Int {
+                self.getStickers(for: scheduleId) { [weak self] in
+                    self?.showStickerBottomSheet(stickers: self?.stickers)
+                }
+            }
+        }
+    }
+    
+    func sendStickerObserver() {
+        if scheduleType == .share {
+            Notification.Name.sendSticker.addObserver { [weak self] notification in
+                guard let self = self else { return }
+                
+                if let notification = notification.userInfo,
+                   let isLikedState = notification["isLikedState"] as? Bool,
+                   let scheduleId = notification["scheduleId"] as? Int,
+                   let likeScheduleId = notification["likeScheduleId"] as? Int,
+                   let stickerId = notification["stickerId"] as? Int
+                {
+                    if isLikedState {
+                        print("✂️ 호출")
+                        self.changeSticker(for: likeScheduleId, withSticker: stickerId) { [weak self] in
+                            guard let self = self else { return }
+                            self.getMemberPillLists(memberId: 187, date: self.currentDate.toString(of: .year))
+                        }
+                    }
+                    else {
+                        print("🛳 호출")
+                        self.postSticker(for: scheduleId, withSticker: stickerId) { [weak self] in
+                            guard let self = self else { return }
+                            self.getMemberPillLists(memberId: 187, date: self.currentDate.toString(of: .year))
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// =============================================
+// MARK: - Network Call
+// =============================================
+
+extension ScheduleViewController {
+
+    private func fetchSchedules(for type: ScheduleType) {
+        switch type {
+        case .main:
+            getMySchedules(date: currentDate.toString(of: .year))
+            
+        case .share:
+            getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
+        }
+    }
+    
+    private func fetchPillLists(for type: ScheduleType) {
+        switch type {
+        case .main:
+            getMyPillLists(date: currentDate.toString(of: .year))
+            
+        case .share:
+            getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
+        }
+    }
+
     func parseSchedules() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = FormatType.full.description
@@ -359,6 +382,22 @@ extension ScheduleViewController {
         self.doingDates = doingItems
         
         calendarView.reloadData()
+    }
+}
+
+
+// =============================================
+// MARK: - Transition
+// =============================================
+
+extension ScheduleViewController {
+    
+    func editFriendName() {
+        friendNameView.completion = {
+            let editFriendNameViewController = EditFriendNameViewController.instanceFromNib()
+            editFriendNameViewController.modalPresentationStyle = .fullScreen
+            self.present(editFriendNameViewController, animated: true)
+        }
     }
     
     func showStickerBottomSheet(stickers: [Stickers]?) {
@@ -382,17 +421,27 @@ extension ScheduleViewController {
     }
 }
 
-extension ScheduleViewController {
-    func editFriendName() {
-        friendNameView.completion = {
-            let editFriendNameViewController = EditFriendNameViewController.instanceFromNib()
-            editFriendNameViewController.modalPresentationStyle = .fullScreen
-            self.present(editFriendNameViewController, animated: true)
-        }
+
+// =============================================
+// MARK: - Delegate
+// =============================================
+
+
+// MARK: - UIScrollViewDelegate
+
+extension ScheduleViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.bounces = scrollView.contentOffset.y > 0
+        scrollView.backgroundColor = scrollView.contentOffset.y > 0 ? Color.gray150 : Color.white
     }
 }
 
+
+// MARK: - CalendarTopViewDelegate
+
 extension ScheduleViewController: CalendarTopViewDelegate {
+    
     func calendarTopView(scope: CalendarScopeState) {
         calendarView.setScope(scope == .week ? .week : .month, animated: true)
         calendarTopView.scopeButton.setTitle(scope == .week ? "주" : "월", for: .normal)
@@ -401,9 +450,43 @@ extension ScheduleViewController: CalendarTopViewDelegate {
     }
 }
 
-extension ScheduleViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.bounces = scrollView.contentOffset.y > 0
-        scrollView.backgroundColor = scrollView.contentOffset.y > 0 ? Color.gray150 : Color.white
+
+// MARK: - MainScheduleCellDelegate
+
+extension ScheduleViewController: MainScheduleCellDelegate {
+    
+    func checkButtonTapped(_ cell: MainScheduleCell) {
+        guard let scheduleId = cell.pill?.scheduleId else { return }
+        
+        if cell.isChecked {
+            showAlert(
+                title: "복약하지 않은 약인가요?",
+                message: "복약을 취소하면 소중한 사람들의 응원도 같이 삭제되어요",
+                completionTitle: "복약 취소",
+                cancelTitle: "취소"
+            ) { [weak self] _ in
+                cell.isChecked.toggle()
+                self?.uncheckPillSchedule(scheduleId: scheduleId) {
+                    self?.fetchSchedules(for: .main)
+                    self?.calendarView.reloadData()
+                }
+            }
+        }
+        else {
+            cell.isChecked.toggle()
+            self.checkPillSchedule(scheduleId: scheduleId) {
+                self.fetchSchedules(for: .main)
+                self.calendarView.reloadData()
+            }
+        }
+    }
+    
+    func moreButtonTapped(_ cell: MainScheduleCell) {
+        let vc = EditViewController(viewModel: EditCommonViewModel(
+            addPillFirstViewModel: AddPillFirstViewModel(),
+            timeViewModel: PillTimeViewModel(),
+            dayViewModel: PillDayViewModel(),
+            periodViewModel: PillPeriodViewModel()))
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
