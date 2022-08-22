@@ -49,6 +49,7 @@
 		BD0C707D2862060500CF452F /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */; };
 		BD0C707F2862273C00CF452F /* ScheduleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C707E2862273C00CF452F /* ScheduleDataSource.swift */; };
 		BD0C70812862274A00CF452F /* ScheduleViewController+FSCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0C70802862274A00CF452F /* ScheduleViewController+FSCalendar.swift */; };
+		BD117D0428B3987A00A103FA /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD117D0328B3987A00A103FA /* DynamicHeightCollectionView.swift */; };
 		BD149DCB278B31DC009AA416 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCA278B31DC009AA416 /* TabBarItem.swift */; };
 		BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD149DCC278B3369009AA416 /* TabBarController.swift */; };
 		BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14F362278EB4B000F316AF /* ShareViewController.swift */; };
@@ -307,6 +308,7 @@
 		BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleHeaderView.swift; sourceTree = "<group>"; };
 		BD0C707E2862273C00CF452F /* ScheduleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataSource.swift; sourceTree = "<group>"; };
 		BD0C70802862274A00CF452F /* ScheduleViewController+FSCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleViewController+FSCalendar.swift"; sourceTree = "<group>"; };
+		BD117D0328B3987A00A103FA /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		BD149DCA278B31DC009AA416 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		BD149DCC278B3369009AA416 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BD14F362278EB4B000F316AF /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				BD4611C228608389007BEE87 /* CalendarTopView.swift */,
 				BD67B63A2860CF4900F1B96A /* ScheduleEmptyView.swift */,
 				BD0C707C2862060500CF452F /* ScheduleHeaderView.swift */,
+				BD117D0328B3987A00A103FA /* DynamicHeightCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1963,6 +1966,7 @@
 			files = (
 				F67798A8289FF39800AAD2EF /* ShareScheduleCell.swift in Sources */,
 				EC99153F2833BE5A00542115 /* UICollectionView + Extension.swift in Sources */,
+				BD117D0428B3987A00A103FA /* DynamicHeightCollectionView.swift in Sources */,
 				9A3DF0CD2799F4C800D07A8C /* EditFriendDataModel.swift in Sources */,
 				BD58ACF62893CBD600832F01 /* ScheduleViewController+Network.swift in Sources */,
 				BD382F65286B6A19002E91F0 /* BaseModel.swift in Sources */,
