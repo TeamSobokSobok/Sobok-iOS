@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainScheduleCellDelegate: AnyObject {
     func checkButtonTapped(_ cell: MainScheduleCell)
+    func moreButtonTapped(_ cell: MainScheduleCell)
 }
 
 final class MainScheduleCell: ScheduleCell {
@@ -50,6 +51,7 @@ final class MainScheduleCell: ScheduleCell {
     lazy var moreButton = UIButton().then {
         $0.setImage(Image.icEdit40, for: .normal)
         $0.isHidden = true
+        $0.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
     }
     
     
@@ -127,6 +129,10 @@ extension MainScheduleCell {
     
     @objc func checkButtonTapped() {
         delegate?.checkButtonTapped(self)
+    }
+    
+    @objc func moreButtonTapped() {
+        delegate?.moreButtonTapped(self)
     }
     
     @objc func editStarted(notification: NSNotification) {

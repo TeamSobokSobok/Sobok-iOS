@@ -15,11 +15,22 @@ protocol SendPillFirstProtocol: StyleProtocol, TargetProtocol, BindProtocol, Tos
 final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol {
     
     var type: TossPill = .friendPill
-    
+    var viewModel: SendPillViewModel
     private let disposeBag = DisposeBag()
 
     private let sendPillFirstView = SendPillFirstView()
-
+    
+    private let member = UserDefaults.standard.member
+    
+    init(viewModel: SendPillViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         self.view = sendPillFirstView
     }
@@ -51,6 +62,10 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     }
     
     func bind() {
+        self.sendPillFirstView.userLabel.text = member.first?.memberName
+        
+        self.viewModel.memberId = member.first!.memberId
+        
         sendPillFirstView.navigationView.xButton.rx.tap
             .bind {
                 self.navigationController?.popViewController(animated: true)
@@ -74,8 +89,9 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     }
 }
 
-extension SendPillFirstViewController: SendMemberNameDelegate {
-    func sendMemberName(name: String) {
+extension SendPillFirstViewController: SendMemberDelegate {
+    func sendMember(name: String, id: Int) {
         sendPillFirstView.userLabel.text = name
+        viewModel.memberId = id
     }
 }

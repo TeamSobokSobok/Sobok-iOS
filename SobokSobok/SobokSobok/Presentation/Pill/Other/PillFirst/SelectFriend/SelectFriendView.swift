@@ -12,7 +12,7 @@ import Then
 
 final class SelectFriendView: BaseView {
     
-    let backgroundView = UIView().then {
+    private lazy var backgroundView = UIView().then {
         $0.makeRounded(radius: 15)
         $0.backgroundColor = Color.white
     }

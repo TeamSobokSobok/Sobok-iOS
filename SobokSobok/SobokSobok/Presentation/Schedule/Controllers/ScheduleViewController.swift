@@ -219,6 +219,15 @@ extension ScheduleViewController {
 }
 
 extension ScheduleViewController: MainScheduleCellDelegate {
+    func moreButtonTapped(_ cell: MainScheduleCell) {
+        let vc = EditViewController(viewModel: EditCommonViewModel(
+            addPillFirstViewModel: AddPillFirstViewModel(),
+            timeViewModel: PillTimeViewModel(),
+            dayViewModel: PillDayViewModel(),
+            periodViewModel: PillPeriodViewModel()))
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func checkButtonTapped(_ cell: MainScheduleCell) {
         guard let scheduleId = cell.pill?.scheduleId else { return }
         
