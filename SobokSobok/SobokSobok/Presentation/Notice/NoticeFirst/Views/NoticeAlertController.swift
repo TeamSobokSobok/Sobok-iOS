@@ -7,29 +7,37 @@
 
 import UIKit
 
-func makeAlert(title: String, message: String, accept: String, viewController: UIViewController? = nil, nextViewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let acceptAction = UIAlertAction(title: accept, style: .default) { _ in
-        guard let nextViewController = nextViewController else { return }
-        nextViewController.modalPresentationStyle = .fullScreen
-        viewController?.present(nextViewController, animated: true)
+extension NoticeViewController {
+    func makeAlert(title: String, message: String, accept: String, viewController: UIViewController? = nil, nextViewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let acceptAction = UIAlertAction(title: accept, style: .default) { _ in
+            guard let nextViewController = nextViewController else { return }
+            nextViewController.modalPresentationStyle = .fullScreen
+            viewController?.present(nextViewController, animated: true) {
+                UserDefaults.standard.setValue("accept", forKey: "accept")
+            }
+        }
+        let refuseAction = UIAlertAction(title: "취소", style: .default) { _ in
+            guard let nextViewController = nextViewController else { return }
+            nextViewController.modalPresentationStyle = .fullScreen
+            viewController?.present(nextViewController, animated: true) {
+                UserDefaults.standard.setValue("refuse", forKey: "refuse")
+            }
+        }
+        [refuseAction, acceptAction].forEach {
+            alert.addAction($0)
+        }
+        viewController?.present(alert, animated: true, completion: completion)
     }
-    let refuseAction = UIAlertAction(title: "취소", style: .default) { _ in
-        guard let nextViewController = nextViewController else { return }
-        nextViewController.modalPresentationStyle = .fullScreen
-//        viewController?.present(nextViewController, animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-    }
-    [refuseAction, acceptAction].forEach {
-        alert.addAction($0)
-    }
-    viewController?.present(alert, animated: true, completion: completion)
-}
 
-func makeAcceptAlert(title: String, message: String, viewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
-        viewController?.dismiss(animated: true, completion: completion)
+    func makeRefuseAlert(title: String, message: String, viewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
+            viewController?.dismiss(animated: true) {
+                UserDefaults.standard.setValue("refuse", forKey: "refuse")
+            }
+        }
+        alert.addAction(acceptAction)
+        viewController?.present(alert, animated: true)
     }
-    alert.addAction(acceptAction)
-    viewController?.present(alert, animated: true)
 }
