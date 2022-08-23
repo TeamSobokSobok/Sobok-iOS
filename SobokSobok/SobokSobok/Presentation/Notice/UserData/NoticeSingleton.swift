@@ -8,6 +8,8 @@
 import Foundation
 
 var acceptedPillCount = UserDefaults.standard.integer(forKey: "acceptedPillCount")
+var friendStatus = UserDefaults.standard.bool(forKey: "friendStatus")
+var sendedPillStatus = UserDefaults.standard.bool(forKey: "sendedPillStatus")
 
 // 추후 리팩토링에 사용
 @propertyWrapper struct NoticeDateFormatter {
