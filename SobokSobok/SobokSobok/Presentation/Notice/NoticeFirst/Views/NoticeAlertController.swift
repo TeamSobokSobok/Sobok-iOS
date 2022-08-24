@@ -8,36 +8,34 @@
 import UIKit
 
 extension NoticeViewController {
-    func makeAlert(title: String, message: String, accept: String, viewController: UIViewController? = nil, nextViewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
+    func makeAlert(title: String, message: String, completion: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let acceptAction = UIAlertAction(title: accept, style: .default) { _ in
-            guard let nextViewController = nextViewController else { return }
-            nextViewController.modalPresentationStyle = .fullScreen
-            viewController?.present(nextViewController, animated: true) {
-                UserDefaults.standard.setValue("accept", forKey: "accept")
+        let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
+            self.modalPresentationStyle = .fullScreen
+            self.dismiss(animated: false) {
+                completion()
             }
         }
         let refuseAction = UIAlertAction(title: "취소", style: .default) { _ in
-            guard let nextViewController = nextViewController else { return }
-            nextViewController.modalPresentationStyle = .fullScreen
-            viewController?.present(nextViewController, animated: true) {
-                UserDefaults.standard.setValue("refuse", forKey: "refuse")
+            self.modalPresentationStyle = .fullScreen
+            self.dismiss(animated: false) {
+                completion()
             }
         }
         [refuseAction, acceptAction].forEach {
             alert.addAction($0)
         }
-        viewController?.present(alert, animated: true, completion: completion)
+        self.present(alert, animated: true, completion: completion)
     }
 
-    func makeRefuseAlert(title: String, message: String, viewController: UIViewController? = nil, completion: (() -> Void)? = nil) {
+    func makeRefuseAlert(title: String, message: String, completion: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
-            viewController?.dismiss(animated: true) {
-                UserDefaults.standard.setValue("refuse", forKey: "refuse")
+            self.dismiss(animated: false) {
+                completion()
             }
         }
         alert.addAction(acceptAction)
-        viewController?.present(alert, animated: true)
+        self.present(alert, animated: true)
     }
 }

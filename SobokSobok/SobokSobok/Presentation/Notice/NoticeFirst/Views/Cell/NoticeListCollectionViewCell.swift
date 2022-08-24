@@ -182,14 +182,14 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
             descriptionLabel.textColor = Color.gray700
             [topStackView, lineView, bottomStackView].forEach {
                 $0.isHidden = false
-                contentView.addSubview($0)
+//                contentView.addSubview($0)
                 middleStackView.sendSubviewToBack($0)
             }
         case .done:
             descriptionLabel.textColor = Color.gray600
             [topStackView, lineView, bottomStackView].forEach {
                 $0.isHidden = true
-                $0.removeFromSuperview()
+//                $0.removeFromSuperview()
             }
         }
     }

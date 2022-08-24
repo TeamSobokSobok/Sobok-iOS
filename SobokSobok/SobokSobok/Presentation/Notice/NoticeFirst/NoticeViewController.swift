@@ -20,7 +20,6 @@ final class NoticeViewController: UIViewController {
         }
     }
     let noticeListManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
-    private let status: [String] = ["accept", "refuse"]
     private lazy var sendedPillCount: Int = 0
     private let noticeListView = NoticeListView()
     
@@ -31,11 +30,12 @@ final class NoticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
-        getNoticeList()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        getNoticeList()
     }
 }
 
@@ -60,6 +60,7 @@ extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let userName = (noticeList?.userName) ?? ""
         let groupName = (noticeList?.infoList[indexPath.row].senderName) ?? ""
+        let pillName = (noticeList?.infoList[indexPath.row].pillName) ?? ""
         var createdAt = (noticeList?.infoList[indexPath.row].createdAt) ?? ""
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = FormatType.full.description
@@ -70,197 +71,112 @@ extension NoticeViewController: UICollectionViewDataSource {
             for: indexPath, cellType: NoticeListCollectionViewCell.self
         )
         
-        if noticeList?.infoList[indexPath.row].section == "calendar" {
-            if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
+        // 약 / 캘린더인지 --> waiting / accept, refuse
+        // pillName / senderName
+        // senderName
+        // 시간
+        // 거절 / 수락 --> PUT 통신 --> senderName, 시간
+        
+        if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
+            createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
+            cell.timeLabel.text = "\(createdAt)"
+            
+            if noticeList?.infoList[indexPath.row].section == "calendar" {
                 cell.setupView(section: .calender, status: .waite)
+                cell.nameLabel.text = "\(groupName)"
+                cell.descriptionLabel.text = "\(groupName)님이 친구를 신청했어요"
                 
-                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
-                cell.nameLabel.text = groupName
-                cell.descriptionLabel.text = groupName + "님이 친구를 신청했어요"
-                cell.timeLabel.text = createdAt
-                
-                cell.accept = { [weak self] in
-                    createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                    self?.makeAlert(
-                        title: groupName + "님의 친구 신청을 수락할까요?",
-                        message: "수락하면 상대방이 내 캘린더를 볼 수 있어요",
-                        accept: "확인",
-                        viewController: self) { [weak self] in
-                            UserDefaults.standard.setValue("accept", forKey: "accept")
-                            if UserDefaults.standard.string(forKey: "accept") == "accept" {
-                                self?.putAcceptFriend(
-                                    status: self?.status[0] ?? "",
-                                    at: self?.friendInfo?.sendGroupId ?? 0
-                                )
-                                cell.setupView(section: .calender, status: .done)
-                                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                                cell.descriptionLabel.text = groupName + "님의 친구 신청을 수락했어요"
-                                cell.timeLabel.text = createdAt
-                            }
-                            else {
-                                cell.setupView(section: .calender, status: .waite)
-                            }
-                        }
-                }
                 cell.refuse = { [weak self] in
-                    createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                    UserDefaults.standard.setValue("refuse", forKey: "refuse")
-                    self?.makeAlert(
-                        title: groupName + "님의 친구 신청을 거절할까요?",
+                    self?.makeRefuseAlert(
+                        title: "\(groupName)님의 친구 신청을 거절할까요?",
                         message: "거절하면 상대방이 내 캘린더를 볼 수 없어요",
-                        accept: "확인",
-                        viewController: self) { [weak self] in
-                            if UserDefaults.standard.string(forKey: "refuse") == "refuse" {
-                                self?.putAcceptFriend(
-                                    status: self?.status[1] ?? "",
-                                    at: self?.friendInfo?.sendGroupId ?? 0
-                                )
-                                cell.setupView(section: .calender, status: .done)
-                                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                                cell.descriptionLabel.text = groupName + "님의 친구 신청을 거절했어요"
-                                cell.timeLabel.text = createdAt
-                            } else {
-                                cell.setupView(section: .calender, status: .waite)
-                            }
-                        }
+                        completion: {
+                            self?.putAcceptFriend(
+                                for: self?.noticeList?.infoList[indexPath.row].noticeId ?? 0,
+                                status: "refuse")
+                            self?.noticeListView.noticeListCollectionView.reloadData()
+                            // -- 이쪽 부분
+                        })
+                }
+                cell.accept = { [weak self] in
+                    self?.makeAlert(
+                        title: "\(groupName)님의 친구 신청을 수락할까요?",
+                        message: "수락하면 상대방이 내 캘린더를 볼 수 있어요",
+                        completion: {
+                            self?.putAcceptFriend(
+                                for: self?.noticeList?.infoList[indexPath.row].noticeId ?? 0,
+                                status: "accept")
+                        })
                 }
             }
-            else if noticeList?.infoList[indexPath.row].isOkay == "accept" {
-                cell.setupView(section: .calender, status: .done)
-                
-                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                cell.descriptionLabel.text = groupName + "님의 친구 신청을 수락했어요"
-                cell.timeLabel.text = createdAt
-            }
-            else if noticeList?.infoList[indexPath.row].isOkay == "refuse" {
-                cell.setupView(section: .calender, status: .done)
-                
-                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                cell.descriptionLabel.text = groupName + "님의 친구 신청을 거절했어요"
-                cell.timeLabel.text = createdAt
-            }
-            else { fatalError("존재하지 않는 case") }
-        }
-        else if noticeList?.infoList[indexPath.row].section == "pill" {
-            if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
+            else if noticeList?.infoList[indexPath.row].section == "pill" {
                 cell.setupView(section: .pill, status: .waite)
-                
-                if UserDefaults.standard.integer(forKey: "acceptedPillCount") == 0  {
-                    cell.toolTipView.isHidden = false
-                    cell.toolTipView.layer.duration = 5.0
-                    cell.toolTipView.isHidden.toggle()
-                }
-                
-                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
-                cell.nameLabel.text = noticeList?.infoList[indexPath.row].pillName
-                cell.descriptionLabel.text = groupName + "님이 약 일정을 보냈어요"
-                cell.timeLabel.text = createdAt
+                cell.nameLabel.text = "\(pillName)"
+                cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 보냈어요"
                 
                 cell.info = { [weak self] in
-                    let nextViewController = PillInfoViewController.instanceFromNib()
-                    nextViewController.noticeId = self?.noticeList?.infoList[indexPath.row].noticeId ?? 0
-                    nextViewController.pillId = self?.noticeList?.infoList[indexPath.row].pillId ?? 0
-                    self?.navigationController?.pushViewController(nextViewController, animated: true)
+                    let pillInfoViewController = PillInfoViewController.instanceFromNib()
+                    pillInfoViewController.noticeId = self?.noticeList?.infoList[indexPath.row].noticeId ?? 0
+                    pillInfoViewController.pillId = self?.noticeList?.infoList[indexPath.row].pillId ?? 0
+                    self?.navigationController?.pushViewController(pillInfoViewController, animated: false)
                 }
-                
+                cell.refuse = { [weak self] in
+                    self?.makeRefuseAlert(
+                        title: "이 약을 거절할까요?",
+                        message: "거절하면 해당 약 알림을 받을 수 없어요",
+                        completion: {
+                            self?.putAcceptPill(
+                                for: self?.noticeList?.infoList[indexPath.row].pillId ?? 0,
+                                status: "refuse")
+                        })
+                    
+                }
                 cell.accept = { [weak self] in
                     self?.makeAlert(
                         title: "이 약을 수락할까요?",
-                        message: "수락하면 홈 캘린더에 약이 추가되고,\n정해진 시간에 알림을 받을 수 있어요 ",
-                        accept: "확인",
-                        viewController: self)  { [weak self] in
-                            UserDefaults.standard.setValue("accept", forKey: "accept")
-                            if UserDefaults.standard.string(forKey: "accept") == "accept" {
-                                if UserDefaults.standard.integer(forKey: "acceptedPillCount") < 5 {
-                                    createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                                    cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 수락했어요"
-                                    cell.timeLabel.text = createdAt
-                                    
-                                    self?.putAcceptPill(
-                                        status: self?.status[0] ?? "",
-                                        at: self?.noticeList?.infoList[indexPath.row].pillId ?? 0
-                                    )
-    
-                                    cell.setupView(section: .pill, status: .done)
-                                    
-                                    self?.sendedPillCount += 1
-                                    UserDefaults.standard.setValue(self?.sendedPillCount, forKey: "acceptedPillCount")
-                                }
-                                else if UserDefaults.standard.integer(forKey: "acceptedPillCount") == 5 {
-                                    self?.makeRefuseAlert(
-                                        title: "이미 5개의 약을 복약 중이에요!",
-                                        message: "약은 최대 5개까지만 추가 가능해요") { [weak self] in
-                                            if UserDefaults.standard.bool(forKey: "isOkay") == true {
-            
-                                                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                                                cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 거절했어요"
-                                                cell.timeLabel.text = createdAt
-                                                
-                                                self?.putAcceptPill(
-                                                    status: self?.status[1] ?? "",
-                                                    at: self?.noticeList?.infoList[indexPath.row].pillId ?? 0
-                                                )
-                                                
-                                                cell.setupView(section: .pill, status: .done)
-                                            } else { fatalError("존재하지 않는 case") }
-                                        }
-                                }
-                                else {
-                                    fatalError("존재하지 않는 case")
-                                }
-                            }
-                            else {
-                                cell.setupView(section: .calender, status: .waite)
-                            }
-                        }
+                        message: "수락하면 홈 캘린더에 약이 추가되고,\n정해진 시간에 알림을 받을 수 있어요",
+                        completion: {
+                            self?.putAcceptFriend(
+                                for: self?.noticeList?.infoList[indexPath.row].pillId ?? 0,
+                                status: "accept")
+                        })
                 }
-                cell.refuse = { [weak self] in
-                    createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                    UserDefaults.standard.setValue("refuse", forKey: "refuse")
-                    self?.makeAlert(
-                        title: "이 약을 거절할까요?",
-                        message: "거절하면 해당 약 알림을 받을 수 없어요",
-                        accept: "확인",
-                        viewController: self) { [weak self] in
-                            if UserDefaults.standard.string(forKey: "refuse") == "refuse" {
-                                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                                cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 거절했어요"
-                                cell.timeLabel.text = createdAt
-                                
-                                self?.putAcceptPill(
-                                    status: self?.status[1] ?? "",
-                                    at: self?.noticeList?.infoList[indexPath.row].pillId ?? 0
-                                )
-                                
-                                cell.setupView(section: .pill, status: .done)
-                            }
-                            else {
-                                cell.setupView(section: .pill, status: .waite)
-                            }
-                        }
-                }
-                
             }
-            else if noticeList?.infoList[indexPath.row].isOkay == "accept" {
-                cell.setupView(section: .pill, status: .done)
-                
-                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 수락했어요"
-                cell.timeLabel.text = createdAt
-            }
-            else if noticeList?.infoList[indexPath.row].isOkay == "refuse" {
-                cell.setupView(section: .pill, status: .done)
-                
-                createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-                cell.descriptionLabel.text = groupName + "님이 보낸 약 알림 일정을 거절했어요"
-                cell.timeLabel.text = createdAt
-            }
-            else { fatalError("존재하지 않는 case") }
-            
+            else { fatalError("발생할 수 없는 case") }
         }
         else {
-            assert(indexPath.isEmpty, "어떤 상태도 아님 (데이터 안 담겼음)")
+            createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
+            cell.timeLabel.text = "\(createdAt)"
+            
+            if noticeList?.infoList[indexPath.row].isOkay == "accept" {
+                if noticeList?.infoList[indexPath.row].section == "calendar" {
+                    cell.setupView(section: .calender, status: .done)
+                    cell.nameLabel.text = "\(groupName)"
+                    cell.descriptionLabel.text = "\(groupName)님의 친구 신청을 수락했어요"
+                }
+                else if noticeList?.infoList[indexPath.row].section == "pill" {
+                    cell.setupView(section: .pill, status: .done)
+                    cell.nameLabel.text = "\(pillName)"
+                    cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 수락했어요"
+                }
+                else { fatalError("발생할 수 없는 case") }
+            }
+            else if noticeList?.infoList[indexPath.row].isOkay == "refuse" {
+                if noticeList?.infoList[indexPath.row].section == "calendar" {
+                    cell.setupView(section: .calender, status: .done)
+                    cell.nameLabel.text = "\(groupName)"
+                    cell.descriptionLabel.text = "\(groupName)님의 친구 신청을 거절했어요"
+                }
+                else if noticeList?.infoList[indexPath.row].section == "pill" {
+                    cell.setupView(section: .pill, status: .done)
+                    cell.nameLabel.text = "\(pillName)"
+                    cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 거절했어요"
+                }
+                else { fatalError("발생할 수 없는 case") }
+            }
+            else { fatalError("발생할 수 없는 case") }
         }
+        
         return cell
     }
 }

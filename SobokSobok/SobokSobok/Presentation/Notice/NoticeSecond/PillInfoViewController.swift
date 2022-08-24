@@ -34,7 +34,7 @@ final class PillInfoViewController: UIViewController {
         super.viewDidLoad()
         target()
         getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: self.setInfoData)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12, execute: self.setInfoData)
     }
 }
 

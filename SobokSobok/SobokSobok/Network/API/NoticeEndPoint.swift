@@ -10,8 +10,8 @@ import Foundation
 enum NoticeEndPoint {
     case getNoticeList
     case getPillDetailInfo(noticeId: Int, pillId: Int)
-    case putAcceptFriend(body: AcceptFriendBody, senderGroupId: Int)
-    case putAcceptPill(body: AcceptPillBody, pillId: Int)
+    case putAcceptFriend(sendGroupId: Int, isOkay: String)
+    case putAcceptPill(pillId: Int, isOkay: String)
 }
 
 extension NoticeEndPoint: EndPoint {
@@ -34,10 +34,10 @@ extension NoticeEndPoint: EndPoint {
             return nil
         case .getPillDetailInfo:
             return nil
-        case .putAcceptFriend(let body, _):
-            return body.encode()
-        case .putAcceptPill(let body, _):
-            return body.encode()
+        case .putAcceptFriend:
+            return nil
+        case .putAcceptPill:
+            return nil
         }
     }
     
@@ -48,10 +48,10 @@ extension NoticeEndPoint: EndPoint {
             return "\(baseURL)/notice/list"
         case .getPillDetailInfo(let noticeId, let pillId):
             return "\(baseURL)/notice/list/\(noticeId)/\(pillId)"
-        case .putAcceptFriend(let senderGroupId):
-            return "\(baseURL)/group/\(senderGroupId)"
-        case .putAcceptPill(let pillId):
-            return "\(baseURL)/notice/list/\(pillId)"
+        case .putAcceptFriend(let sendGroupId, let isOkay):
+            return "\(baseURL)/group/\(sendGroupId)?isOkay=\(isOkay)"
+        case .putAcceptPill(let pillId, let isOkay):
+            return "\(baseURL)/notice/list/\(pillId)?isOkay=\(isOkay)"
         }
     }
 }
