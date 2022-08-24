@@ -67,6 +67,8 @@
 		BD38CB7028AB94C9006CB0FB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */; };
 		BD38CB7228AB9764006CB0FB /* SocialUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */; };
 		BD38CB7428AB976C006CB0FB /* SocialUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */; };
+		BD3D167628B65B2D00C24BA2 /* SBIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */; };
+		BD3D167828B65BC100C24BA2 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD3D167728B65BC100C24BA2 /* loading.json */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -326,6 +328,8 @@
 		BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserRequest.swift; sourceTree = "<group>"; };
 		BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserResponse.swift; sourceTree = "<group>"; };
+		BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBIndicator.swift; sourceTree = "<group>"; };
+		BD3D167728B65BC100C24BA2 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -677,6 +681,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		BD3D167428B65B0700C24BA2 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
 		BD4611BF2860822E007BEE87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +898,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD3D167428B65B0700C24BA2 /* Indicator */,
 				EC02140727D1E5F500CF3569 /* Protocol */,
 				EC4BF2EB27C0BA8400B28F90 /* Button */,
 				BD2C8B3A27953B7300B1F59D /* PagerTab */,
@@ -903,6 +916,7 @@
 			isa = PBXGroup;
 			children = (
 				F60BAEB9279B4AB40012707C /* splash.json */,
+				BD3D167728B65BC100C24BA2 /* loading.json */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -1909,6 +1923,7 @@
 				9AB83409289A66FE0040FC2A /* WithdrawalViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				9AB833F9288972A80040FC2A /* EditNicknameViewController.xib in Resources */,
+				BD3D167828B65BC100C24BA2 /* loading.json in Resources */,
 				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
@@ -2058,6 +2073,7 @@
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				ECCF5E7A28A643FF00BC6862 /* EditCommonViewModel.swift in Sources */,
 				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
+				BD3D167628B65B2D00C24BA2 /* SBIndicator.swift in Sources */,
 				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */,
