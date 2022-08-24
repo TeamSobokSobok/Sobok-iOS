@@ -11,7 +11,7 @@ final class ShareTopView: BaseView {
     
     var completion: (() -> ())?
     
-    var friends: [Member] = [] {
+    var members: [Member] = [] {
         didSet {
             updateUI()
             updateButton()
@@ -36,14 +36,15 @@ final class ShareTopView: BaseView {
         $0.setImage(Image.icPlus48, for: .normal)
         $0.tintColor = Color.white
         $0.addTarget(self, action: #selector(addFriendButtonTapped), for: .touchUpInside)
-        $0.isHidden = friends.isEmpty
+        $0.isHidden = members.isEmpty
     }
-    
+
     override func setupView() {
         super.setupView()
         
         self.backgroundColor = Color.mint
         self.configureHStackView()
+        self.members = UserDefaults.standard.member
     }
     
     override func setupConstraints() {
@@ -53,6 +54,7 @@ final class ShareTopView: BaseView {
         friendHStackView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20.adjustedWidth)
             $0.bottom.equalToSuperview().inset(14.adjustedHeight)
+            $0.height.equalTo(24.adjustedHeight)
         }
         
         addFriendButton.snp.makeConstraints {
@@ -77,16 +79,17 @@ extension ShareTopView {
     }
     
     private func updateUI() {
-        for index in friends.indices {
+        for index in members.indices {
             let button = friendHStackView.arrangedSubviews[index] as! UIButton
             button.isHidden = false
-            button.setTitle(friends[index].memberName, for: .normal)
+            let friendName = members[index].memberName.prefix(2)
+            button.setTitle("\(friendName)", for: .normal)
         }
-        addFriendButton.isHidden = friends.isEmpty
+        addFriendButton.isHidden = members.isEmpty
     }
     
     private func updateButton() {
-        for index in friends.indices {
+        for index in members.indices {
             let button = friendHStackView.arrangedSubviews[index] as! UIButton
             
             if index == currentIndex {
@@ -101,6 +104,8 @@ extension ShareTopView {
     
     @objc func friendNameButtonTapped(_ sender: UIButton) {
         currentIndex = sender.tag
+        
+        Notification.Name.tapMember.post(object: nil, userInfo: ["tapIndex": currentIndex])
     }
     
     @objc func addFriendButtonTapped() {

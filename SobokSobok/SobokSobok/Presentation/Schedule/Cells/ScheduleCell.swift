@@ -142,11 +142,6 @@ extension ScheduleCell {
     
     @objc func stickerButtonTapped(_ sender: UIButton) {
         guard let scheduleId = pill?.scheduleId else { return }
-        
-        NotificationCenter.default.post(
-            name: Notification.Name("sticker"),
-            object: nil,
-            userInfo: ["scheduleId" : scheduleId]
-        )
+        Notification.Name.showAllSticker.post(object: nil, userInfo: ["scheduleId" : scheduleId])
     }
 }

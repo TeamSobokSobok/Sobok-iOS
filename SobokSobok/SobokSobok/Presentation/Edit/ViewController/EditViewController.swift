@@ -50,9 +50,10 @@ final class EditViewController: UIViewController, EditViewProtocol {
         super.viewDidLoad()
         assignDelegation()
         bind()
+        tabBarController?.tabBar.isHidden = true
     }
     
-    private func checkVaild(_ text: String) -> Bool {
+    private func checkValid(_ text: String) -> Bool {
         return text.count > 0
     }
     
@@ -73,7 +74,7 @@ final class EditViewController: UIViewController, EditViewProtocol {
             .disposed(by: disposeBag)
         
         pillTextFieldText
-            .map(checkVaild)
+            .map(checkValid)
             .bind(to: textFieldValid)
             .disposed(by: disposeBag)
         

@@ -10,10 +10,9 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-protocol AddPillSecondProtocol: StyleProtocol, TargetProtocol, TossPillProtocol, CalendarViewDelegate {}
+protocol AddPillSecondProtocol: StyleProtocol, TargetProtocol, TossPillProtocol, DelegationProtocol, BindProtocol, CalendarViewDelegate {}
 
 final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol {
-   
    
     var type: TossPill = .myPill
     private let addPillSecondView = AddPillSecondView()
@@ -35,15 +34,43 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
         target()
-        
+        bind()
+        assignDelegation()
+    }
+    
+    func assignDelegation() {
         addPillSecondView.calendar.delegate = self
+    }
+    
+    
+    func style() {
+        self.view.backgroundColor = Color.white
+    }
+    
+    func bind() {
+        addPillSecondView.navigationView.xButton.rx.tap.bind {
+            self.navigationController?.popViewController(animated: true)
+        }
+        .disposed(by: disposeBag)
+        
+        addPillSecondView.navigationView.cancelButton.rx.tap.bind {
+            
+            let viewController = StopPillViewController()
+            
+            viewController.modalTransitionStyle = .crossDissolve
+            viewController.modalPresentationStyle = .overFullScreen
+            
+            self.present(viewController, animated: true)
+        }
+        .disposed(by: disposeBag)
         
         let date = Date()
         
-        guard let date1 = Calendar.current.date(byAdding: .day, value: 92, to: date) else { return }
+        guard let afterDate = Calendar.current.date(byAdding: .day, value: 92, to: date) else { return }
 
-        self.addPillSecondView.pillPeriodLabel.text = "\(date.toString(of: .year)) ~ \(date1.toString(of: .year))"
+        self.addPillSecondView.pillPeriodLabel.text = "\(date.toString(of: .year)) ~ \(afterDate.toString(of: .year))"
         
         self.addPillSecondView.checkBoxButton.rx.tap.bind {
             self.addPillSecondView.checkBoxButton.isSelected.toggle()
@@ -60,16 +87,11 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
       
         }
         .disposed(by: disposeBag)
-        
-        
     }
     
     func didSelectFirstDate(_ calendar: CalendarView) {
-        
-        print("select")
-        
         if self.addPillSecondView.calendar.firstDate == nil {
-            
+
             self.addPillSecondView.checkBoxButton.setImage(Image.icCheckButton48, for: .normal)
             self.unableNextButton()
         }
@@ -148,9 +170,5 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         addPillSecondView.nextButton.backgroundColor = Color.gray200
         addPillSecondView.nextButton.setTitleColor(Color.gray500, for: .normal)
         addPillSecondView.nextButton.isEnabled = false
-    }
-    
-    func style() {
-        tabBarController?.tabBar.isHidden = true
     }
 }

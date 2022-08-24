@@ -13,8 +13,6 @@ extension ShareViewController {
                 if let members = members,
                    !members.isEmpty {
                     self.members = members
-                    shareTopView.friends = members
-                    scheduleViewController.friendName = members.first?.memberName
                 }
             }
         }

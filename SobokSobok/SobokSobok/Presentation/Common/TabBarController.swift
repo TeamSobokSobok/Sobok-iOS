@@ -12,7 +12,10 @@ import EasyKit
 final class TabBarController: UITabBarController {
     // MARK: - Properties
     
+    let tabbarManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
+    
     private var tabs: [UIViewController] = []
+    var members: [Member] = []
     
     // MARK: - View Life Cycle
     
@@ -22,15 +25,17 @@ final class TabBarController: UITabBarController {
         setTabBarAppearance()
         setTabBarItems()
         setDelegation()
+        
+        getGroupInformation()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         tabBar.frame.size.height = 90
         tabBar.frame.origin.y = view.frame.height - 90
     }
-
+    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let imageView = tabBar.subviews[item.tag + 1].subviews.compactMap({ $0 as? UIImageView }).first else { return }
         tabBarItemBounceAnimation(imageView: imageView)
@@ -44,14 +49,14 @@ extension TabBarController {
         UITabBar.clearShadow()
         UITabBar.appearance().tintColor = Color.black
         UITabBar.appearance().unselectedItemTintColor = Color.gray800
-
+        
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 11.0)!]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         
         tabBar.layer.borderWidth = 1.0
         tabBar.layer.borderColor = Color.gray200.cgColor
     }
-
+    
     private func setTabBarItems() {
         tabs = [
             UINavigationController(rootViewController: MainViewController()),
@@ -59,7 +64,7 @@ extension TabBarController {
             UINavigationController(rootViewController: NoticeViewController()),
             UINavigationController(rootViewController: UIViewController())
         ]
-
+        
         TabBarItem.allCases.forEach {
             tabs[$0.rawValue].tabBarItem = $0.asTabBarItem()
             tabs[$0.rawValue].tabBarItem.tag = $0.rawValue
@@ -112,5 +117,20 @@ extension TabBarController: UITabBarControllerDelegate {
             return false
         }
         return true
+    }
+}
+
+extension TabBarController {
+    func getGroupInformation() {
+        Task {
+            do {
+                let members = try await tabbarManager.getGroupInformation()
+                if let members = members,
+                   !members.isEmpty {
+                    self.members = members
+                    UserDefaults.standard.member = members
+                }
+            }
+        }
     }
 }

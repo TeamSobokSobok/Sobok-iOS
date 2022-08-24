@@ -31,18 +31,20 @@ extension ScheduleViewController {
         }
     }
     
-    func checkPillSchedule(scheduleId: Int) {
+    func checkPillSchedule(scheduleId: Int, completion: @escaping (() ->())) {
         Task {
             do {
                 let _ = try await scheduleManager.checkPillSchedule(for: scheduleId)
+                completion()
             }
         }
     }
     
-    func uncheckPillSchedule(scheduleId: Int) {
+    func uncheckPillSchedule(scheduleId: Int, completion: @escaping (() -> ())) {
         Task {
             do {
                 let _ = try await scheduleManager.uncheckPillSchedule(for: scheduleId)
+                completion()
             }
         }
     }
@@ -82,18 +84,20 @@ extension ScheduleViewController {
         }
     }
     
-    func postSticker(for scheduleId: Int, withSticker stickerId: Int) {
+    func postSticker(for scheduleId: Int, withSticker stickerId: Int, completion: @escaping (() -> ())) {
         Task {
             do {
                 let _ = try await stickerManageer.postStickers(for: scheduleId, withSticker: stickerId)
+                completion()
             }
         }
     }
     
-    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int) {
+    func changeSticker(for likeScheduleId: Int, withSticker stickerId: Int, completion: @escaping (() -> ())) {
         Task {
             do {
                 let _ = try await stickerManageer.changeSticker(for: likeScheduleId, withSticker: stickerId)
+                completion()
             }
         }
     }

@@ -20,8 +20,8 @@ protocol SendPillPeriodDelegate: AnyObject {
     func sendPillPeriod(pillPeriod: String)
 }
 
-protocol SendMemberNameDelegate: AnyObject {
-    func sendMemberName(name: String)
+protocol SendMemberDelegate: AnyObject {
+    func sendMember(name: String, id: Int)
 }
 
 // 모달에서 공통으로 쓰이는 부분
