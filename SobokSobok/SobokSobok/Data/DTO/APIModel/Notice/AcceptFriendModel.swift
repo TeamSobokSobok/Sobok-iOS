@@ -9,15 +9,8 @@ import Foundation
 
 struct AcceptFriend: Codable {
     let sendGroupId: Int?
-    let senderId: Int
-    let senderName: String
-    let memberId: Int
     let memberName: String
     let isSend: Bool
-    let isOkay: Bool?
+    let isOkay: String?
     let updatedAt: String
-}
-
-struct AcceptFriendBody: Codable {
-    let isOkay: String
 }

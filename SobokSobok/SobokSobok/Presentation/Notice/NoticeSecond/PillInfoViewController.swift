@@ -12,7 +12,9 @@ final class PillInfoViewController: UIViewController {
     var pillInfoList: PillDetailInfo?
     let pillInfoManager: NoticeServiceable = NoticeManager(apiService: APIManager(), environment: .development)
     private let pillInfoView = PillInfoView()
-    private let timeView = TimeView()
+    let dateFormatter = DateFormatter().then {
+        $0.dateFormat = FormatType.full.description
+    }
     var noticeId: Int = 0 {
         didSet {
             setInfoData()
@@ -32,7 +34,7 @@ final class PillInfoViewController: UIViewController {
         super.viewDidLoad()
         target()
         getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: self.setInfoData)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12, execute: self.setInfoData)
     }
 }
 
@@ -48,19 +50,14 @@ extension PillInfoViewController: NoticeSecondControl {
         }
     }
 
-    func setInfoData() {
-//        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
-        print("setInfoData에서 찍힌거", pillInfoList)
-        
+    func setInfoData() {        
         let timeCount: Int = pillInfoList?.makeTimeCount() ?? 0
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = FormatType.full.description
         var startDate = pillInfoList?.startDate ?? ""
         var endDate = pillInfoList?.endDate ?? ""
         startDate = dateFormatter.date(from: startDate)?.toString(of: .noticeDay) ?? ""
         endDate = dateFormatter.date(from: endDate)?.toString(of: .noticeDay) ?? ""
         let interval = pillInfoList?.scheduleSpecific?.changeEnToKr()
-        let timeArray: [String] = pillInfoList?.scheduleTime ?? []
+        guard let timeArray = pillInfoList?.scheduleTime else { return }
         
         if pillInfoList?.takeInterval == 1 {
             pillInfoView.intervalButton.setTitle("매일", for: .normal)
@@ -86,7 +83,9 @@ extension PillInfoViewController: NoticeSecondControl {
         if timeCount == 0 {
             [pillInfoView.timeFirstLine, pillInfoView.timeSecondLine].forEach { $0.isHidden = true }
         } else if timeCount <= 3 {
-            for index in 0..<timeCount { pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index])) }
+            for index in 0..<timeCount {
+                pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index]))
+            }
         } else if timeCount > 3 {
             for index in 0..<3 { pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index])) }
             for index in 3..<timeCount { pillInfoView.timeSecondLine.addArrangedSubviews(TimeView(time: timeData[index])) }

@@ -89,4 +89,5 @@ public enum Image {
     public static let tooltipImage = UIImage(named: "tooltipImage")!
     public static let icChecked = UIImage(named: "icChecked")!
     public static let icCheckedNot = UIImage(named: "icCheckedNot")!
+    public static let icDetail16 = UIImage(named: "icDetail16")!
 }
