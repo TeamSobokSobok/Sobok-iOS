@@ -18,9 +18,20 @@ final class ShareViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addFriend()
 
+        addFriend()
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)      
+
+        tabBarController?.tabBar.isHidden = false
+        getGroupInformation()
+    }
+    
+    override func layout() {
+        super.layout()
+       
         view.addSubviews(shareTopView, containerView)
         embed(scheduleViewController, inView: containerView)
         
@@ -33,13 +44,6 @@ final class ShareViewController: BaseViewController {
             $0.top.equalTo(shareTopView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
-    }
-  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)      
-
-        tabBarController?.tabBar.isHidden = false
-        getGroupInformation()
     }
 }
 
