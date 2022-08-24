@@ -19,6 +19,11 @@ extension Notification.Name {
      - 스티커 전송
      */
     static let sendSticker = NSNotification.Name("sendSticker")
+    
+    /*
+     - 멤버 정보 탭
+     */
+    static let tapMember = NSNotification.Name("tapMember")
 }
 
 extension Notification.Name {

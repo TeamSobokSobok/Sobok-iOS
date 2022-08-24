@@ -30,6 +30,7 @@ final class FriendNameView: BaseView {
             $0.top.equalToSuperview().inset(20.adjustedHeight)
             $0.bottom.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)
+            $0.height.equalTo(35.adjustedHeight)
         }
         
         friendNameEditButton.snp.makeConstraints {

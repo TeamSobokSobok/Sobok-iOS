@@ -16,7 +16,13 @@ final class ScheduleViewController: BaseViewController {
     let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(), environment: .development)
     
     let gregorian = Calendar(identifier: .gregorian)
-    var friendName: String? { didSet { updateUI() } }
+    var member: [Member] = UserDefaults.standard.member
+    var tapIndex = 0 {
+        didSet {
+            fetchSchedules(for: scheduleType)
+            fetchPillLists(for: scheduleType)
+        }
+    }
 
     var schedules: [Schedule] = [] {
         didSet {
@@ -38,6 +44,7 @@ final class ScheduleViewController: BaseViewController {
         didSet {
             fetchSchedules(for: scheduleType)
             fetchPillLists(for: scheduleType)
+            updateUI()
         }
     }
 
@@ -183,8 +190,7 @@ extension ScheduleViewController {
         
         friendNameView.do {
             $0.isHidden = scheduleType == .main
-            $0.friendNameLabel.text = friendName
-            
+            $0.friendNameLabel.text = member.first?.memberName
         }
         
         calendarTopView.do {
@@ -262,8 +268,7 @@ extension ScheduleViewController {
 extension ScheduleViewController {
     
     private func updateUI() {
-        friendNameView.isHidden = friendName == nil ? true : false
-        friendNameView.friendNameLabel.text = friendName
+        friendNameView.isHidden = scheduleType == .main
         calendarTopView.dateLabel.text = calendarTopView.scopeState == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
     }
     
@@ -291,11 +296,13 @@ extension ScheduleViewController {
     private func addObservers() {
         showAllStickerObserver()
         sendStickerObserver()
+        tapMember()
     }
     
     private func removeObservers() {
         Notification.Name.showAllSticker.removeObserver(observer: self)
         Notification.Name.sendSticker.removeObserver(observer: self)
+        Notification.Name.tapMember.removeObserver(observer: self)
     }
     
     func showAllStickerObserver() {
@@ -321,19 +328,31 @@ extension ScheduleViewController {
                    let stickerId = notification["stickerId"] as? Int
                 {
                     if isLikedState {
-                        print("✂️ 호출")
                         self.changeSticker(for: likeScheduleId, withSticker: stickerId) { [weak self] in
                             guard let self = self else { return }
-                            self.getMemberPillLists(memberId: 187, date: self.currentDate.toString(of: .year))
+                            self.getMemberPillLists(memberId: self.member[self.tapIndex].memberId, date: self.currentDate.toString(of: .year))
                         }
                     }
                     else {
-                        print("🛳 호출")
                         self.postSticker(for: scheduleId, withSticker: stickerId) { [weak self] in
                             guard let self = self else { return }
-                            self.getMemberPillLists(memberId: 187, date: self.currentDate.toString(of: .year))
+                            self.getMemberPillLists(memberId: self.member[self.tapIndex].memberId, date: self.currentDate.toString(of: .year))
                         }
                     }
+                }
+            }
+        }
+    }
+    
+    func tapMember() {
+        if scheduleType == .share {
+            Notification.Name.tapMember.addObserver { [weak self] notification in
+                guard let self = self else { return }
+                
+                if let notification = notification.userInfo,
+                   let tapIndex = notification["tapIndex"] as? Int {
+                    self.tapIndex = tapIndex
+                    self.friendNameView.friendNameLabel.text = self.member[self.tapIndex].memberName
                 }
             }
         }
@@ -353,7 +372,7 @@ extension ScheduleViewController {
             getMySchedules(date: currentDate.toString(of: .year))
             
         case .share:
-            getMemberSchedules(memberId: 187, date: currentDate.toString(of: .year))
+            getMemberSchedules(memberId: member[tapIndex].memberId, date: currentDate.toString(of: .year))
         }
     }
     
@@ -363,7 +382,7 @@ extension ScheduleViewController {
             getMyPillLists(date: currentDate.toString(of: .year))
             
         case .share:
-            getMemberPillLists(memberId: 187, date: currentDate.toString(of: .year))
+            getMemberPillLists(memberId: member[tapIndex].memberId, date: currentDate.toString(of: .year))
         }
     }
 

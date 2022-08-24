@@ -15,6 +15,7 @@ final class TabBarController: UITabBarController {
     let tabbarManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
     
     private var tabs: [UIViewController] = []
+    var members: [Member] = []
     
     // MARK: - View Life Cycle
     
@@ -126,6 +127,7 @@ extension TabBarController {
                 let members = try await tabbarManager.getGroupInformation()
                 if let members = members,
                    !members.isEmpty {
+                    self.members = members
                     UserDefaults.standard.member = members
                 }
             }
