@@ -7,8 +7,6 @@
 
 import Foundation
 
-var acceptedPillCount = UserDefaults.standard.integer(forKey: "acceptedPillCount")
-
 // 추후 리팩토링에 사용
 @propertyWrapper struct NoticeDateFormatter {
     let dateFormatter = DateFormatter()

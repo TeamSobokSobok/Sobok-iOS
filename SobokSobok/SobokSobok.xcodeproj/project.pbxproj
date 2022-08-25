@@ -67,6 +67,8 @@
 		BD38CB7028AB94C9006CB0FB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */; };
 		BD38CB7228AB9764006CB0FB /* SocialUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */; };
 		BD38CB7428AB976C006CB0FB /* SocialUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */; };
+		BD3D167628B65B2D00C24BA2 /* SBIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */; };
+		BD3D167828B65BC100C24BA2 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD3D167728B65BC100C24BA2 /* loading.json */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -240,7 +242,7 @@
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
 		F60BAEB8279B3E690012707C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB6279B3E690012707C /* SplashView.xib */; };
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
-		F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */; };
+		F635EEA427C55A07009B9246 /* NoticeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* NoticeAlertController.swift */; };
 		F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEAA27C78B72009B9246 /* PillInfoView.swift */; };
 		F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
@@ -329,6 +331,8 @@
 		BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserRequest.swift; sourceTree = "<group>"; };
 		BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserResponse.swift; sourceTree = "<group>"; };
+		BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBIndicator.swift; sourceTree = "<group>"; };
+		BD3D167728B65BC100C24BA2 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -492,7 +496,7 @@
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F60BAEB6279B3E690012707C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
-		F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		F635EEA327C55A07009B9246 /* NoticeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAlertController.swift; sourceTree = "<group>"; };
 		F635EEAA27C78B72009B9246 /* PillInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoView.swift; sourceTree = "<group>"; };
 		F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
@@ -683,6 +687,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		BD3D167428B65B0700C24BA2 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
 		BD4611BF2860822E007BEE87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,7 +853,6 @@
 				BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */,
 				BD2C8B56279612BC00B1F59D /* Date+Extension.swift */,
 				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
-				F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */,
 				EC99153E2833BE5A00542115 /* UICollectionView + Extension.swift */,
 				F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */,
 				ECAF4D28284F8D0000B12DA7 /* String+Extension.swift */,
@@ -892,6 +903,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD3D167428B65B0700C24BA2 /* Indicator */,
 				EC02140727D1E5F500CF3569 /* Protocol */,
 				EC4BF2EB27C0BA8400B28F90 /* Button */,
 				BD2C8B3A27953B7300B1F59D /* PagerTab */,
@@ -909,6 +921,7 @@
 			isa = PBXGroup;
 			children = (
 				F60BAEB9279B4AB40012707C /* splash.json */,
+				BD3D167728B65BC100C24BA2 /* loading.json */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -1011,6 +1024,7 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				F6B9376D28B4A48800954DBB /* Protocol */,
 				F67798AB28A3A2B100AAD2EF /* UserData */,
 				F605025527BBFBB30010DEC8 /* NoticeFirst */,
 				F605025927BBFC2F0010DEC8 /* NoticeSecond */,
@@ -1753,7 +1767,6 @@
 			children = (
 				F605027427BE186B0010DEC8 /* Views */,
 				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
-				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
 				F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */,
 			);
 			path = NoticeFirst;
@@ -1762,9 +1775,8 @@
 		F605025927BBFC2F0010DEC8 /* NoticeSecond */ = {
 			isa = PBXGroup;
 			children = (
-				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
+				F6B9376E28B4A4A400954DBB /* Views */,
 				F6538FA6278D814900B20B5E /* PillInfoViewController.swift */,
-				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
 				F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */,
 			);
 			path = NoticeSecond;
@@ -1773,6 +1785,7 @@
 		F605027427BE186B0010DEC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F635EEA327C55A07009B9246 /* NoticeAlertController.swift */,
 				F6951685289A6287000F88D7 /* Cell */,
 				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
 			);
@@ -1796,6 +1809,23 @@
 				F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6B9376D28B4A48800954DBB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
+				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F6B9376E28B4A4A400954DBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1919,6 +1949,7 @@
 				9AB83409289A66FE0040FC2A /* WithdrawalViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				9AB833F9288972A80040FC2A /* EditNicknameViewController.xib in Resources */,
+				BD3D167828B65BC100C24BA2 /* loading.json in Resources */,
 				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
@@ -2069,6 +2100,8 @@
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				ECCF5E7A28A643FF00BC6862 /* EditCommonViewModel.swift in Sources */,
 				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
+				F635EEA427C55A07009B9246 /* NoticeAlertController.swift in Sources */,
+				BD3D167628B65B2D00C24BA2 /* SBIndicator.swift in Sources */,
 				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */,

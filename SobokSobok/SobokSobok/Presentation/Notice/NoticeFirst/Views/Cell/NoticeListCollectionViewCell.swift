@@ -18,12 +18,12 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
     
     var sectionType: SectionType = .pill {
         didSet {
-            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     var statusType: StatusType = .waite {
         didSet {
-            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     
@@ -44,16 +44,10 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         $0.textAlignment = .left
         $0.textColor = Color.gray900
     }
-    private lazy var detailLabel = UILabel().then {
-        $0.font = UIFont.font(.pretendardMedium, ofSize: 14)
-        $0.text = "상세보기"
-        $0.textColor = Color.gray900
-    }
-    private lazy var detailImageView = UIImageView().then {
+    let detailButton = UIButton().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = Image.icMoreBlack48
+        $0.setImage(Image.icDetail16, for: .normal)
     }
-    let detailButton = UIButton()
     let toolTipView = SobokToolTipView(
         tipContent: "친구가 보낸 약 알림 일정을 확인해보세요",
         tipStartX: 184, tipWidth: 10, tipHeight: 6.2).then {
@@ -62,7 +56,6 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
     private lazy var middleStackView = UIStackView().then {
         $0.axis = .vertical
         $0.distribution = .fill
-        $0.spacing = 4
     }
     private lazy var lineView = UIView().then {
         $0.backgroundColor = Color.gray150
@@ -109,14 +102,13 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         statusType = status
         divideSection()
         
-        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailLabel, detailImageView)
-        [detailLabel, detailImageView].forEach { $0.bringSubviewToFront(detailButton) }
+        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton)
         topStackView.bringSubviewToFront(toolTipView)
-        middleStackView.addArrangedSubviews(lineView, descriptionLabel, timeLabel)
+        middleStackView.addArrangedSubviews(descriptionLabel, timeLabel)
         bottomStackView.addArrangedSubviews(refuseButton, acceptButton)
         containerStackView.addArrangedSubviews(topStackView, middleStackView, bottomStackView)
         
-        contentView.addSubviews(detailButton, containerStackView)
+        contentView.addSubviews(lineView, containerStackView)
         contentView.backgroundColor = Color.white
         contentView.makeRounded(radius: 12)
 
@@ -128,42 +120,51 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         }
 
         // MARK: - top
+        topStackView.snp.makeConstraints { make in
+            make.height.equalTo(25.adjustedHeight)
+        }
         iconImageView.snp.makeConstraints { make in
             make.width.height.equalTo(22)
+            make.top.equalTo(topStackView.snp.top).offset(1.5)
+            make.leading.equalTo(topStackView.snp.leading)
         }
         nameLabel.snp.makeConstraints { make in
-            make.height.equalTo(25.adjustedHeight)
-        }
-        detailLabel.snp.makeConstraints { make in
-            make.height.equalTo(25.adjustedHeight)
-        }
-        detailImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(48.adjustedWidth)
+            make.width.equalTo(156.adjustedWidth)
+            make.top.equalTo(topStackView.snp.top)
+            make.leading.equalTo(topStackView.snp.leading).offset(32)
         }
         detailButton.snp.makeConstraints { make in
             make.width.equalTo(72.adjustedWidth)
-            make.height.equalTo(21.adjustedHeight)
-            make.centerX.equalTo(topStackView.snp.trailing)
-            make.top.equalToSuperview().offset(18)
+            make.top.equalTo(topStackView.snp.top)
+            make.leading.equalTo(topStackView.snp.leading).offset(227)
         }
 
         // MARK: - middle
         lineView.snp.makeConstraints { make in
             make.height.equalTo(2.adjustedHeight)
+            make.top.equalTo(topStackView.snp.bottom).offset(18)
+            make.leading.trailing.equalTo(middleStackView)
+        }
+        middleStackView.snp.makeConstraints { make in
+            make.height.equalTo(50.adjustedHeight)
+            make.top.equalTo(lineView.snp.bottom).offset(8)
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.height.equalTo(21)
+            make.height.equalTo(21.adjustedHeight)
+            make.top.equalTo(middleStackView.snp.top)
         }
         timeLabel.snp.makeConstraints { make in
             make.height.equalTo(17)
+            make.top.equalTo(middleStackView.snp.top).offset(25)
         }
         
         bottomStackView.snp.makeConstraints {
-            $0.height.equalTo(40.adjustedHeight)
+            $0.height.equalTo(52.adjustedHeight)
         }
         refuseButton.snp.makeConstraints { make in
             make.width.equalTo(146.adjustedWidth)
             make.height.equalTo(40.adjustedHeight)
+            make.top.equalTo(bottomStackView.snp.top).offset(12)
         }
     }
     
@@ -171,24 +172,24 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         switch sectionType {
         case .pill:
             iconImageView.image = Image.icPillAlarm
-            [detailLabel, detailImageView, detailButton].forEach { $0.isHidden = false }
+            detailButton.isHidden = false
         case .calender:
             iconImageView.image = Image.icShareAlarm
-            [detailLabel, detailImageView, detailButton].forEach { $0.isHidden = true }
+            detailButton.isHidden = true
         }
         switch statusType {
         case .waite:
             descriptionLabel.textColor = Color.gray700
             [topStackView, lineView, bottomStackView].forEach {
-                contentView.addSubview($0)
                 $0.isHidden = false
+//                contentView.addSubview($0)
                 middleStackView.sendSubviewToBack($0)
             }
         case .done:
             descriptionLabel.textColor = Color.gray600
             [topStackView, lineView, bottomStackView].forEach {
                 $0.isHidden = true
-                $0.removeFromSuperview()
+//                $0.removeFromSuperview()
             }
         }
     }
