@@ -132,7 +132,8 @@ extension NoticeViewController: UICollectionViewDataSource {
                     let pillInfoViewController = PillInfoViewController.instanceFromNib()
                     pillInfoViewController.noticeId = self?.noticeList?.infoList[indexPath.row].noticeId ?? 0
                     pillInfoViewController.pillId = self?.noticeList?.infoList[indexPath.row].pillId ?? 0
-                    self?.navigationController?.pushViewController(pillInfoViewController, animated: false)
+                    self?.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+                    self?.navigationController?.pushViewController(pillInfoViewController, animated: true)
                 }
                 cell.refuse = { [weak self] in
                     guard let self = self else { return }
