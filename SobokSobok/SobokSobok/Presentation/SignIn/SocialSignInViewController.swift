@@ -84,10 +84,10 @@ extension SocialSignInViewController {
             guard let accessToken = result?.accesstoken else { return }
 
             if isNewUser {
-                UserDefaultsManager.socialID = socialID
                 transitionToSetNickNameViewController(socialId: socialID)
                 
             } else {
+                UserDefaultsManager.socialID = socialID
                 UserDefaultsManager.accessToken = accessToken
                 transitionToMainViewController()
             }
@@ -120,9 +120,6 @@ extension SocialSignInViewController {
     
     private func signInWithApp() {
         UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
-            
-            print("hello")
-            
             if let error = error {
                 print("⛔️⛔️⛔️⛔️", error)
             }

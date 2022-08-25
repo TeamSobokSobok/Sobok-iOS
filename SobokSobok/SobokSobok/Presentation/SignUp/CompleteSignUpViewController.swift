@@ -31,8 +31,7 @@ final class CompleteSignUpViewController: UIViewController, CompleteSingUpProtoc
     func transitionToMainViewController() {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
-        let completeSignUpViewController = TabBarController.instanceFromNib()
-        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: completeSignUpViewController)
+        sceneDelegate?.window?.rootViewController = TabBarController()
         sceneDelegate?.window?.makeKeyAndVisible()
     }
 }

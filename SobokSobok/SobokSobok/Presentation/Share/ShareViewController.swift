@@ -8,7 +8,7 @@
 import UIKit
 
 final class ShareViewController: BaseViewController {
-    var members: [Member] = []
+    var members: [Member] = UserDefaults.standard.member
     lazy var scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
                                                                     environment: .development)
     
@@ -26,6 +26,7 @@ final class ShareViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)      
 
+        tabBarController?.tabBar.isHidden = false
         getGroupInformation()
     }
     
@@ -60,7 +61,6 @@ final class ShareViewController: BaseViewController {
 extension ShareViewController {
     
     func initialAttributes() {
-        tabBarController?.tabBar.isHidden = false
         scheduleViewController.calendarTopView.isHidden = members.isEmpty
         scheduleViewController.calendarView.isHidden = members.isEmpty
         containerView.isHidden = members.isEmpty

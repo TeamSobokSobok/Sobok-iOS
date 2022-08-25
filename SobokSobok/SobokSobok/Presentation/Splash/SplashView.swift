@@ -11,6 +11,8 @@ import Lottie
 
 final class SplashView: UIViewController {
     
+    lazy var authManager = AuthManager(apiService: APIManager(), environment: .development)
+    
     // MARK: - Properties
     lazy var lottiView: AnimationView = {
         let animationView = AnimationView(name: "splash")
@@ -34,9 +36,51 @@ final class SplashView: UIViewController {
         view.addSubview(lottiView)
         lottiView.isHidden = false
         lottiView.play { _ in
-            let nextVC = SocialSignInViewController.instanceFromNib()
-            nextVC.modalTransitionStyle = .crossDissolve
-            self.navigationController?.pushViewController(nextVC, animated: true)
+            self.isAutoLogin()
         }
+    }
+}
+
+extension SplashView {
+    
+    func isAutoLogin() {
+        Task {
+            do {
+                print(UserDefaultsManager.socialID)
+                print(UserDefaultsManager.fcmToken)
+                
+                let result = try await authManager.signIn(socialId: UserDefaultsManager.socialID,
+                                                          deviceToken: UserDefaultsManager.fcmToken)
+                
+                guard let isNewUser = result?.isNew else {
+                    self.transitionToSignInViewController()
+                    return
+                }
+                
+                if isNewUser {
+                    self.transitionToSignInViewController()
+
+                } else {
+                    self.transitionToMainViewController()
+                }
+                
+            } catch {
+                self.transitionToSignInViewController()
+            }
+        }
+    }
+    
+    func transitionToSignInViewController() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = SocialSignInViewController.instanceFromNib()
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
+    func transitionToMainViewController() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = TabBarController()
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }
