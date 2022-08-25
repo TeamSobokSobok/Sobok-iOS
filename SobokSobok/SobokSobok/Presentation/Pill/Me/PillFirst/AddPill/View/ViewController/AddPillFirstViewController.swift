@@ -80,7 +80,9 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         .disposed(by: disposeBag)
         
         addPillFirstView.navigationView.cancelButton.rx.tap.bind {
-            let viewController = StopPillViewController()
+            let viewController = StopPillViewController(
+                navigation: self.navigationController!
+            )
             viewController.modalTransitionStyle = .crossDissolve
             viewController.modalPresentationStyle = .overFullScreen
             self.present(viewController, animated: true)

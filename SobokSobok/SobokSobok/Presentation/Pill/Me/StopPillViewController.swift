@@ -18,6 +18,8 @@ final class StopPillViewController: UIViewController, StopPillProtocol {
     
     private let disposeBag = DisposeBag()
     
+    var navigation: UINavigationController
+    
     override func loadView() {
         self.view = stopPillView
     }
@@ -26,6 +28,15 @@ final class StopPillViewController: UIViewController, StopPillProtocol {
         super.viewDidLoad()
         style()
         bind()
+    }
+    
+    init(navigation: UINavigationController) {
+        self.navigation = navigation
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func style() {
@@ -39,7 +50,9 @@ final class StopPillViewController: UIViewController, StopPillProtocol {
         .disposed(by: disposeBag)
         
         stopPillView.stopButton.rx.tap.bind {
-           
+            self.dismiss(animated: false) {
+                self.navigation.popToRootViewController(animated: true)
+            }
         }
         .disposed(by: disposeBag)
     }
