@@ -15,6 +15,7 @@ final class ShareViewController: BaseViewController {
     lazy var shareTopView = ShareTopView()
     let scheduleViewController = ScheduleViewController(scheduleType: .share)
     private lazy var containerView = UIView()
+    private lazy var emptyView = ShareEmptyView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,18 @@ final class ShareViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)      
 
-        tabBarController?.tabBar.isHidden = false
         getGroupInformation()
+    }
+    
+    override func style() {
+        initialAttributes()
     }
     
     override func layout() {
         super.layout()
        
-        view.addSubviews(shareTopView, containerView)
+        
+        view.addSubviews(shareTopView, containerView, emptyView)
         embed(scheduleViewController, inView: containerView)
         
         shareTopView.snp.makeConstraints {
@@ -44,15 +49,38 @@ final class ShareViewController: BaseViewController {
             $0.top.equalTo(shareTopView.snp.bottom)
             $0.leading.bottom.trailing.equalToSuperview()
         }
+        
+        emptyView.snp.makeConstraints {
+            $0.top.equalTo(shareTopView.snp.bottom)
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
     }
 }
 
 extension ShareViewController {
-    func addFriend() {
+    
+    func initialAttributes() {
+        tabBarController?.tabBar.isHidden = false
+        scheduleViewController.calendarTopView.isHidden = members.isEmpty
+        scheduleViewController.calendarView.isHidden = members.isEmpty
+        containerView.isHidden = members.isEmpty
+        emptyView.isHidden = !members.isEmpty
+        
+        emptyView.addButton.addTarget(self, action: #selector(transitionToSearchNicknameViewController), for: .touchUpInside)
+    }
+    
+    @objc func addFriend() {
         shareTopView.completion = {
-            let searchNicknameViewController = UINavigationController(rootViewController: SearchNicknameViewController.instanceFromNib())
-            searchNicknameViewController.modalPresentationStyle = .fullScreen
-            self.present(searchNicknameViewController, animated: true)
+            self.transitionToSearchNicknameViewController()
         }
+    }
+}
+
+extension ShareViewController {
+    
+    @objc func transitionToSearchNicknameViewController() {
+        let searchNicknameViewController = UINavigationController(rootViewController: SearchNicknameViewController.instanceFromNib())
+        searchNicknameViewController.modalPresentationStyle = .fullScreen
+        self.present(searchNicknameViewController, animated: true)
     }
 }

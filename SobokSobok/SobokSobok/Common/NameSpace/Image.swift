@@ -52,7 +52,6 @@ public enum Image {
 	public static let icPlusGray = UIImage(named: "icPlusGray")!
 	public static let illustHome = UIImage(named: "illustHome")!
 	public static let calendarBackgroundToday = UIImage(named: "calendarBackgroundToday")!
-	public static let illustAddFreind = UIImage(named: "illustAddFreind")!
 	public static let illustAlreadyFivePills = UIImage(named: "illustAlreadyFivePills")!
 	public static let illustNoFriend = UIImage(named: "illustNoFriend")!
 	public static let illustNoNotice = UIImage(named: "illustNoNotice")!
@@ -89,4 +88,5 @@ public enum Image {
     public static let tooltipImage = UIImage(named: "tooltipImage")!
     public static let icChecked = UIImage(named: "icChecked")!
     public static let icCheckedNot = UIImage(named: "icCheckedNot")!
+    public static let new = UIImage(named: "new")!
 }
