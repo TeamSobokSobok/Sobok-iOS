@@ -14,3 +14,14 @@ struct SendPill: Codable {
     let specific: String?
     let time: [String]
 }
+
+struct EditPill: Codable {
+    let pillName: String
+    let start: String
+    let end: String
+    let cycle: Int
+    let day: String?
+    let specific: String?
+    let time: [String]
+    let date: String
+}
