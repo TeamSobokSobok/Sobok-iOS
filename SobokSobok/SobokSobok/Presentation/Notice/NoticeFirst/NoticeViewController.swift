@@ -86,7 +86,7 @@ extension NoticeViewController: UICollectionViewDataSource {
                 
                 cell.refuse = { [weak self] in
                     guard let self = self else { return }
-                    self.makeRefuseAlert(
+                    self.makeAlert(
                         title: "\(groupName)님의 친구 신청을 거절할까요?",
                         message: "거절하면 상대방이 내 캘린더를 볼 수 없어요",
                         completion: {
@@ -123,6 +123,10 @@ extension NoticeViewController: UICollectionViewDataSource {
                 if UserDefaults.standard.integer(forKey: "sendedPillCount") == 0 {
                     cell.toolTipView.isHidden = false
                 }
+                else {
+                    cell.toolTipView.isHidden = true
+                    cell.toolTipView.removeFromSuperview()
+                }
                 
                 cell.info = { [weak self] in
                     let pillInfoViewController = PillInfoViewController.instanceFromNib()
@@ -132,7 +136,7 @@ extension NoticeViewController: UICollectionViewDataSource {
                 }
                 cell.refuse = { [weak self] in
                     guard let self = self else { return }
-                    self.makeRefuseAlert(
+                    self.makeAlert(
                         title: "이 약을 거절할까요?",
                         message: "거절하면 해당 약 알림을 받을 수 없어요",
                         completion: {
@@ -148,6 +152,7 @@ extension NoticeViewController: UICollectionViewDataSource {
                 }
                 cell.accept = { [weak self] in
                     guard let self = self else { return }
+                    
                     self.makeAlert(
                         title: "이 약을 수락할까요?",
                         message: "수락하면 홈 캘린더에 약이 추가되고,\n정해진 시간에 알림을 받을 수 있어요",
@@ -160,6 +165,20 @@ extension NoticeViewController: UICollectionViewDataSource {
                                 ]
                             )
                         })
+                    
+                    if UserDefaults.standard.integer(forKey: "sendedPillCount") == 5 {
+                        self.makeRefuseAlert(
+                            title: "이미 5개의 약을 복약 중이에요!",
+                            message: "약은 최대 5개까지만 추가 가능해요") {
+                                Notification.Name.requestPill.post(
+                                    object: nil,
+                                    userInfo: [
+                                        "pillId": self.noticeList?.infoList[indexPath.row].pillId ?? 0,
+                                        "isOkay": "refuse"
+                                    ]
+                                )
+                            }
+                    }
                 }
             }
             else { fatalError("발생할 수 없는 case") }
@@ -234,7 +253,14 @@ extension NoticeViewController {
                let pillId = notification["pillId"] as? Int,
                let isOkay = notification["isOkay"] as? String {
                 
-                if isOkay == "accept" || isOkay == "refuse" {
+                if isOkay == "accept" {
+                    if self.sendedPillCount < 5 {
+                        self.sendedPillCount += 1
+                    }
+                    UserDefaults.standard.set(self.sendedPillCount, forKey: "sendedPillCount")
+                    self.putAcceptPill(for: pillId, status: isOkay)
+                }
+                else if isOkay == "refuse" {
                     self.putAcceptPill(for: pillId, status: isOkay)
                 }
                 else {
