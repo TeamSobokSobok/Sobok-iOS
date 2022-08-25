@@ -56,13 +56,12 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         .disposed(by: disposeBag)
         
         addPillSecondView.navigationView.cancelButton.rx.tap.bind {
-            
-            let viewController = StopPillViewController()
-            
-            viewController.modalTransitionStyle = .crossDissolve
-            viewController.modalPresentationStyle = .overFullScreen
-            
-            self.present(viewController, animated: true)
+                let viewController = StopPillViewController(
+                    navigation: self.navigationController!
+                )
+                viewController.modalTransitionStyle = .crossDissolve
+                viewController.modalPresentationStyle = .overFullScreen
+                self.present(viewController, animated: true)
         }
         .disposed(by: disposeBag)
         

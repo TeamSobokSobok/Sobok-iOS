@@ -68,12 +68,11 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         .disposed(by: disposeBag)
         
         addPillThirdView.navigationView.cancelButton.rx.tap.bind {
-            
-            let viewController = StopPillViewController()
-            
+            let viewController = StopPillViewController(
+                navigation: self.navigationController!
+            )
             viewController.modalTransitionStyle = .crossDissolve
             viewController.modalPresentationStyle = .overFullScreen
-            
             self.present(viewController, animated: true)
         }
         .disposed(by: disposeBag)
