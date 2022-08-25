@@ -120,6 +120,10 @@ extension NoticeViewController: UICollectionViewDataSource {
                 cell.nameLabel.text = "\(pillName)"
                 cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 보냈어요"
                 
+                if UserDefaults.standard.integer(forKey: "sendedPillCount") == 0 {
+                    cell.toolTipView.isHidden = false
+                }
+                
                 cell.info = { [weak self] in
                     let pillInfoViewController = PillInfoViewController.instanceFromNib()
                     pillInfoViewController.noticeId = self?.noticeList?.infoList[indexPath.row].noticeId ?? 0

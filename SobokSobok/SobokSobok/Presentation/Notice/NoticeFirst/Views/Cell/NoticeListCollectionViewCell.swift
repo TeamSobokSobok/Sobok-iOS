@@ -50,7 +50,8 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
     }
     let toolTipView = SobokToolTipView(
         tipContent: "친구가 보낸 약 알림 일정을 확인해보세요",
-        tipStartX: 184, tipWidth: 10, tipHeight: 6.2).then {
+        tipStartX: 184, tipWidth: 10, tipHeight: 6.2,
+        duration: 1.0).then {
         $0.isHidden = true
     }
     private lazy var middleStackView = UIStackView().then {
@@ -180,17 +181,10 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         switch statusType {
         case .waite:
             descriptionLabel.textColor = Color.gray700
-            [topStackView, lineView, bottomStackView].forEach {
-                $0.isHidden = false
-//                contentView.addSubview($0)
-                middleStackView.sendSubviewToBack($0)
-            }
+            [topStackView, lineView, bottomStackView].forEach { $0.isHidden = false }
         case .done:
             descriptionLabel.textColor = Color.gray600
-            [topStackView, lineView, bottomStackView].forEach {
-                $0.isHidden = true
-//                $0.removeFromSuperview()
-            }
+            [topStackView, lineView, bottomStackView].forEach { $0.isHidden = true }
         }
     }
 }
