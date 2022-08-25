@@ -64,17 +64,16 @@ final class FirstPillNameView: BaseView {
     
     @objc func deleteTextButtonTapped() {
         self.pillNameTextField.text = ""
-        self.sendPillViewModel.pillName[sendPillViewModel.tag] = ""
+        self.sendPillViewModel.pillName.value[sendPillViewModel.tag] = ""
     }
     
     @objc func pillTextFieldDidChange(_ textField: UITextField) {
+        
+        print(sendPillViewModel.pillName.value)
         guard let text = pillNameTextField.text else { return }
         if text.count == 0 {
             sendPillViewModel.isTrue.value = false
-        } else {
-            sendPillViewModel.isTrue.value = true
         }
-        
         pillNameTextField.attributedText = setAttributedText(text: text)
         pillTextCountLabel.attributedText = setAttributedText(text: "\(String(text.count)) / 10")
         
@@ -148,7 +147,10 @@ final class FirstPillNameView: BaseView {
 extension FirstPillNameView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        print(pillNameTextField.tag)
+        
         if pillNameTextField.isEditing {
+            sendPillViewModel.isTrue.value = false
             pillTextCountLabel.isHidden = false
             pillNameTextField.layer.borderColor = Color.gray600.cgColor
         } else {
@@ -157,8 +159,10 @@ extension FirstPillNameView: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        sendPillViewModel.isTrue.value = true
+      
         guard let text = pillNameTextField.text else { return }
-        sendPillViewModel.pillName[sendPillViewModel.tag] = text
+        sendPillViewModel.pillName.value[pillNameTextField.tag] = text
         pillTextCountLabel.isHidden = true
         deleteTextButton.isHidden = true
     }
