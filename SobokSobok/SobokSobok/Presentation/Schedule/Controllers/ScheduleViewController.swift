@@ -17,7 +17,7 @@ final class ScheduleViewController: BaseViewController {
     
     let gregorian = Calendar(identifier: .gregorian)
     var member: [Member] = UserDefaults.standard.member
-    var tapIndex = 0 {
+    var tapIndex: Int? {
         didSet {
             fetchSchedules(for: scheduleType)
             fetchPillLists(for: scheduleType)
@@ -89,6 +89,8 @@ final class ScheduleViewController: BaseViewController {
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
+
+    lazy var emptyView = ScheduleEmptyView(for: scheduleType)
 
     
     // MARK: - Life Cycles
@@ -175,7 +177,7 @@ extension ScheduleViewController {
     }
     
     private func configureAttributes() {
-
+        
         scrollView.do {
             $0.showsVerticalScrollIndicator = false
             $0.backgroundColor = Color.gray150
@@ -189,8 +191,8 @@ extension ScheduleViewController {
         }
         
         friendNameView.do {
-            $0.isHidden = scheduleType == .main
-            $0.friendNameLabel.text = member.first?.memberName
+            $0.isHidden = (scheduleType == .main || member.isEmpty)
+            $0.friendNameLabel.text = member.first?.memberName ?? ""
         }
         
         calendarTopView.do {
@@ -330,13 +332,15 @@ extension ScheduleViewController {
                     if isLikedState {
                         self.changeSticker(for: likeScheduleId, withSticker: stickerId) { [weak self] in
                             guard let self = self else { return }
-                            self.getMemberPillLists(memberId: self.member[self.tapIndex].memberId, date: self.currentDate.toString(of: .year))
+                            guard let tapIndex = self.tapIndex else { return }
+                            self.getMemberPillLists(memberId: self.member[tapIndex].memberId, date: self.currentDate.toString(of: .year))
                         }
                     }
                     else {
                         self.postSticker(for: scheduleId, withSticker: stickerId) { [weak self] in
                             guard let self = self else { return }
-                            self.getMemberPillLists(memberId: self.member[self.tapIndex].memberId, date: self.currentDate.toString(of: .year))
+                            guard let tapIndex = self.tapIndex else { return }
+                            self.getMemberPillLists(memberId: self.member[tapIndex].memberId, date: self.currentDate.toString(of: .year))
                         }
                     }
                 }
@@ -352,7 +356,7 @@ extension ScheduleViewController {
                 if let notification = notification.userInfo,
                    let tapIndex = notification["tapIndex"] as? Int {
                     self.tapIndex = tapIndex
-                    self.friendNameView.friendNameLabel.text = self.member[self.tapIndex].memberName
+                    self.friendNameView.friendNameLabel.text = self.member[tapIndex].memberName
                 }
             }
         }
@@ -372,6 +376,7 @@ extension ScheduleViewController {
             getMySchedules(date: currentDate.toString(of: .year))
             
         case .share:
+            guard let tapIndex = self.tapIndex else { return }
             getMemberSchedules(memberId: member[tapIndex].memberId, date: currentDate.toString(of: .year))
         }
     }
@@ -382,6 +387,7 @@ extension ScheduleViewController {
             getMyPillLists(date: currentDate.toString(of: .year))
             
         case .share:
+            guard let tapIndex = self.tapIndex else { return }
             getMemberPillLists(memberId: member[tapIndex].memberId, date: currentDate.toString(of: .year))
         }
     }

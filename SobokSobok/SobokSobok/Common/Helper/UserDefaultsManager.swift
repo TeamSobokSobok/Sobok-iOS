@@ -29,12 +29,19 @@ struct UserDefaultWrapper<T> {
 
 enum UserDefaultKeys: String, CaseIterable {
     case fcmToken
+    case socialID
+    case accessToken
 }
 
 struct UserDefaultsManager {
     @UserDefaultWrapper(key: UserDefaultKeys.fcmToken.rawValue, defaultValue: "")
     static var fcmToken: String
     
+    @UserDefaultWrapper(key: UserDefaultKeys.socialID.rawValue, defaultValue: "")
+    static var socialID: String
+    
+    @UserDefaultWrapper(key: UserDefaultKeys.accessToken.rawValue, defaultValue: "")
+    static var accessToken: String
 }
 
 extension UserDefaultsManager {

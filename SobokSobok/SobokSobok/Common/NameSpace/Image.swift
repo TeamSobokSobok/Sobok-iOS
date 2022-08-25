@@ -52,7 +52,6 @@ public enum Image {
 	public static let icPlusGray = UIImage(named: "icPlusGray")!
 	public static let illustHome = UIImage(named: "illustHome")!
 	public static let calendarBackgroundToday = UIImage(named: "calendarBackgroundToday")!
-	public static let illustAddFreind = UIImage(named: "illustAddFreind")!
 	public static let illustAlreadyFivePills = UIImage(named: "illustAlreadyFivePills")!
 	public static let illustNoFriend = UIImage(named: "illustNoFriend")!
 	public static let illustNoNotice = UIImage(named: "illustNoNotice")!
@@ -81,13 +80,14 @@ public enum Image {
 	public static let isVImage = UIImage(named: "isVImage")!
 	public static let icNext16 = UIImage(named: "ic_more_16_black")!
 	public static let icPillAlarm = UIImage(named: "ic_pill_alarm_22_darkmint")!
-    public static let icInfo = UIImage(named: "icInfo")!
-    public static let icShareAlarm = UIImage(named: "ic_share_alarm_22_darkmint")!
-    public static let icNoFriend = UIImage(named: "icNoFriend")!
-    public static let icMoreBlack48 = UIImage(named: "icMoreBlack48")!
-    public static let calendarBackgroundTodayDefault = UIImage(named: "calendarBackgroundTodayDefault")!
-    public static let tooltipImage = UIImage(named: "tooltipImage")!
-    public static let icChecked = UIImage(named: "icChecked")!
-    public static let icCheckedNot = UIImage(named: "icCheckedNot")!
-    public static let icDetail16 = UIImage(named: "icDetail16")!
+  public static let icInfo = UIImage(named: "icInfo")!
+  public static let icShareAlarm = UIImage(named: "ic_share_alarm_22_darkmint")!
+  public static let icNoFriend = UIImage(named: "icNoFriend")!
+  public static let icMoreBlack48 = UIImage(named: "icMoreBlack48")!
+  public static let calendarBackgroundTodayDefault = UIImage(named: "calendarBackgroundTodayDefault")!
+  public static let tooltipImage = UIImage(named: "tooltipImage")!
+  public static let icChecked = UIImage(named: "icChecked")!
+  public static let icCheckedNot = UIImage(named: "icCheckedNot")!
+  public static let new = UIImage(named: "new")!
+  public static let icDetail16 = UIImage(named: "icDetail16")!
 }

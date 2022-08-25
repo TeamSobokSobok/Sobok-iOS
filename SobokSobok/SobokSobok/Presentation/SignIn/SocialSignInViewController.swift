@@ -7,6 +7,8 @@
 
 import UIKit
 import AuthenticationServices
+import KakaoSDKCommon
+import KakaoSDKUser
 
 protocol SocialSignInProtocol: StyleProtocol {}
 
@@ -31,7 +33,7 @@ final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
     }
     
     @IBAction func signInWithKakao(_ sender: UIView) {
-        print("kakao")
+        kakaoButtonTapped()
     }
     
     @IBAction func signInWIthApple(_ sender: UIView) {
@@ -70,16 +72,23 @@ extension SocialSignInViewController: AppleLoginManagerDelegate {
 
 extension SocialSignInViewController {
     
-    func signIn(socialID: String) {
+    func signIn(socialID: String?) {
+        guard let socialID = socialID else {
+            print("유효하지 않은 사용자입니다.")
+            return
+        }
+        
         Task {
             let result = try await authManager.signIn(socialId: socialID, deviceToken: UserDefaultsManager.fcmToken)
-            
             guard let isNewUser = result?.isNew else { return }
-            
+            guard let accessToken = result?.accesstoken else { return }
+
             if isNewUser {
                 transitionToSetNickNameViewController(socialId: socialID)
                 
             } else {
+                UserDefaultsManager.socialID = socialID
+                UserDefaultsManager.accessToken = accessToken
                 transitionToMainViewController()
             }
         }
@@ -94,5 +103,54 @@ extension SocialSignInViewController {
     func transitionToMainViewController() {
         let mainViewController = TabBarController()
         navigationController?.pushViewController(mainViewController, animated: true)
+    }
+}
+
+extension SocialSignInViewController {
+    
+    private func kakaoButtonTapped() {
+
+        if UserApi.isKakaoTalkLoginAvailable() {
+            self.signInWithApp()
+            
+        } else {
+            self.signUpWithWeb()
+        }
+    }
+    
+    private func signInWithApp() {
+        UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
+            if let error = error {
+                print("⛔️⛔️⛔️⛔️", error)
+            }
+            else {
+                self.fetchUserInfomation { socialID in
+                    self.signIn(socialID: socialID)
+                }
+            }
+        }
+    }
+
+    private func signUpWithWeb() {
+        
+        UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+
+            if let error = error {
+                print("⛔️⛔️⛔️⛔️", error)
+            }
+            else {
+                self.fetchUserInfomation { socialID in
+                    self.signIn(socialID: socialID)
+                }
+            }
+        }
+    }
+    
+    private func fetchUserInfomation(completion: @escaping ((String) -> ())) {
+        UserApi.shared.me { user, error in
+            guard let userID = user?.id else { return }
+            let socialID = "Kakao@\(userID)"
+            completion(socialID)
+        }
     }
 }

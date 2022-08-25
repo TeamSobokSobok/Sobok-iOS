@@ -118,6 +118,9 @@
 		BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */; };
 		BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210227977DBC0068B981 /* PillManagementService.swift */; };
 		BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210427977DCC0068B981 /* PillManagementAPI.swift */; };
+		BD772D4F28B72BF7006CBD6B /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BD772D4E28B72BF7006CBD6B /* KakaoSDKAuth */; };
+		BD772D5128B72BF7006CBD6B /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = BD772D5028B72BF7006CBD6B /* KakaoSDKUser */; };
+		BD772D5328B74280006CBD6B /* ShareEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5228B74280006CBD6B /* ShareEmptyView.swift */; };
 		BD917E45289D48C700A60BBE /* StickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E44289D48C700A60BBE /* StickerType.swift */; };
 		BD917E47289D493800A60BBE /* PillColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E46289D493800A60BBE /* PillColorType.swift */; };
 		BD917E4C289D594600A60BBE /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E4B289D594600A60BBE /* StateView.swift */; };
@@ -375,6 +378,7 @@
 		BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BD71210227977DBC0068B981 /* PillManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementService.swift; sourceTree = "<group>"; };
 		BD71210427977DCC0068B981 /* PillManagementAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementAPI.swift; sourceTree = "<group>"; };
+		BD772D5228B74280006CBD6B /* ShareEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareEmptyView.swift; sourceTree = "<group>"; };
 		BD917E44289D48C700A60BBE /* StickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerType.swift; sourceTree = "<group>"; };
 		BD917E46289D493800A60BBE /* PillColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillColorType.swift; sourceTree = "<group>"; };
 		BD917E49289D593800A60BBE /* ShareScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScheduleCell.swift; sourceTree = "<group>"; };
@@ -524,6 +528,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD772D4F28B72BF7006CBD6B /* KakaoSDKAuth in Frameworks */,
 				BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */,
 				EC02140027CFAFC700CF3569 /* RxCocoa in Frameworks */,
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
@@ -533,6 +538,7 @@
 				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
 				BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
+				BD772D5128B72BF7006CBD6B /* KakaoSDKUser in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
 				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
 				BD515E8327877F0E003BD5A4 /* Moya in Frameworks */,
@@ -1251,6 +1257,7 @@
 			children = (
 				BDE2ADE32891266200A42559 /* ShareTopView.swift */,
 				BD917E4B289D594600A60BBE /* StateView.swift */,
+				BD772D5228B74280006CBD6B /* ShareEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1852,6 +1859,8 @@
 				EC02140127CFAFC700CF3569 /* RxSwift */,
 				BD65721428AA6C6F00A0623A /* FirebaseAnalytics */,
 				BD65721628AA6C6F00A0623A /* FirebaseMessaging */,
+				BD772D4E28B72BF7006CBD6B /* KakaoSDKAuth */,
+				BD772D5028B72BF7006CBD6B /* KakaoSDKUser */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -1892,6 +1901,7 @@
 				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				EC0213FE27CFAFC700CF3569 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -2071,6 +2081,7 @@
 				BD917E47289D493800A60BBE /* PillColorType.swift in Sources */,
 				ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */,
 				EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */,
+				BD772D5328B74280006CBD6B /* ShareEmptyView.swift in Sources */,
 				EC02140927D1E60100CF3569 /* ViewModelType.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
 				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
@@ -2477,6 +2488,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -2546,6 +2565,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		BD772D4E28B72BF7006CBD6B /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		BD772D5028B72BF7006CBD6B /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
 		};
 		BD9857A52791CE27009883FC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
