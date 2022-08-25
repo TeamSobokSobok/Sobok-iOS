@@ -24,6 +24,13 @@ extension Notification.Name {
      - 멤버 정보 탭
      */
     static let tapMember = NSNotification.Name("tapMember")
+    
+    /*
+     - 알림 목록 전체보기
+     - 약 ・ 친구 수락, 거절
+     */
+    static let requestPill = Notification.Name("requestPill")
+    static let requestFriend = Notification.Name("requestFriend")
 }
 
 extension Notification.Name {

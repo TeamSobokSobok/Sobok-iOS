@@ -36,6 +36,11 @@ final class PillInfoViewController: UIViewController {
         getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.12, execute: self.setInfoData)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+        navigationController?.isNavigationBarHidden = true
+    }
 }
 
 // MARK: - Extensions

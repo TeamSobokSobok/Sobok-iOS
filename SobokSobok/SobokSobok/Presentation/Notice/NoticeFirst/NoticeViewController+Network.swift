@@ -20,9 +20,7 @@ extension NoticeViewController {
     func putAcceptFriend(for senderGroupId: Int, status isOkay: String) {
         Task {
             do {
-                print(222222, friendInfo?.updatedAt)
                 let friendInfo = try await noticeListManager.putAcceptFriend(for: senderGroupId, status: isOkay)
-                print("여기는 제대로 담기나...", friendInfo)
                 if let friendInfo = friendInfo {
                     self.friendInfo = friendInfo
                 }

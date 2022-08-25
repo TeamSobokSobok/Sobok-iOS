@@ -30,12 +30,16 @@ final class NoticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
+        addObservers()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         getNoticeList()
+    }
+    deinit {
+        removeObservers()
     }
 }
 
@@ -71,12 +75,6 @@ extension NoticeViewController: UICollectionViewDataSource {
             for: indexPath, cellType: NoticeListCollectionViewCell.self
         )
         
-        // 약 / 캘린더인지 --> waiting / accept, refuse
-        // pillName / senderName
-        // senderName
-        // 시간
-        // 거절 / 수락 --> PUT 통신 --> senderName, 시간
-        
         if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
             createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
             cell.timeLabel.text = "\(createdAt)"
@@ -87,25 +85,33 @@ extension NoticeViewController: UICollectionViewDataSource {
                 cell.descriptionLabel.text = "\(groupName)님이 친구를 신청했어요"
                 
                 cell.refuse = { [weak self] in
-                    self?.makeRefuseAlert(
+                    guard let self = self else { return }
+                    self.makeAlert(
                         title: "\(groupName)님의 친구 신청을 거절할까요?",
                         message: "거절하면 상대방이 내 캘린더를 볼 수 없어요",
                         completion: {
-                            self?.putAcceptFriend(
-                                for: self?.noticeList?.infoList[indexPath.row].noticeId ?? 0,
-                                status: "refuse")
-                            self?.noticeListView.noticeListCollectionView.reloadData()
-                            // -- 이쪽 부분
+                            Notification.Name.requestFriend.post(
+                                object: nil,
+                                userInfo: [
+                                    "sendGroupId": self.noticeList?.infoList[indexPath.row].noticeId ?? 0,
+                                    "isOkay": "refuse"
+                                ]
+                            )
                         })
                 }
                 cell.accept = { [weak self] in
-                    self?.makeAlert(
+                    guard let self = self else { return }
+                    self.makeAlert(
                         title: "\(groupName)님의 친구 신청을 수락할까요?",
                         message: "수락하면 상대방이 내 캘린더를 볼 수 있어요",
                         completion: {
-                            self?.putAcceptFriend(
-                                for: self?.noticeList?.infoList[indexPath.row].noticeId ?? 0,
-                                status: "accept")
+                            Notification.Name.requestFriend.post(
+                                object: nil,
+                                userInfo: [
+                                    "sendGroupId": self.noticeList?.infoList[indexPath.row].noticeId ?? 0,
+                                    "isOkay": "accept"
+                                ]
+                            )
                         })
                 }
             }
@@ -114,32 +120,66 @@ extension NoticeViewController: UICollectionViewDataSource {
                 cell.nameLabel.text = "\(pillName)"
                 cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 보냈어요"
                 
+                if UserDefaults.standard.integer(forKey: "sendedPillCount") == 0 {
+                    cell.toolTipView.isHidden = false
+                }
+                else {
+                    cell.toolTipView.isHidden = true
+                    cell.toolTipView.removeFromSuperview()
+                }
+                
                 cell.info = { [weak self] in
                     let pillInfoViewController = PillInfoViewController.instanceFromNib()
                     pillInfoViewController.noticeId = self?.noticeList?.infoList[indexPath.row].noticeId ?? 0
                     pillInfoViewController.pillId = self?.noticeList?.infoList[indexPath.row].pillId ?? 0
-                    self?.navigationController?.pushViewController(pillInfoViewController, animated: false)
+                    self?.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+                    self?.navigationController?.pushViewController(pillInfoViewController, animated: true)
                 }
                 cell.refuse = { [weak self] in
-                    self?.makeRefuseAlert(
+                    guard let self = self else { return }
+                    self.makeAlert(
                         title: "이 약을 거절할까요?",
                         message: "거절하면 해당 약 알림을 받을 수 없어요",
                         completion: {
-                            self?.putAcceptPill(
-                                for: self?.noticeList?.infoList[indexPath.row].pillId ?? 0,
-                                status: "refuse")
+                            Notification.Name.requestPill.post(
+                                object: nil,
+                                userInfo: [
+                                    "pillId": self.noticeList?.infoList[indexPath.row].pillId ?? 0,
+                                    "isOkay": "refuse"
+                                ]
+                            )
                         })
                     
                 }
                 cell.accept = { [weak self] in
-                    self?.makeAlert(
+                    guard let self = self else { return }
+                    
+                    self.makeAlert(
                         title: "이 약을 수락할까요?",
                         message: "수락하면 홈 캘린더에 약이 추가되고,\n정해진 시간에 알림을 받을 수 있어요",
                         completion: {
-                            self?.putAcceptFriend(
-                                for: self?.noticeList?.infoList[indexPath.row].pillId ?? 0,
-                                status: "accept")
+                            Notification.Name.requestPill.post(
+                                object: nil,
+                                userInfo: [
+                                    "pillId": self.noticeList?.infoList[indexPath.row].pillId ?? 0,
+                                    "isOkay": "accept"
+                                ]
+                            )
                         })
+                    
+                    if UserDefaults.standard.integer(forKey: "sendedPillCount") == 5 {
+                        self.makeRefuseAlert(
+                            title: "이미 5개의 약을 복약 중이에요!",
+                            message: "약은 최대 5개까지만 추가 가능해요") {
+                                Notification.Name.requestPill.post(
+                                    object: nil,
+                                    userInfo: [
+                                        "pillId": self.noticeList?.infoList[indexPath.row].pillId ?? 0,
+                                        "isOkay": "refuse"
+                                    ]
+                                )
+                            }
+                    }
                 }
             }
             else { fatalError("발생할 수 없는 case") }
@@ -178,5 +218,56 @@ extension NoticeViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension NoticeViewController {
+    private func addObservers() {
+        requestFriendObserver()
+        requestPillObserver()
+    }
+    private func removeObservers() {
+        Notification.Name.requestFriend.removeObserver(observer: self)
+        Notification.Name.requestPill.removeObserver(observer: self)
+    }
+    
+    private func requestFriendObserver() {
+        Notification.Name.requestFriend.addObserver { [weak self] notification in
+            guard let self = self else { return }
+            if let notification = notification.userInfo,
+               let sendGroupId = notification["sendGroupId"] as? Int,
+               let isOkay = notification["isOkay"] as? String {
+                
+                if isOkay == "accept" || isOkay == "refuse" {
+                    self.putAcceptFriend(for: sendGroupId, status: isOkay)
+                }
+                else {
+                    return
+                }
+            }
+        }
+    }
+    private func requestPillObserver() {
+        Notification.Name.requestPill.addObserver { [weak self] notification in
+            guard let self = self else { return }
+            if let notification = notification.userInfo,
+               let pillId = notification["pillId"] as? Int,
+               let isOkay = notification["isOkay"] as? String {
+                
+                if isOkay == "accept" {
+                    if self.sendedPillCount < 5 {
+                        self.sendedPillCount += 1
+                    }
+                    UserDefaults.standard.set(self.sendedPillCount, forKey: "sendedPillCount")
+                    self.putAcceptPill(for: pillId, status: isOkay)
+                }
+                else if isOkay == "refuse" {
+                    self.putAcceptPill(for: pillId, status: isOkay)
+                }
+                else {
+                    return
+                }
+            }
+        }
     }
 }

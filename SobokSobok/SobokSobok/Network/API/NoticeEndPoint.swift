@@ -34,10 +34,12 @@ extension NoticeEndPoint: EndPoint {
             return nil
         case .getPillDetailInfo:
             return nil
-        case .putAcceptFriend:
-            return nil
-        case .putAcceptPill:
-            return nil
+        case .putAcceptFriend(_, let isOkay):
+            let query = ["isOkay": isOkay]
+            return query.encode()
+        case .putAcceptPill(_, let isOkay):
+            let query = ["isOkay": isOkay]
+            return query.encode()
         }
     }
     
@@ -48,10 +50,10 @@ extension NoticeEndPoint: EndPoint {
             return "\(baseURL)/notice/list"
         case .getPillDetailInfo(let noticeId, let pillId):
             return "\(baseURL)/notice/list/\(noticeId)/\(pillId)"
-        case .putAcceptFriend(let sendGroupId, let isOkay):
-            return "\(baseURL)/group/\(sendGroupId)?isOkay=\(isOkay)"
-        case .putAcceptPill(let pillId, let isOkay):
-            return "\(baseURL)/notice/list/\(pillId)?isOkay=\(isOkay)"
+        case .putAcceptFriend(let sendGroupId, _):
+            return "\(baseURL)/group/\(sendGroupId)"
+        case .putAcceptPill(let pillId, _):
+            return "\(baseURL)/notice/list/\(pillId)"
         }
     }
 }

@@ -15,7 +15,8 @@ final class SobokToolTipView: UIView {
         tipContent: String,
         tipStartX: CGFloat,
         tipWidth: CGFloat,
-        tipHeight: CGFloat
+        tipHeight: CGFloat,
+        duration: CFTimeInterval
     ) {
         super.init(frame: .zero)
         self.backgroundColor = Color.black
@@ -34,9 +35,14 @@ final class SobokToolTipView: UIView {
         shape.path = path
         shape.fillColor = Color.black.cgColor
         
+        let animation = CABasicAnimation(keyPath: "animation")
+        animation.repeatCount = .infinity
+        animation.duration = duration
+        
         self.layer.insertSublayer(shape, at: 0)
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 6
+        self.layer.animation(forKey: "animation")
         
         self.addLabel(of: tipContent)
     }
