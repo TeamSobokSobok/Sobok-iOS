@@ -93,7 +93,7 @@ extension NoticeViewController: UICollectionViewDataSource {
                             Notification.Name.requestFriend.post(
                                 object: nil,
                                 userInfo: [
-                                    "sendGroupId": self.noticeList?.infoList[indexPath.row].noticeId ?? 0,
+                                    "sendGroupId": self.noticeList?.infoList[indexPath.row].senderGroupId ?? 0,
                                     "isOkay": "refuse"
                                 ]
                             )
@@ -108,7 +108,7 @@ extension NoticeViewController: UICollectionViewDataSource {
                             Notification.Name.requestFriend.post(
                                 object: nil,
                                 userInfo: [
-                                    "sendGroupId": self.noticeList?.infoList[indexPath.row].noticeId ?? 0,
+                                    "sendGroupId": self.noticeList?.infoList[indexPath.row].senderGroupId ?? 0,
                                     "isOkay": "accept"
                                 ]
                             )
