@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol ScheduleServiceable {
     func getMySchedule(for date: String) async throws -> [Schedule]?
@@ -15,6 +16,8 @@ protocol ScheduleServiceable {
     func getGroupInformation() async throws -> [Member]?
     func getMemberSchedule(memberId: Int, date: String) async throws -> [Schedule]?
     func getMemberPillList(memberId: Int, date: String) async throws -> [PillList]?
+    func deletePillList(pillId: Int) async throws -> EmptyData?
+    func stopPillList(pillId: Int, date: String) async throws -> EmptyData?
 }
 
 struct ScheduleManager: ScheduleServiceable {
@@ -71,6 +74,20 @@ struct ScheduleManager: ScheduleServiceable {
     func getMemberPillList(memberId: Int, date: String) async throws -> [PillList]? {
         let request = ScheduleEndPoint
             .getMemberPillList(memberId: memberId, date: date)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func deletePillList(pillId: Int) async throws -> EmptyData? {
+        let request = ScheduleEndPoint
+            .deletePillList(pillId: pillId)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func stopPillList(pillId: Int, date: String) async throws -> EmptyData? {
+        let request = ScheduleEndPoint
+            .stopPillList(pillId: pillId, date: date)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }

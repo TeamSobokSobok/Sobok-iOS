@@ -15,6 +15,8 @@ enum ScheduleEndPoint {
     case getGroupInformation
     case getMemberSchedule(memberId: Int, date: String)
     case getMemberPillList(memberId: Int, date: String)
+    case deletePillList(pillId: Int)
+    case stopPillList(pillId: Int, date: String)
 }
 
 extension ScheduleEndPoint: EndPoint {
@@ -32,6 +34,10 @@ extension ScheduleEndPoint: EndPoint {
             return .GET
         case .getMemberPillList:
             return .GET
+        case .deletePillList:
+            return .DELETE
+        case .stopPillList:
+            return .PUT
         }
     }
     
@@ -49,6 +55,11 @@ extension ScheduleEndPoint: EndPoint {
             return nil
         case .getMemberPillList:
             return nil
+        case .deletePillList:
+            return nil
+        case .stopPillList(_, let date):
+            let parameter = ["date" : date]
+            return parameter.encode()
         }
     }
     
@@ -69,6 +80,10 @@ extension ScheduleEndPoint: EndPoint {
             return "\(baseURL)/schedule/\(memberId)/calendar?date=\(date)"
         case .getMemberPillList(let memberId, let date):
             return "\(baseURL)/schedule/\(memberId)/detail?date=\(date)"
+        case .deletePillList(let pillId):
+            return "\(baseURL)/pill/\(pillId)"
+        case .stopPillList(let pillId, _):
+            return "\(baseURL)/pill/stop/\(pillId)"
         }
     }
 }
