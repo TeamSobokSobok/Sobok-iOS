@@ -906,6 +906,7 @@
 				9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */,
 				9A3DF0CC2799F4C800D07A8C /* EditFriendDataModel.swift */,
 				9A3DF0BA279832F800D07A8C /* SearchNicknameDataModel.swift */,
+				9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1143,7 +1144,6 @@
 			isa = PBXGroup;
 			children = (
 				BD7120F8279723A00068B981 /* Member.swift */,
-				9A3DF0C82799EFEB00D07A8C /* EditFriendUsername.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
