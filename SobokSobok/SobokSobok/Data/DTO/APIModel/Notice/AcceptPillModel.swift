@@ -12,7 +12,3 @@ struct AcceptPill: Codable {
     let success: Bool
     let message: String
 }
-
-struct AcceptPillBody: Codable {
-    let isOkay: String
-}

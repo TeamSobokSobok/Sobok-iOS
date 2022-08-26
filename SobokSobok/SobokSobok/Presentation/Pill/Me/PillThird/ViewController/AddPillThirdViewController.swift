@@ -22,6 +22,8 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     private let sendPillViewModel: SendPillViewModel
     let pillThirdViewModel: PillThirdViewModel
     
+    var tagNumber = 0
+    
     init(sendPillViewModel: SendPillViewModel, pillThirdViewModel: PillThirdViewModel) {
         self.sendPillViewModel = sendPillViewModel
         self.pillThirdViewModel = pillThirdViewModel
@@ -68,12 +70,11 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         .disposed(by: disposeBag)
         
         addPillThirdView.navigationView.cancelButton.rx.tap.bind {
-            
-            let viewController = StopPillViewController()
-            
+            let viewController = StopPillViewController(
+                navigation: self.navigationController!
+            )
             viewController.modalTransitionStyle = .crossDissolve
             viewController.modalPresentationStyle = .overFullScreen
-            
             self.present(viewController, animated: true)
         }
         .disposed(by: disposeBag)
@@ -93,7 +94,10 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         
         sendPillViewModel.tag = pillNameView.tag
         
-        self.sendPillViewModel.pillName.insert("", at: sendPillViewModel.tag)
+        print(pillNameView.pillNameTextField.tag)
+        
+        self.sendPillViewModel.pillName.value.insert("", at: sendPillViewModel.tag)
+        
         self.addPillThirdView.wholeStackView.addArrangedSubview(pillNameView)
         
         self.sendPillViewModel.count.value = count
@@ -109,9 +113,15 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
             let tag = pillNameView.deleteCellButton.tag
             let textFieldTag = pillNameView.pillNameTextField.tag
             
+       
+            
+            print(pillNameView.pillNameTextField.tag)
+            
             self.sendPillViewModel.tag = textFieldTag
             
-            self.sendPillViewModel.pillName.remove(at: self.sendPillViewModel.tag)
+            self.sendPillViewModel.pillName.value.remove(at: self.sendPillViewModel.tag)
+            
+            self.tagNumber = self.sendPillViewModel.tag
             
             if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
                 self.addPillThirdView.footerView.isHidden = true
@@ -119,7 +129,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
                 self.addPillThirdView.footerView.isHidden = false
             }
             
-            guard let firstPillNameView = self.addPillThirdView.wholeStackView.subviews.first(where: { $0.tag == tag })?.removeFromSuperview() as? FirstPillNameView else { return }
+            guard let firstPillNameView = self.addPillThirdView.wholeStackView.subviews.first(where: { $0.tag == textFieldTag })?.removeFromSuperview() as? FirstPillNameView else { return }
             
             self.addPillThirdView.wholeStackView.removeArrangedSubview(firstPillNameView)
         }
@@ -160,7 +170,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     private func postMyPill() {
-        sendPillViewModel.postFriendPill()
+//        sendPillViewModel.postFriendPill()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -168,6 +178,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         switch type {
         case .myPill:
             postMyPill()
+            
         case .friendPill:
             presentView()
         }

@@ -24,11 +24,6 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
     private var pillSchedules: PillSchedules
     private var scheduleType: ScheduleType
     private var viewController: ScheduleViewController
-    
-    
-    // MARK: - UI Properties
-    
-    lazy var emptyView = ScheduleEmptyView(for: scheduleType)
 
     
     // MARK: - Initializer
@@ -48,7 +43,7 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
     // MARK: - CollectionView Methods
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        collectionView.backgroundView = pillSchedules.isEmpty ? emptyView : nil
+        collectionView.backgroundView = pillSchedules.isEmpty ? viewController.emptyView : nil
         return pillSchedules.count
     }
 

@@ -13,7 +13,6 @@ extension PillInfoViewController {
                 if let pillDetailInfo = pillDetailInfo {
                     self.pillInfoList = pillDetailInfo
                 }
-                print("getPillDetailInfo에서 찍힌거", pillInfoList)
             }
         }
     }

@@ -68,6 +68,8 @@
 		BD38CB7228AB9764006CB0FB /* SocialUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */; };
 		BD38CB7428AB976C006CB0FB /* SocialUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */; };
 		BD3D167328B6560B00C24BA2 /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D167228B6560B00C24BA2 /* EmptyData.swift */; };
+		BD3D167628B65B2D00C24BA2 /* SBIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */; };
+		BD3D167828B65BC100C24BA2 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = BD3D167728B65BC100C24BA2 /* loading.json */; };
 		BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C028608260007BEE87 /* FriendNameView.swift */; };
 		BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C228608389007BEE87 /* CalendarTopView.swift */; };
 		BD4611C52860868C007BEE87 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4611C42860868C007BEE87 /* HomeTopView.swift */; };
@@ -117,6 +119,9 @@
 		BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */; };
 		BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210227977DBC0068B981 /* PillManagementService.swift */; };
 		BD71210527977DCC0068B981 /* PillManagementAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71210427977DCC0068B981 /* PillManagementAPI.swift */; };
+		BD772D4F28B72BF7006CBD6B /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BD772D4E28B72BF7006CBD6B /* KakaoSDKAuth */; };
+		BD772D5128B72BF7006CBD6B /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = BD772D5028B72BF7006CBD6B /* KakaoSDKUser */; };
+		BD772D5328B74280006CBD6B /* ShareEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD772D5228B74280006CBD6B /* ShareEmptyView.swift */; };
 		BD917E45289D48C700A60BBE /* StickerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E44289D48C700A60BBE /* StickerType.swift */; };
 		BD917E47289D493800A60BBE /* PillColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E46289D493800A60BBE /* PillColorType.swift */; };
 		BD917E4C289D594600A60BBE /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD917E4B289D594600A60BBE /* StateView.swift */; };
@@ -180,6 +185,8 @@
 		EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51A41927D4AC9E00BB01AF /* PillPeriodViewController.swift */; };
 		EC63A21327D37FDA006EBED7 /* PillDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC63A21227D37FDA006EBED7 /* PillDayTableViewCell.swift */; };
 		EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666A8C28855C630089A4CA /* BaseProtocol.swift */; };
+		EC7E85BF28B7BAE200AF1A65 /* PillEditEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E85BE28B7BAE100AF1A65 /* PillEditEndPoint.swift */; };
+		EC7E85C128B7BAEE00AF1A65 /* PillEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E85C028B7BAEE00AF1A65 /* PillEditManager.swift */; };
 		EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596A9281C023800850E84 /* AddPillSecondView.swift */; };
 		EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */; };
 		EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AF281C1FAB00850E84 /* BaseView.swift */; };
@@ -238,7 +245,11 @@
 		F60BAEB7279B3E690012707C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BAEB5279B3E690012707C /* SplashView.swift */; };
 		F60BAEB8279B3E690012707C /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB6279B3E690012707C /* SplashView.xib */; };
 		F60BAEBA279B4AB40012707C /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = F60BAEB9279B4AB40012707C /* splash.json */; };
-		F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */; };
+		F61CDD4E28B8538000D6BBCC /* UserPillListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD4D28B8538000D6BBCC /* UserPillListModel.swift */; };
+		F61CDD5028B8545000D6BBCC /* AccountEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD4F28B8545000D6BBCC /* AccountEndPoint.swift */; };
+		F61CDD5228B8551700D6BBCC /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD5128B8551700D6BBCC /* AccountManager.swift */; };
+		F61CDD5428B856AB00D6BBCC /* MyInfoViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD5328B856AB00D6BBCC /* MyInfoViewController+Network.swift */; };
+		F635EEA427C55A07009B9246 /* NoticeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* NoticeAlertController.swift */; };
 		F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEAA27C78B72009B9246 /* PillInfoView.swift */; };
 		F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */; };
 		F6494F312795AECC00F43A94 /* SendStickerPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */; };
@@ -328,6 +339,8 @@
 		BD38CB7128AB9764006CB0FB /* SocialUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserRequest.swift; sourceTree = "<group>"; };
 		BD38CB7328AB976C006CB0FB /* SocialUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserResponse.swift; sourceTree = "<group>"; };
 		BD3D167228B6560B00C24BA2 /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
+		BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBIndicator.swift; sourceTree = "<group>"; };
+		BD3D167728B65BC100C24BA2 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		BD4611C028608260007BEE87 /* FriendNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendNameView.swift; sourceTree = "<group>"; };
 		BD4611C228608389007BEE87 /* CalendarTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTopView.swift; sourceTree = "<group>"; };
 		BD4611C42860868C007BEE87 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
@@ -373,6 +386,7 @@
 		BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BD71210227977DBC0068B981 /* PillManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementService.swift; sourceTree = "<group>"; };
 		BD71210427977DCC0068B981 /* PillManagementAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillManagementAPI.swift; sourceTree = "<group>"; };
+		BD772D5228B74280006CBD6B /* ShareEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareEmptyView.swift; sourceTree = "<group>"; };
 		BD917E44289D48C700A60BBE /* StickerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerType.swift; sourceTree = "<group>"; };
 		BD917E46289D493800A60BBE /* PillColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillColorType.swift; sourceTree = "<group>"; };
 		BD917E49289D593800A60BBE /* ShareScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScheduleCell.swift; sourceTree = "<group>"; };
@@ -433,6 +447,8 @@
 		EC51A41927D4AC9E00BB01AF /* PillPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillPeriodViewController.swift; sourceTree = "<group>"; };
 		EC63A21227D37FDA006EBED7 /* PillDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDayTableViewCell.swift; sourceTree = "<group>"; };
 		EC666A8C28855C630089A4CA /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		EC7E85BE28B7BAE100AF1A65 /* PillEditEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillEditEndPoint.swift; sourceTree = "<group>"; };
+		EC7E85C028B7BAEE00AF1A65 /* PillEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillEditManager.swift; sourceTree = "<group>"; };
 		EC8596A9281C023800850E84 /* AddPillSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondView.swift; sourceTree = "<group>"; };
 		EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondViewController.swift; sourceTree = "<group>"; };
 		EC8596AF281C1FAB00850E84 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -490,7 +506,11 @@
 		F60BAEB5279B3E690012707C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F60BAEB6279B3E690012707C /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		F60BAEB9279B4AB40012707C /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
-		F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		F61CDD4D28B8538000D6BBCC /* UserPillListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPillListModel.swift; sourceTree = "<group>"; };
+		F61CDD4F28B8545000D6BBCC /* AccountEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEndPoint.swift; sourceTree = "<group>"; };
+		F61CDD5128B8551700D6BBCC /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		F61CDD5328B856AB00D6BBCC /* MyInfoViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyInfoViewController+Network.swift"; sourceTree = "<group>"; };
+		F635EEA327C55A07009B9246 /* NoticeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAlertController.swift; sourceTree = "<group>"; };
 		F635EEAA27C78B72009B9246 /* PillInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoView.swift; sourceTree = "<group>"; };
 		F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6494F2F2795AECC00F43A94 /* SendStickerPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendStickerPopUpViewController.swift; sourceTree = "<group>"; };
@@ -522,6 +542,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD772D4F28B72BF7006CBD6B /* KakaoSDKAuth in Frameworks */,
 				BD65721728AA6C6F00A0623A /* FirebaseMessaging in Frameworks */,
 				EC02140027CFAFC700CF3569 /* RxCocoa in Frameworks */,
 				BD515E8F27878093003BD5A4 /* IQKeyboardManagerSwift in Frameworks */,
@@ -531,6 +552,7 @@
 				BD9857A62791CE27009883FC /* FSCalendar in Frameworks */,
 				BD65721528AA6C6F00A0623A /* FirebaseAnalytics in Frameworks */,
 				BD515E8C27877FAD003BD5A4 /* Kingfisher in Frameworks */,
+				BD772D5128B72BF7006CBD6B /* KakaoSDKUser in Frameworks */,
 				BD515E9527878114003BD5A4 /* EasyKit in Frameworks */,
 				BD515E8927877F9C003BD5A4 /* SnapKit in Frameworks */,
 				BD515E8327877F0E003BD5A4 /* Moya in Frameworks */,
@@ -545,8 +567,8 @@
 			children = (
 				9AB833F12889721F0040FC2A /* Settings */,
 				9AB833F0288971C00040FC2A /* EditNickname */,
-				9AB833EF288971B20040FC2A /* MyInfoBasic */,
 				9A06C99528377E6B00606D28 /* MyInfoViewController.swift */,
+				F61CDD5328B856AB00D6BBCC /* MyInfoViewController+Network.swift */,
 				9A06C99628377E6B00606D28 /* MyInfoViewController.xib */,
 				9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */,
 				9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */,
@@ -587,6 +609,7 @@
 			children = (
 				9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */,
 				9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */,
+				F61CDD4D28B8538000D6BBCC /* UserPillListModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -598,13 +621,6 @@
 				9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */,
 			);
 			path = EditFriendName;
-			sourceTree = "<group>";
-		};
-		9AB833EF288971B20040FC2A /* MyInfoBasic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyInfoBasic;
 			sourceTree = "<group>";
 		};
 		9AB833F0288971C00040FC2A /* EditNickname */ = {
@@ -662,6 +678,8 @@
 				BDDF7722289A95340096196B /* StickerManager.swift */,
 				ECCF5E52289F8C0000BC6862 /* SendPillManager.swift */,
 				BD38CB6F28AB94C9006CB0FB /* AuthManager.swift */,
+				EC7E85C028B7BAEE00AF1A65 /* PillEditManager.swift */,
+				F61CDD5128B8551700D6BBCC /* AccountManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -675,8 +693,18 @@
 				BDDF7720289A952B0096196B /* StickerEndPoint.swift */,
 				ECCF5E50289F8BF500BC6862 /* SendPillEndPoint.swift */,
 				BD38CB6D28AB94BF006CB0FB /* AuthEndPoint.swift */,
+				EC7E85BE28B7BAE100AF1A65 /* PillEditEndPoint.swift */,
+				F61CDD4F28B8545000D6BBCC /* AccountEndPoint.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		BD3D167428B65B0700C24BA2 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				BD3D167528B65B2D00C24BA2 /* SBIndicator.swift */,
+			);
+			path = Indicator;
 			sourceTree = "<group>";
 		};
 		BD4611BF2860822E007BEE87 /* Views */ = {
@@ -837,7 +865,6 @@
 				BD382F6E286DA188002E91F0 /* Encodable+Extension.swift */,
 				BD2C8B56279612BC00B1F59D /* Date+Extension.swift */,
 				BD7120FE279777AB0068B981 /* UIViewController+Extension.swift */,
-				F635EEA327C55A07009B9246 /* UIAlertController+Extension.swift */,
 				EC99153E2833BE5A00542115 /* UICollectionView + Extension.swift */,
 				F68FE3492834F1BE00FA0254 /* Adjusted+Extension.swift */,
 				ECAF4D28284F8D0000B12DA7 /* String+Extension.swift */,
@@ -888,6 +915,7 @@
 		BD515E5A27877635003BD5A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BD3D167428B65B0700C24BA2 /* Indicator */,
 				EC02140727D1E5F500CF3569 /* Protocol */,
 				EC4BF2EB27C0BA8400B28F90 /* Button */,
 				BD2C8B3A27953B7300B1F59D /* PagerTab */,
@@ -905,6 +933,7 @@
 			isa = PBXGroup;
 			children = (
 				F60BAEB9279B4AB40012707C /* splash.json */,
+				BD3D167728B65BC100C24BA2 /* loading.json */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -1007,6 +1036,7 @@
 		BD515E69278776E6003BD5A4 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				F6B9376D28B4A48800954DBB /* Protocol */,
 				F67798AB28A3A2B100AAD2EF /* UserData */,
 				F605025527BBFBB30010DEC8 /* NoticeFirst */,
 				F605025927BBFC2F0010DEC8 /* NoticeSecond */,
@@ -1240,6 +1270,7 @@
 			children = (
 				BDE2ADE32891266200A42559 /* ShareTopView.swift */,
 				BD917E4B289D594600A60BBE /* StateView.swift */,
+				BD772D5228B74280006CBD6B /* ShareEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1749,7 +1780,6 @@
 			children = (
 				F605027427BE186B0010DEC8 /* Views */,
 				F605027D27BE3BC60010DEC8 /* NoticeViewController.swift */,
-				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
 				F695168D289D11FB000F88D7 /* NoticeViewController+Network.swift */,
 			);
 			path = NoticeFirst;
@@ -1758,9 +1788,8 @@
 		F605025927BBFC2F0010DEC8 /* NoticeSecond */ = {
 			isa = PBXGroup;
 			children = (
-				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
+				F6B9376E28B4A4A400954DBB /* Views */,
 				F6538FA6278D814900B20B5E /* PillInfoViewController.swift */,
-				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
 				F6951691289D7EE7000F88D7 /* PillInfoViewController+Network.swift */,
 			);
 			path = NoticeSecond;
@@ -1769,6 +1798,7 @@
 		F605027427BE186B0010DEC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F635EEA327C55A07009B9246 /* NoticeAlertController.swift */,
 				F6951685289A6287000F88D7 /* Cell */,
 				F605027F27BE6CAC0010DEC8 /* NoticeListView.swift */,
 			);
@@ -1792,6 +1822,23 @@
 				F67798A928A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6B9376D28B4A48800954DBB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F6951670288FCE97000F88D7 /* NoticeFirstControl.swift */,
+				F6951672288FCFE1000F88D7 /* NoticeSecondControl.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F6B9376E28B4A4A400954DBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1825,6 +1872,8 @@
 				EC02140127CFAFC700CF3569 /* RxSwift */,
 				BD65721428AA6C6F00A0623A /* FirebaseAnalytics */,
 				BD65721628AA6C6F00A0623A /* FirebaseMessaging */,
+				BD772D4E28B72BF7006CBD6B /* KakaoSDKAuth */,
+				BD772D5028B72BF7006CBD6B /* KakaoSDKUser */,
 			);
 			productName = SobokSobok;
 			productReference = BD515E35278770C5003BD5A4 /* SobokSobok.app */;
@@ -1865,6 +1914,7 @@
 				BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				EC0213FE27CFAFC700CF3569 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = BD515E36278770C5003BD5A4 /* Products */;
 			projectDirPath = "";
@@ -1912,6 +1962,7 @@
 				9AB83409289A66FE0040FC2A /* WithdrawalViewController.xib in Resources */,
 				BD51AE2B2790642900314A94 /* Pretendard-Thin.otf in Resources */,
 				9AB833F9288972A80040FC2A /* EditNicknameViewController.xib in Resources */,
+				BD3D167828B65BC100C24BA2 /* loading.json in Resources */,
 				F6494F322795AECC00F43A94 /* SendStickerPopUpViewController.xib in Resources */,
 				BD515E73278778F9003BD5A4 /* SampleViewController.xib in Resources */,
 				9A9E620B278D575800D900A6 /* SignUpViewController.xib in Resources */,
@@ -1981,9 +2032,11 @@
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
+				EC7E85BF28B7BAE200AF1A65 /* PillEditEndPoint.swift in Sources */,
 				9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */,
 				ECCF5E5F28A0288E00BC6862 /* PillThirdViewModel.swift in Sources */,
 				F6538FB3278DCF8600B20B5E /* SendInfoDataModel.swift in Sources */,
+				F61CDD5028B8545000D6BBCC /* AccountEndPoint.swift in Sources */,
 				BD149DCD278B3369009AA416 /* TabBarController.swift in Sources */,
 				9A3DF0B427981C6A00D07A8C /* SearchNicknameModel.swift in Sources */,
 				9A3DF0C92799EFEC00D07A8C /* EditFriendUsername.swift in Sources */,
@@ -1995,6 +2048,7 @@
 				EC4BF2EF27C0BD5700B28F90 /* ButtonViewController.swift in Sources */,
 				ECB97F3428AA36AC009C8637 /* StopPillView.swift in Sources */,
 				ECCF5E6128A03F1A00BC6862 /* UITextField+Extension.swift in Sources */,
+				F61CDD5228B8551700D6BBCC /* AccountManager.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
 				F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */,
 				ECCF5E4D289CF1B700BC6862 /* SelectFriendViewModel.swift in Sources */,
@@ -2044,6 +2098,7 @@
 				BD917E47289D493800A60BBE /* PillColorType.swift in Sources */,
 				ECD77F37282A5C5100710157 /* TakePillTimeCollectionViewCell.swift in Sources */,
 				EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */,
+				BD772D5328B74280006CBD6B /* ShareEmptyView.swift in Sources */,
 				EC02140927D1E60100CF3569 /* ViewModelType.swift in Sources */,
 				9A3DF08F2796647B00D07A8C /* SignService.swift in Sources */,
 				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
@@ -2062,7 +2117,9 @@
 				BDDAA5AD2789BCD3000C0AF8 /* Color.swift in Sources */,
 				ECCF5E7A28A643FF00BC6862 /* EditCommonViewModel.swift in Sources */,
 				F68FE34A2834F1BF00FA0254 /* Adjusted+Extension.swift in Sources */,
-				F635EEA427C55A07009B9246 /* UIAlertController+Extension.swift in Sources */,
+				F635EEA427C55A07009B9246 /* NoticeAlertController.swift in Sources */,
+				BD3D167628B65B2D00C24BA2 /* SBIndicator.swift in Sources */,
+				F635EEA427C55A07009B9246 /* NoticeAlertController.swift in Sources */,
 				EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */,
 				BDC3A46F286ADB6800A5A8A2 /* APIError.swift in Sources */,
 				ECB8A5C7286BD87600B1D363 /* SelectFriendViewController.swift in Sources */,
@@ -2070,8 +2127,10 @@
 				BD7120EB2796A7150068B981 /* ScheduleService.swift in Sources */,
 				9A06C99728377E6B00606D28 /* MyInfoViewController.swift in Sources */,
 				BD515E72278778F9003BD5A4 /* SampleViewController.swift in Sources */,
+				EC7E85C128B7BAEE00AF1A65 /* PillEditManager.swift in Sources */,
 				ECF96BE62798EFB400B5A32C /* PillLimitView.swift in Sources */,
 				ECCF6EE028200AA200D6138A /* AddPillFooterView.swift in Sources */,
+				F61CDD5428B856AB00D6BBCC /* MyInfoViewController+Network.swift in Sources */,
 				9AB833F4288972440040FC2A /* SettingViewController.swift in Sources */,
 				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
@@ -2138,6 +2197,7 @@
 				BDE2ADE42891266200A42559 /* ShareTopView.swift in Sources */,
 				EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */,
 				EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */,
+				F61CDD4E28B8538000D6BBCC /* UserPillListModel.swift in Sources */,
 				9A3DF0BB279832F800D07A8C /* SearchNicknameDataModel.swift in Sources */,
 				EC8EC12F2851001300A744FE /* AddPillTimeView.swift in Sources */,
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
@@ -2448,6 +2508,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		BD9857A42791CE27009883FC /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -2517,6 +2585,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD65721328AA6C6F00A0623A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		BD772D4E28B72BF7006CBD6B /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		BD772D5028B72BF7006CBD6B /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD772D4D28B72BF7006CBD6B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
 		};
 		BD9857A52791CE27009883FC /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;

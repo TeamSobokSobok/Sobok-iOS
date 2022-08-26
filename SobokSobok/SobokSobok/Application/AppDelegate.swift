@@ -10,6 +10,7 @@ import UIKit
 import FirebaseCore
 import FirebaseMessaging
 import IQKeyboardManagerSwift
+import KakaoSDKCommon
 import UserNotifications
 
 @main
@@ -18,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        setKakaoSDK()
+        
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         // 키보드 Done 뜨는 이슈 해결
@@ -44,8 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+}
 
-
+extension AppDelegate {
+    
+    private func setKakaoSDK() {
+        let appKey = Bundle.main.infoDictionary?["KAKAO_APP_KEY"] as? String ?? ""
+        KakaoSDK.initSDK(appKey: appKey)
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {

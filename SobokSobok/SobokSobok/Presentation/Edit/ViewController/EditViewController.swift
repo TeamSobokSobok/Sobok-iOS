@@ -58,6 +58,7 @@ final class EditViewController: UIViewController, EditViewProtocol {
     }
     
     func bind() {
+        viewModel.textFieldText.value = editView.editPillNameView.pillNameTextField.text!
         
         viewModel.timeViewModel.timeList.bind { [weak self] _ in
             guard let self = self else { return }

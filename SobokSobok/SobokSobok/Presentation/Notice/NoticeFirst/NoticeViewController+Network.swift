@@ -17,11 +17,10 @@ extension NoticeViewController {
         }
     }
     
-    func putAcceptFriend(status body: String, at senderGoupId: Int) {
+    func putAcceptFriend(for senderGroupId: Int, status isOkay: String) {
         Task {
             do {
-                let status = AcceptFriendBody(isOkay: body)
-                let friendInfo = try await noticeListManager.putAcceptFriend(status: status, for: senderGoupId)
+                let friendInfo = try await noticeListManager.putAcceptFriend(for: senderGroupId, status: isOkay)
                 if let friendInfo = friendInfo {
                     self.friendInfo = friendInfo
                 }
@@ -29,11 +28,10 @@ extension NoticeViewController {
         }
     }
     
-    func putAcceptPill(status body: String, at pillId: Int) {
+    func putAcceptPill(for pillId: Int, status isOkay: String) {
         Task {
             do {
-                let status = AcceptPillBody(isOkay: body)
-                _ = try await noticeListManager.putAcceptPill(status: status, for: pillId)
+                _ = try await noticeListManager.putAcceptPill(for: pillId, status: isOkay)
             }
         }
     }

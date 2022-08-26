@@ -22,6 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
+                <outlet property="nickNameLabel" destination="1ob-br-I10" id="rsc-G4-05f"/>
                 <outlet property="pillTableView" destination="7ng-5w-0EY" id="YDA-mB-sat"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
