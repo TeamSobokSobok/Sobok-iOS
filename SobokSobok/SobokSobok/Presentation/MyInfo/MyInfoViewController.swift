@@ -37,8 +37,7 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, AccountD
                 periodViewModel: PillPeriodViewModel()
             )
         )
-        editViewController.modalPresentationStyle = .fullScreen
-        self.present(editViewController, animated: false)
+        self.navigationController?.pushViewController(editViewController, animated: true)
     }
 
     // MARK: - @IBAction func
