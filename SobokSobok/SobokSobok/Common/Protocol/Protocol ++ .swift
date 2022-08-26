@@ -28,3 +28,8 @@ protocol SendMemberDelegate: AnyObject {
 protocol PopUpDelegate: AnyObject {
     func popupDismissed()
 }
+
+// 설정 뷰 프로토콜
+protocol AccountDelegate: AnyObject {
+    func presentEditView()
+}

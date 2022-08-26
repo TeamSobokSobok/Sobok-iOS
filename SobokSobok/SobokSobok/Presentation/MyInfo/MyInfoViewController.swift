@@ -7,24 +7,38 @@
 
 import UIKit
 
-final class MyInfoViewController: UIViewController {
-
+final class MyInfoViewController: UIViewController, DelegationProtocol, AccountDelegate {
+    @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var pillTableView: UITableView!
+    var userPillList: [UserPillList]? {
+        didSet {
+            self.pillTableView.reloadData()
+        }
+    }
+    let myInfoManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
-        registerXib()
+        getUserPillInfoLiost()
     }
     
-    private func assignDelegation() {
-        pillTableView.dataSource = self
-        pillTableView.delegate = self
-    }
-    
-    private func registerXib() {
+    func assignDelegation() {
         pillTableView.register(MyInfoTableViewCell.self)
-        pillTableView.alwaysBounceVertical = false
+        pillTableView.dataSource = self
+    }
+    
+    func presentEditView() {
+        let editViewController = EditViewController(
+            viewModel: EditCommonViewModel(
+                addPillFirstViewModel: AddPillFirstViewModel(),
+                timeViewModel: PillTimeViewModel(),
+                dayViewModel: PillDayViewModel(),
+                periodViewModel: PillPeriodViewModel()
+            )
+        )
+        editViewController.modalPresentationStyle = .fullScreen
+        self.present(editViewController, animated: false)
     }
 
     // MARK: - @IBAction func
@@ -45,19 +59,22 @@ final class MyInfoViewController: UIViewController {
     @IBAction func pushSettingVC(_ sender: UIButton) {
         navigationController?.pushViewController(SettingViewController.instanceFromNib(), animated: true)
     }
-    
 }
 
-extension MyInfoViewController: UITableViewDelegate {
-}
 
 extension MyInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return userPillList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = pillTableView.dequeueReusableCell(for: indexPath, cellType: MyInfoTableViewCell.self)
+        let pillColor = userPillList?[indexPath.row].color.colorTypeToImageName() ?? ""
+        let pillName = userPillList?[indexPath.row].pillName ?? ""
+        
+        cell.setData(name: pillName, image: pillColor)
+        cell.myInfoViewDelegate = self
+        
         return cell
     }
 }

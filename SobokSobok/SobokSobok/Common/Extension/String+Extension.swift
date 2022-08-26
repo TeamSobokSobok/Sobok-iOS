@@ -25,4 +25,12 @@ extension String {
             .replacingOccurrences(of: "week", with: "주에 한 번")
             .replacingOccurrences(of: "day", with: "일에 한 번")
     }
+    
+    func colorTypeToImageName() -> String {
+        return self.replacingOccurrences(of: "1", with: "Ellipse38")
+            .replacingOccurrences(of: "2", with: "Ellipse64")
+            .replacingOccurrences(of: "3", with: "Ellipse65")
+            .replacingOccurrences(of: "4", with: "Ellipse94")
+            .replacingOccurrences(of: "5", with: "Ellipse95")
+    }
 }
