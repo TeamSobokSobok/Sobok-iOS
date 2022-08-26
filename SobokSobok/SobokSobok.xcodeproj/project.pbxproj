@@ -607,8 +607,6 @@
 		9A3DF0B227981C4D00D07A8C /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */,
-				9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */,
 				F61CDD4D28B8538000D6BBCC /* UserPillListModel.swift */,
 			);
 			path = Account;
@@ -895,6 +893,8 @@
 		BD515E5827877622003BD5A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9A3DF0B327981C6A00D07A8C /* SearchNicknameModel.swift */,
+				9A3DF0BC27987A7300D07A8C /* SaveNicknameModel.swift */,
 				F67CDBF1278B4B8D00F70974 /* NoticeListDataModel.swift */,
 				F6538FB2278DCF8600B20B5E /* SendInfoDataModel.swift */,
 				9A3DF0952796B24D00D07A8C /* SignUpDataModel.swift */,
