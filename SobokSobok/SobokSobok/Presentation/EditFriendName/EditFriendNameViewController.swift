@@ -14,6 +14,7 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
     // MARK: - Properties
     var name: String?
     private var nameCount: Int = 0
+    let editFriendNameManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
     
     // MARK: - @IBOulet Properties
     @IBOutlet weak var confirmButton: UIButton!
@@ -98,15 +99,14 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
     
     // MARK: - @IBAction Properties
     @IBAction func touchUpToConfirm(_ sender: Any) {
-        EditFriend.shared.groupId = 31 // 화면 연결되면 전달 받아야함
-        EditFriend.shared.memberName = nameTextField.text ?? ""
-        editFriendName()
+//        EditFriend.shared.groupId = 31 // 화면 연결되면 전달 받아야함
+//        EditFriend.shared.memberName = nameTextField.text ?? ""
+        editFriendNickname(at: 56, for: nameTextField.text ?? "")
     }
     
     @IBAction func touchUpToDIsmiss(_ sender: Any) {
         dismiss(animated: true)
     }
-    
 }
 
 extension EditFriendNameViewController {

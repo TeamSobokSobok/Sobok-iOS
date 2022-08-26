@@ -76,7 +76,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52p-ov-AwO" userLabel="텍스트필드">
                     <rect key="frame" x="20" y="144" width="374" height="54"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="수혀니" placeholder="수혀니" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qwZ-Bz-7bT">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="수혀니" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qwZ-Bz-7bT">
                             <rect key="frame" x="15" y="15" width="344" height="24"/>
                             <color key="textColor" name="gray900_sub"/>
                             <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
