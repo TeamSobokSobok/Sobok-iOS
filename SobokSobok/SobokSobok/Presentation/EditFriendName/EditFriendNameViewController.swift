@@ -101,7 +101,7 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
     @IBAction func touchUpToConfirm(_ sender: Any) {
 //        EditFriend.shared.groupId = 31 // 화면 연결되면 전달 받아야함
 //        EditFriend.shared.memberName = nameTextField.text ?? ""
-        editFriendNickname(at: 56, for: nameTextField.text ?? "")
+        editFriendNickname(at: 56, for: nameTextField.text ?? "") // TODO: - at 부분에 전달 받은 groupId 넣어주기
     }
     
     @IBAction func touchUpToDIsmiss(_ sender: Any) {
