@@ -101,8 +101,10 @@ extension SocialSignInViewController {
     }
     
     func transitionToMainViewController() {
-        let mainViewController = TabBarController()
-        navigationController?.pushViewController(mainViewController, animated: true)
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = TabBarController()
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }
 
