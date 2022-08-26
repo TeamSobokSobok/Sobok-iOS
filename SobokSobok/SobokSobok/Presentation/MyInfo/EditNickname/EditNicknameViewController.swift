@@ -13,6 +13,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
 
     // MARK: - Properties
     var nickname: String?
+    let editNicknameManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
 
     private var isNickNameRight: Bool = false
     private var isDuplicationChecked: Bool = false
@@ -144,7 +145,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
 
     @IBAction func touchUpToConfirm(_ sender: UIButton) {
         if isDuplicationChecked {
-            print(nickNameTextField.text ?? "")
+            editNickname(for: nickNameTextField.text ?? "")
         } else {
             showToast(message: "닉네임 중복확인을 해주세요")
         }

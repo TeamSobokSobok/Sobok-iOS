@@ -249,6 +249,8 @@
 		F61CDD5028B8545000D6BBCC /* AccountEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD4F28B8545000D6BBCC /* AccountEndPoint.swift */; };
 		F61CDD5228B8551700D6BBCC /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD5128B8551700D6BBCC /* AccountManager.swift */; };
 		F61CDD5428B856AB00D6BBCC /* MyInfoViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD5328B856AB00D6BBCC /* MyInfoViewController+Network.swift */; };
+		F61CDD5628B8CB2400D6BBCC /* UserNickNameEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD5528B8CB2400D6BBCC /* UserNickNameEditModel.swift */; };
+		F61CDD5828B8CDB200D6BBCC /* EditNicknameViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61CDD5728B8CDB200D6BBCC /* EditNicknameViewController+Network.swift */; };
 		F635EEA427C55A07009B9246 /* NoticeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEA327C55A07009B9246 /* NoticeAlertController.swift */; };
 		F635EEAB27C78B72009B9246 /* PillInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635EEAA27C78B72009B9246 /* PillInfoView.swift */; };
 		F638460228648EB000F60A9F /* NoticeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */; };
@@ -510,6 +512,8 @@
 		F61CDD4F28B8545000D6BBCC /* AccountEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEndPoint.swift; sourceTree = "<group>"; };
 		F61CDD5128B8551700D6BBCC /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		F61CDD5328B856AB00D6BBCC /* MyInfoViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyInfoViewController+Network.swift"; sourceTree = "<group>"; };
+		F61CDD5528B8CB2400D6BBCC /* UserNickNameEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNickNameEditModel.swift; sourceTree = "<group>"; };
+		F61CDD5728B8CDB200D6BBCC /* EditNicknameViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditNicknameViewController+Network.swift"; sourceTree = "<group>"; };
 		F635EEA327C55A07009B9246 /* NoticeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeAlertController.swift; sourceTree = "<group>"; };
 		F635EEAA27C78B72009B9246 /* PillInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillInfoView.swift; sourceTree = "<group>"; };
 		F638460128648EB000F60A9F /* NoticeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -608,6 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				F61CDD4D28B8538000D6BBCC /* UserPillListModel.swift */,
+				F61CDD5528B8CB2400D6BBCC /* UserNickNameEditModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 			children = (
 				9AB833F6288972A80040FC2A /* EditNicknameViewController.swift */,
 				9AB833F7288972A80040FC2A /* EditNicknameViewController.xib */,
+				F61CDD5728B8CDB200D6BBCC /* EditNicknameViewController+Network.swift */,
 			);
 			path = EditNickname;
 			sourceTree = "<group>";
@@ -2206,6 +2212,7 @@
 				ECCF5E6E28A6281E00BC6862 /* EditView.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
+				F61CDD5628B8CB2400D6BBCC /* UserNickNameEditModel.swift in Sources */,
 				BDCDB5CA2861B0A300C419CC /* ScheduleCell.swift in Sources */,
 				ECFE3F80288FCC2200150699 /* SendFillFirstView.swift in Sources */,
 				EC4A381A289A68BF00974D7E /* PillCountlManager.swift in Sources */,
@@ -2222,6 +2229,7 @@
 				EC51A41A27D4AC9E00BB01AF /* PillPeriodViewController.swift in Sources */,
 				BDC3A46D286ADA2B00A5A8A2 /* APIManager.swift in Sources */,
 				BD67B63B2860CF4900F1B96A /* ScheduleEmptyView.swift in Sources */,
+				F61CDD5828B8CDB200D6BBCC /* EditNicknameViewController+Network.swift in Sources */,
 				EC4A384D289BBA0100974D7E /* AddPillSheetViewModel.swift in Sources */,
 				BDC3A46B286AD44900A5A8A2 /* NetworkRequest.swift in Sources */,
 				F6951690289D7CCD000F88D7 /* PillDetailInfoModel.swift in Sources */,

@@ -9,6 +9,7 @@ import Foundation
 
 protocol AccountServiceable {
     func getUserPillList() async throws -> [UserPillList]?
+    func editUserName(for username: String) async throws -> UserNickNameEdit?
 }
 
 struct AccountManager: AccountServiceable {
@@ -23,6 +24,12 @@ struct AccountManager: AccountServiceable {
     func getUserPillList() async throws -> [UserPillList]? {
         let request = AccountEndPoint
             .getUserPillList
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    func editUserName(for username: String) async throws -> UserNickNameEdit? {
+        let request = AccountEndPoint
+            .putUserNickNameEdit(username: username)
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
