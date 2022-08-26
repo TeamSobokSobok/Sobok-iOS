@@ -6,23 +6,32 @@
 //
 
 import UIKit
-import CarPlay
 
 class MyInfoTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var cellOutline: UIView!
+    @IBOutlet weak var pillColorImageView: UIImageView!
+    @IBOutlet weak var pillNameLabel: UILabel!
+    weak var myInfoViewDelegate: AccountDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         style()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
+    @IBAction func pillDetailInfoButtonDidClicked(_ sender: UIButton) {
+        myInfoViewDelegate?.presentEditView()
+    }
+}
+
+extension MyInfoTableViewCell: StyleProtocol {
     func style() {
         cellOutline.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
+    }
+    
+    func setData(name: String, image: String) {
+        self.pillNameLabel.text = name
+        self.pillColorImageView.image = UIImage(named: image)
     }
 }

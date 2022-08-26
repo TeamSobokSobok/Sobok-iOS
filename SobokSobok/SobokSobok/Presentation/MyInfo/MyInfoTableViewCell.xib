@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,19 +17,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="62" rowHeight="62" id="KGk-i7-Jjw" customClass="MyInfoTableViewCell" customModule="SobokSobok" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cl7-nE-D86" userLabel="테두리">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" name="gray300_sub"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse38" translatesAutoresizingMaskIntoConstraints="NO" id="IEm-vw-fxB">
                         <rect key="frame" x="20" y="23" width="8" height="8"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="8" id="Was-pJ-iuy"/>
                             <constraint firstAttribute="height" constant="8" id="eiI-SS-ZSf"/>
@@ -38,30 +38,37 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비타민" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyj-eL-cEd">
-                        <rect key="frame" x="38" y="14" width="247.5" height="26"/>
+                        <rect key="frame" x="38" y="14" width="224" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="224" id="atg-eB-0ja"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="18"/>
                         <color key="textColor" name="black_sub"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_more_16_black" translatesAutoresizingMaskIntoConstraints="NO" id="e8L-YC-phY">
-                        <rect key="frame" x="285.5" y="22" width="10.5" height="10.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuU-Nw-oBR">
+                        <rect key="frame" x="284" y="3" width="48" height="48"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="e8L-YC-phY" secondAttribute="height" multiplier="1:1" id="fWA-nO-s7c"/>
+                            <constraint firstAttribute="width" secondItem="TuU-Nw-oBR" secondAttribute="height" multiplier="1:1" id="fUU-hY-ZCP"/>
                         </constraints>
-                    </imageView>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="icMoreBlack48"/>
+                        <connections>
+                            <action selector="pillDetailInfoButtonDidClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fzj-o3-dsA"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cl7-nE-D86" firstAttribute="bottom" secondItem="e8L-YC-phY" secondAttribute="bottom" constant="21.75" id="36a-hj-0pe"/>
                     <constraint firstItem="cl7-nE-D86" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8Hp-cc-8It"/>
-                    <constraint firstItem="e8L-YC-phY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21.75" id="OqE-l0-aZG"/>
                     <constraint firstItem="cl7-nE-D86" firstAttribute="bottom" secondItem="IEm-vw-fxB" secondAttribute="bottom" constant="23" id="PmN-6u-5MK"/>
                     <constraint firstItem="Vyj-eL-cEd" firstAttribute="leading" secondItem="IEm-vw-fxB" secondAttribute="trailing" constant="10" id="VQm-g6-8Gf"/>
+                    <constraint firstItem="TuU-Nw-oBR" firstAttribute="centerY" secondItem="Vyj-eL-cEd" secondAttribute="centerY" id="VhI-Ya-rRP"/>
                     <constraint firstAttribute="bottom" secondItem="cl7-nE-D86" secondAttribute="bottom" constant="8" id="WKg-5N-Xyt"/>
-                    <constraint firstAttribute="trailing" secondItem="e8L-YC-phY" secondAttribute="trailing" constant="24" id="XCC-4U-gD1"/>
                     <constraint firstAttribute="trailing" secondItem="cl7-nE-D86" secondAttribute="trailing" id="XVI-76-KQE"/>
-                    <constraint firstItem="e8L-YC-phY" firstAttribute="leading" secondItem="Vyj-eL-cEd" secondAttribute="trailing" id="YdO-Uh-055"/>
                     <constraint firstItem="Vyj-eL-cEd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="dC4-zU-Xb3"/>
                     <constraint firstItem="IEm-vw-fxB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="eUi-be-k7U"/>
+                    <constraint firstItem="TuU-Nw-oBR" firstAttribute="leading" secondItem="Vyj-eL-cEd" secondAttribute="trailing" constant="22" id="ri5-hd-dOd"/>
                     <constraint firstItem="cl7-nE-D86" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rwP-T1-UST"/>
                     <constraint firstItem="IEm-vw-fxB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="sSQ-3o-uMc"/>
                     <constraint firstItem="cl7-nE-D86" firstAttribute="bottom" secondItem="Vyj-eL-cEd" secondAttribute="bottom" constant="14" id="sWa-to-R7t"/>
@@ -70,13 +77,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellOutline" destination="cl7-nE-D86" id="XYS-ZA-Ewm"/>
+                <outlet property="pillColorImageView" destination="IEm-vw-fxB" id="vlN-5N-4f6"/>
+                <outlet property="pillNameLabel" destination="Vyj-eL-cEd" id="Pl0-ov-IXy"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="87.053571428571431"/>
+            <point key="canvasLocation" x="131.15942028985509" y="87.053571428571431"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Ellipse38" width="80" height="80.5"/>
-        <image name="ic_more_16_black" width="16" height="16"/>
+        <image name="icMoreBlack48" width="48" height="48"/>
         <namedColor name="black_sub">
             <color red="0.12156862745098039" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
