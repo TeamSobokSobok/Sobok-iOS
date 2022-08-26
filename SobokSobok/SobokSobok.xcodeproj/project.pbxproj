@@ -557,7 +557,6 @@
 			children = (
 				9AB833F12889721F0040FC2A /* Settings */,
 				9AB833F0288971C00040FC2A /* EditNickname */,
-				9AB833EF288971B20040FC2A /* MyInfoBasic */,
 				9A06C99528377E6B00606D28 /* MyInfoViewController.swift */,
 				9A06C99628377E6B00606D28 /* MyInfoViewController.xib */,
 				9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */,
@@ -610,13 +609,6 @@
 				9A3DF0C52798CE4300D07A8C /* EditFriendNameViewController.xib */,
 			);
 			path = EditFriendName;
-			sourceTree = "<group>";
-		};
-		9AB833EF288971B20040FC2A /* MyInfoBasic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyInfoBasic;
 			sourceTree = "<group>";
 		};
 		9AB833F0288971C00040FC2A /* EditNickname */ = {
