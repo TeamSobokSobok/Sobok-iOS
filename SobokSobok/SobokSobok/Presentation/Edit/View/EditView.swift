@@ -15,6 +15,7 @@ final class EditView: BaseView  {
     private lazy var scrollView = UIScrollView().then {
         $0.backgroundColor = Color.white
         $0.alwaysBounceVertical = true
+        $0.showsVerticalScrollIndicator = false
     }
     
     lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "저장", fontSize: 18)
@@ -27,25 +28,34 @@ final class EditView: BaseView  {
     
     lazy var editPillTimeView = EditPillTimeView()
     
+    lazy var editPillDateView = EditPillDateView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         hideBottomView()
     }
     
     override func setupView() {
-        [navigationView, scrollView].forEach {
+        [navigationView, scrollView, nextButton].forEach {
             addSubview($0)
         }
         
-        [editPillNameView, editPillPeriodView, editPillTimeView, nextButton]
+        [editPillNameView, editPillPeriodView, editPillTimeView, editPillDateView]
             .forEach { scrollView.addSubview($0) }
     }
     
     override func setupConstraints() {
+        
+        nextButton.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.height.equalTo(54)
+        }
+        
         scrollView.snp.makeConstraints {
             $0.top.equalTo(navigationView.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(safeAreaInsets)
+            $0.bottom.equalTo(nextButton.snp.top)
         }
         
         navigationView.snp.makeConstraints {
@@ -55,7 +65,7 @@ final class EditView: BaseView  {
         }
         
         editPillNameView.snp.makeConstraints {
-            $0.top.equalTo(navigationView.snp.bottom).offset(30)
+            $0.top.equalTo(scrollView.snp.top)
             $0.leading.equalTo(scrollView.snp.leading).inset(20)
             $0.trailing.equalTo(scrollView.snp.trailing).inset(20)
             $0.height.equalTo(83)
@@ -73,12 +83,12 @@ final class EditView: BaseView  {
             $0.height.equalTo(300)
         }
         
-        nextButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(safeAreaLayoutGuide).inset(22)
-            $0.height.equalTo(54)
+        editPillDateView.snp.makeConstraints {
+            $0.top.equalTo(editPillTimeView.snp.bottom).offset(52)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(110)
+            $0.bottom.equalTo(scrollView.snp.bottom).inset(60)
         }
-
     }
     
     func hideBottomView() {

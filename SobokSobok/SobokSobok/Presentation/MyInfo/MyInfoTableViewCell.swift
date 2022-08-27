@@ -9,7 +9,6 @@ import UIKit
 
 class MyInfoTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cellOutline: UIView!
     @IBOutlet weak var pillColorImageView: UIImageView!
     @IBOutlet weak var pillNameLabel: UILabel!
     weak var myInfoViewDelegate: AccountDelegate?
@@ -20,13 +19,13 @@ class MyInfoTableViewCell: UITableViewCell {
     }
     
     @IBAction func pillDetailInfoButtonDidClicked(_ sender: UIButton) {
-        myInfoViewDelegate?.presentEditView()
+//        myInfoViewDelegate?.presentEditView(pillId: )
     }
 }
 
 extension MyInfoTableViewCell: StyleProtocol {
     func style() {
-        cellOutline.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        contentView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
     }
     

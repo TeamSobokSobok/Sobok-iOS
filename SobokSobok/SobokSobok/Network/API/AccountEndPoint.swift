@@ -9,6 +9,7 @@ import Foundation
 
 enum AccountEndPoint {
     case getUserPillList
+    case getUserDetailPillList(pillId: Int)
     case putUserNickNameEdit(username: String)
     case putFriendNicknameEdit(groupId: Int, memberName: String)
 }
@@ -17,6 +18,8 @@ extension AccountEndPoint: EndPoint {
     var method: HttpMethod {
         switch self {
         case .getUserPillList:
+            return .GET
+        case .getUserDetailPillList:
             return .GET
         case .putUserNickNameEdit:
             return .PUT
@@ -28,6 +31,8 @@ extension AccountEndPoint: EndPoint {
     var body: Data? {
         switch self {
         case .getUserPillList:
+            return nil
+        case .getUserDetailPillList:
             return nil
         case .putUserNickNameEdit(let username):
             let body = ["username": username]
@@ -43,12 +48,12 @@ extension AccountEndPoint: EndPoint {
         switch self {
         case .getUserPillList:
             return "\(baseURL)/user/pill"
+        case .getUserDetailPillList(let pillId):
+            return "\(baseURL)/user/pill/\(pillId)"
         case .putUserNickNameEdit(_):
             return "\(baseURL)/user/nickname"
         case .putFriendNicknameEdit(let groupId, _):
             return "\(baseURL)/group/\(groupId)/name"
         }
     }
-    
-    
 }

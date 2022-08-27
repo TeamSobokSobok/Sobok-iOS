@@ -9,6 +9,7 @@ import Foundation
 
 protocol AccountServiceable {
     func getUserPillList() async throws -> [UserPillList]?
+    func getUserDetailPillList(for pillId: Int) async throws -> [DetailPillList]?
     func editUserName(for username: String) async throws -> UserNickNameEdit?
     func friendNicknameEdit(groupId: Int, memberName: String) async throws -> EditFriendNickname?
 }
@@ -28,6 +29,14 @@ struct AccountManager: AccountServiceable {
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
+    
+    func getUserDetailPillList(for pillId: Int) async throws -> [DetailPillList]? {
+        let request = AccountEndPoint
+            .getUserDetailPillList(pillId: pillId)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
     func editUserName(for username: String) async throws -> UserNickNameEdit? {
         let request = AccountEndPoint
             .putUserNickNameEdit(username: username)
