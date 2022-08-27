@@ -190,7 +190,7 @@
 		EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596A9281C023800850E84 /* AddPillSecondView.swift */; };
 		EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */; };
 		EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AF281C1FAB00850E84 /* BaseView.swift */; };
-		EC8695F528AAB64C000BBC62 /* FirstPillNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8695F428AAB64C000BBC62 /* FirstPillNameView.swift */; };
+		EC8695F528AAB64C000BBC62 /* PillNameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8695F428AAB64C000BBC62 /* PillNameViewCell.swift */; };
 		EC8EC12D2850F8F200A744FE /* AddTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8EC12C2850F8F200A744FE /* AddTimeViewModel.swift */; };
 		EC8EC12F2851001300A744FE /* AddPillTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8EC12E2851001300A744FE /* AddPillTimeView.swift */; };
 		EC8EC1312851003000A744FE /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8EC1302851003000A744FE /* AddTimeViewController.swift */; };
@@ -456,7 +456,7 @@
 		EC8596A9281C023800850E84 /* AddPillSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondView.swift; sourceTree = "<group>"; };
 		EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondViewController.swift; sourceTree = "<group>"; };
 		EC8596AF281C1FAB00850E84 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		EC8695F428AAB64C000BBC62 /* FirstPillNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPillNameView.swift; sourceTree = "<group>"; };
+		EC8695F428AAB64C000BBC62 /* PillNameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillNameViewCell.swift; sourceTree = "<group>"; };
 		EC8EC12C2850F8F200A744FE /* AddTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewModel.swift; sourceTree = "<group>"; };
 		EC8EC12E2851001300A744FE /* AddPillTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillTimeView.swift; sourceTree = "<group>"; };
 		EC8EC1302851003000A744FE /* AddTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
@@ -1624,7 +1624,7 @@
 				EC91946528224C1A0047893F /* AddPillInfoView.swift */,
 				EC919467282252230047893F /* PillPeriodTimeView.swift */,
 				EC919469282252530047893F /* PillNameView.swift */,
-				EC8695F428AAB64C000BBC62 /* FirstPillNameView.swift */,
+				EC8695F428AAB64C000BBC62 /* PillNameViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2203,7 +2203,7 @@
 				F61CDD5C28B8D46F00D6BBCC /* EditFriendNameViewController+Network.swift in Sources */,
 				BD515E3B278770C5003BD5A4 /* SceneDelegate.swift in Sources */,
 				EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */,
-				EC8695F528AAB64C000BBC62 /* FirstPillNameView.swift in Sources */,
+				EC8695F528AAB64C000BBC62 /* PillNameViewCell.swift in Sources */,
 				F605027E27BE3BC60010DEC8 /* NoticeViewController.swift in Sources */,
 				EC919468282252230047893F /* PillPeriodTimeView.swift in Sources */,
 				BD38CB6C28AB9082006CB0FB /* AppleLoginManager.swift in Sources */,

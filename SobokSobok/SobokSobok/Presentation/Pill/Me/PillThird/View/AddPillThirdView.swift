@@ -14,8 +14,7 @@ import Then
 final class AddPillThirdView: BaseView {
     
     lazy var navigationView = NavigationView()
-    
-    let firstNameView = FirstPillNameView(frame: CGRect(), sendPillViewModel: SendPillViewModel())
+
     lazy var pillNameInfoLabel = UILabel().then {
         $0.text = "약 이름을 입력해 주세요"
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 15)
@@ -48,102 +47,66 @@ final class AddPillThirdView: BaseView {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 15)
         $0.textColor = Color.gray500
     }
+
     
-    let scrollView = UIScrollView().then {
-        $0.showsVerticalScrollIndicator = false
-        $0.backgroundColor = .white
-    }
-    
-    let wholeStackView = UIStackView().then {
-        $0.axis = .vertical
-        $0.spacing = 10
-    }
-    
-    lazy var firstStackView = UIStackView().then {
-        $0.backgroundColor = .red
-        $0.axis = .vertical
-        $0.distribution = .fill
-        $0.alignment = .center
-        
-      
-        $0.addArrangedSubview(firstNameView)
-    }
-  
-    let footerView = AddPillFooterView()
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+
+            $0.register(PillNameViewCell.self)
+            $0.register(AddPillFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier)
+            let layout = UICollectionViewFlowLayout()
+
+            layout.scrollDirection = .vertical
+            $0.showsVerticalScrollIndicator = false
+            $0.showsHorizontalScrollIndicator = false
+            $0.collectionViewLayout = layout
+        }
     
     lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "추가하기", fontSize: 18)
     
 
     override func setupView() {
-        addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, scrollView, nextButton, tooltipImage)
-        
-        scrollView.addSubviews(wholeStackView, footerView)
-        
-        footerView.isHidden = true
+        addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton)
     }
     
     override func setupConstraints() {
-        navigationView.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(55)
+            navigationView.snp.makeConstraints {
+                $0.top.equalTo(safeAreaLayoutGuide)
+                $0.leading.trailing.equalToSuperview()
+                $0.height.equalTo(55)
+            }
+
+            pillNameInfoLabel.snp.makeConstraints {
+                $0.top.equalTo(navigationView.snp.bottom).offset(37)
+                $0.leading.equalToSuperview().offset(20)
+            }
+
+            pillCountLabel.snp.makeConstraints {
+                $0.top.equalTo(pillNameInfoLabel.snp.bottom).offset(4)
+                $0.leading.equalTo(pillNameInfoLabel.snp.leading)
+            }
+
+            pillCountInfoLabel.snp.makeConstraints {
+                $0.leading.equalTo(pillCountLabel.snp.trailing).offset(3)
+                $0.top.equalTo(pillNameInfoLabel.snp.bottom).offset(4)
+            }
+
+            countInfoButton.snp.makeConstraints {
+                $0.centerY.equalTo(pillCountLabel)
+                $0.leading.equalTo(pillCountInfoLabel.snp.trailing).offset(1)
+                $0.width.height.equalTo(22)
+            }
+
+            collectionView.snp.makeConstraints {
+                $0.top.equalTo(pillCountLabel.snp.bottom).offset(6)
+                $0.leading.trailing.equalToSuperview()
+                $0.bottom.equalTo(nextButton.snp.top).inset(1)
+            }
+
+            nextButton.snp.makeConstraints {
+                $0.leading.trailing.equalToSuperview().inset(20)
+                $0.bottom.equalTo(safeAreaLayoutGuide).inset(22)
+                $0.height.equalTo(54)
+            }
         }
-        
-        pillNameInfoLabel.snp.makeConstraints {
-            $0.top.equalTo(navigationView.snp.bottom).offset(37)
-            $0.leading.equalToSuperview().offset(20)
-        }
-        
-        pillPeriodInfoLabel.snp.makeConstraints {
-            $0.top.equalTo(pillNameInfoLabel.snp.bottom).offset(4)
-            $0.leading.equalToSuperview().offset(20)
-        }
-        
-        pillCountLabel.snp.makeConstraints {
-            $0.top.equalTo(pillPeriodInfoLabel.snp.bottom).offset(34)
-            $0.leading.equalTo(pillNameInfoLabel.snp.leading)
-        }
-        
-        pillCountInfoLabel.snp.makeConstraints {
-            $0.leading.equalTo(pillCountLabel.snp.trailing).offset(3)
-            $0.top.equalTo(pillPeriodInfoLabel.snp.bottom).offset(34)
-        }
-        
-        countInfoButton.snp.makeConstraints {
-            $0.centerY.equalTo(pillCountLabel)
-            $0.leading.equalTo(pillCountInfoLabel.snp.trailing).offset(1)
-            $0.width.height.equalTo(22)
-        }
-        
-        tooltipImage.snp.makeConstraints {
-            $0.top.equalTo(countInfoButton.snp.bottom)
-            $0.centerX.equalTo(countInfoButton.snp.centerX)
-        }
-        
-        scrollView.snp.makeConstraints {
-            $0.top.equalTo(pillCountLabel.snp.bottom).offset(6)
-            $0.leading.trailing.equalTo(safeAreaInsets)
-            $0.bottom.equalTo(nextButton.snp.top).inset(1)
-        }
-        
-        wholeStackView.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.top)
-            $0.width.equalTo(UIScreen.main.bounds.width - 40)
-            $0.leading.equalTo(scrollView.snp.leading).inset(20)
-            $0.trailing.equalTo(scrollView.snp.trailing).inset(20)
-        }
-        
-        footerView.snp.makeConstraints {
-            $0.top.equalTo(wholeStackView.snp.bottom)
-            $0.height.equalTo(54)
-            $0.leading.trailing.equalToSuperview()
-        }
- 
-        nextButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.bottom.equalTo(safeAreaLayoutGuide).inset(22)
-            $0.height.equalTo(54)
-        }
-    }
 }
 
