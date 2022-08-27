@@ -96,8 +96,9 @@ final class EditViewController: UIViewController, EditViewProtocol {
                 title: "",
                 message: "저장하지 않고 나가면 수정한 내용이 반영되지 않아요. 그래도 나갈까요?",
                 completionTitle: "나가기",
-                cancelTitle: "취소"
-            )
+                cancelTitle: "취소") { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
         }
         .disposed(by: disposeBag)
         
