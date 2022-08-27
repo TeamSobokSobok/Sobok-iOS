@@ -81,12 +81,13 @@ extension SocialSignInViewController {
         Task {
             let result = try await authManager.signIn(socialId: socialID, deviceToken: UserDefaultsManager.fcmToken)
             guard let isNewUser = result?.isNew else { return }
-            guard let accessToken = result?.accesstoken else { return }
-
+            
             if isNewUser {
                 transitionToSetNickNameViewController(socialId: socialID)
                 
             } else {
+                guard let accessToken = result?.accesstoken else { return }
+                
                 UserDefaultsManager.socialID = socialID
                 UserDefaultsManager.accessToken = accessToken
                 transitionToMainViewController()
@@ -95,14 +96,19 @@ extension SocialSignInViewController {
     }
     
     func transitionToSetNickNameViewController(socialId: String) {
-        let setNickNameViewController = SetNickNameVIewController()
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        let setNickNameViewController = SetNickNameVIewController.instanceFromNib()
         setNickNameViewController.socialId = socialId
-        navigationController?.pushViewController(setNickNameViewController, animated: true)
+        sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: setNickNameViewController)
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
     
     func transitionToMainViewController() {
-        let mainViewController = TabBarController()
-        navigationController?.pushViewController(mainViewController, animated: true)
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = TabBarController()
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }
 

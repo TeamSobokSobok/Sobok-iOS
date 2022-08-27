@@ -244,8 +244,13 @@ extension SetNickNameVIewController {
                 username: nickname,
                 deviceToken: deviceToken
             )
+            
+            print(result?.accesstoken)
 
             if result?.isNew != nil {
+                guard let accesstoken = result?.accesstoken else { return }
+                UserDefaultsManager.accessToken = accesstoken
+                UserDefaultsManager.userName = nickname
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                     self?.transitionToCompleteSignUpViewController()
                 }

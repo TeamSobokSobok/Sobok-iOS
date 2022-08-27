@@ -15,6 +15,8 @@ final class MainViewController: BaseViewController {
     private let scheduleViewController = ScheduleViewController(scheduleType: .main)
     private let containerView = UIView()
     
+    var userName: String = UserDefaultsManager.userName
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +31,7 @@ final class MainViewController: BaseViewController {
     override func style() {
         super.style()
 
-        homeTopView.mainMessageLabel.text = "소중한 태끼님\n오늘도 약 꼭 챙겨 드세요"
+        homeTopView.mainMessageLabel.text = "소중한 \(userName)님\n오늘도 약 꼭 챙겨 드세요"
         containerView.backgroundColor = .red
     }
     
