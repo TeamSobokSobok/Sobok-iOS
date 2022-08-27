@@ -5,6 +5,8 @@
 //  Created by taekki on 2022/08/02.
 //
 
+import Foundation
+
 extension ShareViewController {
     func getGroupInformation() {
         Task {
@@ -13,6 +15,8 @@ extension ShareViewController {
                 if let members = members,
                    !members.isEmpty {
                     self.members = members
+                    self.scheduleViewController.member = members
+                    UserDefaults.standard.member = members
                 }
             }
         }

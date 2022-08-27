@@ -8,7 +8,11 @@
 import UIKit
 
 final class ShareViewController: BaseViewController {
-    var members: [Member] = UserDefaults.standard.member
+    var members: [Member] = UserDefaults.standard.member {
+        didSet {
+            initialAttributes()
+        }
+    }
     lazy var scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(),
                                                                     environment: .development)
     
@@ -65,8 +69,9 @@ extension ShareViewController {
         scheduleViewController.calendarView.isHidden = members.isEmpty
         containerView.isHidden = members.isEmpty
         emptyView.isHidden = !members.isEmpty
-        
         emptyView.addButton.addTarget(self, action: #selector(transitionToSearchNicknameViewController), for: .touchUpInside)
+        shareTopView.members = members
+        scheduleViewController.member = members
     }
     
     @objc func addFriend() {

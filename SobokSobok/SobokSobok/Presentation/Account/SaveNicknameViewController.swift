@@ -143,7 +143,6 @@ final class SaveNicknameViewController: UIViewController, SaveNicknameProtocol {
     
     @IBAction func touchUpToRequest(_ sender: UIButton) {
         saveNickname()
-        navigationController?.pushViewController(ShareViewController.instanceFromNib(), animated: true)
     }
 }
 
@@ -154,8 +153,8 @@ extension SaveNicknameViewController {
         
         AddAccountAPI.shared.saveNickname(memberId: memberID, memberName: savedName, completion: {(result) in
             switch result {
-            case .success(let data):
-                self.dismiss(animated: true)
+            case .success:
+                self.transitionToMainViewController()
             case .requestErr:
                 self.showToast(message: "이미 추가된 사람이에요")
             case .pathErr:
@@ -166,5 +165,12 @@ extension SaveNicknameViewController {
                 print("networkFail")
             }
         })
+    }
+    
+    func transitionToMainViewController() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = TabBarController()
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }
