@@ -18,6 +18,7 @@ struct NoticeList: Codable {
 }
 
 struct InfoList: Codable {
+    let senderGroupId: Int
     let noticeId: Int
     let section: String
     let isOkay: String

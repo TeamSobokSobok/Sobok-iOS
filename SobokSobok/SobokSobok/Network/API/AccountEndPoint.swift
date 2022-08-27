@@ -6,10 +6,11 @@
 //
 
 import Foundation
-// UserPill
 
 enum AccountEndPoint {
     case getUserPillList
+    case putUserNickNameEdit(username: String)
+    case putFriendNicknameEdit(groupId: Int, memberName: String)
 }
 
 extension AccountEndPoint: EndPoint {
@@ -17,6 +18,10 @@ extension AccountEndPoint: EndPoint {
         switch self {
         case .getUserPillList:
             return .GET
+        case .putUserNickNameEdit:
+            return .PUT
+        case .putFriendNicknameEdit:
+            return .PUT
         }
     }
     
@@ -24,6 +29,12 @@ extension AccountEndPoint: EndPoint {
         switch self {
         case .getUserPillList:
             return nil
+        case .putUserNickNameEdit(let username):
+            let body = ["username": username]
+            return body.encode()
+        case .putFriendNicknameEdit(_, let memberName):
+            let query = ["memberName": memberName]
+            return query.encode()
         }
     }
     
@@ -32,6 +43,10 @@ extension AccountEndPoint: EndPoint {
         switch self {
         case .getUserPillList:
             return "\(baseURL)/user/pill"
+        case .putUserNickNameEdit(_):
+            return "\(baseURL)/user/nickname"
+        case .putFriendNicknameEdit(let groupId, _):
+            return "\(baseURL)/group/\(groupId)/name"
         }
     }
     
