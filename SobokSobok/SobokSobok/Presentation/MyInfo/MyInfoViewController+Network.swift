@@ -6,7 +6,7 @@
 //
 
 extension MyInfoViewController {
-    func getUserPillInfoLiost() {
+    func getUserPillInfoList() {
         Task {
             do {
                 let userPillList = try await myInfoManager.getUserPillList()
@@ -14,6 +14,15 @@ extension MyInfoViewController {
                    !userPillList.isEmpty {
                     self.userPillList = userPillList
                 }
+            }
+        }
+    }
+    
+    func getUserDetailPillInfoList(pillId: Int) {
+        Task {
+            do {
+                let detailPillList = try await myInfoManager.getUserDetailPillList(for: pillId)
+                print(333, detailPillList)
             }
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-protocol EditViewProtocol: DelegationProtocol, BindProtocol {}
+protocol EditViewProtocol: DelegationProtocol, BindProtocol, StyleProtocol {}
 
 final class EditViewController: UIViewController, EditViewProtocol {
     
@@ -50,11 +50,17 @@ final class EditViewController: UIViewController, EditViewProtocol {
         super.viewDidLoad()
         assignDelegation()
         bind()
-        tabBarController?.tabBar.isHidden = true
+        style()
     }
     
     private func checkValid(_ text: String) -> Bool {
         return text.count > 0
+    }
+    
+    func style() {
+        view.backgroundColor = Color.white
+        tabBarController?.tabBar.isHidden = true
+        editView.navigationView.navigationTitleLabel.text = "내 약 수정"
     }
     
     func bind() {

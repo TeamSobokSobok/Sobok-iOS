@@ -12,3 +12,15 @@ struct UserPillList: Codable {
     let color: String
     let pillName: String
 }
+
+struct DetailPillList: Codable {
+    let pillId: Int
+    let pillName: String
+    let color: String
+    let startDate: String
+    let endDate: String
+    let takeInterval: Int
+    let scheduleDay: String?
+    let scheduleSpecific: String?
+    let time: [String]
+}

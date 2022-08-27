@@ -16,7 +16,7 @@ protocol PillNameCellDelegate: AnyObject {
 
 final class PillNameViewCell: UICollectionViewCell {
     
-    private let pillThirdViewModel = PillThirdViewModel()
+    let pillThirdViewModel = PillThirdViewModel()
     
     weak var delegate: PillNameCellDelegate?
     

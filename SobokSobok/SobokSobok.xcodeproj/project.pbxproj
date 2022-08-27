@@ -187,6 +187,7 @@
 		EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666A8C28855C630089A4CA /* BaseProtocol.swift */; };
 		EC7E85BF28B7BAE200AF1A65 /* PillEditEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E85BE28B7BAE100AF1A65 /* PillEditEndPoint.swift */; };
 		EC7E85C128B7BAEE00AF1A65 /* PillEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E85C028B7BAEE00AF1A65 /* PillEditManager.swift */; };
+		EC7E85F228B9F7A900AF1A65 /* EditPillDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7E85F128B9F7A900AF1A65 /* EditPillDateView.swift */; };
 		EC8596AA281C023800850E84 /* AddPillSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596A9281C023800850E84 /* AddPillSecondView.swift */; };
 		EC8596AE281C05CF00850E84 /* AddPillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */; };
 		EC8596B0281C1FAB00850E84 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8596AF281C1FAB00850E84 /* BaseView.swift */; };
@@ -453,6 +454,7 @@
 		EC666A8C28855C630089A4CA /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
 		EC7E85BE28B7BAE100AF1A65 /* PillEditEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillEditEndPoint.swift; sourceTree = "<group>"; };
 		EC7E85C028B7BAEE00AF1A65 /* PillEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillEditManager.swift; sourceTree = "<group>"; };
+		EC7E85F128B9F7A900AF1A65 /* EditPillDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPillDateView.swift; sourceTree = "<group>"; };
 		EC8596A9281C023800850E84 /* AddPillSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondView.swift; sourceTree = "<group>"; };
 		EC8596AD281C05CF00850E84 /* AddPillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSecondViewController.swift; sourceTree = "<group>"; };
 		EC8596AF281C1FAB00850E84 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -1740,6 +1742,7 @@
 				ECCF5E7128A62BC900BC6862 /* EditPillNameView.swift */,
 				ECCF5E7328A62BD900BC6862 /* EditPillPeriodView.swift */,
 				ECCF5E7528A62BE500BC6862 /* EditPillTimeView.swift */,
+				EC7E85F128B9F7A900AF1A65 /* EditPillDateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2251,6 +2254,7 @@
 				ECAF4D29284F8D0000B12DA7 /* String+Extension.swift in Sources */,
 				EC666A8D28855C630089A4CA /* BaseProtocol.swift in Sources */,
 				BD382F6D286D9A6B002E91F0 /* ScheduleEndPoint.swift in Sources */,
+				EC7E85F228B9F7A900AF1A65 /* EditPillDateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

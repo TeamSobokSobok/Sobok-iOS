@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MyInfoViewController: UIViewController, DelegationProtocol, AccountDelegate {
+final class MyInfoViewController: UIViewController, DelegationProtocol, StyleProtocol, AccountDelegate {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var pillTableView: UITableView!
     var userPillList: [UserPillList]? {
@@ -20,15 +20,21 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, AccountD
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
-        getUserPillInfoLiost()
+        style()
+        getUserPillInfoList()
     }
     
     func assignDelegation() {
         pillTableView.register(MyInfoTableViewCell.self)
+        pillTableView.delegate = self
         pillTableView.dataSource = self
     }
     
-    func presentEditView() {
+    func style() {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    func presentEditView(pillId: Int) {
         let editViewController = EditViewController(
             viewModel: EditCommonViewModel(
                 addPillFirstViewModel: AddPillFirstViewModel(),
@@ -37,6 +43,7 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, AccountD
                 periodViewModel: PillPeriodViewModel()
             )
         )
+
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
 
@@ -60,6 +67,7 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, AccountD
     }
 }
 
+extension MyInfoViewController: UITableViewDelegate {}
 
 extension MyInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,5 +83,11 @@ extension MyInfoViewController: UITableViewDataSource {
         cell.myInfoViewDelegate = self
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("click")
+        self.presentEditView(pillId: userPillList?[indexPath.row].id ?? 00)
+        print(userPillList?[indexPath.row].id ?? 00)
     }
 }

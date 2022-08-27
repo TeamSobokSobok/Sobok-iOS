@@ -31,5 +31,5 @@ protocol PopUpDelegate: AnyObject {
 
 // 설정 뷰 프로토콜
 protocol AccountDelegate: AnyObject {
-    func presentEditView()
+    func presentEditView(pillId: Int)
 }
