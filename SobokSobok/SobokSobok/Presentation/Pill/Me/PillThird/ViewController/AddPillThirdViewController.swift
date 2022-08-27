@@ -10,19 +10,16 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-protocol AddPillThirdProtocol: TargetProtocol, BindProtocol, TossPillProtocol, StyleProtocol {}
+protocol AddPillThirdProtocol: TargetProtocol, BindProtocol, TossPillProtocol, StyleProtocol, DelegationProtocol {}
 
 final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     
     private let disposeBag = DisposeBag()
     var type: TossPill = .myPill
     private let addPillThirdView = AddPillThirdView()
-    private let firstPillNameView = FirstPillNameView(frame: CGRect(), sendPillViewModel: SendPillViewModel())
     private let addPillInfoView = AddPillInfoView()
     private let sendPillViewModel: SendPillViewModel
-    let pillThirdViewModel: PillThirdViewModel
-    
-    var tagNumber = 0
+    private let pillThirdViewModel: PillThirdViewModel
     
     init(sendPillViewModel: SendPillViewModel, pillThirdViewModel: PillThirdViewModel) {
         self.sendPillViewModel = sendPillViewModel
@@ -44,26 +41,32 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         bind()
         style()
         didTappedView()
-        addPill()
+        assignDelegation()
     }
     
-    private func addPill() {
-        addPillThirdView.footerView.addPillButton.rx.tap.bind {
-            self.bind()
-            if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 5 {
-                self.addPillThirdView.footerView.isHidden = true
-            } else {
-                self.addPillThirdView.footerView.isHidden = false
-            }
-        }
-        .disposed(by: disposeBag)
+    func assignDelegation() {
+        addPillThirdView.collectionView.dataSource = self
+        addPillThirdView.collectionView.delegate = self
+        addPillThirdView.collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.addPillThirdView.collectionView.collectionViewLayout = createCompositionalLayoutForFirst()
     }
-
+    
     func style() {
         self.view.backgroundColor = Color.white
     }
     
     func bind() {
+        pillThirdViewModel.pillCount.bind { count in
+            self.addPillThirdView.pillCountLabel.text = "\(count)개"
+        }
+        
+        pillThirdViewModel.pillList.bind { _ in
+            DispatchQueue.main.async {
+                self.addPillThirdView.collectionView.reloadData()
+            }
+        }
+        
         addPillThirdView.navigationView.xButton.rx.tap.bind {
             self.navigationController?.popViewController(animated: true)
         }
@@ -78,68 +81,36 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
             self.present(viewController, animated: true)
         }
         .disposed(by: disposeBag)
-        
-        if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
-            self.addPillThirdView.footerView.isHidden = true
-        } else {
-            self.addPillThirdView.footerView.isHidden = false
+    }
+    
+    fileprivate func createCompositionalLayoutForFirst() -> UICollectionViewLayout{
+        let layout = UICollectionViewCompositionalLayout{
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(54))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+            
+            let groupHeight = NSCollectionLayoutDimension.fractionalWidth(1/4)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+            
+            
+            let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                          heightDimension: .absolute(54))
+            
+            let footer = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: footerHeaderSize,
+                elementKind: UICollectionView.elementKindSectionFooter,
+                alignment: .bottom)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+            section.boundarySupplementaryItems = [footer]
+            return section
         }
-        
-        let pillNameView = FirstPillNameView(frame: CGRect(), sendPillViewModel: sendPillViewModel)
-        let count = self.addPillThirdView.wholeStackView.arrangedSubviews.count
-        pillNameView.deleteCellButton.tag = count == 0 ? 0 : count
-        pillNameView.pillNameTextField.tag = count == 0 ? 0 : count
-        pillNameView.tag = pillNameView.deleteCellButton.tag
-        pillNameView.tag = pillNameView.pillNameTextField.tag
-        
-        sendPillViewModel.tag = pillNameView.tag
-        
-        print(pillNameView.pillNameTextField.tag)
-        
-        self.sendPillViewModel.pillName.value.insert("", at: sendPillViewModel.tag)
-        
-        self.addPillThirdView.wholeStackView.addArrangedSubview(pillNameView)
-        
-        self.sendPillViewModel.count.value = count
-        sendPillViewModel.isTrue.bind { _ in
-            if self.sendPillViewModel.isTrue.value {
-                self.enableNextButton()
-            } else {
-                self.unableNextButton()
-            }
-        }
-        
-        pillNameView.deleteCellButton.rx.tap.bind {
-            let tag = pillNameView.deleteCellButton.tag
-            let textFieldTag = pillNameView.pillNameTextField.tag
-            
-       
-            
-            print(pillNameView.pillNameTextField.tag)
-            
-            self.sendPillViewModel.tag = textFieldTag
-            
-            self.sendPillViewModel.pillName.value.remove(at: self.sendPillViewModel.tag)
-            
-            self.tagNumber = self.sendPillViewModel.tag
-            
-            if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
-                self.addPillThirdView.footerView.isHidden = true
-            } else {
-                self.addPillThirdView.footerView.isHidden = false
-            }
-            
-            guard let firstPillNameView = self.addPillThirdView.wholeStackView.subviews.first(where: { $0.tag == textFieldTag })?.removeFromSuperview() as? FirstPillNameView else { return }
-            
-            self.addPillThirdView.wholeStackView.removeArrangedSubview(firstPillNameView)
-        }
-        .disposed(by: self.disposeBag)
-        
-        if self.addPillThirdView.wholeStackView.arrangedSubviews.count >= 6 {
-            self.addPillThirdView.footerView.isHidden = true
-        } else {
-            self.addPillThirdView.footerView.isHidden = false
-        }
+        return layout
     }
     
     func didTappedView() {
@@ -170,15 +141,13 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     private func postMyPill() {
-//        sendPillViewModel.postFriendPill()
-        self.navigationController?.popToRootViewController(animated: true)
+        sendPillViewModel.postFriendPill()
     }
     
     @objc func divideType() {
         switch type {
         case .myPill:
             postMyPill()
-            
         case .friendPill:
             presentView()
         }
@@ -216,3 +185,51 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         navigationView.navigationTitleLabel.text = style.navigationTitle
     }
 }
+
+extension AddPillThirdViewController: UICollectionViewDelegate {}
+
+extension AddPillThirdViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pillThirdViewModel.pillList.value.count
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillNameViewCell.self)
+        
+        cell.pillNameTextField.tag = indexPath.row
+        
+        cell.delegate = self
+        
+        cell.pillThirdViewModel.deleteCellClosure = {
+            self.pillThirdViewModel.deleteCell(index: indexPath.row)
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier, for: indexPath) as? AddPillFooterView else { return UICollectionReusableView()}
+        
+        cell.viewModel.addCellClosure = { [weak self] in
+            guard let self = self else { return }
+            self.pillThirdViewModel.addCell()
+        }
+        
+        self.pillThirdViewModel.hideFooterView(button: &cell.addPillButton.isHidden)
+        
+        return cell
+    }
+}
+
+extension AddPillThirdViewController: PillNameCellDelegate {
+    func didTapPillNameTextField(text: String, tag: Int) {
+        pillThirdViewModel.pillList.value[tag] = text
+    }
+}
+
