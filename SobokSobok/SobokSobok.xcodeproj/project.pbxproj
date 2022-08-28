@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A06C99728377E6B00606D28 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C99528377E6B00606D28 /* MyInfoViewController.swift */; };
 		9A06C99828377E6B00606D28 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06C99628377E6B00606D28 /* MyInfoViewController.xib */; };
-		9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */; };
-		9A06C99C28378D4500606D28 /* MyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */; };
 		9A18E7AB278D48120011FEB9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A18E7A9278D48120011FEB9 /* SignInViewController.swift */; };
 		9A18E7AC278D48120011FEB9 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A18E7AA278D48120011FEB9 /* SignInViewController.xib */; };
 		9A3DF08C279660A400D07A8C /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DF08B279660A400D07A8C /* Sign.swift */; };
@@ -152,6 +150,7 @@
 		BDDF7721289A952B0096196B /* StickerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF7720289A952B0096196B /* StickerEndPoint.swift */; };
 		BDDF7723289A95340096196B /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDF7722289A95340096196B /* StickerManager.swift */; };
 		BDE2ADE42891266200A42559 /* ShareTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2ADE32891266200A42559 /* ShareTopView.swift */; };
+		BDE58C5C28BA1E270059DF0A /* MyInfoPillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE58C5B28BA1E270059DF0A /* MyInfoPillCell.swift */; };
 		BDF4D54128A018340043FA8D /* PillCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4D54028A018340043FA8D /* PillCount.swift */; };
 		BDF4D54328A018590043FA8D /* SendPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4D54228A018590043FA8D /* SendPill.swift */; };
 		BDF4D54528A0295A0043FA8D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF4D54428A0295A0043FA8D /* CalendarView.swift */; };
@@ -285,8 +284,6 @@
 /* Begin PBXFileReference section */
 		9A06C99528377E6B00606D28 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		9A06C99628377E6B00606D28 /* MyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
-		9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewCell.swift; sourceTree = "<group>"; };
-		9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		9A18E7A9278D48120011FEB9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A18E7AA278D48120011FEB9 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		9A3DF08B279660A400D07A8C /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -422,6 +419,7 @@
 		BDDF7720289A952B0096196B /* StickerEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerEndPoint.swift; sourceTree = "<group>"; };
 		BDDF7722289A95340096196B /* StickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerManager.swift; sourceTree = "<group>"; };
 		BDE2ADE32891266200A42559 /* ShareTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTopView.swift; sourceTree = "<group>"; };
+		BDE58C5B28BA1E270059DF0A /* MyInfoPillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoPillCell.swift; sourceTree = "<group>"; };
 		BDF4D54028A018340043FA8D /* PillCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCount.swift; sourceTree = "<group>"; };
 		BDF4D54228A018590043FA8D /* SendPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPill.swift; sourceTree = "<group>"; };
 		BDF4D54428A0295A0043FA8D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -580,8 +578,7 @@
 				9A06C99528377E6B00606D28 /* MyInfoViewController.swift */,
 				F61CDD5328B856AB00D6BBCC /* MyInfoViewController+Network.swift */,
 				9A06C99628377E6B00606D28 /* MyInfoViewController.xib */,
-				9A06C99928378D4500606D28 /* MyInfoTableViewCell.swift */,
-				9A06C99A28378D4500606D28 /* MyInfoTableViewCell.xib */,
+				BDE58C5B28BA1E270059DF0A /* MyInfoPillCell.swift */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -1950,7 +1947,6 @@
 				BD64F8F42788B488009249D0 /* Pretendard-ExtraLight.otf in Resources */,
 				BD51AE292790641E00314A94 /* Pretendard-Medium.otf in Resources */,
 				BD64F8EA2788A01C009249D0 /* .swiftlint.yml in Resources */,
-				9A06C99C28378D4500606D28 /* MyInfoTableViewCell.xib in Resources */,
 				F60BAEBA279B4AB40012707C /* splash.json in Resources */,
 				9A3DF0AB2797252300D07A8C /* SearchNicknameViewController.xib in Resources */,
 				BD64F8F02788B488009249D0 /* Pretendard-Bold.otf in Resources */,
@@ -2089,7 +2085,6 @@
 				9AB83408289A66FE0040FC2A /* WithdrawalViewController.swift in Sources */,
 				F6538FA8278D814900B20B5E /* PillInfoViewController.swift in Sources */,
 				BD3D167328B6560B00C24BA2 /* EmptyData.swift in Sources */,
-				9A06C99B28378D4500606D28 /* MyInfoTableViewCell.swift in Sources */,
 				F695168A289D05E7000F88D7 /* NoticeEndPoint.swift in Sources */,
 				EC02141227D27A4700CF3569 /* PillPeriodView.swift in Sources */,
 				EC0213F027CE69E900CF3569 /* AddPillFirstViewController.swift in Sources */,
@@ -2120,6 +2115,7 @@
 				EC91946628224C1A0047893F /* AddPillInfoView.swift in Sources */,
 				ECCF5E7428A62BD900BC6862 /* EditPillPeriodView.swift in Sources */,
 				EC4BF2ED27C0BA9000B28F90 /* SobokButton.swift in Sources */,
+				BDE58C5C28BA1E270059DF0A /* MyInfoPillCell.swift in Sources */,
 				BDCEFBF828B20FC600EE0439 /* Notification+Extension.swift in Sources */,
 				BD7120E92796A61A0068B981 /* Schedule.swift in Sources */,
 				BDDF7723289A95340096196B /* StickerManager.swift in Sources */,

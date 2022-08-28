@@ -7,9 +7,12 @@
 
 import UIKit
 
-final class MyInfoViewController: UIViewController, DelegationProtocol, StyleProtocol, AccountDelegate {
+final class MyInfoViewController: UIViewController, DelegationProtocol, StyleProtocol, LayoutProtocol, AccountDelegate {
+    
     @IBOutlet weak var nickNameLabel: UILabel!
-    @IBOutlet weak var pillTableView: UITableView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    lazy var pillTableView = UITableView()
+    
     var userPillList: [UserPillList]? {
         didSet {
             self.pillTableView.reloadData()
@@ -19,19 +22,32 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, StylePro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         assignDelegation()
         style()
+        layout()
         getUserPillInfoList()
     }
     
     func assignDelegation() {
-        pillTableView.register(MyInfoTableViewCell.self)
+        pillTableView.register(MyInfoPillCell.self)
         pillTableView.delegate = self
         pillTableView.dataSource = self
+        pillTableView.rowHeight = 62
     }
     
     func style() {
         tabBarController?.tabBar.isHidden = true
+        pillTableView.separatorStyle = .none
+    }
+    
+    func layout() {
+        view.addSubview(pillTableView)
+        pillTableView.snp.makeConstraints {
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(14)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     func presentEditView(pillId: Int) {
@@ -67,7 +83,13 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, StylePro
     }
 }
 
-extension MyInfoViewController: UITableViewDelegate {}
+extension MyInfoViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pillId = userPillList?[indexPath.row].id ?? 0
+        self.presentEditView(pillId: pillId)
+    }
+}
 
 extension MyInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,19 +97,8 @@ extension MyInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = pillTableView.dequeueReusableCell(for: indexPath, cellType: MyInfoTableViewCell.self)
-        let pillColor = userPillList?[indexPath.row].color.colorTypeToImageName() ?? ""
-        let pillName = userPillList?[indexPath.row].pillName ?? ""
-        
-        cell.setData(name: pillName, image: pillColor)
-        cell.myInfoViewDelegate = self
-        
+        let cell = pillTableView.dequeueReusableCell(for: indexPath, cellType: MyInfoPillCell.self)
+        cell.configure(with: userPillList?[indexPath.row])
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("click")
-        self.presentEditView(pillId: userPillList?[indexPath.row].id ?? 00)
-        print(userPillList?[indexPath.row].id ?? 00)
     }
 }
