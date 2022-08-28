@@ -19,11 +19,9 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     private let addPillThirdView = AddPillThirdView()
     private let addPillInfoView = AddPillInfoView()
     private let sendPillViewModel: SendPillViewModel
-    private let pillThirdViewModel: PillThirdViewModel
     
-    init(sendPillViewModel: SendPillViewModel, pillThirdViewModel: PillThirdViewModel) {
+    init(sendPillViewModel: SendPillViewModel) {
         self.sendPillViewModel = sendPillViewModel
-        self.pillThirdViewModel = pillThirdViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,11 +55,11 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     func bind() {
-        pillThirdViewModel.pillCount.bind { count in
+        sendPillViewModel.pillCount.bind { count in
             self.addPillThirdView.pillCountLabel.text = "\(count)개"
         }
         
-        pillThirdViewModel.pillList.bind { _ in
+        sendPillViewModel.pillList.bind { _ in
             DispatchQueue.main.async {
                 self.addPillThirdView.collectionView.reloadData()
             }
@@ -83,7 +81,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         .disposed(by: disposeBag)
     }
     
-    fileprivate func createCompositionalLayoutForFirst() -> UICollectionViewLayout{
+    private func createCompositionalLayoutForFirst() -> UICollectionViewLayout{
         let layout = UICollectionViewCompositionalLayout{
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
@@ -190,26 +188,48 @@ extension AddPillThirdViewController: UICollectionViewDelegate {}
 
 extension AddPillThirdViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pillThirdViewModel.pillList.value.count
-        
+        return sendPillViewModel.pillList.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillNameViewCell.self)
         
-        cell.pillNameTextField.tag = indexPath.row
-        
+        let index = indexPath.row
+    
         cell.delegate = self
+
+        [cell.deleteTextButton,
+         cell.deleteCellButton,
+         cell.pillNameTextField].forEach { $0.tag = index }
+
+        cell.pillNameTextField.text = self.sendPillViewModel.pillList.value[indexPath.row]
         
-        cell.pillThirdViewModel.deleteCellClosure = {
-            self.pillThirdViewModel.deleteCell(index: indexPath.row)
+        if cell.pillNameTextField.text!.isEmpty {
+            self.sendPillViewModel.footerViewState.value = true
+            unableNextButton()
+        } else {
+            enableNextButton()
+        }
+    
+        sendPillViewModel.addButtonState.bind { bool in
+            if bool {
+                self.enableNextButton()
+            } else {
+                self.unableNextButton()
+            }
         }
         
+        cell.sendPillViewModel.deleteCellClosure = {
+            self.sendPillViewModel.deleteCell(index: self.sendPillViewModel.index.value)
+            self.addPillThirdView.collectionView.reloadData()
+        }
+
+        cell.sendPillViewModel.deleteTextClosure = {
+            cell.pillNameTextField.text  = ""
+            self.sendPillViewModel.deleteText(index: self.sendPillViewModel.index.value)
+        }
+
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -218,18 +238,44 @@ extension AddPillThirdViewController: UICollectionViewDataSource {
         
         cell.viewModel.addCellClosure = { [weak self] in
             guard let self = self else { return }
-            self.pillThirdViewModel.addCell()
+            self.sendPillViewModel.addCell()
+            self.addPillThirdView.collectionView.reloadData()
+        }
+
+        self.sendPillViewModel.hideFooterView(button: &cell.addPillButton.isHidden)
+        
+        self.sendPillViewModel.footerViewState.bind { bool in
+            cell.addPillButton.isHidden = bool ? true : false
         }
         
-        self.pillThirdViewModel.hideFooterView(button: &cell.addPillButton.isHidden)
+        if self.sendPillViewModel.pillList.value.count == 0 {
+            cell.addPillButton.isHidden = false
+        }
         
         return cell
     }
 }
 
 extension AddPillThirdViewController: PillNameCellDelegate {
-    func didTapPillNameTextField(text: String, tag: Int) {
-        pillThirdViewModel.pillList.value[tag] = text
+    func addButtonState(bool: Bool) {
+        self.sendPillViewModel.addButtonState.value = bool
+    }
+    
+    func footerViewState(bool: Bool) {
+        self.sendPillViewModel.footerViewState.value = bool
+    }
+    
+    func didDeleteCellButtonTapped(tag: Int) {
+        self.sendPillViewModel.index.value = tag
+    }
+    
+    func didDeleteTextButtonTapped(tag: Int) {
+        self.sendPillViewModel.index.value = tag
+    }
+    
+    func collectionViewCell(valueChangedIn textField: UITextField, delegatedFrom cell: UICollectionViewCell, tag: Int) {
+        if let _ = addPillThirdView.collectionView.indexPath(for: cell), let text = textField.text {
+        self.sendPillViewModel.pillList.value[tag] = text
+        }
     }
 }
-

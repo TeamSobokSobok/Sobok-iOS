@@ -130,10 +130,7 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
     }
     
     private func pushViewController(style: PillStyle) {        
-        
-        let addPillThirdView = AddPillThirdViewController(sendPillViewModel: sendPillViewModel, pillThirdViewModel: PillThirdViewModel())
-        
-        
+        let addPillThirdView = AddPillThirdViewController(sendPillViewModel: sendPillViewModel)
         addPillThirdView.divide(style: style)
         addPillThirdView.type = style.type
         self.navigationController?.pushViewController(addPillThirdView, animated: true)

@@ -1623,7 +1623,6 @@
 				EC91946528224C1A0047893F /* AddPillInfoView.swift */,
 				EC919467282252230047893F /* PillPeriodTimeView.swift */,
 				EC919469282252530047893F /* PillNameView.swift */,
-				EC8695F428AAB64C000BBC62 /* PillNameViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1650,6 +1649,7 @@
 			isa = PBXGroup;
 			children = (
 				ECD77F3A282A64CD00710157 /* PillTableViewCell.swift */,
+				EC8695F428AAB64C000BBC62 /* PillNameViewCell.swift */,
 				ECD77F36282A5C5100710157 /* TakePillTimeCollectionViewCell.swift */,
 			);
 			path = Cell;
