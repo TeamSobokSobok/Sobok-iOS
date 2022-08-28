@@ -11,15 +11,18 @@ import SnapKit
 import Then
 
 protocol PillNameCellDelegate: AnyObject {
-    func didTapPillNameTextField(text: String, tag: Int)
+    func collectionViewCell(valueChangedIn textField: UITextField, delegatedFrom cell: UICollectionViewCell, tag: Int)
+    func didDeleteTextButtonTapped(tag: Int)
+    func didDeleteCellButtonTapped(tag: Int)
+    func footerViewState(bool: Bool)
+    func addButtonState(bool: Bool)
 }
 
 final class PillNameViewCell: UICollectionViewCell {
     
-    let pillThirdViewModel = PillThirdViewModel()
+    let sendPillViewModel = SendPillViewModel()
     
     weak var delegate: PillNameCellDelegate?
-    
     
     lazy var pillNameTextField = UITextField().then {
         $0.makeRoundedWithBorder(radius: 8, color: Color.gray300.cgColor)
@@ -50,7 +53,6 @@ final class PillNameViewCell: UICollectionViewCell {
         $0.spacing = 10
     }
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -69,36 +71,36 @@ final class PillNameViewCell: UICollectionViewCell {
     
     private func setupTextField() {
         pillNameTextField.addTarget(self, action: #selector(pillTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
-        
-        [deleteCellButton, deleteTextButton].forEach {
-            $0.isHidden = true
-        }
     }
     
-    @objc func deleteCellButtonTapped() {
-        pillThirdViewModel.deleteCellClosure?()
+    @objc func deleteCellButtonTapped(sender: UIButton) {
+        delegate?.didDeleteCellButtonTapped(tag: sender.tag)
+        sendPillViewModel.deleteCellClosure?()
     }
     
-    @objc func deleteTextButtonTapped() {
-        pillThirdViewModel.deleteTextClosure?()
+    @objc func deleteTextButtonTapped(sender: UIButton) {
+        delegate?.didDeleteTextButtonTapped(tag: sender.tag)
+        sendPillViewModel.deleteTextClosure?()
     }
     
     @objc func pillTextFieldDidChange(_ textField: UITextField) {
-        
         guard let text = pillNameTextField.text else { return }
         
         pillNameTextField.attributedText = setAttributedText(text: text)
         pillTextCountLabel.attributedText = setAttributedText(text: "\(String(text.count)) / 10")
         
-        if text.count == 0 {
+        if text.isEmpty {
             self.verticalStackView.snp.remakeConstraints {
                 $0.height.equalTo(54)
                 $0.leading.trailing.equalToSuperview()
                 $0.width.equalTo(UIScreen.main.bounds.width - 40)
                 self.pillTextCountLabel.isHidden = true
+                delegate?.addButtonState(bool: false)
             }
+            delegate?.footerViewState(bool: true)
             pillTextCountLabel.isHidden = true
             deleteTextButton.isHidden = true
+            deleteCellButton.isHidden = true
         } else {
             self.pillNameTextField.snp.remakeConstraints {
                 $0.height.equalTo(54)
@@ -110,9 +112,11 @@ final class PillNameViewCell: UICollectionViewCell {
                 $0.leading.trailing.equalToSuperview()
                 $0.width.equalTo(UIScreen.main.bounds.width - 40)
             }
+            delegate?.footerViewState(bool: true)
+            delegate?.addButtonState(bool: true)
             pillTextCountLabel.isHidden = false
             pillNameTextField.layer.borderColor = Color.gray600.cgColor
-            
+
             deleteTextButton.isHidden = false
         }
     }
@@ -175,11 +179,8 @@ final class PillNameViewCell: UICollectionViewCell {
 
 extension PillNameViewCell: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textField: UITextField, viewModel: PillThirdViewModel) {
-        guard let text = self.pillNameTextField.text else { return }
-        
-        self.delegate?.didTapPillNameTextField(text: text, tag: pillNameTextField.tag)
-        
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+     
         self.pillNameTextField.snp.remakeConstraints {
             $0.height.equalTo(54)
             $0.width.equalTo(UIScreen.main.bounds.width - 40)
@@ -193,17 +194,18 @@ extension PillNameViewCell: UITextFieldDelegate {
         }
         self.pillTextCountLabel.isHidden = false
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
 
-        let array = pillThirdViewModel.pillNameList!
-        
-        RealmManager.shared.updatePillNameData(object: array[index], with: textField.text!)
-        
-        deleteTextButton.isHidden = true
-        deleteCellButton.isHidden = false
+    func textFieldDidEndEditing(_ textField: UITextField) {
         pillNameTextField.layer.borderColor = Color.gray300.cgColor
+ 
+        self.deleteCellButton.isHidden = false
+        self.deleteTextButton.isHidden = true
         
+        if !textField.text!.isEmpty {
+            delegate?.footerViewState(bool: false)
+        }
+        delegate?.collectionViewCell(valueChangedIn: pillNameTextField, delegatedFrom: self, tag: textField.tag)
+    
         self.verticalStackView.snp.remakeConstraints {
             $0.height.equalTo(54)
             $0.leading.trailing.equalToSuperview()
