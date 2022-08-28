@@ -9,6 +9,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import RealmSwift
 
 protocol AddPillThirdProtocol: TargetProtocol, BindProtocol, TossPillProtocol, StyleProtocol, DelegationProtocol {}
 
@@ -20,7 +21,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     private let addPillInfoView = AddPillInfoView()
     private let sendPillViewModel: SendPillViewModel
     private let pillThirdViewModel: PillThirdViewModel
-    
+
     init(sendPillViewModel: SendPillViewModel, pillThirdViewModel: PillThirdViewModel) {
         self.sendPillViewModel = sendPillViewModel
         self.pillThirdViewModel = pillThirdViewModel
@@ -83,7 +84,7 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         .disposed(by: disposeBag)
     }
     
-    fileprivate func createCompositionalLayoutForFirst() -> UICollectionViewLayout{
+    private func createCompositionalLayoutForFirst() -> UICollectionViewLayout{
         let layout = UICollectionViewCompositionalLayout{
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
@@ -190,35 +191,42 @@ extension AddPillThirdViewController: UICollectionViewDelegate {}
 
 extension AddPillThirdViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pillThirdViewModel.pillList.value.count
-        
+        return pillThirdViewModel.pillNameList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: PillNameViewCell.self)
         
-        cell.pillNameTextField.tag = indexPath.row
-        
+        cell.index = indexPath.row
         cell.delegate = self
-        
-        cell.pillThirdViewModel.deleteCellClosure = {
-            self.pillThirdViewModel.deleteCell(index: indexPath.row)
+        cell.deleteCellButton.tag = indexPath.row
+        cell.deleteTextButton.tag = indexPath.row
+        cell.pillNameTextField.tag = indexPath.row
+        cell.pillNameTextField.text = self.pillThirdViewModel.pillNameList?[indexPath.row].name
+
+        cell.pillThirdViewModel.deleteCellClosure = {            self.pillThirdViewModel.deleteCell(index: indexPath.row)
+            self.addPillThirdView.collectionView.reloadData()
+        }
+
+        cell.pillThirdViewModel.deleteTextClosure = {
+            cell.pillNameTextField.text = ""
+            print(444, indexPath.row)
+            print(444, self.pillThirdViewModel.pillNameList![indexPath.row])
+            self.pillThirdViewModel.deleteText(index: indexPath.row)
+            self.addPillThirdView.collectionView.reloadData()
         }
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFooterView.reuseIdentifier, for: indexPath) as? AddPillFooterView else { return UICollectionReusableView()}
-        
+
         cell.viewModel.addCellClosure = { [weak self] in
             guard let self = self else { return }
             self.pillThirdViewModel.addCell()
+            self.addPillThirdView.collectionView.reloadData()
         }
         
         self.pillThirdViewModel.hideFooterView(button: &cell.addPillButton.isHidden)

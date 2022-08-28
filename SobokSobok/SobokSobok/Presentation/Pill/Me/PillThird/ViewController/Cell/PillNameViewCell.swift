@@ -20,6 +20,7 @@ final class PillNameViewCell: UICollectionViewCell {
     
     weak var delegate: PillNameCellDelegate?
     
+    
     lazy var pillNameTextField = UITextField().then {
         $0.makeRoundedWithBorder(radius: 8, color: Color.gray300.cgColor)
         $0.addLeftPadding()
@@ -68,6 +69,10 @@ final class PillNameViewCell: UICollectionViewCell {
     
     private func setupTextField() {
         pillNameTextField.addTarget(self, action: #selector(pillTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
+        
+        [deleteCellButton, deleteTextButton].forEach {
+            $0.isHidden = true
+        }
     }
     
     @objc func deleteCellButtonTapped() {
@@ -75,7 +80,7 @@ final class PillNameViewCell: UICollectionViewCell {
     }
     
     @objc func deleteTextButtonTapped() {
-        self.pillNameTextField.text = ""
+        pillThirdViewModel.deleteTextClosure?()
     }
     
     @objc func pillTextFieldDidChange(_ textField: UITextField) {
@@ -190,6 +195,15 @@ extension PillNameViewCell: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+
+        let array = pillThirdViewModel.pillNameList!
+        
+        RealmManager.shared.updatePillNameData(object: array[index], with: textField.text!)
+        
+        deleteTextButton.isHidden = true
+        deleteCellButton.isHidden = false
+        pillNameTextField.layer.borderColor = Color.gray300.cgColor
+        
         self.verticalStackView.snp.remakeConstraints {
             $0.height.equalTo(54)
             $0.leading.trailing.equalToSuperview()

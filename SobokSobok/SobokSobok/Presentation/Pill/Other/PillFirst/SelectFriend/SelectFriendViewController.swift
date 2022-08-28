@@ -44,9 +44,10 @@ final class SelectFriendViewController: UIViewController, SelectFriendProtocol {
     }
     
     func bind() {
+        self.selectFriendViewModel.getMember()
+        
         selectFriendViewModel.memberName.bind { _ in
             DispatchQueue.main.async {
-                self.selectFriendViewModel.getMember()
                 self.selectFriendView.pickerView.reloadAllComponents()
             }
         }

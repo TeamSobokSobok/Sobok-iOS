@@ -9,6 +9,7 @@ import Foundation
 
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 final class SendPillViewModel: ViewModelType {
     var disposeBag = DisposeBag()
@@ -31,6 +32,8 @@ final class SendPillViewModel: ViewModelType {
     
     private let requestSendPill = PublishRelay<SendPill>()
     
+    private let pillThirdViewModel = PillThirdViewModel()
+    
     let sendPillManager: SendPillServiceable = SendPillManager(apiService: APIManager(), environment: .development)
      
     var count: Helper<Int> = Helper(0)
@@ -44,6 +47,8 @@ final class SendPillViewModel: ViewModelType {
     var specific = ""
     var time: [String] = []
     var memberId = 0
+    
+    
 }
 
 extension SendPillViewModel {
@@ -61,7 +66,7 @@ extension SendPillViewModel {
     func postFriendPill() {
         Task {
             do {
-                let sendPill = SendPill(pillName: pillName.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: time)
+                let sendPill = SendPill(pillName: pillName.value , start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: time)
                 _ = try await sendPillManager.postFriendPill(body: sendPill, for: 187)
             }
         }
