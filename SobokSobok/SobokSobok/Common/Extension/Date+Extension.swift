@@ -36,7 +36,7 @@ enum FormatType {
         case .calendar:
             return "yyyy년 MM월 dd일"
         case .calendarTime:
-            return "a HH:mm"
+            return "a hh:mm"
         case .calendarWithMonth:
             return "yyyy년 M월"
         case .noticeDay:
@@ -50,6 +50,7 @@ extension Date {
     func toString(of type: FormatType) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.timeZone = TimeZone(abbreviation: "KST")
         dateFormatter.dateFormat = type.description
         return dateFormatter.string(from: self)
     }
@@ -60,6 +61,7 @@ extension String {
     func toDate(to type: FormatType) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.dateFormat = type.description
         return dateFormatter.date(from: self)
     }

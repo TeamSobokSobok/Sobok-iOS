@@ -42,6 +42,7 @@ final class FriendNameView: BaseView {
 
 extension FriendNameView {
     @objc func editButtonTapped(_ sender: UIButton) {
+        print("click")
         completion?()
     }
 }

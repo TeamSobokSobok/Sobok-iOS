@@ -182,6 +182,7 @@ extension ScheduleViewController {
         setCalendarStyle()
         setDelegation()
         addObservers()
+        editFriendName()
     }
     
     private func configureAttributes() {

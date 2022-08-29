@@ -76,8 +76,7 @@ extension NoticeViewController: UICollectionViewDataSource {
         )
         
         if noticeList?.infoList[indexPath.row].isOkay == "waiting" {
-            createdAt = dateFormatter.date(from: createdAt)?.toString(of: .calendarTime) ?? ""
-            cell.timeLabel.text = "\(createdAt)"
+            cell.timeLabel.text = "\(createdAt.toDate(to: .full)?.toString(of: .calendarTime) ?? "")"
             
             if noticeList?.infoList[indexPath.row].section == "calendar" {
                 cell.setupView(section: .calender, status: .waite)
@@ -185,8 +184,7 @@ extension NoticeViewController: UICollectionViewDataSource {
             else { fatalError("발생할 수 없는 case") }
         }
         else {
-            createdAt = dateFormatter.date(from: createdAt)?.toString(of: .noticeDay) ?? ""
-            cell.timeLabel.text = "\(createdAt)"
+            cell.timeLabel.text = "\(createdAt.toDate(to: .full)?.toString(of: .calendarTime) ?? "")"
             
             if noticeList?.infoList[indexPath.row].isOkay == "accept" {
                 if noticeList?.infoList[indexPath.row].section == "calendar" {
