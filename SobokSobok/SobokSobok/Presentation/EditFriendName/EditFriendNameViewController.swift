@@ -13,6 +13,7 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
 
     // MARK: - Properties
     var name: String?
+    var groupId: Int?
     private var nameCount: Int = 0
     let editFriendNameManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
     
@@ -32,6 +33,7 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
     
     func style() {
         nameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray600.cgColor)
+        nameTextField.placeholder = name
         warningTextLabel.isHidden = true
         counterTextLabel.isHidden = true
     }
@@ -101,32 +103,11 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
     @IBAction func touchUpToConfirm(_ sender: Any) {
 //        EditFriend.shared.groupId = 31 // 화면 연결되면 전달 받아야함
 //        EditFriend.shared.memberName = nameTextField.text ?? ""
-        editFriendNickname(at: 56, for: nameTextField.text ?? "") // TODO: - at 부분에 전달 받은 groupId 넣어주기
+        editFriendNickname(at: groupId ?? 0, for: nameTextField.text ?? "") // TODO: - at 부분에 전달 받은 groupId 넣어주기
+        dismiss(animated: true)
     }
     
     @IBAction func touchUpToDIsmiss(_ sender: Any) {
         dismiss(animated: true)
-    }
-}
-
-extension EditFriendNameViewController {
-    func editFriendName() {
-        guard let groupId = EditFriend.shared.groupId else { return }
-        guard let memberName = EditFriend.shared.memberName else { return }
-        
-        ShareAPI.shared.editFriendUsername(groupId: groupId, memberName: memberName, completion: {(result) in
-            switch result {
-            case .success:
-                self.dismiss(animated: true)
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        })
     }
 }

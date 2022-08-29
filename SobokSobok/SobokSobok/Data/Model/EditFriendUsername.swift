@@ -9,13 +9,8 @@ import Foundation
 
 // MARK: - EditFriendUsername
 struct EditFriendUsername: Codable {
-    let groupID, userID, memberID: Int
+    let groupId: Int
+    let userId: Int
+    let memberId: Int
     let memberName: String
-
-    enum CodingKeys: String, CodingKey {
-        case groupID
-        case userID
-        case memberID
-        case memberName
-    }
 }

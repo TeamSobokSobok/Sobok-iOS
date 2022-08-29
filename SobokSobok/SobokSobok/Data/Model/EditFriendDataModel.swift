@@ -7,8 +7,9 @@
 
 import UIKit
 
-class EditFriend {
-    static let shared = EditFriend()
-    var groupId: Int?
-    var memberName: String?
+struct EditFriend {
+    var groupId: Int
+    var userId: Int
+    var memberId: Int
+    var memberName: String
 }

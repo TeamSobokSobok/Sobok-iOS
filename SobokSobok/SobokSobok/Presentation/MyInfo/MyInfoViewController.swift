@@ -39,6 +39,7 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, StylePro
     func style() {
         tabBarController?.tabBar.isHidden = true
         pillTableView.separatorStyle = .none
+        nickNameLabel.text = UserDefaultsManager.userName
     }
     
     func layout() {

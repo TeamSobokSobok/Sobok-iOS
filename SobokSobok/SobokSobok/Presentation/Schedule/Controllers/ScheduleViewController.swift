@@ -182,6 +182,7 @@ extension ScheduleViewController {
         setCalendarStyle()
         setDelegation()
         addObservers()
+        editFriendName()
     }
     
     private func configureAttributes() {
@@ -433,6 +434,8 @@ extension ScheduleViewController {
         friendNameView.completion = {
             let editFriendNameViewController = EditFriendNameViewController.instanceFromNib()
             editFriendNameViewController.modalPresentationStyle = .fullScreen
+            editFriendNameViewController.name = self.member[self.tapIndex].memberName
+            editFriendNameViewController.groupId = self.member[self.tapIndex].groupId
             self.present(editFriendNameViewController, animated: true)
         }
     }
