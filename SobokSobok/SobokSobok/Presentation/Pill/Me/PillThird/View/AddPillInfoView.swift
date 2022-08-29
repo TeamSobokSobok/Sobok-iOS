@@ -35,8 +35,8 @@ final class AddPillInfoView: BaseView {
     
     override func setupView() {
         addSubviews(backgroundView)
-        backgroundView.addSubviews(bottomSheetView, pillNameView, pillPeriodTimeView)
-        pillPeriodTimeView.addSubview(sendButton)
+        backgroundView.addSubviews(bottomSheetView, pillNameView, pillPeriodTimeView, sendButton)
+//        pillPeriodTimeView.addSubview(sendButton)
         backgroundColor = .white
     }
 

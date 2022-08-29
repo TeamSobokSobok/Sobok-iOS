@@ -26,7 +26,7 @@ extension APIEnvironment {
     }
     
     var token: String {
-        return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM5LCJuYW1lIjoi7YOc64G8IOuplOyduCIsImlhdCI6MTY2MTc0NzQ4MCwiZXhwIjoxNjY0MzM5NDgwLCJpc3MiOiJzb2JvayJ9.52uEKVJj5s-gEbk_RQ__eCiD5UHhcemORBGp6vxPBgw"
+        return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQyLCJuYW1lIjoi66mU7J247YOc64G8IiwiaWF0IjoxNjYxNzUxNjQ3LCJleHAiOjE2NjQzNDM2NDcsImlzcyI6InNvYm9rIn0.dj8t-BwbFgiqOlqpJ0PB6yGK9YFRgtgnniLkElyrs5k"
 //        return UserDefaultsManager.accessToken
     }
 }

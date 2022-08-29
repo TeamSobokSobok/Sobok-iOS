@@ -63,6 +63,7 @@ final class SendPillViewModel: ViewModelType {
   
     let sendPillManager: SendPillServiceable = SendPillManager(apiService: APIManager(), environment: .development)
      
+    var userName = ""
     var count: Helper<Int> = Helper(0)
     var isTrue: Helper<Bool> = Helper(false)
     var pillName: Helper<[String]> = Helper([])
@@ -72,7 +73,8 @@ final class SendPillViewModel: ViewModelType {
     var day = ""
     var specific = ""
     var time: [String] = []
-    var memberId = 0
+    var changeTime: [String] = []
+    var memberId: Helper<Int> = Helper(0)
 }
 
 
@@ -80,7 +82,7 @@ extension SendPillViewModel {
     func postMyPill() {
         Task {
             do {
-                let sendPill = SendPill(pillName: pillList.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: time)
+                let sendPill = SendPill(pillName: pillList.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: changeTime)
                 
                 print(sendPill)
                 _ = try await sendPillManager.postMyPill(body: sendPill)
@@ -91,8 +93,8 @@ extension SendPillViewModel {
     func postFriendPill() {
         Task {
             do {
-                let sendPill = SendPill(pillName: pillList.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: time)
-                _ = try await sendPillManager.postFriendPill(body: sendPill, for: memberId)
+                let sendPill = SendPill(pillName: pillList.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: changeTime)
+                _ = try await sendPillManager.postFriendPill(body: sendPill, for: memberId.value)
             }
         }
     }

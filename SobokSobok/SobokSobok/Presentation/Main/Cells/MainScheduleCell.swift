@@ -151,7 +151,7 @@ extension MainScheduleCell {
 extension MainScheduleCell {
     
     func days() -> Int {
-        let newDate = Calendar.current.dateComponents([.day], from: Date(), to: currentDate)
+        let newDate = Calendar.current.dateComponents([.day], from: Date().addingTimeInterval(-86400), to: currentDate)
         guard let day = newDate.day else { return 0 }
         return day
     }

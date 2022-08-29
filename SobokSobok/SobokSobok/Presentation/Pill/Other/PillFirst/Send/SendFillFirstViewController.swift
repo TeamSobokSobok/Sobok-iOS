@@ -64,7 +64,9 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     func bind() {
         self.sendPillFirstView.userLabel.text = member.first?.memberName
         
-        self.viewModel.memberId = member.first!.memberId
+        self.viewModel.memberId.value = member.first!.memberId
+        
+        self.viewModel.userName = member.first!.memberName
         
         sendPillFirstView.navigationView.xButton.rx.tap
             .bind {
@@ -82,7 +84,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
     }
     
     @objc func pushAddPillFirstView() {
-        let addPillFirstView = AddPillFirstViewController(sendPillViewModel: SendPillViewModel())
+        let addPillFirstView = AddPillFirstViewController(sendPillViewModel: viewModel)
         addPillFirstView.divide(style: .friendPill)
         addPillFirstView.type = .friendPill
         self.navigationController?.pushViewController(addPillFirstView, animated: true)
@@ -92,6 +94,7 @@ final class SendPillFirstViewController: UIViewController, SendPillFirstProtocol
 extension SendPillFirstViewController: SendMemberDelegate {
     func sendMember(name: String, id: Int) {
         sendPillFirstView.userLabel.text = name
-        viewModel.memberId = id
+        viewModel.memberId.value = id
+        viewModel.userName = name
     }
 }

@@ -361,6 +361,10 @@ extension EditViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension EditViewController: SendPillTimeDelegate, SendPillDaysDelegate, SendPillPeriodDelegate {
+    func sendChangeTime(changeTime: String) {
+        viewModel.timeViewModel.addChangeTime(pillTime: changeTime)
+    }
+    
     func snedPillTime(pillTime: String) {
         viewModel.timeViewModel.addPillTime(pillTime: pillTime)
     }

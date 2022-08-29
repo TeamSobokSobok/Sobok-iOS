@@ -13,7 +13,6 @@ import Then
 final class PillPeriodTimeView: BaseView {
     
     lazy var pillPeopleLabel = UILabel().then {
-        $0.text = "엄마에게 전송할 약이에요"
         $0.textColor = Color.black
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 22)
     }

@@ -44,6 +44,8 @@ final class NoFriendViewController: UIViewController, NoFriendProtocol {
         
         let navigation = noFriendView.navigationView
         
+        navigation.navigationTitleLabel.isHidden = true
+        
         [navigation.sendBottomFirstView,
          navigation.sendBottomSecondView,
          navigation.sendBottomThirdView,

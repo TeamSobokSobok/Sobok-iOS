@@ -128,18 +128,23 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     }
     
     @objc func openToolTipImage() {
-        addPillThirdView.tooltipImage.isHidden = false
+        addPillThirdView.tooltipImage.isHidden.toggle()
     }
     
     private func presentView() {
-        let bottomSheetVC = AddPillInfoViewController(sendPillViewModel: sendPillViewModel)
+
+        let bottomSheetVC = AddPillInfoViewController(
+            sendPillViewModel: sendPillViewModel,
+            navigation: self.navigationController!
+        )
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.modalTransitionStyle = .crossDissolve
         self.present(bottomSheetVC, animated: false)
     }
     
     private func postMyPill() {
-        sendPillViewModel.postFriendPill()
+        sendPillViewModel.postMyPill()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func divideType() {

@@ -22,7 +22,10 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     
     private let disposeBag = DisposeBag()
     
-    init(sendPillViewModel: SendPillViewModel) {
+    var navigation: UINavigationController
+ 
+    init(sendPillViewModel: SendPillViewModel, navigation: UINavigationController) {
+        self.navigation = navigation
         self.sendPillViewModel = sendPillViewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,8 +63,14 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     }
     
     func bind() {
+        addPillInfoView.pillPeriodTimeView.pillPeopleLabel.text = "\(sendPillViewModel.userName)에게 전송할 약이에요"
+        print(sendPillViewModel.userName)
+        
         addPillInfoView.sendButton.rx.tap.bind {
             self.sendPillViewModel.postFriendPill()
+            self.dismiss(animated: false) {
+                self.navigation.popToRootViewController(animated: true)
+            }
         }
         .disposed(by: disposeBag)
         
@@ -159,14 +168,14 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
 
 extension AddPillInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pillArray.count
+        return sendPillViewModel.pillList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = addPillInfoView.pillNameView.pillTableView.dequeueReusableCell(for: indexPath, cellType: PillTableViewCell.self)
         
-        cell.pillLabel.text = pillArray[indexPath.row]
+        cell.pillLabel.text = sendPillViewModel.pillList.value[indexPath.row]
         
         return cell
     }
