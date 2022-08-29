@@ -11,7 +11,7 @@ protocol AccountServiceable {
     func getUserPillList() async throws -> [UserPillList]?
     func getUserDetailPillList(for pillId: Int) async throws -> [DetailPillList]?
     func editUserName(for username: String) async throws -> UserNickNameEdit?
-    func friendNicknameEdit(groupId: Int, memberName: String) async throws -> EditFriendNickname?
+    func friendNicknameEdit(groupId: Int, memberName: String) async throws -> [EditFriendNickname]?
 }
 
 struct AccountManager: AccountServiceable {
@@ -43,7 +43,7 @@ struct AccountManager: AccountServiceable {
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }
-    func friendNicknameEdit(groupId: Int, memberName: String) async throws -> EditFriendNickname? {
+    func friendNicknameEdit(groupId: Int, memberName: String) async throws -> [EditFriendNickname]? {
         let request = AccountEndPoint
             .putFriendNicknameEdit(groupId: groupId, memberName: memberName)
             .createRequest(environment: environment)

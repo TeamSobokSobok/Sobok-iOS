@@ -30,7 +30,6 @@ extension ShareService: TargetType {
             return URLs.getFriendCalendarURL.replacingOccurrences(of: "{memberId}", with: "\(memberId)")
         case .getFriendPillList(let memberId, _):
             return URLs.getFriendPillListURL.replacingOccurrences(of: "{memberId}", with: "\(memberId)")
-            
         case .editFriendUsername(let groupId, _):
             return URLs.editFriendUsernameURL.replacingOccurrences(of: "{groupId}", with: "\(groupId)")
         }
@@ -61,11 +60,12 @@ extension ShareService: TargetType {
     var headers: [String: String]? {
         switch self {
         case .getGroupInfomation, .getFriendCalendar, .getFriendPillList:
-            return APIConstants.headerWithToken
-            
+            return [
+                "accesstoken": UserDefaultsManager.accessToken
+            ]
         case .editFriendUsername:
             return [
-                "accesstoken": APIConstants.accessToken27
+                "accesstoken": UserDefaultsManager.accessToken
             ]
         }
     }
