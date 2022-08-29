@@ -164,10 +164,10 @@ extension AddPillSheet: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             output.didLoadPillCount.drive(onNext: { pillCount in
-                if pillCount < 5 || pillCount == 0 {
-                    self.pushPillLimitViewController()
-                } else {
+                if 5 - pillCount > 0 || 5 - pillCount == 0 {
                     self.pushPillFirstViewController(style: .myPill)
+                } else {
+                    self.pushPillLimitViewController()
                 }
             })
             .disposed(by: disposeBag)

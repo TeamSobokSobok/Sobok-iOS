@@ -44,7 +44,6 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         addPillSecondView.calendar.delegate = self
     }
     
-    
     func style() {
         self.view.backgroundColor = Color.white
     }
@@ -68,6 +67,9 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         let date = Date()
         
         guard let afterDate = Calendar.current.date(byAdding: .day, value: 92, to: date) else { return }
+        
+        self.sendPillViewModel.start = "\(date.toString(of: .year))"
+        self.sendPillViewModel.end = "\(afterDate.toString(of: .year))"
 
         self.addPillSecondView.pillPeriodLabel.text = "\(date.toString(of: .year)) ~ \(afterDate.toString(of: .year))"
         
@@ -115,7 +117,6 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         }
     }
     
-
     func target() {
         addPillSecondView.nextButton.addTarget(self, action: #selector(pushAddPillThirdView), for: .touchUpInside)
     }

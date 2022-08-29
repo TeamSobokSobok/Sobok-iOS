@@ -18,6 +18,7 @@ class AddTimeViewModel {
     var hour: Helper<String> = Helper("1")
     var minute: Helper<String> = Helper("00")
     var pillTime: Helper<String> = Helper("오전 1:00")
+    var changePillTime: Helper<String> = Helper("12:00:00")
 
     func initTimeData() {
         for min in 0..<60 {
@@ -59,6 +60,14 @@ class AddTimeViewModel {
         default:
             minute.value = minuteList.value[row]
         }
-        pillTime.value = morning.value + " " + hour.value + ":"  + minute.value
+        
+        if morning.value.contains("오후") {
+            let changeHour = Int(hour.value)! + 12
+            pillTime.value = morning.value + " " + hour.value + ":"  + minute.value
+            changePillTime.value = morning.value + " " + "\(changeHour)" + ":"  + minute.value
+        } else {
+            pillTime.value = morning.value + " " + hour.value + ":"  + minute.value
+        }
+       
     }
 }

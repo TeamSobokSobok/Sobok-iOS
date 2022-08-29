@@ -266,6 +266,7 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
         
         cell.updateCell(pillTimeViewModel, indexPath: indexPath)
         
+        sendPillViewModel.changeTime = pillTimeViewModel.changeTimeList.value
         sendPillViewModel.time = pillTimeViewModel.timeList.value
         
         cell.viewModel.deleteCellClosure = { [weak self] in
@@ -279,8 +280,6 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AddPillFirstFooterView.reuseIdentifier, for: indexPath) as? AddPillFirstFooterView else { return UICollectionReusableView()}
-       
-        cell.addTimeButton.currentImage?.withTintColor(.red)
         
         cell.viewModel.addCellClosure = { [weak self] in
             guard let self = self else { return }
@@ -301,6 +300,17 @@ extension AddPillFirstViewController: UICollectionViewDelegateFlowLayout {
 
 extension AddPillFirstViewController: SendPillTimeDelegate, SendPillDaysDelegate, SendPillPeriodDelegate {
     func snedPillTime(pillTime: String) {
+        if pillTime.contains("오전") {
+            let pill = pillTime.replacingOccurrences(of: "오전", with: "")
+            pillTimeViewModel.addChangeTime(pillTime: "\(pill):00")
+        }
+        
+        if pillTime.contains("오후") {
+            let pill = pillTime.replacingOccurrences(of: "오후", with: "")
+        
+            pillTimeViewModel.addChangeTime(pillTime: "\(pill):00")
+        }
+      
         pillTimeViewModel.addPillTime(pillTime: pillTime)
     }
     

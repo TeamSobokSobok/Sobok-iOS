@@ -125,8 +125,7 @@ extension TabBarController {
         Task {
             do {
                 let members = try await tabbarManager.getGroupInformation()
-                if let members = members,
-                   !members.isEmpty {
+                if let members = members {
                     self.members = members
                     UserDefaults.standard.member = members
                 }
