@@ -32,9 +32,8 @@ final class PillInfoViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        network()
         target()
-        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12, execute: self.setInfoData)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,6 +44,15 @@ final class PillInfoViewController: UIViewController {
 
 // MARK: - Extensions
 extension PillInfoViewController: NoticeSecondControl {
+    func network() {
+        SBIndicator.shared.show()
+        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            self?.setInfoData()
+            SBIndicator.shared.hide()
+        }
+    }
+    
     func target() {
         pillInfoView.navigationView.navigationButton.addTarget(self, action: #selector(addDismiss), for: .touchUpInside)
     }
@@ -87,13 +95,22 @@ extension PillInfoViewController: NoticeSecondControl {
     private func setTimeViews(timeCount: Int, timeData: [String]) {
         if timeCount == 0 {
             [pillInfoView.timeFirstLine, pillInfoView.timeSecondLine].forEach { $0.isHidden = true }
+            pillInfoView.periodStack.snp.makeConstraints { make in
+                make.top.equalTo(pillInfoView.timeTitleLabel.snp.bottom).offset(49)
+            }
         } else if timeCount <= 3 {
             for index in 0..<timeCount {
                 pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index]))
             }
+            pillInfoView.periodStack.snp.makeConstraints { make in
+                make.top.equalTo(pillInfoView.timeFirstLine.snp.bottom).offset(49)
+            }
         } else if timeCount > 3 {
             for index in 0..<3 { pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index])) }
             for index in 3..<timeCount { pillInfoView.timeSecondLine.addArrangedSubviews(TimeView(time: timeData[index])) }
+            pillInfoView.periodStack.snp.makeConstraints { make in
+                make.top.equalTo(pillInfoView.timeTitleLabel.snp.bottom).offset(143)
+            }
         } else {
             fatalError("Wrong Data: Exceeded maximum number of pills.")
         }

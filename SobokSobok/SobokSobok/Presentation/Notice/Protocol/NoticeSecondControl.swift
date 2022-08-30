@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol NoticeSecondControl: TargetProtocol {}
+protocol NoticeSecondControl: TargetProtocol {
+    func network()
+}

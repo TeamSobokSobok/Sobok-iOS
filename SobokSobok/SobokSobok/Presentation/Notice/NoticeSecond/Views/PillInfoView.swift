@@ -41,7 +41,7 @@ final class PillInfoView: BaseView {
         $0.axis = .horizontal
         $0.spacing = 12
     }
-    private lazy var timeTitleLabel = UILabel().then {
+    let timeTitleLabel = UILabel().then {
         $0.font = UIFont.font(.pretendardSemibold, ofSize: 16)
         $0.text = "약 먹는 시간"
         $0.textColor = Color.black
@@ -65,7 +65,7 @@ final class PillInfoView: BaseView {
         $0.font = UIFont.font(.pretendardMedium, ofSize: 18)
         $0.textColor = Color.darkMint
     }
-    private lazy var periodStack = UIStackView().then {
+    let periodStack = UIStackView().then {
         $0.alignment = .fill
         $0.axis = .vertical
         $0.spacing = 7
@@ -121,7 +121,7 @@ final class PillInfoView: BaseView {
             make.height.equalTo(38)
         }
         periodStack.snp.makeConstraints { make in
-            make.top.equalTo(timeTitleLabel.snp.bottom).offset(143)
+//            make.top.equalTo(timeTitleLabel.snp.bottom).offset(143)
             make.leading.equalTo(20)
         }
     }
