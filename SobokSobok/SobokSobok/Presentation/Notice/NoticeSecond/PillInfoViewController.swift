@@ -32,9 +32,8 @@ final class PillInfoViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        network()
         target()
-        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12, execute: self.setInfoData)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,6 +44,15 @@ final class PillInfoViewController: UIViewController {
 
 // MARK: - Extensions
 extension PillInfoViewController: NoticeSecondControl {
+    func network() {
+        SBIndicator.shared.show()
+        getPillDetailInfo(noticeId: self.noticeId, pillId: self.pillId)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            self?.setInfoData()
+            SBIndicator.shared.hide()
+        }
+    }
+    
     func target() {
         pillInfoView.navigationView.navigationButton.addTarget(self, action: #selector(addDismiss), for: .touchUpInside)
     }
