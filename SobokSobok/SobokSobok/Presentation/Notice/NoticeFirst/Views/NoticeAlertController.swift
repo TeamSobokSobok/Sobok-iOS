@@ -12,9 +12,7 @@ extension NoticeViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let acceptAction = UIAlertAction(title: "확인", style: .default) { _ in
             self.modalPresentationStyle = .fullScreen
-            self.dismiss(animated: false) {
-                completion()
-            }
+            self.dismiss(animated: false)
         }
         let refuseAction = UIAlertAction(title: "취소", style: .default)
         [refuseAction, acceptAction].forEach { alert.addAction($0) }
@@ -24,9 +22,7 @@ extension NoticeViewController {
     func makeRefuseAlert(title: String, message: String, completion: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let acceptAction = UIAlertAction(title: "확인", style: .cancel) { _ in
-            self.dismiss(animated: false) {
-                completion()
-            }
+            self.dismiss(animated: false)
         }
         alert.addAction(acceptAction)
         self.present(alert, animated: true)
