@@ -87,13 +87,22 @@ extension PillInfoViewController: NoticeSecondControl {
     private func setTimeViews(timeCount: Int, timeData: [String]) {
         if timeCount == 0 {
             [pillInfoView.timeFirstLine, pillInfoView.timeSecondLine].forEach { $0.isHidden = true }
+            pillInfoView.periodStack.snp.makeConstraints { make in
+                make.top.equalTo(pillInfoView.timeTitleLabel.snp.bottom).offset(49)
+            }
         } else if timeCount <= 3 {
             for index in 0..<timeCount {
                 pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index]))
             }
+            pillInfoView.periodStack.snp.makeConstraints { make in
+                make.top.equalTo(pillInfoView.timeFirstLine.snp.bottom).offset(49)
+            }
         } else if timeCount > 3 {
             for index in 0..<3 { pillInfoView.timeFirstLine.addArrangedSubview(TimeView(time: timeData[index])) }
             for index in 3..<timeCount { pillInfoView.timeSecondLine.addArrangedSubviews(TimeView(time: timeData[index])) }
+            pillInfoView.periodStack.snp.makeConstraints { make in
+                make.top.equalTo(pillInfoView.timeTitleLabel.snp.bottom).offset(143)
+            }
         } else {
             fatalError("Wrong Data: Exceeded maximum number of pills.")
         }
