@@ -13,6 +13,8 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, StylePro
     @IBOutlet weak var descriptionLabel: UILabel!
     lazy var pillTableView = UITableView()
     
+    var editPillViewModel = EditCommonViewModel(addPillFirstViewModel: AddPillFirstViewModel(), timeViewModel: PillTimeViewModel(), dayViewModel: PillDayViewModel(), periodViewModel: PillPeriodViewModel())
+    
     var userPillList: [UserPillList]? {
         didSet {
             self.pillTableView.reloadData()
@@ -26,9 +28,15 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, StylePro
         assignDelegation()
         style()
         layout()
-        getUserPillInfoList()
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getUserPillInfoList()
+    }
+
     func assignDelegation() {
         pillTableView.register(MyInfoPillCell.self)
         pillTableView.delegate = self
@@ -53,15 +61,52 @@ final class MyInfoViewController: UIViewController, DelegationProtocol, StylePro
     
     func presentEditView(pillId: Int) {
         let editViewController = EditViewController(
-            viewModel: EditCommonViewModel(
-                addPillFirstViewModel: AddPillFirstViewModel(),
-                timeViewModel: PillTimeViewModel(),
-                dayViewModel: PillDayViewModel(),
-                periodViewModel: PillPeriodViewModel()
-            )
+            viewModel: editPillViewModel
         )
-
+        getUserDetailPillInfoList(pillId: pillId)
         self.navigationController?.pushViewController(editViewController, animated: true)
+    }
+    
+    func transformString(string: String) -> String {
+        let stringRange = string.index(string.startIndex, offsetBy: 0) ..< string.index(string.endIndex, offsetBy: -14)
+      
+        let changedString = string[stringRange]
+        
+        return String(changedString)
+    }
+    
+    func transformStringToInt(_ array: [String]) -> [String] {
+        
+        var timeArray = [String]()
+        var time = String()
+        
+        for string in array {
+            let stringRange = string.index(string.startIndex, offsetBy: 0) ..< string.index(string.endIndex, offsetBy: -3)
+          
+            let changedArray = string[stringRange]
+            
+            var hour = String()
+            var minute = String()
+           
+            let changedString = changedArray.map { String($0) }
+  
+            hour = "\(changedString[0])\(changedString[1])"
+            minute = "\(changedString[3])\(changedString[4])"
+            
+            if Int(hour)! > 11 {
+                print("오후 \(Int(hour)! - 12):\(minute)")
+             
+                time = "오후 \(Int(hour)! - 12):\(minute)"
+                timeArray.append(time)
+
+            } else {
+                print("오전 \(hour):\(minute)")
+                time = "오전 \(Int(hour)!):\(minute)"
+                timeArray.append(time)
+            }
+        }
+        
+        return timeArray
     }
 
     // MARK: - @IBAction func
@@ -88,7 +133,9 @@ extension MyInfoViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pillId = userPillList?[indexPath.row].id ?? 0
-        self.presentEditView(pillId: pillId)
+        editPillViewModel.pillId.value = pillId
+
+        self.presentEditView(pillId: editPillViewModel.pillId.value)
     }
 }
 
