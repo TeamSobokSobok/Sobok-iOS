@@ -58,6 +58,7 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
         }
         let stickerId = pill.stickerId?.map { $0.stickerId }
         let stickerList = pill.stickerList?.map { $0.stickerId }
+        let totalCount = pill.stickerTotalCount
 
         switch scheduleType {
         case .main:
@@ -66,14 +67,14 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
             mainCell.isChecked = pill.isCheck
             mainCell.currentDate = viewController.currentDate
             mainCell.delegate = viewController
-            mainCell.configure(withSticker: stickerId)
+            mainCell.configure(withSticker: stickerId, totalCount: totalCount)
             return mainCell
             
         case .share:
             let shareCell = collectionView.dequeueReusableCell(for: indexPath, cellType: ShareScheduleCell.self)
             shareCell.configure(withPill: pill)
             shareCell.configure(with: (isLiked: pill.isLikedSchedule ?? false, isEat: pill.isCheck))
-            shareCell.configure(withSticker: stickerList)
+            shareCell.configure(withSticker: stickerList, totalCount: totalCount)
             shareCell.stateView.emotionClosure = { [weak self] in
                 self?.viewController.getStickers(for: pill.scheduleId) {
                     let stickers = self?.viewController.stickers.filter { $0.isMySticker == true }.map { $0.likeScheduleId }

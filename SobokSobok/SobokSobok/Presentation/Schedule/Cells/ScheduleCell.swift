@@ -110,10 +110,11 @@ extension ScheduleCell {
         self.pillNameLabel.text = pill.pillName
     }
     
-    func configure(withSticker stickerId: [Int]?) {
+    func configure(withSticker stickerId: [Int]?, totalCount: Int) {
         stickerHStackView.removeAllArrangedSubviews()
+
         if let stickerId = stickerId, !stickerId.isEmpty {
-            self.countLabel.text = stickerId.count > 4 ? "+ \(stickerId.count - 4)" : ""
+            self.countLabel.text = totalCount > 4 ? "+ \(totalCount - 4)" : ""
             for (index, value) in stickerId.enumerated() {
                 let stickerButton = UIButton()
                 stickerButton.setImage(StickerType.stickers[value], for: .normal)
