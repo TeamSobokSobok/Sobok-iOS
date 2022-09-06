@@ -114,14 +114,15 @@ extension ScheduleCell {
         stickerHStackView.removeAllArrangedSubviews()
         if let stickerId = stickerId, !stickerId.isEmpty {
             self.countLabel.text = stickerId.count > 4 ? "+ \(stickerId.count - 4)" : ""
-            for value in stickerId {
+            for (index, value) in stickerId.enumerated() {
+//                if index >= 4 { return }
                 let stickerButton = UIButton()
                 stickerButton.setImage(StickerType.stickers[value], for: .normal)
                 stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
-                stickerHStackView.addArrangedSubview(stickerButton)
+                if index < 4 { stickerHStackView.addArrangedSubview(stickerButton) } 
             }
-            
             self.stickerHStackView.isHidden = false
+            
         }
         else {
             self.stickerHStackView.isHidden = true
