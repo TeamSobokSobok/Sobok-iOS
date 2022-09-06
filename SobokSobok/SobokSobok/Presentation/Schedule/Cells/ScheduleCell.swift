@@ -115,7 +115,6 @@ extension ScheduleCell {
         if let stickerId = stickerId, !stickerId.isEmpty {
             self.countLabel.text = stickerId.count > 4 ? "+ \(stickerId.count - 4)" : ""
             for (index, value) in stickerId.enumerated() {
-//                if index >= 4 { return }
                 let stickerButton = UIButton()
                 stickerButton.setImage(StickerType.stickers[value], for: .normal)
                 stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
