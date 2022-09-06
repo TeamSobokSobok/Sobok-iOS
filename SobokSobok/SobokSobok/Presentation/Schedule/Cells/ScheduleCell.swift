@@ -42,12 +42,6 @@ class ScheduleCell: UICollectionViewCell {
         $0.distribution = .fillEqually
         $0.spacing = 5.adjustedWidth
         $0.isHidden = true
-        
-//        for index in 0..<4 {
-//            let stickerButton = UIButton()
-//            stickerButton.addTarget(self, action: #selector(stickerButtonTapped), for: .touchUpInside)
-//            $0.addArrangedSubview(stickerButton)
-//        }
     }
     
     private lazy var countLabel = UILabel().then {
@@ -74,7 +68,7 @@ class ScheduleCell: UICollectionViewCell {
     // MARK: - Configure Functions
     
     func configureUI() {
-        self.backgroundColor = Color.gray100
+        self.backgroundColor = Color.white
         self.makeRounded(radius: 12)
         self.pillColorView.makeRounded(radius: 4)
         self.stickerHStackView.arrangedSubviews.forEach { $0.isHidden = true }
