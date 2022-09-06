@@ -98,8 +98,8 @@ final class CalendarDayCell: FSCalendarCell {
     }
     
     func configureUI(isSelected: Bool, with type: FilledType) {
-        width = isSelected ? 44 : 32
-        yPosition = isSelected ? -4 : 2
+        width = isSelected ? 48 : 32
+        yPosition = isSelected ? -6 : 2
         selectedType = isSelected ? .single : .not
         filledType = type
     }
