@@ -272,6 +272,7 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
         cell.viewModel.deleteCellClosure = { [weak self] in
             guard let self = self else { return }
             self.pillTimeViewModel.deleteCell(index: indexPath.row)
+            self.pillTimeViewModel.deleteChangeTimeList(index: indexPath.row)
         }
         
         return cell

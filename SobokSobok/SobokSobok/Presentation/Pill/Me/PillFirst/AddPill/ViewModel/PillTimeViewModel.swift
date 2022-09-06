@@ -20,6 +20,9 @@ class PillTimeViewModel {
     
     func deleteCell(index: Int) {
         timeList.value.remove(at: index)
+    }
+    
+    func deleteChangeTimeList(index: Int) {
         changeTimeList.value.remove(at: index)
     }
     
