@@ -117,7 +117,7 @@ extension NoticeViewController: UICollectionViewDataSource {
             else if noticeList?.infoList[indexPath.row].section == "pill" {
                 cell.setupView(section: .pill, status: .waite)
                 cell.nameLabel.text = "\(pillName)"
-                cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 보냈어요"
+                cell.descriptionLabel.text = "\(groupName)님이 약 알림 일정을 보냈어요"
                 
                 if UserDefaults.standard.integer(forKey: "sendedPillCount") == 0 {
                     cell.toolTipView.isHidden = false
