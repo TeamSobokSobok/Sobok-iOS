@@ -29,16 +29,14 @@ extension UICollectionView {
         // MARK: - Render
         [sobokImage, descriptionLabel].forEach { emptyView.addSubview($0) }
 
-        sobokImage.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(178)
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.height.equalTo(165.adjustedHeight)
+        sobokImage.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(178)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(165.adjustedHeight)
         }
-        descriptionLabel.snp.makeConstraints {
-            $0.width.equalTo(318.adjustedWidth)
-            $0.top.equalTo(sobokImage.snp.bottom).offset(29)
-            $0.centerX.equalToSuperview()
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(sobokImage.snp.bottom).offset(29)
+            make.centerX.equalToSuperview()
         }
         self.backgroundView = emptyView
     }
