@@ -79,7 +79,7 @@ extension ShareTopView {
     }
     
     private func updateUI() {
-        for index in members.indices {
+        for index in members.indices where index < 5 {
             let button = friendHStackView.arrangedSubviews[index] as! UIButton
             button.isHidden = false
             let friendName = members[index].memberName.prefix(2)
@@ -89,7 +89,7 @@ extension ShareTopView {
     }
     
     private func updateButton() {
-        for index in members.indices {
+        for index in members.indices where index < 5 {
             let button = friendHStackView.arrangedSubviews[index] as! UIButton
             
             if index == currentIndex {
