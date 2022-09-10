@@ -25,7 +25,8 @@ final class SBIndicator: BaseView {
     }
     
     override func setupConstraints() {
-        self.backgroundColor = .black.withAlphaComponent(0.3)
+//        self.backgroundColor = .black.withAlphaComponent(0.3)
+        self.backgroundColor = .white
         
         self.addSubview(self.contentView)
         self.contentView.addSubview(self.loadingView)
