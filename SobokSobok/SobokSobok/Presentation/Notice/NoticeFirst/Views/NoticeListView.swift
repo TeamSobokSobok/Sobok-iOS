@@ -34,9 +34,9 @@ final class NoticeListView: BaseView {
             $0.leading.equalToSuperview().offset(20)
         }
         noticeListCollectionView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(117)
+            $0.top.equalToSuperview().offset(147)
             $0.leading.equalToSuperview().offset(20)
-            $0.bottom.equalTo(self.safeAreaLayoutGuide).inset(32)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
             $0.trailing.equalToSuperview().inset(20)
         }
     }

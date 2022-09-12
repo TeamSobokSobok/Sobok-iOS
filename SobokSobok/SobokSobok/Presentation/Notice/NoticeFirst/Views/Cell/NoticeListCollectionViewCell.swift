@@ -35,6 +35,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
     private lazy var topStackView =  UIStackView().then {
         $0.axis = .horizontal
         $0.distribution = .fill
+        $0.spacing = 10
     }
     private lazy var iconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -103,7 +104,7 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         statusType = status
         divideSection()
         
-        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton)
+        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton, toolTipView)
         topStackView.bringSubviewToFront(toolTipView)
         middleStackView.addArrangedSubviews(descriptionLabel, timeLabel)
         bottomStackView.addArrangedSubviews(refuseButton, acceptButton)
@@ -132,12 +133,17 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         nameLabel.snp.makeConstraints { make in
             make.width.equalTo(156.adjustedWidth)
             make.top.equalTo(topStackView.snp.top)
-            make.leading.equalTo(topStackView.snp.leading).offset(32)
+            make.leading.equalTo(topStackView.snp.leading).inset(30)
         }
         detailButton.snp.makeConstraints { make in
             make.width.equalTo(72.adjustedWidth)
             make.top.equalTo(topStackView.snp.top)
-            make.leading.equalTo(topStackView.snp.leading).offset(227)
+            make.leading.equalTo(topStackView.snp.leading).inset(217)
+        }
+        toolTipView.snp.makeConstraints { make in
+            make.width.equalTo(247.adjustedWidth)
+            make.height.equalTo(36.adjustedHeight)
+            make.top.equalTo(detailButton.snp.bottom).offset(1)
         }
 
         // MARK: - middle

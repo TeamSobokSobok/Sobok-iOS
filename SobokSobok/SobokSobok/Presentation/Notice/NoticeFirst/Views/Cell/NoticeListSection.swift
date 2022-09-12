@@ -14,7 +14,7 @@ extension NoticeViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(180.adjustedHeight))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 18, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 32, trailing: 0)
         section.interGroupSpacing = 8
         section.orthogonalScrollingBehavior = .none
         

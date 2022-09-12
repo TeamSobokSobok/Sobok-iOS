@@ -53,6 +53,8 @@ extension NoticeViewController: NoticeFistControl {
 extension NoticeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if noticeList?.infoList.isEmpty == true {
+            let userName = noticeList?.userName ?? ""
+            noticeListView.titleLabel.text = "소중한 " + userName + "님의 알림"
             collectionView.setEmptyView(
                 image: Image.illustOops, message: "아직 도착한 알림이 없어요!"
             )
@@ -117,7 +119,7 @@ extension NoticeViewController: UICollectionViewDataSource {
             else if noticeList?.infoList[indexPath.row].section == "pill" {
                 cell.setupView(section: .pill, status: .waite)
                 cell.nameLabel.text = "\(pillName)"
-                cell.descriptionLabel.text = "\(groupName)님이 보낸 약 알림 일정을 보냈어요"
+                cell.descriptionLabel.text = "\(groupName)님이 약 알림 일정을 보냈어요"
                 
                 if UserDefaults.standard.integer(forKey: "sendedPillCount") == 0 {
                     cell.toolTipView.isHidden = false
