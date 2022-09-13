@@ -79,7 +79,6 @@ final class EditViewController: UIViewController, EditViewProtocol {
         }
         
         editCommonViewModel.end.bind { text in
-            print(333, self.editCommonViewModel.end.value)
             self.editView.editPillDateView.pillDateLabel.text = "\(self.editCommonViewModel.start.value) ~ \(self.editCommonViewModel.end.value)"
         }
     
@@ -102,8 +101,8 @@ final class EditViewController: UIViewController, EditViewProtocol {
                     }
                 case 3:
                     self.divideButtonState(everyday: false, day: false, period: true, type: .period)
-                    
-                    self.editView.editPillPeriodView.specificView.specificLabel.text = self.editCommonViewModel.periodViewModel.dayString.value
+                    self.editView.editPillPeriodView.specificView.isHidden = false
+                    self.editView.editPillPeriodView.specificView.specificLabel.text = self.editCommonViewModel.periodViewModel.dayString.value.changeEnToKr()
        
                     if self.editCommonViewModel.periodViewModel.dayString.value == "며칠 간격으로 먹나요?" {
                         self.unableNextButton()
@@ -242,6 +241,7 @@ final class EditViewController: UIViewController, EditViewProtocol {
         
         editCommonViewModel.dayViewModel.days.bind { (text) in
             self.editView.editPillPeriodView.specificView.specificLabel.text = text
+        
             
             guard let textField = self.editView.editPillNameView.pillNameTextField.text else { return }
             
@@ -265,7 +265,7 @@ final class EditViewController: UIViewController, EditViewProtocol {
         }
         
         editCommonViewModel.periodViewModel.dayString.bind { (text) in
-            
+   
             self.editView.editPillPeriodView.specificView.specificLabel.text = text
             text == "" ? self.unableNextButton() : self.enableNextButton()
             self.divide()

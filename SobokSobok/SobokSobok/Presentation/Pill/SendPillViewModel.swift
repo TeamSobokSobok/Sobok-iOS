@@ -77,14 +77,12 @@ final class SendPillViewModel: ViewModelType {
     var memberId: Helper<Int> = Helper(0)
 }
 
-
 extension SendPillViewModel {
     func postMyPill() {
         Task {
             do {
                 let sendPill = SendPill(pillName: pillList.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: changeTime)
                 
-                print(sendPill)
                 _ = try await sendPillManager.postMyPill(body: sendPill)
             }
         }
@@ -94,6 +92,7 @@ extension SendPillViewModel {
         Task {
             do {
                 let sendPill = SendPill(pillName: pillList.value, start: start, end: end, takeInterval: takeInterval, day: day, specific: specific, time: changeTime)
+                
                 _ = try await sendPillManager.postFriendPill(body: sendPill, for: memberId.value)
             }
         }

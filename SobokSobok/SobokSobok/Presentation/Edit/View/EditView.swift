@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class EditView: BaseView  {
+final class EditView: BaseView {
     
     private lazy var scrollView = UIScrollView().then {
         $0.backgroundColor = Color.white

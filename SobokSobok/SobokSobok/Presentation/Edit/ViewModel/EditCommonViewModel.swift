@@ -44,8 +44,7 @@ extension EditCommonViewModel {
         Task {
             do {
                 let editPill = EditPill(pillName: pillName.value,
-                                        start: start.value, end: end.value, cycle: takeInterval.value, day: dayViewModel.days.value, specific: periodViewModel.dayPeriod.value, time: timeViewModel.changeTimeList.value, date: currentDate.toString(of: .year))
-                
+                                        start: start.value, end: end.value, cycle: takeInterval.value, day: dayViewModel.days.value, specific: periodViewModel.dayString.value.changeKrToEn(), time: timeViewModel.changeTimeList.value, date: currentDate.toString(of: .year))
                 _ = try await
                 editPillManager.putEditPill(pillId: pillId, body: editPill)
             }

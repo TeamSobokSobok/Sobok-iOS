@@ -39,8 +39,8 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegation()
-        style()
         bind()
+        style()
     }
     
     init(sendPillViewModel: SendPillViewModel) {
@@ -71,6 +71,8 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
     func style() {
         tabBarController?.tabBar.isHidden = true
         view.backgroundColor = .systemBackground
+        self.enableNextButton()
+        self.sendPillViewModel.takeInterval = 1
     }
     
     func bind() {
@@ -91,6 +93,7 @@ final class AddPillFirstViewController: UIViewController, AddPillFirstProtocol {
         
         addPillFirstView.everydayButton.rx.tap.bind {
             self.addPillFirstView.everydayButton.isSelected.toggle()
+
             if self.addPillFirstView.everydayButton.isSelected {
                 self.enableNextButton()
                 self.sendPillViewModel.takeInterval = 1
@@ -273,6 +276,10 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
             guard let self = self else { return }
             self.pillTimeViewModel.deleteCell(index: indexPath.row)
             self.pillTimeViewModel.deleteChangeTimeList(index: indexPath.row)
+        }
+        
+        if self.pillTimeViewModel.timeList.value.count == 1 {
+            cell.deleteButton.isHidden = true
         }
         
         return cell

@@ -28,13 +28,11 @@ final class AddPillFirstViewModel: ViewModelType {
     
     var disposeBag = DisposeBag()
     
-    private let isEverydaySelected = BehaviorRelay<Bool>(value: false)
+    private let isEverydaySelected = BehaviorRelay<Bool>(value: true)
     private let isSpecificDaySelected = BehaviorRelay<Bool>(value: false)
     private let isSpecificPeriodSelected = BehaviorRelay<Bool>(value: false)
     
-    init() {
- 
-    }
+    init() {}
     
     func transform(input: Input) -> Output {
         input.didEverydayButtonTap

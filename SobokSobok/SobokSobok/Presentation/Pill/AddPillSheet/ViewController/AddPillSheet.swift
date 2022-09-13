@@ -56,6 +56,7 @@ final class AddPillSheet: UIViewController, AddPillProtocol {
     @IBOutlet var mainView: UIView!
     @IBOutlet var medicineTableView: UITableView!
     @IBOutlet var sheetHeight: NSLayoutConstraint!
+    @IBOutlet weak var xButton: UIButton!
     
     // MARK: - View Life Cycle
     
@@ -75,6 +76,7 @@ final class AddPillSheet: UIViewController, AddPillProtocol {
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         sheetHeight.constant = 0
+        xButton.tintColor = Color.darkMint
     }
     
     // MARK: - Functions
@@ -164,6 +166,8 @@ extension AddPillSheet: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             output.didLoadPillCount.drive(onNext: { pillCount in
+                
+                print(123123123123, pillCount)
                 if 5 - pillCount > 0 || 5 - pillCount == 0 {
                     self.pushPillFirstViewController(style: .myPill)
                 } else {

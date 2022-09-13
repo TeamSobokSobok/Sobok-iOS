@@ -27,6 +27,10 @@ final class AddPillSecondView: BaseView {
         $0.text = "2022.1.9 ~ 2022.4.9"
     }
     
+    lazy var bottomLine = UIView().then {
+        $0.backgroundColor = Color.gray200
+    }
+    
     let calendar = CalendarView()
     
     let checkBoxButton = UIButton().then {
@@ -66,7 +70,7 @@ final class AddPillSecondView: BaseView {
     }
     
     override func setupView() {
-        [navigationView, pillQuestionLabel, pillPeriodLabel, calendar, checkBoxButton, startThreeMonthLabel, periodInformationLabel, nextButton].forEach {
+        [navigationView, pillQuestionLabel, pillPeriodLabel, bottomLine, calendar, checkBoxButton, startThreeMonthLabel, periodInformationLabel, nextButton].forEach {
             addSubview($0)
         }
     }
@@ -88,8 +92,14 @@ final class AddPillSecondView: BaseView {
             $0.leading.equalTo(pillQuestionLabel.snp.leading)
         }
         
-        calendar.snp.makeConstraints {
+        bottomLine.snp.makeConstraints {
             $0.top.equalTo(pillPeriodLabel.snp.bottom).offset(34)
+            $0.height.equalTo(1)
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        calendar.snp.makeConstraints {
+            $0.top.equalTo(bottomLine.snp.bottom).offset(9)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(UIScreen.main.bounds.height * 0.4)
         }
