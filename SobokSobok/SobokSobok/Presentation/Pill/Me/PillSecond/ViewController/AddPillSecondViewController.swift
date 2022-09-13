@@ -18,6 +18,8 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
     private let addPillSecondView = AddPillSecondView()
     private let sendPillViewModel: SendPillViewModel
     private let disposeBag = DisposeBag()
+    var start = String()
+    var end = String()
     
     init(sendPillViewModel: SendPillViewModel) {
         self.sendPillViewModel = sendPillViewModel
@@ -71,7 +73,7 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         self.sendPillViewModel.start = "\(date.toString(of: .year))"
         self.sendPillViewModel.end = "\(afterDate.toString(of: .year))"
 
-        self.addPillSecondView.pillPeriodLabel.text = "\(date.toString(of: .year)) ~ \(afterDate.toString(of: .year))"
+        self.addPillSecondView.pillPeriodLabel.text = "\(date.toString(of: .noticeDay)) ~ \(afterDate.toString(of: .noticeDay))"
         
         self.addPillSecondView.checkBoxButton.rx.tap.bind {
             self.addPillSecondView.checkBoxButton.isSelected.toggle()
@@ -100,8 +102,9 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         guard let calendar = calendar.firstDate else { return }
         
         self.sendPillViewModel.start = calendar.toString(of: .year)
+        self.start = calendar.toString(of: .noticeDay)
         
-        self.addPillSecondView.pillPeriodLabel.text = "\(sendPillViewModel.start) ~ \(sendPillViewModel.end)"
+        self.addPillSecondView.pillPeriodLabel.text = "\(self.start) ~ \(self.end)"
      
     }
     
@@ -109,8 +112,9 @@ final class AddPillSecondViewController: UIViewController, AddPillSecondProtocol
         guard let calendar = calendar.lastDate else { return }
         
         self.sendPillViewModel.end = calendar.toString(of: .year)
+        self.end = calendar.toString(of: .noticeDay)
     
-        self.addPillSecondView.pillPeriodLabel.text = "\(sendPillViewModel.start) ~ \(sendPillViewModel.end)"
+        self.addPillSecondView.pillPeriodLabel.text = "\(self.start) ~ \(self.end)"
         
         if self.addPillSecondView.calendar.firstDate != nil && self.addPillSecondView.calendar.lastDate != nil {
             self.enableNextButton()

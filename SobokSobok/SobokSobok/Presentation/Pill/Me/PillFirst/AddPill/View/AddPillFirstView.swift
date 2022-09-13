@@ -51,9 +51,9 @@ final class AddPillFirstView: BaseView {
     
     let verticalStackView = UIStackView().then {
         $0.axis = .vertical
-        $0.distribution = .fillEqually
-        $0.alignment = .center
         $0.spacing = 10
+        $0.distribution = .fill
+        $0.alignment = .center
     }
     
     let timeLabel = UILabel().then {

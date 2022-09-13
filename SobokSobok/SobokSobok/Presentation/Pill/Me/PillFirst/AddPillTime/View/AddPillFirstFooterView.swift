@@ -19,6 +19,7 @@ final class AddPillFirstFooterView: UICollectionReusableView {
         $0.backgroundColor = Color.gray100
         $0.addTarget(self, action: #selector(addPillCellButtonClicked), for: .touchUpInside)
         $0.setTitle("  시간 추가", for: .normal)
+        $0.titleLabel?.font = UIFont.font(.pretendardRegular, ofSize: 16)
         $0.setImage(Image.icPlusGray, for: .normal)
         $0.currentImage?.withTintColor(Color.gray600)
         let new = $0.currentImage?.resizedImage(Size: CGSize(width: 13, height: 13))

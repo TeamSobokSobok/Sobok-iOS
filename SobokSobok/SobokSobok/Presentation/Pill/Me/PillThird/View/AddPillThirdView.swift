@@ -48,7 +48,6 @@ final class AddPillThirdView: BaseView {
         $0.textColor = Color.gray500
     }
     
-    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         
         $0.register(PillNameViewCell.self)
@@ -66,6 +65,8 @@ final class AddPillThirdView: BaseView {
     
     override func setupView() {
         addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton, tooltipImage)
+        
+        pillPeriodInfoLabel.isHidden = true
     }
     
     override func setupConstraints() {
@@ -78,6 +79,10 @@ final class AddPillThirdView: BaseView {
         pillNameInfoLabel.snp.makeConstraints {
             $0.top.equalTo(navigationView.snp.bottom).offset(37)
             $0.leading.equalToSuperview().offset(20)
+        }
+        
+        pillPeriodInfoLabel.snp.makeConstraints {
+            $0.top.equalTo(pillNameInfoLabel.snp.bottom).offset(4)
         }
         
         pillCountLabel.snp.makeConstraints {
@@ -114,4 +119,3 @@ final class AddPillThirdView: BaseView {
         }
     }
 }
-

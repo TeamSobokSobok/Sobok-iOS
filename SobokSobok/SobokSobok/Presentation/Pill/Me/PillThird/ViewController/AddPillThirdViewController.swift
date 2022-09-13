@@ -217,11 +217,7 @@ extension AddPillThirdViewController: UICollectionViewDataSource {
         }
     
         sendPillViewModel.addButtonState.bind { bool in
-            if bool {
-                self.enableNextButton()
-            } else {
-                self.unableNextButton()
-            }
+            bool == true ? self.enableNextButton() : self.unableNextButton()
         }
         
         cell.sendPillViewModel.deleteCellClosure = {
@@ -248,15 +244,7 @@ extension AddPillThirdViewController: UICollectionViewDataSource {
         }
 
         self.sendPillViewModel.hideFooterView(button: &cell.addPillButton.isHidden)
-        
-        self.sendPillViewModel.footerViewState.bind { bool in
-            cell.addPillButton.isHidden = bool ? true : false
-        }
-        
-        if self.sendPillViewModel.pillList.value.count == 0 {
-            cell.addPillButton.isHidden = false
-        }
-        
+
         return cell
     }
 }
