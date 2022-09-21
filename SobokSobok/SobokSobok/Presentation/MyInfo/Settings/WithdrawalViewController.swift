@@ -41,16 +41,36 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
 
 extension WithdrawalViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if(textView.textColor == UIColor(cgColor: Color.gray500.cgColor)) {
-            textView.text = ""
+        if reasonTextView.hasText {
+            textView.text.removeAll()
             textView.textColor = UIColor(cgColor: Color.black.cgColor)
+        }
+        else {
+            textView.text = "적어주시는 여러분의 소중한 의견은 서비스 개선에\n큰 도움이 되어요:)"
+            textView.textColor = UIColor(cgColor: Color.gray500.cgColor)
+            reasonTextCounter.text = "0/2000"
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "적어주시는 여러분의 소중한 의견은 서비스 개선에 큰 도움이 되어요:)"
+            textView.text = "적어주시는 여러분의 소중한 의견은 서비스 개선에큰 도움이 되어요:)"
             textView.textColor = UIColor(cgColor: Color.gray500.cgColor)
+            reasonTextCounter.text = "0/2000"
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let textRange = Range(range, in: currentText) else { return false }
+        let changedText = currentText.replacingCharacters(in: textRange, with: text)
+        reasonTextCounter.text = "\(changedText.count)/2000"
+        
+        if changedText.count > 2000 {
+            reasonTextView.deleteBackward()
+            reasonTextCounter.text = "2000/2000"
+        }
+        
+        return changedText.count < 2000
     }
 }
