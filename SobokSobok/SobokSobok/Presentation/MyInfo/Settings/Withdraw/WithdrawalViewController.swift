@@ -59,7 +59,7 @@ extension WithdrawalViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "적어주시는 여러분의 소중한 의견은 서비스 개선에큰 도움이 되어요:)"
+            textView.text = "적어주시는 여러분의 소중한 의견은 서비스 개선에\n큰 도움이 되어요:)"
             textView.textColor = UIColor(cgColor: Color.gray500.cgColor)
             reasonTextCounter.text = "0/2000"
         }
