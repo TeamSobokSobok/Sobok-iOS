@@ -13,6 +13,8 @@ import SnapKit
 protocol WitrhdrawalProtocol: StyleProtocol, DelegationProtocol {}
 
 final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
+    
+    @IBOutlet weak var reasonTextLabel: UILabel!
     @IBOutlet weak var reasonView: UIView!
     @IBOutlet weak var reasonTextView: UITextView!
     @IBOutlet weak var reasonTextCounter: UILabel!
@@ -27,6 +29,12 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
     func style () {
         reasonView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
         witrhdrawButton.makeRounded(radius: 12)
+        
+        let attrString = NSMutableAttributedString(string: reasonTextLabel.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.minimumLineHeight = 21
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        reasonTextLabel.attributedText = attrString
     }
     
     func assignDelegation() {

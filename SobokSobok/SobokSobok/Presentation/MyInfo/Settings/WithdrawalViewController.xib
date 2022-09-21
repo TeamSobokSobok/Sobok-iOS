@@ -20,8 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WithdrawalViewController" customModule="SobokSobok" customModuleProvider="target">
             <connections>
                 <outlet property="reasonTextCounter" destination="kxu-mc-H2w" id="AeQ-3W-WDm"/>
+                <outlet property="reasonTextLabel" destination="LwO-Pg-q1O" id="n6I-po-q0X"/>
                 <outlet property="reasonTextView" destination="xPA-5g-0pS" id="iIL-nX-Lie"/>
-                <outlet property="reasonView" destination="K07-88-GBF" id="Alc-kH-Nfy"/>
+                <outlet property="reasonView" destination="K07-88-GBF" id="aXc-XI-Ori"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="witrhdrawButton" destination="Xmm-of-TIK" id="C75-Od-Qts"/>
             </connections>
@@ -64,7 +65,7 @@
                     <color key="textColor" name="black_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 그 동안의 복약기록과 받은 스티커를 포함한 모든 정보가 사라져요 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwO-Pg-q1O">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 그 동안의 복약기록과 받은 스티커를 포함한 모든 정보가 사라져요 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwO-Pg-q1O" userLabel="탈퇴하면 그 동안의 복약기록과 받은 스티커를 포함한 모든 정보가 사라져요">
                     <rect key="frame" x="20" y="144" width="252" height="36.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
                     <color key="textColor" name="gray500_sub"/>
