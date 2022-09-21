@@ -645,13 +645,10 @@
 		9AB833F12889721F0040FC2A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				F6ECBC2528DB052E000ED3DD /* Withdraw */,
+				F6ECBC2428DB051B000ED3DD /* Terms */,
 				9AB833F2288972430040FC2A /* SettingViewController.swift */,
 				9AB833F3288972440040FC2A /* SettingViewController.xib */,
-				9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */,
-				9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */,
-				9AB83406289A66FD0040FC2A /* WithdrawalViewController.swift */,
-				F6ECBC0F28DAFB23000ED3DD /* WithdrawViewController+Network.swift */,
-				9AB83407289A66FD0040FC2A /* WithdrawalViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1854,6 +1851,25 @@
 				F635EEAA27C78B72009B9246 /* PillInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F6ECBC2428DB051B000ED3DD /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				9AB833FA28912F0E0040FC2A /* TermsAndPolicesViewController.swift */,
+				9AB833FB28912F0E0040FC2A /* TermsAndPolicesViewController.xib */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
+		F6ECBC2528DB052E000ED3DD /* Withdraw */ = {
+			isa = PBXGroup;
+			children = (
+				9AB83406289A66FD0040FC2A /* WithdrawalViewController.swift */,
+				F6ECBC0F28DAFB23000ED3DD /* WithdrawViewController+Network.swift */,
+				9AB83407289A66FD0040FC2A /* WithdrawalViewController.xib */,
+			);
+			path = Withdraw;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
