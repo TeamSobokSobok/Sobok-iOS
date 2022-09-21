@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="appleLoginButton" destination="rLM-yc-pdj" id="TvA-nT-Eez"/>
                 <outlet property="kakaoLoginButton" destination="kuT-c8-eMU" id="BFR-yA-AQo"/>
+                <outlet property="titleLabel" destination="uGy-Zg-XTb" id="ne5-pL-LyS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
