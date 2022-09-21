@@ -15,7 +15,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
     var nickname: String?
     let editNicknameManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
 
-    private var isNickNameRight: Bool = false
+    private var isNickNameRight: Bool = true
     private var isDuplicationChecked: Bool = false
     
     private var isKeyboardOn: Bool = false
@@ -53,9 +53,13 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
 
     // MARK: 텍스트필드 관련
     @objc private func activateTextField() {
+        changeTextFieldBorder()
+    }
+    @objc private func changeTextFieldWhileEditing() {
         initializeDuplicationCheck()
         limitNicknameText()
         checkIsNicknameRight()
+        changeTextFieldBorder()
         showWarning()
         enableDuplicationCheckButton()
     }
@@ -67,6 +71,10 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
             nickNameTextField.deleteBackward()
         }
     }
+    private func changeTextFieldBorder() {
+        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
+    }
+    
     private func checkIsNicknameRight() {
         isNickNameRight = checkNicknameRegularExpression(input: nickNameTextField.text ?? "")
     }
@@ -78,9 +86,8 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
     }
     private func showWarning() {
         warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
-        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
     }
-
+    
     @objc private func inactivateTextField() {
         nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
     }
