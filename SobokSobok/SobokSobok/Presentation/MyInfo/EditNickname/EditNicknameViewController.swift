@@ -82,8 +82,8 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
         isNickNameRight = checkNicknameRegularExpression(input: nickNameTextField.text ?? "")
     }
     private func checkNicknameRegularExpression (input: String) -> Bool {
-        // 닉네임 조건 : [영문, 한글, 공백, 숫자] 2~10글자
-        let validNickName = "[가-힣0-9a-zA-Z ]{2,10}"
+        // 닉네임 조건 : [영문, 한글, 숫자] 2~10글자
+        let validNickName = "[가-힣0-9a-zA-Z]{2,10}"
         let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
           return nickNameTest.evaluate(with: input)
     }
