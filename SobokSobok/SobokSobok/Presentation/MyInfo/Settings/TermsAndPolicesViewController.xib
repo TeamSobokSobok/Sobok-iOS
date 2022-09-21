@@ -66,8 +66,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMoreBlack48" translatesAutoresizingMaskIntoConstraints="NO" id="7m7-yg-Svd">
-                                    <rect key="frame" x="338" y="0.0" width="48" height="48"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_more_48_gray500" translatesAutoresizingMaskIntoConstraints="NO" id="7m7-yg-Svd">
+                                    <rect key="frame" x="337.5" y="0.0" width="48.5" height="48"/>
                                     <color key="tintColor" name="gray500_sub"/>
                                 </imageView>
                             </subviews>
@@ -102,8 +102,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icMoreBlack48" translatesAutoresizingMaskIntoConstraints="NO" id="d94-ra-Ddv">
-                                    <rect key="frame" x="338" y="0.0" width="48" height="48"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_more_48_gray500" translatesAutoresizingMaskIntoConstraints="NO" id="d94-ra-Ddv">
+                                    <rect key="frame" x="337.5" y="0.0" width="48.5" height="48"/>
                                     <color key="tintColor" name="gray500_sub"/>
                                 </imageView>
                             </subviews>
@@ -138,7 +138,7 @@
     </objects>
     <resources>
         <image name="icBack48" width="48" height="48"/>
-        <image name="icMoreBlack48" width="48" height="48"/>
+        <image name="ic_more_48_gray500" width="48.5" height="48"/>
         <namedColor name="gray500_sub">
             <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
