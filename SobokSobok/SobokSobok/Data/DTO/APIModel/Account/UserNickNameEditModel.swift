@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserNickNameEdit: Codable {
+struct Account: Codable {
     let status: Int
     let success: Bool
     let message: String

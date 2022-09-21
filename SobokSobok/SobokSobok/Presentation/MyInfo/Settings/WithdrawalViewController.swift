@@ -14,6 +14,8 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
     @IBOutlet weak var reasonTextView: UITextView!
     @IBOutlet weak var reasonTextCounter: UILabel!
     @IBOutlet weak var witrhdrawButton: UIButton!
+    let accountWithdrawManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
+    private var reason: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,7 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
     }
     
     @IBAction func confirmWitrhdrawal(_ sender: UIButton) {
-        print("회원탈퇴")
+        withdrawSobokSobok(reason)
     }
 }
 
@@ -62,6 +64,7 @@ extension WithdrawalViewController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
+        reason = currentText
         guard let textRange = Range(range, in: currentText) else { return false }
         let changedText = currentText.replacingCharacters(in: textRange, with: text)
         reasonTextCounter.text = "\(changedText.count)/2000"
