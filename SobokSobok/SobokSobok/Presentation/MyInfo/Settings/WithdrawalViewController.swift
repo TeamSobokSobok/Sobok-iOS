@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Then
+import SnapKit
+
 protocol WitrhdrawalProtocol: StyleProtocol, DelegationProtocol {}
 
 final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
@@ -29,7 +32,7 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
     func assignDelegation() {
         reasonTextView.delegate = self
     }
-    
+
     @IBAction func backToSettingVC(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -46,7 +49,9 @@ extension WithdrawalViewController: UITextViewDelegate {
             textView.textColor = UIColor(cgColor: Color.black.cgColor)
         }
     }
-    
+    func textViewDidChange(_ textView: UITextView) {
+        reasonTextCounter.text = "\(reasonTextView.text.count)/2000"
+    }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "적어주시는 여러분의 소중한 의견은 서비스 개선에 큰 도움이 되어요:)"
