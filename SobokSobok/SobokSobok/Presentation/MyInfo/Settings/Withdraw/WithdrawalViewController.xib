@@ -65,19 +65,21 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하면 그 동안의 복약기록와  받은 스티커를 포함한 모든 정보가 사라져요 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwO-Pg-q1O">
-                    <rect key="frame" x="20" y="144" width="252" height="36.5"/>
+                    <rect key="frame" x="20" y="148" width="252" height="36.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
                     <color key="textColor" name="gray500_sub"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K07-88-GBF" userLabel="input">
-                    <rect key="frame" x="20" y="245.5" width="374" height="160"/>
+                    <rect key="frame" x="20" y="249.5" width="374" height="160"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="적어주시는 여러분의 소중한 의견은 서비스 개선에 큰 도움이 되어요:)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xPA-5g-0pS">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xPA-5g-0pS">
                             <rect key="frame" x="16" y="12" width="342" height="108"/>
+                            <string key="text">적어주시는 여러분의 소중한 의견은 서비스 개선에
+큰 도움이 되어요:)</string>
                             <color key="textColor" name="gray500_sub"/>
                             <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxu-mc-H2w">
                             <rect key="frame" x="313.5" y="132" width="44.5" height="16"/>
@@ -113,7 +115,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하려는 이유가 궁금해요 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-3f-k71">
-                    <rect key="frame" x="20" y="216.5" width="204" height="19"/>
+                    <rect key="frame" x="20" y="220.5" width="204" height="19"/>
                     <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                     <color key="textColor" name="gray800_sub"/>
                     <nil key="highlightedColor"/>
@@ -129,7 +131,7 @@
                 <constraint firstItem="1hj-3f-k71" firstAttribute="leading" secondItem="LwO-Pg-q1O" secondAttribute="leading" id="HVg-Lp-Xzb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xmm-of-TIK" secondAttribute="trailing" constant="20" id="Ji4-Da-6qX"/>
                 <constraint firstItem="PAq-Vp-3xa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LaJ-K8-jzR"/>
-                <constraint firstItem="LwO-Pg-q1O" firstAttribute="top" secondItem="YEl-GF-Wlu" secondAttribute="bottom" constant="4" id="Mfr-61-vjw"/>
+                <constraint firstItem="LwO-Pg-q1O" firstAttribute="top" secondItem="YEl-GF-Wlu" secondAttribute="bottom" constant="8" id="Mfr-61-vjw"/>
                 <constraint firstItem="Xmm-of-TIK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="g24-fL-tN8"/>
                 <constraint firstItem="K07-88-GBF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hhX-3p-dlF"/>
                 <constraint firstItem="1hj-3f-k71" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="q74-kD-3iT"/>
