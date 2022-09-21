@@ -174,7 +174,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad6-yu-mXo">
-                    <rect key="frame" x="21" y="325" width="82" height="31"/>
+                    <rect key="frame" x="21" y="317" width="82" height="31"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
                     <color key="tintColor" name="gray500_sub"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -194,7 +194,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nwT-CY-jb6" secondAttribute="trailing" id="Ger-6a-gtj"/>
                 <constraint firstItem="1K1-9Y-4xX" firstAttribute="leading" secondItem="2Rh-si-K2R" secondAttribute="leading" id="bbu-Vq-K0i"/>
                 <constraint firstItem="ad6-yu-mXo" firstAttribute="leading" secondItem="2Rh-si-K2R" secondAttribute="leading" id="fuj-Lr-K4R"/>
-                <constraint firstItem="ad6-yu-mXo" firstAttribute="top" secondItem="1K1-9Y-4xX" secondAttribute="bottom" constant="8" id="i27-vp-y67"/>
+                <constraint firstItem="ad6-yu-mXo" firstAttribute="top" secondItem="1K1-9Y-4xX" secondAttribute="bottom" id="i27-vp-y67"/>
                 <constraint firstItem="1K1-9Y-4xX" firstAttribute="top" secondItem="2Rh-si-K2R" secondAttribute="bottom" constant="16" id="kKn-Sk-9I0"/>
                 <constraint firstItem="2Rh-si-K2R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20.809999999999999" id="lyC-0I-S3d"/>
                 <constraint firstItem="2Rh-si-K2R" firstAttribute="top" secondItem="nwT-CY-jb6" secondAttribute="bottom" constant="8" id="mvs-Fj-Tzn"/>
