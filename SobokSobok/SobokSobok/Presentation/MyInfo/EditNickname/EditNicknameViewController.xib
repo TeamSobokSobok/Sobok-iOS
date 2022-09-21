@@ -54,7 +54,7 @@
                                 <action selector="touchUpToDIsmiss:" destination="-1" eventType="touchUpInside" id="qYd-VR-wwf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIT-Sg-ahT">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIT-Sg-ahT">
                             <rect key="frame" x="355.5" y="23.5" width="48.5" height="31"/>
                             <color key="tintColor" name="mint_main"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>

@@ -16,6 +16,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
     let editNicknameManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
 
     private var isNickNameRight: Bool = true
+    
     private var isDuplicationChecked: Bool = false
     
     private var isKeyboardOn: Bool = false
@@ -63,6 +64,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
         changeTextFieldBorder()
         showWarning()
         enableDuplicationCheckButton()
+        enableConfirmButton()
     }
     private func initializeDuplicationCheck() {
         isDuplicationChecked = false
@@ -97,6 +99,9 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
     private func enableDuplicationCheckButton() {
         checkDuplicationButton.isEnabled = isNickNameRight
         checkDuplicationButtonBottomLine.backgroundColor = isNickNameRight ? UIColor(cgColor: Color.darkMint.cgColor) : UIColor(cgColor: Color.gray400.cgColor)
+    }
+    private func enableConfirmButton() {
+        confirmButton.isEnabled = isNickNameRight
     }
 
     // MARK: 토스트메세지 관련
