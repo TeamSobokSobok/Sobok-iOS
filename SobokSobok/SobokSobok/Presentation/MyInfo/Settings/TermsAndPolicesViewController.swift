@@ -23,10 +23,10 @@ final class TermsAndPolicesViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func personalInfo(_ sender: UIButton) {
-        openSafari(link: "https://suave-lilac-075.notion.site/6629bc1cbcb74d94a9d5d7563fe189ef")
+        openSafari(link: "https://baejiann120.notion.site/4f976bca05bb40b49d618c745cc5b754")
     }
     
     @IBAction func serviceTerms(_ sender: UIButton) {
-        openSafari(link: "https://suave-lilac-075.notion.site/33840908911044fe8651c1649706d7a1")
+        openSafari(link: "https://baejiann120.notion.site/77c1e0372c784f8399d1c588f2e89cef")
     }
 }
