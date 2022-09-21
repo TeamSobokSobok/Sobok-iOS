@@ -66,6 +66,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,completionHandler: { (_, _) in }
         )
+        
+        switch UIApplication.shared.applicationState {
+        default:
+            Notification.Name.userRespondsPush.post()
+        }
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

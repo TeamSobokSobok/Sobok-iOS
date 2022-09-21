@@ -27,6 +27,11 @@ final class TabBarController: UITabBarController {
         setDelegation()
         
         getGroupInformation()
+        setPushDefaultView()
+    }
+    
+    deinit {
+        Notification.Name.userRespondsPush.removeObserver(observer: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -130,6 +135,12 @@ extension TabBarController {
                     UserDefaults.standard.member = members
                 }
             }
+        }
+    }
+    private func setPushDefaultView() {
+        Notification.Name.userRespondsPush.addObserver { [weak self] _ in
+            guard let self = self else { return }
+            self.selectedIndex = 2
         }
     }
 }
