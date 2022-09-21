@@ -16,6 +16,7 @@ final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
 
     @IBOutlet weak var kakaoLoginButton: UIView!
     @IBOutlet weak var appleLoginButton: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     lazy var appleLoginManager = AppleLoginManager()
     lazy var authManager = AuthManager(apiService: APIManager(), environment: .development)
@@ -30,6 +31,13 @@ final class SocialSignInViewController: UIViewController, SocialSignInProtocol {
     func style() {
         kakaoLoginButton.makeRounded(radius: 6)
         appleLoginButton.makeRounded(radius: 6)
+        
+        let attrString = NSMutableAttributedString(string: titleLabel.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.minimumLineHeight = 34
+        paragraphStyle.alignment = .center
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        titleLabel.attributedText = attrString
     }
     
     @IBAction func signInWithKakao(_ sender: UIView) {

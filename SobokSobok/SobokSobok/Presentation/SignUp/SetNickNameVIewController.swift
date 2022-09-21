@@ -70,7 +70,8 @@ final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
     
     // MARK: Functions
     private func addTargetToTextField() {
-        nickNameTextField.addTarget(self, action: #selector(self.activateTextField), for: .editingChanged)
+        nickNameTextField.addTarget(self, action: #selector(self.activateTextField), for: .editingDidBegin)
+        nickNameTextField.addTarget(self, action: #selector(self.changeTextFieldDuringEditing), for: .editingChanged)
         nickNameTextField.addTarget(self, action: #selector(self.inactivateTextField), for: .editingDidEnd)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -78,16 +79,22 @@ final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
     
     // MARK: 텍스트필드 관련
     @objc private func activateTextField() {
+        changeTextFieldBorder()
+    }
+    @objc private func changeTextFieldDuringEditing() {
         initializeDuplicationCheck()
         limitNicknameText()
         checkIsNicknameRight()
         showWarning()
+        changeTextFieldBorder()
         enableDuplicationCheckButton()
         enableSignUpButton()
     }
+    
     private func initializeDuplicationCheck() {
         isDuplicationChecked = false
     }
+    
     private func limitNicknameText() {
         if nickNameTextField.text?.count ?? 0 > 10 {
             nickNameTextField.deleteBackward()
@@ -102,13 +109,18 @@ final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
         let nickNameTest = NSPredicate(format: "SELF MATCHES %@", validNickName)
           return nickNameTest.evaluate(with: input)
     }
+    
+    // MARK: 텍스트필드 스타일 관련
     private func showWarning() {
         warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
+    }
+    private func changeTextFieldBorder() {
         nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray600.cgColor : Color.pillColorRed.cgColor
     }
-
+    
     @objc private func inactivateTextField() {
-        nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
+        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
     // MARK: 버튼 활성화 관련
