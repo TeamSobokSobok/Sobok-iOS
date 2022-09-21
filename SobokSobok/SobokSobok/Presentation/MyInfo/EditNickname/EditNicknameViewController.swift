@@ -45,7 +45,8 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
 
     // MARK: Functions
     private func addTargetToTextField() {
-        nickNameTextField.addTarget(self, action: #selector(self.activateTextField), for: .editingChanged)
+        nickNameTextField.addTarget(self, action: #selector(self.activateTextField), for: .editingDidBegin)
+        nickNameTextField.addTarget(self, action: #selector(self.changeTextFieldWhileEditing), for: .editingChanged)
         nickNameTextField.addTarget(self, action: #selector(self.inactivateTextField), for: .editingDidEnd)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -89,7 +90,7 @@ final class EditNicknameViewController: UIViewController, EditNicknameProtocol {
     }
     
     @objc private func inactivateTextField() {
-        nickNameTextFieldView.makeRoundedWithBorder(radius: 12, color: Color.gray300.cgColor)
+        nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
 
     // MARK: 버튼 활성화 관련

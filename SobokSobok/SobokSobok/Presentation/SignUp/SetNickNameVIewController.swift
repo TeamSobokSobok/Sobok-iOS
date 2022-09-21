@@ -119,7 +119,6 @@ final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
     }
     
     @objc private func inactivateTextField() {
-        warningTextLabel.isHidden = isNickNameRight || !nickNameTextField.hasText
         nickNameTextFieldView.layer.borderColor = isNickNameRight || !nickNameTextField.hasText ? Color.gray300.cgColor : Color.pillColorRed.cgColor
     }
     
