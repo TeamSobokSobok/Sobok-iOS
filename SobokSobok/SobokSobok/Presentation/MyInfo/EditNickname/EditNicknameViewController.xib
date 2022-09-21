@@ -114,7 +114,7 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1U0-6a-I2c" userLabel="밑줄">
                     <rect key="frame" x="342" y="244" width="52" height="1"/>
-                    <color key="backgroundColor" name="gray500_sub"/>
+                    <color key="backgroundColor" name="gray400_sub"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Mn6-PL-41z"/>
                     </constraints>
@@ -149,8 +149,8 @@
         <namedColor name="dark_mint_main">
             <color red="0.0" green="0.6705882352941176" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="gray500_sub">
-            <color red="0.63137254901960782" green="0.66274509803921566" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="gray400_sub">
+            <color red="0.76078431372549016" green="0.78823529411764703" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray900_sub">
             <color red="0.20000000000000001" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
