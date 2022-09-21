@@ -280,6 +280,7 @@
 		F6EA7455281D1DAD00163B2E /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7454281D1DAD00163B2E /* TimeView.swift */; };
 		F6EA7457281D919000163B2E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7456281D919000163B2E /* NavigationBarView.swift */; };
 		F6ECBC1028DAFB23000ED3DD /* WithdrawViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6ECBC0F28DAFB23000ED3DD /* WithdrawViewController+Network.swift */; };
+		F6ECBC2828DB057C000ED3DD /* WithdrawCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6ECBC2628DB057C000ED3DD /* WithdrawCompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -545,6 +546,7 @@
 		F6EA7454281D1DAD00163B2E /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		F6EA7456281D919000163B2E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F6ECBC0F28DAFB23000ED3DD /* WithdrawViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WithdrawViewController+Network.swift"; sourceTree = "<group>"; };
+		F6ECBC2628DB057C000ED3DD /* WithdrawCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawCompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1868,6 +1870,7 @@
 				9AB83406289A66FD0040FC2A /* WithdrawalViewController.swift */,
 				F6ECBC0F28DAFB23000ED3DD /* WithdrawViewController+Network.swift */,
 				9AB83407289A66FD0040FC2A /* WithdrawalViewController.xib */,
+				F6ECBC2628DB057C000ED3DD /* WithdrawCompleteViewController.swift */,
 			);
 			path = Withdraw;
 			sourceTree = "<group>";
@@ -2165,6 +2168,7 @@
 				F61CDD5428B856AB00D6BBCC /* MyInfoViewController+Network.swift in Sources */,
 				9AB833F4288972440040FC2A /* SettingViewController.swift in Sources */,
 				BD71210327977DBC0068B981 /* PillManagementService.swift in Sources */,
+				F6ECBC2828DB057C000ED3DD /* WithdrawCompleteViewController.swift in Sources */,
 				BD14F364278EB4B000F316AF /* ShareViewController.swift in Sources */,
 				BDDF7691289951C20096196B /* ShareViewController+Network.swift in Sources */,
 				BD4611C328608389007BEE87 /* CalendarTopView.swift in Sources */,
