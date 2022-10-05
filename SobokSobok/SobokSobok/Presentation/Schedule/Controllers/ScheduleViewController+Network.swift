@@ -5,14 +5,28 @@
 //  Created by taekki on 2022/07/29.
 //
 
+import Foundation
+
 extension ScheduleViewController {
-    func getMySchedules(date: String) {
+    func getMySchedules(date: Date) {
         Task {
             do {
-                let schedules = try await scheduleManager.getMySchedule(for: date)
-                if let schedules = schedules,
-                   !schedules.isEmpty {
-                    self.schedules = schedules
+                let prev = Calendar.current.date(byAdding: .month, value: -1, to: date)!.toString(of: .year)
+                let current = date.toString(of: .year)
+                let next = Calendar.current.date(byAdding: .month, value: 1, to: date)!.toString(of: .year)
+
+                var tmp: [Schedule] = []
+                for date in [prev, current, next] {
+                    let schedules = try await scheduleManager.getMySchedule(for: date)
+                    if let schedules = schedules,
+                       !schedules.isEmpty {
+                        tmp.append(contentsOf: schedules)
+                    }
+                }
+                
+                if tmp != self.schedules {
+                    self.schedules.removeAll()
+                    self.schedules = tmp
                     self.calendarView.reloadData()
                 }
             }

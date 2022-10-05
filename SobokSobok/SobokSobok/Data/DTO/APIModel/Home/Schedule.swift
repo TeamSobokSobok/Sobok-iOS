@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Schedule: Codable {
+struct Schedule: Codable, Equatable {
     let scheduleDate: String
     let scheduleCount: String
     let isCheckCount: String
