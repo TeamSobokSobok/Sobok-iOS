@@ -397,10 +397,7 @@ extension ScheduleViewController {
             getMyPillLists(date: currentDate.toString(of: .year))
             
         case .share:
-            guard !member.isEmpty else {
-                print("멤버가 없어요!! 📞📞📞📞📞📞📞📞📞📞📞")
-                return
-            }
+            guard !member.isEmpty else { return }
             getMemberPillLists(memberId: member[tapIndex].memberId, date: currentDate.toString(of: .year))
         }
     }
