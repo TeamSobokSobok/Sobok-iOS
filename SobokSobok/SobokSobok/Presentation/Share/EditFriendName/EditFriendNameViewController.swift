@@ -103,11 +103,24 @@ final class EditFriendNameViewController: UIViewController, EditFriendnameProtoc
     @IBAction func touchUpToConfirm(_ sender: Any) {
 //        EditFriend.shared.groupId = 31 // 화면 연결되면 전달 받아야함
 //        EditFriend.shared.memberName = nameTextField.text ?? ""
-        editFriendNickname(at: groupId ?? 0, for: nameTextField.text ?? "") // TODO: - at 부분에 전달 받은 groupId 넣어주기
+        editFriendNickname(at: groupId ?? 0, for: nameTextField.text ?? "") // TODO: - at 부분에 전달 받은 groupId 넣어주기
         dismiss(animated: true)
     }
     
     @IBAction func touchUpToDIsmiss(_ sender: Any) {
-        dismiss(animated: true)
+        guard let name = nameTextField.text else { return }
+        editFriendNickname(at: groupId ?? 0, for: name)
+
+        var members = UserDefaults.standard.member
+        for index in members.indices {
+            if members[index].groupId == self.groupId {
+                print(name)
+                members[index].memberName = name
+            }
+        }
+
+        dismiss(animated: true) {
+            UserDefaults.standard.member = members
+        }
     }
 }
