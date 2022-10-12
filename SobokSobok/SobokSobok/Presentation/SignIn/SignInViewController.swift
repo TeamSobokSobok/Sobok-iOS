@@ -103,7 +103,6 @@ extension SignInViewController {
                 // 데이터 전달
                 self.userDefaults.set(data.username, forKey: "username")
                 self.userDefaults.set(data.accessToken, forKey: "accessToken")
-                print("\(data.username),\(data.accessToken)")
                 // 화면 이동
                 self.navigationController?.pushViewController(TabBarController.instanceFromNib(), animated: true)
             case .requestErr:
