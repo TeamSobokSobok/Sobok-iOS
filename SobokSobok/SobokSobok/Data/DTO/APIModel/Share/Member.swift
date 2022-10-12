@@ -8,7 +8,7 @@
 import UIKit
 
 struct Member: Codable {
-    let groupId: Int
-    let memberId: Int
-    let memberName: String
+    var groupId: Int
+    var memberId: Int
+    var memberName: String
 }
