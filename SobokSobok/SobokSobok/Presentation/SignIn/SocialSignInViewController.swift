@@ -98,6 +98,12 @@ extension SocialSignInViewController {
                 
                 UserDefaultsManager.socialID = socialID
                 UserDefaultsManager.accessToken = accessToken
+                
+                // 유저 닉네임 호출
+                let userResponse = try await authManager.fetchUsername()
+                guard let username = userResponse?.username else { return }
+                UserDefaultsManager.userName = username
+                
                 transitionToMainViewController()
             }
         }
