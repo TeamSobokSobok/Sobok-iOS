@@ -10,6 +10,7 @@ import Foundation
 enum AuthEndPoint {
     case signUp(socialId: String, username: String, deviceToken: String)
     case signIn(socialId: String, deviceToken: String)
+    case fetchUsername
 }
 
 extension AuthEndPoint: EndPoint {
@@ -17,7 +18,7 @@ extension AuthEndPoint: EndPoint {
         switch self {
         case .signUp:
             return .POST
-        case .signIn:
+        case .signIn, .fetchUsername:
             return .GET
         }
     }
@@ -31,7 +32,7 @@ extension AuthEndPoint: EndPoint {
                 "deviceToken": deviceToken
             ]
             return parameter.encode()
-        case .signIn:
+        case .signIn, .fetchUsername:
             return nil
         }
     }
@@ -43,6 +44,8 @@ extension AuthEndPoint: EndPoint {
             return "\(baseURL)/auth/signup"
         case .signIn(let socialId, let deviceToken):
             return "\(baseURL)/auth/signin?socialId=\(socialId)&deviceToken=\(deviceToken)"
+        case .fetchUsername:
+            return "\(baseURL)/user/info"
         }
     }
     
@@ -66,8 +69,14 @@ extension AuthEndPoint: EndPoint {
                                   httpMethod: method,
                                   requestBody: body,
                                   headers: headers)
+        case .fetchUsername:
+            var headers: [String: String] = [:]
+            headers["Content-Type"] = "application/json"
+            headers["accesstoken"] = environment.token
+            return NetworkRequest(url: getURL(from: environment),
+                                  httpMethod: method,
+                                  requestBody: body,
+                                  headers: headers)
         }
-        
-
     }
 }
