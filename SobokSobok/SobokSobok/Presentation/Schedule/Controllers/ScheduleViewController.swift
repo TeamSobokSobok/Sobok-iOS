@@ -563,10 +563,8 @@ extension ScheduleViewController {
             let stringRange = string.index(string.startIndex, offsetBy: 0) ..< string.index(string.endIndex, offsetBy: -3)
           
             let changedArray = string[stringRange]
-            
             var hour = String()
             var minute = String()
-           
             let changedString = changedArray.map { String($0) }
   
             hour = "\(changedString[0])\(changedString[1])"
@@ -575,13 +573,11 @@ extension ScheduleViewController {
             if Int(hour)! > 11 {
                 time = "오후 \(Int(hour)! - 12):\(minute)"
                 timeArray.append(time)
-
             } else {
                 time = "오전 \(Int(hour)!):\(minute)"
                 timeArray.append(time)
             }
         }
-        
         return timeArray
     }
     
