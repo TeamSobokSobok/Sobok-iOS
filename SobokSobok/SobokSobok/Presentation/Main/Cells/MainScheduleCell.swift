@@ -8,6 +8,7 @@
 import EasyKit
 import UIKit
 
+
 protocol MainScheduleCellDelegate: AnyObject {
     func checkButtonTapped(_ cell: MainScheduleCell)
     func moreButtonTapped(_ cell: MainScheduleCell)
@@ -18,6 +19,7 @@ final class MainScheduleCell: ScheduleCell {
     // MARK: - Properties
     
     weak var delegate: MainScheduleCellDelegate?
+    
     var isChecked = false {
         didSet {
             updateUI()
@@ -62,7 +64,7 @@ final class MainScheduleCell: ScheduleCell {
 
         addObservers()
     }
-    
+
     deinit {
         removeObservers()
     }
