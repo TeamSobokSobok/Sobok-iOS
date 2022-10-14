@@ -45,7 +45,7 @@ extension AddAccountService: TargetType {
         case .searchNickname(let username):
             return .requestParameters(parameters: ["username": username], encoding: URLEncoding.queryString)
         case .saveNickname(let memberId, let memberName):
-            return .requestCompositeParameters(bodyParameters: ["memberName": memberName], bodyEncoding: JSONEncoding.default, urlParameters: ["memberId": memberId])
+            return .requestCompositeParameters(bodyParameters: ["memberName": memberName, "memberId": memberId], bodyEncoding: JSONEncoding.default, urlParameters: [:])
         }
     }
     

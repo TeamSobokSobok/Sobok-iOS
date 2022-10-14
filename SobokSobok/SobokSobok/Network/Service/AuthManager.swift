@@ -10,6 +10,7 @@ import Foundation
 protocol AuthServiceable {
     func signUp(socialId: String, username: String, deviceToken: String) async throws -> SignUpResponse?
     func signIn(socialId: String, deviceToken: String) async throws -> SignInResponse?
+    func fetchUsername() async throws -> SignUpResponse?
 }
 
 struct AuthManager: AuthServiceable {
@@ -31,6 +32,13 @@ struct AuthManager: AuthServiceable {
     func signIn(socialId: String, deviceToken: String) async throws -> SignInResponse? {
         let request = AuthEndPoint
             .signIn(socialId: socialId, deviceToken: deviceToken)
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func fetchUsername() async throws -> SignUpResponse? {
+        let request = AuthEndPoint
+            .fetchUsername
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }

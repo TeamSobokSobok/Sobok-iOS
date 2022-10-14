@@ -28,11 +28,13 @@ extension Notification.Name {
     /*
      - 알림 목록 전체보기
      - 약 ・ 친구 수락, 거절
+     - 푸시알림 클릭
      */
     static let requestPill = Notification.Name("requestPill")
     static let requestFriend = Notification.Name("requestFriend")
     
     static let editSchedule = Notification.Name("editSchedule")
+    static let userRespondsPush = Notification.Name("userRespondsPush")
 }
 
 extension Notification.Name {

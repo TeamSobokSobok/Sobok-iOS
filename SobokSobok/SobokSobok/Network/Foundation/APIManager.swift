@@ -24,13 +24,8 @@ final class APIManager: Requestable {
             throw APIError.serverError
         }
 
-        print("✅✅✅✅✅✅✅✅✅", data)
-        
         let decodedData = try JSONDecoder().decode(BaseModel<T>.self, from: data)
 
-        
-        print("⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️", decodedData)
-        
         if decodedData.success {
             return decodedData.data
         } else {
