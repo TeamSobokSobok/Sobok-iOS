@@ -325,8 +325,6 @@ extension ScheduleViewController {
                 let isEdit = userInfo["isEdit"] as? Bool else { return }
             
             self.isEdit = isEdit
-            print(isEdit)
-            
         }
     }
     
