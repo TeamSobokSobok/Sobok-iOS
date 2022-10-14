@@ -30,13 +30,13 @@ final class ScheduleHeaderView: UICollectionReusableView {
     
     
     // MARK: - Initializer
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configureLayout()
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -96,6 +96,6 @@ extension ScheduleHeaderView {
     
     @objc func editButtonTapped(_ sender: UIButton) {
         isEdit.toggle()
-        NotificationCenter.default.post(name: Notification.Name("edit"), object: self)
+        Notification.Name.editSchedule.post(object: nil, userInfo: ["isEdit": isEdit])
     }
 }

@@ -24,7 +24,7 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
     private var pillSchedules: PillSchedules
     private var scheduleType: ScheduleType
     private var viewController: ScheduleViewController
-
+    weak var delegate: MainScheduleCellDelegate?
     
     // MARK: - Initializer
     

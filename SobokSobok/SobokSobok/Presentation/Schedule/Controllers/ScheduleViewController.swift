@@ -14,6 +14,9 @@ final class ScheduleViewController: BaseViewController {
     
     let scheduleManager: ScheduleServiceable = ScheduleManager(apiService: APIManager(), environment: .development)
     let stickerManageer: StickerServiceable = StickerManager(apiService: APIManager(), environment: .development)
+    let myInfoManager: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
+    
+    let editPillViewModel = EditCommonViewModel(addPillFirstViewModel: AddPillFirstViewModel(), timeViewModel: PillTimeViewModel(), dayViewModel: PillDayViewModel(), periodViewModel: PillPeriodViewModel())
     
     let gregorian = Calendar(identifier: .gregorian)
     var member: [Member] = UserDefaults.standard.member {
@@ -33,6 +36,7 @@ final class ScheduleViewController: BaseViewController {
             parseSchedules()
         }
     }
+    
     
     var doingDates: [String] = []
     var doneDates: [String] = []
@@ -65,6 +69,8 @@ final class ScheduleViewController: BaseViewController {
     
     var stickers: [Stickers] = []
     
+    var isEdit: Bool = false
+    
     
     // MARK: - Initializer
 
@@ -93,6 +99,7 @@ final class ScheduleViewController: BaseViewController {
         frame: .zero,
         collectionViewLayout: UICollectionViewLayout()
     )
+    lazy var scheduleHeaderView = ScheduleHeaderView()
 
     lazy var emptyView = ScheduleEmptyView(for: scheduleType)
 
@@ -101,6 +108,7 @@ final class ScheduleViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -268,6 +276,7 @@ extension ScheduleViewController {
         calendarView.dataSource = self
         calendarTopView.delegate = self
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
     }
 }
 
@@ -309,6 +318,16 @@ extension ScheduleViewController {
         showAllStickerObserver()
         sendStickerObserver()
         tapMember()
+        
+        Notification.Name.editSchedule.addObserver { noti in
+            guard
+                let userInfo = noti.userInfo,
+                let isEdit = userInfo["isEdit"] as? Bool else { return }
+            
+            self.isEdit = isEdit
+            print(isEdit)
+            
+        }
     }
     
     private func removeObservers() {
@@ -494,7 +513,11 @@ extension ScheduleViewController: CalendarTopViewDelegate {
 // MARK: - MainScheduleCellDelegate
 
 extension ScheduleViewController: MainScheduleCellDelegate {
+    func moreButtonTapped(_ cell: MainScheduleCell) {
+      
+    }
     
+
     func checkButtonTapped(_ cell: MainScheduleCell) {
         guard let scheduleId = cell.pill?.scheduleId else { return }
         
@@ -520,13 +543,61 @@ extension ScheduleViewController: MainScheduleCellDelegate {
             }
         }
     }
+}
+
+extension ScheduleViewController {
+    func transformString(string: String) -> String {
+        let stringRange = string.index(string.startIndex, offsetBy: 0) ..< string.index(string.endIndex, offsetBy: -14)
+      
+        let changedString = string[stringRange]
+        
+        return String(changedString)
+    }
     
-    func moreButtonTapped(_ cell: MainScheduleCell) {
-        let vc = EditViewController(viewModel: EditCommonViewModel(
-            addPillFirstViewModel: AddPillFirstViewModel(),
-            timeViewModel: PillTimeViewModel(),
-            dayViewModel: PillDayViewModel(),
-            periodViewModel: PillPeriodViewModel()))
-        self.navigationController?.pushViewController(vc, animated: true)
+    func transformStringToInt(_ array: [String]) -> [String] {
+        
+        var timeArray = [String]()
+        var time = String()
+        
+        for string in array {
+            let stringRange = string.index(string.startIndex, offsetBy: 0) ..< string.index(string.endIndex, offsetBy: -3)
+          
+            let changedArray = string[stringRange]
+            
+            var hour = String()
+            var minute = String()
+           
+            let changedString = changedArray.map { String($0) }
+  
+            hour = "\(changedString[0])\(changedString[1])"
+            minute = "\(changedString[3])\(changedString[4])"
+            
+            if Int(hour)! > 11 {
+                time = "오후 \(Int(hour)! - 12):\(minute)"
+                timeArray.append(time)
+
+            } else {
+                time = "오전 \(Int(hour)!):\(minute)"
+                timeArray.append(time)
+            }
+        }
+        
+        return timeArray
+    }
+    
+    func pushToMyInfoController() {
+        let myInfoViewController = MyInfoViewController()
+        self.navigationController?.pushViewController(myInfoViewController, animated: true)
+    }
+}
+
+extension ScheduleViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     
+        if isEdit {
+            let pillId = (pillLists[indexPath.section].scheduleList?[indexPath.row].pillId)!
+                             editPillViewModel.pillId.value = pillId
+            self.pushToMyInfoController()
+        }
     }
 }

@@ -31,6 +31,8 @@ extension Notification.Name {
      */
     static let requestPill = Notification.Name("requestPill")
     static let requestFriend = Notification.Name("requestFriend")
+    
+    static let editSchedule = Notification.Name("editSchedule")
 }
 
 extension Notification.Name {
