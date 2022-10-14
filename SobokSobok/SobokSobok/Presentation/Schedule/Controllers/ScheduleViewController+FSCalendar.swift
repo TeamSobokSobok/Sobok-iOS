@@ -45,14 +45,16 @@ extension ScheduleViewController: FSCalendarDataSource {
     private func checkDate(for date: Date) -> FilledType {
         let formattedDate = date.toString(of: .year)
         
-        if self.gregorian.isDateInToday(date) {
-            return .today
-        } else if doingDates.contains(formattedDate) {
+        if doingDates.contains(formattedDate) {
             return .some
         } else if doneDates.contains(formattedDate) {
             return .all
         } else {
-            return .none
+            if self.gregorian.isDateInToday(date) {
+                return .today
+            } else {
+                return .none
+            }
         }
     }
     
