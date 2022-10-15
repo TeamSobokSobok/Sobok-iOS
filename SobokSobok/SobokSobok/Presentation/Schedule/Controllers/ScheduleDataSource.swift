@@ -106,6 +106,8 @@ final class ScheduleDataSource: NSObject, UICollectionViewDataSource {
         
         let scheduleTime = pillSchedules[indexPath.section].scheduleTime
         headerView.configure(withTime: scheduleTime)
+        headerView.isEdit = false
+        viewController.isEdit = false
         return headerView
     }
 }

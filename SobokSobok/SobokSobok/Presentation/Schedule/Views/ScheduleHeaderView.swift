@@ -11,7 +11,7 @@ final class ScheduleHeaderView: UICollectionReusableView {
     
     // MARK: - Properties
     
-    var isEdit = false {
+    var isEdit: Bool {
         didSet {
             updateUI()
         }
@@ -32,14 +32,18 @@ final class ScheduleHeaderView: UICollectionReusableView {
     // MARK: - Initializer
 
     override init(frame: CGRect) {
+        isEdit = false
         super.init(frame: frame)
-        
         configureLayout()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 }
 

@@ -32,6 +32,13 @@ final class MainScheduleCell: ScheduleCell {
         }
     }
     
+    var isEdit: Bool {
+        didSet {
+            checkButton.isHidden = isEdit
+            moreButton.isHidden = !isEdit
+        }
+    }
+    
     lazy var dateFormatter = DateFormatter()
     
     
@@ -60,8 +67,8 @@ final class MainScheduleCell: ScheduleCell {
     // MARK: - Initializer
     
     override init(frame: CGRect) {
+        isEdit = false
         super.init(frame: frame)
-
         addObservers()
     }
 
@@ -85,6 +92,13 @@ final class MainScheduleCell: ScheduleCell {
             $0.height.equalTo(56)
             $0.centerY.equalTo(topHStackView)
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        checkButton.isHidden = false
+        moreButton.isHidden = true
     }
 }
 
@@ -111,16 +125,23 @@ extension MainScheduleCell {
     }
     
     private func addObservers() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(editStarted),
-                                               name: NSNotification.Name("edit"),
-                                               object: nil)
+        Notification.Name.editSchedule.addObserver { [weak self] noti in
+            guard
+                let self,
+                let userInfo = noti.userInfo,
+                let isEdit = userInfo["isEdit"] as? Bool else { return }
+            
+            let day = self.days()
+
+            self.isEdit = isEdit
+            if day > 0 {
+                self.checkButton.isHidden = true
+            }
+        }
     }
     
     private func removeObservers() {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name("edit"),
-                                                  object: nil)
+        Notification.Name.editSchedule.removeObserver(observer: self)
     }
 }
 
@@ -135,18 +156,6 @@ extension MainScheduleCell {
     
     @objc func moreButtonTapped() {
         delegate?.moreButtonTapped(self)
-    }
-    
-    @objc func editStarted(notification: NSNotification) {
-        let day = days()
-        
-        if day > 0 {
-            checkButton.isHidden = true
-            moreButton.isHidden.toggle()
-        } else {
-            checkButton.isHidden.toggle()
-            moreButton.isHidden.toggle()
-        }
     }
 }
 

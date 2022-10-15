@@ -325,8 +325,6 @@ extension ScheduleViewController {
                 let isEdit = userInfo["isEdit"] as? Bool else { return }
             
             self.isEdit = isEdit
-            print(isEdit)
-            
         }
     }
     
@@ -489,7 +487,6 @@ extension ScheduleViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.bounces = scrollView.contentOffset.y > 0
-        scrollView.backgroundColor = scrollView.contentOffset.y > 0 ? Color.gray150 : Color.white
     }
 }
 
