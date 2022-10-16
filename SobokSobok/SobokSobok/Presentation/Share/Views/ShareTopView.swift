@@ -104,7 +104,6 @@ extension ShareTopView {
     
     @objc func friendNameButtonTapped(_ sender: UIButton) {
         currentIndex = sender.tag
-        
         Notification.Name.tapMember.post(object: nil, userInfo: ["tapIndex": currentIndex])
     }
     

@@ -291,6 +291,8 @@ extension ScheduleViewController {
         friendNameView.isHidden = scheduleType == .main
         friendNameView.friendNameLabel.text = !member.isEmpty ? member[tapIndex].memberName : ""
         calendarTopView.dateLabel.text = calendarTopView.scopeState == .week ? currentDate.toString(of: .day) : currentDate.toString(of: .month)
+        fetchSchedules(for: scheduleType)
+        fetchPillLists(for: scheduleType)
     }
     
     // TODO: - 높이 문제 해결 필요
@@ -383,6 +385,7 @@ extension ScheduleViewController {
                 if let notification = notification.userInfo,
                    let tapIndex = notification["tapIndex"] as? Int {
                     self.tapIndex = tapIndex
+                    self.member = UserDefaults.standard.member
                     self.friendNameView.friendNameLabel.text = self.member[tapIndex].memberName
                 }
             }

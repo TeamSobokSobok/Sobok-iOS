@@ -14,9 +14,10 @@ extension ShareViewController {
                 let members = try await scheduleManager.getGroupInformation()
                 if let members = members,
                    !members.isEmpty {
+                    UserDefaults.standard.member = members
                     self.members = members
                     self.scheduleViewController.member = members
-                    UserDefaults.standard.member = members
+                    self.scheduleViewController.collectionView.reloadData()
                 }
             }
         }
