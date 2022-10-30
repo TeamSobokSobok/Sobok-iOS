@@ -32,6 +32,7 @@ enum UserDefaultKeys: String, CaseIterable {
     case socialID
     case accessToken
     case userName
+    case autoLogin
 }
 
 struct UserDefaultsManager {
@@ -46,6 +47,9 @@ struct UserDefaultsManager {
     
     @UserDefaultWrapper(key: UserDefaultKeys.userName.rawValue, defaultValue: "")
     static var userName: String
+    
+    @UserDefaultWrapper(key: UserDefaultKeys.autoLogin.rawValue, defaultValue: false)
+    static var autoLogin: Bool
 }
 
 extension UserDefaultsManager {

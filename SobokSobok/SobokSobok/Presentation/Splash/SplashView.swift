@@ -44,29 +44,10 @@ final class SplashView: UIViewController {
 extension SplashView {
     
     func isAutoLogin() {
-        Task {
-            do {
-                print(UserDefaultsManager.socialID)
-                print(UserDefaultsManager.fcmToken)
-                
-                let result = try await authManager.signIn(socialId: UserDefaultsManager.socialID,
-                                                          deviceToken: UserDefaultsManager.fcmToken)
-                
-                guard let isNewUser = result?.isNew else {
-                    self.transitionToSignInViewController()
-                    return
-                }
-                
-                if isNewUser {
-                    self.transitionToSignInViewController()
-
-                } else {
-                    self.transitionToMainViewController()
-                }
-                
-            } catch {
-                self.transitionToSignInViewController()
-            }
+        if UserDefaultsManager.autoLogin {
+            transitionToMainViewController()
+        } else {
+            transitionToSignInViewController()
         }
     }
     

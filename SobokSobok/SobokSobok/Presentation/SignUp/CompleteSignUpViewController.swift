@@ -23,6 +23,7 @@ final class CompleteSignUpViewController: UIViewController, CompleteSingUpProtoc
     
     // MARK: - @IBAction Properties
     @IBAction func touchUpToStart(_ sender: UIButton) {
+        configureAutoLogin()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.transitionToMainViewController()
         }
@@ -33,5 +34,9 @@ final class CompleteSignUpViewController: UIViewController, CompleteSingUpProtoc
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         sceneDelegate?.window?.rootViewController = TabBarController()
         sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
+    func configureAutoLogin() {
+        UserDefaultsManager.autoLogin = true
     }
 }
