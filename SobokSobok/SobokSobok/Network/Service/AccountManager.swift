@@ -13,6 +13,7 @@ protocol AccountServiceable {
     func editUserName(for username: String) async throws -> Account?
     func friendNicknameEdit(groupId: Int, memberName: String) async throws -> [EditFriendNickname]?
     func deleteUserAccount() async throws -> Account?
+    func logout() async throws -> Account?
 }
 
 struct AccountManager: AccountServiceable {
@@ -55,6 +56,13 @@ struct AccountManager: AccountServiceable {
     func deleteUserAccount() async throws -> Account? {
         let request = AccountEndPoint
             .deleteUserAccount
+            .createRequest(environment: environment)
+        return try await self.apiService.request(request)
+    }
+    
+    func logout() async throws -> Account? {
+        let request = AccountEndPoint
+            .logout
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }

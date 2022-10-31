@@ -13,6 +13,7 @@ enum AccountEndPoint {
     case putUserNickNameEdit(username: String)
     case putFriendNicknameEdit(groupId: Int, memberName: String)
     case deleteUserAccount
+    case logout
 }
 
 extension AccountEndPoint: EndPoint {
@@ -28,6 +29,8 @@ extension AccountEndPoint: EndPoint {
             return .PUT
         case .deleteUserAccount:
             return .DELETE
+        case .logout:
+            return .POST
         }
     }
     
@@ -45,6 +48,8 @@ extension AccountEndPoint: EndPoint {
             return query.encode()
         case .deleteUserAccount:
             return nil
+        case .logout:
+            return nil
         }
     }
     
@@ -61,6 +66,8 @@ extension AccountEndPoint: EndPoint {
             return "\(baseURL)/group/\(groupId)/name"
         case .deleteUserAccount:
             return "\(baseURL)/auth/user"
+        case .logout:
+            return "\(baseURL)/auth/logout"
         }
     }
 }
