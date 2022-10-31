@@ -57,6 +57,7 @@ final class EditViewController: UIViewController, EditViewProtocol {
     }
     
     func target() {
+        editView.editPillNameView.deleteTextButton.addTarget(self, action: #selector(deleteTextButtonTapped), for: .touchUpInside)
         editView.editPillNameView.pillNameTextField.addTarget(self, action: #selector(pillTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
 
@@ -67,6 +68,7 @@ final class EditViewController: UIViewController, EditViewProtocol {
     }
     
     func bind() {
+        
         editCommonViewModel.pillName.bind { text in
             DispatchQueue.main.async {
                 self.editView.editPillNameView.pillNameTextField.text =  self.editCommonViewModel.pillName.value
@@ -87,11 +89,9 @@ final class EditViewController: UIViewController, EditViewProtocol {
                 switch value {
                 case 1:
                     self.divideButtonState(everyday: true, day: false, period: false, type: .everyday)
-                    
                     self.changeBool.value = self.editView.editPillPeriodView.everydayButton.isSelected
                 case 2:
                     self.divideButtonState(everyday: false, day: true, period: false, type: .day)
-                    
                     self.editView.editPillPeriodView.specificView.specificLabel.text = self.editCommonViewModel.dayViewModel.days.value
                     self.editView.editPillPeriodView.specificView.isHidden = false
   
@@ -154,11 +154,11 @@ final class EditViewController: UIViewController, EditViewProtocol {
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
             
             let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-            alert.addAction(UIAlertAction(title: "복약 중단", style: .default, handler: { _ in
-                let alert = UIAlertController(title: "정말로 복약을 중단하나요?", message: "복약을 중단하면 내일부터 약 알림이 오지 않아요.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "약 알림 그만 받기", style: .default, handler: { _ in
+                let alert = UIAlertController(title: "약 알림을 그만 받으시겠어요?", message: "오늘부터 해당 약에 대한 알림이 오지 않아요", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "취소", style: .default)
                 
-                let stopAction = UIAlertAction(title: "복약 중단", style: .destructive) { _ in
+                let stopAction = UIAlertAction(title: "그만받기", style: .destructive) { _ in
                     self.editCommonViewModel.stopPillList()
                     self.navigationController?.popToRootViewController(animated: true)
                 }
@@ -304,10 +304,17 @@ final class EditViewController: UIViewController, EditViewProtocol {
         .disposed(by: disposeBag)
     }
 
-    @objc func pillTextFieldDidChange(_ textField: UITextField) {
+    @objc
+    func pillTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             editCommonViewModel.pillName.value = text
         }
+    }
+    
+    @objc
+    func deleteTextButtonTapped() {
+        editCommonViewModel.pillName.value = ""
+        self.unableNextButton()
     }
     
     private func checkValid(_ text: String) -> Bool {
@@ -408,6 +415,13 @@ extension EditViewController: UICollectionViewDataSource {
         editCommonViewModel.changeTime = editCommonViewModel.timeViewModel.changeTimeList.value
         editCommonViewModel.time = editCommonViewModel.timeViewModel.timeList.value
         
+        
+        if self.editCommonViewModel.timeViewModel.timeList.value.count == 1 {
+            cell.deleteButton.isHidden = true
+        } else {
+            cell.deleteButton.isHidden = false
+        }
+        
         cell.viewModel.deleteCellClosure = { [weak self] in
             guard let self = self else { return }
             self.editCommonViewModel.timeViewModel.deleteCell(index: indexPath.row)
@@ -462,13 +476,13 @@ extension EditViewController: SendPillTimeDelegate, SendPillDaysDelegate, SendPi
     
     func sendPillDays(pillDays: String) {
         editCommonViewModel.dayViewModel.days.value = pillDays.addSeparator()
-        
+        self.editView.editPillPeriodView.specificView.specificLabel.textColor = Color.black
         editCommonViewModel.scheduleDay.value = pillDays.addSeparator()
     }
     
     func sendPillPeriod(pillPeriod: String) {
         editCommonViewModel.periodViewModel.dayString.value = pillPeriod
-        
+        self.editView.editPillPeriodView.specificView.specificLabel.textColor = Color.black
         editCommonViewModel.scheduleSpecific.value = pillPeriod
     }
 }

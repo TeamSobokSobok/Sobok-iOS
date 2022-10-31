@@ -84,7 +84,7 @@ final class EditView: BaseView {
         }
         
         editPillDateView.snp.makeConstraints {
-            $0.top.equalTo(editPillTimeView.snp.bottom).offset(52)
+            $0.top.equalTo(editPillTimeView.snp.bottom).offset(40)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(110)
             $0.bottom.equalTo(scrollView.snp.bottom).inset(60)
