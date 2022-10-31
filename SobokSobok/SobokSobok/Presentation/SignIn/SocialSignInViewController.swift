@@ -104,6 +104,7 @@ extension SocialSignInViewController {
                 guard let username = userResponse?.username else { return }
                 UserDefaultsManager.userName = username
                 
+                configureAutoLogin()
                 transitionToMainViewController()
             }
         }
@@ -172,5 +173,9 @@ extension SocialSignInViewController {
             let socialID = "Kakao@\(userID)"
             completion(socialID)
         }
+    }
+    
+    func configureAutoLogin() {
+        UserDefaultsManager.autoLogin = true
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 final class SettingViewController: UIViewController {
 
     private let email: String = "soboksobok.official@gmail.com"
+    private let service: AccountServiceable = AccountManager(apiService: APIManager(), environment: .development)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +44,32 @@ final class SettingViewController: UIViewController {
     @IBAction func logOut(_ sender: UIButton) {
         let logoutAlert = UIAlertController(title:"정말 로그아웃 하시나요?", message:"", preferredStyle: .alert)
         logoutAlert.addAction(UIAlertAction(title: "취소", style: .default, handler: {_ in print("취소")}))
-        logoutAlert.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: {_ in print("로그아웃")}))
+        logoutAlert.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { [weak self] _ in
+            self?.logout()
+        }))
         present(logoutAlert, animated: true)
     }
     
     @IBAction func withdraw(_ sender: UIButton) {
         navigationController?.pushViewController(WithdrawalViewController.instanceFromNib(), animated: true)
     }
+}
+
+extension SettingViewController {
+    private func logout() {
+        Task {
+            do {
+                let _ = try await service.logout()
+                UserDefaultsManager.autoLogin = false
+                self.transitionToSignInView()
+            }
+        }
+    }
     
+    private func transitionToSignInView() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = SocialSignInViewController()
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
 }

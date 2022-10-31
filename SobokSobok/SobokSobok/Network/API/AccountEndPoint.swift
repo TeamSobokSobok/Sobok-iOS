@@ -12,7 +12,8 @@ enum AccountEndPoint {
     case getUserDetailPillList(pillId: Int)
     case putUserNickNameEdit(username: String)
     case putFriendNicknameEdit(groupId: Int, memberName: String)
-    case deleteUserAccount(reason: String)
+    case deleteUserAccount
+    case logout
 }
 
 extension AccountEndPoint: EndPoint {
@@ -28,6 +29,8 @@ extension AccountEndPoint: EndPoint {
             return .PUT
         case .deleteUserAccount:
             return .DELETE
+        case .logout:
+            return .POST
         }
     }
     
@@ -43,9 +46,10 @@ extension AccountEndPoint: EndPoint {
         case .putFriendNicknameEdit(_, let memberName):
             let query = ["memberName": memberName]
             return query.encode()
-        case .deleteUserAccount(let reason):
-            let body = ["reason": reason]
-            return body.encode()
+        case .deleteUserAccount:
+            return nil
+        case .logout:
+            return nil
         }
     }
     
@@ -60,8 +64,10 @@ extension AccountEndPoint: EndPoint {
             return "\(baseURL)/user/nickname"
         case .putFriendNicknameEdit(let groupId, _):
             return "\(baseURL)/group/\(groupId)/name"
-        case .deleteUserAccount(_):
+        case .deleteUserAccount:
             return "\(baseURL)/auth/user"
+        case .logout:
+            return "\(baseURL)/auth/logout"
         }
     }
 }

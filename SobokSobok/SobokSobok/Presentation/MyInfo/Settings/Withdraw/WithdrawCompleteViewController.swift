@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import KakaoSDKUser
 
 final class WithdrawCompleteViewController: UIViewController {
     private lazy var completionButton = UIButton().then {
@@ -40,10 +41,36 @@ extension WithdrawCompleteViewController: LayoutProtocol {
     
     private func setWithdraw() {
         SBIndicator.shared.show()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
             SBIndicator.shared.hide()
-            self.modalTransitionStyle = .coverVertical
-            self.navigationController?.popToRootViewController(animated: true)
+            self?.kakaoLogout()
+            self?.modalTransitionStyle = .coverVertical
+            self?.transitionToSplashView()
         }
+    }
+    
+    private func transitionToSplashView() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        sceneDelegate?.window?.rootViewController = SplashView()
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
+    private func kakaoLogout() {
+        UserApi.shared.unlink {(error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("✂️✂️✂️ unlink() success.")
+            }
+        }
+    }
+    
+    private func reset() {
+        UserDefaultsManager.accessToken = ""
+        UserDefaultsManager.userName = ""
+        UserDefaultsManager.autoLogin = false
+        UserDefaults.standard.member = []
     }
 }
