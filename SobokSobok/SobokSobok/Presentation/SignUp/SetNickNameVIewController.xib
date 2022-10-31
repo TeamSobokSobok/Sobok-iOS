@@ -225,7 +225,7 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-1g-aug" userLabel="전체동의">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-1g-aug" userLabel="이용약관체크">
                             <rect key="frame" x="350" y="49" width="22" height="22"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icCheckedNot"/>
@@ -233,7 +233,7 @@
                                 <action selector="touchUpToAgreeSecond:" destination="-1" eventType="touchUpInside" id="UGf-ah-4rU"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQv-eq-a9L" userLabel="전체동의">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQv-eq-a9L" userLabel="개인정보체크">
                             <rect key="frame" x="350" y="15" width="22" height="22"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="icCheckedNot"/>
@@ -241,20 +241,44 @@
                                 <action selector="touchUpToAgreeFirst:" destination="-1" eventType="touchUpInside" id="Fph-nU-7Rh"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jc-9R-sAq" userLabel="개인정보링크">
+                            <rect key="frame" x="28" y="10" width="67" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="openPersonalInfo:" destination="-1" eventType="touchUpInside" id="16V-Us-avQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-Jq-Wfu" userLabel="이용약관링크">
+                            <rect key="frame" x="56" y="44" width="67" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="openServicePolicy:" destination="-1" eventType="touchUpInside" id="Fdr-5e-Kq8"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="Oda-Jq-Wfu" firstAttribute="width" secondItem="7sa-DH-qyS" secondAttribute="width" multiplier="0.406061" id="1Rx-zA-exI"/>
                         <constraint firstAttribute="trailing" secondItem="rDz-1g-aug" secondAttribute="trailing" constant="16" id="Ass-Kt-cK5"/>
                         <constraint firstItem="rDz-1g-aug" firstAttribute="centerY" secondItem="7sa-DH-qyS" secondAttribute="centerY" id="Baq-Ax-2Ww"/>
                         <constraint firstAttribute="bottom" secondItem="7sa-DH-qyS" secondAttribute="bottom" constant="18" id="EnM-ov-TWS"/>
                         <constraint firstItem="7sa-DH-qyS" firstAttribute="leading" secondItem="zUR-Zf-ogf" secondAttribute="leading" constant="16" id="GIc-zr-QGd"/>
                         <constraint firstItem="5cu-0y-sru" firstAttribute="top" secondItem="zUR-Zf-ogf" secondAttribute="top" constant="18" id="IK9-xE-OEk"/>
                         <constraint firstItem="SQv-eq-a9L" firstAttribute="width" secondItem="SQv-eq-a9L" secondAttribute="height" multiplier="1:1" id="Igu-YT-f2H"/>
+                        <constraint firstItem="5cu-0y-sru" firstAttribute="top" secondItem="7jc-9R-sAq" secondAttribute="bottom" constant="-23" id="JE7-5r-GNP"/>
                         <constraint firstItem="SQv-eq-a9L" firstAttribute="centerY" secondItem="5cu-0y-sru" secondAttribute="centerY" id="ONE-Dz-0U6"/>
                         <constraint firstAttribute="trailing" secondItem="SQv-eq-a9L" secondAttribute="trailing" constant="16" id="Tds-gG-FA4"/>
+                        <constraint firstItem="7jc-9R-sAq" firstAttribute="width" secondItem="5cu-0y-sru" secondAttribute="width" multiplier="0.537433" id="U43-gK-vbW"/>
+                        <constraint firstItem="Oda-Jq-Wfu" firstAttribute="height" secondItem="7sa-DH-qyS" secondAttribute="height" multiplier="1.9375" id="Z0v-Yf-oWc"/>
+                        <constraint firstItem="7sa-DH-qyS" firstAttribute="leading" secondItem="Oda-Jq-Wfu" secondAttribute="trailing" constant="-107" id="a2L-fb-4qR"/>
+                        <constraint firstItem="7sa-DH-qyS" firstAttribute="top" secondItem="Oda-Jq-Wfu" secondAttribute="bottom" constant="-23" id="byl-z9-FYL"/>
                         <constraint firstItem="5cu-0y-sru" firstAttribute="leading" secondItem="zUR-Zf-ogf" secondAttribute="leading" constant="16" id="cug-6x-SeX"/>
+                        <constraint firstItem="5cu-0y-sru" firstAttribute="leading" secondItem="7jc-9R-sAq" secondAttribute="trailing" constant="-79" id="fSN-or-WAz"/>
                         <constraint firstItem="rDz-1g-aug" firstAttribute="width" secondItem="rDz-1g-aug" secondAttribute="height" multiplier="1:1" id="kBK-A5-maM"/>
                         <constraint firstItem="7sa-DH-qyS" firstAttribute="top" secondItem="5cu-0y-sru" secondAttribute="bottom" constant="18" id="qHA-hH-wYz"/>
+                        <constraint firstItem="7jc-9R-sAq" firstAttribute="height" secondItem="5cu-0y-sru" secondAttribute="height" multiplier="1.9375" id="sNY-gd-s2R"/>
                     </constraints>
                 </view>
             </subviews>

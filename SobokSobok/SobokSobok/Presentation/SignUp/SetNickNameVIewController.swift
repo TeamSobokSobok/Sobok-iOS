@@ -12,6 +12,9 @@ protocol SetNicknameProtocol: StyleProtocol {}
 
 final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
 
+    private let personalInfoLink: String = "https://baejiann120.notion.site/4f976bca05bb40b49d618c745cc5b754"
+     private let serviceTermsLink: String = "https://baejiann120.notion.site/77c1e0372c784f8399d1c588f2e89cef"
+    
     // MARK: - Properties
     private var user = SignUpUserData.shared
     private let userDefaults = UserDefaults.standard
@@ -209,6 +212,21 @@ final class SetNickNameVIewController: UIViewController, SetNicknameProtocol {
         agreeFirstButton.setImage( isFirstAgreed ? UIImage(named: "icChecked") : UIImage(named: "icCheckedNot"), for: .normal)
         agreeSecondButton.setImage( isSecondAgreed ? UIImage(named: "icChecked") : UIImage(named: "icCheckedNot"), for: .normal)
     }
+    
+    // 링크 연결
+    private func openSafari(link: String) {
+        guard let url = URL(string: link) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @IBAction func openPersonalInfo(_ sender: UIButton) {
+        openSafari(link: personalInfoLink)
+    }
+    
+    @IBAction func openServicePolicy(_ sender: UIButton) {
+        openSafari(link: serviceTermsLink)
+    }
+    
     
     // 회원가입
     @IBAction func touchUpToSignUp(_ sender: UIButton) {
