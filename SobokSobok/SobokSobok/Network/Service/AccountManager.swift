@@ -12,7 +12,7 @@ protocol AccountServiceable {
     func getUserDetailPillList(for pillId: Int) async throws -> [DetailPillList]?
     func editUserName(for username: String) async throws -> Account?
     func friendNicknameEdit(groupId: Int, memberName: String) async throws -> [EditFriendNickname]?
-    func deleteUserAccount(in reason: String) async throws -> Account?
+    func deleteUserAccount() async throws -> Account?
 }
 
 struct AccountManager: AccountServiceable {
@@ -52,9 +52,9 @@ struct AccountManager: AccountServiceable {
         return try await self.apiService.request(request)
     }
     
-    func deleteUserAccount(in reason: String) async throws -> Account? {
+    func deleteUserAccount() async throws -> Account? {
         let request = AccountEndPoint
-            .deleteUserAccount(reason: reason)
+            .deleteUserAccount
             .createRequest(environment: environment)
         return try await self.apiService.request(request)
     }

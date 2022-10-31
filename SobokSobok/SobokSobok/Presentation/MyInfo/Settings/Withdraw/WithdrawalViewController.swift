@@ -37,8 +37,8 @@ final class WithdrawalViewController: UIViewController, WitrhdrawalProtocol {
     }
     
     @IBAction func confirmWitrhdrawal(_ sender: UIButton) {
-        withdrawSobokSobok(reason)
-        let completionViewController = WithdrawCompleteViewController.instanceFromNib()
+        withdrawSobokSobok()
+        let completionViewController = WithdrawCompleteViewController()
         self.modalPresentationStyle = .fullScreen
         self.present(completionViewController, animated: true)
     }
