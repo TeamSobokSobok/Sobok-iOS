@@ -59,7 +59,7 @@ extension SettingViewController {
     private func logout() {
         Task {
             do {
-                let result = try await service.logout()
+                let _ = try await service.logout()
                 UserDefaultsManager.autoLogin = false
                 self.transitionToSignInView()
             }

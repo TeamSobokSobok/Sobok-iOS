@@ -25,7 +25,7 @@ final class APIManager: Requestable {
         }
 
         let decodedData = try JSONDecoder().decode(BaseModel<T>.self, from: data)
-        print(decodedData)
+
         if decodedData.success {
             return decodedData.data
         } else {
