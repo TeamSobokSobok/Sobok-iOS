@@ -16,7 +16,7 @@ final class ShareEmptyView: BaseView {
     
     lazy var addButton = UIButton().then {
         $0.backgroundColor = Color.mint
-        $0.setTitle("추가하기", for: .normal)
+        $0.setTitle("요청하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.layer.cornerRadius = 12
         $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: 18)
