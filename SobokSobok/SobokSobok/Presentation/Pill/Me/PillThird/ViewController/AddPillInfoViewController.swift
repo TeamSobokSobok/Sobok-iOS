@@ -16,14 +16,12 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     
     private let addPillInfoView = AddPillInfoView()
     
-    let pillArray: [String] = ["김승찬", "김선영", "김태현", "정은희", "아요짱"]
-    
     private let sendPillViewModel: SendPillViewModel
     
     private let disposeBag = DisposeBag()
     
     var navigation: UINavigationController
- 
+    
     init(sendPillViewModel: SendPillViewModel, navigation: UINavigationController) {
         self.navigation = navigation
         self.sendPillViewModel = sendPillViewModel
@@ -45,7 +43,7 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     var minHeight: CGFloat = UIScreen.main.bounds.height * 0.3
     var normalHeight: CGFloat = UIScreen.main.bounds.height * 0.5
     var expandedHeight: CGFloat = UIScreen.main.bounds.height * 0.9
-  
+    
     override func loadView() {
         self.view = addPillInfoView
     }
@@ -62,9 +60,16 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
         view.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
     }
     
+    //    private func presentAddSuccessView() {
+    //
+    //        let viewController = AddSuccessFriendViewController(navigation: self.navigationController!)
+    //        viewController.modalTransitionStyle = .crossDissolve
+    //        viewController.modalPresentationStyle = .overCurrentContext
+    //        self.present(viewController, animated: true)
+    //    }
+    
     func bind() {
         addPillInfoView.pillPeriodTimeView.pillPeopleLabel.text = "\(sendPillViewModel.userName)에게 전송할 약이에요"
-        print(sendPillViewModel.userName)
         
         addPillInfoView.sendButton.rx.tap.bind {
             self.sendPillViewModel.postFriendPill()
@@ -94,7 +99,7 @@ final class AddPillInfoViewController: UIViewController, AddPillInfoProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showBottomSheet()
-    
+        
     }
     
     private func assignDelegation() {

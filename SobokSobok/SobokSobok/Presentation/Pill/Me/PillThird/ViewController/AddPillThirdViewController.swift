@@ -35,6 +35,8 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addPillThirdView.nextButton.isEnabled = false
         target()
         bind()
         style()
@@ -123,7 +125,6 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     
     func target() {
         addPillThirdView.nextButton.addTarget(self, action: #selector(divideType), for: .touchUpInside)
-        
         addPillThirdView.countInfoButton.addTarget(self, action: #selector(openToolTipImage), for: .touchUpInside)
     }
     
@@ -144,7 +145,12 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
     
     private func postMyPill() {
         sendPillViewModel.postMyPill()
-        self.navigationController?.popToRootViewController(animated: true)
+        let viewController = AddSuccessViewController(
+            navigation: self.navigationController!
+        )
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.modalPresentationStyle = .overFullScreen
+        self.present(viewController, animated: true)
     }
     
     @objc func divideType() {
@@ -186,6 +192,8 @@ final class AddPillThirdViewController: UIViewController, AddPillThirdProtocol {
         }
         
         navigationView.navigationTitleLabel.text = style.navigationTitle
+        
+        addPillThirdView.nextButton.setTitle(style.buttonTitle, for: .normal)
     }
 }
 

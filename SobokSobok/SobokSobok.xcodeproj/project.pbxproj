@@ -175,6 +175,10 @@
 		EC037613278B2EAF00CA4B54 /* AddPillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC037611278B2EAF00CA4B54 /* AddPillTableViewCell.xib */; };
 		EC042867286022A0001DD1EC /* NoFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042866286022A0001DD1EC /* NoFriendView.swift */; };
 		EC042869286022BF001DD1EC /* NoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC042868286022BF001DD1EC /* NoFriendViewController.swift */; };
+		EC0CB013290C1EAC006DFD1D /* AddSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CB012290C1EAB006DFD1D /* AddSuccessView.swift */; };
+		EC0CB015290C1EBE006DFD1D /* AddSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CB014290C1EBE006DFD1D /* AddSuccessViewController.swift */; };
+		EC0CB017290C2600006DFD1D /* AddSuccessFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CB016290C2600006DFD1D /* AddSuccessFriendView.swift */; };
+		EC0CB019290C2611006DFD1D /* AddSuccessFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CB018290C2611006DFD1D /* AddSuccessFriendViewController.swift */; };
 		EC4A381A289A68BF00974D7E /* PillCountlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A3819289A68BF00974D7E /* PillCountlManager.swift */; };
 		EC4A384D289BBA0100974D7E /* AddPillSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A384C289BBA0100974D7E /* AddPillSheetViewModel.swift */; };
 		EC4AD0AD288E6D9A005452BD /* PillStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4AD0AC288E6D9A005452BD /* PillStyle.swift */; };
@@ -443,6 +447,10 @@
 		EC037611278B2EAF00CA4B54 /* AddPillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPillTableViewCell.xib; sourceTree = "<group>"; };
 		EC042866286022A0001DD1EC /* NoFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendView.swift; sourceTree = "<group>"; };
 		EC042868286022BF001DD1EC /* NoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFriendViewController.swift; sourceTree = "<group>"; };
+		EC0CB012290C1EAB006DFD1D /* AddSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuccessView.swift; sourceTree = "<group>"; };
+		EC0CB014290C1EBE006DFD1D /* AddSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuccessViewController.swift; sourceTree = "<group>"; };
+		EC0CB016290C2600006DFD1D /* AddSuccessFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuccessFriendView.swift; sourceTree = "<group>"; };
+		EC0CB018290C2611006DFD1D /* AddSuccessFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuccessFriendViewController.swift; sourceTree = "<group>"; };
 		EC4A3819289A68BF00974D7E /* PillCountlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCountlManager.swift; sourceTree = "<group>"; };
 		EC4A384C289BBA0100974D7E /* AddPillSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPillSheetViewModel.swift; sourceTree = "<group>"; };
 		EC4AD0AC288E6D9A005452BD /* PillStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillStyle.swift; sourceTree = "<group>"; };
@@ -1338,6 +1346,10 @@
 		EC042861286021D2001DD1EC /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				EC0CB016290C2600006DFD1D /* AddSuccessFriendView.swift */,
+				EC0CB012290C1EAB006DFD1D /* AddSuccessView.swift */,
+				EC0CB018290C2611006DFD1D /* AddSuccessFriendViewController.swift */,
+				EC0CB014290C1EBE006DFD1D /* AddSuccessViewController.swift */,
 				EC0213F927CFAE0B00CF3569 /* PillFirst */,
 				EC8596A4281C00F500850E84 /* PillSecond */,
 				ECA63796281D1A7300CA2291 /* PillThird */,
@@ -2065,6 +2077,7 @@
 				BD51AE372790A97400314A94 /* StickerBottomSheet.swift in Sources */,
 				ECB845ED279594E400433522 /* URLs.swift in Sources */,
 				F6ECBC1028DAFB23000ED3DD /* WithdrawViewController+Network.swift in Sources */,
+				EC0CB015290C1EBE006DFD1D /* AddSuccessViewController.swift in Sources */,
 				BD515E6F2787784D003BD5A4 /* BaseViewController.swift in Sources */,
 				EC7E85BF28B7BAE200AF1A65 /* PillEditEndPoint.swift in Sources */,
 				9A3DF0BD27987A7400D07A8C /* SaveNicknameModel.swift in Sources */,
@@ -2144,6 +2157,7 @@
 				BDDF7723289A95340096196B /* StickerManager.swift in Sources */,
 				9A3DF0C62798CE4300D07A8C /* EditFriendNameViewController.swift in Sources */,
 				F67798AA28A0210900AAD2EF /* NoticeListCollectionViewCell+Interaction.swift in Sources */,
+				EC0CB013290C1EAC006DFD1D /* AddSuccessView.swift in Sources */,
 				ECA6379E281D1AF800CA2291 /* AddPillThirdView.swift in Sources */,
 				ECCF5E7228A62BC900BC6862 /* EditPillNameView.swift in Sources */,
 				BD7120FF279777AB0068B981 /* UIViewController+Extension.swift in Sources */,
@@ -2210,6 +2224,7 @@
 				ECAF4D2B284F979200B12DA7 /* AddPillFirstViewModel.swift in Sources */,
 				EC02140B27D1E7D200CF3569 /* PillPeriodViewModel.swift in Sources */,
 				EC02140427D0F85000CF3569 /* PillDayViewModel.swift in Sources */,
+				EC0CB017290C2600006DFD1D /* AddSuccessFriendView.swift in Sources */,
 				EC91946428224BBF0047893F /* AddPillInfoViewController.swift in Sources */,
 				EC02141627D27CD900CF3569 /* PillDayViewController.swift in Sources */,
 				BD38CB6E28AB94BF006CB0FB /* AuthEndPoint.swift in Sources */,
@@ -2240,6 +2255,7 @@
 				9A979F0527D51CA4001760C0 /* SocialSignInViewController.swift in Sources */,
 				F6951671288FCE97000F88D7 /* NoticeFirstControl.swift in Sources */,
 				BD4611C128608260007BEE87 /* FriendNameView.swift in Sources */,
+				EC0CB019290C2611006DFD1D /* AddSuccessFriendViewController.swift in Sources */,
 				ECCF5E6E28A6281E00BC6862 /* EditView.swift in Sources */,
 				BDD21A9A278D8705007D10F6 /* MainViewController.swift in Sources */,
 				EC4BF2F127C0BEAC00B28F90 /* ButtonView.swift in Sources */,
