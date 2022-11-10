@@ -61,7 +61,8 @@ class EditPillNameView: BaseView {
         pillNameTextField.addTarget(self, action: #selector(pillTextFieldDidChange(_:)), for: UIControl.Event.allEditingEvents)
     }
     
-    @objc func pillTextFieldDidChange(_ textField: UITextField) {
+    @objc
+    func pillTextFieldDidChange(_ textField: UITextField) {
         guard let text = pillNameTextField.text else { return }
         
         pillNameTextField.attributedText = setAttributedText(text: text)
