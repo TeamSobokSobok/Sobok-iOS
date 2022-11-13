@@ -20,6 +20,7 @@ class PillDayView: BaseView {
     lazy var tableView = UITableView().then {
         $0.register(PillDayTableViewCell.self)
         $0.isScrollEnabled = false
+        $0.separatorInset.left = 15
         $0.rowHeight = 48
     }
     

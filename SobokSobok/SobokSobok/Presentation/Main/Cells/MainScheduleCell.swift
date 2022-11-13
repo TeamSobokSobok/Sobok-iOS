@@ -127,7 +127,7 @@ extension MainScheduleCell {
     private func addObservers() {
         Notification.Name.editSchedule.addObserver { [weak self] noti in
             guard
-                let self,
+                let self = self,
                 let userInfo = noti.userInfo,
                 let isEdit = userInfo["isEdit"] as? Bool else { return }
             

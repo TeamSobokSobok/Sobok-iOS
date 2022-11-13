@@ -59,9 +59,14 @@ final class AddPillThirdView: BaseView {
         $0.showsHorizontalScrollIndicator = false
         $0.collectionViewLayout = layout
     }
-    
-    lazy var nextButton = SobokButton.init(frame: CGRect(), mode: .inactive, text: "추가하기", fontSize: 18)
-    
+
+    lazy var nextButton = UIButton().then {
+        $0.backgroundColor = Color.gray100
+        $0.setTitleColor(Color.gray500, for: .normal)
+        $0.setTitle("추가하기", for: .normal)
+        $0.makeRounded(radius: 8)
+        $0.titleLabel?.font = UIFont.font(.pretendardSemibold, ofSize: CGFloat(18))
+    }
     
     override func setupView() {
         addSubviews(navigationView, pillNameInfoLabel, pillPeriodInfoLabel, pillCountLabel, pillCountInfoLabel, countInfoButton, collectionView, nextButton, tooltipImage)
