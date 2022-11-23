@@ -104,8 +104,8 @@ final class NoticeListCollectionViewCell: UICollectionViewCell, NoticeListPresen
         statusType = status
         divideSection()
         
-        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton, toolTipView)
-        topStackView.bringSubviewToFront(toolTipView)
+        topStackView.addArrangedSubviews(iconImageView, nameLabel, detailButton)
+//        topStackView.bringSubviewToFront(toolTipView)
         middleStackView.addArrangedSubviews(descriptionLabel, timeLabel)
         bottomStackView.addArrangedSubviews(refuseButton, acceptButton)
         containerStackView.addArrangedSubviews(topStackView, middleStackView, bottomStackView)
