@@ -40,7 +40,9 @@ final class AddSuccessView: BaseView {
     
     override func setupConstraints() {
         backgroundView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.height.equalTo(166)
+            $0.width.equalTo(283)
+            $0.centerX.centerY.equalToSuperview()
         }
         
         successLabel.snp.makeConstraints {

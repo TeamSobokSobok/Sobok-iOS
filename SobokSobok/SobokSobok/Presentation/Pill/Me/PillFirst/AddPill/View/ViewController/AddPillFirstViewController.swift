@@ -280,6 +280,8 @@ extension AddPillFirstViewController: UICollectionViewDelegate, UICollectionView
         
         if self.pillTimeViewModel.timeList.value.count == 1 {
             cell.deleteButton.isHidden = true
+        } else {
+            cell.deleteButton.isHidden = false
         }
         
         return cell
